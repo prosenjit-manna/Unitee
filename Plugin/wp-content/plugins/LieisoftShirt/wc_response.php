@@ -8,7 +8,6 @@ global $wpdb;
 
 
 
-
 if(!function_exists("upload_base64")){
      
     function upload_base64($encode , $filename , $coord , $e ){
@@ -39,16 +38,27 @@ if(!function_exists("upload_base64")){
         imagealphablending($i , FALSE);
         imagesavealpha($i , TRUE);
 
+       /* imagecopyresampled($i, 
+                $img,
+                0,
+                0, 
+                $coord->x + 115,
+                $coord->y + 40,
+                $wm + 300, 
+                $hm + 300, 
+                $wm  , 
+                $hm  );*/
+        
         imagecopyresampled($i, 
                 $img,
                 0,
                 0, 
-                $coord->x,
-                $coord->y ,
-                $wm, 
+                $coord->x ,
+                $coord->y - 27 ,
+                $wm , 
                 $hm , 
                 $wm  , 
-                $hm );
+                $hm  );
 
         imagepng($i, $upload_path . $hashed_filename );
         imagedestroy($img);
@@ -211,7 +221,7 @@ foreach ($images as $k=>$i){
 }
 
 update_post_meta( $post_id, '_thumbnail_id', current($images_id) );
-update_post_meta( $post_id, '_product_image_gallery' , implode("," , $images_id));
+update_post_meta( $post_id, '_product_image_gallery' , end($images_id));
 
 
 $date_ = new DateTime($duracion);

@@ -265,7 +265,7 @@
                      $("a[href='#finish']")
                         .html("Redireccionando")
                         .attr("disabled" , "disabled");
-                       // window.location.href= w;
+                        //window.location.href= w;
                     
                 });
                 
@@ -412,7 +412,8 @@
                         draggable: true,
                         resizable : true,
                         zChangeable: true,
-                        autoCenter: true
+                        autoCenter: true,
+                        scale : 1.5
                     },
                     textParameters: {
                         textSize: 16
