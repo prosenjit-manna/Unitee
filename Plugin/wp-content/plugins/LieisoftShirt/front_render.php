@@ -48,7 +48,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
 <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/src/js/bootstrap-datetimepicker.js"></script>
 
-<br><br>
 <input type="hidden" id="global_price" value="" />
 <input type="hidden" id="wp_path" value="<?php echo ABSPATH; ?>" />
 <div id="pasos">
@@ -136,7 +135,7 @@
             <section id="login_from">
                 <?php echo do_shortcode('[woocommerce_my_account]'); ?>
             </section>
-        <?php endif; ?>  
+       <?php endif; ?>  
 </div>
 
 
@@ -259,13 +258,10 @@
                 
                 ftask.success_callback(function(call){
                     var w = $.trim(call);
-                    
-                    console.log(call);
-                    
                      $("a[href='#finish']")
                         .html("Redireccionando")
                         .attr("disabled" , "disabled");
-                        //window.location.href= w;
+                        window.location.href= w;
                     
                 });
                 
