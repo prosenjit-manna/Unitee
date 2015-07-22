@@ -34,6 +34,13 @@
                 "section3"      => "Guarda tus cambios"
              );
             break;
+        default:
+             $modes = array(
+                "section1"      => "Diseña",
+                "section2"      => "Crea Tu campaña",
+                "section3"      => "Inicia Sesion"
+             );
+            break;
     }
     
 
