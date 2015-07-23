@@ -99,7 +99,6 @@
                         <div class="col-sm-4">
                             <input  type="number" class="form-control" id="txt_precio" placeholder="" value="">
                         </div>
-                        <span style="background-color:white;color:black;font-family:cursive;font-size:16px;font-style:oblique;" id="txt_cprice" class="label label-default"></span>
                     </div>
                         <div class="form-group">
                         <label for="" class="col-sm-4 control-label"> Duración </label>
@@ -204,16 +203,34 @@
                }
                else
                {
-                   var duracion     = $("#txt_duracion").val();
-                   var actual       = new Date();
-                   if(new Date(actual).getTime() >= new Date(duracion).getTime())
-                   {
-                        _labelErr(1 , "La campaña no puede terminar el mismo dia que se creo.");
+                   
+                   var duracion = new Date($("#txt_duracion").val());
+                   var current = new Date();
+                   var min = (1000*60);
+                   var hour = min *60;
+                   var day = hour * 24;
+                   var week = day *7;
+                   var the_week = current.getTime() + week;
+                   var the_month = current.getTime() + (week*4);
+
+                  if(duracion.getTime() < the_week){
+                      console.log("La campaña debe de durar minimo una semana ");
+                       _labelErr(1 , "La campaña debe ser minimo una semana.");
                         return;
-                   }
+                  }
+                  else if(duracion.getTime() > the_month){
+                         _labelErr(1 , "La campaña debe ser maximo 4 semanas");
+                        return;
+                  }
                }
-
-
+               
+               
+               if($("#txt_precio").val() === $("#global_price").val())
+               {
+                   _labelErr(1 , "El precio de tu camisa no debe ser igual al costo.");
+                   return;
+               }
+               
                if(typeof camisas_categoria === "undefined"  ){
                    _labelErr(1 , "No ha seleccionado un diseño. ");
                    return;
@@ -229,7 +246,7 @@
                    _labelErr(1 , "La campaña debe tener una fecha limite para continuar.");
                    return;
                }
-               
+ 
  
                 //var d = JSON.stringify(fancy.getViewsDataURL("png"));
 
@@ -292,35 +309,55 @@
                         ii++;
                    });
                    
-                    var c = {
+                   var cc = {
                         "x":115,
                         "y":27,
                         "x2":336,
-                        "y2":225,
+                        "y2":245,
                         "w":221,
                         "h":198
                     };
+                    
+                    coordFront = cc;
+                    coordBack = cc;
+                    
+                    /***
+                    * FUNCIONES Y VARIABLES DE PRUEBAS , 
+                    * DEPRECADOS EN LA VERSION 1.5
+                    * ***/
 
-                    $('#d1').Jcrop({
+                /*    var c = {
+                        "x":64,
+                        "y":17,
+                        "x2":231,
+                        "y2":156,
+                        "w":221,
+                        "h":198
+                    };
+                    */
+                    
+
+                 /*   $('#d1').Jcrop({
                             bgFade: false,
                             setSelect: [c.x,c.y,c.x2,c.y2],
                             bgColor:     'transparent',
                             bgOpacity:   .4,
                             onSelect : function(cf){
                                coordFront = cf;
+                               console.log(cf);
                             }
-                    });
+                    });*/
                     
                     
-                     $('#d2').Jcrop({
+                 /*    $('#d2').Jcrop({
                             bgFade: false,
                             setSelect: [c.x,c.y,c.x2,c.y2],
                             bgColor:     'transparent',
                             bgOpacity:   .4,
                             onSelect : function(cb){
-                                coordBack = cb;
+                                coordBack = cc;
                             }
-                    });
+                    });*/
  
                     
                 }
@@ -707,7 +744,7 @@
                                 first_art +=('</div>');
                                 price = v.precio;
                                 $("#global_price").val(price);
-                                $("#txt_cprice").html( "$" + price);
+                                $("#txt_precio").val(price);
                             }
                          
                         });
