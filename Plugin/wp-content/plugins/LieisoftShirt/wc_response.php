@@ -1,16 +1,39 @@
 <?php
 
 
-require_once( $_REQUEST['path'] . "wp-config.php" );
+/***
+ * 
+ * WC response 
+ * version 0.5
+ * Dev by Rolando Arriaza
+ * Lieison Working T.
+ * 
+ * Modulo en el cual guarda la informaciond e la campaña de la camisa
+ * por medio de parametros especificos , en el cua varian de acuerdo 
+ * al diseño del elemento 
+ * 
+ * **/
 
-global $current_user;
-global $wpdb;
+
+//Necesitamos las librerias de wordpress ya que se esta enviando por medio AJAX
+require_once( $_REQUEST['path'] . "wp-config.php" ); 
 
 
+global $current_user;  // obtiene el usuario actual logado  tipo array 
+global $wpdb; // obtenemos la clase de bases de datos wordpress
 
+
+/*
+ * Esta funcion desarrolla el proceso en el cual sube la imagen pero antes
+ * de subirla pasa por una serie de filtros incluyendo el factor de 
+ * conversion base 64 a cadena o string 
+ * 
+ */
 if(!function_exists("upload_base64")){
      
     function upload_base64($encode , $filename , $coord , $e ){
+        
+       
         
         $upload_dir             = wp_upload_dir();
         $upload_path            = str_replace( '/', DIRECTORY_SEPARATOR, $upload_dir['path'] ) . DIRECTORY_SEPARATOR;
@@ -19,36 +42,25 @@ if(!function_exists("upload_base64")){
         
 
         
-        header('Content-Type: image/png');
+        header('Content-Type: image/png'); //header png data sistem
         
-        $img = imagecreatefromstring($decoded);
-        list($w , $h) = getimagesizefromstring($decoded);
+        $img = imagecreatefromstring($decoded); //imagen string 
+        list($w , $h) = getimagesizefromstring($decoded); //obtenemos el tamaño real de la imagen
 
 
-        $w_m = 800;
-        $h_m = 600;
+        $w_m = 800; // estandar
+        $h_m = 600; // estandar
         
         
-        $wm = $h * ($w_m / $h_m);
-        $hm = $w * ($h_m / $w_m);
+        $wm = $h * ($w_m / $h_m);  //calculo para obtener el width general
+        $hm = $w * ($h_m / $w_m);  // calculo para obtener el height general 
         
-        $i = imagecreatetruecolor($w_m, $h_m);
+        $i = imagecreatetruecolor($w_m, $h_m); // aplicamos el rectangulo 800x600
         
              
-        imagealphablending($i , FALSE);
-        imagesavealpha($i , TRUE);
+        imagealphablending($i , FALSE); // obtenemos las transparencias 
+        imagesavealpha($i , TRUE); // se guarda las transparencias
 
-       /* imagecopyresampled($i, 
-                $img,
-                0,
-                0, 
-                $coord->x + 115,
-                $coord->y + 40,
-                $wm + 300, 
-                $hm + 300, 
-                $wm  , 
-                $hm  );*/
-        
         imagecopyresampled($i, 
                 $img,
                 0,
@@ -58,7 +70,7 @@ if(!function_exists("upload_base64")){
                 $wm , 
                 $hm , 
                 $wm  , 
-                $hm  );
+                $hm  ); // corta la imagen 
 
         imagepng($i, $upload_path . $hashed_filename );
         imagedestroy($img);

@@ -26,7 +26,11 @@
   <div class="panel-heading">Configuracion de T-shirt (Web services)</div>
   <div class="panel-body">
     <form role="form" action="" method="post">
-          <div class="form-group">
+     <div class="form-group">
+                <label for="exampleInputEmail1">Shortcodes []</label>
+                <input type="text" value="[ls_tshirt width='' height='']" name="txt_color" id="txt_color" class="form-control" id="exampleInputEmail1" placeholder="webservices del color">
+    </div>
+    <div class="form-group">
                 <label for="exampleInputEmail1"> Webservices</label>
                 <input type="text" value="<?php echo $w_color; ?>" name="txt_color" id="txt_color" class="form-control" id="exampleInputEmail1" placeholder="webservices del color">
      </div>
@@ -40,6 +44,7 @@
      </div> 
         <input type="submit" name="cmd_send" id="cmd_send" class="btn btn-primary" value="Guardar" />
       </form>
+      
       
       <?php
       
