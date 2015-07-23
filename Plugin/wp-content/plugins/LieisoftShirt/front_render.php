@@ -53,7 +53,7 @@
 <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/src/js/bootstrap-datetimepicker.js"></script>
+
 
 <input type="hidden" id="global_price" value="" />
 <input type="hidden" id="wp_path" value="<?php echo ABSPATH; ?>" />
@@ -81,7 +81,7 @@
                     <div style="visibility:hidden;" id="label_alert" class="alert alert-danger" role="alert"></div>    
                     <form class="form-horizontal">
                         <div class="form-group">
-                        <label for="" class="col-sm-4 control-label">Titulo</label>
+                        <label for="" class="col-sm-4 control-label">* Titulo</label>
                         <div  class="col-sm-6">
                             <input type='text' id='txt_titulo' class="form-control" />
                             <p></p>
@@ -89,19 +89,19 @@
                         </div>
                     </div>
                         <div class="form-group">
-                        <label for="" class="col-sm-4 control-label"> # Camisas Objetivo</label>
+                        <label for="" class="col-sm-4 control-label">* # Camisas Objetivo</label>
                         <div  class="col-sm-6">
                             <input id="txt_camisas" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="400" data-slider-step="1" data-slider-value="1"/>
                         </div>
                     </div>
                         <div class="form-group">
-                        <label for="" class="col-sm-4  control-label"> Precio $</label>
+                        <label for="" class="col-sm-4  control-label">* Precio $</label>
                         <div class="col-sm-4">
                             <input  type="number" class="form-control" id="txt_precio" placeholder="" value="">
                         </div>
                     </div>
                         <div class="form-group">
-                        <label for="" class="col-sm-4 control-label"> Duración </label>
+                        <label for="" class="col-sm-4 control-label">* Duración </label>
                         <div class="col-sm-6">
                             <input type='text' id='txt_duracion' class="form-control" />
                             <p></p>
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                        <label for="" class="col-sm-4 control-label"> Tags </label>
+                        <label for="" class="col-sm-4 control-label">* Tags </label>
                         <div class="col-sm-6">
                             <input  data-role="tagsinput" id="txt_tags" class="form-control" type="text" placeholder="" size="4" style="width: 15em !important;">
                              <p></p>
@@ -163,10 +163,6 @@
    
     jQuery(document).ready(function($){
         
-
-          
-               /**Funcion en el cual finaliza el proceso ...*/
-
             var _labelErr = function(state , msj){
                 var label = $("#label_alert");
                 switch(state){
@@ -179,15 +175,13 @@
                         .attr("data-toggle" , "popover")
                         .attr("data-placement" , "top")
                         .attr("title" , "Faltan campos.")
-                        .attr("data-content" , "Olvidastes algun campo : \n\n(" + msj + ")" )
+                        .attr("data-content" , "(*) Campos Obligatorios ..." )
                         .popover('show');
                         break;
                 }
                 label.html(msj);
             };
         
-            /**Funcion en el cual finaliza el proceso ...*/
-
             var _finish = function(){
               
              
@@ -246,6 +240,13 @@
                    _labelErr(1 , "La campaña debe tener una fecha limite para continuar.");
                    return;
                }
+               
+               if($("#txt_tags").val() === "undefined" 
+                       || $("#txt_tags").val() === ""){
+                   _labelErr(1 , "Agrega agunos tags separados por comas ej: camisas , color negro , ...");
+                   return;
+               }
+               
  
  
                 //var d = JSON.stringify(fancy.getViewsDataURL("png"));
@@ -366,7 +367,7 @@
             
 
            //configuracion sistema steps
-            $("#pasos").steps({
+           $("#pasos").steps({
                     headerTag: "h3",
                     bodyTag: "section",
                     transitionEffect: "slideLeft",
@@ -377,11 +378,11 @@
             });
             
        
-            
            $('#txt_duracion').datetimepicker({
-                sideBySide: true
+                        sideBySide : true,
+                        enabledHours: [23]
            });
-
+           
             
            count_camisas = $("#txt_camisas").bootstrapSlider({
                 tooltip: 'always'
@@ -541,7 +542,7 @@
                         unlock:"Desbloquear",
                         remove:"Remover",
                         outOfContainmentAlert:"Mover en este contenedor",
-                        initText:"Unitee Design ... Cargando",
+                        initText:"Unitee Design",
                         myUploadedImgCat:"Tus fotos subidas",
                         uploadedDesignSizeAlert:"Sorry! The image you have uploaded does not meet the size requirements.\nMinimum Width: 100 pixels\nMinimum Height: 100 pixels\nMaximum Width: 10000 pixels\nMaximum Height: 10000 pixels"
                     },
@@ -608,7 +609,7 @@
               var adjunto_ = JSON.parse(d.adjunto_data);
               $.map(adjunto_ , function(p){
                    if(p.type === "front"){
-                        var j =('<br><img class="media-object img-circle" width="100" height="100" src="'
+                        var j =('<img class="media-object img-circle" width="100" height="100" src="'
                                         + img_url + p.value +'" alt="">');
                         $("#media_image").html(j);
                         return;
@@ -712,7 +713,7 @@
                                 
                                 first_art = '';
                                 first_art +=('<div align="center" id="change_art_media" class="media">');
-                                first_art +=('<div  id="media_image" class="media-right"><br>');
+                                first_art +=('<div  id="media_image" class="media-right">');
                                 
                                  var image_front = JSON.parse(v.adjunto_data);
                                  var img = null;
@@ -726,7 +727,7 @@
                                         + img_url + img +'" alt="">');
                                 first_art +=('</div>');
                                 first_art +=('<div style="width:160px;"  class="media-body">');
-                                first_art +=('<br>');
+                                first_art +=('<p></p>');
                                 first_art +=('<h4 style="color:blueviolet;text-decoration-style:double;text-transform:uppercase;text-shadow:calc;" class="media-heading">' 
                                         + ("<span class='text-success' >" + v.nombre + "</span>") 
                                         + ('<br><span class="text-success small">&nbsp;' + v.descripcion + '</span>')
@@ -750,21 +751,22 @@
                         });
                         
                         data +=('</div>');
-                        data +=('</div>');
+                      //  data +=('</div>');
 
-                        data +=('</div>');
+                      //  data +=('</div>');
                         
-                        data += ('<div style="color:' + bg_color + ';" class="panel panel-default">');
+                      //  data += ('<div style="color:' + bg_color + ';" class="panel panel-default">');
                         data += first_art;
                        
                      
-                        data +=('<div align="center" class="media">');
+                      //  data +=('<div align="center" class="media">');
                         data +=('<div id="art_price" class="media-body">');
                         data += ('<span style="font-family:Helvetica;font-weight:bold;font-size:2.3rem;color:black;">Precio: </span>');
                         data += ('<span style="font-family:Helvetica;font-weight:bold;font-size:2.3rem;color:blue;">$' + price + '</span>');
                         data += '<br>&nbsp;&nbsp;<span><button onclick="create_view();" id="load_articulo_canvas" name="load_articulo_canvas" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;&nbsp;Utilizar</button></span>'
                         data += '</div></div>';
                         data += '</div>';
+                        data +=('</div>');
                         
                         container.html(data);
 

@@ -352,13 +352,13 @@ $insta_recent_images_button = isset($_POST['instaRecentImagesButton']) ? $_POST[
 							</div>
 						</div>
 					</div>
-					<div class="fpd-transform-options fpd-list-row fpd-sub-option fpd-scale-option">
+                                        <div style="display:none;" class="fpd-transform-options fpd-list-row fpd-sub-option fpd-scale-option">
 						<div class="fpd-cell-0">
 							<label><?php echo $scale; ?></label>
 						</div>
 						<div class="fpd-cell-1">
 							<div>
-								<div data-value="1" data-min="0" data-max="20" data-step="0.1" class="fpd-scale-slider fpd-slider"></div>
+								<div data-value="1" disabled="disabled" data-min="0" data-max="20" data-step="0.1" class="fpd-scale-slider fpd-slider"></div>
 							</div>
 						</div>
 					</div>

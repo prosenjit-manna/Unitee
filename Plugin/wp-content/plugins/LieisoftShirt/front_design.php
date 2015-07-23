@@ -24,9 +24,9 @@ class LS_DESIGN {
         /*PLUGIN SPACE */
         
         wp_register_script("pdatepicker", 
-                LS_PLUGIN_DIR . "plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" );
+                LS_PLUGIN_DIR . "plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" );
         wp_register_script("pdatepicker2", 
-                LS_PLUGIN_DIR . "plugins/bootstrap-datetimepicker/moment.js" );
+                LS_PLUGIN_DIR . "plugins/moment/moment.js" );
         
        wp_register_script("slider", 
                 LS_PLUGIN_DIR . "plugins/slider/js/bootstrap-slider.js" );
@@ -38,7 +38,7 @@ class LS_DESIGN {
         
         wp_enqueue_script('jquery' );
         wp_enqueue_script('crop' );
-       // wp_enqueue_script("pdatepicker");
+        wp_enqueue_script("pdatepicker");
        // wp_enqueue_script("pdatepicker2");
         wp_enqueue_script('task' );
         wp_enqueue_script('tag' );
