@@ -6,19 +6,14 @@ defined("T_SLUG") or define("T_SLUG", "ls-menu");
 defined("T_ICON") or define("T_ICON",   
         get_site_url() . "/wp-content/plugins/" 
         . LS_NAME . "/img/kiwi.png");
-
-
-
 /**
  * Funcion de creacion del menu en sidebar
  * como requerimiento se necesitan las definiciones 
  * que se encuentran arriba
  **/
-
 if(!function_exists("Ls_menu")){
     function Ls_menu(){
     
-
         add_menu_page(
              T_NAME, 
              T_NAME,
