@@ -7,6 +7,7 @@ class Login extends CI_Controller {
         parent::__construct();
         
         $this->load->library("base_url");
+        $this->load->helper("form");
         
     }
     
@@ -16,5 +17,7 @@ class Login extends CI_Controller {
          $this->load->view("login/index" ,  array( "route" => $r));
         
     }
+    
+ 
 
 }
