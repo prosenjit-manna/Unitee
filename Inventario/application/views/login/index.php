@@ -8,6 +8,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 <meta content="" name="Unitee"/>
 <meta content="" name="Lieson"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -16,7 +20,11 @@
 <link href="<?php echo $route;?>css/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<<<<<<< HEAD
 <link href="<?php echo $route;?>css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css"/>
+=======
+
+>>>>>>> origin/master
 <meta content="" name="description"/>
 <meta content="" name="author"/>
 
@@ -27,7 +35,7 @@
 <link href="../../assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
 <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css"/>
->>>>>>> origin/master
+
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link href="<?php echo $route;?>css/select2.css" rel="stylesheet" type="text/css"/>
