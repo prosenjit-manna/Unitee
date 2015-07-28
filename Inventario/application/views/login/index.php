@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="es">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Login Options - Login Form 2</title>
+<title>Unitee | Login</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
