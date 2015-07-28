@@ -26,9 +26,25 @@ class User_Auth extends CI_Model {
                      . " , roles.nombre as 'rol_name' , roles.nivel as 'rol_nivel'"
                      . " FROM user "
                      . " INNER JOIN login ON login.id_login=user.id_login "
-                     . " INNER JOIN roles ON roles.id_rol=user.id_rol ";
+                     . " INNER JOIN roles ON roles.id_rol=user.id_rol "
+                     . " WHERE login.user LIKE ? AND login.password LIKE ?";
         
-        $request = $this->db->query($this->query , array());
+        $request = $this->db->query($this->query , array($usr , $pwd));
+        
+        if(empty($request)){
+            
+               $this->query = "SELECT concat(user.nombres, ' ' , user.apellidos ) "
+                     . " as 'name' , login.user as 'user' , login.password as 'password' "
+                     . " , login.status as 'status' , login.last_date as 'last_date' "
+                     . " , roles.nombre as 'rol_name' , roles.nivel as 'rol_nivel'"
+                     . " FROM user "
+                     . " INNER JOIN login ON login.id_login=user.id_login "
+                     . " INNER JOIN roles ON roles.id_rol=user.id_rol "
+                     . " WHERE user.email LIKE ? AND login.password LIKE ?";
+            
+        }
+        
+         $request = $this->db->query($this->query , array($usr , $pwd));
        
     }
     
