@@ -21,6 +21,20 @@ if($now_ > $date_ ){
     }
     $s = TRUE;
 }
+
+
+if(!function_exists("custom_get_availability")){
+      
+    function custom_get_availability( $availability, $_product ) {
+        if ( $_product->is_in_stock() ) $availability['availability'] = __(get_option("ls_stock_"), 'woocommerce');
+  
+        if ( !$_product->is_in_stock() ) $availability['availability'] = __(get_option("ls_outstock_"), 'woocommerce');
+        return $availability;
+    }
+
+}
+
+add_filter( 'woocommerce_get_availability', 'custom_get_availability', 1, 2);
         
 
 ?>
@@ -33,7 +47,7 @@ if($now_ > $date_ ){
         width: 322px;
         height: 44px;
 
-        border: 4px rgb(199, 30, 30) solid;
+        border: 4px rgb(172, 14, 14) solid;
 
         padding: 1px;
 
@@ -49,29 +63,19 @@ if($now_ > $date_ ){
         -moz-box-sizing: inherit;
         box-sizing: inherit;
 
-        background: rgb(255, 255, 255);
-
-        color: rgb(2, 2, 2);
         font-size: 20px;
-        font-weight: inherit;
-        font-family: 'MS Serif', 'New York', sans-serif;
-        font-style: inherit;
         text-decoration: blink;
         text-align: center;
 
         line-height: 1.6em;
-        text-shadow: 0px 0px 23px rgb(20, 15, 15);
 
-            -moz-box-shadow:  -1px 0px 8px 6px rgb(25, 22, 22);
-            -webkit-box-shadow:  -1px 0px 8px 6px rgb(25, 22, 22);
-        box-shadow:  -1px 0px 8px 6px rgb(25, 22, 22);
     }
 </style>
 <br>
 <div class="count_down" id="getting-started"></div>   
 <br>
 <?php else: ?>
-    <div><p><b>Campaña Finalizada</b></p></div>
+    <div><p><b><?php echo get_option("ls_campain_"); ?></b></p></div>
 <?php endif; ?>
 
 <script type="text/javascript">

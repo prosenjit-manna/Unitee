@@ -57,9 +57,31 @@ class LS_TSHIRT {
              add_option("key_web_services" , "No Key");
          }
          
+             
+        if(get_option("ls_stock_") == NULL)
+        {
+            add_option("ls_stock_", "In stock");
+        }
+        
+        if(get_option("ls_outstock_") == NULL)
+        {
+            add_option("ls_outstock_", "Out Of Stock");
+        }
+        
+        if(get_option("ls_campain_") == NULL)
+        {
+            add_option("ls_campain_", "End Campain");
+        }
+        
+         
+         
+        
          ls_create_db();
          
     }
+    
+    
+    
     
     public function set_webservices(array $data){
         
@@ -172,6 +194,33 @@ if(!function_exists("ls_endtime_product")){
     }
     
 }
+
+
+if(!function_exists("ls_labels")){
+    
+    function ls_labels(){
+        
+     
+        
+        wp_register_script("bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" );
+        
+        
+        wp_enqueue_script("jquery");
+        wp_enqueue_script("bootstrap");
+        
+             
+        wp_register_style("bt1","//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" );
+        wp_register_style("bt2","//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" );
+       
+        
+        wp_enqueue_style("bt1");
+        wp_enqueue_style("bt2");
+     
+        include plugin_dir_path( __FILE__ ) . "include/settings/labels.php";
+    
+    }
+}
+
 
 
 /***

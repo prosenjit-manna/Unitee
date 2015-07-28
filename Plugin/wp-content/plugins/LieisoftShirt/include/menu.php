@@ -25,8 +25,7 @@ if(!function_exists("Ls_menu")){
     
         add_submenu_page(T_SLUG, "Options", "Options", "manage_options", "ls-sub-options", "ls_options");
         add_submenu_page(T_SLUG, "Preview", "Preview", "manage_options", "ls-sub-preview", "ls_preview");
-       // add_submenu_page(T_SLUG, "User Preview", "User Preview", "manage_options", "ls-sub-upreview", "ls_user_preview");
-       // add_submenu_page(T_SLUG, "WC styles", "WC styles", "manage_options", "ls-sub-woocommerce", "woocommerce_design");
+        add_submenu_page(T_SLUG, "Labels", "Labels", "manage_options", "ls-sub-plabel", "ls_labels");
         
         
     }
