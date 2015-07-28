@@ -31,7 +31,7 @@ class User_Auth extends CI_Model {
         
         $request = $this->db->query($this->query , array($usr , $pwd));
         
-        if(empty($request)){
+        if(empty($request) && $email != NULL){
             
                $this->query = "SELECT concat(user.nombres, ' ' , user.apellidos ) "
                      . " as 'name' , login.user as 'user' , login.password as 'password' "
@@ -41,10 +41,12 @@ class User_Auth extends CI_Model {
                      . " INNER JOIN login ON login.id_login=user.id_login "
                      . " INNER JOIN roles ON roles.id_rol=user.id_rol "
                      . " WHERE user.email LIKE ? AND login.password LIKE ?";
+               
+               $request = $this->db->query($this->query , array($usr , $pwd));
             
         }
         
-         $request = $this->db->query($this->query , array($usr , $pwd));
+        return $request;
        
     }
     
