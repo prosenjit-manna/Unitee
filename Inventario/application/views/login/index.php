@@ -8,26 +8,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta content="" name="description"/>
-<meta content="" name="author"/>
+<meta content="" name="Unitee"/>
+<meta content="" name="Lieson"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
-<link href="../../assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/admin/pages/css/login-soft-rtl.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/select2.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/login-soft-rtl.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
-<link href="../../assets/global/css/components-rtl.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/css/plugins-rtl.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/admin/layout/css/layout-rtl.css" rel="stylesheet" type="text/css"/>
-<link id="style_color" href="../../assets/admin/layout/css/themes/default-rtl.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/admin/layout/css/custom-rtl.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/components-rtl.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/plugins-rtl.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/layout-rtl.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="<?php echo $route;?>css/themes/default-rtl.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>css/custom-rtl.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -35,7 +35,7 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
 	<a href="index.html">
-	<img src="../../assets/admin/layout/img/logo-big.png" alt=""/>
+	<img src="<?php echo $route;?>images/login/logo-big.png" alt=""/>
 	</a>
 </div>
 <!-- END LOGO -->
@@ -467,29 +467,29 @@
 <script src="../../assets/global/plugins/respond.min.js"></script>
 <script src="../../assets/global/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/jquery.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="../../assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="../../assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
-<script src="../../assets/global/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="../../assets/global/plugins/select2/select2.min.js"></script>
+<script src="<?php echo $route;?>js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="js/jquery.backstretch.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo $route;?>js/select2.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="../../assets/admin/pages/scripts/login-soft.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/metronic.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/layout.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/quick-sidebar.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/demo.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>js/login-soft.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {     
@@ -500,10 +500,10 @@ Demo.init(); // init demo features
   Login.init();
        // init background slide images
        $.backstretch([
-        "../../assets/admin/pages/media/bg/1.jpg",
-        "../../assets/admin/pages/media/bg/2.jpg",
-        "../../assets/admin/pages/media/bg/3.jpg",
-        "../../assets/admin/pages/media/bg/4.jpg"
+        "/bg/1.jpg",
+        "<?php echo $route;?>images/login/bg/2.jpg",
+        "<?php echo $route;?>images/login/bg/3.jpg",
+        "<?php echo $route;?>images/login/bg/4.jpg"
         ], {
           fade: 1000,
           duration: 8000
