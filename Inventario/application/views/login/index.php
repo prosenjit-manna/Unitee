@@ -8,35 +8,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 <meta content="" name="Unitee"/>
 <meta content="" name="Lieson"/>
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-<link href="<?php echo $route;?>css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo $route;?>css/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo $route;?>css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo $route;?>css/uniform.default.css" rel="stylesheet" type="text/css"/>
-<<<<<<< HEAD
-<link href="<?php echo $route;?>css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css"/>
-=======
-
->>>>>>> origin/master
-<meta content="" name="description"/>
-<meta content="" name="author"/>
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-<link href="<?php echo $route;?>css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-<link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>assert/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>assert/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>assert/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>assert/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>assert/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css"/>
+
 
 <!-- END GLOBAL MANDATORY STYLES -->
+
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link href="<?php echo $route;?>css/select2.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>css/login-soft-rtl.css" rel="stylesheet" type="text/css"/>
@@ -45,7 +30,7 @@
 <link href="<?php echo $route;?>css/components-rtl.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>css/plugins-rtl.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>css/layout-rtl.css" rel="stylesheet" type="text/css"/>
-<link id="style_color" href="<?php echo $route;?>css/themes/default-rtl.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="<?php echo $route;?>css/default-rtl.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>css/custom-rtl.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
@@ -515,7 +500,7 @@ jQuery(document).ready(function() {
   Metronic.init(); // init metronic core components
 Layout.init(); // init current layout
 QuickSidebar.init(); // init quick sidebar
-Demo.init(); // init demo features
+  Demo.init(); // init demo features
   Login.init();
        // init background slide images
        $.backstretch([
