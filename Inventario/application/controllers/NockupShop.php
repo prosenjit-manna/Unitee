@@ -4,6 +4,18 @@ class NockupShop  extends CI_Controller{
     
     
     protected $key  = "LieisoftApi";
+    
+    
+  /*  public function encrypt($enc)
+    {
+         $this->load->library("encryption");
+         echo "<br>";
+         $data =  $this->encryption->encrypt($enc);
+         echo $data;
+         echo "<br>";
+         echo $this->encryption->decrypt($data);
+         
+    }*/
 
     public function __construct() {
         parent::__construct();
@@ -35,9 +47,6 @@ class NockupShop  extends CI_Controller{
         $r =  $this->tshop_model
              ->get_articulos($id_articulo);
         
-       // print "<pre>" ;
-       // print_r($r);
-       // print "</pre>";
        print json_encode($r);
         
     }
@@ -48,10 +57,13 @@ class NockupShop  extends CI_Controller{
         print $this->base_url->GetBaseUrl("/images/articulos") . "/" . $image;
     }
     
+    
     public function generate_key($old_key , $c = NULL){
            if(!$this->get_key($old_key)) return;
            print $this->tshop_model->change_private_key();
     }
+    
+    
     
     private function  get_key($private_key){
          if ($this->key != $private_key) {
