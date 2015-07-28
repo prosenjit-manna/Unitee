@@ -26,6 +26,7 @@
 <link href="<?php echo $route;?>css/select2.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>css/login-soft-rtl.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL SCRIPTS -->
+
 <!-- BEGIN THEME STYLES -->
 <link href="<?php echo $route;?>css/components-rtl.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>css/plugins-rtl.css" rel="stylesheet" type="text/css"/>
