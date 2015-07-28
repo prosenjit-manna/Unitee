@@ -23,7 +23,7 @@
 
 <br><br>
 <div class="panel panel-default">
-  <div class="panel-heading">Count Down Options</div>
+  <div class="panel-heading">Labels Options</div>
   <div class="panel-body">
  <form role="form" class="form-horizontal" action=""  method="post">
   <div class="form-group">
