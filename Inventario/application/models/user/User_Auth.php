@@ -21,6 +21,13 @@ class User_Auth extends CI_Model {
     public function Auth($usr , $pwd , $type = "user"){
         
         $this->load->library('encryption');
+        $this->encryption->initialize(
+        array(
+                'cipher'    => 'aes-256',
+                'mode'      => 'cbc',
+                'key'       => get_key()
+        ));
+        
         
         $t = "login.user";
         
@@ -37,20 +44,27 @@ class User_Auth extends CI_Model {
                      . " , login.status as 'status' , login.last_date as 'last_date' "
                      . " , roles.nombre as 'rol_name' , roles.nivel as 'rol_nivel'"
                      . " FROM user "
-                     . " INNER JOIN login ON login.id_login=user.id_login "
-                     . " INNER JOIN roles ON roles.id_rol=user.id_rol "
-                     . " WHERE $t LIKE ? AND login.password LIKE ?";
+                     . " LEFT JOIN login ON login.id_login=user.id_login "
+                     . " LEFT JOIN roles ON roles.id_rol=user.id_rol "
+                     . " WHERE $t LIKE ? ";
         
         $request = $this->db
                         ->query($this->query , array(
-                            $this->encryption->encrypt($usr) , 
-                            $pwd
+                            $usr 
                         ))
-                        ->result_array();
+                        ->result_array()[0];
+       
         
         if(empty($request))
         {
             return FALSE;
+        }
+        else
+        {
+            $pass = $this->encryption->decrypt($request['password']);
+            if(strcmp($pwd, $pass) !== 0){
+                return FALSE;
+            }
         }
         
         
@@ -59,9 +73,8 @@ class User_Auth extends CI_Model {
             $this->session->unset_userdata('user');
         }
         
-        $this->session->user = array(
-            
-        );
+        $this->session->user = $request;
+                
         
         return TRUE;
 
