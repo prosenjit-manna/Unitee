@@ -8,17 +8,32 @@
  * @todo Controlador del dashboard en general 
  * **/
 
+
+/**
+ * Variables reservadas en la vista en general 
+ * 
+ * $style       = array(array(...) , array(...)) , array("link" => the_link , "stylessheet" => "stylessheet")
+ * $js          = array(array(...) , array(...)) , array("link" => the_link );
+ * $jquery_init = array("function1()" , "function2()" , ...);
+ * $route       = String the_route
+ * 
+ * 
+ */
+
+
+
 class Dashboard extends CI_Controller {
     
     
+    protected $route = NULL;
+
+
     public function __construct() {
         parent::__construct();
         
         $this->load->library("session");
         $this->load->library("base_url");
-        
-       //$this->session->unset_userdata('user');  
-        
+        $this->route = $this->base_url->GetBaseUrl();
         
         /**
          * Verifica si el usuario tiene una sesion 
@@ -37,10 +52,12 @@ class Dashboard extends CI_Controller {
     
     public function index( $model = NULL , $location = NULL){
            
-        $this->load->view("dashboard/header");
+     
         
         if($model === NULL){
+             $this->load->view("dashboard/header");
              $this->load->view("dashboard/main");
+             $this->load->view("dashboard/footer");
         }
         else
         {
@@ -56,7 +73,7 @@ class Dashboard extends CI_Controller {
             $this->$model->_init();
         }
         
-        $this->load->view("dashboard/footer");
+        
         
         
     }
@@ -79,10 +96,15 @@ class Dashboard extends CI_Controller {
     }
     
     
-    public function modulos(){
+    public function modulos($type = "install" ){
         
-        $this->load->library("plugin");
-        $re = $this->plugin->_install("pruebas" , "prueba_controller");
+        if($type = "install"){
+            $this->load->library("plugin");
+            
+        }
+        
+        
+        $re = $this->plugin->Is_install("pruebas" , "prueba_controller");
         if($re){
             echo "INSTALACION REALIZADA";
         }
