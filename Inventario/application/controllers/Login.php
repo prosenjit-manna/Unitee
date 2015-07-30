@@ -25,7 +25,9 @@ class Login extends CI_Controller {
     public function login()
     {
         
-        $user       = $_REQUEST['user'];
+    
+        
+        $user       = $_REQUEST['username'];
         $password   = $_REQUEST['password'];
         $type       = "email";
         

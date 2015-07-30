@@ -45,7 +45,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<form class="login-form" action="index.html" method="post">
+	<?php echo form_open("Login/login/", array("class" => "login-form" , "method" => "post")); ?>
 		<h3 class="form-title">Unitee - Inicia Sessión</h3>
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>
@@ -80,7 +80,7 @@
 		<div class="create-account">
 			
 		</div>
-	</form>
+	<?php echo form_close();  ?>
 	
 </div>
 <!-- END LOGIN -->
