@@ -1,5 +1,5 @@
 <?php
 
 
-echo "<br>" , "el poder de superman";
+echo "<br><br>" , "el poder de superman";
 

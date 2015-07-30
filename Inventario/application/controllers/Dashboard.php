@@ -32,18 +32,33 @@ class Dashboard extends CI_Controller {
             return;
         }
         
-        $this->load->view("dashboard/header");
-        
     }
     
     
-    public function index(){
+    public function index( $model = NULL , $location = NULL){
+           
+        $this->load->view("dashboard/header");
         
-        /**
-         * index del dashboard de forma general
-         */
+        if($model === NULL){
+             $this->load->view("dashboard/main");
+        }
+        else
+        {
+            if($location === NULL)
+            {
+                $this->load->model($model);
+            }
+            else
+            {
+                $this->load->model("$location/$model");
+            }
+            
+            $this->$model->_init();
+        }
         
-        $this->load->view("dashboard/main");
+        $this->load->view("dashboard/footer");
+        
+        
     }
     
     
