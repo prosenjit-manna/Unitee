@@ -26,14 +26,13 @@ class Dashboard extends CI_Controller {
             return;
         }
         
+        $this->load->view("dashboard/header");
+        
 
     }
     
-    
     public function index(){
-  
-        
-        echo "<pre>" , print_r($this->session->user) , "</pre>";
+        $this->load->view("dashboard/main");
     }
     
     public function session($close = true)

@@ -52,8 +52,7 @@ class Login extends CI_Controller {
     {
 
         $this->load->helper("setup");
-   
-        
+    
         $user       = $_REQUEST['username'];
         $password   = $_REQUEST['password'];
         $type       = "email";
