@@ -74,6 +74,12 @@
 			Entrar <i class="m-icon-swapright m-icon-white"></i>
 			</button>
 		</div>
+                
+                <?php if($err != null): ?>
+                <div class="form-actions">
+			<label class=""><?php echo $err; ?></label>
+                </div>
+                <?php endif; ?>
 		<div class="forget-password">
 			
 		</div>
