@@ -17,7 +17,6 @@ class Plugin {
                  ->plugin_model
                  ->search_plugin($name , $controller);
         
-            $this->class->load->controller("dashboard");
         if($ok){
             return TRUE;
         }

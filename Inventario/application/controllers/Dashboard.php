@@ -70,9 +70,7 @@ class Dashboard extends CI_Controller {
         if($re){
             echo "INSTALACION REALIZADA";
         }
-        
-                
-       // $this->class->load->controller("");
+      
 
     }
     
