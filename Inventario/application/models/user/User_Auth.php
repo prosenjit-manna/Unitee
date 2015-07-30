@@ -20,7 +20,12 @@ class User_Auth extends CI_Model {
     
     public function Auth($usr , $pwd , $type = "user"){
         
+        
         $this->load->library('encryption');
+        
+        
+        //iniciando tipo de encriptacion aes-256
+        // se tiene la llave por medio de helper setup
         $this->encryption->initialize(
         array(
                 'cipher'    => 'aes-256',
@@ -29,16 +34,17 @@ class User_Auth extends CI_Model {
         ));
         
         
+        // comenzaremos analizar el campo de user en la tabla login
         $t = "login.user";
         
-        
+        //verifica si el tipo es email
         if($type === "email"){
             $t = "user.email";
         }
 
         $this->query = NULL;
         
-        
+        //sentencia sql en el cual verifica el estado de un usuario
         $this->query = "SELECT concat(user.nombres, ' ' , user.apellidos ) "
                      . " as 'name' , login.user as 'user' , login.password as 'password' "
                      . " , login.status as 'status' , login.last_date as 'last_date' "

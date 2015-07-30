@@ -57,20 +57,20 @@
 			<label class="control-label visible-ie8 visible-ie9">Usuario</label>
 			<div class="input-icon">
 				<i class="fa fa-user"></i>
-				<input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Usuario" name="username"/>
+                                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Usuario" id="username" name="username"/>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">Contraseña</label>
 			<div class="input-icon">
 				<i class="fa fa-lock"></i>
-				<input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Contraseña" name="password"/>
+                                <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Contraseña" id="password" name="password"/>
 			</div>
 		</div>
 		<div class="form-actions">
 			<label class="checkbox">
 			<input type="checkbox" name="remember" value="1"/>Recordar</label>
-			<button type="submit" class="btn blue pull-right">
+                    <button type="submit" id="cmd_send" class="btn blue pull-right">
 			Entrar <i class="m-icon-swapright m-icon-white"></i>
 			</button>
 		</div>
@@ -118,11 +118,11 @@
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {     
-  Metronic.init(); // init metronic core components
-Layout.init(); // init current layout
-QuickSidebar.init(); // init quick sidebar
-Demo.init(); // init demo features
-  Login.init();
+    Metronic.init(); // init metronic core components
+    Layout.init(); // init current layout
+    QuickSidebar.init(); // init quick sidebar
+    Demo.init(); // init demo features
+    Login.init();
        // init background slide images
        $.backstretch([
         "<?php echo $route;?>images/login/bg/1.jpg",
@@ -132,8 +132,30 @@ Demo.init(); // init demo features
         ], {
           fade: 1000,
           duration: 8000
-    }
-    );
+    });
+    
+    setInterval(function(){ 
+        
+        var u   = document.getElementById("username");
+        var p   = document.getElementById("password");
+        var b   = document.getElementById("cmd_send");
+        
+        if(p.value === null || p.value == "" )
+        {
+            b.disabled = true;
+        }
+        else if(u.value === null || u.value == "")
+        {
+             b.disabled = true;
+        }
+        else
+        {
+             b.disabled = false;
+        }
+       
+    }, 500);
+    
+    
 });
 </script>
 <!-- END JAVASCRIPTS -->
