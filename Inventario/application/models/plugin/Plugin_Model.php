@@ -14,7 +14,7 @@ class Plugin_Model extends CI_Model {
      public function search_plugin($name , $controller = NULL){
          
          $this->query = "SELECT COUNT(*) as 'c'"
-                 . " FROM modulos WHERE nombre LIKE ? or controller LIKE ?";
+                 . " FROM modulos WHERE nombre LIKE ? or model LIKE ?";
          
          $result = $this->db
                  ->query($this->query , array($name , $controller))
