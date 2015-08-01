@@ -55,9 +55,15 @@ class Dashboard extends CI_Controller {
      
         
         if($model === NULL){
-             $this->load->view("dashboard/header");
-             $this->load->view("dashboard/main");
-             $this->load->view("dashboard/footer");
+            
+            
+             $vars =  array(   
+               "route" =>$this->base_url->GetBaseUrl()
+             );
+            
+             $this->load->view("dashboard/header" , $vars );
+             $this->load->view("dashboard/main" , $vars);
+             $this->load->view("dashboard/footer" , $vars);
         }
         else
         {

@@ -11,7 +11,7 @@ class Plugin {
                 ->model("plugin/plugin_model");
     }
     
-    public function _install($name , $controller  = NULL , $status = NULL){
+    public function Is_install($name , $controller  = NULL , $status = NULL){
             
         $ok = $this->class
                  ->plugin_model
