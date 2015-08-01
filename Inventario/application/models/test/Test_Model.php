@@ -12,6 +12,8 @@ class Test_Model extends CI_Model implements PluginInterface {
     }
     
     public function _init(){
+        
+        
         $this->load->library("base_url");
         
         $this->load->view("dashboard/header" , array(   
