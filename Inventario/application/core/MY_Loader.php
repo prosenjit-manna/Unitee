@@ -9,5 +9,9 @@ class MY_Loader extends CI_Loader {
     public function interfaces($interface){
         require_once APPPATH . "/interfaces/$interface" . ".php";
     }
+    
+    public function complement($complement_name){
+         require_once APPPATH . "/complement/$complement_name" . ".php";
+    }
  
 }

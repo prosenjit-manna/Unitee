@@ -50,7 +50,7 @@ class Dashboard extends CI_Controller {
     }
     
     
-    public function index( $model = NULL , $location = NULL){
+    public function index( $model = NULL){
            
      
         
@@ -67,13 +67,17 @@ class Dashboard extends CI_Controller {
         }
         else
         {
-            if($location === NULL)
-            {
-                $this->load->model($model);
+            $parts = explode("=", $model);
+             
+            
+            if(sizeof($parts) == 0){
+                $this->load->model($parts[0]);
+                $model = $parts[0];
             }
-            else
-            {
-                $this->load->model("$location/$model");
+            else if(sizeof($parts) >= 1){
+                $location = $parts[0] . "/" . $parts[1];
+                $this->load->model("$location");
+                $model = $parts[1];
             }
             
             $this->$model->_init();
