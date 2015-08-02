@@ -9,18 +9,11 @@ class Test_Model extends CI_Model implements PluginInterface {
     
     public function __construct() {
         parent::__construct();
+        $this->load->library("base_url");
     }
     
     public function _init(){
-        
-        
-        $this->load->library("base_url");
-        
-        $this->load->view("dashboard/header" , array(   
-               "route" =>$this->base_url->GetBaseUrl()
-        ));
         $this->load->view("test_view/index");
-        $this->load->view("dashboard/footer");
     }
     
     public function _install(){
@@ -30,6 +23,15 @@ class Test_Model extends CI_Model implements PluginInterface {
 
     }
     
+   
     public function  _update(){}
-    
+
+    public function _footer() {
+        
+    }
+
+    public function _header() {
+        return array("../prueba/1.css" , ".../prueaba/2.css");
+    }
+
 }

@@ -28,15 +28,12 @@
 <link href="assert/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
 <?php
 
+  
     if(isset($styles)){
          if(is_array($styles)){
              foreach ( $styles as $v){
                  echo "<link href='" , 
-                         $v["link"] ,
-                         "' rel='" , 
-                         $v['stylessheet'] , 
-                         "' type='text/css'" 
-                         , " />" ;
+                         $v ,"' rel='stylesheet' type='text/css' />" ;
              }
          }
     }

@@ -17,6 +17,20 @@
  * $jquery_init = array("function1()" , "function2()" , ...);
  * $route       = String the_route
  * 
+ * implementacion del controlador en dashboard 
+ * 
+ * la implementacion es realmente sencilla 
+ *      
+ *      al momento de generar la ruta  del modelo seria de esta forma
+ *      para el modelo directo :  seria index/nombre_carpeta=nombre_model
+ * 
+ *      este tipo de enrutaje es unico al momento de procesar 
+ * 
+ *      EL MODEL DEL SISTEMA SE IMPLEMENTA CON UNA INTERFAZ 
+ *      ESTO SERVIRA PARA ACTUALIZAR LOS MODULOS Y/O CREAR NUEVOS 
+ * 
+ *      
+ *       
  * 
  */
 
@@ -53,13 +67,11 @@ class Dashboard extends CI_Controller {
     public function index( $model = NULL){
            
      
+      $vars =  array(   
+               "route" =>$this->base_url->GetBaseUrl()
+       );
         
         if($model === NULL){
-            
-            
-             $vars =  array(   
-               "route" =>$this->base_url->GetBaseUrl()
-             );
             
              $this->load->view("dashboard/header" , $vars );
              $this->load->view("dashboard/main" , $vars);
@@ -68,8 +80,7 @@ class Dashboard extends CI_Controller {
         else
         {
             $parts = explode("=", $model);
-             
-            
+
             if(sizeof($parts) == 0){
                 $this->load->model($parts[0]);
                 $model = $parts[0];
@@ -79,6 +90,30 @@ class Dashboard extends CI_Controller {
                 $this->load->model("$location");
                 $model = $parts[1];
             }
+            
+            $header_dependence = $this->$model->_header();
+            if(!is_null($header_dependence)){
+                 if(is_array($header_dependence)){
+                     $vars["styles"] = $header_dependence;
+                 }else{
+                     $vars["styles"] = array($header_dependence);
+                 }
+                 $this->load->view("dashboard/header" , $vars );
+                 
+            }else{
+                $this->load->view("dashboard/header" , $vars );
+            }
+            
+            $footer_dependencies = $this->$model->_footer();
+            if(!is_null($footer_dependencies)){
+                 if(is_array($footer_dependencies)){
+                     $vars["javascript"] = $footer_dependencies ;
+                 }else{
+                     $vars["javascript"] = array($footer_dependencies);
+                 }
+                 $this->load->view("dashboard/footer" , $vars );
+            }
+      
             
             $this->$model->_init();
         }
