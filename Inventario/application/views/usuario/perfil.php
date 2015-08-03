@@ -1,3 +1,19 @@
+<style>
+  .class_tr {
+        width: 100%;
+        display: inline-table;
+  }
+  .class_tbody
+  {
+    overflow-y: scroll;
+    overflow-wrap: scroll;
+    height: 380px;
+    width: 100%;
+    position: relative;
+  }
+  
+  
+</style>
 
 <!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
@@ -115,8 +131,8 @@
 						</div>
 						
 				</div>
-                 <div class="col-md-9">
-						<div class="tab-content">
+                             <div class="col-md-9 ">
+						<div class="tab-content class_tbody ">
 											<div id="tab_1-1" class="tab-pane active">
 												<form role="form" action="#">
 													<div class="form-group">
