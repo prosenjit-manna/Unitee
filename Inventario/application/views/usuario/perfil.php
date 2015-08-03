@@ -119,9 +119,6 @@
 											</div>
 											
 											<div id="tab_2-2" class="tab-pane">
-												<p>
-													 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-												</p>
 												<form action="#" role="form">
 													<div class="form-group">
 														<div class="fileinput fileinput-new" data-provides="fileinput">
@@ -133,32 +130,24 @@
 															<div>
 																<span class="btn default btn-file">
 																<span class="fileinput-new">
-																Select image </span>
+																Seleccionar Imagen </span>
 																<span class="fileinput-exists">
-																Change </span>
+																Cambiar </span>
 																<input type="file" name="...">
 																</span>
 																<a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-																Remove </a>
+																Eliminar </a>
 															</div>
-														</div>
-														<div class="clearfix margin-top-10">
-															<span class="label label-danger">
-															NOTE! </span>
-															<span>
-															Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
 														</div>
 													</div>
 													<div class="margin-top-10">
 														<a href="#" class="btn green">
-														Submit </a>
+														Guardar </a>
 														<a href="#" class="btn default">
-														Cancel </a>
+														Cancelar </a>
 													</div>
 												</form>
 											</div>
-											
-											
 											<div id="tab_3-3" class="tab-pane">
 												<form action="#">
 													<div class="form-group">
