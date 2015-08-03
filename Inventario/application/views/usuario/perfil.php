@@ -145,31 +145,27 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Correo</label>
-														<textarea class="form-control" rows="3"></textarea>
+														<input type="text" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Usuario</label>
 														<input type="text" class="form-control"/>
 													</div>
-													<div class="margiv-top-10">
-														<a href="#" class="btn green">
-														Save Changes </a>
-														<a href="#" class="btn default">
-														Cancel </a>
-													</div>
 												</form>
 											</div>
 											<div id="tab_2-2" class="tab-pane">
-												<p>
-													 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-												</p>
 												<form action="#" role="form">
+													<center>
 													<div class="form-group">
 														<div class="fileinput fileinput-new" data-provides="fileinput">
-															<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+															<div clas="col-md-6">
+																<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
 																<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+																</div>
 															</div>
-															<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+															<div class="col-md-6">
+																<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+																</div>
 															</div>
 															<div>
 																<span class="btn default btn-file">
@@ -183,12 +179,6 @@
 																Remove </a>
 															</div>
 														</div>
-														<div class="clearfix margin-top-10">
-															<span class="label label-danger">
-															NOTE! </span>
-															<span>
-															Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
-														</div>
 													</div>
 													<div class="margin-top-10">
 														<a href="#" class="btn green">
@@ -196,6 +186,7 @@
 														<a href="#" class="btn default">
 														Cancel </a>
 													</div>
+													</center>
 												</form>
 											</div>
 											<div id="tab_3-3" class="tab-pane">
