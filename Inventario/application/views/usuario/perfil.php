@@ -19,37 +19,18 @@
 	<div class="page-content-wrapper">
 		<div class="page-content">
 			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-							<h4 class="modal-title">Modal title</h4>
-						</div>
-						<div class="modal-body">
-							 Widget settings form goes here
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn blue">Save changes</button>
-							<button type="button" class="btn default" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-					<!-- /.modal-content -->
-				</div>
-				<!-- /.modal-dialog -->
-			</div>
 			<h3 class="page-title">
-			Unitee - Dashboard <small>Opcion elegida</small>
+			Unitee - Perfil 
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="index.html">Home</a>
+                                                <a href="<?php echo site_url("Dashboard/index"); ?>">Home</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Dashboard</a>
+						<a href="<?php echo site_url("Dashboard/index/user=user_profile"); ?>">Perfil</a>
 					</li>
 				</ul>
 				<div class="page-toolbar">
@@ -59,29 +40,7 @@
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN DASHBOARD STATS -->
                        <div class="page-content-wrapper">
-			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-							<h4 class="modal-title">Modal title</h4>
-						</div>
-						<div class="modal-body">
-							 Widget settings form goes here
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn blue">Save changes</button>
-							<button type="button" class="btn default" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-					<!-- /.modal-content -->
-				</div>
-				<!-- /.modal-dialog -->
-			</div>
-			<!-- /.modal -->
-			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-		
+
 			<!-- BEGIN PAGE HEADER-->
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
@@ -92,16 +51,24 @@
 						<div class="portlet light profile-sidebar-portlet">
 							<!-- SIDEBAR USERPIC -->
 							<div class="profile-userpic">
+                                                            <?php if(is_null($user_data['avatar'])):  ?>
 								<img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="">
-							</div>
+                                                            <?php else: ?>
+                                                                <img src="<?php echo $route; ?>images/dashboard/users/<?php echo $user_data['avatar']; ?>" class="img-responsive" alt="">
+                                                            <?php endif; ?>
+                                                        </div>
 							<!-- END SIDEBAR USERPIC -->
 							<!-- SIDEBAR USER TITLE -->
 							<div class="profile-usertitle">
 								<div class="profile-usertitle-name">
-									Marcus Doe
+								    <?php
+                                                                        echo  strtoupper( $user_data['user']);
+                                                                    ?>
 								</div>
 								<div class="profile-usertitle-job">
-									Developer
+                                                                    <?php 
+                                                                        echo strtoupper( $user_data['rol_name']);
+                                                                    ?>
 								</div>
 							</div>
 							<!-- END SIDEBAR USER TITLE -->
@@ -130,26 +97,23 @@
                              <div class="col-md-9 ">
 						<div class="tab-content class_tbody ">
 											<div id="tab_1-1" class="tab-pane active">
-												<form role="form" action="#">
+												<form role="form">
 													<div class="form-group">
 														<label class="control-label">Nombres</label>
-														<input type="text" class="form-control"/>
+                                                                                                                <input disabled="disabled" type="text" class="form-control" value="<?php echo $user_data['name']; ?>" />
 													</div>
-													<div class="form-group">
-														<label class="control-label">Apellidos</label>
-														<input type="text" class="form-control"/>
-													</div>
+										
 													<div class="form-group">
 														<label class="control-label">Privilegios</label>
-														<input type="text" class="form-control"/>
+														<input disabled="disabled"  type="text" class="form-control" value="<?php echo $user_data['rol_name']; ?>"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Correo</label>
-														<input type="text" class="form-control"/>
+														<input disabled="disabled"  type="text" class="form-control" value="<?php echo $user_data['email']; ?>"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Usuario</label>
-														<input type="text" class="form-control"/>
+														<input disabled="disabled"  type="text" class="form-control" value="<?php echo $user_data['user']; ?>"/>
 													</div>
 												</form>
 											</div>
