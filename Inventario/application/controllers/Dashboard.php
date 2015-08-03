@@ -41,7 +41,7 @@ class Dashboard extends CI_Controller {
     
     protected $route = NULL;
     
-    var $user_profile  = NULL;
+    var $user_p  = NULL;
 
 
     public function __construct() {
@@ -63,7 +63,7 @@ class Dashboard extends CI_Controller {
             return;
         }
         
-        $this->user = $this->session->user;
+        $this->user_p = $this->session->user;
         
     }
     
@@ -80,7 +80,7 @@ class Dashboard extends CI_Controller {
      
         $vars =  array(   
                "route"                  => $this->base_url->GetBaseUrl(),
-               "user_data"              => $this->user_profile,
+               "user_data"              => $this->user_p,
                "open_container"         => $this->OpenContainer(),
                "close_container"        => $this->CloseContainer()
         );

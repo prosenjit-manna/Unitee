@@ -338,11 +338,15 @@
                                                     echo '<img alt="" class="img-circle hide1" src=" ' , $route , 'images/dashboard/avatar.png"/>';
                                                 }
                                                 else{
-                                                    echo '<img alt="" class="img-circle hide1" src="' , $route , "images/dashboard/users/" , $user['avatar']  , '"/>';
+                                                    echo '<img alt="" class="img-circle hide1" src="' , $route , "images/dashboard/users/" , $user_data['avatar']  , '"/>';
                                                 }
                                         ?>
 					<span class="username username-hide-on-mobile">
-					Usuario </span>
+                                            <?php 
+                                                    $user_name = explode(" ", $user_data['name']);
+                                                    echo current($user_name) , " " , end($user_name);
+                                            ?>
+					</span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
@@ -351,12 +355,12 @@
 							<i class="icon-user"></i> Mi Perfil </a>
 						</li>
 						<li>
-							<a href="#">
-							<i class="icon-calendar"></i> Bloquear </a>
+							<a href="<?php echo site_url("Dashboard/index/user=user_profile"); ?>">
+							<i class="icon-wallet"></i> Bloquear </a>
 						</li>
 						</li>
 						<li>
-							<a href="#">
+							<a href="<?php echo site_url("Dashboard/session/"); ?>">
 							<i class="icon-key"></i> Cerrar Sesión </a>
 						</li>
 					</ul>

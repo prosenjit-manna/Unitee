@@ -15,11 +15,15 @@ class User_Profile extends CI_Model implements PInterface {
     }
 
     public function _footer() {
-       return null;
+       return array(
+           $this->route . ""
+       );
     }
 
     public function _header() {
-       return null;
+       return array(
+           $this->route . ""
+       );
     }
 
     public function _init() {
