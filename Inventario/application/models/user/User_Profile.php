@@ -16,14 +16,16 @@ class User_Profile extends CI_Model implements PInterface {
 
     public function _footer() {
        return array(
-           $this->route . "assert/perfil/js/profile.js"
+           $this->route . "assert/perfil/js/profile.js",
+		   $this->route . "assert/perfil/js/bootstrap-fileinput.js"
        );
     }
 
     public function _header() {
        return array(
            $this->route . "assert/perfil/css/profile.css",
-           $this->route . "assert/perfil/css/profile-old.css"
+           $this->route . "assert/perfil/css/profile-old.css",
+		   $this->route . "assert/perfil/css/bootstrap-fileinput.css"
        );
     }
 
