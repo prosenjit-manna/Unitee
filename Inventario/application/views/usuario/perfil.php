@@ -117,36 +117,48 @@
 													</div>
 												</form>
 											</div>
+											
 											<div id="tab_2-2" class="tab-pane">
+												<p>
+													 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+												</p>
 												<form action="#" role="form">
 													<div class="form-group">
 														<div class="fileinput fileinput-new" data-provides="fileinput">
-																<div align="center"class="fileinput-new thumbnail col-md-6" style="width: 200px; height: 150px;">
+															<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
 																<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
-																</div>
-																<div align="center"class="fileinput-preview fileinput-exists thumbnail col-md-6" style="max-width: 200px; max-height: 150px;">
-																</div>
-															<div class="col-md-12">
+															</div>
+															<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+															</div>
+															<div>
 																<span class="btn default btn-file">
 																<span class="fileinput-new">
-																Seleccionar Imagen </span>
+																Select image </span>
 																<span class="fileinput-exists">
-																Cambiar </span>
+																Change </span>
 																<input type="file" name="...">
 																</span>
 																<a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-																Eliminar </a>
+																Remove </a>
 															</div>
 														</div>
+														<div class="clearfix margin-top-10">
+															<span class="label label-danger">
+															NOTE! </span>
+															<span>
+															Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
+														</div>
 													</div>
-													<div class="margin-top-10 col-md-12">
+													<div class="margin-top-10">
 														<a href="#" class="btn green">
-														Guardar </a>
+														Submit </a>
 														<a href="#" class="btn default">
-														Cancelar </a>
+														Cancel </a>
 													</div>
 												</form>
 											</div>
+											
+											
 											<div id="tab_3-3" class="tab-pane">
 												<form action="#">
 													<div class="form-group">
