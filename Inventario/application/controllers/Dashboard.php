@@ -74,7 +74,6 @@ class Dashboard extends CI_Controller {
         if($model === NULL){
             
              $this->load->view("dashboard/header" , $vars );
-             $this->load->view("dashboard/top_bar" , $vars);
              $this->load->view("dashboard/left_sidebar" , $vars);
              $this->load->view("dashboard/main" , $vars);
              $this->load->view("dashboard/footer" , $vars);
@@ -103,9 +102,6 @@ class Dashboard extends CI_Controller {
             }
             
             $this->load->view("dashboard/header" , $vars );
-            
-            
-            $this->load->view("dashboard/top_bar" , $vars);
             $this->load->view("dashboard/left_sidebar" , $vars);
             
             $footer_dependencies = $this->$model->_footer();
