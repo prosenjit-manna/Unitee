@@ -155,59 +155,53 @@
 											</div>
 											<div id="tab_2-2" class="tab-pane">
 												<form action="#" role="form">
-													<center>
 													<div class="form-group">
 														<div class="fileinput fileinput-new" data-provides="fileinput">
-															<div clas="col-md-6">
-																<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+																<div align="center"class="fileinput-new thumbnail col-md-6" style="width: 200px; height: 150px;">
 																<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
 																</div>
-															</div>
-															<div class="col-md-6">
-																<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+																<div align="center"class="fileinput-preview fileinput-exists thumbnail col-md-6" style="max-width: 200px; max-height: 150px;">
 																</div>
-															</div>
-															<div>
+															<div class="col-md-12">
 																<span class="btn default btn-file">
 																<span class="fileinput-new">
-																Select image </span>
+																Seleccionar Imagen </span>
 																<span class="fileinput-exists">
-																Change </span>
+																Cambiar </span>
 																<input type="file" name="...">
 																</span>
 																<a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-																Remove </a>
+																Eliminar </a>
 															</div>
 														</div>
 													</div>
-													<div class="margin-top-10">
+													<div class="margin-top-10 col-md-12">
 														<a href="#" class="btn green">
-														Submit </a>
+														Guardar </a>
 														<a href="#" class="btn default">
-														Cancel </a>
+														Cancelar </a>
 													</div>
-													</center>
 												</form>
 											</div>
 											<div id="tab_3-3" class="tab-pane">
 												<form action="#">
 													<div class="form-group">
-														<label class="control-label">Current Password</label>
+														<label class="control-label">Contraseña Actual</label>
 														<input type="password" class="form-control"/>
 													</div>
 													<div class="form-group">
-														<label class="control-label">New Password</label>
+														<label class="control-label">Nueva Contraseña</label>
 														<input type="password" class="form-control"/>
 													</div>
 													<div class="form-group">
-														<label class="control-label">Re-type New Password</label>
+														<label class="control-label">Repetir Contraseña</label>
 														<input type="password" class="form-control"/>
 													</div>
 													<div class="margin-top-10">
 														<a href="#" class="btn green">
-														Change Password </a>
+														Cambiar </a>
 														<a href="#" class="btn default">
-														Cancel </a>
+														Cancelar </a>
 													</div>
 												</form>
 											</div>
