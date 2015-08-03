@@ -32,4 +32,8 @@ class Testing extends CI_Model implements PInterface {
         return array("../prueba/1.css" , ".../prueaba/2.css");
     }
 
+    public function _jsLoader() {
+        
+    }
+
 }

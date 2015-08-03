@@ -74,6 +74,8 @@ class Dashboard extends CI_Controller {
         if($model === NULL){
             
              $this->load->view("dashboard/header" , $vars );
+             $this->load->view("dashboard/top_bar" , $vars);
+             $this->load->view("dashboard/left_sidebar" , $vars);
              $this->load->view("dashboard/main" , $vars);
              $this->load->view("dashboard/footer" , $vars);
         }
@@ -102,6 +104,10 @@ class Dashboard extends CI_Controller {
             
             $this->load->view("dashboard/header" , $vars );
             
+            
+            $this->load->view("dashboard/top_bar" , $vars);
+            $this->load->view("dashboard/left_sidebar" , $vars);
+            
             $footer_dependencies = $this->$model->_footer();
             if(!is_null($footer_dependencies)){
                  if(is_array($footer_dependencies)){
@@ -113,16 +119,13 @@ class Dashboard extends CI_Controller {
             
             $javascript_loaders    = $this->$model->_jsLoader();
             if(!is_null($javascript_loaders) && is_array($javascript_loaders)){
-                
+                $vars["js_loader"] = $javascript_loaders;
             }
-      
-            $this->load->view("dashboard/footer" , $vars );
+
             $this->$model->_init();
+            
+            $this->load->view("dashboard/footer" , $vars );
         }
-        
-        
-        
-        
     }
     
     
