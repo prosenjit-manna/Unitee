@@ -1,11 +1,9 @@
 <?php
 
-
-
 get_instance()->load->interfaces("Interface");
 
 
-class Test_Model extends CI_Model implements PInterface {
+class Testing extends CI_Model implements PInterface {
     
     public function __construct() {
         parent::__construct();
