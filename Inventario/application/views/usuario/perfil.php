@@ -92,7 +92,11 @@
 						<div class="portlet light profile-sidebar-portlet">
 							<!-- SIDEBAR USERPIC -->
 							<div class="profile-userpic">
-								<img src="../../assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+                                                            <?php  if(is_null($user_data['avatar'])):?>
+								<img src="<?php echo $route;?>images/dashboard/avatar.png" class="img-responsive" alt="">
+                                                            <?php else: ?>
+                                                                <img src="<?php echo $route;?>images/dashboard/users/<?php echo $user_data['avatar']; ?>" class="img-responsive" alt="">
+                                                            <?php endif; ?>
 							</div>
 							<!-- END SIDEBAR USERPIC -->
 							<!-- SIDEBAR USER TITLE -->
