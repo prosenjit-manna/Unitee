@@ -55,6 +55,7 @@
 
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
+<<<<<<< HEAD
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
 	<div class="page-header-inner">
@@ -358,3 +359,7 @@
 	<!-- END HEADER INNER -->
 </div>
 
+=======
+    
+<body>
+>>>>>>> origin/master

@@ -38,7 +38,7 @@
 <?php
     if(isset($javascript) && is_array($javascript)){
          foreach($javascript as $j){
-             echo "<script src='" , $j , "' type='text/javascript' ></script>";
+             echo "\n<script src='" , $j , "' type='text/javascript' ></script>";
          }
     }
 ?>
@@ -46,23 +46,26 @@
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {    
-   Metronic.init(); // init metronic core componets
-   Layout.init(); // init layout
-   QuickSidebar.init(); // init quick sidebar
-   Demo.init(); // init demo features 
-   Index.init();   
-   Index.initDashboardDaterange();
-   Index.initJQVMAP(); // init index page's custom scripts
-   Index.initCalendar(); // init index page's custom scripts
-   Index.initCharts(); // init index page's custom scripts
-   Index.initChat();
-   Index.initMiniCharts();
-   Tasks.initDashboardWidget();
+ 
+   
+   try{
+        Metronic.init(); // init metronic core componets
+        Layout.init(); // init layout
+        QuickSidebar.init(); // init quick sidebar
+        Demo.init(); // init demo features 
+        Index.init();   
+        Index.initDashboardDaterange();
+        Tasks.initDashboardWidget();
+   }catch(ex){
+        console.log("Error al momento de cargar ... " + ex.message);
+   }
+   
    
    <?php
         if(isset($js_loader) && is_array($js_loader)){
+            echo "/*Scripts de inicio generado por el sistema*/ \n";
             foreach($js_loader as $jv){
-                echo $jv;
+                echo  "\t" , $jv , "\n";
             }
         }
    ?>
