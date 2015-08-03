@@ -11,7 +11,8 @@
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 					<div class="sidebar-toggler">
 					</div>
-				</li>
+					<!-- END SIDEBAR TOGGLER BUTTON -->
+				</li><br>
 				<li class="start active open">
 					<a href="javascript:;">
 					<i class="icon-home"></i>

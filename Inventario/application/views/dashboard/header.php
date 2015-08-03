@@ -66,9 +66,6 @@
 			<a href="index.html">
 			<img src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" class="logo-default"/>
 			</a>
-			<div class="menu-toggler sidebar-toggler hide">
-				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-			</div>
 		</div>
 		<!-- END LOGO -->
 		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -365,7 +362,7 @@
 						</li>
 					</ul>
 				</li>
-				<!-- END QUICK SIDEBAR TOGGLER -->
+				
 			</ul>
 		</div>
 	</div>

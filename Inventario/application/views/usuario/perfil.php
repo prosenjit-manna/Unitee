@@ -39,7 +39,7 @@
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN DASHBOARD STATS -->
-                       <div class="page-content-wrapper">
+           <div class="page-content-wrapper">
 
 			<!-- BEGIN PAGE HEADER-->
 			<!-- END PAGE HEADER-->

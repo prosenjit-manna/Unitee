@@ -6,7 +6,7 @@ class NockupShop  extends CI_Controller{
     protected $key  = "LieisoftApi";
     
     
-  /*  public function encrypt($enc)
+    public function encrypt($enc)
     {
          $this->load->library("encryption");
          echo "<br>";
@@ -15,7 +15,7 @@ class NockupShop  extends CI_Controller{
          echo "<br>";
          echo $this->encryption->decrypt($data);
          
-    }*/
+    }
 
     public function __construct() {
         parent::__construct();
