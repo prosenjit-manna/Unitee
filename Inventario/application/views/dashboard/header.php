@@ -57,6 +57,7 @@
 </head>
 <body class="page-header-fixed page-footer-fixed page-quick-sidebar-over-content">
 <!-- BEGIN HEADER -->
+<?php echo $open_container; ?>
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
 	<div class="page-header-inner">
@@ -332,24 +333,31 @@
 				<!-- BEGIN USER LOGIN DROPDOWN -->
 				<li class="dropdown dropdown-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" class="img-circle hide1" src="<?php echo $route; ?>images/dashboard/avatar3_small.jpg"/>
+					<?php 
+                                                if(is_null($user_data['avatar'])){
+                                                    echo '<img alt="" class="img-circle hide1" src=" ' , $route , 'images/dashboard/avatar.png"/>';
+                                                }
+                                                else{
+                                                    echo '<img alt="" class="img-circle hide1" src="' , $route , "images/dashboard/users/" , $user['avatar']  , '"/>';
+                                                }
+                                        ?>
 					<span class="username username-hide-on-mobile">
 					Usuario </span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a href="#">
-							<i class="icon-user"></i> My Profile </a>
+                                                    <a href="<?php echo site_url("Dashboard/index/user=user_profile"); ?>">
+							<i class="icon-user"></i> Mi Perfil </a>
 						</li>
 						<li>
 							<a href="#">
-							<i class="icon-calendar"></i> My Calendar </a>
+							<i class="icon-calendar"></i> Bloquear </a>
 						</li>
 						</li>
 						<li>
 							<a href="#">
-							<i class="icon-key"></i> Log Out </a>
+							<i class="icon-key"></i> Cerrar Sesión </a>
 						</li>
 					</ul>
 				</li>

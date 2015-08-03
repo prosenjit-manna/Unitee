@@ -1,3 +1,4 @@
+<?php echo $close_container; ?>
 <div class="page-footer">
 	<div class="page-footer-inner">
 		<?php $d = new DateTime("now");

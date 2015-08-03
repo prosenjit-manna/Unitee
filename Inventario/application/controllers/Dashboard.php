@@ -40,6 +40,8 @@ class Dashboard extends CI_Controller {
     
     
     protected $route = NULL;
+    
+    var $user_profile  = NULL;
 
 
     public function __construct() {
@@ -61,16 +63,29 @@ class Dashboard extends CI_Controller {
             return;
         }
         
+        $this->user = $this->session->user;
+        
     }
     
+    private function OpenContainer(){
+        return '<div class="page-container">';
+    }
+    
+    private function CloseContainer(){
+        return  "</div>";
+    }
     
     public function index( $model = NULL){
-           
+      
      
-      $vars =  array(   
-               "route" =>$this->base_url->GetBaseUrl()
-       );
-        
+        $vars =  array(   
+               "route"                  => $this->base_url->GetBaseUrl(),
+               "user_data"              => $this->user_profile,
+               "open_container"         => $this->OpenContainer(),
+               "close_container"        => $this->CloseContainer()
+        );
+      
+
         if($model === NULL){
             
              $this->load->view("dashboard/header" , $vars );
@@ -121,6 +136,7 @@ class Dashboard extends CI_Controller {
             $this->$model->_init();
             
             $this->load->view("dashboard/footer" , $vars );
+           
         }
     }
     

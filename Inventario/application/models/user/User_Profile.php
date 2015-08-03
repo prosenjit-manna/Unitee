@@ -3,7 +3,7 @@
 get_instance()->load->interfaces("Interface");
 
 
-class User extends CI_Model implements PInterface {
+class User_Profile extends CI_Model implements PInterface {
     
     protected $route = NULL; 
 
@@ -15,16 +15,11 @@ class User extends CI_Model implements PInterface {
     }
 
     public function _footer() {
-        return array(
-            $this->route . "yolo.js",
-            $this->route . ""
-        );
+       return null;
     }
 
     public function _header() {
-        return array(
-            APPPATH ."/model/user/css/buscar.css" ,
-            APPPATH ."/model/user/css/nombre.css" );
+       return null;
     }
 
     public function _init() {
@@ -41,7 +36,7 @@ class User extends CI_Model implements PInterface {
     }
 
     public function _jsLoader() {
-       return array("cargando(); " , "jugando();" , "var j = function(){}");
+       return null;
     }
 
 }
