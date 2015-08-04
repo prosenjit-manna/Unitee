@@ -178,14 +178,14 @@
 													</div>
 													<div class="form-group">
 														<label class="control-label">Nueva Contraseña</label>
-                                                                                                                <input name="txt_new_pass" type="password" class="form-control"/>
+                                                                                                                <input onkeyup="pass_compare();" id="txt_new_pass" name="txt_new_pass" type="password" class="form-control"/>
 													</div>
 													<div class="form-group">
-														<label class="control-label">Repetir Contraseña</label>
-                                                                                                                <input name="txt_repeat_pass" type="password" class="form-control"/>
+                                                                                                            <label  class="control-label">Repetir Contraseña</label>
+                                                                                                            <input  onkeyup="pass_compare();" id="txt_repeat_pass" name="txt_repeat_pass" type="password" class="form-control"/>
 													</div>
 													<div class="margin-top-10">
-                                                                                                            <button type="submit" name="cmd_cambiar" class="btn green"> Cambiar</button>
+                                                                                                            <button type="submit" id="cmd_cambiar" name="cmd_cambiar" class="btn green"> Cambiar</button>
 														<a href="javascript:reset();" class="btn default">
 														Cancelar </a>
 													</div>
@@ -205,5 +205,29 @@
 	<!-- END CONTENT -->
         
         <script>
+            
+            var pass_compare = function(){
+                
+
+                var p1 = $("#txt_new_pass").val();
+                var p2 = $("#txt_repeat_pass").val();
+                
+                if(p1 === "undefined" 
+                        || p2 === "undefined"
+                        || p1 === null 
+                        || p2 === null
+                        || p1 == ""
+                        || p2 == ""){
+                    document.getElementById("cmd_cambiar").disabled = true;
+                }
+                
+                if(p1 === p2){
+                    document.getElementById("cmd_cambiar").disabled = false;
+                }else{
+                    document.getElementById("cmd_cambiar").disabled = true;
+                }
+                
+            };
+            
         </script>
 

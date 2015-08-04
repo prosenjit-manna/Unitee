@@ -43,7 +43,12 @@ class User_Profile extends CI_Model implements PInterface {
     }
 
     public function _jsLoader() {
-       return null;
+        
+        $inits_elements = 'var user_init = function() { '
+                . 'document.getElementById("cmd_cambiar").disabled = true; }; '
+                . 'user_init(); ';
+                
+        return array($inits_elements);
     }
 
     public function _title() {
