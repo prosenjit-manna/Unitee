@@ -95,6 +95,28 @@
 						
 				</div>
                              <div class="col-md-9 ">
+                                <?php 
+                                
+                                if(isset($_REQUEST['opps'])):
+                                    switch($_REQUEST['opps']):
+                                        case 0:
+                                             echo '<div class="alert alert-success" role="alert">
+                                                <a href="#" class="alert-link">Contraseña Cambiada con exito</a></div>';
+                                            
+                                            break;
+                                        case 1:
+                                            echo '<div class="alert alert-warning" role="alert">
+                                                <a href="#" class="alert-link">Lo sentimos , Tu contraseña actual es incorrecta .</a></div>';
+                                            break;
+                                        case 2: 
+                                             echo '<div class="alert alert-warning" role="alert">
+                                                <a href="#" class="alert-link">Lo sentimos , Hubo un error intente mas tarde</a></div>';
+                                            break;
+                                            break;
+                                    endswitch;
+                                endif;
+                                
+                                ?>
 						<div class="tab-content class_tbody ">
 											<div id="tab_1-1" class="tab-pane active">
 												<form role="form">
@@ -149,28 +171,29 @@
 												</form>
 											</div>
 											<div id="tab_3-3" class="tab-pane">
-												<form action="#">
+												<?php echo form_open("User/password/change/user=user_profile") ?>
 													<div class="form-group">
 														<label class="control-label">Contraseña Actual</label>
-														<input type="password" class="form-control"/>
+                                                                                                                <input name="txt_actual_pass" type="password" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Nueva Contraseña</label>
-														<input type="password" class="form-control"/>
+                                                                                                                <input name="txt_new_pass" type="password" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Repetir Contraseña</label>
-														<input type="password" class="form-control"/>
+                                                                                                                <input name="txt_repeat_pass" type="password" class="form-control"/>
 													</div>
 													<div class="margin-top-10">
-														<a href="#" class="btn green">
-														Cambiar </a>
-														<a href="#" class="btn default">
+                                                                                                            <button type="submit" name="cmd_cambiar" class="btn green"> Cambiar</button>
+														<a href="javascript:reset();" class="btn default">
 														Cancelar </a>
 													</div>
-												</form>
+												<?php echo form_close(); ?>
 											</div>
 										</div>
+                                 
+                                 
 									
                 </div>
 			</div>
@@ -180,4 +203,7 @@
 	</div>
 
 	<!-- END CONTENT -->
+        
+        <script>
+        </script>
 

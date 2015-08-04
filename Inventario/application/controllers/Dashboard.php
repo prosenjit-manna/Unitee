@@ -66,14 +66,7 @@ class Dashboard extends CI_Controller {
         $this->user_p = $this->session->user;
         
     }
-    
-    private function OpenContainer(){
-        return '<div class="page-container">';
-    }
-    
-    private function CloseContainer(){
-        return  "</div>";
-    }
+   
     
     public function index( $model = NULL){
       
@@ -107,7 +100,7 @@ class Dashboard extends CI_Controller {
                 $model = $parts[1];
             }
             
-            $header_dependence = $this->$model->_header();
+            $header_dependence = $this->$model->_css();
             if(!is_null($header_dependence)){
                  if(is_array($header_dependence)){
                      $vars["styles"] = $header_dependence;
@@ -116,10 +109,13 @@ class Dashboard extends CI_Controller {
                  } 
             }
             
+            $vars['title'] = $this->$model->_title();
+            
             $this->load->view("dashboard/header" , $vars );
             $this->load->view("dashboard/left_sidebar" , $vars);
             
-            $footer_dependencies = $this->$model->_footer();
+            $footer_dependencies = $this->$model->_js();
+            
             if(!is_null($footer_dependencies)){
                  if(is_array($footer_dependencies)){
                      $vars["javascript"] = $footer_dependencies ;
@@ -172,6 +168,14 @@ class Dashboard extends CI_Controller {
         }
       
 
+    }
+    
+    private function OpenContainer(){
+        return '<div class="page-container">';
+    }
+    
+    private function CloseContainer(){
+        return  "</div>";
     }
     
 }

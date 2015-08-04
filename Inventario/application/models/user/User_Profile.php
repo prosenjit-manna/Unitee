@@ -14,14 +14,14 @@ class User_Profile extends CI_Model implements PInterface {
         $this->route = $this->base_url->GetBaseUrl();
     }
 
-    public function _footer() {
+    public function _js() {
        return array(
            $this->route . "assert/perfil/js/profile.js",
 		   $this->route . "assert/perfil/js/bootstrap-fileinput.js"
        );
     }
 
-    public function _header() {
+    public function _css() {
        return array(
            $this->route . "assert/perfil/css/profile.css",
            $this->route . "assert/perfil/css/profile-old.css",
@@ -44,6 +44,17 @@ class User_Profile extends CI_Model implements PInterface {
 
     public function _jsLoader() {
        return null;
+    }
+
+    public function _title() {
+        return "Unitee | Perfil";
+    }
+    
+    public function change_password($new_password){
+        $this->db->where("id_login" , $this->session->user['id_login']);
+        return $this->db->update("login" , array(
+            "password"  => $new_password
+        ));
     }
 
 }

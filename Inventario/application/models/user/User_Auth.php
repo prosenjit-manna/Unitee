@@ -50,7 +50,7 @@ class User_Auth extends CI_Model {
                      . " , login.status as 'status' , login.last_date as 'last_date' "
                      . " , roles.nombre as 'rol_name' , roles.nivel as 'rol_nivel' , "
                      . " user.avatar as 'avatar' , roles.sub_nivel as 'sub_nivel' , "
-                     . " user.email as 'email' "
+                     . " user.email as 'email' , login.id_login as 'id_login' , user.id_user as 'id_user' "
                      . " FROM user "
                      . " LEFT JOIN login ON login.id_login=user.id_login "
                      . " LEFT JOIN roles ON roles.id_rol=user.id_rol "
