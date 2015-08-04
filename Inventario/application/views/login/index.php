@@ -33,15 +33,10 @@
 <!-- BEGIN LOGO -->
 <br>
 <div class="logo">
-	<a href="http://lieison.com/">
-	<img src="<?php echo $route;?>images/login/logo.png" style="width:150px; height:75px;"/>
+	<img src="<?php echo $route;?>images/login/logo.png" style="width:190px;"/>
 	</a>
 </div>
 <!-- END LOGO -->
-<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-<div class="menu-toggler sidebar-toggler">
-</div>
-<!-- END SIDEBAR TOGGLER BUTTON -->
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
@@ -49,8 +44,7 @@
 		<h3 class="form-title">Unitee - Inicia Sessión</h3>
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>
-			<span>
-			Digite usuario y contraseña</span>
+			<span>Debe ingresar usuario y contraseña</span>
 		</div>
 		<div class="form-group">
 			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
@@ -71,7 +65,7 @@
 			<label class="checkbox">
 			<input type="checkbox" name="remember" value="1"/>Recordar</label>
                     <button type="submit" id="cmd_send" class="btn blue pull-right">
-			Entrar <i class="m-icon-swapright m-icon-white"></i>
+			Entrar<i class="m-icon-swapright m-icon-white"></i>
 			</button>
 		</div>
                 
@@ -80,12 +74,6 @@
 			<label class=""><?php echo $err; ?></label>
                 </div>
                 <?php endif; ?>
-		<div class="forget-password">
-			
-		</div>
-		<div class="create-account">
-			
-		</div>
 	<?php echo form_close();  ?>
 	
 </div>
