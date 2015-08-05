@@ -89,6 +89,8 @@ class Dashboard extends CI_Controller {
         else
         {
             $parts = explode("=", $model);
+            
+            
 
             if(sizeof($parts) == 0){
                 $this->load->model($parts[0]);
@@ -99,6 +101,14 @@ class Dashboard extends CI_Controller {
                 $this->load->model("$location");
                 $model = $parts[1];
             }
+            
+            $class_implement = class_implements($this->$model);
+            
+            if(sizeof($class_implement) == 0){
+                $this->load->view("errors/html/error_404" , $vars);
+                return;
+            }
+            
             
             $header_dependence = $this->$model->_css();
             if(!is_null($header_dependence)){
