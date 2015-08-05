@@ -39,9 +39,9 @@
 class Dashboard extends CI_Controller {
     
     
-    protected $route = NULL;
+    protected $route        = NULL;
     
-    var $user_p  = NULL;
+    var $user_p             = NULL;
 
 
     public function __construct() {

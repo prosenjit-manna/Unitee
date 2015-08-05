@@ -17,7 +17,7 @@ class User_Profile extends CI_Model implements PInterface {
     public function _js() {
        return array(
            $this->route . "assert/perfil/js/profile.js",
-		   $this->route . "assert/perfil/js/bootstrap-fileinput.js"
+           $this->route . "assert/perfil/js/bootstrap-fileinput.js"
        );
     }
 
@@ -25,7 +25,7 @@ class User_Profile extends CI_Model implements PInterface {
        return array(
            $this->route . "assert/perfil/css/profile.css",
            $this->route . "assert/perfil/css/profile-old.css",
-		   $this->route . "assert/perfil/css/bootstrap-fileinput.css"
+           $this->route . "assert/perfil/css/bootstrap-fileinput.css"
        );
     }
 
