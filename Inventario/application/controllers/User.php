@@ -14,6 +14,13 @@ class User extends CI_Controller {
         parent::__construct();
         $this->load->library("session");
         $this->load->library("base_url");
+        
+        if(!is_array($this->session->user))
+        {
+            redirect("Login/");
+            return;
+        }
+        
     }
     
     /**

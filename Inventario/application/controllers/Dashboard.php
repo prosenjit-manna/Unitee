@@ -49,6 +49,7 @@ class Dashboard extends CI_Controller {
         
         $this->load->library("session");
         $this->load->library("base_url");
+        $this->load->helper("setup");
         $this->route = $this->base_url->GetBaseUrl();
         
         /**
@@ -91,20 +92,41 @@ class Dashboard extends CI_Controller {
             $parts = explode("=", $model);
             
             
-
-            if(sizeof($parts) == 0){
-                $this->load->model($parts[0]);
-                $model = $parts[0];
+            try{
+                        
+                if(sizeof($parts) == 1){
+                    $model = $parts[0];
+                    
+                    if(!check_model($model)){
+                       $this->load->view("errors/html/error_404" , $vars);
+                       return;
+                    }
+                    
+                    $this->load->model($model);
+                    
+                }
+                else if(sizeof($parts) >= 2){
+                    
+                    $location = $parts[0] . "/" . $parts[1];
+                    
+                    if(!check_model($location)){
+                       $this->load->view("errors/html/error_404" , $vars);
+                       return;
+                    }
+                    
+                    $this->load->model("$location");
+                    $model = $parts[1];
+                }
+            
+            } 
+            catch (Exception $ex){
+                trigger_error("Error Critico del sistema : " . $ex->getMessage());
             }
-            else if(sizeof($parts) >= 1){
-                $location = $parts[0] . "/" . $parts[1];
-                $this->load->model("$location");
-                $model = $parts[1];
-            }
+          
             
             $class_implement = class_implements($this->$model);
             
-            if(sizeof($class_implement) == 0){
+            if(sizeof($class_implement) == 0 ){
                 $this->load->view("errors/html/error_404" , $vars);
                 return;
             }

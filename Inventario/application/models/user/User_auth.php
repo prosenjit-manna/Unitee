@@ -16,6 +16,13 @@ class User_Auth extends CI_Model {
         
         $this->load->database();
         $this->load->library('session');
+        
+        if(!is_array($this->session->user))
+        {
+            redirect("Login/");
+            return;
+        }
+        
     }
     
     public function Auth($usr , $pwd , $type = "user"){
