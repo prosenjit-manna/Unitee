@@ -9,6 +9,8 @@ class User_Auth extends CI_Model {
     
     var $get_usr        = NULL;
     
+    var $roles          = array();
+    
     protected $query    = NULL;
     
     public function __construct() {
@@ -17,12 +19,17 @@ class User_Auth extends CI_Model {
         $this->load->database();
         $this->load->library('session');
         
-        if(!is_array($this->session->user))
-        {
-            redirect("Login/");
-            return;
+        if(is_array($this->session->user)){
+            $user = $this->session->user;
+            $this->get_id       = $user['id_login'];
+            $this->get_usr      = $user['id_user'];
+            $this->get_auth     = $user;
+            $this->roles        = array(
+                "name"          => $user['rol_name'],
+                "nivel"         => $user['rol_nivel'],
+                "sub_nivel"     => $user['sub_nivel']
+            );
         }
-        
     }
     
     public function Auth($usr , $pwd , $type = "user"){
@@ -53,11 +60,17 @@ class User_Auth extends CI_Model {
         
         //sentencia sql en el cual verifica el estado de un usuario
         $this->query = "SELECT concat(user.nombres, ' ' , user.apellidos ) "
-                     . " as 'name' , login.user as 'user' , login.password as 'password' "
-                     . " , login.status as 'status' , login.last_date as 'last_date' "
-                     . " , roles.nombre as 'rol_name' , roles.nivel as 'rol_nivel' , "
-                     . " user.avatar as 'avatar' , roles.sub_nivel as 'sub_nivel' , "
-                     . " user.email as 'email' , login.id_login as 'id_login' , user.id_user as 'id_user' "
+                     . " as 'name' , login.user as 'user' "
+                     . ", login.password as 'password' "
+                     . ", login.status as 'status' "
+                     . ", login.last_date as 'last_date' "
+                     . ", roles.nombre as 'rol_name' "
+                     . ", roles.nivel as 'rol_nivel'  "
+                     . ", user.avatar as 'avatar' "
+                     . ", roles.sub_nivel as 'sub_nivel'  "
+                     . ", user.email as 'email' "
+                     . ", login.id_login as 'id_login'"
+                     . ", user.id_user as 'id_user' "
                      . " FROM user "
                      . " LEFT JOIN login ON login.id_login=user.id_login "
                      . " LEFT JOIN roles ON roles.id_rol=user.id_rol "

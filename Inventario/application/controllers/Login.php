@@ -29,7 +29,7 @@ class Login extends CI_Controller {
         
         if(is_array($this->session->user))
         {
-            redirect("Dashboard/");
+            redirect("/0/");
             return;
         }
     }
@@ -90,7 +90,7 @@ class Login extends CI_Controller {
         
         //si el request existe entonces cargamos el dashboard
         if($request){
-            redirect("Dashboard/");
+            redirect("/0/");
         }else
         {
             redirect("Login/index/1");

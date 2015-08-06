@@ -341,23 +341,32 @@
 					<span class="username username-hide-on-mobile">
                                             <?php 
                                                     $user_name = explode(" ", $user_data['name']);
-                                                    echo current($user_name) , " " , end($user_name);
+                                                    $count = sizeof($user_name);
+                                                    if($count >= 2 && $count <= 3){
+                                                         echo current($user_name) , " " , end($user_name);
+                                                    }
+                                                    else if($count > 3 ){
+                                                         echo current($user_name);
+                                                         echo " ";
+                                                         echo substr($user_name[1], 0 , 1);
+                                                         echo ". " , end($user_name);
+                                                    }
                                             ?>
 					</span>
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-                                                    <a href="<?php echo site_url("Dashboard/index/user=user_profile"); ?>">
+                                                    <a href="<?php echo site_url("0/user=user_profile"); ?>">
 							<i class="icon-user"></i> Mi Perfil </a>
 						</li>
 						<li>
-							<a href="<?php echo site_url("Dashboard/index/user=user_profile"); ?>">
+							<a href="<?php echo site_url("block"); ?>">
 							<i class="icon-wallet"></i> Bloquear </a>
 						</li>
 						</li>
 						<li>
-							<a href="<?php echo site_url("Dashboard/session/"); ?>">
+							<a href="<?php echo site_url("logout"); ?>">
 							<i class="icon-key"></i> Cerrar Sesión </a>
 						</li>
 					</ul>

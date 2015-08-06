@@ -64,8 +64,24 @@ class Dashboard extends CI_Controller {
             return;
         }
         
+        if(isset($this->session->block)){
+            if($this->session->block === TRUE){
+                redirect("Dashboard/blockscreen");
+                return;
+            }
+        }
+        
         $this->user_p = $this->session->user;
         
+    }
+    
+    public function get_sidebar()
+    {
+         $this->load->model("system/sidebar_engine");
+         $this->sidebar_engine->_init();
+         
+         $url = $this->base_url->FriendlyUrl("Dashboard/index/");
+         echo $url;
     }
    
     
@@ -185,6 +201,23 @@ class Dashboard extends CI_Controller {
 
     }
     
+    public function blockscreen($block = true ){
+        if($block){
+            echo "VISTA DEL BLOQUEO ... COMMING SOON";
+            return;
+        }
+        else
+        {
+            $pass = isset($_REQUEST['password']) ? : NULL;
+            if($pass === NULL)
+            {
+                echo "view please";
+            }
+        }
+        
+        
+    }
+    
     
     public function modulos($type = "install" ){
         
@@ -201,6 +234,7 @@ class Dashboard extends CI_Controller {
       
 
     }
+    
     
     private function OpenContainer(){
         return '<div class="page-container">';

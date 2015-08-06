@@ -112,7 +112,6 @@
                                              echo '<div class="alert alert-warning" role="alert">
                                                 <a href="#" class="alert-link">Lo sentimos , Hubo un error intente mas tarde</a></div>';
                                             break;
-                                            break;
                                     endswitch;
                                 endif;
                                 
