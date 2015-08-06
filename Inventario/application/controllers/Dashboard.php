@@ -78,10 +78,12 @@ class Dashboard extends CI_Controller {
     public function get_sidebar()
     {
          $this->load->model("system/sidebar_engine");
-         $this->sidebar_engine->_init();
+         $the_sidebar = $this->sidebar_engine->_init();
          
-         $url = $this->base_url->FriendlyUrl("Dashboard/index/");
-         echo $url;
+         echo "<pre>";
+         print_r($the_sidebar);
+         echo "</pre>";
+         
     }
    
     
