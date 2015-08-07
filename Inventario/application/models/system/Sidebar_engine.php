@@ -32,6 +32,13 @@ class Sidebar_engine extends CI_Model {
         }
         else{
             foreach ($namespaces as $ns){
+                                      
+                    $spaces[0] = array(
+                        "namespaces" => "",
+                        "seccions"   => array(),
+                        "start"      => 0
+                    );
+                
                     $spaces[$ns->id_namespace] = array(
                         "namespaces" => $ns->name,
                         "seccions"   => array(),
@@ -176,6 +183,7 @@ class Sidebar_engine extends CI_Model {
                   $view .= $data['complement'];
                   $view .= '<span class="arrow"></span>';
                   $view .= '</a>';
+                  
                   foreach ($data['sub_seccion'] as $sub){
                       $view .= '<ul class="sub-menu">';
                       $view .= '<li>';
