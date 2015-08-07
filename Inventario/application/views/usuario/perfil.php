@@ -112,6 +112,14 @@
                                              echo '<div class="alert alert-warning" role="alert">
                                                 <a href="#" class="alert-link">Lo sentimos , Hubo un error intente mas tarde</a></div>';
                                             break;
+                                        case 3:
+                                              echo '<div class="alert alert-success" role="alert">
+                                                <a href="#" class="alert-link">Avatar cambiado con exito</a></div>';
+                                            break;
+                                        case 4: 
+                                             echo '<div class="alert alert-warning" role="alert">
+                                                <a href="#" class="alert-link">Hubo un error al momento de guardar la imagen</a></div>';
+                                            break;
                                     endswitch;
                                 endif;
                                 
@@ -140,7 +148,7 @@
 											</div>
 											
 											<div id="tab_2-2" class="tab-pane">
-												<form action="#" role="form">
+												<?php echo form_open_multipart("avatar"); ?>
 													<div class="form-group">
 														<div class="fileinput fileinput-new" data-provides="fileinput">
 															<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
@@ -154,7 +162,7 @@
 																Seleccionar Imagen </span>
 																<span class="fileinput-exists">
 																Cambiar </span>
-																<input type="file" name="...">
+																<input type="file" name="avatar_img">
 																</span>
 																<a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
 																Eliminar </a>
@@ -162,12 +170,11 @@
 														</div>
 													</div>
 													<div class="margin-top-10">
-														<a href="#" class="btn green">
-														Guardar </a>
-														<a href="#" class="btn default">
-														Cancelar </a>
+                                                                                                            <button type="submit" class="btn green" name="cmd_avatar">
+														Guardar </button>
+													
 													</div>
-												</form>
+												<?php echo form_close(); ?>
 											</div>
 											<div id="tab_3-3" class="tab-pane">
 												<?php echo form_open("User/password/change/user=user_profile") ?>

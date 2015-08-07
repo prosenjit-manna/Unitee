@@ -61,5 +61,12 @@ class User_Profile extends CI_Model implements PInterface {
             "password"  => $new_password
         ));
     }
+    
+    public function change_avatar($avatar){
+        $this->db->where("id_user" , $this->session->user['id_user']);
+        return $this->db->update("user" , array(
+            "avatar"      => $avatar
+        ));
+    }
 
 }

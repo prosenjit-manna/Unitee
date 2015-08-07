@@ -69,12 +69,11 @@ class Base_upload  {
            $this->config = $config;
            $this->Initialize($this->config);
         }
-        else{
         
-            $this->config['upload_path']    = "./";
-            $this->config['max_size']       = 450000;
-            $this->config['file_name']      = NULL;
-        }
+        
+        $this->config['upload_path']    = "./";
+        $this->config['max_size']       = 450000;
+        $this->config['file_name']      = NULL;
     }
     
    /**
@@ -180,8 +179,7 @@ class Base_upload  {
         if(!$is_ok){
             return array(
                 "value" => false , 
-                "error" => $this->class
-                    ->upload->display_errors()
+                "error" => $this->class->upload->display_errors()
             );
         }else{
             return true;

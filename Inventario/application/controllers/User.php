@@ -10,11 +10,14 @@
 
 class User extends CI_Controller {
     
+    protected $route = NULL;
+
+
     public function __construct() {
         parent::__construct();
         $this->load->library("session");
         $this->load->library("base_url");
-        
+        $this->route = $this->base_url->GetBaseUrl();
         if(!is_array($this->session->user))
         {
             redirect("Login/");
@@ -64,6 +67,46 @@ class User extends CI_Controller {
                 break;
             case "verify":
                 break;
+        }
+    }
+    
+    public function change_avatar(){
+        
+         if(!isset($_FILES['avatar_img']))
+         {
+             redirect("/0/");
+             return;
+         }
+         
+         
+        $path          = "./images/dashboard/users/";
+        $name          = explode(".", $_FILES['avatar_img']['name']);
+        $ext           = end($name);  
+         
+        $this->load->helper('string');
+        $rename =  random_string();
+           
+        $config['upload_path']      = $path;
+        $config['allowed_types']    = 'gif|jpg|png';
+        $config['max_size']         = '100';
+        $config['file_name']        = $rename;
+        
+     
+        $this->load->library('upload', $config);
+        $this->upload->do_upload("avatar_img");
+        
+        $errors = $this->upload->display_errors();
+        if($errors == NULL || $errors == ''){
+            $this->load->model("user/user_profile");
+            $is_ok = $this->user_profile->change_avatar($rename . "." . $ext);
+            if($is_ok){
+                $sesion = $this->session->user;
+                $sesion['avatar'] =  $rename . "." . $ext;
+                $this->session->set_userdata("user" , $sesion ) ;
+                redirect('/0/user=user_profile?opps=3');
+            }else{
+                 redirect('/0/user=user_profile?opps=4');
+            }
         }
     }
     

@@ -57,3 +57,4 @@ $route['0/([a-z_-]+)=([a-z_-]+)']   = 'dashboard/index/$1=$2';
 $route['block']                     = "dashboard/blockscreen";
 $route['logout']                    = "dashboard/session";
 $route['sidebar']                   = "dashboard/get_sidebar";
+$route['avatar']                    = "user/change_avatar";

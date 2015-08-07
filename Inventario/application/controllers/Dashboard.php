@@ -233,6 +233,12 @@ class Dashboard extends CI_Controller {
 
     }
     
+    public function getsession(){
+        echo "<pre>";
+        print_r($this->session->user);
+        echo "</pre>";
+    }
+    
     
     private function OpenContainer(){
         return '<div class="page-container">';
