@@ -3,7 +3,7 @@
 	<div class="page-content-wrapper">
 		<div class="page-content">
 			<h3 class="page-title">
-			Unitee - Dashboard <small>Opcion elegida</small>
+			Unitee - Dashboard <small></small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">

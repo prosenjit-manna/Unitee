@@ -26,14 +26,16 @@ class Sidebar_engine extends CI_Model {
         if(sizeof($namespaces) === 0){
             $spaces[0] = array(
                 "namespaces"    => "",
-                "seccions"      => array()
+                "seccions"      => array(),
+                "start"         => 0
              );
         }
         else{
             foreach ($namespaces as $ns){
                     $spaces[$ns->id_namespace] = array(
                         "namespaces" => $ns->name,
-                        "seccions"   => array()
+                        "seccions"   => array(),
+                        "start"      => $ns->start
                     );
             }
         }
@@ -41,20 +43,14 @@ class Sidebar_engine extends CI_Model {
         
         $current_rol            = $roles['nivel'];
         
-        foreach($sections as $sec){
+        foreach($sections as $sec)
+        {
            
             $array_         = array();
             $rol_           = explode(",", $sec->roles);
-            $flag           = FALSE;
             $sp             = 0;
             
-            
-            foreach($rol_ as $r )
-            {
-                if($r === $current_rol){
-                    $flag = TRUE;
-                }
-            }
+            $flag           = $this->check_rol($current_rol, $rol_);
               
             if($flag ){
                 
@@ -94,21 +90,23 @@ class Sidebar_engine extends CI_Model {
             
             $array_         = array();
             $rol_           = explode(",", $side->roles);
-            $flag           = FALSE;
             $sp             = 0;
             
-            foreach($rol_ as $r )
-            {
-                if($r === $current_rol){
-                    $flag = TRUE;
-                }
-            }
+            
+            $flag           = $this->check_rol($current_rol, $rol_);
             
             if($flag)
             {
+                
+                $uri = $side->model_dir . "=" . $side->model;
+                if($side->model == NULL || $side->model == "")
+                {
+                    $uri = $side->model_dir;
+                }
+                
                 $array_ = array(
                     "name"              =>$side->name,
-                    "url"               =>$side->model_dir . "=" . $side->model,
+                    "url"               =>$uri,
                     "icon"              =>$side->icon,
                     "start"             =>$side->start,
                     "cmp"               =>$side->complement
@@ -120,7 +118,7 @@ class Sidebar_engine extends CI_Model {
                     {
                         $spaces[$k]['seccions']
                                 [$side->id_seccion]
-                                ['sidebars'] = $array_;
+                                ['sidebars'][] = $array_;
                         break;
                     }else
                     {
@@ -134,7 +132,9 @@ class Sidebar_engine extends CI_Model {
                                 $spaces[$k]
                                     ['seccions']
                                     [$kk]
-                                    ['sub_seccion'][$side->id_seccion]['sidebars'] = $array_;
+                                    ['sub_seccion']
+                                    [$side->id_seccion]
+                                    ['sidebars'][] = $array_;
                                 break;
                             }
                         }
@@ -147,20 +147,108 @@ class Sidebar_engine extends CI_Model {
         
       
         return $spaces;
+
+    }
+    
+    public function _echo(){
+         
+         $the_sidebar   = $this->_init();
+         $view          = NULL;
+         
+         //echo "<pre>" , print_r($the_sidebar) , "</pre>";
+         
+         foreach ($the_sidebar as $side)
+         {
+             if($side['namespaces'] !== NULL 
+                     || $side['namespaces'] != "" ){
+                 $view .= '<li class="heading">';
+                 $view .= '<h3 class="uppercase">';
+                 $view .= $side['namespaces'];
+                 $view .= '</h3></li>';
+             }
+             
+             
+             foreach($side['seccions'] as $data){
+                  $view .= "<li>";
+                  $view .= '<a href="javascript:;">';
+                  $view .= '<i class="' . $data['icon'] .  '"></i>&nbsp;';
+                  $view .= '<span class="title">' . $data['name'] . '</span>';
+                  $view .= $data['complement'];
+                  $view .= '<span class="arrow"></span>';
+                  $view .= '</a>';
+                  foreach ($data['sub_seccion'] as $sub){
+                      $view .= '<ul class="sub-menu">';
+                      $view .= '<li>';
+                      $view .= '<a href="javascript:;">';
+                      $view .= '&nbsp;<i class="' . $sub['icon'] .  '"></i>&nbsp;';
+                      $view .= '<span class="title">' . $sub['name'] . '</span>';
+                      $view .= $sub['complement'];
+                      $view .= '<span class="arrow"></span>';
+                      $view .= '</a>';
+                      $view .= '<ul class="sub-menu">';
+
+                      foreach($sub['sidebars'] as $s){
+                        
+                          $view .= '<li>';
+                          $view .= '<a href="' . site_url("/0/" . $s['url']) . '">';
+                          $view .= '<i class="' . $s['icon'] . '"></i>&nbsp;';
+                          $view .= $s['name'];
+                          $view .= $s['cmp'];
+                          $view .= '</a>';
+                          $view .= '</li>';
+                      }
+                      $view .= '</ul>';
+                      $view .= '</li>';
+                      $view .= '</ul>';
+                  }
+                                                
+           
+                  
+                  $view .= '<ul class="sub-menu">';
+
+                     foreach($data['sidebars'] as $s){
+                        
+                          $view .= '<li>';
+                          $view .= '<a href="' . site_url("/0/" . $s['url']) . '">';
+                          $view .= '<i class="' . $s['icon'] . '"></i>&nbsp;';
+                          $view .= $s['name'];
+                          $view .= $s['cmp'];
+                          $view .= '</a>';
+                          $view .= '</li>';
+                      }
+                      $view .= '</ul>';
+                  
+                  $view .= "</li>";
+             }
+             
+            
+         }
+         
+       
+         echo $view;
+    }
+    
+    private function check_rol($current , $roles)
+    {
+         if(isset($roles[0]))
+         {
+             if($roles[0] == 0){ return TRUE; }
+         }
+         foreach ($roles as $rol){
+             if ($rol === $current) {
+                return TRUE;
+            }
+        }
         
-       /*  echo "<pre>";
-         print_r($spaces);
-         print_r($namespaces);
-         print_r($sections);
-         print_r($sidebars);
-         print_r($roles);
-         echo "</pre>"; */
+        return FALSE;
     }
     
     private function get_namespaces(){
         
         $this->query = "SELECT * FROM namespaces";
-        return $this->db->query($this->query)->result_object();
+        return $this->db
+                ->query($this->query)
+                ->result_object();
         
     }
     
@@ -175,10 +263,11 @@ class Sidebar_engine extends CI_Model {
        
     }
     
-    
     private function get_sidebars(){
          $this->query = "SELECT * FROM sidebar WHERE status LIKE 1";
-         return $this->db->query($this->query)->result_object();
+         return $this->db
+                 ->query($this->query)
+                 ->result_object();
     }
     
     
