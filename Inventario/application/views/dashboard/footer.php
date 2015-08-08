@@ -36,6 +36,9 @@
 <script src="<?php echo $route;?>assert/dashboard/js/demo.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/dashboard/js/index.js" type="text/javascript"></script>
 
+<!--LIBRERIA EN LA CUAL SUSTITUYE AJAX COMO GESTOR DE PROCESOS DE SEGUNDO PLANO : PRIORIDAD DEL SISTEMA  -->
+<script src="<?php echo $route;?>assert/dashboard/jstask/task.js" type="text/javascript"></script>
+
 <?php
     if(isset($javascript) && is_array($javascript)){
          foreach($javascript as $j){
@@ -57,8 +60,17 @@ jQuery(document).ready(function() {
         Index.init();   
         Index.initDashboardDaterange();
         Tasks.initDashboardWidget();
+        
+        
+        
    }catch(ex){
         console.log("Error al momento de cargar ... " + ex.message);
+   }
+   
+   try{
+       SidebarSystem.init();
+   }catch(ex){
+       console.log("Error al momento de cargar archivos del sistema " + ex.message);
    }
    
    

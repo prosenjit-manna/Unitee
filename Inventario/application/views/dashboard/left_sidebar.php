@@ -4,19 +4,45 @@
 <!-- BEGIN CONTAINER -->
 
 <!-- BEGIN SIDEBAR -->
+
 <div class="page-sidebar-wrapper">
 		<div class="page-sidebar navbar-collapse collapse">
-			<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                            <br>
-                            <?php
-                                
-                                $sidebar = &get_instance();
-                                $sidebar->load->model("system/sidebar_engine");
-                                $sidebar->sidebar_engine->_echo();
-                            ?>			
-                        </ul>
-
-			<!-- END SIDEBAR MENU -->
+                    <!-- SIBEDAR INIT -->
+                    <ul name="sidebar_" id="sidebar_" class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <!-- SIDEBAR SYSTEM COMO TAREA ASINCRONA O PROCESO DE SEGUNDO PLANO -->
+                        <li>
+                            <br><br>
+                            <a >Cargando ...</a>
+                        </li> 
+                          		
+                    </ul>
+                    <!-- END SIDEBAR -->
 		</div>
 	</div>
 <!-- END SIDEBAR -->
+<script>
+    
+    var SidebarSystem = function(){
+       
+        var load = function(){
+            var tasking = new jtask();
+            tasking.url = "<?php echo site_url("/sidebar/"); ?>";
+            tasking.success_callback(function(result){
+                 $("#sidebar_").html(result);
+            });
+            tasking.do_task();
+            
+          console.log("terminando sidebar");
+          
+        };
+        
+        
+    return {
+        init: function() {
+            load();
+        }
+    };  
+      
+    }();
+    
+</script>

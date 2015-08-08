@@ -79,7 +79,7 @@ class Dashboard extends CI_Controller {
     {
          $this->load->model("system/sidebar_engine");
          $this->sidebar_engine->_echo();
-
+         
     }
    
     
