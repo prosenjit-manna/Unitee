@@ -26,6 +26,8 @@
 <link href="<?php echo $route;?>assert/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>assert/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>assert/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
+
+
 <?php
 
   

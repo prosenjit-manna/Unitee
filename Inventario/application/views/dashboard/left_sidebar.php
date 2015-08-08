@@ -2,9 +2,7 @@
 <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
-
 <!-- BEGIN SIDEBAR -->
-
 <div class="page-sidebar-wrapper">
 		<div class="page-sidebar navbar-collapse collapse">
                     <!-- SIBEDAR INIT -->
@@ -31,12 +29,7 @@
                  $("#sidebar_").html(result);
             });
             tasking.do_task();
-            
-          console.log("terminando sidebar");
-          
         };
-        
-        
     return {
         init: function() {
             load();
