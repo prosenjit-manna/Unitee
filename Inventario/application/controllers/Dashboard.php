@@ -136,6 +136,8 @@ class Dashboard extends CI_Controller {
             catch (Exception $ex){
                 trigger_error("Error Critico del sistema : " . $ex->getMessage());
             }
+            
+            
           
             
             $class_implement = class_implements($this->$model);
@@ -145,6 +147,35 @@ class Dashboard extends CI_Controller {
                 return;
             }
             
+            $privs          = $this->$model->_rols();
+            $priv_flag      = FALSE;
+            if($privs != NULL){
+                if(is_array($privs)){
+                    foreach ($privs as $p){
+                        if(strcmp($this->session->user['rol_name'], $p) === 0){
+                           $priv_flag = TRUE;
+                        }
+                        else if($this->session->user['rol_nivel'] == $p){
+                           $priv_flag = TRUE;
+                        }
+                    } 
+                }else if(is_string($privs)){
+                    $parts  = explode(",", $privs);
+                    foreach ($parts as $p){
+                        if(strcmp($this->session->user['rol_name'], $p) === 0){
+                           $priv_flag = TRUE;
+                        }
+                        else if($this->session->user['rol_nivel'] == $p){
+                           $priv_flag = TRUE;
+                        }
+                    }
+                }
+            }else if($privs === NULL){ $priv_flag = TRUE; }
+            
+            if(!$priv_flag){
+                $this->load->view("errors/html/error_permissions");
+                return;
+            }
             
             $header_dependence = $this->$model->_css();
             if(!is_null($header_dependence)){

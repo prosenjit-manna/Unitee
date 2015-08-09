@@ -43,7 +43,7 @@ var jtask = function(){
         
         var C_type    = this.dataType;
         
-        var C_cache   = this.cache;
+        var C_cache   = this.cache ;
 
         var C_async   = this.async;
         
