@@ -105,7 +105,7 @@ class Sidebar_engine extends CI_Model {
             if($flag)
             {
                 
-                $uri = $side->model_dir . "=" . $side->model;
+                $uri = $side->model_dir . system_token() . $side->model;
                 if($side->model == NULL || $side->model == "")
                 {
                     $uri = $side->model_dir;

@@ -44,7 +44,8 @@ class Dashboard extends CI_Controller {
     var $user_p             = NULL;
 
 
-    public function __construct() {
+    public function __construct() 
+    {
         parent::__construct();
         
         $this->load->library("session");
@@ -82,8 +83,8 @@ class Dashboard extends CI_Controller {
          
     }
    
-    
-    public function index( $model = NULL){
+    public function index( $model = NULL)
+    {
       
      
         $vars =  array(   
@@ -103,7 +104,8 @@ class Dashboard extends CI_Controller {
         }
         else
         {
-            $parts = explode("=", $model);
+
+            $parts = explode(system_token(), $model);
             
             
             try{
@@ -139,7 +141,6 @@ class Dashboard extends CI_Controller {
             
             
           
-            
             $class_implement = class_implements($this->$model);
             
             if(sizeof($class_implement) == 0 ){
@@ -213,7 +214,6 @@ class Dashboard extends CI_Controller {
         }
     }
     
-    
     public function session($close = true)
     {
         
@@ -246,7 +246,6 @@ class Dashboard extends CI_Controller {
         
         
     }
-    
     
     public function modulos($type = "install" ){
         

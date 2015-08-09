@@ -17,3 +17,9 @@ if(!function_exists("check_model")){
         }
     }
 }
+
+if(!function_exists("system_token")){
+    function system_token(){
+        return "=";
+    }
+}

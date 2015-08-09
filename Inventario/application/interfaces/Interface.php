@@ -56,7 +56,7 @@ interface PInterface {
     
     /**
      * @todo funcion que requiere el nivel de seguridad de acuerdo a los roles
-     * @return string/null/array , retorna un nivel , ninguno , o varios 
+     * @return string/null/array , retorna un nivel , ninguno  o varios 
      */
     public function _rols();
     
