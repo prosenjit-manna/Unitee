@@ -25,9 +25,9 @@
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
 					<li>
-						<i class="fa fa-home"></i>
+						<i class="icon-home"></i>
                                                 <a href="<?php echo site_url("Dashboard/index"); ?>">Home</a>
-						<i class="fa fa-angle-right"></i>
+						<i class="icon-angle-right"></i>
 					</li>
 					<li>
 						<a href="<?php echo site_url("Dashboard/index/user=user_profile"); ?>">Perfil</a>
@@ -77,17 +77,17 @@
 							<ul class="ver-inline-menu tabbable margin-bottom-10">
 											<li class="active">
 												<a data-toggle="tab" href="#tab_1-1">
-												<i class="fa fa-cog"></i> Información Personal</a>
+												<i class="icon-cog"></i> Información Personal</a>
 												<span class="after">
 												</span>
 											</li>
 											<li>
 												<a data-toggle="tab" href="#tab_2-2">
-												<i class="fa fa-picture-o"></i> Cambiar Imagen</a>
+												<i class="icon-picture-o"></i> Cambiar Imagen</a>
 											</li>
 											<li>
 												<a data-toggle="tab" href="#tab_3-3">
-												<i class="fa fa-lock"></i> Cambiar Contraseña</a>
+												<i class="icon-lock"></i> Cambiar Contraseña</a>
 											</li>
 										</ul>
 
