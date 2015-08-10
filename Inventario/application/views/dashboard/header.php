@@ -95,7 +95,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-success">
-									<i class="fa fa-plus"></i>
+									<i class="icon-plus"></i>
 									</span>
 									New user registered. <span class="time">
 									Just now </span>
@@ -104,7 +104,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
+									<i class="icon-bolt"></i>
 									</span>
 									Server #12 overloaded. <span class="time">
 									15 mins </span>
@@ -113,7 +113,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
+									<i class="icon-bell"></i>
 									</span>
 									Server #2 not responding. <span class="time">
 									22 mins </span>
@@ -122,7 +122,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
+									<i class="icon-bullhorn"></i>
 									</span>
 									Application error. <span class="time">
 									40 mins </span>
@@ -131,7 +131,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
+									<i class="icon-bolt"></i>
 									</span>
 									Database overloaded 68%. <span class="time">
 									2 hrs </span>
@@ -140,7 +140,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
+									<i class="icon-bolt"></i>
 									</span>
 									2 user IP blocked. <span class="time">
 									5 hrs </span>
@@ -149,7 +149,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
+									<i class="icon-bell-o"></i>
 									</span>
 									Storage Server #4 not responding. <span class="time">
 									45 mins </span>
@@ -158,7 +158,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
+									<i class="icon-bullhorn"></i>
 									</span>
 									System Error. <span class="time">
 									55 mins </span>
@@ -167,7 +167,7 @@
 								<li>
 									<a href="#">
 									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
+									<i class="icon-bolt"></i>
 									</span>
 									Database overloaded 68%. <span class="time">
 									2 hrs </span>
@@ -355,7 +355,7 @@
                                                     }
                                             ?>
 					</span>
-					<i class="fa fa-angle-down"></i>
+					<i class="icon-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
 						<li>
