@@ -64,10 +64,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'nockup_inventario',
+	'hostname' => 'lieison.com',
+	'username' => 'lieison_test',
+	'password' => 'Support2015',
+	'database' => 'lieison_unitee',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
