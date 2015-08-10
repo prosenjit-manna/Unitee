@@ -166,7 +166,7 @@ class Sidebar_engine extends CI_Model {
          
          foreach ($the_sidebar as $side)
          {
-             if($side['namespaces'] !== NULL 
+             if($side['namespaces'] != NULL 
                      || $side['namespaces'] != "" ){
                  $view .= '<li class="heading">';
                  $view .= '<h3 class="uppercase">';
