@@ -49,7 +49,15 @@ class Sidebar_engine extends CI_Model {
         
         
         $current_rol            = $roles['nivel'];
+        $sub_rol                = $roles['sub_nivel'];
         
+        if($sub_rol != 0){
+            $current_rol = array(
+                0   => $current_rol ,
+                1   => $sub_rol
+            );
+        }
+ 
         foreach($sections as $sec)
         {
            
@@ -58,9 +66,9 @@ class Sidebar_engine extends CI_Model {
             $sp             = 0;
             
             $flag           = $this->check_rol($current_rol, $rol_);
-              
+
+            
             if($flag ){
-                
                 
                 $array_ = array(
                     "name"          => $sec->name,
@@ -164,14 +172,18 @@ class Sidebar_engine extends CI_Model {
          
          //echo "<pre>" , print_r($the_sidebar) , "</pre>";
          
+         
          foreach ($the_sidebar as $side)
          {
-             if($side['namespaces'] != NULL 
+             
+             if(sizeof($side['seccions']) != 0){
+                 if($side['namespaces'] != NULL 
                      || $side['namespaces'] != "" ){
-                 $view .= '<li class="heading">';
-                 $view .= '<h3 class="uppercase">';
-                 $view .= $side['namespaces'];
-                 $view .= '</h3></li>';
+                    $view .= '<li class="heading">';
+                    $view .= '<h3 class="uppercase">';
+                    $view .= $side['namespaces'];
+                    $view .= '</h3></li>';
+                }
              }
              
              
@@ -242,9 +254,20 @@ class Sidebar_engine extends CI_Model {
          {
              if($roles[0] == 0){ return TRUE; }
          }
-         foreach ($roles as $rol){
+         
+         if(!is_array($current)){
+           foreach ($roles as $rol){
              if ($rol === $current) {
                 return TRUE;
+            }
+         }
+        }else{
+            foreach ($roles as $rol){
+                foreach ($current as $c){
+                    if($rol === $c){
+                        return TRUE;
+                    }
+                }
             }
         }
         

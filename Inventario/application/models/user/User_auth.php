@@ -27,7 +27,8 @@ class User_Auth extends CI_Model {
             $this->roles        = array(
                 "name"          => $user['rol_name'],
                 "nivel"         => $user['rol_nivel'],
-                "sub_nivel"     => $user['sub_nivel']
+                "sub_nivel"     => $user['sub_nivel'],
+                "parent"        => $user['parent']
             );
         }
     }
@@ -66,6 +67,7 @@ class User_Auth extends CI_Model {
                      . ", login.last_date as 'last_date' "
                      . ", roles.nombre as 'rol_name' "
                      . ", roles.nivel as 'rol_nivel'  "
+                     . ", roles.parent as 'parent'"
                      . ", user.avatar as 'avatar' "
                      . ", roles.sub_nivel as 'sub_nivel'  "
                      . ", user.email as 'email' "
