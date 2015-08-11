@@ -44,18 +44,18 @@
             <span class="email">
             bob@keenthemes.com </span>
             <span class="locked">
-            Locked </span>
+            Bloqueado</span>
             <form class="form-inline" action="index.html">
                 <div class="input-group input-medium">
                     <input type="text" class="form-control" placeholder="Password">
                     <span class="input-group-btn">
-                    <button type="submit" class="btn blue icn-only"><i class="m-icon-swapright m-icon-white"></i></button>
+                    <button type="submit" class="btn blue icn-only"><i class="m-icon-swapright icon-arrow-right"></i></button>
                     </span>
                 </div>
                 <!-- /input-group -->
                 <div class="relogin">
                     <a href="login.html">
-                    Not Bob Nilson ? </a>
+                    No eres Bob Nilson ? </a>
                 </div>
             </form>
         </div>

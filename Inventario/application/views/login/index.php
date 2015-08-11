@@ -65,7 +65,7 @@
 			<label class="checkbox">
 			<input type="checkbox" name="remember" value="1"/>Recordar</label>
                     <button type="submit" id="cmd_send" class="btn blue pull-right">
-			Entrar<i class="m-icon-swapright m-icon-white"></i>
+			Entrar&nbsp;<i class="m-icon-swapright icon-arrow-right"></i>
 			</button>
 		</div>
                 
