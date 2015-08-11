@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<title>Unitee | Login</title>
+<title>Unitee | Bloqueado</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -19,6 +19,7 @@
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link href="<?php echo $route;?>assert/plugins/select2/select2.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>assert/login/css/login-soft.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>assert/lock/lock.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME STYLES -->
 <link href="<?php echo $route;?>assert/login/css/components.css" rel="stylesheet" type="text/css"/>
@@ -29,22 +30,41 @@
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
-<body class="login">
-<!-- BEGIN LOGO -->
-<br>
-<div class="logo">
-	<img src="<?php echo $route;?>images/login/logo.png" style="width:190px;"/>
-	</a>
-</div>
-<!-- END LOGO -->
-<!-- BEGIN LOGIN -->
-
+<body>
+<div class="page-lock">
+    <div class="page-logo">
+        <a class="brand" href="index.html">
+    <img src="<?php echo $route;?>images/login/logo.png" style="width:50px;"/>
+        </a>
+    </div>
+    <div class="page-body">
+        <img class="page-lock-img" src="<?php echo $route;?>images/dashboard/users/iAY0lcKy.jpg" alt="">
+        <div class="page-lock-info">
+            <h1>Bob Nilson</h1>
+            <span class="email">
+            bob@keenthemes.com </span>
+            <span class="locked">
+            Locked </span>
+            <form class="form-inline" action="index.html">
+                <div class="input-group input-medium">
+                    <input type="text" class="form-control" placeholder="Password">
+                    <span class="input-group-btn">
+                    <button type="submit" class="btn blue icn-only"><i class="m-icon-swapright m-icon-white"></i></button>
+                    </span>
+                </div>
+                <!-- /input-group -->
+                <div class="relogin">
+                    <a href="login.html">
+                    Not Bob Nilson ? </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="page-footer-custom">
+ 2015 All Rights reserved &copy; Powered By <a href="http://lieison.com/" style="color:white;" target="_blank">Lieison Working Together</a>.    </div>
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN COPYRIGHT -->
-<div class="copyright">
-	 2015 All Rights reserved &copy; Powered By <a href="http://lieison.com/" style="color:white;" target="_blank">Lieison Working Together</a>.
-</div>
 <script src="<?php echo $route;?>/assert/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>/assert/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
@@ -63,6 +83,7 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="<?php echo $route;?>assert/login/js/metronic.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/login/js//layout.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>assert/lock/lock.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/login/js//quick-sidebar.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/login/js/demo.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/login/js/login-soft.js" type="text/javascript"></script>
@@ -74,6 +95,7 @@ jQuery(document).ready(function() {
     QuickSidebar.init(); // init quick sidebar
     Demo.init(); // init demo features
     Login.init();
+     Lock.init();
        // init background slide images
        $.backstretch([
         "<?php echo $route;?>images/login/bg/1.jpg",
