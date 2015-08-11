@@ -235,6 +235,7 @@ class Dashboard extends CI_Controller {
     
     public function blockscreen(){
             $this->session->block = TRUE;
+            $this->load->helper("form");
             $this->load->view("lock/lock" ,
                     array(
                         "route"                  => $this->route ,
@@ -243,12 +244,13 @@ class Dashboard extends CI_Controller {
     }
     
     public function unlock(){
-           // $pass = isset($_REQUEST['password']) ? : NULL;
-           /* if($pass === NULL)
+           $this->load->helper("form");
+            $pass = isset($_REQUEST['password']) ? : NULL;
+            if($pass === NULL || $pass == "")
             {
                 redirect("/lock?err=1");
                 return;
-            }*/
+            }
             $this->session->block = FALSE;
     }
     

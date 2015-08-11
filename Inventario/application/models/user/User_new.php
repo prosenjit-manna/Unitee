@@ -2,7 +2,7 @@
 
 get_instance()->load->interfaces("Interface");
 
-class User_edit extends CI_Model implements PInterface{
+class User_new extends CI_Model implements PInterface{
     
     public function __construct() {
         parent::__construct();
@@ -13,11 +13,12 @@ class User_edit extends CI_Model implements PInterface{
     }
 
     public function _init() {
-        
+        $this->load->helper("form");
+        $this->load->view("usuario/new");
     }
 
     public function _install() {
-        $this->load->view("usuario/edit");
+        
     }
 
     public function _js() {

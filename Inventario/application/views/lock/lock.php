@@ -38,37 +38,59 @@
         </a>
     </div>
     
+    
     <?php
+         $user_name = explode(" ", $user_data['name']);
+         $count = sizeof($user_name);
+         $u = NULL;
+         if($count >= 2 && $count <= 3){
+                   $u = current($user_name) . " ". end($user_name);
+         }
+         else if($count > 3 ){
+                $u = current($user_name);
+                $u .= " ";
+                $u .= substr($user_name[1], 0 , 1);
+                $u .= ". " . end($user_name);
+         }
+      ?>
     
-    
-    
-    ?>
     
     <div class="page-body">
-        <img class="page-lock-img" src="<?php echo $route;?>images/dashboard/users/iAY0lcKy.jpg" alt="">
+        <img class="page-lock-img" src="<?php echo $route;?>images/dashboard/users/<?php echo $user_data['avatar'] ?>" alt="">
         <div class="page-lock-info">
-            <h1>Bob Nilson</h1>
+            <h1><?php echo $u; ?></h1>
             <span class="email">
-            bob@keenthemes.com </span>
+            <?php echo $user_data['email']; ?> </span>
             <span class="locked">
-            Bloqueado</span>
-            <form class="form-inline" action="index.html">
+              <?php
+               if(isset($_REQUEST['err'])){
+                    echo "Sigues bloqueado ...";
+               }else{
+                   echo "Bloqueado";
+               }
+              ?>
+            </span>
+            <?php echo form_open("/unlock" , array("class" => "form-inline")); ?>
                 <div class="input-group input-medium">
-                    <input type="text" class="form-control" placeholder="Password">
+                    <input type="text" class="form-control" name="password" id="password" placeholder="Password">
                     <span class="input-group-btn">
                     <button type="submit" class="btn blue icn-only"><i class="m-icon-swapright icon-arrow-right"></i></button>
                     </span>
                 </div>
                 <!-- /input-group -->
                 <div class="relogin">
-                    <a href="login.html">
-                    No eres Bob Nilson ? </a>
+                    <a href="<?php echo site_url("/logout"); ?>">
+                    No eres <?php echo $u; ?></a>
                 </div>
-            </form>
+            <?php echo form_close(); ?>
         </div>
     </div>
     <div class="page-footer-custom">
- 2015 All Rights reserved &copy; Powered By <a href="http://lieison.com/" style="color:white;" target="_blank">Lieison Working Together</a>.    </div>
+        <?php 
+           $date  = new DateTime("now");
+           $d = $date->format("Y");
+        ?>
+ <?php echo $d; ?> All Rights reserved &copy; Powered By <a href="http://lieison.com/" style="color:white;" target="_blank">Lieison Working Together</a>.    </div>
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN COPYRIGHT -->
