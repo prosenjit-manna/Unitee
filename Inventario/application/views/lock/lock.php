@@ -107,27 +107,6 @@ jQuery(document).ready(function() {
           duration: 8000
     });
     
-    setInterval(function(){ 
-        
-        var u   = document.getElementById("username");
-        var p   = document.getElementById("password");
-        var b   = document.getElementById("cmd_send");
-        
-        if(p.value === null || p.value == "" )
-        {
-            b.disabled = true;
-        }
-        else if(u.value === null || u.value == "")
-        {
-             b.disabled = true;
-        }
-        else
-        {
-             b.disabled = false;
-        }
-       
-    }, 500);
-    
     
 });
 </script>
