@@ -107,6 +107,8 @@ class User extends CI_Controller {
             }else{
                  redirect('/0/user=user_profile?opps=4');
             }
+        }else{
+            print_r($errors);
         }
     }
     
