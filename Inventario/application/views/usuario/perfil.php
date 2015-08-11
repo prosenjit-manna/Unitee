@@ -120,6 +120,10 @@
                                              echo '<div class="alert alert-warning" role="alert">
                                                 <a href="#" class="alert-link">Hubo un error al momento de guardar la imagen</a></div>';
                                             break;
+                                        case 5:
+                                            echo '<div class="alert alert-warning" role="alert">
+                                                <a href="#" class="alert-link">Lo sentimos la image debe de ser menor a un mega byte (1Mb)/a></div>';
+                                            break;
                                     endswitch;
                                 endif;
                                 

@@ -114,7 +114,9 @@ class Dashboard extends CI_Controller {
                     $model = $parts[0];
                     
                     if(!check_model($model)){
+                       //$this->load->view("dashboard/header" , $vars );  
                        $this->load->view("errors/html/error_404" , $vars);
+                       //$this->load->view("dashboard/footer" , $vars);
                        return;
                     }
                     
@@ -126,7 +128,9 @@ class Dashboard extends CI_Controller {
                     $location = $parts[0] . "/" . $parts[1];
                     
                     if(!check_model($location)){
+                       //$this->load->view("dashboard/header" , $vars ); 
                        $this->load->view("errors/html/error_404" , $vars);
+                       //$this->load->view("dashboard/footer" , $vars);
                        return;
                     }
                     

@@ -11,6 +11,8 @@
 class User extends CI_Controller {
     
     protected $route = NULL;
+    
+    
 
 
     public function __construct() {
@@ -88,7 +90,7 @@ class User extends CI_Controller {
            
         $config['upload_path']      = $path;
         $config['allowed_types']    = 'gif|jpg|png';
-        $config['max_size']         = '100';
+        $config['max_size']         = '1000';
         $config['file_name']        = $rename;
         
      
@@ -100,15 +102,24 @@ class User extends CI_Controller {
             $this->load->model("user/user_profile");
             $is_ok = $this->user_profile->change_avatar($rename . "." . $ext);
             if($is_ok){
+                
+                $this->load->helper("file");
                 $sesion = $this->session->user;
+                
+                if($sesion['avatar'] != NULL || $sesion['avatar'] != ""){
+                    if(read_file($path .  $sesion['avatar'])){
+                        unlink(FCPATH . "images/dashboard/users/" .  $sesion['avatar']);
+                    }
+                }
+                
                 $sesion['avatar'] =  $rename . "." . $ext;
-                $this->session->set_userdata("user" , $sesion ) ;
+                $this->session->set_userdata("user" , $sesion );
                 redirect('/0/user=user_profile?opps=3');
             }else{
                  redirect('/0/user=user_profile?opps=4');
             }
         }else{
-            print_r($errors);
+            redirect('/0/user=user_profile?opps=5');
         }
     }
     

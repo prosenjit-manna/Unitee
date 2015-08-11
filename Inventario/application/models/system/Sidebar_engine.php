@@ -67,8 +67,7 @@ class Sidebar_engine extends CI_Model {
             
             $flag           = $this->check_rol($current_rol, $rol_);
 
-            
-            if($flag ){
+            if($flag){
                 
                 $array_ = array(
                     "name"          => $sec->name,
@@ -170,8 +169,8 @@ class Sidebar_engine extends CI_Model {
          $the_sidebar   = $this->_init();
          $view          = NULL;
          
-         //echo "<pre>" , print_r($the_sidebar) , "</pre>";
-         
+         //echo "<pre>" , print_r($the_sidebar) , "</pre>";  
+        // return;
          
          foreach ($the_sidebar as $side)
          {

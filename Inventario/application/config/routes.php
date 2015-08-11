@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 include APPPATH . "helpers/setup_helper.php";
 
 $route['default_controller']        = 'login';
-$route['404_override']              = '';
+$route['404_override']              = 'dashboard/index';
 $route['translate_uri_dashes']      = FALSE;
 $route['0']                         = 'dashboard/index';
 $route['0/([a-z_-]+)' 
