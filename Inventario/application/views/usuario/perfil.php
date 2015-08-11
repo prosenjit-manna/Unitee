@@ -83,7 +83,7 @@
 											</li>
 											<li>
 												<a data-toggle="tab" href="#tab_2-2">
-												<i class="icon-picture-o"></i> Cambiar Imagen</a>
+												<i class="icon-picture"></i> Cambiar Imagen</a>
 											</li>
 											<li>
 												<a data-toggle="tab" href="#tab_3-3">
