@@ -72,7 +72,7 @@
             </span>
             <?php echo form_open("/unlock" , array("class" => "form-inline")); ?>
                 <div class="input-group input-medium">
-                    <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                     <span class="input-group-btn">
                     <button type="submit" class="btn blue icn-only"><i class="m-icon-swapright icon-arrow-right"></i></button>
                     </span>

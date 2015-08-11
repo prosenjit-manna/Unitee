@@ -244,14 +244,41 @@ class Dashboard extends CI_Controller {
     }
     
     public function unlock(){
-           $this->load->helper("form");
-            $pass = isset($_REQUEST['password']) ? : NULL;
-            if($pass === NULL || $pass == "")
+           if(!isset($_REQUEST['password'])){
+                redirect("/block?err=1");
+                return;
+           }
+        
+            $this->load->helper("form");
+            $pass = $_REQUEST['password'];
+            
+            if($pass == NULL || $pass == "")
             {
-                redirect("/lock?err=1");
+                redirect("/block?err=1");
                 return;
             }
-            $this->session->block = FALSE;
+            
+            $this->load->library("encryption");
+            $this->load->helper("setup");
+            
+            $this->encryption->initialize(
+             array(
+                'cipher'    => 'aes-256',
+                'mode'      => 'cbc',
+                'key'       => get_key()
+            ));
+            
+            $current_password   = $this->encryption->decrypt($this->session->user['password']);
+            
+            if(strcmp($current_password, $pass) == 0){
+                 $this->session->block = FALSE;
+                 redirect("/0/");
+                 return;
+            }else{
+                redirect("/block?err=1");
+                return;
+            }
+
     }
     
     public function modulos($type = "install" ){
