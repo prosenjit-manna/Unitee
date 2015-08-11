@@ -65,13 +65,6 @@ class Dashboard extends CI_Controller {
             return;
         }
         
-        if(isset($this->session->block)){
-            if($this->session->block === TRUE){
-                redirect("Dashboard/blockscreen");
-                return;
-            }
-        }
-        
         $this->user_p = $this->session->user;
         
     }
@@ -85,7 +78,14 @@ class Dashboard extends CI_Controller {
    
     public function index( $model = NULL)
     {
-      
+        
+        if(isset($_SESSION['block'])){
+            if($this->session->block == TRUE){
+                redirect("/block");
+                return;
+            }
+        }
+
      
         $vars =  array(   
                "route"                  => $this->base_url->GetBaseUrl(),
@@ -112,7 +112,6 @@ class Dashboard extends CI_Controller {
                         
                 if(sizeof($parts) == 1){
                     $model = $parts[0];
-                    
                     if(!check_model($model)){
                        //$this->load->view("dashboard/header" , $vars );  
                        $this->load->view("errors/html/404" , $vars);
@@ -234,21 +233,23 @@ class Dashboard extends CI_Controller {
 
     }
     
-    public function blockscreen($block = true ){
-        if($block){
-            $this->load->view("lock/lock" , array("route" => $this->route));
-            return;
-        }
-        else
-        {
-            $pass = isset($_REQUEST['password']) ? : NULL;
-            if($pass === NULL)
+    public function blockscreen(){
+            $this->session->block = TRUE;
+            $this->load->view("lock/lock" ,
+                    array(
+                        "route"                  => $this->route ,
+                        "user_data"              => $this->user_p,
+                    ));
+    }
+    
+    public function unlock(){
+           // $pass = isset($_REQUEST['password']) ? : NULL;
+           /* if($pass === NULL)
             {
-                echo "view please";
-            }
-        }
-        
-        
+                redirect("/lock?err=1");
+                return;
+            }*/
+            $this->session->block = FALSE;
     }
     
     public function modulos($type = "install" ){

@@ -37,6 +37,13 @@
     <img src="<?php echo $route;?>images/login/logo.png" style="width:50px;"/>
         </a>
     </div>
+    
+    <?php
+    
+    
+    
+    ?>
+    
     <div class="page-body">
         <img class="page-lock-img" src="<?php echo $route;?>images/dashboard/users/iAY0lcKy.jpg" alt="">
         <div class="page-lock-info">

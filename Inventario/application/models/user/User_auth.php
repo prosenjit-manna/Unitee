@@ -1,5 +1,7 @@
 <?php
 
+
+
 class User_Auth extends CI_Model {
     
     
