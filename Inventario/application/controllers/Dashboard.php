@@ -115,7 +115,7 @@ class Dashboard extends CI_Controller {
                     
                     if(!check_model($model)){
                        //$this->load->view("dashboard/header" , $vars );  
-                       $this->load->view("errors/html/error_404" , $vars);
+                       $this->load->view("errors/html/404" , $vars);
                        //$this->load->view("dashboard/footer" , $vars);
                        return;
                     }
@@ -129,7 +129,7 @@ class Dashboard extends CI_Controller {
                     
                     if(!check_model($location)){
                        //$this->load->view("dashboard/header" , $vars ); 
-                       $this->load->view("errors/html/error_404" , $vars);
+                       $this->load->view("errors/html/404" , $vars);
                        //$this->load->view("dashboard/footer" , $vars);
                        return;
                     }
@@ -148,7 +148,7 @@ class Dashboard extends CI_Controller {
             $class_implement = class_implements($this->$model);
             
             if(sizeof($class_implement) == 0 ){
-                $this->load->view("errors/html/error_404" , $vars);
+                $this->load->view("errors/html/404" , $vars);
                 return;
             }
             
