@@ -236,7 +236,7 @@ class Dashboard extends CI_Controller {
     
     public function blockscreen($block = true ){
         if($block){
-            echo "VISTA DEL BLOQUEO ... COMMING SOON";
+            $this->load->view("lock/lock" , array("route" => $this->route));
             return;
         }
         else
