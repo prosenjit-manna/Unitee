@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42df3d73-e623-4205-aae7-4a2d1ce7bb83" name="Default" comment="" />
+    <list default="true" id="42df3d73-e623-4205-aae7-4a2d1ce7bb83" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Inventario/application/views/login/index.php" afterPath="$PROJECT_DIR$/Inventario/application/views/login/index.php" />
+    </list>
     <ignored path="Unitee.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
