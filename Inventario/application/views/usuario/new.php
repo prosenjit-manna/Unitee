@@ -65,32 +65,36 @@
 											<div class="form-body">
 												<div class="row">
 													<div class="col-md-6">
-														<div class="form-group">
-															<label class="control-label">Nombres</label>
+													   <label class="control-label col-md-2">Nombres</label>
+														<div class="form-group col-md-10">
 															<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombres">
 														</div>
-														<div class="form-group">
-															<label class="control-label">Apellidos</label>
+														<label class="control-label col-md-2">Apellidos</label>
+														<div class="form-group col-md-10">
 															<input type="text" id="firstName" class="form-control input-circle" placeholder="Apellidos">
 														</div>
-														<div class="form-group">
-															<label class="control-label">Correo</label>
+														<label class="control-label col-md-2">Correo</label>
+														<div class="form-group col-md-10">
 																<input type="email" class="form-control input-circle" placeholder="Email Address">
 														</div>
 													</div>
 													<!--/span-->
 													<div class="col-md-6">
-														<div class="form-group has-error">
-															<label class="control-label">Contraseña</label>
+														<label class="control-label col-md-2">Usuario</label>
+														<div class="form-group col-md-10">
+															<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombre de Usuario">
+														</div>
+														<label class="control-label col-md-2">Contraseña</label>
+														<div class="form-group col-md-10">
 															<input type="password" class="form-control input-circle-left" placeholder="Contraseña">
 														</div>
-														<div class="form-group has-error">
-															<label class="control-label">Repetir Contraseña</label>
-															<input type="password" class="form-control input-circle-left" placeholder="Repetir Cpntraseña">
+														<label class="control-label col-md-2">Repetir</label>
+														<div class="form-group col-md-10">
+															<input type="password" class="form-control input-circle-left" placeholder="Repetir Contraseña">
 														</div>
-														<div class="form-group">
+														<label class="control-label col-md-2">Autogenerar</label>
+														<div class="form-group col-md-10">
 															<div class="radio-list">
-															<label class="control-label">Autogenerar Contraseña</label>
 																<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="ON" data-off-color="default" data-off-text="OFF">
 														</div>
 													</div>
