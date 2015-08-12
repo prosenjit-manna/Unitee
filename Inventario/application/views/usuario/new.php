@@ -44,41 +44,70 @@
 			<!-- BEGIN PAGE HEADER-->
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
-			<div class="row">
+			<div class="row scroller" style="height:450px" data-rail-visible="1" >
 				<div class="col-md-12">
 					<!-- BEGIN Portlet PORTLET-->
 					<div class="portlet light">
 						<div class="portlet-title">
 							<div class="caption font-green-sharp">
 								<i class="icon-speech font-green-sharp"></i>
-								<span class="caption-subject"> Portlet</span>
-								<span class="caption-helper">more samples...</span>
+								<span class="caption-subject">Información Usuario</span>
 							</div>
 							<div class="actions">
-								<div class="btn-group">
-									<a class="btn btn-circle btn-default " href="#" data-toggle="dropdown">
-									<i class="fa fa-user"></i> Cancelar <i class="fa fa-angle-down"></i>
-									</a>
-								</div>
 								<a href="#" class="btn btn-circle red-sunglo ">
-								<i class="fa fa-plus"></i> Crear </a>
-								<a class="btn btn-circle btn-icon-only btn-default" href="#">
-								<i class="icon-cloud-upload"></i>
-								</a>
-								<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#">
-								</a>
+								<i class="icon-plus"></i> Nuevo Usuario </a>
 							</div>
 						</div>
 						<div class="portlet-body">
-							<div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
-								<h4>Heading Text</h4>
-								<p>
-									 Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
-								</p>
-								<p>
-									 nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
-								</p>
-							</div>
+							<div class="portlet-body form">
+										<!-- BEGIN FORM-->
+										<form action="#" class="horizontal-form">
+											<div class="form-body">
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label">Nombres</label>
+															<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombres">
+														</div>
+														<div class="form-group">
+															<label class="control-label">Apellidos</label>
+															<input type="text" id="firstName" class="form-control input-circle" placeholder="Apellidos">
+														</div>
+														<div class="form-group">
+															<label class="control-label">Correo</label>
+																<input type="email" class="form-control input-circle" placeholder="Email Address">
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group has-error">
+															<label class="control-label">Contraseña</label>
+															<input type="password" class="form-control input-circle-left" placeholder="Contraseña">
+														</div>
+														<div class="form-group has-error">
+															<label class="control-label">Repetir Contraseña</label>
+															<input type="password" class="form-control input-circle-left" placeholder="Repetir Cpntraseña">
+														</div>
+														<div class="form-group">
+															<div class="radio-list">
+															<label class="control-label">Autogenerar Contraseña</label>
+																<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+														</div>
+													</div>
+													<!--/span-->
+												</div>
+												<!--/row-->
+												<!--/row-->
+												<!--/row-->
+												
+											</div>
+											<div class="form-actions right">
+												<button type="button" class="btn default">Cancelar</button>
+												<button type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+											</div>
+										</form>
+										<!-- END FORM-->
+									</div>
 						</div>
 					</div>
 					<!-- END Portlet PORTLET-->
