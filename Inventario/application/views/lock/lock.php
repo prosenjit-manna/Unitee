@@ -34,7 +34,7 @@
 <div class="page-lock">
     <div class="page-logo">
         <a class="brand" href="index.html">
-    <img src="<?php echo $route;?>images/login/logo.png" style="width:50px;"/>
+    <img src="<?php echo $route;?>images/login/logo.png" style="width:150px;  height:50px;"/>
         </a>
     </div>
     
