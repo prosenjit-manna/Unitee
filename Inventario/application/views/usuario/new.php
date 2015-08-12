@@ -82,20 +82,20 @@
 													<div class="col-md-6">
 														<label class="control-label col-md-2">Usuario</label>
 														<div class="form-group col-md-10">
-															<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombre de Usuario">
+															<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombre de Usuario required">
 														</div>
 														<label class="control-label col-md-2">Contraseña</label>
 														<div class="form-group col-md-10">
-															<input type="password" class="form-control input-circle-left" placeholder="Contraseña">
+															<input type="password" id="firstName" class="form-control input-circle" placeholder="Contraseña">
 														</div>
 														<label class="control-label col-md-2">Repetir</label>
 														<div class="form-group col-md-10">
-															<input type="password" class="form-control input-circle-left" placeholder="Repetir Contraseña">
+															<input type="password" id="firstName" class="form-control input-circle" placeholder="Repetir Contraseña">
 														</div>
 														<label class="control-label col-md-2">Autogenerar</label>
 														<div class="form-group col-md-10">
 															<div class="radio-list">
-																<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+																<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
 														</div>
 													</div>
 													<!--/span-->
