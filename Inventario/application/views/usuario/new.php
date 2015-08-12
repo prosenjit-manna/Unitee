@@ -1,3 +1,4 @@
+<!-- INICIO ESTILOS DE LA BARRA -->
 <style>
   .class_tr {
         width: 100%;
@@ -14,14 +15,20 @@
   
   
 </style>
+<!-- FINAL ESTILOS DE LA BARRA -->
 
-<!-- BEGIN CONTENT -->
+<!-- INICIO CONTENIDO -->
 	<div class="page-content-wrapper">
+
+	<!-- INICIO CONTENIDO -->
 		<div class="page-content">
-			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<!-- INICIO TITULO DE LA PAGINA -->
 			<h3 class="page-title">
 			Unitee - Nuevo Usuario 
 			</h3>
+			<!-- FINAL TITULO DE LA PAGINA -->
+
+			<!-- INICIO BREADCUMBS -->
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
 					<li>
@@ -37,30 +44,25 @@
                                     
 				</div>
 			</div>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN DASHBOARD STATS -->
+			<!-- FINAL BREADCUMBS -->
+
+			<!-- INICIO DASHBOARD STATS -->
            <div class="page-content-wrapper">
 
-			<!-- BEGIN PAGE HEADER-->
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN PAGE CONTENT-->
+			<!-- INICIO PAGE CONTENT-->
 			<div class="row scroller" style="height:450px" data-rail-visible="1" >
 				<div class="col-md-12">
-					<!-- BEGIN Portlet PORTLET-->
+					<!-- INICIO Portlet PORTLET-->
 					<div class="portlet light">
 						<div class="portlet-title">
 							<div class="caption font-green-sharp">
 								<i class="icon-speech font-green-sharp"></i>
 								<span class="caption-subject">Información Usuario</span>
 							</div>
-							<div class="actions">
-								<a href="#" class="btn btn-circle red-sunglo ">
-								<i class="icon-plus"></i> Nuevo Usuario </a>
-							</div>
 						</div>
 						<div class="portlet-body">
 							<div class="portlet-body form">
-										<!-- BEGIN FORM-->
+										<!-- INICIO FORM-->
 										<form action="#" class="horizontal-form">
 											<div class="form-body">
 												<div class="row">
@@ -100,9 +102,6 @@
 													</div>
 													<!--/span-->
 												</div>
-												<!--/row-->
-												<!--/row-->
-												<!--/row-->
 												
 											</div>
 											<div class="form-actions right">
@@ -110,18 +109,19 @@
 												<button type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
 											</div>
 										</form>
-										<!-- END FORM-->
+										<!-- FINAL FORM-->
 									</div>
 						</div>
 					</div>
-					<!-- END Portlet PORTLET-->
+					<!-- FINAL Portlet PORTLET-->
 				</div>
 			</div>
-			<!-- END PAGE CONTENT-->
+			<!-- FINAL PAGE CONTENTENIDO-->
 		</div>
-		</div>
+		<!-- FINAL ESTILOS DE LA BARRA -->
+
 	</div>
 
-	<!-- END CONTENT -->
+	<!-- FINAL CONTENIDO -->
         
 
