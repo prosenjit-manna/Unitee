@@ -1,3 +1,4 @@
+<!--INICIO ESTILOS DE LA BARRA-->
 <style>
   .class_tr {
         width: 100%;
@@ -14,14 +15,19 @@
   
   
 </style>
+<!--FINAL ESTILOS DE LA BARRA-->
 
-<!-- BEGIN CONTENT -->
+<!-- INICIO CONTENIDO -->
 	<div class="page-content-wrapper">
+	<!-- INICIO CONTENIDO -->
 		<div class="page-content">
-			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<!-- INICIO TITULO DE LA PAGINA ACRUAL-->
 			<h3 class="page-title">
 			Unitee - Editar Usuario 
 			</h3>
+			<!-- FINAL TITULO DE LA PAGINA ACRUAL-->
+
+			<!-- INICIO TITULO PAGE BAR BREADCUMBS-->
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
 					<li>
@@ -37,85 +43,44 @@
                                     
 				</div>
 			</div>
-			<!-- END PAGE HEADER-->
-			<!-- BEGIN DASHBOARD STATS -->
-			<div class="page-content-wrapper">
+			<!-- FINAL TITULO PAGE BAR BREADCUMBS-->
 
-				<!-- BEGIN PAGE HEADER-->
-				<!-- END PAGE HEADER-->
-				<!-- BEGIN PAGE CONTENT-->
+			<!-- INICIO DEL MAIN CONTENIDO-->
+			<div class="page-content-wrapper">
+				<!-- INICIO FILA DEL CONTENIDO -->
 				<div class="row">
-						<div align="center">
+					<!-- INICIO PORTLET DEL CONTENIDO-->
+					<div class="col-md-12 ">
+					<!-- INICIO PORTLET LIGHT-->
+					<div class="portlet light">
+						<!-- INICIO PORTLET TABS-->
+						<div class="portlet-title tabbable-line">
+							<div class="caption font-green-sharp">
+								<i class="icon-speech font-green-sharp"></i>
+								<span class="caption-subject">Editar Roles e Informacion de USuario</span>
+							</div>
 							<ul class="nav nav-tabs">
 								<li class="active">
-									<a href="#tab_0" data-toggle="tab">
+									<a href="#portlet_tab1" data-toggle="tab">
 									Editar Usuario</a>
 								</li>
 								<li>
-									<a href="#tab_1" data-toggle="tab">
+									<a href="#portlet_tab2" data-toggle="tab">
 									Editar Roles</a>
 								</li>
 							</ul>
 						</div>
+						<!-- FINAL PORTLET TABS-->
+
+						<!-- INICIO PORTLET NODY-->
+						<div class="portlet-body">
+							<!-- INICIO PORTLET TAB CONTENT-->
 							<div class="tab-content">
-								<div class="tab-pane active" id="tab_0">
-									<div class="caption font-green-sharp col-md-12">
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-speech font-green-sharp"></i>
-										<span class="caption-subject">Información Usuario</span>
-									</div><br>
-									<div class="portlet light">
-										<div class="portlet-body form">
-													<form action="#" class="horizontal-form">
-															<div class="col-md-6">
-															   <label class="control-label col-md-2">Nombres</label>
-																<div class="form-group col-md-10">
-																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombres">
-																</div>
-																<label class="control-label col-md-2">Apellidos</label>
-																<div class="form-group col-md-10">
-																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Apellidos">
-																</div>
-																<label class="control-label col-md-2">Correo</label>
-																<div class="form-group col-md-10">
-																		<input type="email" class="form-control input-circle" placeholder="Email Address">
-																</div>
-															</div>
-															<!--/span-->
-															<div class="col-md-6">
-																<label class="control-label col-md-2">Usuario</label>
-																<div class="form-group col-md-10">
-																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombre de Usuario required">
-																</div>
-																<label class="control-label col-md-2">Contraseña</label>
-																<div class="form-group col-md-10">
-																	<input type="password" id="firstName" class="form-control input-circle" placeholder="Contraseña">
-																</div>
-																<label class="control-label col-md-2">Repetir</label>
-																<div class="form-group col-md-10">
-																	<input type="password" id="firstName" class="form-control input-circle" placeholder="Repetir Contraseña">
-																</div>
-																<label class="control-label col-md-2">Autogenerar</label>
-																<div class="form-group col-md-10">
-																	<div class="radio-list">
-																		<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-																	</div>
-																</div>
-															</div>
-															<div class="form-actions right">
-																<button type="button" class="btn default">Cancelar</button>
-																<button type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
-															</div>
-													</form>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane" id="tab_1">
-								<div class="caption font-green-sharp col-md-12">
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-speech font-green-sharp"></i>
-										<span class="caption-subject">Roles</span>
-								</div><br>
-									<div class="portlet light">
-										<div class="portlet-body form">
+								<!-- INICIO DEL PRIMER TAB PANE-->
+								<div class="tab-pane " id="portlet_tab2">
+									<!-- INICIO DEL DIV DEL SCROLLER-->
+									<div class="scroller" style="height: 325px;">
+												<!--INICIO FORMULARIO ROLES-->
 												<form action="#" class="horizontal-form">
 														<div class="col-md-6">
 														   <label class="control-label col-md-6">Dar acceso al Rol #1</label>
@@ -146,22 +111,95 @@
 																	<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
 															</div>
 														</div>
-														<br><br><br><br><br><br><br>
-														<div class="form-actions right">
+														<br><br><br><br><br><br><br><br>
+														<div class="form-actions" align="right">
 															<button type="button" class="btn default">Cancelar</button>
 															<button type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
 														</div>
 												</form>
-										</div>
-									</div>
-								</div>
-							</div>
-				</div>
-				<!-- END PAGE CONTENT-->
-			</div>
-		</div>
-	</div>
+												<!--FINAL FORMULARIO ROLES-->
 
-	<!-- END CONTENT -->
+									</div>
+									<!-- FINAL DEL DIV DEL SCROLLER-->
+
+								</div>
+								<!-- FINAL DEL PRIMER TAB PANE-->
+
+								<!-- INICIO DEL SEGUNDO TAB PANE-->
+								<div class="tab-pane active" id="portlet_tab1">
+									<!-- INICIO DEL DIV DEL SCROLLER-->
+									<div class="scroller" style="height: 325px;">
+													<!--INICIO FORMULARIO INFO USUARIO-->
+													<form action="#" class="horizontal-form">
+															<div class="col-md-6">
+															   <label class="control-label col-md-2">Nombres</label>
+																<div class="form-group col-md-10">
+																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombres" required>
+																</div>
+																<label class="control-label col-md-2">Apellidos</label>
+																<div class="form-group col-md-10">
+																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Apellidos" required>
+																</div>
+																<label class="control-label col-md-2">Correo</label>
+																<div class="form-group col-md-10">
+																		<input type="email" class="form-control input-circle" placeholder="Email Address" required>
+																</div>
+															</div>
+															<!--/span-->
+															<div class="col-md-6">
+																<label class="control-label col-md-2">Usuario</label>
+																<div class="form-group col-md-10">
+																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombre de Usuario required" required>
+																</div>
+																<label class="control-label col-md-2">Contraseña</label>
+																<div class="form-group col-md-10">
+																	<input type="password" id="firstName" class="form-control input-circle" placeholder="Contraseña" required>
+																</div>
+																<label class="control-label col-md-2">Repetir</label>
+																<div class="form-group col-md-10">
+																	<input type="password" id="firstName" class="form-control input-circle" placeholder="Repetir Contraseña" required>
+																</div>
+																<label class="control-label col-md-2">Autogenerar</label>
+																<div class="form-group col-md-10">
+																	<div class="radio-list">
+																		<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+																	</div>
+																</div>
+															</div>
+															<br><br><br>
+															<div class="form-actions" align="right">
+																<button type="button" class="btn default">Cancelar</button>
+																<button type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+															</div>
+													</form>
+													<!--FINAL FORMULARIO INFO USUARIO-->
+
+									</div>
+									<!-- FINAL DEL DIV DEL SCROLLER-->
+								</div>
+								<!-- FINAL DEL SEGUNDO TAB PANE-->
+							</div>
+							<!-- FINAL PORTLET TAB CONTENT-->
+
+						</div>
+						<!-- FINAL PORTLET NODY-->
+
+					</div>
+					<!-- INICIO PORTLET LIGHT-->
+
+				</div>
+				<!-- FINAL PORTLET DEL CONTENIDO-->
+
+				</div>
+				<!-- FINAL FILA DEL CONTENIDO -->
+
+			</div>
+			<!-- FINAL DEL MAIN CONTENIDO-->
+
+		</div>
+		<!-- FINAL CONTENIDO -->
+
+	</div>
+	<!-- FINAL CONTENIDO -->
         
 
