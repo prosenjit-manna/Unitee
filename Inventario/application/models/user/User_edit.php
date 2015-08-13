@@ -15,12 +15,18 @@ get_instance()->load->interfaces("Interface");
 
 class User_edit extends CI_Model implements PInterface{
 
+    var $route = NULL;
+
     public function __construct() {
         parent::__construct();
+        $this->load->library("base_url");
+        $this->route = $this->base_url->GetBaseUrl();
     }
 
     public function _css() {
-
+         return array(
+           $this->route . "assert/plugins/bootstrap-toastr/toastr.min.css"
+       );
     }
 
     public function _init() {
@@ -33,7 +39,11 @@ class User_edit extends CI_Model implements PInterface{
     }
 
     public function _js() {
+         return array(
+            $this->route . "assert/plugins/bootstrap-toastr/toastr.min.js",
+            $this->route . "assert/plugins/bootstrap-toastr/ui-toastr.js"
 
+       );
     }
 
     public function _jsLoader() {

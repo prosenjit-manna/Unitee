@@ -60,6 +60,7 @@ jQuery(document).ready(function() {
         Index.init();   
         Index.initDashboardDaterange();
         Tasks.initDashboardWidget();
+        UIToastr.init();
         
         
         

@@ -65,7 +65,7 @@
 							</div>
 							<ul class="nav nav-tabs">
 								<li>
-								<select class="layout-style-option form-control input-sm">
+								<select class="btn btn-default dropdown-toggle input-circle">
 									<option value="square" selected="selected">Seleccione el Usuario</option>
 									<option value="rounded">Usuario 1</option>
 									<option value="rounded">Usuario 2</option>
@@ -182,7 +182,7 @@
 															<br><br><br>
 															<div class="form-actions" align="right">
 																<button type="button" class="btn default">Cancelar</button>
-																<button type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
 															</div>
 													</form>
 													<!--FINAL FORMULARIO INFO USUARIO-->
@@ -216,20 +216,3 @@
 
 	</div>
 	<!-- FINAL CONTENIDO -->
-<script type="text/javascript">
-Command: toastr[success]("Gnome & Growl type non-blocking notifications", "Toastr Notifications")
-toastr.options = {
-  "closeButton": true,
-  "debug": false,
-  "positionClass": "toast-top-right",
-  "onclick": null,
-  "showDuration": "5000",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-</script>
