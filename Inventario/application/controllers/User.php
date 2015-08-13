@@ -121,6 +121,16 @@ class User extends CI_Controller {
         }
     }
     
+    public function GetRoles(){
+        
+        $current_rol = $this->session->user['rol_nivel'];
+        if($current_rol != 1 ){
+            echo "No tiene suficientes privilegios";
+            exit();
+        }
+        
+    }
+    
 
     
 }

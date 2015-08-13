@@ -47,7 +47,7 @@ class User_edit extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-
+          return array( "i();" , "c();" , "r();");
     }
 
     public function _rols() {

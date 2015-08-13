@@ -20,6 +20,11 @@
   }
 </style>
 <!--FINAL ESTILOS DE LA BARRA-->
+<?php 
+
+   $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+   $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
+?>
 
 <!-- INICIO CONTENIDO -->
 	<div class="page-content-wrapper">
@@ -36,11 +41,11 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="icon-home"></i>
-                                                <a href="">Home</a>
+                                                <a href="<?php echo site_url("/0/"); ?>">Home</a>
 						<i class="icon-angle-right"></i>
 					</li>
 					<li>
-						<a href="">Editar Usuario</a>
+						<a href="#">Editar Usuario</a>
 					</li>
 				</ul>
 				<div class="page-toolbar">
@@ -73,11 +78,11 @@
 									<option value="rounded">Usuario 4</option>
 								</select>
 								</li>
-								<li class="active">
+                                                                <li id="user_" name="user_" class="active">
 									<a href="#portlet_tab1" data-toggle="tab">
 									Editar Usuario</a>
 								</li>
-								<li>
+                                                                <li id="roles_" name="roles_">
 									<a href="#portlet_tab2" data-toggle="tab">
 									Editar Roles</a>
 								</li>
@@ -95,35 +100,9 @@
 									<div class="scroller" style="height: 250px;">
 												<!--INICIO FORMULARIO ROLES-->
 												<form action="#" class="horizontal-form">
-														<div class="col-md-6">
-														   <label class="control-label col-md-6">Dar acceso al Rol #1</label>
-															<div class="form-group col-md-6">
-																<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-															</div>
-															<label class="control-label col-md-6">Dar acceso al Rol #2</label>
-															<div class="form-group col-md-6">
-																<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-															</div>
-															<label class="control-label col-md-6">Dar acceso al Rol #3</label>
-															<div class="form-group col-md-6">
-																<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-															</div>
-														</div>
-														<!--/span-->
-														<div class="col-md-6">
-															<label class="control-label col-md-6">Dar acceso al Rol #4</label>
-															<div class="form-group col-md-6">
-																	<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-															</div>
-															<label class="control-label col-md-6">Dar acceso al Rol #5</label>
-															<div class="form-group col-md-6">
-																	<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-															</div>
-															<label class="control-label col-md-6">Dar acceso al Rol #6</label>
-															<div class="form-group col-md-6">
-																	<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-															</div>
-														</div>
+                                                                                                    <div id="select_roles">
+														Cargando ...
+                                                                                                    </div>
 														<br><br><br><br><br><br><br><br>
 														<div class="form-actions" align="right">
 															<button type="button" class="btn default">Cancelar</button>
@@ -216,3 +195,38 @@
 
 	</div>
 	<!-- FINAL CONTENIDO -->
+        
+        <script>
+            
+            var i = function(){
+                
+                var rol = "<?php echo $rol; ?>";
+                if(!rol){ return null; }
+                $("#user_").attr("class" , "");
+                $("#roles_").attr("class" , "active");
+                $("#portlet_tab2").attr("class" , "tab-pane active");
+                $("#portlet_tab1").attr("class" , "tab-pane ");
+                
+                var id = "<?php echo $id; ?>";
+                if(id != null){
+                    c(id);
+                }
+            };
+            
+            var c = function(val){
+               if(val === "undefined" || val == null){ return; }
+               
+            };
+            
+            
+            var r = function(){
+                var t = new jtask();
+                t.url = "<?php echo site_url("/User/GetRoles/"); ?>";
+                t.success_callback(function(data){
+                    var d   = $("#select_roles");
+                    d.html(data);
+                });
+                t.do_task();
+            };
+            
+        </script>

@@ -22,6 +22,7 @@ class TheUser extends CI_Controller {
  
     }
     
+    
     public function Add(){
         
         if(!isset($_REQUEST['txt_nombre'])){
