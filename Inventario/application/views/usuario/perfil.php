@@ -184,18 +184,18 @@
 												<?php echo form_open("User/password/change/user=user_profile") ?>
 													<div class="form-group">
 														<label class="control-label">Contraseña Actual</label>
-                                                                                                                <input name="txt_actual_pass" type="password" class="form-control"/>
+                                                                                                                <input required="" onkeyup="check_();" name="txt_actual_pass" type="password" class="form-control"/>
 													</div>
 													<div class="form-group">
 														<label class="control-label">Nueva Contraseña</label>
-                                                                                                                <input onkeyup="pass_compare();" id="txt_new_pass" name="txt_new_pass" type="password" class="form-control"/>
+                                                                                                                <input required="" onkeyup="pass_compare();" id="txt_new_pass" name="txt_new_pass" type="password" class="form-control"/>
 													</div>
 													<div class="form-group">
                                                                                                             <label  class="control-label">Repetir Contraseña</label>
-                                                                                                            <input  onkeyup="pass_compare();" id="txt_repeat_pass" name="txt_repeat_pass" type="password" class="form-control"/>
+                                                                                                            <input required=""  onkeyup="pass_compare();" id="txt_repeat_pass" name="txt_repeat_pass" type="password" class="form-control"/>
 													</div>
 													<div class="margin-top-10">
-                                                                                                            <button type="submit" id="cmd_cambiar" name="cmd_cambiar" class="btn green"> Cambiar</button>
+                                                                                                            <button type="submit" disabled="disabled" id="cmd_cambiar" name="cmd_cambiar" class="btn green"> Cambiar</button>
 														<a href="javascript:reset();" class="btn default">
 														Cancelar </a>
 													</div>
@@ -215,6 +215,13 @@
 	<!-- END CONTENT -->
         
         <script>
+            
+            var check_ = function(){
+                var p2 = $("#txt_repeat_pass").val();
+                if(p2 === "" || p2 == "undefined"){
+                     document.getElementById("cmd_cambiar").disabled = true;
+                }
+            };
             
             var pass_compare = function(){
                 
