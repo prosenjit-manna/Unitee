@@ -1,5 +1,14 @@
 <?php
 
+/**
+   @@author: Lieison S.A de C.V
+   @@version: 1.5
+ * @@type: plugin
+ * @@name: Controlador de Shop unitee
+ * @@description : controlador de la tienda unitee en web services con wp 
+ * @@id : system
+ */
+
 class NockupShop  extends CI_Controller{
     
     

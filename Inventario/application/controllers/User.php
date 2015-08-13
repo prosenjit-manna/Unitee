@@ -1,10 +1,11 @@
 <?php
-
 /**
- * @@ Type : system
- * @@ version : 1.0
- * @@ name : User
- * @@ company: Lieison
+   @@author: Lieison S.A de C.V
+   @@version: 1.5
+ * @@type: system
+ * @@name: Sistema de usuario
+ * @@description : Controlador de los aspectos del usuario en sesion
+ * @@id : system
  */
 
 
@@ -12,9 +13,6 @@ class User extends CI_Controller {
     
     protected $route = NULL;
     
-    
-
-
     public function __construct() {
         parent::__construct();
         $this->load->library("session");

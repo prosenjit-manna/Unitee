@@ -64,3 +64,4 @@ $route['unlock']                    = "dashboard/unlock";
 $route['logout']                    = "dashboard/session";
 $route['sidebar']                   = "dashboard/get_sidebar";
 $route['avatar']                    = "user/change_avatar";
+$route['modules']                   = "dashboard/modulos";

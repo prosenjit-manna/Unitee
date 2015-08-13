@@ -1,5 +1,14 @@
 <?php
 
+/**
+   @@author: Lieison S.A de C.V
+   @@version: 1.5
+ * @@type: system
+ * @@name: Controlador del login 
+ * @@description : 
+ * @@id : system
+ */
+
 
 class Login extends CI_Controller {
     

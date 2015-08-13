@@ -1,14 +1,19 @@
 <?php
 
-
 /**
- * @version 1.0
- * @author Rolando Arriaza
- * @copyright (c) 2015, Lieison
- * @todo Controlador del dashboard en general 
- * **/
+   @@author: Lieison S.A de C.V
+   @@version: 1.5
+ * @@type: system
+ * @@name: Controlador de dashboard
+ * @@description : el controlador mas importante del sistema
+ * @@id : system
+ */
 
 
+
+class Dashboard extends CI_Controller {
+    
+    
 /**
  * Variables reservadas en la vista en general 
  * 
@@ -33,10 +38,6 @@
  *       
  * 
  */
-
-
-
-class Dashboard extends CI_Controller {
     
     
     protected $route        = NULL;
@@ -371,20 +372,12 @@ class Dashboard extends CI_Controller {
 
     }
     
-    public function modulos($type = "install" ){
+    public function modulos( ){
         
-        if($type = "install"){
-            $this->load->library("plugin");
-            
-        }
-        
-        
-        $re = $this->plugin->Is_install("pruebas" , "prueba_controller");
-        if($re){
-            echo "INSTALACION REALIZADA";
-        }
-      
-
+        $this->load->library("plugin");
+        echo "<pre>";
+        print_r($this->plugin->_show());
+        echo "</pre>";
     }
     
     public function getsession(){

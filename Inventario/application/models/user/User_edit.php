@@ -1,5 +1,16 @@
 <?php
 
+/**
+   @@author: Lieison S.A de C.V
+   @@version: 1.2
+ * @@update : lieison.com/unitee/update
+ * @@type: plugin
+ * @@name: Editar Usuario
+ * @@parent: user
+ * @@description : modulo en el cual se encarga de editar un usuario 
+ * @@id : _user_001
+ */
+
 get_instance()->load->interfaces("Interface");
 
 class User_edit extends CI_Model implements PInterface{
@@ -41,5 +52,10 @@ class User_edit extends CI_Model implements PInterface{
     public function _update() {
 
     }
+
+    public function _unistall() {
+        
+    }
+
 
 }
