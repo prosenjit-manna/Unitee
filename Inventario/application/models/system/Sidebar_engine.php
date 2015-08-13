@@ -169,7 +169,7 @@ class Sidebar_engine extends CI_Model {
          $the_sidebar   = $this->_init();
          $view          = NULL;
          
-         //echo "<pre>" , print_r($the_sidebar) , "</pre>";  
+        // echo "<pre>" , print_r($the_sidebar) , "</pre>";  
         // return;
          
          foreach ($the_sidebar as $side)
@@ -187,6 +187,8 @@ class Sidebar_engine extends CI_Model {
              
              
              foreach($side['seccions'] as $data){
+                  
+                 
                   $view .= "<li>";
                   $view .= '<a href="javascript:;">';
                   $view .= '<i class="' . $data['icon'] .  '"></i>&nbsp;';
@@ -195,8 +197,12 @@ class Sidebar_engine extends CI_Model {
                   $view .= '<span class="arrow"></span>';
                   $view .= '</a>';
                   
-                  foreach ($data['sub_seccion'] as $sub){
-                      $view .= '<ul class="sub-menu">';
+                  if(sizeof($data['sub_seccion']) >= 1){
+                   
+                   $view .= '<ul class="sub-menu">';  
+                      
+                    foreach ($data['sub_seccion'] as $sub){
+                     
                       $view .= '<li>';
                       $view .= '<a href="javascript:;">';
                       $view .= '&nbsp;<i class="' . $sub['icon'] .  '"></i>&nbsp;';
@@ -204,8 +210,9 @@ class Sidebar_engine extends CI_Model {
                       $view .= $sub['complement'];
                       $view .= '<span class="arrow"></span>';
                       $view .= '</a>';
-                      $view .= '<ul class="sub-menu">';
 
+                      if(count($sub['sidebars']) >= 1){
+                       $view .= '<ul class="sub-menu">';  
                       foreach($sub['sidebars'] as $s){
                         
                           $view .= '<li>';
@@ -216,13 +223,17 @@ class Sidebar_engine extends CI_Model {
                           $view .= '</a>';
                           $view .= '</li>';
                       }
-                      $view .= '</ul>';
+                       $view .= '</ul>';
+                      }
+                   
                       $view .= '</li>';
-                      $view .= '</ul>';
+                     
+                  }
+                  
+                     $view .= '</ul>';
+                  
                   }
                                                 
-           
-                  
                   $view .= '<ul class="sub-menu">';
 
                      foreach($data['sidebars'] as $s){
@@ -235,9 +246,9 @@ class Sidebar_engine extends CI_Model {
                           $view .= '</a>';
                           $view .= '</li>';
                       }
-                      $view .= '</ul>';
-                  
-                  $view .= "</li>";
+                      
+                $view .= '</ul>';
+                $view .= "</li>";
              }
              
             

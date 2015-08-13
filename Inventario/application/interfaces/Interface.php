@@ -19,7 +19,7 @@ interface PInterface {
     public function _install();
     
     
-       /**
+     /**
      * @todo realiza todos los componentes necesarios para la desistalacion
      * @return bool , debe de retornar un valor booleano si se completo la desistalacion
      */

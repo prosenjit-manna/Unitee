@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 <!--INICIO ESTILOS DE LA BARRA-->
+=======
+<?php 
+    /**
+     * @@ name : edit
+     * @@ version : 1.2
+     * @@ id: _user_001
+     */    
+?>
+
+>>>>>>> origin/master
 <style>
   .class_tr {
         width: 100%;

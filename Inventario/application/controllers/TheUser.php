@@ -14,4 +14,8 @@ class TheUser extends CI_Controller {
         parent::__construct();
     }
     
+    public function Add(){
+        echo "hola mundo";
+    }
+    
 }
