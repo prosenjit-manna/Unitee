@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<!--INICIO ESTILOS DE LA BARRA-->
-=======
 <?php 
     /**
      * @@ name : edit
@@ -8,8 +5,6 @@
      * @@ id: _user_001
      */    
 ?>
-
->>>>>>> origin/master
 <style>
   .class_tr {
         width: 100%;
@@ -23,8 +18,6 @@
     width: 100%;
     position: relative;
   }
-  
-  
 </style>
 <!--FINAL ESTILOS DE LA BARRA-->
 
@@ -71,6 +64,15 @@
 								<span class="caption-subject">Editar Roles e Informacion de USuario</span>
 							</div>
 							<ul class="nav nav-tabs">
+								<li>
+								<select class="layout-style-option form-control input-sm">
+									<option value="square" selected="selected">Seleccione el Usuario</option>
+									<option value="rounded">Usuario 1</option>
+									<option value="rounded">Usuario 2</option>
+									<option value="rounded">Usuario 3</option>
+									<option value="rounded">Usuario 4</option>
+								</select>
+								</li>
 								<li class="active">
 									<a href="#portlet_tab1" data-toggle="tab">
 									Editar Usuario</a>
@@ -90,7 +92,7 @@
 								<!-- INICIO DEL PRIMER TAB PANE-->
 								<div class="tab-pane " id="portlet_tab2">
 									<!-- INICIO DEL DIV DEL SCROLLER-->
-									<div class="scroller" style="height: 325px;">
+									<div class="scroller" style="height: 250px;">
 												<!--INICIO FORMULARIO ROLES-->
 												<form action="#" class="horizontal-form">
 														<div class="col-md-6">
@@ -139,7 +141,7 @@
 								<!-- INICIO DEL SEGUNDO TAB PANE-->
 								<div class="tab-pane active" id="portlet_tab1">
 									<!-- INICIO DEL DIV DEL SCROLLER-->
-									<div class="scroller" style="height: 325px;">
+									<div class="scroller" style="height: 250px;">
 													<!--INICIO FORMULARIO INFO USUARIO-->
 													<form action="#" class="horizontal-form">
 															<div class="col-md-6">
@@ -187,8 +189,10 @@
 
 									</div>
 									<!-- FINAL DEL DIV DEL SCROLLER-->
+
 								</div>
 								<!-- FINAL DEL SEGUNDO TAB PANE-->
+
 							</div>
 							<!-- FINAL PORTLET TAB CONTENT-->
 
@@ -212,5 +216,20 @@
 
 	</div>
 	<!-- FINAL CONTENIDO -->
-        
-
+<script type="text/javascript">
+Command: toastr[success]("Gnome & Growl type non-blocking notifications", "Toastr Notifications")
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "positionClass": "toast-top-right",
+  "onclick": null,
+  "showDuration": "5000",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+</script>
