@@ -73,15 +73,19 @@
 													<div class="col-md-6">
 														<label class="control-label col-md-2">Usuario</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="txt_user" name="txt_user" class="form-control input-circle" placeholder="Nombre de Usuario required">
-														</div>
+                                                                                                                    <div class="input-icon right">
+                                                                                                                        <i name="change_" id="change_" style="display:none;" class="icon-check" data-original-title="Usuario aceptado ..."></i>
+												<input onkeyup="check_user(this.value);" required="" type="text" id="txt_user" name="txt_user" class="form-control input-circle" placeholder="Nombre de Usuario ">
+                                                                                                </div>
+                                                                                                                    
+                                                                                                                </div>
 														<label class="control-label col-md-2">Contraseña</label>
 														<div class="form-group col-md-10">
-															<input  type="password" id="txt_password" name="txt_password" class="form-control input-circle" placeholder="Contraseña">
+                                                                                                                    <input required=""  type="password" id="txt_password" name="txt_password" class="form-control input-circle" placeholder="Contraseña">
 														</div>
 														<label class="control-label col-md-2">Repetir</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input onkeyup="check_();" type="password" id="txt_repeat_pass" name="txt_repeat_pass" class="form-control input-circle" placeholder="Repetir Contraseña">
+                                                                                                                    <input required="" onkeyup="check_();" type="password" id="txt_repeat_pass" name="txt_repeat_pass" class="form-control input-circle" placeholder="Repetir Contraseña">
 														</div>
 														<label class="control-label col-md-2">Autogenerar</label>
 														<div class="form-group col-md-10">
@@ -95,7 +99,7 @@
 											</div>
 											<div class="form-actions right">
                                                                                             <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                                                                                            <button id="send" name="send" disabled="disabled" type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                                                                                            <button  id="send" name="send" disabled="disabled" type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
 											</div>
 										<?php echo form_close(); ?>
 										<!-- FINAL FORM-->
@@ -120,13 +124,35 @@
         var $p2         = document.getElementById("txt_repeat_pass").value;
         var $auto       = document.getElementById("txt_generate").checked;
        
+       
         if($auto){
             document.getElementById("send").disabled = false;
         }else if($p1 === $p2 && $p1 !== "" ){
             document.getElementById("send").disabled = false;
+           
         }else{
             document.getElementById("send").disabled = true;
+           
         }
         
+    };
+    
+    var check_user = function(value){
+         var tasking = new jtask();
+         tasking.url = "<?php echo site_url("/TheUser/exists/" ); ?>";
+         tasking.data = { "name" : value }; 
+         tasking.success_callback(function(s){
+           
+              var change      = $("#change_");
+             if(s==1 || s== true){
+                  document.getElementById("send").disabled = true;
+                   change.css("display" , "none");
+             }
+             else{
+                  document.getElementById("send").disabled = false;
+                   change.css("display" , "block");
+             }
+         });
+         tasking.do_task();
     };
  </script>

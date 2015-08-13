@@ -72,6 +72,18 @@ class User_Profile extends CI_Model implements PInterface {
             "avatar"      => $avatar
         ));
     }
+    
+    
+    public function exist_user($name){
+        $query = $this->db
+                ->select("*")
+                ->from("login")
+                ->where("user" , $name )
+                ->get()
+                ->result();
+       if(sizeof($query) >= 1){ return TRUE; }
+       else { return FALSE; }
+    }
 
     public function _unistall() {
         

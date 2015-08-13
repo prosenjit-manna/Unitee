@@ -19,6 +19,7 @@ class User_new extends CI_Model implements PInterface{
 
     public function __construct() {
         parent::__construct();
+        $this->load->database();
     }
     
     public function _css() {
@@ -58,6 +59,21 @@ class User_new extends CI_Model implements PInterface{
 
     public function _unistall() {
         
+    }
+    
+    public function CreateUser(array $data){
+        $id_login = $this->db
+                         ->insert("login" , $data);
+        
+        if($id_login){
+            return $this->db->insert_id();
+        }else{
+            return null;
+        }
+    }
+    
+    public function CreatePerfil(array $data){
+        return $this->db->insert("user" , $data);
     }
 
 }
