@@ -2,6 +2,11 @@
 <!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
+			<div class="alert alert-block alert-warning fade in">
+				<p>
+					<b>¡Alerta!</b>Tienes que cambiar tu contraseña
+				</p>
+			</div>
 			<h3 class="page-title">
 			Unitee - Dashboard <small></small>
 			</h3>

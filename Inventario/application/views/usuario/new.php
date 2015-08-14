@@ -49,6 +49,16 @@
 								<span class="caption-subject">Información Usuario</span>
 							</div>
 						</div>
+						<div class="alert alert-block alert-success fade in">
+							<p>
+								<b>Guuardado!</b>      Roles Guardados con Exito
+							</p>
+						</div>
+						<div class="alert alert-block alert-danger fade in">
+							<p>
+								<b>Guuardado!</b>      Roles Guardados con Exito
+							</p>
+						</div>
 						<div class="portlet-body">
 							<div class="portlet-body form">
 										<!-- INICIO FORM-->

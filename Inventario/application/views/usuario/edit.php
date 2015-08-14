@@ -89,7 +89,17 @@
 							</ul>
 						</div>
 						<!-- FINAL PORTLET TABS-->
-
+						<div class="alert alert-block alert-success fade in">
+							<p>
+								<b>Guuardado!</b>      Roles Guardados con Exito
+							</p>
+						</div>
+						<div class="alert alert-block alert-danger fade in">
+							<p>
+								<b>Guuardado!</b>      Roles Guardados con Exito
+							</p>
+						</div>
+						
 						<!-- INICIO PORTLET NODY-->
 						<div class="portlet-body">
 							<!-- INICIO PORTLET TAB CONTENT-->
@@ -97,16 +107,13 @@
 								<!-- INICIO DEL PRIMER TAB PANE-->
 								<div class="tab-pane " id="portlet_tab2">
 									<!-- INICIO DEL DIV DEL SCROLLER-->
-									<div class="scroller" style="height: 330px;">
+									<div class="scroller" style="height: 270px;">
 												<!--INICIO FORMULARIO ROLES-->
 												<form action="#" class="horizontal-form">
-                                                                                                    <div id="select_roles">
-														Cargando ...
-                                                                                                    </div>
 							                 		<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
 														<div class="profile-userpic">
-							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:27%;height:17%;">      
+							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:24%;height:14%;">      
 							                            </div>
 														<!-- FINAL SIDEBAR USERPIC -->
 														<!-- SIDEBAR USER TITLE -->
@@ -123,7 +130,7 @@
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
 														<div class="profile-userpic">
-							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:27%;height:17%;">      
+							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:24%;height:14%;">      
 							                            </div>
 														<!-- FINAL SIDEBAR USERPIC -->
 														<!-- SIDEBAR USER TITLE -->
@@ -140,7 +147,7 @@
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
 														<div class="profile-userpic">
-							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:27%;height:17%;">      
+							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:24%;height:14%;">      
 							                            </div>
 														<!-- FINAL SIDEBAR USERPIC -->
 														<!-- SIDEBAR USER TITLE -->
@@ -192,15 +199,7 @@
 															<div class="col-md-6">
 																<label class="control-label col-md-2">Usuario</label>
 																<div class="form-group col-md-10">
-																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombre de Usuario required" required>
-																</div>
-																<label class="control-label col-md-2">Contraseña</label>
-																<div class="form-group col-md-10">
-																	<input type="password" id="firstName" class="form-control input-circle" placeholder="Contraseña" required>
-																</div>
-																<label class="control-label col-md-2">Repetir</label>
-																<div class="form-group col-md-10">
-																	<input type="password" id="firstName" class="form-control input-circle" placeholder="Repetir Contraseña" required>
+																	<input type="text" id="firstName" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
 																</div>
 																<label class="control-label col-md-2">Autogenerar</label>
 																<div class="form-group col-md-10">
@@ -209,7 +208,7 @@
 																	</div>
 																</div>
 															</div>
-															<br><br><br>
+															<br><br><br><br><br>
 															<div class="form-actions" align="right">
 																<button type="button" class="btn default">Cancelar</button>
 																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
