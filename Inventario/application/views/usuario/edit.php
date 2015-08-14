@@ -97,17 +97,85 @@
 								<!-- INICIO DEL PRIMER TAB PANE-->
 								<div class="tab-pane " id="portlet_tab2">
 									<!-- INICIO DEL DIV DEL SCROLLER-->
-									<div class="scroller" style="height: 250px;">
+									<div class="scroller" style="height: 300px;">
 												<!--INICIO FORMULARIO ROLES-->
 												<form action="#" class="horizontal-form">
                                                                                                     <div id="select_roles">
 														Cargando ...
                                                                                                     </div>
-														<br><br><br><br><br><br><br><br>
-														<div class="form-actions" align="right">
-															<button type="button" class="btn default">Cancelar</button>
-															<button type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+							                 		<div class="portlet light profile-sidebar-portlet col-md-3">
+														<!-- SIDEBAR USERPIC -->
+														<div class="profile-userpic">
+							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:35%;height:25%;">      
+							                            </div>
+														<!-- FINAL SIDEBAR USERPIC -->
+														<!-- SIDEBAR USER TITLE -->
+														<div class="profile-usertitle">
+															<div class="profile-usertitle-name">
+															   Otorgar ROL #1 
+															</div>
 														</div>
+														<!-- FINAL SIDEBAR USER TITLE -->
+														<div class="radio-list" align="center">
+															<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+														</div>
+													</div>
+													<div class="portlet light profile-sidebar-portlet col-md-3">
+														<!-- SIDEBAR USERPIC -->
+														<div class="profile-userpic">
+							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:35%;height:25%;">      
+							                            </div>
+														<!-- FINAL SIDEBAR USERPIC -->
+														<!-- SIDEBAR USER TITLE -->
+														<div class="profile-usertitle">
+															<div class="profile-usertitle-name">
+															   Otorgar ROL #2 
+															</div>
+														</div>
+														<!-- FINAL SIDEBAR USER TITLE -->
+														<div class="radio-list" align="center">
+															<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+														</div>
+													</div>
+													<div class="portlet light profile-sidebar-portlet col-md-3">
+														<!-- SIDEBAR USERPIC -->
+														<div class="profile-userpic">
+							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:35%;height:25%;">      
+							                            </div>
+														<!-- FINAL SIDEBAR USERPIC -->
+														<!-- SIDEBAR USER TITLE -->
+														<div class="profile-usertitle">
+															<div class="profile-usertitle-name">
+															   Otorgar ROL #3
+															</div>
+														</div>
+														<!-- FINAL SIDEBAR USER TITLE -->
+														<div class="radio-list" align="center">
+															<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+														</div>
+													</div>
+													<div class="portlet light profile-sidebar-portlet col-md-3">
+														<!-- SIDEBAR USERPIC -->
+														<div class="profile-userpic">
+							                                    <img src="<?php echo $route; ?>images/dashboard/avatar.png" class="img-responsive" alt="" style="width:35%;height:25%;">      
+							                            </div>
+														<!-- FINAL SIDEBAR USERPIC -->
+														<!-- SIDEBAR USER TITLE -->
+														<div class="profile-usertitle">
+															<div class="profile-usertitle-name">
+															   Otorgar ROL #4 
+															</div>
+														</div>
+														<!-- FINAL SIDEBAR USER TITLE -->
+														<div class="radio-list" align="center">
+															<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+														</div><br><br>
+														<div class="form-actions" align="right">
+																<button type="button" class="btn default">Cancelar</button>
+																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
+														</div>
+													</div>
+
 												</form>
 												<!--FINAL FORMULARIO ROLES-->
 
