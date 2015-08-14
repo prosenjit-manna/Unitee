@@ -204,8 +204,18 @@
 																<div class="form-group col-md-10">
 																	<input name="txt_user" id="txt_user" type="text" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
 																</div>
-																<label class="control-label col-md-2">Autogenerar</label>
+																<label class="control-label col-md-2">Ultima Conexión</label>
 																<div class="form-group col-md-10">
+																	<input name="txt_user" id="txt_user" type="text" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
+																</div><br>
+																<label class="control-label col-md-4">Dar de Baja</label>
+																<div class="form-group col-md-8">
+																	<div class="radio-list">
+																		<input type="checkbox" name="txt_pass" id="txt_pass" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+																	</div>
+																</div>
+																<label class="control-label col-md-4">Autogenerar</label>
+																<div class="form-group col-md-8">
 																	<div class="radio-list">
 																		<input type="checkbox" name="txt_pass" id="txt_pass" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
 																	</div>
