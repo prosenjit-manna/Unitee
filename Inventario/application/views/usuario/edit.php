@@ -70,14 +70,20 @@
 							</div>
 							<ul class="nav nav-tabs">
 								<li>
-								<select class="btn btn-default dropdown-toggle input-circle">
+                                                                    <select onchange="c(this.value);" class="btn btn-default dropdown-toggle input-circle">
 									<option value="-1" selected="selected">Seleccione el Usuario</option>
 									<?php 
                                                                             
                                                                             $class = &get_instance();
                                                                             $class->load->model("user/user_edit");
-                                                                            $result = $class->user_edit->GetUsersInfo();
-                                                                            
+                                                                            $result = $class->user_edit->GetUsers();
+                                                                            ob_start();
+                                                                            if(count($result) >= 1){
+                                                                                foreach($result as $user){
+                                                                                    echo "<option value='" . $user['id_login'] . "' >" . $user['user'] . "</option>";
+                                                                                }
+                                                                            }
+                                                                            ob_end_flush();
                                                                         ?>
 								</select>
 								</li>
@@ -92,16 +98,9 @@
 							</ul>
 						</div>
 						<!-- FINAL PORTLET TABS-->
-						<div class="alert alert-block alert-success fade in">
-							<p>
-								<b>Guuardado!</b>      Roles Guardados con Exito
-							</p>
-						</div>
-						<div class="alert alert-block alert-danger fade in">
-							<p>
-								<b>Guuardado!</b>      Roles Guardados con Exito
-							</p>
-						</div>
+                                                <div id="messages">
+                                                    
+                                                </div>
 						
 						<!-- INICIO PORTLET NODY-->
 						<div class="portlet-body">
@@ -206,12 +205,12 @@
 																</div>
 																<label class="control-label col-md-2">Ultima Conexión</label>
 																<div class="form-group col-md-10">
-																	<input name="txt_user" id="txt_user" type="text" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
+																	<input name="txt_conexion" id="txt_conexion" type="text" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
 																</div><br>
 																<label class="control-label col-md-4">Dar de Baja</label>
 																<div class="form-group col-md-8">
 																	<div class="radio-list">
-																		<input type="checkbox" name="txt_pass" id="txt_pass" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+																		<input type="checkbox" name="txt_baja" id="txt_baja" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
 																	</div>
 																</div>
 																<label class="control-label col-md-4">Autogenerar</label>
@@ -261,6 +260,8 @@
         
         <script>
             
+            var $user = null;
+            
             var i = function(){
                 
                 var rol = "<?php echo $rol; ?>";
@@ -281,6 +282,35 @@
             
             var c = function(val){
                if(val === "undefined" || val == null){ return; }
+               
+                   var tasking = new jtask();
+                   tasking.url = "<?php echo site_url("/TheUser/GetUserInfo/" ); ?>";
+                   tasking.data = { "data" : val }; 
+                   tasking.beforesend = true;
+                   tasking.config_before(function(){
+                       $("#messages").html(
+                               '<div class="alert alert-block alert-success fade in">' +
+                               '<p><b>Cargando ...</b>   Por favor espere.</p>' +
+                               '</div>'
+                        );
+                   });
+                   tasking.success_callback(function(s){
+                      $("#messages").html("");
+                      $user  = JSON.parse(s);
+                     $.map($user, function(u){
+                          $("#txt_nombres").val(u.nombres);
+                          $("#txt_apellidos").val(u.apellidos);
+                          $("#txt_email").val(u.email);
+                          $("#txt_user").val(u.user);
+                          $("#txt_conexion").val(u.last_date);
+                          var status = u.status;
+                          if(status == 1)
+                               $("#txt_baja").prop("checked" , "checked");
+                          else
+                               $("#txt_baja").prop("checked" , "checked");
+                      });
+                   });
+                   tasking.do_task();
                
             };
             

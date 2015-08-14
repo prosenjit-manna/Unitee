@@ -103,11 +103,20 @@ class User_Auth extends CI_Model {
         
         if(isset($this->session->user))
         {
+            
             $this->session->unset_userdata('user');
         }
         
         $this->session->user = $request;
-                
+         
+        date_default_timezone_set("America/El_Salvador");
+        
+        $date   = new DateTime("now");
+        $current_d  = $date->format("Y-m-d H:m:s");
+        $this->db->update("login" ,
+                    array("last_date" => $current_d ) ,
+                    "id_login = " . $request['id_login']
+        );
         
         return TRUE;
 

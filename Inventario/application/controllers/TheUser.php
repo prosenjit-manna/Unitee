@@ -14,6 +14,19 @@ class TheUser extends CI_Controller {
         parent::__construct();
         $this->load->library("base_url");
     }
+    
+    public function index(){ echo "Un pajarito se perdio";}
+    
+    public function GetUserInfo($i = NULL){
+        $id = isset($_REQUEST['data']) ? $_REQUEST['data'] : $i;
+        $this->load->model("user/user_edit");
+        $result = $this->user_edit->GetUsersInfo($id);
+        if($i == NULL){
+            echo json_encode($result);
+        }else{
+             return $result;
+        }
+    }
 
     public function Add(){
         

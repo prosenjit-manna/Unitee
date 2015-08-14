@@ -21,6 +21,7 @@ class User_edit extends CI_Model implements PInterface{
 
     public function __construct() {
         parent::__construct();
+        $this->load->database();
         $this->load->library("base_url");
         $this->route = $this->base_url->GetBaseUrl();
     }
@@ -77,8 +78,32 @@ class User_edit extends CI_Model implements PInterface{
         
     }
     
-    public function GetUsersInfo(){
-        $this->query = "SELECT login.user , login.password , login.status , ";
+    public function GetUsersInfo($id){
+        $this->query = "SELECT"
+                . " login.user ,"
+                . " login.status , "
+                . " login.password_state,"
+                . " login.last_date,"
+                . " user.nombres ,"
+                . " user.apellidos ,"
+                . " user.email ,"
+                . " user.id_user,"
+                . " user.id_rol,"
+                . " user.id_login "
+                . " FROM login "
+                . " LEFT JOIN user ON user.id_login=login.id_login "
+                . " WHERE login.id_login LIKE ?";
+        return $this->db
+                ->query($this->query , array($id))
+                ->result_array();
+        
+    }
+    
+    public function GetUsers(){
+        $this->query = "SELECT login.id_login ,  login.user FROM login ";
+        return $this->db
+                ->query($this->query)
+                ->result_array(); 
     }
 
 
