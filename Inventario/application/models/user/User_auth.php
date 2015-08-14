@@ -67,6 +67,7 @@ class User_Auth extends CI_Model {
                      . ", login.password as 'password' "
                      . ", login.status as 'status' "
                      . ", login.last_date as 'last_date' "
+                     . ", login.password_state as 'p_state'"
                      . ", roles.nombre as 'rol_name' "
                      . ", roles.nivel as 'rol_nivel'  "
                      . ", roles.parent as 'parent'"
@@ -113,6 +114,5 @@ class User_Auth extends CI_Model {
        
     }
     
-    
-    
+   
 }

@@ -71,11 +71,14 @@
 							<ul class="nav nav-tabs">
 								<li>
 								<select class="btn btn-default dropdown-toggle input-circle">
-									<option value="square" selected="selected">Seleccione el Usuario</option>
-									<option value="rounded">Usuario 1</option>
-									<option value="rounded">Usuario 2</option>
-									<option value="rounded">Usuario 3</option>
-									<option value="rounded">Usuario 4</option>
+									<option value="-1" selected="selected">Seleccione el Usuario</option>
+									<?php 
+                                                                            
+                                                                            $class = &get_instance();
+                                                                            $class->load->model("user/user_edit");
+                                                                            $result = $class->user_edit->GetUsersInfo();
+                                                                            
+                                                                        ?>
 								</select>
 								</li>
                                                                 <li id="user_" name="user_" class="active">
@@ -184,33 +187,33 @@
 															<div class="col-md-6">
 															   <label class="control-label col-md-2">Nombres</label>
 																<div class="form-group col-md-10">
-																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Nombres" required>
+                                                                                                                                    <input type="text" name="txt_nombres" id="txt_nombres" class="form-control input-circle" placeholder="Nombres" required>
 																</div>
 																<label class="control-label col-md-2">Apellidos</label>
 																<div class="form-group col-md-10">
-																	<input type="text" id="firstName" class="form-control input-circle" placeholder="Apellidos" required>
+																	<input name="txt_apellidos" id="txt_apellidos" type="text"  class="form-control input-circle" placeholder="Apellidos" required>
 																</div>
 																<label class="control-label col-md-2">Correo</label>
 																<div class="form-group col-md-10">
-																		<input type="email" class="form-control input-circle" placeholder="Email Address" required>
+																	<input name="txt_email" id="txt_email" type="email" class="form-control input-circle" placeholder="Email Address" required>
 																</div>
 															</div>
 															<!--/span-->
 															<div class="col-md-6">
 																<label class="control-label col-md-2">Usuario</label>
 																<div class="form-group col-md-10">
-																	<input type="text" id="firstName" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
+																	<input name="txt_user" id="txt_user" type="text" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
 																</div>
 																<label class="control-label col-md-2">Autogenerar</label>
 																<div class="form-group col-md-10">
 																	<div class="radio-list">
-																		<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+																		<input type="checkbox" name="txt_pass" id="txt_pass" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
 																	</div>
 																</div>
 															</div>
 															<br><br><br><br><br>
 															<div class="form-actions" align="right">
-																<button type="button" class="btn default">Cancelar</button>
+                                                                                                                            <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
 																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
 															</div>
 													</form>
@@ -263,20 +266,14 @@
                 }
             };
             
+            
+           
+            
             var c = function(val){
                if(val === "undefined" || val == null){ return; }
                
             };
             
             
-            var r = function(){
-                var t = new jtask();
-                t.url = "<?php echo site_url("/User/GetRoles/"); ?>";
-                t.success_callback(function(data){
-                    var d   = $("#select_roles");
-                    d.html(data);
-                });
-                t.do_task();
-            };
             
         </script>

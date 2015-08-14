@@ -76,6 +76,10 @@ class User_edit extends CI_Model implements PInterface{
     public function _unistall() {
         
     }
+    
+    public function GetUsersInfo(){
+        $this->query = "SELECT login.user , login.password , login.status , ";
+    }
 
 
 }

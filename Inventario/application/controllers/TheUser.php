@@ -68,6 +68,10 @@ class TheUser extends CI_Controller {
             redirect("/0/user=user_new?e=1");
             return;
         }else{
+            
+             
+             
+            
              $p_ok = $this->user_new->CreatePerfil(array(
                     "id_login"                  => $id,
                     "nombres"                   => $nombre,

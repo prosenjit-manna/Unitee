@@ -43,7 +43,7 @@ class User_new extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-        
+        return array("load_users();");
     }
 
     public function _rols() {

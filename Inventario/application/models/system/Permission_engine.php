@@ -34,6 +34,10 @@ class Permission_engine extends CI_Model {
                 BREAK;
         }
         
+        if(count($data) == 0){
+            return null;
+        }
+        
         switch ($format){
             case INT:
                 $data = explode(",", $data[0]->roles);

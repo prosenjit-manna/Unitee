@@ -59,6 +59,7 @@ class User_Profile extends CI_Model implements PInterface {
         return NULL;
     }
     
+    
     public function change_password($new_password){
         $this->db->where("id_login" , $this->session->user['id_login']);
         return $this->db->update("login" , array(

@@ -399,12 +399,19 @@ class Dashboard extends CI_Controller {
     
     
     public function test(){
-        $this->load->model("system/permission_engine");
-        $data = $this->permission_engine->_get("pagina 1" , NAME , INT);
         
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
+        ini_set("SMTP","marmot.arvixe.com");
+        ini_set("smtp_port","465");
+        
+        $this->load->library("email");
+        $this->email->from('rmarroquin@lieison.com', 'Unitee | Mail');
+        $this->email->to('rmarroquin@lieison.com');
+
+        $this->email->subject('Contraseña Unitee | Inventario');
+        $this->email->message('Tu contraseña es : ');
+
+        print_r($this->email->send());
+       
     }
     
 }
