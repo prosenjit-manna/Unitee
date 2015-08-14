@@ -25,7 +25,9 @@ class User_edit extends CI_Model implements PInterface{
 
     public function _css() {
          return array(
-           $this->route . "assert/plugins/bootstrap-toastr/toastr.min.css"
+           $this->route . "assert/plugins/bootstrap-toastr/toastr.min.css",
+            $this->route . "assert/perfil/css/profile.css",
+           $this->route . "assert/perfil/css/profile-old.css"
        );
     }
 
