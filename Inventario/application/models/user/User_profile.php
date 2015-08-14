@@ -84,6 +84,15 @@ class User_Profile extends CI_Model implements PInterface {
        if(sizeof($query) >= 1){ return TRUE; }
        else { return FALSE; }
     }
+    
+    public function get_users(){
+        $query = $this->db
+                ->select("user")
+                ->from("login")
+                ->get()
+                ->result_array();
+        return $query;
+    }
 
     public function _unistall() {
         

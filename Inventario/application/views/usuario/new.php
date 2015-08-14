@@ -118,6 +118,10 @@
 	<!-- FINAL CONTENIDO -->
         
  <script type="text/javascript" >
+     
+    var $users = null;
+     
+     
     function check_(){
     
         var $p1         = document.getElementById("txt_password").value;
@@ -138,21 +142,39 @@
     };
     
     var check_user = function(value){
-         var tasking = new jtask();
-         tasking.url = "<?php echo site_url("/TheUser/exists/" ); ?>";
-         tasking.data = { "name" : value }; 
-         tasking.success_callback(function(s){
-           
-              var change      = $("#change_");
-             if(s==1 || s== true){
-                  document.getElementById("send").disabled = true;
-                   change.css("display" , "none");
-             }
-             else{
-                  document.getElementById("send").disabled = false;
-                   change.css("display" , "block");
-             }
+         var change      = $("#change_");
+         document.getElementById("send").disabled = false;
+         change.css("display" , "block");
+         
+         if($users === null || $users == null){
+              var tasking = new jtask();
+              tasking.url = "<?php echo site_url("/User/users/" ); ?>";
+              tasking.data = { "js" : true }; 
+              tasking.success_callback(function(s){
+              $users             = JSON.parse(s);
+              var change         = $("#change_");
+              $.map($users , function(k){
+                  if(k.user == value){
+                    document.getElementById("send").disabled = true;
+                    change.css("display" , "none");
+                  }
+             });
          });
-         tasking.do_task();
+            tasking.do_task();
+        }else{
+             console.log("proceso .. $user ejecutando");
+             $.map($users , function(k){
+                  if(value == "" || value === "" ){
+                     document.getElementById("send").disabled = true;
+                     change.css("display" , "none");
+                     return;
+                  }
+                  if(k.user == value){
+                    document.getElementById("send").disabled = true;
+                    change.css("display" , "none");
+                  }
+             });
+        }
+        
     };
  </script>

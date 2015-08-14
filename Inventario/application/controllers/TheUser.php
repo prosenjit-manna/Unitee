@@ -14,15 +14,7 @@ class TheUser extends CI_Controller {
         parent::__construct();
         $this->load->library("base_url");
     }
-    
-    public function exists(){
-        $this->output->set_header("Access-Control-Allow-Origin: *");
-        $this->load->model("user/user_profile");
-        echo  $this->user_profile->exist_user($_REQUEST['name']);
- 
-    }
-    
-    
+
     public function Add(){
         
         if(!isset($_REQUEST['txt_nombre'])){

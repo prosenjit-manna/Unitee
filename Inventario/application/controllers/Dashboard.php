@@ -397,4 +397,14 @@ class Dashboard extends CI_Controller {
         return  "</div>";
     }
     
+    
+    public function test(){
+        $this->load->model("system/permission_engine");
+        $data = $this->permission_engine->_get("pagina 1" , NAME , INT);
+        
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+    }
+    
 }

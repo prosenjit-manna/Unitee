@@ -16,6 +16,8 @@ get_instance()->load->interfaces("Interface");
 class User_edit extends CI_Model implements PInterface{
 
     var $route = NULL;
+    
+    protected  $model = "user_edit";
 
     public function __construct() {
         parent::__construct();
@@ -51,7 +53,13 @@ class User_edit extends CI_Model implements PInterface{
     }
 
     public function _rols() {
-         return "administrador";
+        $this->load->model("system/permission_engine");
+        $data = $this->permission_engine->_get(
+                $this->model, 
+                MODEL , 
+                INT
+         );
+        return $data;
     }
 
     public function _title() {

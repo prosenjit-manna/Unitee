@@ -48,16 +48,14 @@ class Sidebar_engine extends CI_Model {
         }
         
         
-        $current_rol            = $roles['nivel'];
-        $sub_rol                = $roles['sub_nivel'];
-        
-        if($sub_rol != 0 || !empty($sub_rol)){
-            
-            $current_rol = array(
-                0   => $current_rol ,
-                1   => $sub_rol
-            );
-        }
+
+        $this->load->model("system/permission_engine");
+        $current_rol            = $this->permission_engine
+                                    ->GetDataRol(
+                                            $roles['nivel'] ,
+                                            $roles['sub_nivel'] 
+                                    );
+        unset($this->permission_engine);
  
         foreach($sections as $sec)
         {

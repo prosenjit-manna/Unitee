@@ -16,6 +16,9 @@ get_instance()->load->interfaces("Interface");
 
 class User_new extends CI_Model implements PInterface{
     
+    
+    protected $model   = "user_new";
+
 
     public function __construct() {
         parent::__construct();
@@ -23,7 +26,7 @@ class User_new extends CI_Model implements PInterface{
     }
     
     public function _css() {
-        
+        //ACA IRAN TODOS LOS CSS 
     }
 
     public function _init() {
@@ -32,11 +35,11 @@ class User_new extends CI_Model implements PInterface{
     }
 
     public function _install() {
-        
+        //INSTALACION DEL MODULO 
     }
 
     public function _js() {
-        
+        //ACA IRAN TODOS LOS JAVASCRIPT
     }
 
     public function _jsLoader() {
@@ -44,10 +47,14 @@ class User_new extends CI_Model implements PInterface{
     }
 
     public function _rols() {
-        
         $this->load->model("system/permission_engine");
-        $this->permission_engine->GetTheName("rolo" );
-        //return "administrador";
+        $data = $this->permission_engine->_get(
+                $this->model, 
+                MODEL , 
+                INT
+         );
+        
+        return $data;
     }
 
     public function _title() {
@@ -56,12 +63,12 @@ class User_new extends CI_Model implements PInterface{
     }
 
     public function _update() {
-        
+        //ACTUALIZACION DEL MODULO UPDATE
     }
 
 
     public function _unistall() {
-        
+        //DESISTALACION 
     }
     
     public function CreateUser(array $data){

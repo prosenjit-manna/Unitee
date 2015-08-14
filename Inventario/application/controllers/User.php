@@ -131,6 +131,24 @@ class User extends CI_Controller {
         
     }
     
+    
+    public function exists($name = NULL){
+        $this->load->model("user/user_profile");
+        if($name != NULL){
+            return $this->user_profile->exist_user($name);
+        }else{
+             echo $this->user_profile->exist_user($_REQUEST['name']);
+        }
+    }
+    
+    public function users(){
+        $this->load->model("user/user_profile");
+        $u      = $this->user_profile->get_users();
+        $v      = isset($_REQUEST['js']) ? TRUE: FALSE;
+        if($v) echo json_encode ($u);
+        else return $v;
+    }
+    
 
     
 }
