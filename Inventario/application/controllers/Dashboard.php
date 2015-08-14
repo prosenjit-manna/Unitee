@@ -255,7 +255,10 @@ class Dashboard extends CI_Controller {
             
             //CONTROL DE PERMISOS OMG !!!
             if(!$priv_flag){
-                $this->load->view("errors/html/error_permissions");
+                $this->load->view("dashboard/header" , $vars );
+                $this->load->view("dashboard/left_sidebar" , $vars);
+                $this->load->view("errors/html/error_permissions", $vars);
+                $this->load->view("dashboard/footer" , $vars);
                 return;
             }
             

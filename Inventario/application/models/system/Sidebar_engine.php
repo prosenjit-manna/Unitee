@@ -51,7 +51,8 @@ class Sidebar_engine extends CI_Model {
         $current_rol            = $roles['nivel'];
         $sub_rol                = $roles['sub_nivel'];
         
-        if($sub_rol != 0){
+        if($sub_rol != 0 || !empty($sub_rol)){
+            
             $current_rol = array(
                 0   => $current_rol ,
                 1   => $sub_rol

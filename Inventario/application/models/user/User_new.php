@@ -45,6 +45,9 @@ class User_new extends CI_Model implements PInterface{
 
     public function _rols() {
         
+        $this->load->model("system/permission_engine");
+        $this->permission_engine->GetTheName("rolo" );
+        //return "administrador";
     }
 
     public function _title() {
