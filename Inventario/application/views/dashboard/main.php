@@ -2,11 +2,9 @@
 <!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			<div class="alert alert-block alert-warning fade in">
-				<p>
-					<b>¡Alerta!</b>Tienes que cambiar tu contraseña
-				</p>
-			</div>
+                        <div id="peticiones">
+                             <!-- Peticiones del sistema -->
+                        </div>
 			<h3 class="page-title">
 			Unitee - Dashboard <small></small>
 			</h3>
@@ -32,4 +30,22 @@
 	</div>
 
 <!-- END CONTENT -->
+<script>
+
+    var pass_request = function(){
+        
+        var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/User/password/verify/"); ?>";
+        tasking.success_callback(function(request){
+            var t = $.trim(request);
+            var $peticiones = $("#peticiones");
+            if(t==0 || t== '0'){
+               $peticiones.append('<div class="alert alert-block alert-warning fade in"><p><b>¡Alerta!</b>Tienes que cambiar tu contraseña</p></div>');
+            }
+        });
+        tasking.do_task();
+    };
+    
+    
+</script>
 

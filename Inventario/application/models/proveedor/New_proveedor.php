@@ -17,7 +17,7 @@ get_instance()->load->interfaces("Interface");
 class New_proveedor extends CI_Model implements PInterface{
     
     
-    protected $model   = "proveedor_new";
+    protected $model   = "new_proveedor";
 
 
     public function __construct() {

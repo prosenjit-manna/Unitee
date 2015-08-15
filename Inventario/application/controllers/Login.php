@@ -96,6 +96,12 @@ class Login extends CI_Controller {
         $request =  $this->user_auth
                          ->Auth($user , $password , $type);
         
+        //verificamos si el usuario actual esta activado o no !!!
+        if(is_array($request)){
+            $request['route'] = $this->route;
+            $this->load->view("login/desactivate" , $request);
+            return;
+        }
         
         //si el request existe entonces cargamos el dashboard
         if($request){

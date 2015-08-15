@@ -99,8 +99,34 @@
 						</div>
 						<!-- FINAL PORTLET TABS-->
                                                 <div id="messages">
-                                                    
+                                                   <!-- DIV PARA MENSAJES POR JAVASCRIPT ...-->
                                                 </div>
+                                                
+                                                 <?php 
+                                                       
+                                                        $request = isset($_REQUEST['e']) ? $_REQUEST['e'] : NULL;
+                                                        if($request != null){
+                                                           
+                                                            switch ($request){
+                                                                case 0:
+                                                                    echo '<div class="alert alert-block alert-success fade in"><p>
+                                                                        <b>Cambios Realizados !</b>  El usuario se ha editado con exito.
+                                                                        </p></div>';
+                                                                    break;
+                                                                case 1:
+                                                                    echo '<div class="alert alert-block alert-success fade in"><p>
+                                                                        <b>Cambios Realizados !</b> Privilegios alterados con exito.
+                                                                        </p></div>';
+                                                                    break;
+                                                                case 3:
+                                                                    echo '<div class="alert alert-block alert-danger fade in"><p>
+                                                                        <b>Algo Salio mal !</b> Intente denuevo :(
+                                                                        </p></div>';
+                                                                    break;
+                                                            }
+                                                        }
+                       
+                                                    ?>
 						
 						<!-- INICIO PORTLET NODY-->
 						<div class="portlet-body">
@@ -182,7 +208,7 @@
 									<!-- INICIO DEL DIV DEL SCROLLER-->
 									<div class="scroller" style="height: 250px;">
 													<!--INICIO FORMULARIO INFO USUARIO-->
-													<form action="#" class="horizontal-form">
+													<?php echo form_open("/TheUser/Edit" , array("method" => "post")); ?>
 															<div class="col-md-6">
 															   <label class="control-label col-md-2">Nombres</label>
 																<div class="form-group col-md-10">
@@ -199,6 +225,7 @@
 															</div>
 															<!--/span-->
 															<div class="col-md-6">
+                                                                                                                                <input type="hidden" value="" id="id_user" name="id_user" />
 																<label class="control-label col-md-2">Usuario</label>
 																<div class="form-group col-md-10">
 																	<input name="txt_user" id="txt_user" type="text" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
@@ -207,17 +234,18 @@
 																<div class="form-group col-md-10">
 																	<input name="txt_conexion" id="txt_conexion" type="text" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
 																</div><br>
-																<label class="control-label col-md-4">Dar de Baja</label>
+																<label id="lbl_baja" class="control-label col-md-4">Dar de Baja</label>
 																<div class="form-group col-md-8">
-																	<div class="radio-list">
-																		<input type="checkbox" name="txt_baja" id="txt_baja" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+                                                                                                                                    <div id=""  class="radio-list">
+                                                                                                                                        <input value="-1" type="checkbox" name="txt_baja" id="txt_baja" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
 																	</div>
 																</div>
 																<label class="control-label col-md-4">Autogenerar</label>
 																<div class="form-group col-md-8">
 																	<div class="radio-list">
-																		<input type="checkbox" name="txt_pass" id="txt_pass" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
+                                                                                                                                            <input type="checkbox" name="txt_pass" id="txt_pass" class="make-switch"  data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
 																	</div>
+                                                                                                                                   
 																</div>
 															</div>
 															<br><br><br><br><br>
@@ -225,7 +253,7 @@
                                                                                                                             <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
 																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
 															</div>
-													</form>
+													<?php echo form_close(); ?>
 													<!--FINAL FORMULARIO INFO USUARIO-->
 
 									</div>
@@ -277,7 +305,15 @@
                 }
             };
             
-            
+            var p   = function(){
+                var rol = "<?php echo $rol; ?>";
+                var id = "<?php echo $id; ?>";
+                if(!rol){
+                    if(c != null){
+                         c(id);
+                    }
+                }
+            };
            
             
             var c = function(val){
@@ -303,12 +339,18 @@
                           $("#txt_email").val(u.email);
                           $("#txt_user").val(u.user);
                           $("#txt_conexion").val(u.last_date);
+                          $("#id_user").val(u.id_login);
                           var status = u.status;
-                          if(status == 1)
-                               $("#txt_baja").prop("checked" , "checked");
-                          else
-                               $("#txt_baja").prop("checked" , "checked");
-                      });
+                          if(status == 1){
+                               $("#txt_baja").val("0");
+                               $("#lbl_baja").html("Desactivar");
+                          }else{
+                               $("#txt_baja").val("1");
+                               $("#lbl_baja").html("Activar");
+                          }
+                              
+
+                        });
                    });
                    tasking.do_task();
                

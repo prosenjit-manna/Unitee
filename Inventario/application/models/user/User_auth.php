@@ -100,6 +100,15 @@ class User_Auth extends CI_Model {
             }
         }
         
+        if($request['status'] == 0){
+            return array(
+                "status"    => 0,
+                "user"      => $request['user'],
+                "avatar"    => $request['avatar'],
+                "name"      => $request['name']
+            );
+        }
+        
         
         if(isset($this->session->user))
         {
@@ -108,6 +117,7 @@ class User_Auth extends CI_Model {
         }
         
         $this->session->user = $request;
+        
          
         date_default_timezone_set("America/El_Salvador");
         
@@ -123,5 +133,12 @@ class User_Auth extends CI_Model {
        
     }
     
+    
+    public function PasswordState(){
+        $r = $this->db->query("select password_state as "
+                . "'state' FROM login WHERE id_login LIKE " 
+                . $this->get_id)->result()[0];
+        return $r->state;
+    }
    
 }

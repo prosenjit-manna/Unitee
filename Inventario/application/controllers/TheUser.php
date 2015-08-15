@@ -13,6 +13,13 @@ class TheUser extends CI_Controller {
     public  function __construct() {
         parent::__construct();
         $this->load->library("base_url");
+        $this->load->library("session");
+        if(!is_array($this->session->user))
+        {
+            redirect("Login/");
+            return;
+        }
+        
     }
     
     public function index(){ echo "Un pajarito se perdio";}
@@ -92,6 +99,9 @@ class TheUser extends CI_Controller {
                     "email"                     => $correo
              ));
              if($p_ok){
+                   $this->load->helper("setup");
+                   $this->load->library("email");
+                   //PROGRAMACION PENDIENTE
                    redirect("/0/user=user_edit?id=" . $id . "&rol=");
                    return;
              }else{
@@ -100,6 +110,79 @@ class TheUser extends CI_Controller {
              }
         }
   
+    }
+    
+    public function Edit(){
+        
+        
+        
+         if(!isset($_REQUEST['txt_nombres'])){
+            redirect("/0/");
+            return;
+        }
+        
+        $nombre         = $_REQUEST['txt_nombres'];
+        $apellido       = $_REQUEST['txt_apellidos'];
+        $correo         = $_REQUEST['txt_email'];
+        
+        $pass           = isset($_REQUEST['txt_pass']) ? $_REQUEST['txt_pass'] : NULL;
+        $status         = isset($_REQUEST['txt_baja']) ? $_REQUEST['txt_baja'] : NULL;
+        
+        $id             = $_REQUEST['id_user'];
+        
+        echo $id;
+        
+        $data_login     = array();
+        $data_user      = array(
+            "nombres"           => $nombre,
+            "apellidos"         => $apellido,
+            "email"             => $correo
+        );
+        
+        if($status != NULL){
+            $data_login["status"] = $status; 
+        }
+        
+        if($pass != NULL){
+             $this->load->helper("string");
+             $this->load->library("encryption");
+             $this->load->helper("setup");
+             
+             $random  = random_string();
+             
+             $this->encryption->initialize(
+              array(
+                        'cipher'    => 'aes-256',
+                        'mode'      => 'cbc',
+                        'key'       => get_key()
+               ));
+             
+             
+              
+             $data_login['password']            = $this->encryption->encrypt($random);
+             $data_login['password_state']      = 0;
+             
+        }
+        
+        $this->load->model("user/user_edit");
+       
+        
+        if(count($data_login) >= 1){
+            $r  = $this->user_edit->updateUsers("login" , $data_login , "id_login=$id");
+            if(!$r){
+                redirect("/0/user=user_edit?e=3&id=" . $id );
+                return;
+            }
+        }
+        
+        $e  = $this->user_edit->updateUsers("user" , $data_user, "id_login=$id");
+        if($e){
+             redirect("/0/user=user_edit?e=0&id=" . $id );
+             return;
+        }else{
+             redirect("/0/user=user_edit?e=3&id=" . $id );
+             return;
+        }
     }
     
 }

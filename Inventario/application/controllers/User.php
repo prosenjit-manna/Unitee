@@ -15,9 +15,10 @@ class User extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
-        $this->load->library("session");
+
         $this->load->library("base_url");
         $this->route = $this->base_url->GetBaseUrl();
+        $this->load->library("session");
         if(!is_array($this->session->user))
         {
             redirect("Login/");
@@ -29,7 +30,7 @@ class User extends CI_Controller {
     /**
      * @param string $type  (change , verify , )
      */
-    public function Password($type , $redirect){
+    public function Password($type , $redirect = NULL){
         
        
         $this->load->library("encryption");
@@ -66,6 +67,9 @@ class User extends CI_Controller {
                 }
                 break;
             case "verify":
+                $this->load->model("user/user_auth");
+                $state = $this->user_auth->PasswordState();
+                echo $state;
                 break;
         }
     }
@@ -130,7 +134,6 @@ class User extends CI_Controller {
         }
         
     }
-    
     
     public function exists($name = NULL){
         $this->load->model("user/user_profile");

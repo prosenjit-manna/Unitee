@@ -52,7 +52,7 @@ class User_edit extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-          return array( "i();" , "c();" , "");
+          return array( "i();" , "c();" , "p();");
     }
 
     public function _rols() {
@@ -104,6 +104,10 @@ class User_edit extends CI_Model implements PInterface{
         return $this->db
                 ->query($this->query)
                 ->result_array(); 
+    }
+    
+    public function updateUsers($table , array $values , $condition){
+        return $this->db->update($table , $values , $condition);
     }
 
 

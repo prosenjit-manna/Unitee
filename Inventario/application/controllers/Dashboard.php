@@ -131,8 +131,8 @@ class Dashboard extends CI_Controller {
         $vars =  array(   
                "route"                  => $this->base_url->GetBaseUrl(),
                "user_data"              => $this->user_p,
-               "open_container"         => $this->OpenContainer(),
-               "close_container"        => $this->CloseContainer()
+               "open_container"         => '<div class="page-container">',
+               "close_container"        => '</div>'
         );
       
         /**
@@ -147,6 +147,11 @@ class Dashboard extends CI_Controller {
             
              $this->load->view("dashboard/header" , $vars );
              $this->load->view("dashboard/left_sidebar" , $vars);
+             
+             $vars['js_loader'] = array(
+                 "pass_request();"
+             );
+             
              $this->load->view("dashboard/main" , $vars);
              $this->load->view("dashboard/footer" , $vars);
         }
@@ -388,29 +393,36 @@ class Dashboard extends CI_Controller {
         print_r($this->session->user);
         echo "</pre>";
     }
-    
-    private function OpenContainer(){
-        return '<div class="page-container">';
-    }
-    
-    private function CloseContainer(){
-        return  "</div>";
-    }
-    
-    
+
     public function test(){
         
-        ini_set("SMTP","marmot.arvixe.com");
-        ini_set("smtp_port","465");
+        //ini_set("SMTP","marmot.arvixe.com");
+        //ini_set("smtp_port","465");
         
         $this->load->library("email");
-        $this->email->from('rmarroquin@lieison.com', 'Unitee | Mail');
+        
+         $config['protocol']='smtp';
+         $config['smtp_host']='ssl://marmot.arvixe.com';
+         $config['smtp_port']='465';
+         $config['smtp_timeout']='10';
+         $config['smtp_user']='test@soft.lieison.com';
+         $config['smtp_pass']='Support2015';
+         $config['charset']='utf-8';
+         $config['newline']="\r\n";
+         $config['wordwrap'] = TRUE;
+         $config['mailtype'] = 'html';
+            
+        $this->email->initialize($config);
+        
+        $this->email->from('rolignu90@gmail.com', 'Unitee | Mail');
         $this->email->to('rmarroquin@lieison.com');
 
         $this->email->subject('Contraseña Unitee | Inventario');
         $this->email->message('Tu contraseña es : ');
 
         print_r($this->email->send());
+        
+        print_r( $this->email->print_debugger(array('headers')));
        
     }
     
