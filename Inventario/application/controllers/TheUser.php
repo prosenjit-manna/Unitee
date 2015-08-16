@@ -56,6 +56,7 @@ class TheUser extends CI_Controller {
             $pass = random_string();
         }
         
+        $the_pass = $pass;
         
         $this->load->library('encryption');
         $this->load->helper("setup");
@@ -99,10 +100,30 @@ class TheUser extends CI_Controller {
                     "email"                     => $correo
              ));
              if($p_ok){
-                   $this->load->helper("setup");
-                   $this->load->library("email");
-                   //PROGRAMACION PENDIENTE
-                   redirect("/0/user=user_edit?id=" . $id . "&rol=");
+                    $this->load->helper("setup");
+                    $this->load->library("email");
+                   
+                    if(email_config() != NULL){
+                        $this->email->initialize(email_config());
+                    }
+        
+                    $from_      = email_from();
+                    
+                    $this->email->from($from_['from'], $from_['name']);
+                    $this->email->to($correo);
+
+                    $this->email->subject('Contraseña Unitee | Inventario');
+                    
+                    $message_ = '<br> Tu Usuario es : ' 
+                            . $user . '<br>' 
+                            . 'Tu contraseña es : ' 
+                            . $the_pass;
+                    
+                    $this->email->message($message_);
+
+                    $this->email->send();
+                    
+                    redirect("/0/user=user_edit?id=" . $id . "&rol=");
                    return;
              }else{
                    redirect("/0/user=user_new?e=1");
@@ -162,6 +183,29 @@ class TheUser extends CI_Controller {
              $data_login['password']            = $this->encryption->encrypt($random);
              $data_login['password_state']      = 0;
              
+             
+                         
+                    $this->load->library("email");
+                   
+                    if(email_config() != NULL){
+                        $this->email->initialize(email_config());
+                    }
+        
+                    $from_      = email_from();
+                    
+                    $this->email->from($from_['from'], $from_['name']);
+                    $this->email->to($correo);
+
+                    $this->email->subject('Contraseña Unitee | Inventario');
+                    
+                    $message_ =
+                             'Tu nueva contraseña es : ' 
+                            . $random;
+                    
+                    $this->email->message($message_);
+
+                    $this->email->send();
+             
         }
         
         $this->load->model("user/user_edit");
@@ -169,6 +213,8 @@ class TheUser extends CI_Controller {
         
         if(count($data_login) >= 1){
             $r  = $this->user_edit->updateUsers("login" , $data_login , "id_login=$id");
+
+            
             if(!$r){
                 redirect("/0/user=user_edit?e=3&id=" . $id );
                 return;

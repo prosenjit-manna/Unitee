@@ -43,3 +43,12 @@ if(!function_exists("email_config")){
             
     }
 }
+
+if(!function_exists("email_from")){
+    function email_from(){
+        return array(
+            "from"  => "",
+            "name"  => ""
+        );
+    }
+}

@@ -82,11 +82,11 @@
                                                                                                                 </div>
 														<label class="control-label col-md-2">Contraseña</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input required=""  type="password" id="txt_password" name="txt_password" class="form-control input-circle" placeholder="Contraseña">
+                                                                                                                    <input   type="password" id="txt_password" name="txt_password" class="form-control input-circle" placeholder="Contraseña">
 														</div>
 														<label class="control-label col-md-2">Repetir</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input required="" onkeyup="check_();" type="password" id="txt_repeat_pass" name="txt_repeat_pass" class="form-control input-circle" placeholder="Repetir Contraseña">
+                                                                                                                    <input  onkeyup="check_();" type="password" id="txt_repeat_pass" name="txt_repeat_pass" class="form-control input-circle" placeholder="Repetir Contraseña">
 														</div>
 														<label class="control-label col-md-2">Autogenerar</label>
 														<div class="form-group col-md-10">
