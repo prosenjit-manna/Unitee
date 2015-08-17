@@ -1,5 +1,10 @@
 <?php
 
+
+/**
+ * Configuracion de la llave AES-256 
+ * para encriptacion de las contraseñas
+ * **/
 if(!function_exists("get_key")){
     function get_key()
     {
@@ -7,23 +12,12 @@ if(!function_exists("get_key")){
     }
 }
 
-if(!function_exists("check_model")){
-    function check_model($model){
-        if(file_exists(APPPATH . "models/$model" . ".php")){
-            return TRUE;
-        }else
-        {
-            return FALSE;
-        }
-    }
-}
 
-if(!function_exists("system_token")){
-    function system_token(){
-        return "=";
-    }
-}
-
+/**
+ * Region de configuracion de correo electronico
+ * : config
+ * : email from config
+ * **/
 
 if(!function_exists("email_config")){
     function email_config(){
@@ -47,8 +41,30 @@ if(!function_exists("email_config")){
 if(!function_exists("email_from")){
     function email_from(){
         return array(
-            "from"  => "",
-            "name"  => ""
+            "from"  => "rmarroquin@lieison.com",
+            "name"  => "Rolando Arriaza Marroquin"
         );
+    }
+}
+
+
+/**
+ * Varios
+ */
+
+if(!function_exists("check_model")){
+    function check_model($model){
+        if(file_exists(APPPATH . "models/$model" . ".php")){
+            return TRUE;
+        }else
+        {
+            return FALSE;
+        }
+    }
+}
+
+if(!function_exists("system_token")){
+    function system_token(){
+        return "=";
     }
 }

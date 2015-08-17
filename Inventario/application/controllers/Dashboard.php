@@ -396,33 +396,7 @@ class Dashboard extends CI_Controller {
 
     public function test(){
         
-        //ini_set("SMTP","marmot.arvixe.com");
-        //ini_set("smtp_port","465");
-        
-        $this->load->library("email");
-        
-         $config['protocol']='smtp';
-         $config['smtp_host']='ssl://marmot.arvixe.com';
-         $config['smtp_port']='465';
-         $config['smtp_timeout']='10';
-         $config['smtp_user']='test@soft.lieison.com';
-         $config['smtp_pass']='Support2015';
-         $config['charset']='utf-8';
-         $config['newline']="\r\n";
-         $config['wordwrap'] = TRUE;
-         $config['mailtype'] = 'html';
-            
-        $this->email->initialize($config);
-        
-        $this->email->from('rolignu90@gmail.com', 'Unitee | Mail');
-        $this->email->to('rmarroquin@lieison.com');
-
-        $this->email->subject('Contraseña Unitee | Inventario');
-        $this->email->message('Tu contraseña es : ');
-
-        print_r($this->email->send());
-        
-        print_r( $this->email->print_debugger(array('headers')));
+     
        
     }
     

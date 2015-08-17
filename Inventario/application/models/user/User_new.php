@@ -3,7 +3,7 @@
 /**
    @@author: Lieison S.A de C.V
    @@version: 1.2
- * @@update : lieison.com/unitee/update
+ * @@update : 
  * @@type: plugin
  * @@name: nuevo usuario
  * @@parent: user
