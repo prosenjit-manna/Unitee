@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42df3d73-e623-4205-aae7-4a2d1ce7bb83" name="Default" comment="Se creo Model User_Edit, se cambio el titulo de User_New y User_Edit">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Inventario/application/views/proveedor/proveedor_new.php" afterPath="$PROJECT_DIR$/Inventario/application/views/proveedor/proveedor_new.php" />
+    <list default="true" id="42df3d73-e623-4205-aae7-4a2d1ce7bb83" name="Default" comment="Formulario nuevo proveedor">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Unitee.iws" />
@@ -525,7 +524,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439843732421</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Formulario nuevo proveedor">
+      <created>1439846306532</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1439846306532</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -578,7 +583,8 @@
     <MESSAGE value="Ahora si furula" />
     <MESSAGE value="Perfil ahora tiene icon en lugar de fa fa" />
     <MESSAGE value="Se creo Model User_Edit, se cambio el titulo de User_New y User_Edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se creo Model User_Edit, se cambio el titulo de User_New y User_Edit" />
+    <MESSAGE value="Formulario nuevo proveedor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formulario nuevo proveedor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
