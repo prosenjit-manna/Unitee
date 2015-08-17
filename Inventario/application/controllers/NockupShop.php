@@ -6,7 +6,7 @@
  * @@type: plugin
  * @@name: Controlador de Shop unitee
  * @@description : controlador de la tienda unitee en web services con wp 
- * @@id : system
+ * @@id : _web_services_001
  */
 
 class NockupShop  extends CI_Controller{
