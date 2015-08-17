@@ -152,8 +152,7 @@
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 														<div class="radio-list" align="center">
-															<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-														</div>
+															<input type="radio" name="" value="" >														</div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -169,8 +168,7 @@
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 														<div class="radio-list" align="center">
-															<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-														</div>
+															<input type="radio" name="" value="" >														</div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -186,8 +184,7 @@
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 														<div class="radio-list" align="center">
-															<input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
-														</div><br><br>
+															<input type="radio" name="" value="" >														</div><br><br>
 														<div class="form-actions" align="right">
 																<button type="button" class="btn default">Cancelar</button>
 																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
