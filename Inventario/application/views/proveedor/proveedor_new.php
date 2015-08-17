@@ -85,7 +85,7 @@
 														</div>
                                                                                                                 <label class="control-label col-md-3">DirecciÃ³n 1</label>
 														<div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Nombre de la Direccin 1">
+                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
 														</div>
                                                                                                                 <label class="control-label col-md-3">DirecciÃ³n 2</label>
 														<div class="form-group col-md-9">
@@ -138,11 +138,11 @@
 													<!--/span-->
 												    </div>
                                                     <div class="col-md-12">
-                                                        <h3 lass="form-section">Descripción</h3><br>
+                                                        <h3 lass="form-section">Descripci&oacute;n</h3><br>
                                                     </div>
-                                                    <label class="control-label col-md-3">Descripción de la Empresa</label>
+                                                    <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                                                     <div class="form-group col-md-9">
-                                                     <textarea rows="4" cols="50" class="form-control input-circle">
+                                                     <textarea rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
                                                      </textarea>
                                                     </div>
 
