@@ -64,9 +64,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'lieison.com',
-	'username' => 'lieison_test',
-	'password' => 'Support2015',
+	'hostname' => 'jauzz.net',
+	'username' => 'lieison2014',
+	'password' => 'lieison2015',
 	'database' => 'lieison_unitee',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
