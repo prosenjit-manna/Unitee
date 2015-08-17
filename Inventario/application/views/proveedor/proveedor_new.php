@@ -171,7 +171,6 @@
             var load_paises = function(){
                 var tasking = new jtask();
                     tasking.url = "<?php echo site_url("/c/2" ); ?>";
-                    tasking.data = { "js" : true }; 
                     tasking.success_callback(function(data){
                           
                     });
