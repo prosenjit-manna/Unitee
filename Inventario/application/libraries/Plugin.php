@@ -29,10 +29,31 @@ class Plugin implements SystemPlugin {
     }
 
     public function _show() {
-        
+       
+       $the_model           =  array();
+       $filter              =  $this->ModelInfo();
+       foreach($filter as $f){
+           $id          = NULL;
+           if(is_array($f['data'])  && count($f['data']) >= 2){
+               foreach ($f['data'] as $i ){
+                   $fill = explode(":", $i);
+                   if(count($fill) >= 2 && strcmp(trim($fill[0]), "id") == 0){
+                       $id = $fill[1];
+                   }
+               }
+               if($id != NULL){
+                   $the_model[$id][] = $f;
+                   if(!isset($the_model[$id]['controller'])){
+                        $the_model[$id]['controller']         = array();
+                        $the_model[$id]['dependencies']       = array();
+                   }
+               }
+           } 
+       }
+       
 
-       return $this->ModelInfo();
-   
+
+       return $the_model;
     }
     
     
@@ -67,6 +88,8 @@ class Plugin implements SystemPlugin {
 
         return $docs;
     }
+    
+
     
     private function SetWrite($data , $type ){
          

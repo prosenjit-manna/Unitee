@@ -8,7 +8,7 @@
  * @@name: nuevo usuario
  * @@parent: user
  * @@description : modulo en el cual se encarga de crear un nuevo usuario 
- * @@id : _user_001
+ * @@id : _provider_001
  */
 
 
