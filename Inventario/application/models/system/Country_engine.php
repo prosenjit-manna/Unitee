@@ -12,7 +12,7 @@ class Country_engine extends CI_Model {
     }
     
     public function get_country(){
-        $this->query = "SELECT id_paises as 'id' , nombre as 'name' FROM paises";
+        $this->query = "SELECT iso as 'id' , nombre as 'name' FROM paises";
         return $this->db->query($this->query)
                         ->result_array();
     }
