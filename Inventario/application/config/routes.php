@@ -65,3 +65,7 @@ $route['logout']                    = "dashboard/session";
 $route['sidebar']                   = "dashboard/get_sidebar";
 $route['avatar']                    = "user/change_avatar";
 $route['modules']                   = "dashboard/modulos";
+
+//OTRAS RUTAS 
+
+$route['c/(:any)']                  = "country/GetCountry/$1";

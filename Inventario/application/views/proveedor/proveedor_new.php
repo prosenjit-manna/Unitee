@@ -112,7 +112,7 @@
                                                                 <option>La Union</option>
                                                                 <option>San Miguel</option>
                                                                 <option>Morazan</option>
-                                                                <option>Cabañas</option>
+                                                                <option>Cabaï¿½as</option>
                                                                 <option>Ahuachapan</option>
                                                                 <option>Chalatenango</option>
                                                             </select>
@@ -129,7 +129,7 @@
                                                                 <option>La Union</option>
                                                                 <option>San Miguel</option>
                                                                 <option>Morazan</option>
-                                                                <option>Cabañas</option>
+                                                                <option>Cabaï¿½as</option>
                                                                 <option>Ahuachapan</option>
                                                                 <option>Chalatenango</option>
                                                             </select>
@@ -166,4 +166,17 @@
 	</div>
 
 	<!-- FINAL CONTENIDO -->
+        <script>
         
+            var load_paises = function(){
+                var tasking = new jtask();
+                    tasking.url = "<?php echo site_url("/c/2" ); ?>";
+                    tasking.data = { "js" : true }; 
+                    tasking.success_callback(function(data){
+                          
+                    });
+                    tasking.do_task();
+
+            };
+        
+        </script>

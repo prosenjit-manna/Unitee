@@ -13,5 +13,9 @@ class MY_Loader extends CI_Loader {
     public function complement($complement_name){
          require_once APPPATH . "/complement/$complement_name" . ".php";
     }
+    
+    public function controllers($controller){
+        require_once APPPATH . "/controllers/$controller" . ".php";
+    }
  
 }
