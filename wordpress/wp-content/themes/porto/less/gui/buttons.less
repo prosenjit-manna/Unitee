@@ -1,0 +1,56 @@
+
+// Buttons
+.btn-primary, .button, input.submit,
+input[type="submit"].btn-primary, input[type="submit"].button, input[type="submit"].submit {
+    border-color: @skinColor;
+    .buttonBackground(@skinColor, spin(@skinColor, 20%));
+}
+
+input[type="submit"] {
+    background: @skinColor;
+    border-color: @skinColor;
+
+    &:hover,
+    &:active {
+        background: darken(@skinColor, 5%);
+        border-color: darken(@skinColor, 5%);
+    }
+}
+
+html {
+    .for(@colors-list); .-each(@value) {
+    @name:  extract(@value, 1);
+    @color:  extract(@value, 2);
+    @color-inverse:  extract(@value, 3);
+
+    .btn-@{name} {
+        .buttonBackground(@color, spin(@color, 20%));
+        border-color: @color @color darken(@color, 10%);
+        &:hover, &:focus {
+            color: @color-inverse;
+        }
+    }
+}
+}
+
+html {
+    .for(@colors-list); .-each(@value) {
+    @name:  extract(@value, 1);
+    @color:  extract(@value, 2);
+    @color-inverse:  extract(@value, 3);
+
+    .btn-borders {
+        &.btn-@{name} {
+            background: transparent;
+            border-color: @color;
+            color: @color;
+            text-shadow: none;
+            &:hover, &:focus {
+                .buttonBackground(@color, spin(@color, 20%));
+                border-color: @color !important;
+                color: @color-inverse;
+            }
+        }
+    }
+}
+}

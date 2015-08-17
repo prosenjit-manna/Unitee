@@ -1,0 +1,5497 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Porto\n"
+"POT-Creation-Date: 2015-07-21 11:36+0800\n"
+"PO-Revision-Date: 2015-07-21 23:41+0300\n"
+"Last-Translator: porto <porto@example.com>\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:11
+msgid "404"
+msgstr "404"
+
+#: 404.php:12
+msgid "We're sorry, but the page you were looking for doesn't exist."
+msgstr ""
+"Извините, но страницы, которую вы запросили, не существует или она была "
+"перемещена."
+
+#: archive-faq.php:55 archive-member.php:55 archive-portfolio.php:62
+#: taxonomy-faq_cat.php:61 taxonomy-portfolio_cat.php:70
+msgid "Show All"
+msgstr "Показать все"
+
+#: archive-faq.php:81 archive-member.php:81 archive-portfolio.php:120
+#: index.php:83 taxonomy-faq_cat.php:87 taxonomy-member_cat.php:61
+#: taxonomy-portfolio_cat.php:129 taxonomy-portfolio_skills.php:93
+msgid "Apologies, but no results were found for the requested archive."
+msgstr "Простите, но для запрошенного архива не было найдено результатов."
+
+#: archive.php:101 search.php:83
+msgid "Nothing Found"
+msgstr "Ничего не найдено"
+
+#: archive.php:105 search.php:87
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Вы готовы опубликовать свой первый пост? <a href=\"%1$s\">Начать здесь</a>."
+
+#: archive.php:109 search.php:91
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr ""
+"К сожалению, по вашему запросу ничего не найдено. Пожалуйста, попробуйте еще "
+"раз с другими ключевыми словами."
+
+#: archive.php:114 search.php:96
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Не удалось найти то что вы ищите. Воспользуйтесь поиском по сайту."
+
+#: comments.php:4
+msgid "Please do not load this page directly. Thanks!porto"
+msgstr "Пожалуйста, не загружайте эту страницу напрямую. Спасибо!"
+
+#: comments.php:7
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Эта запись защищена паролем. Введите пароль…"
+
+#: comments.php:15
+#, php-format
+msgctxt "comments title"
+msgid "Comment (1)"
+msgid_plural "Comments (%1$s)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: comments.php:42
+msgid "Comments are closed."
+msgstr "Комментирии закрыты."
+
+#: content-archive-faq.php:21 content-archive-portfolio-full.php:35
+#: content-archive-portfolio-large.php:46
+#: content-archive-portfolio-medium.php:46 content-blog-full.php:32
+#: content-blog-grid.php:40 content-blog-large-alt.php:32
+#: content-blog-large.php:32 content-blog-medium.php:33
+#: content-blog-timeline.php:38 content-member.php:118
+#: content-portfolio-full.php:68 content-portfolio-large.php:78
+#: content-portfolio-medium.php:78 content-post-full.php:42
+#: content-post-large-alt.php:42 content-post-large.php:42
+#: content-post-medium.php:28
+msgid "Pages:"
+msgstr "Страницы:"
+
+#: content-archive-faq.php:25 content-archive-portfolio-full.php:39
+#: content-archive-portfolio-large.php:50
+#: content-archive-portfolio-medium.php:50 content-blog-full.php:36
+#: content-blog-grid.php:44 content-blog-large-alt.php:36
+#: content-blog-large.php:36 content-blog-medium.php:37
+#: content-blog-timeline.php:42 content-member.php:122
+#: content-portfolio-full.php:72 content-portfolio-large.php:82
+#: content-portfolio-medium.php:82 content-post-full.php:46
+#: content-post-large-alt.php:46 content-post-large.php:46
+#: content-post-medium.php:32 inc/admin/porto/settings.php:2253
+#: inc/functions/layout.php:281 inc/functions/layout.php:430
+msgid "Page"
+msgstr "Страница"
+
+#: content-archive-member.php:47 content-member-item.php:46
+msgid "..."
+msgstr "..."
+
+#: content-archive-member.php:69 content-member-item.php:68
+#: content-member.php:47 inc/admin/porto/settings.php:1854
+#: inc/content_types/member.php:149 inc/functions/layout.php:1206 share.php:27
+msgid "Facebook"
+msgstr "Facebook"
+
+#: content-archive-member.php:73 content-member-item.php:72
+#: content-member.php:51 inc/admin/porto/settings.php:1861
+#: inc/content_types/member.php:155 inc/functions/layout.php:1210 share.php:31
+msgid "Twitter"
+msgstr "Twitter"
+
+#: content-archive-member.php:77 content-member-item.php:76
+#: content-member.php:55 inc/admin/porto/settings.php:1903
+#: inc/content_types/member.php:161 inc/functions/layout.php:1234 share.php:35
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: content-archive-member.php:81 content-member-item.php:80
+#: content-member.php:59 inc/content_types/member.php:167 share.php:39
+msgid "Google +"
+msgstr "﻿Google+"
+
+#: content-archive-member.php:85 content-member-item.php:84
+#: content-member.php:63 inc/admin/porto/settings.php:1875
+#: inc/content_types/member.php:173 inc/functions/layout.php:1218 share.php:43
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: content-archive-member.php:89 content-member-item.php:88
+#: content-member.php:67 inc/content_types/member.php:179 share.php:47
+#: woocommerce/single-product-reviews.php:70
+msgid "Email"
+msgstr "Email"
+
+#: content-archive-member.php:93 content-member-item.php:92
+#: content-member.php:71 inc/content_types/member.php:185 share.php:51
+msgid "VK"
+msgstr "VK"
+
+#: content-archive-member.php:97 content-member-item.php:96
+#: content-member.php:75 inc/content_types/member.php:191 share.php:55
+msgid "Xing"
+msgstr "Xing"
+
+#: content-archive-member.php:101 content-member-item.php:100
+#: content-member.php:79 inc/content_types/member.php:197 share.php:59
+msgid "Tumblr"
+msgstr "Tumblr"
+
+#: content-archive-member.php:105 content-member-item.php:104
+#: content-member.php:83 inc/content_types/member.php:203 share.php:63
+msgid "Reddit"
+msgstr "Reddit"
+
+#: content-archive-portfolio-full.php:50
+#: content-archive-portfolio-large.php:63
+#: content-archive-portfolio-medium.php:63 content-portfolio-full.php:87
+#: content-portfolio-large.php:97 content-portfolio-medium.php:97
+msgid "Live Preview"
+msgstr "Предпросмотр"
+
+#: content-archive-portfolio-full.php:60
+#: content-archive-portfolio-large.php:74
+#: content-archive-portfolio-medium.php:74 content-portfolio-full.php:99
+#: content-portfolio-large.php:109 content-portfolio-medium.php:109
+msgid "Skills"
+msgstr "Категории"
+
+#: content-archive-portfolio-full.php:71
+#: content-archive-portfolio-large.php:85
+#: content-archive-portfolio-medium.php:85 content-portfolio-full.php:110
+#: content-portfolio-large.php:120 content-portfolio-medium.php:120
+msgid "Client"
+msgstr "Клиент"
+
+#: content-archive-portfolio-full.php:96
+#: content-archive-portfolio-large.php:111
+#: content-archive-portfolio-medium.php:111 content-blog-full.php:56
+#: content-blog-grid.php:71 content-blog-large-alt.php:56
+#: content-blog-large.php:56 content-blog-medium.php:62
+#: content-blog-timeline.php:69
+msgid "Read more..."
+msgstr "Читать далее..."
+
+#: content-blog-full.php:44 content-blog-grid.php:57
+#: content-blog-large-alt.php:44 content-blog-large.php:44
+#: content-blog-medium.php:50 content-blog-timeline.php:55
+#: content-post-full.php:24 content-post-large-alt.php:24
+#: content-post-large.php:24 content-post-medium.php:46
+msgid "By"
+msgstr "Опубликовал"
+
+#: content-blog-full.php:55 content-blog-grid.php:68
+#: content-blog-large-alt.php:55 content-blog-large.php:55
+#: content-blog-medium.php:61 content-blog-timeline.php:66
+#: content-post-full.php:35 content-post-large-alt.php:35
+#: content-post-large.php:35 content-post-medium.php:57
+msgid "0 Comments"
+msgstr "0 Комментариев"
+
+#: content-blog-full.php:55 content-blog-grid.php:68
+#: content-blog-large-alt.php:55 content-blog-large.php:55
+#: content-blog-medium.php:61 content-blog-timeline.php:66
+#: content-post-full.php:35 content-post-large-alt.php:35
+#: content-post-large.php:35 content-post-medium.php:57
+msgid "1 Comment"
+msgstr "1 комментарий"
+
+#: content-blog-full.php:55 content-blog-grid.php:68
+#: content-blog-large-alt.php:55 content-blog-large.php:55
+#: content-blog-medium.php:61 content-blog-timeline.php:66
+#: content-post-full.php:35 content-post-large-alt.php:35
+#: content-post-large.php:35 content-post-medium.php:57
+msgid "Comments"
+msgstr "﻿Комментарии"
+
+#: content-member-portfolios.php:11
+msgid "My <strong>Works</strong>"
+msgstr "Мои <strong>Работы</strong>"
+
+#: content-member-products.php:11
+msgid "My <strong>Products</strong>"
+msgstr "Мои <strong>Продукты</strong>"
+
+#: content-member.php:98
+msgid "More Info"
+msgstr "Подробности"
+
+#: content-member.php:141
+msgid "Related <strong>Members</strong>"
+msgstr "Похожие <strong>Пользователи</strong>"
+
+#: content-portfolio-full.php:13 content-portfolio-large.php:13
+#: content-portfolio-medium.php:13
+msgid "Back to list"
+msgstr "Обратно к списку"
+
+#: content-portfolio-full.php:25 content-portfolio-large.php:25
+#: content-portfolio-medium.php:25
+msgid "Previous"
+msgstr "Назад"
+
+#: content-portfolio-full.php:26 content-portfolio-large.php:26
+#: content-portfolio-medium.php:26
+msgid "Next"
+msgstr "След"
+
+#: content-portfolio-full.php:37 content-portfolio-large.php:47
+#: content-portfolio-medium.php:47
+msgid "Project <strong>Description</strong>"
+msgstr "Описание <strong>Проекта</strong>"
+
+#: content-portfolio-full.php:116 content-portfolio-large.php:126
+#: content-portfolio-medium.php:126
+msgid "Share"
+msgstr "Поделиться"
+
+#: content-portfolio-full.php:126 content-portfolio-large.php:139
+#: content-portfolio-medium.php:139 content-post-full.php:65
+#: content-post-large-alt.php:65 content-post-large.php:65
+#: content-post-medium.php:69
+msgid "Author"
+msgstr "Автор"
+
+#: content-post-full.php:58 content-post-large-alt.php:58
+#: content-post-large.php:58 content-post-medium.php:62
+msgid "Share this post"
+msgstr "Поделиться этой Записью"
+
+#: functions.php:114 inc/admin/porto/settings.php:1106
+#: inc/content_types/page.php:67
+msgid "Main Menu"
+msgstr "Основное меню"
+
+#: functions.php:115
+msgid "Sidebar Menu"
+msgstr "Сайдбар меню"
+
+#: functions.php:116
+msgid "Top Navigation"
+msgstr "Верхняя Панель навигации"
+
+#: functions.php:117
+msgid "View Switcher"
+msgstr "Переключатель просмотра"
+
+#: functions.php:118
+msgid "Currency Switcher"
+msgstr "Переключатель валют"
+
+#: functions.php:339
+msgid "The requested content cannot be loaded.<br/>Please try again later."
+msgstr "Невозможно загрузить запрашиваемые данные.<br/>Попробуйте позже."
+
+#: functions.php:359
+msgid ""
+"If you want to import demo, please backup current theme options in "
+"\"Import / Export\" section before import. Do you want to import demo?"
+msgstr ""
+"Если вы хотите импортировать демо, пожалуйста сделайте резервное копирование "
+"текущих настроек темы в разделе “Импорт / Экспорт” перед импортом. Вы хотите "
+"импортировать демо?"
+
+#: header/header_9.php:129 inc/functions/layout.php:719
+#: inc/functions/layout.php:778 inc/functions/layout.php:855
+#: inc/functions/layout.php:857 inc/functions/layout.php:983
+#: inc/functions/layout.php:1069
+msgid "Logout"
+msgstr "Выход"
+
+#: header/header_9.php:145 inc/functions/layout.php:736
+#: inc/functions/layout.php:795 inc/functions/layout.php:875
+#: inc/functions/layout.php:881 inc/functions/layout.php:1000
+#: inc/functions/layout.php:1086 woocommerce/myaccount/form-login.php:81
+#: woocommerce/myaccount/form-login.php:118
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: header/header_9.php:147 inc/functions/layout.php:734
+#: inc/functions/layout.php:793 inc/functions/layout.php:877
+#: inc/functions/layout.php:879 inc/functions/layout.php:998
+#: inc/functions/layout.php:1084 woocommerce/global/form-login.php:41
+#: woocommerce/myaccount/form-login.php:37
+#: woocommerce/myaccount/form-login.php:63
+msgid "Login"
+msgstr "Логин"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:68
+msgid "Slide"
+msgstr "Слайд"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:73
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:174
+#, php-format
+msgid "New %s"
+msgstr "Новый %s"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:223
+#, php-format
+msgid "Add %s"
+msgstr "Добавить %s"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:220
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:167
+msgid "Delete</a></li>"
+msgstr "Удалить</a></li>"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:207
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:153
+msgid "URL"
+msgstr "URL (Ссылка)"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:204
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:149
+msgid "Description"
+msgstr "Описание"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:200
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:145
+msgid "Title"
+msgstr "Заголовок"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:190
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:133
+msgid "Remove</span>"
+msgstr "Удалить</span>"
+
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:188
+#: inc/admin/ReduxCore/inc/fields/slides/field_slides.php:126
+msgid "Upload</span>"
+msgstr "Загрузить</span>"
+
+#: inc/admin/functions.php:40 inc/admin/functions.php:59
+#: inc/admin/functions.php:67
+msgid "Wide"
+msgstr "Широкий"
+
+#: inc/admin/functions.php:41 inc/admin/functions.php:60
+#: inc/functions/content_type/meta_values.php:17
+#: inc/functions/content_type/meta_values.php:28
+#: inc/functions/content_type/meta_values.php:39
+#: inc/functions/content_type/meta_values.php:47
+#: inc/functions/shortcodes.php:1203 inc/functions/shortcodes.php:1226
+#: inc/functions/shortcodes.php:1243
+msgid "Full"
+msgstr "Полный"
+
+#: inc/admin/functions.php:42 inc/admin/functions.php:61
+#: inc/admin/functions.php:68
+msgid "Boxed"
+msgstr "Блочный"
+
+#: inc/admin/functions.php:48 inc/functions/content_type/meta_values.php:6
+msgid "Wide Width"
+msgstr "Широкий Вид"
+
+#: inc/admin/functions.php:49 inc/functions/content_type/meta_values.php:7
+msgid "Wide Left Sidebar"
+msgstr "Широкий Левый Сайдбар"
+
+#: inc/admin/functions.php:50 inc/functions/content_type/meta_values.php:8
+msgid "Wide Right Sidebar"
+msgstr "Широкий Правый Сайдбар"
+
+#: inc/admin/functions.php:51 inc/admin/porto/settings.php:2654
+#: inc/content_types/portfolio.php:192
+#: inc/functions/content_type/meta_values.php:9
+msgid "Full Width"
+msgstr "Полноэкранный"
+
+#: inc/admin/functions.php:52 inc/functions/content_type/meta_values.php:10
+msgid "Left Sidebar"
+msgstr "Левая боковая панель"
+
+#: inc/admin/functions.php:53 inc/functions/content_type/meta_values.php:11
+msgid "Right Sidebar"
+msgstr "Правая боковая панель"
+
+#: inc/admin/functions.php:74
+msgid "Header Type 1"
+msgstr "Шапка Тип 1"
+
+#: inc/admin/functions.php:75
+msgid "Header Type 2"
+msgstr "Шапка Тип 2"
+
+#: inc/admin/functions.php:76
+msgid "Header Type 3"
+msgstr "Шапка Тип 3"
+
+#: inc/admin/functions.php:77
+msgid "Header Type 4"
+msgstr "Шапка Тип 4"
+
+#: inc/admin/functions.php:78
+msgid "Header Type 5"
+msgstr "Шапка Тип 5"
+
+#: inc/admin/functions.php:79
+msgid "Header Type 6"
+msgstr "Шапка Тип 6"
+
+#: inc/admin/functions.php:80
+msgid "Header Type 7"
+msgstr "Шапка Тип 7"
+
+#: inc/admin/functions.php:81
+msgid "Header Type 8"
+msgstr "Шапка Тип 8"
+
+#: inc/admin/functions.php:82
+msgid "Header Type 9"
+msgstr "Шапка Тип 9"
+
+#: inc/admin/functions.php:83
+msgid "Header Type 10"
+msgstr "Шапка Тип 10"
+
+#: inc/admin/functions.php:84
+msgid "Header Type 11"
+msgstr "Шапка Тип 11"
+
+#: inc/admin/functions.php:85
+msgid "Header Type 12"
+msgstr "Шапка Тип 12"
+
+#: inc/admin/functions.php:86
+msgid "Header Type 13"
+msgstr "Шапка Тип 13"
+
+#: inc/admin/functions.php:87
+msgid "Header Type(Side Navigation)"
+msgstr "Тип шапки (боковая навигация)"
+
+#: inc/admin/functions.php:95
+msgid "Footer Type 1"
+msgstr "Тип футера 1"
+
+#: inc/admin/functions.php:96
+msgid "Footer Type 2"
+msgstr "Тип футера 1"
+
+#: inc/admin/functions.php:97
+msgid "Footer Type 3"
+msgstr "Тип футера 3"
+
+#: inc/admin/functions.php:105 inc/admin/porto/settings.php:2653
+#: inc/admin/porto/settings.php:3139 inc/content_types/portfolio.php:123
+#: inc/content_types/portfolio.php:191 inc/content_types/post.php:117
+#: inc/functions/content_type/meta_values.php:68
+#: inc/functions/content_type/meta_values.php:85
+#: inc/functions/content_type/meta_values.php:153
+#: inc/functions/content_type/meta_values.php:164
+#: inc/functions/content_type/meta_values.php:173
+#: inc/functions/content_type/meta_values.php:182
+#: inc/functions/content_type/meta_values.php:197
+#: inc/functions/shortcodes.php:1059 inc/functions/shortcodes.php:1066
+#: inc/functions/shortcodes.php:1080 inc/functions/shortcodes.php:1100
+#: inc/functions/shortcodes.php:1170 inc/functions/shortcodes.php:1180
+#: inc/functions/shortcodes.php:1188 inc/functions/shortcodes.php:1195
+#: inc/functions/shortcodes.php:1270 inc/functions/shortcodes.php:1284
+#: inc/functions/shortcodes.php:1311 inc/functions/shortcodes.php:1319
+#: inc/functions/shortcodes.php:1333 inc/functions/shortcodes.php:1367
+#: inc/functions/shortcodes.php:1400 inc/functions/shortcodes.php:1413
+#: inc/functions/shortcodes.php:1428
+msgid "Default"
+msgstr "По умолчанию"
+
+#: inc/admin/functions.php:106
+msgid "Demo 1"
+msgstr "Демо 1"
+
+#: inc/admin/functions.php:107
+msgid "Demo 2"
+msgstr "Демо 2"
+
+#: inc/admin/functions.php:108
+msgid "Demo 3"
+msgstr "Демо 3"
+
+#: inc/admin/functions.php:109
+msgid "Demo 4"
+msgstr "Демо 4"
+
+#: inc/admin/functions.php:110
+msgid "Demo 5"
+msgstr "Демо 5"
+
+#: inc/admin/functions.php:111
+msgid "Demo 6"
+msgstr "Демо 6"
+
+#: inc/admin/functions.php:112
+msgid "Demo 7"
+msgstr "Демо 7"
+
+#: inc/admin/functions.php:113
+msgid "Demo 8"
+msgstr "Демо 8"
+
+#: inc/admin/functions.php:114
+msgid "Demo 9"
+msgstr "Демо 9"
+
+#: inc/admin/functions.php:115
+msgid "Demo 10"
+msgstr "Демо 10"
+
+#: inc/admin/functions.php:116
+msgid "Demo 11"
+msgstr "Демо 11"
+
+#: inc/admin/functions.php:117
+msgid "Demo 12"
+msgstr "Демо 12"
+
+#: inc/admin/functions.php:118
+msgid "Demo 13"
+msgstr "Демо 13"
+
+#: inc/admin/functions.php:119
+msgid "Demo 14"
+msgstr "Демо 14"
+
+#: inc/admin/functions.php:120
+msgid "Demo 15"
+msgstr "Демо 15"
+
+#: inc/admin/functions.php:121
+msgid "RTL Demo"
+msgstr "RTL Демо"
+
+#: inc/admin/porto/settings.php:103
+msgid "General"
+msgstr "Общие"
+
+#: inc/admin/porto/settings.php:108
+msgid "Body Wrapper"
+msgstr "Фоновый цвет "
+
+#: inc/admin/porto/settings.php:116 inc/admin/porto/settings.php:2320
+#: inc/admin/porto/settings.php:2484 inc/admin/porto/settings.php:2602
+#: inc/admin/porto/settings.php:2688 inc/admin/porto/settings.php:2823
+#: inc/admin/porto/settings.php:2873 inc/admin/porto/settings.php:2946
+#: inc/admin/porto/settings.php:3011 inc/admin/porto/settings.php:3103
+msgid "Page Layout"
+msgstr "Макет страницы"
+
+#: inc/admin/porto/settings.php:124 inc/admin/porto/settings.php:2610
+#: inc/admin/porto/settings.php:2696 inc/admin/porto/settings.php:2831
+#: inc/admin/porto/settings.php:2881 inc/admin/porto/settings.php:2954
+msgid "Select Sidebar"
+msgstr "Выберите боковую панель"
+
+#: inc/admin/porto/settings.php:133
+msgid "Show Breadcrumbs"
+msgstr "Показывать хлебные крошки (Breadcrumbs) - элемент навигации"
+
+#: inc/admin/porto/settings.php:135 inc/admin/porto/settings.php:144
+#: inc/admin/porto/settings.php:190 inc/admin/porto/settings.php:200
+#: inc/admin/porto/settings.php:809 inc/admin/porto/settings.php:842
+#: inc/admin/porto/settings.php:875 inc/admin/porto/settings.php:920
+#: inc/admin/porto/settings.php:949 inc/admin/porto/settings.php:1189
+#: inc/admin/porto/settings.php:1312 inc/admin/porto/settings.php:1372
+#: inc/admin/porto/settings.php:1416 inc/admin/porto/settings.php:1509
+#: inc/admin/porto/settings.php:1774 inc/admin/porto/settings.php:1784
+#: inc/admin/porto/settings.php:1794 inc/admin/porto/settings.php:1847
+#: inc/admin/porto/settings.php:1926 inc/admin/porto/settings.php:1955
+#: inc/admin/porto/settings.php:1983 inc/admin/porto/settings.php:1999
+#: inc/admin/porto/settings.php:2009 inc/admin/porto/settings.php:2019
+#: inc/admin/porto/settings.php:2038 inc/admin/porto/settings.php:2055
+#: inc/admin/porto/settings.php:2077 inc/admin/porto/settings.php:2105
+#: inc/admin/porto/settings.php:2115 inc/admin/porto/settings.php:2138
+#: inc/admin/porto/settings.php:2207 inc/admin/porto/settings.php:2261
+#: inc/admin/porto/settings.php:2279 inc/admin/porto/settings.php:2297
+#: inc/admin/porto/settings.php:2351 inc/admin/porto/settings.php:2360
+#: inc/admin/porto/settings.php:2502 inc/admin/porto/settings.php:2511
+#: inc/admin/porto/settings.php:2520 inc/admin/porto/settings.php:2529
+#: inc/admin/porto/settings.php:2620 inc/admin/porto/settings.php:2665
+#: inc/admin/porto/settings.php:2706 inc/admin/porto/settings.php:2723
+#: inc/admin/porto/settings.php:2732 inc/admin/porto/settings.php:2741
+#: inc/admin/porto/settings.php:2750 inc/admin/porto/settings.php:2841
+#: inc/admin/porto/settings.php:2850 inc/admin/porto/settings.php:2891
+#: inc/admin/porto/settings.php:2964 inc/admin/porto/settings.php:2997
+#: inc/admin/porto/settings.php:3053 inc/admin/porto/settings.php:3071
+#: inc/admin/porto/settings.php:3080 inc/admin/porto/settings.php:3089
+#: inc/admin/porto/settings.php:3114 inc/admin/porto/settings.php:3123
+#: inc/admin/porto/settings.php:3163 inc/admin/porto/settings.php:3180
+#: inc/admin/porto/settings.php:3198 inc/admin/porto/settings.php:3207
+#: inc/admin/porto/settings.php:3216 inc/admin/porto/settings.php:3225
+#: inc/admin/porto/settings.php:3234 inc/admin/porto/settings.php:3250
+#: inc/admin/porto/settings.php:3259 inc/admin/porto/settings.php:3268
+#: inc/admin/porto/settings.php:3286 inc/admin/porto/settings.php:3313
+#: inc/admin/porto/settings.php:3353 inc/admin/porto/settings.php:3377
+#: inc/admin/porto/settings.php:3387 inc/admin/porto/settings.php:3397
+#: inc/admin/porto/settings.php:3407 inc/admin/porto/settings.php:3417
+#: inc/admin/porto/settings.php:3435 inc/admin/porto/settings.php:3445
+#: inc/admin/porto/settings.php:3455 inc/admin/porto/settings.php:3465
+#: inc/admin/porto/settings.php:3475 inc/admin/porto/settings.php:3485
+#: inc/admin/porto/settings.php:3495 inc/admin/porto/settings.php:3505
+#: inc/admin/porto/settings.php:3515 inc/admin/porto/settings.php:3525
+#: inc/admin/porto/settings.php:3535 inc/admin/porto/settings.php:3545
+#: inc/content_types/block.php:38
+msgid "Yes"
+msgstr "Да"
+
+#: inc/admin/porto/settings.php:136 inc/admin/porto/settings.php:145
+#: inc/admin/porto/settings.php:191 inc/admin/porto/settings.php:201
+#: inc/admin/porto/settings.php:810 inc/admin/porto/settings.php:843
+#: inc/admin/porto/settings.php:876 inc/admin/porto/settings.php:921
+#: inc/admin/porto/settings.php:950 inc/admin/porto/settings.php:1190
+#: inc/admin/porto/settings.php:1313 inc/admin/porto/settings.php:1373
+#: inc/admin/porto/settings.php:1417 inc/admin/porto/settings.php:1510
+#: inc/admin/porto/settings.php:1775 inc/admin/porto/settings.php:1785
+#: inc/admin/porto/settings.php:1795 inc/admin/porto/settings.php:1848
+#: inc/admin/porto/settings.php:1927 inc/admin/porto/settings.php:1956
+#: inc/admin/porto/settings.php:1984 inc/admin/porto/settings.php:2000
+#: inc/admin/porto/settings.php:2010 inc/admin/porto/settings.php:2020
+#: inc/admin/porto/settings.php:2039 inc/admin/porto/settings.php:2056
+#: inc/admin/porto/settings.php:2078 inc/admin/porto/settings.php:2106
+#: inc/admin/porto/settings.php:2116 inc/admin/porto/settings.php:2139
+#: inc/admin/porto/settings.php:2208 inc/admin/porto/settings.php:2262
+#: inc/admin/porto/settings.php:2280 inc/admin/porto/settings.php:2298
+#: inc/admin/porto/settings.php:2352 inc/admin/porto/settings.php:2361
+#: inc/admin/porto/settings.php:2503 inc/admin/porto/settings.php:2512
+#: inc/admin/porto/settings.php:2521 inc/admin/porto/settings.php:2530
+#: inc/admin/porto/settings.php:2621 inc/admin/porto/settings.php:2666
+#: inc/admin/porto/settings.php:2707 inc/admin/porto/settings.php:2724
+#: inc/admin/porto/settings.php:2733 inc/admin/porto/settings.php:2742
+#: inc/admin/porto/settings.php:2751 inc/admin/porto/settings.php:2842
+#: inc/admin/porto/settings.php:2851 inc/admin/porto/settings.php:2892
+#: inc/admin/porto/settings.php:2965 inc/admin/porto/settings.php:2998
+#: inc/admin/porto/settings.php:3054 inc/admin/porto/settings.php:3072
+#: inc/admin/porto/settings.php:3081 inc/admin/porto/settings.php:3090
+#: inc/admin/porto/settings.php:3115 inc/admin/porto/settings.php:3124
+#: inc/admin/porto/settings.php:3164 inc/admin/porto/settings.php:3181
+#: inc/admin/porto/settings.php:3199 inc/admin/porto/settings.php:3208
+#: inc/admin/porto/settings.php:3217 inc/admin/porto/settings.php:3226
+#: inc/admin/porto/settings.php:3235 inc/admin/porto/settings.php:3251
+#: inc/admin/porto/settings.php:3260 inc/admin/porto/settings.php:3269
+#: inc/admin/porto/settings.php:3287 inc/admin/porto/settings.php:3314
+#: inc/admin/porto/settings.php:3354 inc/admin/porto/settings.php:3378
+#: inc/admin/porto/settings.php:3388 inc/admin/porto/settings.php:3398
+#: inc/admin/porto/settings.php:3408 inc/admin/porto/settings.php:3418
+#: inc/admin/porto/settings.php:3436 inc/admin/porto/settings.php:3446
+#: inc/admin/porto/settings.php:3456 inc/admin/porto/settings.php:3466
+#: inc/admin/porto/settings.php:3476 inc/admin/porto/settings.php:3486
+#: inc/admin/porto/settings.php:3496 inc/admin/porto/settings.php:3506
+#: inc/admin/porto/settings.php:3516 inc/admin/porto/settings.php:3526
+#: inc/admin/porto/settings.php:3536 inc/admin/porto/settings.php:3546
+#: inc/content_types/block.php:39
+msgid "No"
+msgstr "Нет"
+
+#: inc/admin/porto/settings.php:142
+msgid "Show Page Title"
+msgstr "Показать заголовок страницы"
+
+#: inc/admin/porto/settings.php:151
+msgid "Header Wrapper"
+msgstr "Заголовок"
+
+#: inc/admin/porto/settings.php:160
+msgid "Banner Wrapper"
+msgstr "Баннер"
+
+#: inc/admin/porto/settings.php:169
+msgid "Breadcrumbs Wrapper"
+msgstr "Хлебные крошки"
+
+#: inc/admin/porto/settings.php:178
+msgid "Footer Wrapper"
+msgstr "Внутри оболочки"
+
+#: inc/admin/porto/settings.php:187
+msgid "Show Content Type Skin Options"
+msgstr "Параметры отображаемого контента"
+
+#: inc/admin/porto/settings.php:188
+msgid "Show skin options when edit post, page, product, portfolio, member."
+msgstr ""
+"Показывать опции темы  во время редактирования постов, продуктов, портфолио "
+"и коментариев."
+
+#: inc/admin/porto/settings.php:197
+msgid "Show Category Skin Options"
+msgstr "Показать категории настройки темы"
+
+#: inc/admin/porto/settings.php:198
+msgid ""
+"Show skin options when edit the category of post, product, portfolio, member."
+msgstr ""
+"Показывать опции темы во время редактирования категорий в постах, продуктах, "
+"портфолио и коментариях."
+
+#: inc/admin/porto/settings.php:209
+msgid "Theme Layout"
+msgstr "Макет темы"
+
+#: inc/admin/porto/settings.php:222
+msgid "Logo, Icons"
+msgstr "Логотип, иконки"
+
+#: inc/admin/porto/settings.php:229
+msgid "Logo"
+msgstr "Лого"
+
+#: inc/admin/porto/settings.php:238
+msgid "Logo Max Width"
+msgstr "Максимальная ширина логотипа"
+
+#: inc/admin/porto/settings.php:239
+msgid "unit: px"
+msgstr "Единица измерения: пиксели"
+
+#: inc/admin/porto/settings.php:246
+msgid "Logo Max Width on Wide Screen"
+msgstr "Логотип Максимальная ширина на широкий экран"
+
+#: inc/admin/porto/settings.php:253
+msgid "Logo Max Width on Tablet"
+msgstr "Логотип Максимальная ширина на планшет"
+
+#: inc/admin/porto/settings.php:260
+msgid "Logo Max Width on Mobile"
+msgstr "Логотип Максимальная ширина на мобильный"
+
+#: inc/admin/porto/settings.php:267
+msgid "Logo Max Width in Sticky Header"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/admin/porto/settings.php:276
+msgid "Favicon"
+msgstr "Иконка (favicon) "
+
+#: inc/admin/porto/settings.php:287
+msgid "Apple iPhone Icon"
+msgstr "IPhone иконка"
+
+#: inc/admin/porto/settings.php:288
+msgid "Icon for Apple iPhone (57px X 57px)"
+msgstr "Иконка для Apple, iPhone (57px х 57px)"
+
+#: inc/admin/porto/settings.php:299
+msgid "Apple iPhone Retina Icon"
+msgstr "IPhone Apple Retina Иконка"
+
+#: inc/admin/porto/settings.php:300
+msgid "Icon for Apple iPhone Retina (114px X 114px)"
+msgstr "Иконка для Apple iPhone Retina версии (114px х 114px)"
+
+#: inc/admin/porto/settings.php:311
+msgid "Apple iPad Icon"
+msgstr "Apple"
+
+#: inc/admin/porto/settings.php:312
+msgid "Icon for Apple iPad (72px X 72px)"
+msgstr "Загрузите иконку для Apple iPad (72px X 72px)."
+
+#: inc/admin/porto/settings.php:323
+msgid "Apple iPad Retina Icon"
+msgstr "Apple iPad Retina Иконка"
+
+#: inc/admin/porto/settings.php:324
+msgid "Icon for Apple iPad Retina (144px X 144px)"
+msgstr "Значок для Apple iPhone Retina версии (144px x 144px)"
+
+#: inc/admin/porto/settings.php:335
+msgid "Custom Javascript Code"
+msgstr "Произвольный код JavaScript"
+
+#: inc/admin/porto/settings.php:340
+msgid "JS Code"
+msgstr "Настраиваемый js"
+
+#: inc/admin/porto/settings.php:341
+msgid "Paste your JS code here."
+msgstr "Введите ваш CSS код"
+
+#: inc/admin/porto/settings.php:352 inc/admin/porto/settings.php:398
+msgid "Import Demo"
+msgstr "Импорт Демо"
+
+#: inc/admin/porto/settings.php:358
+msgid "Import Dummy Content"
+msgstr "Импорт"
+
+#: inc/admin/porto/settings.php:359
+msgid "If import failed, please check your site and click again \"Import\"."
+msgstr ""
+"Если импорт не удалось, пожалуйста, проверьте свой сайт и нажмите снова "
+"\"Импорт\"."
+
+#: inc/admin/porto/settings.php:366
+msgid "Successfully Imported!"
+msgstr "Содержимое успешно импортировано"
+
+#: inc/admin/porto/settings.php:366 inc/admin/porto/settings.php:379
+#: inc/admin/porto/settings.php:392
+msgid "Import"
+msgstr "Импорт"
+
+#: inc/admin/porto/settings.php:372
+msgid "Import Widgets"
+msgstr "Импорт виджетов"
+
+#: inc/admin/porto/settings.php:379
+msgid "Successfully Imported Widgets!"
+msgstr "Виджеты успешно импортированы"
+
+#: inc/admin/porto/settings.php:385
+msgid "Import Master Sliders"
+msgstr "Слайдеры"
+
+#: inc/admin/porto/settings.php:392
+msgid "Successfully Imported Master Sliders!"
+msgstr "Настраиваемые сайдбары успешно импортированы"
+
+#: inc/admin/porto/settings.php:399
+msgid ""
+"Before import, you should import dummy content, widgets and master sliders."
+"<br/>When import demo, you should wait a few minutes.<br/>Will be change "
+"theme options, theme css, plugins css, front end page and blog page."
+msgstr ""
+"Перед импортом, вы должны импортировать демо содержание, виджеты и Мастер "
+"Слайдер. <br/> Когда импортируется демо, вы должны ждать несколько минут. "
+"<br/> Будут изменены параметры темы, тема CSS, плагины CSS, фронтенд "
+"страницы и страницы блога."
+
+#: inc/admin/porto/settings.php:406
+msgid "Successfully Imported Demo!"
+msgstr "Содержимое успешно импортировано"
+
+#: inc/admin/porto/settings.php:412
+msgid "Select Demo"
+msgstr "Выберите Демо"
+
+#: inc/admin/porto/settings.php:424
+msgid "Skin"
+msgstr "Тема"
+
+#: inc/admin/porto/settings.php:430
+msgid "After save the changes, will be regenerate the css files (skin_"
+msgstr "После сохранения изменений, нужно сгенерировать css-файлы (skin_"
+
+#: inc/admin/porto/settings.php:437
+msgid "Primary Color"
+msgstr "Главное"
+
+#: inc/admin/porto/settings.php:445
+msgid "Primary Inverse Color"
+msgstr "Главное"
+
+#: inc/admin/porto/settings.php:453
+msgid "Secondary Color"
+msgstr "Второе"
+
+#: inc/admin/porto/settings.php:461
+msgid "Secondary Inverse Color"
+msgstr "Второе"
+
+#: inc/admin/porto/settings.php:469
+msgid "Tertiary Color"
+msgstr "Цвет"
+
+#: inc/admin/porto/settings.php:477
+msgid "Tertiary Inverse Color"
+msgstr "Индивидуальный цвет"
+
+#: inc/admin/porto/settings.php:485
+msgid "Quaternary Color"
+msgstr "Цвет"
+
+#: inc/admin/porto/settings.php:493
+msgid "Quaternary Inverse Color"
+msgstr "Индивидуальный цвет"
+
+#: inc/admin/porto/settings.php:501
+msgid "Dark Color"
+msgstr "Темная"
+
+#: inc/admin/porto/settings.php:509
+msgid "Dark Inverse Color"
+msgstr "Темные полоски"
+
+#: inc/admin/porto/settings.php:517
+msgid "Light Color"
+msgstr "Свет"
+
+#: inc/admin/porto/settings.php:525
+msgid "Light Inverse Color"
+msgstr "Светлые полоски"
+
+#: inc/admin/porto/settings.php:535
+msgid "Compile Default CSS"
+msgstr "По умолчанию"
+
+#: inc/admin/porto/settings.php:542
+msgid "Compile CSS Files"
+msgstr "CSS"
+
+#: inc/admin/porto/settings.php:543
+msgid "Theme CSS compiled successfully!"
+msgstr "Настройки темы успешно импортированы."
+
+#: inc/admin/porto/settings.php:544
+msgid "Theme RTL CSS compiled successfully!"
+msgstr "Тема RTL CSS составлен успешно!"
+
+#: inc/admin/porto/settings.php:545
+msgid "Plugins CSS compiled successfully!"
+msgstr "Все плагины установлены и активированы успешно. %s"
+
+#: inc/admin/porto/settings.php:546
+msgid "Plugins RTL CSS compiled successfully!"
+msgstr "Успешно скомпилирован файл плагинов RTL CSS!"
+
+#: inc/admin/porto/settings.php:547
+msgid "Theme CSS"
+msgstr "CSS"
+
+#: inc/admin/porto/settings.php:548
+msgid "Theme RTL CSS"
+msgstr "CSS"
+
+#: inc/admin/porto/settings.php:549
+msgid "Plugins CSS"
+msgstr "Установить плагины"
+
+#: inc/admin/porto/settings.php:550
+msgid "Plugins RTL CSS"
+msgstr "Установить плагины"
+
+#: inc/admin/porto/settings.php:551
+msgid ""
+"<strong>Before compile</strong>, you should configure <strong>below options</"
+"strong> and click <strong>\"Save Changes\"</strong>."
+msgstr ""
+"<strong>Перед компиляцией</strong>, нужно сконфигурировать <strong>опции "
+"снизу</strong> и нажать <strong>”Сохранить опции”</strong>."
+
+#: inc/admin/porto/settings.php:553
+msgid "After compile, will be regenerate the css files (theme_"
+msgstr "После сохранения изменений, нужно сгенерировать css-файлы (theme_"
+
+#: inc/admin/porto/settings.php:559
+msgid "Background Type"
+msgstr "Тип "
+
+#: inc/admin/porto/settings.php:561 inc/functions/shortcodes.php:1305
+#: inc/functions/shortcodes.php:1407 inc/functions/shortcodes.php:1430
+msgid "Light"
+msgstr "Изображение логотипа (нормальное/светлое)"
+
+#: inc/admin/porto/settings.php:562 inc/functions/shortcodes.php:1304
+#: inc/functions/shortcodes.php:1406 inc/functions/shortcodes.php:1429
+msgid "Dark"
+msgstr "Темная"
+
+#: inc/admin/porto/settings.php:571
+msgid "Basic Background Color"
+msgstr "Цвет фона:"
+
+#: inc/admin/porto/settings.php:579
+msgid "Container Max Width"
+msgstr "Неверное значение максимального размера."
+
+#: inc/admin/porto/settings.php:591
+msgid "Grid Gutter Width"
+msgstr "Растояние между колонками"
+
+#: inc/admin/porto/settings.php:603 inc/functions/shortcodes.php:838
+msgid "Border Radius"
+msgstr "Граница"
+
+#: inc/admin/porto/settings.php:610
+msgid "Thumbnail Padding"
+msgstr "Нижний отступ:"
+
+#: inc/admin/porto/settings.php:619
+msgid "Typography"
+msgstr "Типографика"
+
+#: inc/admin/porto/settings.php:624
+msgid "Body Font"
+msgstr "Фоновый цвет "
+
+#: inc/admin/porto/settings.php:642
+msgid "Body Mobile Font"
+msgstr "Шрифт"
+
+#: inc/admin/porto/settings.php:650
+msgid "Will be change on mobile device(max width < 480)."
+msgstr "Изменится на мобильном устройстве (максимальная ширина < 480)."
+
+#: inc/admin/porto/settings.php:660
+msgid "Alternative Font"
+msgstr "Альтернативный URL RSS"
+
+#: inc/admin/porto/settings.php:668
+msgid "You can use css class name \"alternative-font\" when edit html element."
+msgstr ""
+"Вы можете использовать css класс имя \"alternative-font\" когда редактируете "
+"html-элемент."
+
+#: inc/admin/porto/settings.php:679
+msgid "H1 Font"
+msgstr "H1 стиль"
+
+#: inc/admin/porto/settings.php:697
+msgid "H2 Font"
+msgstr "Шрифт"
+
+#: inc/admin/porto/settings.php:715
+msgid "H3 Font"
+msgstr "H3 стиль"
+
+#: inc/admin/porto/settings.php:733
+msgid "H4 Font"
+msgstr "H4 стиль"
+
+#: inc/admin/porto/settings.php:751
+msgid "H5 Font"
+msgstr "H5 стиль"
+
+#: inc/admin/porto/settings.php:769
+msgid "H6 Font"
+msgstr "H6 стиль"
+
+#: inc/admin/porto/settings.php:789
+msgid "Backgrounds"
+msgstr "Фоны"
+
+#: inc/admin/porto/settings.php:794
+msgid "Body Background"
+msgstr "Фоновый цвет "
+
+#: inc/admin/porto/settings.php:801 inc/admin/porto/settings.php:834
+#: inc/admin/porto/settings.php:867 inc/admin/porto/settings.php:909
+#: inc/admin/porto/settings.php:1301 inc/admin/porto/settings.php:1364
+#: inc/admin/porto/settings.php:1405 inc/admin/porto/settings.php:1498
+msgid "Background"
+msgstr "Фон"
+
+#: inc/admin/porto/settings.php:807 inc/admin/porto/settings.php:840
+#: inc/admin/porto/settings.php:873 inc/admin/porto/settings.php:1370
+msgid "Enable Background Gradient"
+msgstr "Фоновый цвет верхнего градиента"
+
+#: inc/admin/porto/settings.php:816 inc/admin/porto/settings.php:849
+#: inc/admin/porto/settings.php:882 inc/admin/porto/settings.php:927
+#: inc/admin/porto/settings.php:1319 inc/admin/porto/settings.php:1379
+#: inc/admin/porto/settings.php:1423 inc/admin/porto/settings.php:1516
+msgid "Background Gradient Color"
+msgstr "Фоновый цвет верхнего градиента"
+
+#: inc/admin/porto/settings.php:827
+msgid "Page Content Background"
+msgstr "Параллакс фоны"
+
+#: inc/admin/porto/settings.php:860
+msgid "Content Bottom Widgets Area"
+msgstr "Включить Нижнюю Зону Контента"
+
+#: inc/admin/porto/settings.php:894 inc/admin/porto/settings.php:1391
+msgid "Padding"
+msgstr "Верхний отступ:"
+
+#: inc/admin/porto/settings.php:903 inc/admin/porto/settings.php:1766
+#: inc/functions/content_type/meta_boxes.php:31
+msgid "Header"
+msgstr "Заголовок"
+
+#: inc/admin/porto/settings.php:918 inc/admin/porto/settings.php:1310
+#: inc/admin/porto/settings.php:1414 inc/admin/porto/settings.php:1507
+msgid "Background Gradient"
+msgstr "Фоновый цвет верхнего градиента"
+
+#: inc/admin/porto/settings.php:938
+msgid "Sticky Header Background"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/admin/porto/settings.php:947
+msgid "Sticky Header Background Gradient"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/admin/porto/settings.php:956
+msgid "Sticky Header Background Gradient Color"
+msgstr "Фоновый цвет Нижнего Градиента"
+
+#: inc/admin/porto/settings.php:967 inc/admin/porto/settings.php:1054
+#: inc/admin/porto/settings.php:1274 inc/admin/porto/settings.php:1338
+#: inc/admin/porto/settings.php:1434 inc/admin/porto/settings.php:1554
+#: inc/admin/porto/settings.php:1594 inc/admin/porto/settings.php:1680
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: inc/admin/porto/settings.php:976 inc/admin/porto/settings.php:1063
+#: inc/admin/porto/settings.php:1144 inc/admin/porto/settings.php:1222
+#: inc/admin/porto/settings.php:1282 inc/admin/porto/settings.php:1347
+#: inc/admin/porto/settings.php:1443 inc/admin/porto/settings.php:1482
+#: inc/admin/porto/settings.php:1562 inc/admin/porto/settings.php:1603
+#: inc/admin/porto/settings.php:1638
+msgid "Link Color"
+msgstr "Цвет ссылки"
+
+#: inc/admin/porto/settings.php:988 inc/admin/porto/settings.php:1529
+msgid "Top Border"
+msgstr "Задать размер верхней границы контейнера"
+
+#: inc/admin/porto/settings.php:995
+msgid "Background Opacity when banner show below header"
+msgstr "Непрозрачность фона когда баннер накладывается ниже заголовка"
+
+#: inc/admin/porto/settings.php:1002
+msgid "Header Opacity"
+msgstr "Прозрачность"
+
+#: inc/admin/porto/settings.php:1009
+msgid "Search Form Opacity"
+msgstr "Форма поиска по сайту"
+
+#: inc/admin/porto/settings.php:1016
+msgid "Menu Wrap Opacity"
+msgstr "Прозрачность"
+
+#: inc/admin/porto/settings.php:1023
+msgid "Menu Opacity"
+msgstr "Прозрачность"
+
+#: inc/admin/porto/settings.php:1030
+msgid "Header Top"
+msgstr "Показать зону верха шапки"
+
+#: inc/admin/porto/settings.php:1037 inc/admin/porto/settings.php:1128
+#: inc/admin/porto/settings.php:1205 inc/admin/porto/settings.php:1474
+#: inc/admin/porto/settings.php:1586 inc/admin/porto/settings.php:1621
+#: inc/admin/porto/settings.php:1656 inc/admin/porto/settings.php:1729
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: inc/admin/porto/settings.php:1047 inc/admin/porto/settings.php:1538
+#: inc/functions/shortcodes.php:1462
+msgid "Bottom Border"
+msgstr "Задать размер нижней границы контейнера"
+
+#: inc/admin/porto/settings.php:1073
+msgid "Side Navigation"
+msgstr "Меню"
+
+#: inc/admin/porto/settings.php:1080
+msgid "Social Link Background Color"
+msgstr "Цвет ссылки"
+
+#: inc/admin/porto/settings.php:1088
+msgid "Social Link Color"
+msgstr "Цвет ссылки при наведении"
+
+#: inc/admin/porto/settings.php:1096
+msgid "Copyright Text Color"
+msgstr "Цвет текста"
+
+#: inc/admin/porto/settings.php:1112
+msgid "Wrapper Background Color"
+msgstr "Цвет фона:"
+
+#: inc/admin/porto/settings.php:1121
+msgid "Wrapper Padding"
+msgstr "Нижний отступ:"
+
+#: inc/admin/porto/settings.php:1136
+msgid "Top Level Menu Item"
+msgstr "Стиль меню 1-го уровня"
+
+#: inc/admin/porto/settings.php:1154 inc/admin/porto/settings.php:1629
+msgid "Hover Background Color"
+msgstr "Цвет фона при наведении"
+
+#: inc/admin/porto/settings.php:1163
+msgid "Padding on Desktop"
+msgstr "Компьютер"
+
+#: inc/admin/porto/settings.php:1164 inc/admin/porto/settings.php:1173
+msgid "if header type is like type 1 or type 4"
+msgstr "если тип заголовка, как типа 1 или типа 4"
+
+#: inc/admin/porto/settings.php:1172
+msgid "Padding on Desktop (width > 991px)"
+msgstr "Заполнение на столе (ширина ограничена 991px)"
+
+#: inc/admin/porto/settings.php:1180
+msgid "Menu Popup"
+msgstr "Попап"
+
+#: inc/admin/porto/settings.php:1187 inc/functions/shortcodes.php:348
+msgid "Show Border"
+msgstr "Отображать рамку"
+
+#: inc/admin/porto/settings.php:1196 inc/admin/porto/settings.php:1664
+#: inc/admin/porto/settings.php:1720 inc/admin/porto/settings.php:3337
+#: inc/functions/shortcodes.php:362
+msgid "Border Color"
+msgstr "Цвет Границы"
+
+#: inc/admin/porto/settings.php:1213 inc/admin/porto/settings.php:1330
+#: inc/functions/shortcodes.php:701
+msgid "Heading Color"
+msgstr "Выбрать цвет заголовка."
+
+#: inc/admin/porto/settings.php:1232
+msgid "Link Hover Background Color"
+msgstr "Цвет ссылки при наведении"
+
+#: inc/admin/porto/settings.php:1240
+msgid "Narrow Menu Style"
+msgstr "Стиль мобильного меню"
+
+#: inc/admin/porto/settings.php:1241
+msgid ""
+"if narrow menu style is \"Style 2\", you should select \"Top Level Menu "
+"Item / Hover Background Color\"."
+msgstr ""
+"если узкий стиль меню \"Стиль 2\", вы должны выбрать \"Top Level пункт "
+"меню / Hover Цвет фона\"."
+
+#: inc/admin/porto/settings.php:1252
+msgid "Tip"
+msgstr "Подсказка"
+
+#: inc/admin/porto/settings.php:1259
+msgid "Tip Background Color"
+msgstr "Цвет фона:"
+
+#: inc/admin/porto/settings.php:1267
+msgid "Menu Custom Content in header type 1, 4, 9"
+msgstr "Меню на заказ Содержание в 1 типа заголовка, 4, 9"
+
+#: inc/admin/porto/settings.php:1295 inc/admin/porto/settings.php:2163
+#: inc/functions/content_type/meta_boxes.php:38
+msgid "Footer"
+msgstr "Футер"
+
+#: inc/admin/porto/settings.php:1357
+msgid "Footer Top Widget Area"
+msgstr "Показать верх подвала"
+
+#: inc/admin/porto/settings.php:1398
+msgid "Footer Bottom"
+msgstr "Показать низ подвала"
+
+#: inc/admin/porto/settings.php:1453
+msgid "Background Opacity when footer show in fixed position"
+msgstr "Фон Непрозрачность, когда подвал шоу в фиксированном положении"
+
+#: inc/admin/porto/settings.php:1460
+msgid "Footer Opacity"
+msgstr "Прозрачность"
+
+#: inc/admin/porto/settings.php:1467
+msgid "Follow Us Widget"
+msgstr "Читать на твиттере"
+
+#: inc/admin/porto/settings.php:1492
+#: inc/functions/content_type/meta_boxes.php:17
+msgid "Breadcrumbs"
+msgstr "Хлебные крошки"
+
+#: inc/admin/porto/settings.php:1546
+msgid "Content Padding"
+msgstr "Нижний отступ:"
+
+#: inc/admin/porto/settings.php:1547
+msgid "default: 0 15 0 15"
+msgstr "по умолчанию: 0 15 0 15"
+
+#: inc/admin/porto/settings.php:1570
+msgid "Page Title Color"
+msgstr "Стиль заголовка страницы"
+
+#: inc/admin/porto/settings.php:1580
+msgid "Mobile Panel"
+msgstr "Закрыть панель"
+
+#: inc/admin/porto/settings.php:1615
+msgid "View, Currency Switcher"
+msgstr "Переключатель валют"
+
+#: inc/admin/porto/settings.php:1650 inc/admin/porto/settings.php:1948
+msgid "Search Form"
+msgstr "Форма поиска"
+
+#: inc/admin/porto/settings.php:1672 inc/admin/porto/settings.php:1738
+msgid "Popup Border Color"
+msgstr "Цвет Границы"
+
+#: inc/admin/porto/settings.php:1688
+msgid "Hover Color"
+msgstr "Цвет при наведении"
+
+#: inc/admin/porto/settings.php:1698 inc/admin/porto/settings.php:1919
+msgid "Mini Cart"
+msgstr "Мини"
+
+#: inc/admin/porto/settings.php:1704 inc/functions/shortcodes.php:123
+#: inc/functions/shortcodes.php:285 inc/functions/shortcodes.php:457
+#: inc/functions/shortcodes.php:600 inc/functions/shortcodes.php:907
+msgid "Icon Color"
+msgstr "Цвет иконки"
+
+#: inc/admin/porto/settings.php:1712
+msgid "Item Color"
+msgstr "Элемент"
+
+#: inc/admin/porto/settings.php:1721 inc/admin/porto/settings.php:1730
+msgid "When mini cart type is 2, please configure this option."
+msgstr "Когда \"мини-корзина тип 2\", пожалуйста, настройте этот параметр."
+
+#: inc/admin/porto/settings.php:1748
+msgid "Custom CSS"
+msgstr "Индивидуальный CSS"
+
+#: inc/admin/porto/settings.php:1753
+msgid "CSS Code"
+msgstr "Произвольный код CSS"
+
+#: inc/admin/porto/settings.php:1754
+msgid "Paste your CSS code here."
+msgstr "Введите ваш CSS код"
+
+#: inc/admin/porto/settings.php:1772
+msgid "Show Header Top"
+msgstr "Показать зону верха шапки"
+
+#: inc/admin/porto/settings.php:1781
+msgid "Show WPML Language Switcher"
+msgstr "Показать WPML языка Switcher"
+
+#: inc/admin/porto/settings.php:1782
+msgid "Show wpml language switcher instead of view switcher menu."
+msgstr "Показать wpml switcher вместо показа switcher menu."
+
+#: inc/admin/porto/settings.php:1791
+msgid "Show WPML Currency Switcher"
+msgstr "Переключатель валют"
+
+#: inc/admin/porto/settings.php:1792
+msgid "Show wpml currency switcher instead of currency switcher menu."
+msgstr "Показать wpml switcher вместо показа currency switcher menu."
+
+#: inc/admin/porto/settings.php:1801
+msgid "Welcome Message"
+msgstr "Добро пожаловать в Visual Composer"
+
+#: inc/admin/porto/settings.php:1802
+msgid "WELCOME TO PORTO WORDPRESS"
+msgstr "Добро пожаловать в Visual Composer"
+
+#: inc/admin/porto/settings.php:1808
+msgid "Header Contact Info"
+msgstr "Заголовок"
+
+#: inc/admin/porto/settings.php:1815
+msgid "Side Navigation Copyright (Header Type: Side)"
+msgstr "Copyright навигации боковой (тип заголовка: боковая)"
+
+#: inc/admin/porto/settings.php:1816 inc/admin/porto/settings.php:2188
+msgid "&copy; Copyright 2015. All Rights Reserved."
+msgstr "&copy; Copyright 2015. Все права защищены."
+
+#: inc/admin/porto/settings.php:1824 inc/admin/porto/settings.php:1830
+msgid "Header Type"
+msgstr "Шапка Тип 1"
+
+#: inc/admin/porto/settings.php:1840
+msgid "Social Links"
+msgstr "Социалки"
+
+#: inc/admin/porto/settings.php:1845
+msgid "Show Social Links"
+msgstr "Отображать ссылки постраничной навигации"
+
+#: inc/admin/porto/settings.php:1868 inc/functions/layout.php:1214
+msgid "RSS"
+msgstr "RSS"
+
+#: inc/admin/porto/settings.php:1882 inc/functions/layout.php:1222
+msgid "Youtube"
+msgstr "YouTube"
+
+#: inc/admin/porto/settings.php:1889 inc/functions/layout.php:1226
+msgid "Instagram"
+msgstr "Instagram"
+
+#: inc/admin/porto/settings.php:1896 inc/functions/layout.php:1230
+msgid "Skype"
+msgstr "Skype"
+
+#: inc/admin/porto/settings.php:1910 inc/functions/layout.php:1238
+msgid "Google Plus"
+msgstr "Google Plus"
+
+#: inc/admin/porto/settings.php:1924
+msgid "Show Mini Cart"
+msgstr "Мини"
+
+#: inc/admin/porto/settings.php:1933
+msgid "Minicart Type"
+msgstr "Тип "
+
+#: inc/admin/porto/settings.php:1936
+msgid "Minicart Type 1"
+msgstr "Шапка Тип 1"
+
+#: inc/admin/porto/settings.php:1937
+msgid "Minicart Type 2"
+msgstr "Шапка Тип 2"
+
+#: inc/admin/porto/settings.php:1938
+msgid "Minicart Type 3"
+msgstr "Шапка Тип 3"
+
+#: inc/admin/porto/settings.php:1953
+msgid "Show Search Form"
+msgstr "Показать форму поиска на"
+
+#: inc/admin/porto/settings.php:1962
+msgid "Search Form Size"
+msgstr "Форма поиска"
+
+#: inc/admin/porto/settings.php:1964
+#: inc/functions/content_type/meta_values.php:18
+#: inc/functions/content_type/meta_values.php:29
+#: inc/functions/content_type/meta_values.php:40
+#: inc/functions/content_type/meta_values.php:48
+#: inc/functions/shortcodes.php:1143 inc/functions/shortcodes.php:1182
+#: inc/functions/shortcodes.php:1197 inc/functions/shortcodes.php:1204
+#: inc/functions/shortcodes.php:1225 inc/functions/shortcodes.php:1378
+#: inc/functions/shortcodes.php:1394 inc/functions/shortcodes.php:1446
+#: inc/functions/shortcodes.php:1475
+msgid "Large"
+msgstr "Большой"
+
+#: inc/admin/porto/settings.php:1964
+#: inc/functions/content_type/meta_values.php:20
+#: inc/functions/content_type/meta_values.php:31
+#: inc/functions/content_type/meta_values.php:41
+#: inc/functions/content_type/meta_values.php:49
+#: inc/functions/shortcodes.php:1206 inc/functions/shortcodes.php:1224
+msgid "Medium"
+msgstr "Средняя"
+
+#: inc/admin/porto/settings.php:1964 inc/functions/shortcodes.php:1117
+#: inc/functions/shortcodes.php:1142 inc/functions/shortcodes.php:1181
+#: inc/functions/shortcodes.php:1196 inc/functions/shortcodes.php:1377
+#: inc/functions/shortcodes.php:1393 inc/functions/shortcodes.php:1447
+#: inc/functions/shortcodes.php:1474
+msgid "Small"
+msgstr "Маленький"
+
+#: inc/admin/porto/settings.php:1971
+msgid "Search Content Type"
+msgstr "Тип содержимого"
+
+#: inc/admin/porto/settings.php:1973
+msgid "All"
+msgstr "Все"
+
+#: inc/admin/porto/settings.php:1973 inc/admin/porto/settings.php:2289
+msgid "Post"
+msgstr "Запись"
+
+#: inc/admin/porto/settings.php:1973 woocommerce/cart/cart.php:31
+#: woocommerce/checkout/form-pay.php:22
+#: woocommerce/checkout/review-order.php:23
+msgid "Product"
+msgstr "Продукт "
+
+#: inc/admin/porto/settings.php:1973 inc/admin/porto/settings.php:2564
+msgid "Portfolio"
+msgstr "Портфолио"
+
+#: inc/admin/porto/settings.php:1980
+msgid "Show Categories"
+msgstr "Рубрики"
+
+#: inc/admin/porto/settings.php:1992
+msgid "Sticky Header"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/admin/porto/settings.php:1997
+msgid "Enable Sticky Header"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/admin/porto/settings.php:2006
+msgid "Enable on Tablet (width < 992px)"
+msgstr "Включить на Планшете (ширина <992px)"
+
+#: inc/admin/porto/settings.php:2016
+msgid "Enable on Mobile (width <= 480)"
+msgstr "Ширина экрана мобильных устройств"
+
+#: inc/admin/porto/settings.php:2029
+msgid "Menu"
+msgstr "Меню"
+
+#: inc/admin/porto/settings.php:2035
+msgid "Show Menu Arrow"
+msgstr "Отображать иконку корзины в меню"
+
+#: inc/admin/porto/settings.php:2036
+msgid "If menu item have sub menus, show menu arrow."
+msgstr "Если в меню есть субменю, показать стрелку."
+
+#: inc/admin/porto/settings.php:2045
+msgid "Sidebar Menu Title"
+msgstr "Сайдбар меню"
+
+#: inc/admin/porto/settings.php:2046 inc/admin/porto/settings.php:2130
+msgid "All Department"
+msgstr "Все ссылки"
+
+#: inc/admin/porto/settings.php:2052
+msgid "Toggle Sidebar Menu"
+msgstr "Сайдбар меню"
+
+#: inc/admin/porto/settings.php:2062
+msgid "Display Login & Register / Logout Link"
+msgstr "Отображение Login & регистр / Logout ссылка"
+
+#: inc/admin/porto/settings.php:2064 inc/admin/porto/settings.php:2548
+#: inc/admin/porto/settings.php:2769 inc/admin/porto/settings.php:2910
+#: inc/content_types/member.php:68 inc/content_types/portfolio.php:68
+#: inc/content_types/post.php:68 inc/functions/shortcodes.php:1036
+#: inc/functions/shortcodes.php:1357
+msgid "None"
+msgstr "Ничего"
+
+#: inc/admin/porto/settings.php:2065
+msgid "In Top Navigation"
+msgstr "Верхняя Панель навигации"
+
+#: inc/admin/porto/settings.php:2066
+msgid "In Main Menu"
+msgstr "Основное меню"
+
+#: inc/admin/porto/settings.php:2074
+msgid "Show Register Link"
+msgstr "Показывать изображение"
+
+#: inc/admin/porto/settings.php:2084
+msgid "If header type is 1 or 4, 13"
+msgstr "Шапка Тип 1"
+
+#: inc/admin/porto/settings.php:2091
+msgid "Main Menu Align"
+msgstr "Выпадающее главное меню"
+
+#: inc/admin/porto/settings.php:2093 inc/admin/porto/settings.php:2196
+#: inc/functions/shortcodes.php:1037 inc/functions/shortcodes.php:1093
+#: inc/functions/shortcodes.php:1150 inc/functions/shortcodes.php:1439
+msgid "Left"
+msgstr "Влево"
+
+#: inc/admin/porto/settings.php:2094 inc/functions/shortcodes.php:1039
+#: inc/functions/shortcodes.php:1149
+msgid "Center"
+msgstr "По центру"
+
+#: inc/admin/porto/settings.php:2102
+msgid "Show Main Menu in Sidebar"
+msgstr "Сайдбар меню"
+
+#: inc/admin/porto/settings.php:2103
+msgid ""
+"If the layout of a page is left sidebar or right sidebar, the main menu "
+"shows in the sidebar."
+msgstr ""
+"Если страницу выводим с левым или правым сайдбаром, основное меню показывать "
+"в сайдбаре."
+
+#: inc/admin/porto/settings.php:2112
+msgid "Show Main Menu in Sidebar only on Home"
+msgstr "Показать главного меню в боковой панели только на дома"
+
+#: inc/admin/porto/settings.php:2122
+msgid "If header type is 9"
+msgstr "Шапка Тип 1"
+
+#: inc/admin/porto/settings.php:2129
+msgid "Main Menu Title"
+msgstr "Выпадающее главное меню"
+
+#: inc/admin/porto/settings.php:2136
+msgid "Toggle on home page"
+msgstr "Включить"
+
+#: inc/admin/porto/settings.php:2145
+msgid "If header type is 1 or 4, 9, 13"
+msgstr "Если тип заголовка равно 1 или 4, 9, 13"
+
+#: inc/admin/porto/settings.php:2152
+msgid "Menu Custom Content"
+msgstr "Произвольное меню"
+
+#: inc/admin/porto/settings.php:2153
+msgid ""
+"example: &lt;span&gt;Custom Message&lt;/span&gt;&lt;a href=\"#\"&gt;Special "
+"Offer!&lt;/a&gt;&lt;a href=\"#\"&gt;Buy this Theme!&lt;em class=\"tip hot"
+"\"&gt;HOT&lt;i class=\"tip-arrow\"&gt;&lt;/i&gt;&lt;/em&gt;&lt;/a&gt;"
+msgstr ""
+"Пример: &lt;span&gt;Custom Message&lt;/span&gt;&lt;a href=\"#\"&gt;"
+"Специальное предложение!&lt;/a&gt;&lt;a href=\"#\"&gt;Купить эту тему!&lt;em "
+"class=\"tip hot\"&gt;HOT&lt;i class=\"tip-arrow\"&gt;&lt;/i&gt;&lt;/em&gt;"
+"&lt;/a&gt;"
+
+#: inc/admin/porto/settings.php:2171
+msgid "Footer Logo"
+msgstr "В футере"
+
+#: inc/admin/porto/settings.php:2180
+msgid "Ribbon Text"
+msgstr "Текст:"
+
+#: inc/admin/porto/settings.php:2187
+msgid "Copyright"
+msgstr "Копирайт"
+
+#: inc/admin/porto/settings.php:2194
+msgid "Copyright Position"
+msgstr "Копирайт"
+
+#: inc/admin/porto/settings.php:2197 inc/functions/shortcodes.php:1038
+#: inc/functions/shortcodes.php:1094 inc/functions/shortcodes.php:1151
+#: inc/functions/shortcodes.php:1437
+msgid "Right"
+msgstr "Вправо"
+
+#: inc/admin/porto/settings.php:2205
+msgid "Show Payments Logos"
+msgstr "Показать для"
+
+#: inc/admin/porto/settings.php:2216
+msgid "Payments Image"
+msgstr "Изображение"
+
+#: inc/admin/porto/settings.php:2226
+msgid "Payments Link URL"
+msgstr "URL (Ссылка)"
+
+#: inc/admin/porto/settings.php:2236 inc/admin/porto/settings.php:2242
+msgid "Footer Type"
+msgstr "В футере"
+
+#: inc/admin/porto/settings.php:2259 inc/admin/porto/settings.php:2518
+#: inc/admin/porto/settings.php:2739
+msgid "Show Comments"
+msgstr "Отображать количество комментариев"
+
+#: inc/admin/porto/settings.php:2268 inc/admin/porto/settings.php:2304
+#: inc/admin/porto/settings.php:2579 inc/admin/porto/settings.php:2800
+msgid "Slideshow Zoom Effect"
+msgstr "Зум"
+
+#: inc/admin/porto/settings.php:2270 inc/admin/porto/settings.php:2306
+#: inc/admin/porto/settings.php:2572 inc/admin/porto/settings.php:2581
+#: inc/admin/porto/settings.php:2793 inc/admin/porto/settings.php:2802
+#: inc/admin/porto/settings.php:2932
+msgid "Enable"
+msgstr "Включить"
+
+#: inc/admin/porto/settings.php:2271 inc/admin/porto/settings.php:2307
+#: inc/admin/porto/settings.php:2573 inc/admin/porto/settings.php:2582
+#: inc/admin/porto/settings.php:2794 inc/admin/porto/settings.php:2803
+#: inc/admin/porto/settings.php:2933 inc/functions/shortcodes.php:748
+msgid "Disable"
+msgstr "Отключить"
+
+#: inc/admin/porto/settings.php:2277 inc/admin/porto/settings.php:2500
+#: inc/admin/porto/settings.php:2721 inc/admin/porto/settings.php:3232
+msgid "Show Social Share Links"
+msgstr "Количество ссылок для отображения"
+
+#: inc/admin/porto/settings.php:2295
+msgid "Show Post Format"
+msgstr "Скрыть иконку формата записи"
+
+#: inc/admin/porto/settings.php:2315
+msgid "Blog & Post Archive"
+msgstr "Блог / архив"
+
+#: inc/admin/porto/settings.php:2328 inc/admin/porto/settings.php:2492
+#: inc/content_types/post.php:111 inc/content_types/post.php:146
+msgid "Post Layout"
+msgstr "Запись"
+
+#: inc/admin/porto/settings.php:2336 inc/admin/porto/settings.php:2634
+#: inc/content_types/portfolio.php:171 inc/content_types/post.php:155
+msgid "Grid Columns"
+msgstr "Сколько колонок в сетке"
+
+#: inc/admin/porto/settings.php:2349 inc/admin/porto/settings.php:2618
+#: inc/admin/porto/settings.php:2839 inc/admin/porto/settings.php:2962
+msgid "Enable Infinite Scroll"
+msgstr "Включить"
+
+#: inc/admin/porto/settings.php:2358 inc/admin/porto/settings.php:2662
+msgid "Show Excerpt"
+msgstr "Показать анонс"
+
+#: inc/admin/porto/settings.php:2368 inc/admin/porto/settings.php:2673
+#: inc/admin/porto/settings.php:2858
+msgid "Excerpt Length"
+msgstr "Цитата"
+
+#: inc/admin/porto/settings.php:2369 inc/admin/porto/settings.php:2674
+#: inc/admin/porto/settings.php:2859
+msgid "The number of words"
+msgstr "Количество слов "
+
+#: inc/admin/porto/settings.php:2377
+msgid "Excerpt Type"
+msgstr "Цитата"
+
+#: inc/admin/porto/settings.php:2378
+msgid "Text"
+msgstr "Текст"
+
+#: inc/admin/porto/settings.php:2378
+msgid "HTML"
+msgstr "Введите ваш HTML код."
+
+#: inc/admin/porto/settings.php:2387
+msgid "Blog"
+msgstr "Блог"
+
+#: inc/admin/porto/settings.php:2392 inc/admin/porto/settings.php:2595
+#: inc/admin/porto/settings.php:2816 inc/admin/porto/settings.php:2939
+#: inc/functions/content_type/meta_boxes.php:24
+msgid "Page Title"
+msgstr "Заголовок страницы"
+
+#: inc/admin/porto/settings.php:2399
+msgid "Blog Banner Position"
+msgstr "Баннер"
+
+#: inc/admin/porto/settings.php:2407
+msgid "Blog Footer View"
+msgstr "Блог"
+
+#: inc/admin/porto/settings.php:2415
+msgid "Blog Banner Type"
+msgstr "Баннер"
+
+#: inc/admin/porto/settings.php:2424
+#: inc/functions/content_type/meta_boxes.php:93
+#: inc/functions/content_type/meta_values.php:77
+msgid "Master Slider"
+msgstr "Слайдер"
+
+#: inc/admin/porto/settings.php:2433
+#: inc/functions/content_type/meta_boxes.php:101
+#: inc/functions/content_type/meta_values.php:78
+msgid "Revolution Slider"
+msgstr "Revolution Slider"
+
+#: inc/admin/porto/settings.php:2442
+#: inc/functions/content_type/meta_boxes.php:109
+#: inc/functions/content_type/meta_values.php:79
+msgid "Banner Block"
+msgstr "Баннер"
+
+#: inc/admin/porto/settings.php:2443 inc/admin/porto/settings.php:2450
+#: inc/admin/porto/settings.php:2457 inc/admin/porto/settings.php:2464
+#: inc/admin/porto/settings.php:2471
+#: inc/functions/content_type/meta_boxes.php:110
+#: inc/functions/content_type/meta_boxes.php:117
+#: inc/functions/content_type/meta_boxes.php:124
+#: inc/functions/content_type/meta_boxes.php:131
+#: inc/functions/content_type/meta_boxes.php:138
+msgid ""
+"You should input block slug name. You can create a block in <strong>Blocks/"
+"Add New</strong>."
+msgstr ""
+"Вы должны ввести имя дополнительного блока. Потом можно создать блок в "
+"<strong>Блоки/Добавить новые</strong>."
+
+#: inc/admin/porto/settings.php:2449
+#: inc/functions/content_type/meta_boxes.php:116
+msgid "Content Top"
+msgstr "Содержимое"
+
+#: inc/admin/porto/settings.php:2456
+#: inc/functions/content_type/meta_boxes.php:123
+msgid "Content Inner Top"
+msgstr "Содержимое"
+
+#: inc/admin/porto/settings.php:2463
+#: inc/functions/content_type/meta_boxes.php:130
+msgid "Content Inner Bottom"
+msgstr "Низ контента в сетке"
+
+#: inc/admin/porto/settings.php:2470
+#: inc/functions/content_type/meta_boxes.php:137
+msgid "Content Bottom"
+msgstr "Низ контента в сетке"
+
+#: inc/admin/porto/settings.php:2479
+msgid "Single Post"
+msgstr "Одиночное изображение"
+
+#: inc/admin/porto/settings.php:2509 inc/admin/porto/settings.php:2730
+msgid "Show Author Info"
+msgstr "Показать автора блога"
+
+#: inc/admin/porto/settings.php:2527
+msgid "Show Related Posts"
+msgstr "Похожие сообщения"
+
+#: inc/admin/porto/settings.php:2537
+msgid "Related Posts Count"
+msgstr "Количество записей"
+
+#: inc/admin/porto/settings.php:2538
+msgid "If you want to show all the related posts, you should input \"-1\"."
+msgstr "Если вы хотите посмотреть все похожие посты, вы долны ввести \"-1\"."
+
+#: inc/admin/porto/settings.php:2546
+msgid "Related Posts Order by"
+msgstr "Виджет похожих сообщений"
+
+#: inc/admin/porto/settings.php:2549 inc/admin/porto/settings.php:2770
+#: inc/admin/porto/settings.php:2911
+msgid "Random"
+msgstr "Случайно"
+
+#: inc/admin/porto/settings.php:2550 inc/admin/porto/settings.php:2771
+#: inc/admin/porto/settings.php:2912 woocommerce/myaccount/my-orders.php:36
+msgid "Date"
+msgstr "Дата"
+
+#: inc/admin/porto/settings.php:2551 inc/admin/porto/settings.php:2772
+#: inc/admin/porto/settings.php:2913
+msgid "ID"
+msgstr "По ID"
+
+#: inc/admin/porto/settings.php:2552 inc/admin/porto/settings.php:2773
+#: inc/admin/porto/settings.php:2914
+msgid "Modified Date"
+msgstr "Дата изменения"
+
+#: inc/admin/porto/settings.php:2553 inc/admin/porto/settings.php:2774
+msgid "Comment Count"
+msgstr "По количеству комментариев"
+
+#: inc/admin/porto/settings.php:2570
+msgid "Portfolio Content Type"
+msgstr "Тип содержимого"
+
+#: inc/admin/porto/settings.php:2590
+msgid "Portfolio Archive"
+msgstr "Портфолио"
+
+#: inc/admin/porto/settings.php:2627 inc/admin/porto/settings.php:2713
+#: inc/content_types/portfolio.php:117 inc/content_types/portfolio.php:162
+msgid "Portfolio Layout"
+msgstr "Макет"
+
+#: inc/admin/porto/settings.php:2636
+msgid "Select the columns in <strong>grid mode</strong>."
+msgstr "Выберите столбцы, в <strong>режиме сетки.</strong>"
+
+#: inc/admin/porto/settings.php:2638 inc/content_types/portfolio.php:176
+#: inc/content_types/post.php:160
+msgid "2 Columns"
+msgstr "2 колонки"
+
+#: inc/admin/porto/settings.php:2639 inc/content_types/portfolio.php:177
+#: inc/content_types/post.php:161
+msgid "3 Columns"
+msgstr "3 колонки"
+
+#: inc/admin/porto/settings.php:2640 inc/content_types/portfolio.php:178
+#: inc/content_types/post.php:162
+msgid "4 Columns"
+msgstr "4 колонки"
+
+#: inc/admin/porto/settings.php:2641 inc/content_types/portfolio.php:179
+msgid "5 Columns"
+msgstr "5 колонок"
+
+#: inc/admin/porto/settings.php:2642 inc/content_types/portfolio.php:180
+msgid "6 Columns"
+msgstr "6 колонок"
+
+#: inc/admin/porto/settings.php:2649 inc/content_types/portfolio.php:186
+msgid "Grid View Type"
+msgstr "Смотреть элемент"
+
+#: inc/admin/porto/settings.php:2651
+msgid "Select the view type in <strong>grid mode</strong>."
+msgstr "Выберите тип просмотра в <strong>режиме сетки.</strong>"
+
+#: inc/admin/porto/settings.php:2663
+msgid "If yes, will be show the excerpt. If no, will be show the content."
+msgstr ""
+"Если да, будет отображаться цитата. Если нет, будет показано содержимое."
+
+#: inc/admin/porto/settings.php:2683
+msgid "Single Portfolio"
+msgstr "Ссылка одиночного портфолио"
+
+#: inc/admin/porto/settings.php:2704
+msgid "Show List & Prev/Next Navigation"
+msgstr "Показать пред./след. миниатюру"
+
+#: inc/admin/porto/settings.php:2748
+msgid "Show Related Portfolios"
+msgstr "В портфолио"
+
+#: inc/admin/porto/settings.php:2758
+msgid "Related Portfolios Count"
+msgstr "В портфолио"
+
+#: inc/admin/porto/settings.php:2759
+msgid ""
+"If you want to show all the related portfolios, you should input \"-1\"."
+msgstr ""
+"Если вы хотите посмотреть все похожие портфолио, вы долны ввести \"-1\"."
+
+#: inc/admin/porto/settings.php:2767
+msgid "Related Portfolios Order by"
+msgstr "В портфолио"
+
+#: inc/admin/porto/settings.php:2785
+msgid "Member"
+msgstr "Члены команды"
+
+#: inc/admin/porto/settings.php:2791
+msgid "Member Content Type"
+msgstr "Тип содержимого"
+
+#: inc/admin/porto/settings.php:2811
+msgid "Member Archive"
+msgstr "Члены команды"
+
+#: inc/admin/porto/settings.php:2848
+msgid "Show Overview Excerpt"
+msgstr "Показать анонс"
+
+#: inc/admin/porto/settings.php:2868
+msgid "Single Member"
+msgstr "Одиночное изображение"
+
+#: inc/admin/porto/settings.php:2889
+msgid "Show Related Members"
+msgstr "Похожие <strong>Пользователи</strong>"
+
+#: inc/admin/porto/settings.php:2899
+msgid "Related Members Count"
+msgstr "Похожие <strong>Пользователи</strong>"
+
+#: inc/admin/porto/settings.php:2900
+msgid "If you want to show all the related members, you should input \"-1\"."
+msgstr ""
+"Если вы хотите посмотреть все похожие портфолио, вы долны ввести \"-1\"."
+
+#: inc/admin/porto/settings.php:2908
+msgid "Related Members Order by"
+msgstr "Похожие <strong>Пользователи</strong>"
+
+#: inc/admin/porto/settings.php:2925
+msgid "FAQ"
+msgstr "FAQ"
+
+#: inc/admin/porto/settings.php:2930
+msgid "FAQ Content Type"
+msgstr "FAQ"
+
+#: inc/admin/porto/settings.php:2974
+msgid "404 Error"
+msgstr "Ошибка"
+
+#: inc/admin/porto/settings.php:2979
+msgid "404 Error Links Block"
+msgstr "Ошибка 404 Ссылки Блок"
+
+#: inc/admin/porto/settings.php:2980
+msgid "Input static block slug name"
+msgstr "Введите имя статического блока"
+
+#: inc/admin/porto/settings.php:2990
+msgid "Woocommerce"
+msgstr "WooCommerce "
+
+#: inc/admin/porto/settings.php:2995
+msgid "Show Rating in Woocommerce Products Widget"
+msgstr "Показать рейтинги виджетов WooCommerce"
+
+#: inc/admin/porto/settings.php:3006
+msgid "Product Archive"
+msgstr "Продукт "
+
+#: inc/admin/porto/settings.php:3019
+msgid "Products per Page"
+msgstr "Товаров на странице"
+
+#: inc/admin/porto/settings.php:3020
+msgid "Comma separated list of product counts."
+msgstr "Список количества товаров через запятую."
+
+#: inc/admin/porto/settings.php:3027 inc/content_types/product.php:118
+msgid "View Mode"
+msgstr "Параллакс"
+
+#: inc/admin/porto/settings.php:3035
+msgid "Shop Page Product Columns"
+msgstr "Страница товара"
+
+#: inc/admin/porto/settings.php:3043
+msgid "Category Product Columns"
+msgstr "Категория товара"
+
+#: inc/admin/porto/settings.php:3051
+msgid "Enable Image Hover Effect"
+msgstr "Отображение иконок при наведении"
+
+#: inc/admin/porto/settings.php:3060 inc/content_types/product.php:133
+msgid "Add Links Position"
+msgstr "Ссылки"
+
+#: inc/admin/porto/settings.php:3061 inc/content_types/product.php:134
+msgid "Select position of add to cart, add to wishlist, quickview."
+msgstr ""
+"Выберите положение для -Добавить в корзину, добавить в лист покупок, Быстрый "
+"просмотр."
+
+#: inc/admin/porto/settings.php:3062
+#: inc/functions/content_type/meta_values.php:146
+#: inc/functions/shortcodes.php:1285
+msgid "Out of Image"
+msgstr "Нет в наличии"
+
+#: inc/admin/porto/settings.php:3062
+#: inc/functions/content_type/meta_values.php:147
+#: inc/functions/shortcodes.php:1286
+msgid "On Image"
+msgstr "Изображение"
+
+#: inc/admin/porto/settings.php:3069
+msgid "Enable Hover Effect"
+msgstr "Эффект при наведении"
+
+#: inc/admin/porto/settings.php:3078
+msgid "Show Wishlist"
+msgstr "Показать для"
+
+#: inc/admin/porto/settings.php:3087
+msgid "Show Quick View"
+msgstr "Показать только в мобильном режиме?"
+
+#: inc/admin/porto/settings.php:3098
+msgid "Single Product"
+msgstr "Показать один товар по ID или SKU"
+
+#: inc/admin/porto/settings.php:3111
+msgid "Show Prev/Next Product"
+msgstr "Показать пред./след. миниатюру"
+
+#: inc/admin/porto/settings.php:3112
+msgid "Will be show in breadcrumbs"
+msgstr "Хлебные крошки"
+
+#: inc/admin/porto/settings.php:3121
+msgid "Show Short Description"
+msgstr "Короткое описания"
+
+#: inc/admin/porto/settings.php:3130
+msgid "Tabs Type"
+msgstr "Вкладки"
+
+#: inc/admin/porto/settings.php:3131
+msgid "Horizontal"
+msgstr "Горизонтальная"
+
+#: inc/admin/porto/settings.php:3131
+msgid "Vertical"
+msgstr "Вертикальная"
+
+#: inc/admin/porto/settings.php:3131
+msgid "Accordion"
+msgstr "Аккордеон"
+
+#: inc/admin/porto/settings.php:3138
+msgid "Tabs Position"
+msgstr "Позиция широкого  меню"
+
+#: inc/admin/porto/settings.php:3139
+msgid "Below Price & Short Description"
+msgstr "Короткое описания"
+
+#: inc/admin/porto/settings.php:3146
+msgid "Global Product Custom Tab Title"
+msgstr "Глобальный продукт заказ Вкладка Название"
+
+#: inc/admin/porto/settings.php:3153
+msgid "Global Product Custom Tab Block"
+msgstr "Глобальный продукт настраиваемуая вкладка блока"
+
+#: inc/admin/porto/settings.php:3154
+msgid "Input block slug name"
+msgstr "Введите имя статического блока"
+
+#: inc/admin/porto/settings.php:3161
+msgid "Show Related Products"
+msgstr "Похожие товары"
+
+#: inc/admin/porto/settings.php:3171
+msgid "Related Products Count"
+msgstr "Похожие товары"
+
+#: inc/admin/porto/settings.php:3178
+msgid "Show Up Sells"
+msgstr "Показать для"
+
+#: inc/admin/porto/settings.php:3188
+msgid "Up Sells Count"
+msgstr "Вверх"
+
+#: inc/admin/porto/settings.php:3195
+msgid "Show \"Hot\" Label"
+msgstr "Показать метку"
+
+#: inc/admin/porto/settings.php:3196
+msgid "Will be show in the featured product."
+msgstr "Отображать миниатюру"
+
+#: inc/admin/porto/settings.php:3205
+msgid "Show \"Sale\" Label"
+msgstr "Показать метку"
+
+#: inc/admin/porto/settings.php:3214
+msgid "Show Saved Sale Price Percentage"
+msgstr "Показать проценты скидки"
+
+#: inc/admin/porto/settings.php:3223
+msgid "Show \"Out of stock\" Status"
+msgstr "Нет в наличии"
+
+#: inc/admin/porto/settings.php:3243
+msgid "Product Image & Zoom"
+msgstr "Продукт "
+
+#: inc/admin/porto/settings.php:3248
+msgid "Show Thumbnails"
+msgstr "Изображение с миниатюрами"
+
+#: inc/admin/porto/settings.php:3257
+msgid "Enable Image Zoom"
+msgstr "Включить"
+
+#: inc/admin/porto/settings.php:3266
+msgid "Enable Image Popup"
+msgstr "Попап"
+
+#: inc/admin/porto/settings.php:3275
+msgid "Zoom Type"
+msgstr "Зум"
+
+#: inc/admin/porto/settings.php:3276
+msgid "Inner"
+msgstr ""
+"WPBakery имеет полную документацию, доступную по адресу <a target=\"_blank\" "
+"href=\"%s\">kb.wpbakery.com</a>, которая раскрывает все вопросы, связанные с "
+"использованием редактора."
+
+#: inc/admin/porto/settings.php:3276
+msgid "Lens"
+msgstr "Объектив"
+
+#: inc/admin/porto/settings.php:3284
+msgid "Scroll Zoom"
+msgstr "Зум"
+
+#: inc/admin/porto/settings.php:3294
+msgid "Lens Size"
+msgstr "Размер"
+
+#: inc/admin/porto/settings.php:3302
+msgid "Lens Shape"
+msgstr "Форма"
+
+#: inc/admin/porto/settings.php:3303 inc/functions/shortcodes.php:969
+msgid "Round"
+msgstr "Круг"
+
+#: inc/admin/porto/settings.php:3303 inc/functions/shortcodes.php:969
+msgid "Square"
+msgstr "Квадрат"
+
+#: inc/admin/porto/settings.php:3311
+msgid "Contain Lens Zoom"
+msgstr "Зум"
+
+#: inc/admin/porto/settings.php:3321
+msgid "Lens Border"
+msgstr "Граница"
+
+#: inc/admin/porto/settings.php:3329 inc/functions/shortcodes.php:375
+msgid "Border Size"
+msgstr "Задать размер верхней границы контейнера"
+
+#: inc/admin/porto/settings.php:3346
+msgid "Cart Page"
+msgstr "Корзина"
+
+#: inc/admin/porto/settings.php:3351
+msgid "Show Cross Sells"
+msgstr "Показать для"
+
+#: inc/admin/porto/settings.php:3361
+msgid "Cross Sells Count"
+msgstr "Без счетчика"
+
+#: inc/admin/porto/settings.php:3370
+msgid "Catalog Mode"
+msgstr "Классический режим"
+
+#: inc/admin/porto/settings.php:3375
+msgid "Enable Catalog Mode"
+msgstr "Включить режим автозапуска."
+
+#: inc/admin/porto/settings.php:3384
+msgid "Show Price"
+msgstr "Цена"
+
+#: inc/admin/porto/settings.php:3394
+msgid "Show Add Cart Button"
+msgstr "Показать ссылку в дополнение к кнопке корзины"
+
+#: inc/admin/porto/settings.php:3404
+msgid "Show Reviews"
+msgstr "Отзывы"
+
+#: inc/admin/porto/settings.php:3414
+msgid "Enable also for administrators"
+msgstr "Вас может заинтересовать&hellip;"
+
+#: inc/admin/porto/settings.php:3427
+msgid "Social Share"
+msgstr "Включить социалки"
+
+#: inc/admin/porto/settings.php:3432
+msgid "Show social links"
+msgstr "Отображать ссылки постраничной навигации"
+
+#: inc/admin/porto/settings.php:3433
+msgid "Show social links in post and product pages"
+msgstr "Показать социальные ссылки в постах и страницах товаров"
+
+#: inc/admin/porto/settings.php:3442
+msgid "Add rel=\"nofollow\" to social links"
+msgstr "Добавить rel=\"nofollow\" в социальных ссылках"
+
+#: inc/admin/porto/settings.php:3452
+msgid "Enable Facebook Share"
+msgstr "Включить Facebook"
+
+#: inc/admin/porto/settings.php:3462
+msgid "Enable Twitter Share"
+msgstr "Включить Twitter"
+
+#: inc/admin/porto/settings.php:3472
+msgid "Enable LinkedIn Share"
+msgstr "Включить LinkedIn"
+
+#: inc/admin/porto/settings.php:3482
+msgid "Enable Google + Share"
+msgstr "Включить социалки"
+
+#: inc/admin/porto/settings.php:3492
+msgid "Enable Pinterest Share"
+msgstr "Включить Pinterest"
+
+#: inc/admin/porto/settings.php:3502
+msgid "Enable Email Share"
+msgstr "Включить социалки"
+
+#: inc/admin/porto/settings.php:3512
+msgid "Enable VK Share"
+msgstr "Включить VK"
+
+#: inc/admin/porto/settings.php:3522
+msgid "Enable Xing Share"
+msgstr "Включить социалки"
+
+#: inc/admin/porto/settings.php:3532
+msgid "Enable Tumblr Share"
+msgstr "Включить Tumblr"
+
+#: inc/admin/porto/settings.php:3542
+msgid "Enable Reddit Share"
+msgstr "Включить социалки"
+
+#: inc/admin/porto/settings.php:3562
+msgid "Settings"
+msgstr "Настройки"
+
+#: inc/admin/porto/settings.php:3566 inc/admin/porto/settings.php:3567
+#: inc/admin/porto/settings.php:3568
+msgid "Theme Options"
+msgstr "Настройки темы"
+
+#: inc/admin/porto/settings.php:3639
+msgid ""
+"Did you know that Porto sets a global variable for you? To access any of "
+"your saved options from within your code you can use your global variable: "
+msgstr ""
+"Знаете ли вы, что мы устанавливаем глобальную переменную для вас? Чтобы "
+"получить доступ к любому из сохраненных вариантов в коде вы можете "
+"использовать вашу глобальную переменную:"
+
+#: inc/admin/porto/settings.php:3641
+msgid ""
+"This text is displayed above the options panel. It isn't required, but more "
+"info is always better! The intro_text field accepts all HTML."
+msgstr ""
+"Этот текст отображается над панелью опций. Это не обязательно, но "
+"подробности это всегда лучше! В поле Intro_text можно использовать HTML."
+
+#: inc/content_types/block.php:13
+msgid "Block Options"
+msgstr "Настройки"
+
+#: inc/content_types/block.php:33
+msgid "Wrap as Container"
+msgstr "Верхний отступ:"
+
+#: inc/content_types/content_types.php:91
+#: inc/content_types/content_types.php:281
+#: inc/content_types/content_types.php:401
+msgid "Upload Image"
+msgstr "Вставьте URL иконки сайта или выберите/загрузите изображение (%s)."
+
+#: inc/content_types/content_types.php:92
+#: inc/content_types/content_types.php:282
+#: inc/content_types/content_types.php:402
+msgid "Remove Image"
+msgstr "Удалить"
+
+#: inc/content_types/member.php:31 inc/content_types/member.php:217
+msgid "Member Options"
+msgstr "Настройки"
+
+#: inc/content_types/member.php:32 inc/content_types/page.php:23
+#: inc/content_types/portfolio.php:32 inc/content_types/post.php:32
+#: inc/content_types/product.php:32
+msgid "View Options"
+msgstr "Просмотр настроек"
+
+#: inc/content_types/member.php:34 inc/content_types/page.php:25
+#: inc/content_types/portfolio.php:34 inc/content_types/post.php:34
+#: inc/content_types/product.php:34
+msgid "Skin Options"
+msgstr "Настройки"
+
+#: inc/content_types/member.php:66 inc/content_types/portfolio.php:66
+#: inc/content_types/post.php:66
+msgid "Images"
+msgstr "Изображения"
+
+#: inc/content_types/member.php:67 inc/content_types/portfolio.php:67
+#: inc/content_types/post.php:67
+msgid "Video & Audio"
+msgstr "Аудио"
+
+#: inc/content_types/member.php:88
+msgid "First Name"
+msgstr "первый"
+
+#: inc/content_types/member.php:94
+msgid "Last Name"
+msgstr "последний"
+
+#: inc/content_types/member.php:100
+msgid "Role"
+msgstr ""
+"Если новый пользователь создан WordPress, его новый пароль генерируется "
+"случайно и назначается роль %s. Будет необходимо изменить его детали "
+"вручную.  "
+
+#: inc/content_types/member.php:106
+msgid "Overview"
+msgstr "Краткий обзор"
+
+#: inc/content_types/member.php:112
+msgid "Portfolio IDs"
+msgstr "Список ID"
+
+#: inc/content_types/member.php:113
+msgid "Comma separated list of portfolio ids."
+msgstr "Разделенный запятыми список портфельных идентификаторов."
+
+#: inc/content_types/member.php:119
+msgid "Product IDs"
+msgstr "Список ID"
+
+#: inc/content_types/member.php:120
+msgid "Comma separated list of product ids."
+msgstr ""
+"﻿Введите список идентификаторов категорий продуктов, разделенных запятыми."
+
+#: inc/content_types/member.php:126 inc/content_types/portfolio.php:88
+#: inc/content_types/post.php:88
+msgid "Slideshow Type"
+msgstr "Тип "
+
+#: inc/content_types/member.php:127 inc/content_types/portfolio.php:89
+#: inc/content_types/post.php:89
+msgid "Select the slideshow type."
+msgstr "Выбрать тип аннотации."
+
+#: inc/content_types/member.php:135 inc/content_types/portfolio.php:97
+#: inc/content_types/post.php:97
+msgid "Video & Audio Embed Code"
+msgstr "Код для вставки Видео / Аудио"
+
+#: inc/content_types/member.php:136
+msgid ""
+"Paste the iframe code of the Flash (YouTube or Vimeo etc). Only necessary "
+"when the member type is video."
+msgstr ""
+"Вставьте код iframe флеш (YouTube или Vimeo и т.д.). Только необходимо, "
+"когда пользователь определяет видео."
+
+#: inc/content_types/member.php:142
+msgid "Member Link"
+msgstr "Члены команды"
+
+#: inc/content_types/member.php:143
+msgid ""
+"External Link for the Member which adds a visit site button with the link. "
+"Leave blank for post URL."
+msgstr ""
+"Внешняя ссылка для члена, который добавляет кнопку Посетить сайт с ссылкой. "
+"Оставьте пустым для почтового URL."
+
+#: inc/content_types/member.php:218
+msgid "Use selected member options. (<strong>Infinite Scroll</strong>)"
+msgstr ""
+"Параметры выбранного пользователя. (<strong>Бесконечной прокрутки</strong>)"
+
+#: inc/content_types/member.php:225 inc/content_types/portfolio.php:154
+#: inc/content_types/post.php:138
+msgid "Infinite Scroll"
+msgstr "Прокрутка"
+
+#: inc/content_types/member.php:226 inc/content_types/portfolio.php:155
+#: inc/content_types/post.php:139
+msgid "Disable infinite scroll."
+msgstr "Отключить"
+
+#: inc/content_types/page.php:68
+msgid "Select the main menu you would like to display."
+msgstr "Выберите главное меню вы хотели бы, чтобы отобразить."
+
+#: inc/content_types/portfolio.php:31 inc/content_types/portfolio.php:146
+msgid "Portfolio Options"
+msgstr "Настройки"
+
+#: inc/content_types/portfolio.php:98 inc/content_types/post.php:98
+msgid ""
+"Paste the iframe code of the Flash (YouTube or Vimeo etc). Only necessary "
+"when the portfolio type is video."
+msgstr ""
+"Вставьте код iframe флеш (YouTube или Vimeo и т.д.). Только необходимо, "
+"когда пользователь определяет видео."
+
+#: inc/content_types/portfolio.php:104
+msgid "Portfolio Link"
+msgstr "Портфолио"
+
+#: inc/content_types/portfolio.php:105
+msgid ""
+"External Link for the Portfolio which adds a <strong>Live Preview</strong> "
+"button with the link. Leave blank for post URL."
+msgstr ""
+"Внешняя ссылка на портфолио, которое добавляет кнопку "
+"<strong>Предварительный просмотр</strong> со ссылкой. Оставьте пустым для "
+"почтового URL."
+
+#: inc/content_types/portfolio.php:111
+msgid "Client Name"
+msgstr "Клиент"
+
+#: inc/content_types/portfolio.php:118 inc/content_types/portfolio.php:163
+msgid "Select the portfolio layout."
+msgstr "Выбрать макет кнопки."
+
+#: inc/content_types/portfolio.php:131
+msgid "Like Count"
+msgstr "Без счетчика"
+
+#: inc/content_types/portfolio.php:133
+msgid "0"
+msgstr "(от 0 до 1)"
+
+#: inc/content_types/portfolio.php:147
+msgid ""
+"Use selected portfolio options. (<strong>Infinite Scroll, Portfolio Layout, "
+"Grid Columns, Grid View Type</strong>)"
+msgstr ""
+"Используйте выбранные опции портфеля. (<strong>Бесконечные прокрутки, "
+"Портфолио Макет сетки Колонны, Сетка Просмотр тип</strong>)"
+
+#: inc/content_types/portfolio.php:172
+msgid "Select the portfolio columns in <strong>grid layout</strong>."
+msgstr "Выберите портфеля колонки в <strong>макете сетки.</strong>"
+
+#: inc/content_types/portfolio.php:187
+msgid "Select the portfolio view type in <strong>grid layout</strong>."
+msgstr "Выберите тип портфолио в <strong>макете сетки.</strong>"
+
+#: inc/content_types/post.php:31 inc/content_types/post.php:130
+msgid "Post Options"
+msgstr "Запись"
+
+#: inc/content_types/post.php:104
+msgid "External URL"
+msgstr "Внешнее"
+
+#: inc/content_types/post.php:105
+msgid "Input website url if post format is link."
+msgstr "Ввод URL сайта, если формат пост ссылку."
+
+#: inc/content_types/post.php:112 inc/content_types/post.php:147
+msgid "Select the post layout."
+msgstr "Выбрать макет кнопки."
+
+#: inc/content_types/post.php:131
+msgid ""
+"Use selected post options. (<strong>Infinite Scroll, Post Layout, Grid "
+"Columns</strong>)"
+msgstr ""
+"Используйте параметры выбранного поста. (<strong>Бесконечной прокрутки, пост "
+"макет, столбцы сетки</strong>)"
+
+#: inc/content_types/post.php:156
+msgid "Select the post columns in <strong>grid layout</strong>."
+msgstr "Выберите почтовых колонки в <strong>макете сетки.</strong>"
+
+#: inc/content_types/product.php:31
+msgid "Product Options"
+msgstr "Настройки"
+
+#: inc/content_types/product.php:82
+msgid "Custom Tab Title 1"
+msgstr "Введите заголовок вкладки"
+
+#: inc/content_types/product.php:83 inc/content_types/product.php:97
+msgid "Input the custom tab title."
+msgstr "Введите заголовок вкладки."
+
+#: inc/content_types/product.php:89
+msgid "Custom Tab Content 1"
+msgstr "Вкладка 1"
+
+#: inc/content_types/product.php:90 inc/content_types/product.php:104
+msgid "Input the custom tab content."
+msgstr "Добавить пользовательскую вкладку контент."
+
+#: inc/content_types/product.php:96
+msgid "Custom Tab Title 2"
+msgstr "Введите заголовок вкладки"
+
+#: inc/content_types/product.php:103
+msgid "Custom Tab Content 2"
+msgstr "Вкладка 2"
+
+#: inc/content_types/product.php:126
+msgid "Product Columns"
+msgstr "Колонки"
+
+#: inc/content_types/product.php:142
+msgid "Category Image"
+msgstr "Категории"
+
+#: inc/functions/content_type/meta_boxes.php:18
+msgid "Hide breadcrumbs"
+msgstr "Хлебные крошки"
+
+#: inc/functions/content_type/meta_boxes.php:25
+msgid "Hide page title"
+msgstr "Спрятать заголовок страницы в области содержимого"
+
+#: inc/functions/content_type/meta_boxes.php:32
+msgid "Hide header"
+msgstr "Заголовок"
+
+#: inc/functions/content_type/meta_boxes.php:39
+msgid "Hide footer"
+msgstr "Спрятать"
+
+#: inc/functions/content_type/meta_boxes.php:45
+msgid "Layout & Sidebar"
+msgstr "Макет сайдбара"
+
+#: inc/functions/content_type/meta_boxes.php:46
+msgid "Use selected layout and sidebar"
+msgstr "Макет сайдбара"
+
+#: inc/functions/content_type/meta_boxes.php:52
+msgid "Layout"
+msgstr "Макет"
+
+#: inc/functions/content_type/meta_boxes.php:53
+msgid "Select layout."
+msgstr "Выбрать макет кнопки."
+
+#: inc/functions/content_type/meta_boxes.php:61
+msgid "Sidebar"
+msgstr "Сайдбар"
+
+#: inc/functions/content_type/meta_boxes.php:62
+msgid ""
+"Select the sidebar you would like to display. <strong>Note</strong>: You "
+"must first create the sidebar under <strong>Appearance > Sidebars</strong>."
+msgstr ""
+"Выберите боковую панель, если вы хотите, чтобы она отображалась в "
+"<strong>Записях</strong>. Вы сначала должны создать  сайдбар "
+"<strong>Appearance > Sidebars</strong>."
+
+#: inc/functions/content_type/meta_boxes.php:70
+msgid "Banner Position"
+msgstr "Баннер"
+
+#: inc/functions/content_type/meta_boxes.php:78
+msgid "Footer View"
+msgstr "В футере"
+
+#: inc/functions/content_type/meta_boxes.php:86
+msgid "Banner Type"
+msgstr "Баннер"
+
+#: inc/functions/content_type/meta_boxes.php:94
+msgid "Select the Master Slider."
+msgstr "Выбрать источник для слайдера"
+
+#: inc/functions/content_type/meta_boxes.php:102
+msgid "Select the Revolution Slider."
+msgstr "Выберите Revolution Slider."
+
+#: inc/functions/content_type/meta_boxes.php:155
+msgid "Body Background Color"
+msgstr "Фоновый цвет "
+
+#: inc/functions/content_type/meta_boxes.php:157
+#: inc/functions/content_type/meta_boxes.php:193
+#: inc/functions/content_type/meta_boxes.php:229
+#: inc/functions/content_type/meta_boxes.php:265
+#: inc/functions/content_type/meta_boxes.php:301
+#: inc/functions/content_type/meta_boxes.php:337
+#: inc/functions/content_type/meta_boxes.php:373
+#: inc/functions/content_type/meta_boxes.php:409
+#: inc/functions/content_type/meta_boxes.php:445
+msgid "You should input hex color(ex: #ffffff) or 'transparent'."
+msgstr ""
+"Вы должны ввести шестнадцатеричный цвет (например: #ffffff) или «прозрачный»."
+
+#: inc/functions/content_type/meta_boxes.php:161
+msgid "Body Background Image"
+msgstr "Фоновый цвет "
+
+#: inc/functions/content_type/meta_boxes.php:166
+msgid "Body Background Repeat"
+msgstr "Фоновый цвет "
+
+#: inc/functions/content_type/meta_boxes.php:172
+msgid "Body Background Size"
+msgstr "Фоновый цвет "
+
+#: inc/functions/content_type/meta_boxes.php:178
+msgid "Body Background Attachment"
+msgstr "Фоновый цвет "
+
+#: inc/functions/content_type/meta_boxes.php:184
+msgid "Body Background Position"
+msgstr "Фоновый цвет "
+
+#: inc/functions/content_type/meta_boxes.php:191
+msgid "Page Content Background Color"
+msgstr "Фоновый цвет (контент) "
+
+#: inc/functions/content_type/meta_boxes.php:197
+msgid "Page Content Background Image"
+msgstr "Фоновый цвет (контент) "
+
+#: inc/functions/content_type/meta_boxes.php:202
+msgid "Page Content Background Repeat"
+msgstr "Параллакс фоны"
+
+#: inc/functions/content_type/meta_boxes.php:208
+msgid "Page Content Background Size"
+msgstr "Параллакс фоны"
+
+#: inc/functions/content_type/meta_boxes.php:214
+msgid "Page Content Background Attachment"
+msgstr "Параллакс фоны"
+
+#: inc/functions/content_type/meta_boxes.php:220
+msgid "Page Content Background Position"
+msgstr "Параллакс фоны"
+
+#: inc/functions/content_type/meta_boxes.php:227
+msgid "Content Bottom Widgets Area Background Color"
+msgstr "Цвет фона области содержимого снизу виджеты"
+
+#: inc/functions/content_type/meta_boxes.php:233
+msgid "Content Bottom Widgets Area Background Image"
+msgstr "Контента снизу виджеты области фоновое изображение"
+
+#: inc/functions/content_type/meta_boxes.php:238
+msgid "Content Bottom Widgets Area Background Repeat"
+msgstr "Контента снизу виджеты области фон повторить"
+
+#: inc/functions/content_type/meta_boxes.php:244
+msgid "Content Bottom Widgets Area Background Size"
+msgstr "Размер фона области контента снизу виджеты"
+
+#: inc/functions/content_type/meta_boxes.php:250
+msgid "Content Bottom Widgets Area Background Attachment"
+msgstr "Контента снизу виджеты области фона вложений"
+
+#: inc/functions/content_type/meta_boxes.php:256
+msgid "Content Bottom Widgets Area Background Position"
+msgstr "Содержание внизу виджеты области фона положение"
+
+#: inc/functions/content_type/meta_boxes.php:263
+msgid "Header Background Color"
+msgstr "Цвет разделителя шапки"
+
+#: inc/functions/content_type/meta_boxes.php:269
+msgid "Header Background Image"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/functions/content_type/meta_boxes.php:274
+msgid "Header Background Repeat"
+msgstr "Заголовок"
+
+#: inc/functions/content_type/meta_boxes.php:280
+msgid "Header Background Size"
+msgstr "Фон"
+
+#: inc/functions/content_type/meta_boxes.php:286
+msgid "Header Background Attachment"
+msgstr "Вложение"
+
+#: inc/functions/content_type/meta_boxes.php:292
+msgid "Header Background Position"
+msgstr "Заголовок"
+
+#: inc/functions/content_type/meta_boxes.php:299
+msgid "Sticky Header Background Color"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/functions/content_type/meta_boxes.php:305
+msgid "Sticky Header Background Image"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/functions/content_type/meta_boxes.php:310
+msgid "Sticky Header Background Repeat"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/functions/content_type/meta_boxes.php:316
+msgid "Sticky Header Background Size"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/functions/content_type/meta_boxes.php:322
+msgid "Sticky Header Background Attachment"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/functions/content_type/meta_boxes.php:328
+msgid "Sticky Header Background Position"
+msgstr "Изображение логотипа (закрепленная шапка)"
+
+#: inc/functions/content_type/meta_boxes.php:335
+msgid "Footer Top Widget Area Background Color"
+msgstr "Цвет фона виджетов в подвале"
+
+#: inc/functions/content_type/meta_boxes.php:341
+msgid "Footer Top Widget Area Background Image"
+msgstr "Нижний колонтитул Топ виджет области фоновое изображение"
+
+#: inc/functions/content_type/meta_boxes.php:346
+msgid "Footer Top Widget Area Background Repeat"
+msgstr "Нижний колонтитул Топ виджет области фон повторить"
+
+#: inc/functions/content_type/meta_boxes.php:352
+msgid "Footer Top Widget Area Background Size"
+msgstr "Цвет фона виджета колонтитула"
+
+#: inc/functions/content_type/meta_boxes.php:358
+msgid "Footer Top Widget Area Background Attachment"
+msgstr "Нижний колонтитул Топ виджет области фона вложений"
+
+#: inc/functions/content_type/meta_boxes.php:364
+msgid "Footer Top Widget Area Background Position"
+msgstr "Нижний колонтитул Топ виджет области фон позиции"
+
+#: inc/functions/content_type/meta_boxes.php:371
+msgid "Footer Background Color"
+msgstr "Цвет разделителя подвала"
+
+#: inc/functions/content_type/meta_boxes.php:377
+msgid "Footer Background Image"
+msgstr "Фоновое изображение"
+
+#: inc/functions/content_type/meta_boxes.php:382
+msgid "Footer Background Repeat"
+msgstr "Футер"
+
+#: inc/functions/content_type/meta_boxes.php:388
+msgid "Footer Background Size"
+msgstr "Размер"
+
+#: inc/functions/content_type/meta_boxes.php:394
+msgid "Footer Background Attachment"
+msgstr "Футер"
+
+#: inc/functions/content_type/meta_boxes.php:400
+msgid "Footer Background Position"
+msgstr "Футер"
+
+#: inc/functions/content_type/meta_boxes.php:407
+msgid "Footer Bottom Background Color"
+msgstr "Фоновый цвет Нижнего Градиента"
+
+#: inc/functions/content_type/meta_boxes.php:413
+msgid "Footer Bottom Background Image"
+msgstr "Цвета низа подвала"
+
+#: inc/functions/content_type/meta_boxes.php:418
+msgid "Footer Bottom Background Repeat"
+msgstr "Цвета низа подвала"
+
+#: inc/functions/content_type/meta_boxes.php:424
+msgid "Footer Bottom Background Size"
+msgstr "Цвета низа подвала"
+
+#: inc/functions/content_type/meta_boxes.php:430
+msgid "Footer Bottom Background Attachment"
+msgstr "Цвет нижнего фона"
+
+#: inc/functions/content_type/meta_boxes.php:436
+msgid "Footer Bottom Background Position"
+msgstr "Цвета низа подвала"
+
+#: inc/functions/content_type/meta_boxes.php:443
+msgid "Breadcrumbs Background Color"
+msgstr "Хлебные крошки"
+
+#: inc/functions/content_type/meta_boxes.php:449
+msgid "Breadcrumbs Background Image"
+msgstr "Хлебные крошки"
+
+#: inc/functions/content_type/meta_boxes.php:454
+msgid "Breadcrumbs Background Repeat"
+msgstr "Повторять"
+
+#: inc/functions/content_type/meta_boxes.php:460
+msgid "Breadcrumbs Background Size"
+msgstr "Хлебные крошки"
+
+#: inc/functions/content_type/meta_boxes.php:466
+msgid "Breadcrumbs Background Attachment"
+msgstr "Хлебные крошки"
+
+#: inc/functions/content_type/meta_boxes.php:472
+msgid "Breadcrumbs Background Position"
+msgstr "Позиция широкого  меню"
+
+#: inc/functions/content_type/meta_values.php:19
+#: inc/functions/content_type/meta_values.php:30
+#: inc/functions/shortcodes.php:1205
+msgid "Large Alt"
+msgstr "Большой"
+
+#: inc/functions/content_type/meta_values.php:21
+#: inc/functions/content_type/meta_values.php:37
+#: inc/functions/content_type/meta_values.php:198
+#: inc/functions/shortcodes.php:1207 inc/functions/shortcodes.php:1222
+#: inc/functions/shortcodes.php:1249 inc/functions/shortcodes.php:1292
+msgid "Grid"
+msgstr "Сетка"
+
+#: inc/functions/content_type/meta_values.php:22
+#: inc/functions/content_type/meta_values.php:38
+#: inc/functions/shortcodes.php:1208 inc/functions/shortcodes.php:1223
+msgid "Timeline"
+msgstr "Временной график"
+
+#: inc/functions/content_type/meta_values.php:69
+msgid "Before Header"
+msgstr "Заголовок"
+
+#: inc/functions/content_type/meta_values.php:70
+msgid "Below Header"
+msgstr "Подзаголовок"
+
+#: inc/functions/content_type/meta_values.php:71
+#: inc/functions/content_type/meta_values.php:174
+msgid "Fixed"
+msgstr "Фиксированный"
+
+#: inc/functions/content_type/meta_values.php:86
+#: inc/functions/shortcodes.php:1060 inc/functions/shortcodes.php:1189
+msgid "Simple"
+msgstr "Простой"
+
+#: inc/functions/content_type/meta_values.php:87
+msgid "Simple and Position Fixed"
+msgstr "Позиция широкого  меню"
+
+#: inc/functions/content_type/meta_values.php:134
+#: inc/functions/shortcodes.php:1214 inc/functions/shortcodes.php:1232
+msgid "2"
+msgstr "2"
+
+#: inc/functions/content_type/meta_values.php:135
+#: inc/functions/shortcodes.php:1215 inc/functions/shortcodes.php:1233
+msgid "3"
+msgstr "3"
+
+#: inc/functions/content_type/meta_values.php:136
+#: inc/functions/shortcodes.php:1216 inc/functions/shortcodes.php:1234
+msgid "4"
+msgstr "4"
+
+#: inc/functions/content_type/meta_values.php:137
+#: inc/functions/shortcodes.php:1235
+msgid "5"
+msgstr "5"
+
+#: inc/functions/content_type/meta_values.php:138
+#: inc/functions/shortcodes.php:1236
+msgid "6"
+msgstr "6"
+
+#: inc/functions/content_type/meta_values.php:139
+msgid "7 (widthout sidebar)"
+msgstr "7 (без боковой панели)"
+
+#: inc/functions/content_type/meta_values.php:140
+msgid "8 (widthout sidebar)"
+msgstr "Сайдбар"
+
+#: inc/functions/content_type/meta_values.php:154
+msgid "No Repeat"
+msgstr "Не повторять"
+
+#: inc/functions/content_type/meta_values.php:155
+msgid "Repeat All"
+msgstr "Не повторять"
+
+#: inc/functions/content_type/meta_values.php:156
+msgid "Repeat Horizontally"
+msgstr "Горизонтальное повторение"
+
+#: inc/functions/content_type/meta_values.php:157
+msgid "Repeat Vertically"
+msgstr "Вертикальное повторение"
+
+#: inc/functions/content_type/meta_values.php:158
+#: inc/functions/content_type/meta_values.php:165
+#: inc/functions/content_type/meta_values.php:176
+msgid "Inherit"
+msgstr "Наследовать"
+
+#: inc/functions/content_type/meta_values.php:166
+msgid "Cover"
+msgstr "Накрывать"
+
+#: inc/functions/content_type/meta_values.php:167
+msgid "Contain"
+msgstr "Содержать"
+
+#: inc/functions/content_type/meta_values.php:175
+msgid "Scroll"
+msgstr "Прокрутка"
+
+#: inc/functions/content_type/meta_values.php:183
+msgid "Left Top"
+msgstr "Слева сверху"
+
+#: inc/functions/content_type/meta_values.php:184
+msgid "Left Center"
+msgstr "Слева по центру"
+
+#: inc/functions/content_type/meta_values.php:185
+msgid "Left Bottom"
+msgstr "Слева снизу"
+
+#: inc/functions/content_type/meta_values.php:186
+msgid "Center Top"
+msgstr "В центре сверху"
+
+#: inc/functions/content_type/meta_values.php:187
+msgid "Center Center"
+msgstr "По центру"
+
+#: inc/functions/content_type/meta_values.php:188
+msgid "Center Bottom"
+msgstr "В центре снизу"
+
+#: inc/functions/content_type/meta_values.php:189
+msgid "Right Top"
+msgstr "Справа сверху"
+
+#: inc/functions/content_type/meta_values.php:190
+msgid "Right Center"
+msgstr "Справа по центру"
+
+#: inc/functions/content_type/meta_values.php:191
+msgid "Right Bottom"
+msgstr "Справа снизу"
+
+#: inc/functions/content_type/meta_values.php:199
+#: inc/functions/shortcodes.php:1250 inc/functions/shortcodes.php:1293
+msgid "List"
+msgstr "Список"
+
+#: inc/functions/content_type/portfolio_like.php:15
+msgid "Already Liked"
+msgstr "Вы это уже лайкнули!"
+
+#: inc/functions/content_type/portfolio_like.php:28
+msgid "Already liked"
+msgstr "Вы это уже лайкнули!"
+
+#: inc/functions/content_type/portfolio_like.php:30
+msgid "Like"
+msgstr "Нравиться"
+
+#: inc/functions/layout.php:50 inc/functions/layout.php:304
+msgid "Home"
+msgstr "Главная"
+
+#: inc/functions/layout.php:89 inc/functions/layout.php:255
+#: inc/functions/layout.php:327 inc/functions/layout.php:408
+msgid "Search results for &ldquo;"
+msgstr "Результаты поиска:"
+
+#: inc/functions/layout.php:153 inc/functions/layout.php:347
+msgid "Products tagged &ldquo;"
+msgstr "Метка:"
+
+#: inc/functions/layout.php:217 inc/functions/layout.php:392
+msgid "Error 404"
+msgstr "Ошибка"
+
+#: inc/functions/layout.php:263 inc/functions/layout.php:412
+msgid "Posts tagged &ldquo;"
+msgstr "Метка:"
+
+#: inc/functions/layout.php:268 inc/functions/layout.php:417
+msgid "Author:"
+msgstr "Автор"
+
+#: inc/functions/layout.php:351
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Ежедневный архив: \"%s\""
+
+#: inc/functions/layout.php:355
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Ежемесячные Архивы блога : %s"
+
+#: inc/functions/layout.php:355
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/functions/layout.php:359
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Годовой архив за <em>%s</em>"
+
+#: inc/functions/layout.php:359
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/functions/layout.php:377
+#, php-format
+msgid "Archives: %s"
+msgstr "Архивы: %s"
+
+#: inc/functions/layout.php:382
+msgid "Single Project"
+msgstr "Лайтбокс для одиночного проекта"
+
+#: inc/functions/layout.php:1169
+#: woocommerce/yith-woocommerce-ajax-search.php:20
+msgid "Search&hellip;"
+msgstr "Поиск&hellip;"
+
+#: inc/functions/layout.php:1175
+#: woocommerce/yith-woocommerce-ajax-search.php:24
+msgid "All Categories"
+msgstr "Из всех рубрик"
+
+#: inc/functions/layout.php:1191
+#: woocommerce/yith-woocommerce-ajax-search.php:34
+msgid "Search"
+msgstr "Поиск"
+
+#: inc/functions/layout.php:1268 inc/functions/woocommerce.php:204
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d Продукта(ов)"
+msgstr[1] "%d Продукта(ов)"
+msgstr[2] "%d Продукта(ов)"
+
+#: inc/functions/post.php:133
+msgid "read more"
+msgstr "Mehr"
+
+#: inc/functions/post.php:177 woocommerce/myaccount/my-address.php:47
+msgid "Edit"
+msgstr "Редактировать"
+
+#: inc/functions/post.php:178
+msgid "Reply"
+msgstr "Ответить"
+
+#: inc/functions/post.php:183
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
+
+#: inc/functions/post.php:188
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s в %2$s"
+
+#: inc/functions/post.php:236
+msgid "HOT"
+msgstr "ТОП!"
+
+#: inc/functions/post.php:274
+msgid "&larr; Previous"
+msgstr "Назад"
+
+#: inc/functions/post.php:275
+msgid "Next &rarr;"
+msgstr "Продолжить покупки &rarr;"
+
+#: inc/functions/shortcodes.php:14
+msgid "Section"
+msgstr "Секции"
+
+#: inc/functions/shortcodes.php:17 inc/functions/shortcodes.php:179
+msgid "Section & Parallax Text Color"
+msgstr "Выбрать цвет текста."
+
+#: inc/functions/shortcodes.php:23 inc/functions/shortcodes.php:185
+msgid "Text Align"
+msgstr "Выравнивание текста"
+
+#: inc/functions/shortcodes.php:29 inc/functions/shortcodes.php:191
+msgid "Is Section?"
+msgstr "Секции"
+
+#: inc/functions/shortcodes.php:31 inc/functions/shortcodes.php:55
+#: inc/functions/shortcodes.php:62 inc/functions/shortcodes.php:69
+#: inc/functions/shortcodes.php:101 inc/functions/shortcodes.php:193
+#: inc/functions/shortcodes.php:217 inc/functions/shortcodes.php:224
+#: inc/functions/shortcodes.php:231 inc/functions/shortcodes.php:263
+#: inc/functions/shortcodes.php:350 inc/functions/shortcodes.php:434
+#: inc/functions/shortcodes.php:581 inc/functions/shortcodes.php:715
+#: inc/functions/shortcodes.php:734 inc/functions/shortcodes.php:756
+#: inc/functions/shortcodes.php:775 inc/functions/shortcodes.php:785
+#: inc/functions/shortcodes.php:794 inc/functions/shortcodes.php:801
+#: inc/functions/shortcodes.php:808 inc/functions/shortcodes.php:827
+#: inc/functions/shortcodes.php:834
+msgid "Yes, please"
+msgstr "Да"
+
+#: inc/functions/shortcodes.php:37 inc/functions/shortcodes.php:199
+msgid "Section Skin Color"
+msgstr "Секции"
+
+#: inc/functions/shortcodes.php:45
+msgid "Section Default Color Scale"
+msgstr "Цвет второй границы по умолчанию"
+
+#: inc/functions/shortcodes.php:53 inc/functions/shortcodes.php:215
+msgid "Remove Margin Top"
+msgstr "Верхний внешний отступ (пикс.)"
+
+#: inc/functions/shortcodes.php:60 inc/functions/shortcodes.php:222
+msgid "Remove Margin Bottom"
+msgstr "Верхний/нижний отступ (пикс.)"
+
+#: inc/functions/shortcodes.php:67 inc/functions/shortcodes.php:229
+msgid "Show Divider"
+msgstr "Показать для"
+
+#: inc/functions/shortcodes.php:75 inc/functions/shortcodes.php:237
+msgid "Divider Position"
+msgstr "Позиция широкого  меню"
+
+#: inc/functions/shortcodes.php:78 inc/functions/shortcodes.php:240
+#: inc/functions/shortcodes.php:1436
+msgid "Top"
+msgstr "Верх"
+
+#: inc/functions/shortcodes.php:79 inc/functions/shortcodes.php:241
+#: inc/functions/shortcodes.php:1438
+msgid "Bottom"
+msgstr "Кнопка"
+
+#: inc/functions/shortcodes.php:85 inc/functions/shortcodes.php:247
+msgid "Divider Color"
+msgstr "Цвет"
+
+#: inc/functions/shortcodes.php:92 inc/functions/shortcodes.php:254
+msgid "Divider Height"
+msgstr "Высота"
+
+#: inc/functions/shortcodes.php:99 inc/functions/shortcodes.php:261
+#: inc/functions/shortcodes.php:432 inc/functions/shortcodes.php:579
+#: inc/functions/shortcodes.php:713 inc/functions/shortcodes.php:732
+msgid "Show FontAwesome Icon"
+msgstr "Иконка:"
+
+#: inc/functions/shortcodes.php:107 inc/functions/shortcodes.php:269
+#: inc/functions/shortcodes.php:438 inc/functions/shortcodes.php:586
+#: inc/functions/shortcodes.php:719 inc/functions/shortcodes.php:738
+#: inc/functions/shortcodes.php:901
+msgid "Select FontAwesome Icon"
+msgstr "Выбрать библиотеку иконок."
+
+#: inc/functions/shortcodes.php:114 inc/functions/shortcodes.php:276
+#: inc/functions/shortcodes.php:449 inc/functions/shortcodes.php:592
+msgid "Icon Skin Color"
+msgstr "Цвет иконки"
+
+#: inc/functions/shortcodes.php:130 inc/functions/shortcodes.php:292
+#: inc/functions/shortcodes.php:463 inc/functions/shortcodes.php:606
+msgid "Icon Background Color"
+msgstr "Цвет иконки"
+
+#: inc/functions/shortcodes.php:137 inc/functions/shortcodes.php:299
+#: inc/functions/shortcodes.php:469 inc/functions/shortcodes.php:612
+msgid "Icon Border Color"
+msgstr "Цвет границы иконки"
+
+#: inc/functions/shortcodes.php:144 inc/functions/shortcodes.php:306
+#: inc/functions/shortcodes.php:475 inc/functions/shortcodes.php:618
+msgid "Icon Wrap Border Color"
+msgstr "Цвет границы иконки"
+
+#: inc/functions/shortcodes.php:151 inc/functions/shortcodes.php:313
+#: inc/functions/shortcodes.php:416 inc/functions/shortcodes.php:624
+msgid "Icon Style"
+msgstr "Стиль иконки сообщения"
+
+#: inc/functions/shortcodes.php:159 inc/functions/shortcodes.php:321
+#: inc/functions/shortcodes.php:631
+msgid "Icon Position"
+msgstr "Позиция широкого  меню"
+
+#: inc/functions/shortcodes.php:167 inc/functions/shortcodes.php:329
+#: inc/functions/shortcodes.php:638
+msgid "Icon Size"
+msgstr "Размер иконки."
+
+#: inc/functions/shortcodes.php:207
+msgid "Section Default Scale Color"
+msgstr "Цвет второй границы по умолчанию"
+
+#: inc/functions/shortcodes.php:341 inc/functions/shortcodes.php:395
+#: inc/functions/shortcodes.php:531 inc/functions/shortcodes.php:692
+#: inc/functions/shortcodes.php:760
+msgid "Skin Color"
+msgstr "Цвет"
+
+#: inc/functions/shortcodes.php:354
+msgid "Border Skin Color"
+msgstr "Цвет границы"
+
+#: inc/functions/shortcodes.php:368
+msgid "Border Type"
+msgstr "Тип "
+
+#: inc/functions/shortcodes.php:387 inc/functions/shortcodes.php:523
+msgid "Position"
+msgstr "Позиция широкого  меню"
+
+#: inc/functions/shortcodes.php:390 inc/functions/shortcodes.php:526
+msgid "Select the position of the tab header."
+msgstr "Выберите положение заголовка вкладки."
+
+#: inc/functions/shortcodes.php:403 inc/functions/shortcodes.php:539
+msgid "Color"
+msgstr "Цвет"
+
+#: inc/functions/shortcodes.php:409 inc/functions/shortcodes.php:548
+#: inc/functions/shortcodes.php:560 inc/functions/shortcodes.php:680
+#: inc/functions/shortcodes.php:873
+#: inc/plugins/class-tgm-plugin-activation.php:2438
+msgid "Type"
+msgstr "Тип "
+
+#: inc/functions/shortcodes.php:424
+msgid "Icon Effect"
+msgstr "Эффект при наведении"
+
+#: inc/functions/shortcodes.php:444
+msgid "Please configure the following options when Tabs Type is Simple."
+msgstr "Пожалуйста, настройте следующие параметры, когда тип вкладки простой."
+
+#: inc/functions/shortcodes.php:481
+msgid "Icon Box Shadow Color"
+msgstr "Цвет иконки"
+
+#: inc/functions/shortcodes.php:487
+msgid "Icon Hover Color"
+msgstr "Цвет при наведении"
+
+#: inc/functions/shortcodes.php:493
+msgid "Icon Hover Background Color"
+msgstr "Цвет фона при наведении"
+
+#: inc/functions/shortcodes.php:499
+msgid "Icon Hover Border Color"
+msgstr "Цвет границы иконки"
+
+#: inc/functions/shortcodes.php:505
+msgid "Icon Wrap Hover Border Color"
+msgstr "Цвет границы иконки"
+
+#: inc/functions/shortcodes.php:511
+msgid "Icon Hover Box Shadow Color"
+msgstr "Иконка Hover Коробка Цвет тени"
+
+#: inc/functions/shortcodes.php:566 inc/functions/shortcodes.php:656
+msgid "Style"
+msgstr "Стиль"
+
+#: inc/functions/shortcodes.php:573 inc/functions/shortcodes.php:662
+#: inc/functions/shortcodes.php:1126
+msgid "Pattern"
+msgstr "Схема фонового изображения"
+
+#: inc/functions/shortcodes.php:645
+msgid "Gap Size"
+msgstr "Пропуск"
+
+#: inc/functions/shortcodes.php:668
+msgid "Element Tag"
+msgstr "Тег элемента"
+
+#: inc/functions/shortcodes.php:686 inc/functions/shortcodes.php:844
+msgid "Size"
+msgstr "Размер"
+
+#: inc/functions/shortcodes.php:707
+msgid "Heading Background Color"
+msgstr "Выбрать цвет заголовка."
+
+#: inc/functions/shortcodes.php:750
+msgid "Disable button."
+msgstr "Отключить"
+
+#: inc/functions/shortcodes.php:754 inc/functions/shortcodes.php:773
+msgid "Show as Label"
+msgstr "Показать метку"
+
+#: inc/functions/shortcodes.php:767 inc/functions/shortcodes.php:817
+msgid "Contextual Classes"
+msgstr "Классы CSS (необязательно)"
+
+#: inc/functions/shortcodes.php:783
+msgid "LightBox"
+msgstr "Лайтбокс для одиночного проекта"
+
+#: inc/functions/shortcodes.php:787
+msgid "Check it if you want to link to the lightbox with the large image."
+msgstr ""
+"Проверьте это, если вы хотите сделать ссылку на лайтбокс с большим "
+"изображением."
+
+#: inc/functions/shortcodes.php:791
+msgid "Show as Image Gallery"
+msgstr "Адаптивная галерея изображений"
+
+#: inc/functions/shortcodes.php:793
+msgid "Show all the images inside of same row."
+msgstr "Покажите все изображения внутри той же строке."
+
+#: inc/functions/shortcodes.php:799
+msgid "Show Zoom Icon"
+msgstr "Зум"
+
+#: inc/functions/shortcodes.php:806
+msgid "Show Hover Effect"
+msgstr "Эффект при наведении"
+
+#: inc/functions/shortcodes.php:824
+msgid "Enable Waypoints Animation"
+msgstr "Включить"
+
+#: inc/functions/shortcodes.php:831
+msgid "Show Percentage as Tooltip"
+msgstr "Подсказка"
+
+#: inc/functions/shortcodes.php:850
+msgid "Min Width"
+msgstr "мин."
+
+#: inc/functions/shortcodes.php:862
+msgid "Grey"
+msgstr "Серый"
+
+#: inc/functions/shortcodes.php:863
+msgid "Blue"
+msgstr "Синий"
+
+#: inc/functions/shortcodes.php:864
+msgid "Turquoise"
+msgstr "Бирюзовый"
+
+#: inc/functions/shortcodes.php:865
+msgid "Green"
+msgstr "Зеленый"
+
+#: inc/functions/shortcodes.php:866
+msgid "Orange"
+msgstr "Оранжевый"
+
+#: inc/functions/shortcodes.php:867
+msgid "Red"
+msgstr "Красный"
+
+#: inc/functions/shortcodes.php:868
+msgid "Black"
+msgstr "Черный"
+
+#: inc/functions/shortcodes.php:877
+msgid "Porto Circular Bar"
+msgstr "Социалка"
+
+#: inc/functions/shortcodes.php:878
+msgid "VC Pie Chart"
+msgstr "Диаграмма"
+
+#: inc/functions/shortcodes.php:880
+msgid "Select pie chart type."
+msgstr "Выбрать цвет."
+
+#: inc/functions/shortcodes.php:885 inc/functions/shortcodes.php:936
+msgid "Bar color"
+msgstr "Цвет панели"
+
+#: inc/functions/shortcodes.php:888
+msgid "Select pie chart color."
+msgstr "Выбрать цвет."
+
+#: inc/functions/shortcodes.php:894
+msgid "View Type"
+msgstr "Тип "
+
+#: inc/functions/shortcodes.php:913
+msgid "View Size"
+msgstr "Просмотр"
+
+#: inc/functions/shortcodes.php:920
+msgid "Bar Size"
+msgstr "Панель прогресса"
+
+#: inc/functions/shortcodes.php:924
+msgid "Enter the size of the chart in px."
+msgstr "Ввести размер шрифта."
+
+#: inc/functions/shortcodes.php:928
+msgid "Track Color"
+msgstr "Цвет"
+
+#: inc/functions/shortcodes.php:932
+msgid ""
+"Choose the color of the track. Please clear this if you want to use the "
+"default color."
+msgstr ""
+"Выберите цвет трека. Пожалуйста, удалите это, если вы хотите использовать "
+"цвет по умолчанию."
+
+#: inc/functions/shortcodes.php:939
+msgid ""
+"Select pie chart color. Please clear this if you want to use the default "
+"color."
+msgstr ""
+"Выберите круговая диаграмма цвет. Пожалуйста, удалите это, если вы хотите "
+"использовать цвет по умолчанию."
+
+#: inc/functions/shortcodes.php:943
+msgid "Scale color"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:946
+msgid ""
+"Choose the color of the scale. Please clear this if you want to hide the "
+"scale."
+msgstr ""
+"Выберите цвет шкалы. Пожалуйста, очистите это, если вы хотите, чтобы скрыть "
+"масштаб."
+
+#: inc/functions/shortcodes.php:950
+msgid "Animation Speed"
+msgstr "Скорость анимации"
+
+#: inc/functions/shortcodes.php:954
+msgid "Enter the animation speed in milliseconds."
+msgstr "Скорость анимации"
+
+#: inc/functions/shortcodes.php:958
+msgid "Line Width"
+msgstr "Высота строки"
+
+#: inc/functions/shortcodes.php:962
+msgid "Enter the width of the line bar in px."
+msgstr "Введите ширину панели строки в пикселей."
+
+#: inc/functions/shortcodes.php:966
+msgid "Line Cap"
+msgstr "Мензурка"
+
+#: inc/functions/shortcodes.php:971
+msgid "Choose how the ending of the bar line looks like."
+msgstr "Выберите, как окончание бар линии выглядит."
+
+#: inc/functions/shortcodes.php:1040
+msgid "Justify"
+msgstr "По ширине"
+
+#: inc/functions/shortcodes.php:1046
+msgid "Top left"
+msgstr "Слева сверху"
+
+#: inc/functions/shortcodes.php:1047
+msgid "Top right"
+msgstr "Справа сверху"
+
+#: inc/functions/shortcodes.php:1048
+msgid "Bottom left"
+msgstr "Слева снизу"
+
+#: inc/functions/shortcodes.php:1049
+msgid "Bottom right"
+msgstr "Справа снизу"
+
+#: inc/functions/shortcodes.php:1050
+msgid "Top justify"
+msgstr "по ширине"
+
+#: inc/functions/shortcodes.php:1051
+msgid "Bottom justify"
+msgstr "по ширине"
+
+#: inc/functions/shortcodes.php:1052
+msgid "Top center"
+msgstr "В центре сверху"
+
+#: inc/functions/shortcodes.php:1053
+msgid "Bottom center"
+msgstr "В центре снизу"
+
+#: inc/functions/shortcodes.php:1067 inc/functions/shortcodes.php:1132
+#: inc/functions/shortcodes.php:1320 inc/functions/shortcodes.php:1346
+msgid "Style 1"
+msgstr "Стиль"
+
+#: inc/functions/shortcodes.php:1068 inc/functions/shortcodes.php:1133
+#: inc/functions/shortcodes.php:1321 inc/functions/shortcodes.php:1347
+msgid "Style 2"
+msgstr "Вкладка 2"
+
+#: inc/functions/shortcodes.php:1069 inc/functions/shortcodes.php:1134
+#: inc/functions/shortcodes.php:1322 inc/functions/shortcodes.php:1348
+msgid "Style 3"
+msgstr "Прогресс 3"
+
+#: inc/functions/shortcodes.php:1070 inc/functions/shortcodes.php:1135
+#: inc/functions/shortcodes.php:1323 inc/functions/shortcodes.php:1349
+msgid "Style 4"
+msgstr "Стиль"
+
+#: inc/functions/shortcodes.php:1071 inc/functions/shortcodes.php:1324
+#: inc/functions/shortcodes.php:1350
+msgid "Style 5"
+msgstr "Стиль"
+
+#: inc/functions/shortcodes.php:1072 inc/functions/shortcodes.php:1325
+#: inc/functions/shortcodes.php:1351
+msgid "Style 6"
+msgstr "Стиль"
+
+#: inc/functions/shortcodes.php:1073 inc/functions/shortcodes.php:1326
+msgid "Style 7"
+msgstr "Стиль"
+
+#: inc/functions/shortcodes.php:1074 inc/functions/shortcodes.php:1327
+msgid "Style 8"
+msgstr "Стиль"
+
+#: inc/functions/shortcodes.php:1081 inc/functions/shortcodes.php:1334
+msgid "Effect 1"
+msgstr "+1"
+
+#: inc/functions/shortcodes.php:1082 inc/functions/shortcodes.php:1335
+msgid "Effect 2"
+msgstr "Эффект при наведении"
+
+#: inc/functions/shortcodes.php:1083 inc/functions/shortcodes.php:1336
+msgid "Effect 3"
+msgstr "Эффект при наведении"
+
+#: inc/functions/shortcodes.php:1084 inc/functions/shortcodes.php:1337
+msgid "Effect 4"
+msgstr "4:3"
+
+#: inc/functions/shortcodes.php:1085 inc/functions/shortcodes.php:1338
+msgid "Effect 5"
+msgstr "Адрес 5 Google map "
+
+#: inc/functions/shortcodes.php:1086 inc/functions/shortcodes.php:1339
+msgid "Effect 6"
+msgstr "Эффект при наведении"
+
+#: inc/functions/shortcodes.php:1087 inc/functions/shortcodes.php:1340
+msgid "Effect 7"
+msgstr "Эффект при наведении"
+
+#: inc/functions/shortcodes.php:1101
+msgid "Navigation"
+msgstr "Меню"
+
+#: inc/functions/shortcodes.php:1107 inc/functions/shortcodes.php:1116
+#: inc/functions/shortcodes.php:1141 inc/functions/shortcodes.php:1376
+#: inc/functions/shortcodes.php:1392 inc/functions/shortcodes.php:1445
+#: inc/functions/shortcodes.php:1472
+msgid "Normal"
+msgstr "Нормальные"
+
+#: inc/functions/shortcodes.php:1108
+msgid "Short"
+msgstr "Сокращенно (только 2-3 языка)"
+
+#: inc/functions/shortcodes.php:1109
+msgid "Tall"
+msgstr "Высокая"
+
+#: inc/functions/shortcodes.php:1110
+msgid "Taller"
+msgstr "Более высокий"
+
+#: inc/functions/shortcodes.php:1123
+msgid "Gradient"
+msgstr "Цвет низа градиента по умолчанию"
+
+#: inc/functions/shortcodes.php:1124
+msgid "Solid"
+msgstr "Медиа мозаика: Размытие"
+
+#: inc/functions/shortcodes.php:1125
+msgid "Dashed"
+msgstr "Пунктирная"
+
+#: inc/functions/shortcodes.php:1157
+msgid "h1"
+msgstr "H1 стиль"
+
+#: inc/functions/shortcodes.php:1158
+msgid "h2"
+msgstr "<h2>Член 1</h2>Имя"
+
+#: inc/functions/shortcodes.php:1159
+msgid "h3"
+msgstr "H3 стиль"
+
+#: inc/functions/shortcodes.php:1160
+msgid "h4"
+msgstr "H4 стиль"
+
+#: inc/functions/shortcodes.php:1161
+msgid "h5"
+msgstr "H5 стиль"
+
+#: inc/functions/shortcodes.php:1162
+msgid "h6"
+msgstr "H6 стиль"
+
+#: inc/functions/shortcodes.php:1163
+msgid "p"
+msgstr ""
+"<p>Я текстовый блок. Lorem ipsum dolor sit amet, consectetur adipiscing "
+"elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</"
+"p>"
+
+#: inc/functions/shortcodes.php:1164
+msgid "div"
+msgstr ""
+"<div class=\"clear\"></div>\n"
+"\t    <hr>Вы хотели бы поделиться своими мыслями?"
+
+#: inc/functions/shortcodes.php:1171 inc/functions/shortcodes.php:1301
+#: inc/functions/shortcodes.php:1403
+msgid "Secondary"
+msgstr "Второе"
+
+#: inc/functions/shortcodes.php:1172
+msgid "Without Background"
+msgstr "Фон"
+
+#: inc/functions/shortcodes.php:1173
+msgid "Without Borders and Background"
+msgstr "Фон"
+
+#: inc/functions/shortcodes.php:1174 inc/functions/shortcodes.php:1313
+msgid "Custom"
+msgstr "Индивидуально"
+
+#: inc/functions/shortcodes.php:1242
+msgid "Classic"
+msgstr "Классический"
+
+#: inc/functions/shortcodes.php:1251
+msgid "Slider"
+msgstr "Слайдер"
+
+#: inc/functions/shortcodes.php:1263 inc/functions/shortcodes.php:1264
+msgid "(without sidebar)"
+msgstr "В сайдбаре"
+
+#: inc/functions/shortcodes.php:1271 inc/functions/shortcodes.php:1272
+#: inc/functions/shortcodes.php:1273 inc/functions/shortcodes.php:1274
+#: inc/functions/shortcodes.php:1275 inc/functions/shortcodes.php:1276
+msgid " of content width"
+msgstr "Содержимое"
+
+#: inc/functions/shortcodes.php:1277 inc/functions/shortcodes.php:1278
+msgid " of content width (without sidebar)"
+msgstr "Низ сайдбара контента для отображения"
+
+#: inc/functions/shortcodes.php:1300 inc/functions/shortcodes.php:1402
+msgid "Primary"
+msgstr "Главное"
+
+#: inc/functions/shortcodes.php:1302 inc/functions/shortcodes.php:1404
+msgid "Tertiary"
+msgstr "Третичная"
+
+#: inc/functions/shortcodes.php:1303 inc/functions/shortcodes.php:1405
+msgid "Quaternary"
+msgstr "Четвертичный период"
+
+#: inc/functions/shortcodes.php:1312
+msgid "Flat"
+msgstr "Плоский"
+
+#: inc/functions/shortcodes.php:1358
+msgid "Success"
+msgstr "Успех"
+
+#: inc/functions/shortcodes.php:1359
+msgid "Info"
+msgstr "Инфо"
+
+#: inc/functions/shortcodes.php:1360
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: inc/functions/shortcodes.php:1361
+msgid "Danger"
+msgstr "<div class=\"btn btn-danger btn-small\"></div>"
+
+#: inc/functions/shortcodes.php:1368
+msgid "No Border Radius"
+msgstr "Граница"
+
+#: inc/functions/shortcodes.php:1369
+msgid "Rounded Border Radius"
+msgstr "Закруленная граница"
+
+#: inc/functions/shortcodes.php:1370
+msgid "Circled Border Radius"
+msgstr "Граница"
+
+#: inc/functions/shortcodes.php:1384
+msgid "Show Title and Value"
+msgstr "Показать заголовок"
+
+#: inc/functions/shortcodes.php:1385
+msgid "Show Only Icon"
+msgstr "Показать только в мобильном режиме?"
+
+#: inc/functions/shortcodes.php:1386
+msgid "Show Only Title"
+msgstr "Показать только в мобильном режиме?"
+
+#: inc/functions/shortcodes.php:1401
+msgid "Transparent"
+msgstr "Прозрачный"
+
+#: inc/functions/shortcodes.php:1414
+msgid "Scale 1"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:1415
+msgid "Scale 2"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:1416
+msgid "Scale 3"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:1417
+msgid "Scale 4"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:1418
+msgid "Scale 5"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:1419
+msgid "Scale 6"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:1420
+msgid "Scale 7"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:1421
+msgid "Scale 8"
+msgstr "Масштабирование"
+
+#: inc/functions/shortcodes.php:1422
+msgid "Scale 9"
+msgstr "16:9"
+
+#: inc/functions/shortcodes.php:1448 inc/functions/shortcodes.php:1473
+msgid "Extra Small"
+msgstr "Дополнительный CSS класс"
+
+#: inc/functions/shortcodes.php:1454
+msgid "Click"
+msgstr "и нажмите кнопку сохранить/"
+
+#: inc/functions/shortcodes.php:1455
+msgid "Hover"
+msgstr "При наведении/Активный цвет"
+
+#: inc/functions/shortcodes.php:1456
+msgid "Focus"
+msgstr "Сфокусируйтесь на Дизайне и Содержимом"
+
+#: inc/functions/shortcodes.php:1463
+msgid "Bottom Double Border"
+msgstr "Ширина границы"
+
+#: inc/functions/shortcodes.php:1464
+msgid "Middle Border"
+msgstr "Граница"
+
+#: inc/functions/shortcodes.php:1465
+msgid "Middle Border Reverse"
+msgstr "Медиа"
+
+#: inc/functions/shortcodes.php:1466
+msgid "Middle Border Center"
+msgstr "Граница"
+
+#: inc/functions/shortcodes.php:1476
+msgid "Extra Large"
+msgstr "Дополнительный CSS класс"
+
+#: inc/functions/widgets.php:9
+msgid "Blog Sidebar"
+msgstr "Сайдбар блога"
+
+#: inc/functions/widgets.php:18
+msgid "Home Sidebar"
+msgstr "Главная"
+
+#: inc/functions/widgets.php:29
+msgid "Woo Category Sidebar"
+msgstr "Категория"
+
+#: inc/functions/widgets.php:38
+msgid "Woo Product Sidebar"
+msgstr "Продукт "
+
+#: inc/functions/widgets.php:49
+msgid "Content Bottom Widget 1"
+msgstr "Низ контента в сетке"
+
+#: inc/functions/widgets.php:58
+msgid "Content Bottom Widget 2"
+msgstr "Низ контента в сетке"
+
+#: inc/functions/widgets.php:67
+msgid "Content Bottom Widget 3"
+msgstr "Низ контента в сетке"
+
+#: inc/functions/widgets.php:76
+msgid "Content Bottom Widget 4"
+msgstr "Низ контента в сетке"
+
+#: inc/functions/widgets.php:85
+msgid "Footer Top Widget"
+msgstr "Цвета верха подвала"
+
+#: inc/functions/widgets.php:94
+msgid "Footer Widget 1"
+msgstr "В футере"
+
+#: inc/functions/widgets.php:103
+msgid "Footer Widget 2"
+msgstr "В футере"
+
+#: inc/functions/widgets.php:112
+msgid "Footer Widget 3"
+msgstr "В футере"
+
+#: inc/functions/widgets.php:121
+msgid "Footer Widget 4"
+msgstr "В футере"
+
+#: inc/functions/widgets.php:130
+msgid "Footer Bottom Widget"
+msgstr "Цвета низа подвала"
+
+#: inc/functions/widgets.php:141
+msgid "MailPoet Subscription Form"
+msgstr "Gravity Form"
+
+#: inc/functions/woocommerce.php:66
+msgid "Grid View"
+msgstr "Записи в виде сетки"
+
+#: inc/functions/woocommerce.php:66
+msgid "List View"
+msgstr "Список"
+
+#: inc/functions/woocommerce.php:275 woocommerce/single-product/review.php:30
+msgid "out of 5"
+msgstr "из 5"
+
+#: inc/functions/woocommerce.php:342 woocommerce/cart/mini-cart.php:81
+#: woocommerce/loop/sale-flash.php:45
+msgid "View Cart"
+msgstr "Просмотреть корзину "
+
+#: inc/functions/woocommerce.php:348
+msgid "Please select a rating"
+msgstr "Пожалуйста, выберите рейтинг"
+
+#: inc/functions/woocommerce.php:360
+msgid ""
+"Sorry, no products matched your selection. Please choose a different "
+"combination."
+msgstr ""
+"К сожалению, нет продуктов, соответствующих вашему выбору. Пожалуйста, "
+"выберите другое сочетание."
+
+#: inc/functions/woocommerce.php:361
+msgid ""
+"Sorry, this product is unavailable. Please choose a different combination."
+msgstr "Простите, но данного товара нет в наличии. Попробуйте другой вариант."
+
+#: inc/functions/woocommerce.php:506
+#, php-format
+msgid "Use commas instead of %s to separate excluded categories."
+msgstr "Используйте запятые вместо %s для отделения исключенных категорий."
+
+#: inc/menu/menu.php:224
+msgid ""
+"Input font awesome icon or icon class. You can see <a target=\"_blank\" href="
+"\"http://fortawesome.github.io/Font-Awesome/icons/\">Font Awesome Icons in "
+"here</a>."
+msgstr ""
+"Ввод шрифта удивительным значок или значок класса. Вы можете увидеть <a "
+"target=\"_blank\" href=\"http://fortawesome.github.io/Font-Awesome/icons/"
+"\">шрифт Высокий иконки здесь</a> ."
+
+#: inc/plugins/class-tgm-plugin-activation.php:333 inc/plugins/plugins.php:163
+msgid "Install Required Plugins"
+msgstr "Установить требуемые плагины"
+
+#: inc/plugins/class-tgm-plugin-activation.php:334 inc/plugins/plugins.php:164
+msgid "Install Plugins"
+msgstr "Установить плагины"
+
+#: inc/plugins/class-tgm-plugin-activation.php:335 inc/plugins/plugins.php:165
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Установить плагин: %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:336 inc/plugins/plugins.php:166
+msgid "Something went wrong with the plugin API."
+msgstr "Что-то пошло не так с API плагина."
+
+#: inc/plugins/class-tgm-plugin-activation.php:338 inc/plugins/plugins.php:167
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Для этой темы требуется следующий плагин: %1$s."
+msgstr[1] "Для этой темы требуется следующий плагин: %1$s."
+msgstr[2] "Для этой темы требуется следующий плагин: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:343 inc/plugins/plugins.php:168
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Для этой темы рекомендуется следующий плагин: %1$s."
+msgstr[1] "Для этой темы рекомендуется следующий плагин: %1$s."
+msgstr[2] "Для этой темы рекомендуется следующий плагин: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] "Извините, не достаточно прав для установки %s плагина. "
+msgstr[1] "Извините, не достаточно прав для установки %s плагина. "
+msgstr[2] "Извините, не достаточно прав для установки %s плагина. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:353 inc/plugins/plugins.php:173
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"Следующий плагин необходимо обновить до последней версии для максимальной "
+"совместимости с темой: %1$s."
+msgstr[1] ""
+"Следующий плагин необходимо обновить до последней версии для максимальной "
+"совместимости с темой: %1$s."
+msgstr[2] ""
+"Следующий плагин необходимо обновить до последней версии для максимальной "
+"совместимости с темой: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:358
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "Существует обновление для:%1$s."
+msgstr[1] "Существует обновление для:%1$s."
+msgstr[2] "Существует обновление для:%1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:363
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] "Извините, у вас недостаточно прав для обновления%1$s плагина."
+msgstr[1] "Извините, у вас недостаточно прав для обновления%1$s плагина."
+msgstr[2] "Извините, у вас недостаточно прав для обновления%1$s плагина."
+
+#: inc/plugins/class-tgm-plugin-activation.php:368 inc/plugins/plugins.php:170
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "В данный момент не активен необходимый плагин: %1$s."
+msgstr[1] "В данный момент не активен необходимый плагин: %1$s."
+msgstr[2] "В данный момент не активен необходимый плагин: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:373 inc/plugins/plugins.php:171
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "В данный момент не активен рекомендуемый плагин: %1$s."
+msgstr[1] "В данный момент не активен рекомендуемый плагин: %1$s."
+msgstr[2] "В данный момент не активен рекомендуемый плагин: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:378
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+"Извините, но вы не имеете достаточно прав для активации %s плагина. "
+msgstr[1] ""
+"Извините, но вы не имеете достаточно прав для активации %s плагина. "
+msgstr[2] ""
+"Извините, но вы не имеете достаточно прав для активации %s плагина. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:383 inc/plugins/plugins.php:175
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Начать установку плагина"
+msgstr[1] "Начать установку плагина"
+msgstr[2] "Начать установку плагина"
+
+#: inc/plugins/class-tgm-plugin-activation.php:388
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Обновить плагин"
+msgstr[1] "Обновить плагин"
+msgstr[2] "Обновить плагин"
+
+#: inc/plugins/class-tgm-plugin-activation.php:393
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Активировать плагин"
+msgstr[1] "Активировать плагин"
+msgstr[2] "Активировать плагин"
+
+#: inc/plugins/class-tgm-plugin-activation.php:397 inc/plugins/plugins.php:177
+msgid "Return to Required Plugins Installer"
+msgstr "Вернуться к установке необходимых плагинов"
+
+#: inc/plugins/class-tgm-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr "Вернуться в панель управления"
+
+#: inc/plugins/class-tgm-plugin-activation.php:399
+#: inc/plugins/class-tgm-plugin-activation.php:3029
+#: inc/plugins/plugins.php:178
+msgid "Plugin activated successfully."
+msgstr "﻿Плагин успешно активирован."
+
+#: inc/plugins/class-tgm-plugin-activation.php:400
+#: inc/plugins/class-tgm-plugin-activation.php:2832
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Этот плагин успешно активирован:"
+msgstr[1] "Этот плагин успешно активирован:"
+msgstr[2] "Этот плагин успешно активирован:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Никаких действий не принято. Плагин%1$s уже активирован."
+
+#: inc/plugins/class-tgm-plugin-activation.php:402
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Плагин не активирован. Более поздняя версия %s необходима для этой темы. "
+"Пожалуйста, обновите плагин."
+
+#: inc/plugins/class-tgm-plugin-activation.php:403
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Все плагины установлены и успешно активированы. %1$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr "Закрыть это уведомление"
+
+#: inc/plugins/class-tgm-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr "Пожалуйста, обратитесь к администратору этого сайта за помощью."
+
+#: inc/plugins/class-tgm-plugin-activation.php:520
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr "Этот плагин должен быть обновлен, чтобы быть совместимым с вашей теме."
+
+#: inc/plugins/class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr "Требуется обновление"
+
+#: inc/plugins/class-tgm-plugin-activation.php:635
+msgid "Set the parent_slug config variable instead."
+msgstr "Установите вместо переменной конфигурации parent_slug."
+
+#: inc/plugins/class-tgm-plugin-activation.php:828
+#: inc/plugins/class-tgm-plugin-activation.php:3438
+msgid "Return to the Dashboard"
+msgstr "Вернуться в кабинет"
+
+#: inc/plugins/class-tgm-plugin-activation.php:935
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Удаленный пакет плагина не содержим папку с желаемой ссылкой и "
+"переименование не работает."
+
+#: inc/plugins/class-tgm-plugin-activation.php:935
+#: inc/plugins/class-tgm-plugin-activation.php:938
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr "Свяжитесь с поставщиком плагина для устранения ошибки."
+
+#: inc/plugins/class-tgm-plugin-activation.php:938
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Удаленный пакет плагина содержит более одного файла, но они не упакованы в "
+"папку."
+
+#: inc/plugins/class-tgm-plugin-activation.php:1116
+#: inc/plugins/class-tgm-plugin-activation.php:2828
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "и"
+
+#: inc/plugins/class-tgm-plugin-activation.php:1881
+#, php-format
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr "(устарело с вер.%s)"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2167
+msgid "Required"
+msgstr "Обязательно"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2170
+msgid "Recommended"
+msgstr "Рекомендуемый"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2186
+msgid "WordPress Repository"
+msgstr "Хранилище WordPress"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2189
+msgid "External Source"
+msgstr "Внешнее"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2192
+msgid "Pre-Packaged"
+msgstr "Пакет"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2209
+msgid "Not Installed"
+msgstr "Не установлен"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2213
+msgid "Installed But Not Activated"
+msgstr "Все плагины установлены и успешно активированы. %1$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2215
+msgid "Active"
+msgstr "При наведении/Активный цвет"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2221
+msgid "Required Update not Available"
+msgstr "Обновить"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2224
+msgid "Requires Update"
+msgstr "Обновить"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2227
+msgid "Update recommended"
+msgstr "Рекомендуемый"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2235
+#, php-format
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr "%1$s в %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2280
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Все <span class=\"count\">(%s)</span>"
+msgstr[1] "Все <span class=\"count\">(%s)</span>"
+msgstr[2] "Все <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2283
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "Для установки <span class=\"count\">(%s)</span>"
+msgstr[1] "Для установки <span class=\"count\">(%s)</span>"
+msgstr[2] "Для установки <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2286
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Доступно обновление <span class=\"count\">(%s)</span>"
+msgstr[1] "Доступно обновление <span class=\"count\">(%s)</span>"
+msgstr[2] "Доступно обновление <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2289
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "Для активации <span class=\"count\">(%s)</span>"
+msgstr[1] "Для активации <span class=\"count\">(%s)</span>"
+msgstr[2] "Для активации <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2371
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "незвестно"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2379
+msgid "Installed version:"
+msgstr "Не установлен"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2387
+msgid "Minimum required version:"
+msgstr "Обязательно"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2399
+msgid "Available version:"
+msgstr "Доступная версия:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2422
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+"Нет плагинов для установки или активации <a href=\"%1$s\" title=\"Вернуться "
+"в Панель\">Вернуться в Панель</a>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2436
+msgid "Plugin"
+msgstr "Плагин"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2437
+msgid "Source"
+msgstr "Источник"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2442
+msgid "Version"
+msgstr "Версия %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2443
+#: woocommerce/myaccount/my-orders.php:37
+msgid "Status"
+msgstr "Состояние"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2491
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr "Установить %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2495
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr "Обновить %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2500
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr "Активировать %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2570
+msgid "Upgrade message from the plugin author:"
+msgstr "Сообщение обновления от автора плагина:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2603
+msgid "Install"
+msgstr "Установить"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2609
+msgid "Update"
+msgstr "Обновить"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2612
+msgid "Activate"
+msgstr "Активировать"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2643
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Не один из плагинов не был выбран для установки."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2645
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Не один из плагинов не был выбран для обновления."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2681
+msgid "No plugins are available to be installed at this time."
+msgstr "Все плагины установлены и активированы успешно. %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2683
+msgid "No plugins are available to be updated at this time."
+msgstr "В данный момент нет плагинов для обновления."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2788
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "Не один из плагинов не был выбран для обновления."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2814
+msgid "No plugins are available to be activated at this time."
+msgstr "Все плагины установлены и активированы успешно. %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3028
+msgid "Plugin activation failed."
+msgstr "Не удалось активировать плагин."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3362
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка и активация плагина %1$s (%2$d/%3$d)"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3364
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Произошла ошибка при установке %1$s: <strong>%2$s</strong>."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3365
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Установка %1$s не удалась."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3369
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Процесс установки и активации запущен. Это может занять некоторое время, "
+"пожалуйста, будьте терпеливы."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3370
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s установлен и активирован успешно."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3370
+#: inc/plugins/class-tgm-plugin-activation.php:3376
+msgid "Show Details"
+msgstr "﻿Показать подробности"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3370
+#: inc/plugins/class-tgm-plugin-activation.php:3376
+msgid "Hide Details"
+msgstr "Скрыть подробности"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3371
+msgid "All installations and activations have been completed."
+msgstr "Все установки и активация были завершены."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3372
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка и активация плагина %1$s (%2$d/%3$d)"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3375
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Процесс установки начинается. Этот процесс может занять некоторое время,  "
+"поэтому, пожалуйста, будьте терпеливы."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3376
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s  успешно установлен."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3377
+msgid "All installations have been completed."
+msgstr "Все установки завершены."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3378
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка плагина %1$s (%2$d/%3$d)"
+
+#: inc/plugins/importer/parsers.php:43 inc/plugins/importer/parsers.php:75
+#: inc/plugins/importer/parsers.php:83
+msgid "There was an error when reading this WXR file"
+msgstr "Произошла ошибка при чтении этого WXR файл"
+
+#: inc/plugins/importer/parsers.php:44
+msgid ""
+"Details are shown above. The importer will now try again with a different "
+"parser..."
+msgstr "Подробности ниже. Импортер попробует снова с другим парсером..."
+
+#: inc/plugins/importer/parsers.php:87 inc/plugins/importer/parsers.php:92
+#: inc/plugins/importer/parsers.php:284 inc/plugins/importer/parsers.php:472
+msgid ""
+"This does not appear to be a WXR file, missing/invalid WXR version number"
+msgstr "Не похоже на WXR файл, не подходит версия"
+
+#: inc/plugins/importer/wordpress-importer.php:134
+#: inc/plugins/importer/wordpress-importer.php:143
+#: inc/plugins/importer/wordpress-importer.php:194
+#: inc/plugins/importer/wordpress-importer.php:198
+#: inc/plugins/importer/wordpress-importer.php:207
+msgid "Sorry, there has been an error."
+msgstr "Извините, произошла ошибка."
+
+#: inc/plugins/importer/wordpress-importer.php:135
+msgid "The file does not exist, please try again."
+msgstr "Файл не существует, попробуйте еще раз."
+
+#: inc/plugins/importer/wordpress-importer.php:178
+msgid "All done."
+msgstr "Все сделано."
+
+#: inc/plugins/importer/wordpress-importer.php:178
+msgid "Have fun!"
+msgstr "Весело!"
+
+#: inc/plugins/importer/wordpress-importer.php:179
+msgid "Remember to update the passwords and roles of imported users."
+msgstr "Не забудьте обновить пароли и роли импортированных пользователей."
+
+#: inc/plugins/importer/wordpress-importer.php:199
+#, php-format
+msgid ""
+"The export file could not be found at <code>%s</code>. It is likely that "
+"this was caused by a permissions problem."
+msgstr ""
+"Файл экспорта не найден  в<code>%s</code>. Возможно это вызвано проблемой "
+"доступа."
+
+#: inc/plugins/importer/wordpress-importer.php:215
+#, php-format
+msgid ""
+"This WXR file (version %s) may not be supported by this version of the "
+"importer. Please consider updating."
+msgstr ""
+"WXR файл (версия %s) может не поддерживаться этой версией импортера. "
+"Пожалуйста, займитесь обновлением."
+
+#: inc/plugins/importer/wordpress-importer.php:240
+#, php-format
+msgid ""
+"Failed to import author %s. Their posts will be attributed to the current "
+"user."
+msgstr ""
+"Не удалось импортировать автора %s. Его записи будут присвоены текущему "
+"пользователю."
+
+#: inc/plugins/importer/wordpress-importer.php:266
+msgid "Assign Authors"
+msgstr "Связать Авторов"
+
+#: inc/plugins/importer/wordpress-importer.php:267
+msgid ""
+"To make it easier for you to edit and save the imported content, you may "
+"want to reassign the author of the imported item to an existing user of this "
+"site. For example, you may want to import all the entries as <code>admin</"
+"code>s entries."
+msgstr ""
+"Чтобы облегчить редактирование и сохранение импортированного содержимого, вы "
+"можете переназначить автора на существующего. Например выбрать <code>admin</"
+"code>."
+
+#: inc/plugins/importer/wordpress-importer.php:269
+#, php-format
+msgid ""
+"If a new user is created by WordPress, a new password will be randomly "
+"generated and the new user&#8217;s role will be set as %s. Manually changing "
+"the new user&#8217;s details will be necessary."
+msgstr ""
+"Если новый пользователь создан WordPress, его новый пароль генерируется "
+"случайно и назначается роль %s. Будет необходимо изменить его детали "
+"вручную.  "
+
+#: inc/plugins/importer/wordpress-importer.php:279
+msgid "Import Attachments"
+msgstr "Импортировать вложения"
+
+#: inc/plugins/importer/wordpress-importer.php:282
+msgid "Download and import file attachments"
+msgstr "Загрузить и импортировать файл вложения"
+
+#: inc/plugins/importer/wordpress-importer.php:286
+#: woocommerce/single-product-reviews.php:73
+msgid "Submit"
+msgstr "Отправить"
+
+#: inc/plugins/importer/wordpress-importer.php:299
+msgid "Import author:"
+msgstr "Автор импорта:"
+
+#: inc/plugins/importer/wordpress-importer.php:310
+msgid "or create new user with login name:"
+msgstr "или создать нового пользователя с именем:"
+
+#: inc/plugins/importer/wordpress-importer.php:313
+msgid "as a new user:"
+msgstr "в качестве нового пользователя:"
+
+#: inc/plugins/importer/wordpress-importer.php:321
+msgid "assign posts to an existing user:"
+msgstr "назначить записи существующему пользователю:"
+
+#: inc/plugins/importer/wordpress-importer.php:323
+msgid "or assign posts to an existing user:"
+msgstr "или назначить записи существующему пользователю:"
+
+#: inc/plugins/importer/wordpress-importer.php:324
+msgid "- Select -"
+msgstr "- Выберите -"
+
+#: inc/plugins/importer/wordpress-importer.php:374
+#, php-format
+msgid ""
+"Failed to create new user for %s. Their posts will be attributed to the "
+"current user."
+msgstr ""
+"Не удалось создать нового пользователя для %s. Его записи будут присвоены "
+"текущему пользователю."
+
+#: inc/plugins/importer/wordpress-importer.php:425
+#, php-format
+msgid "Failed to import category %s"
+msgstr "Не удалось импортировать рубрику %s"
+
+#: inc/plugins/importer/wordpress-importer.php:465
+#, php-format
+msgid "Failed to import post tag %s"
+msgstr "Не удалось импортировать тег %s"
+
+#: inc/plugins/importer/wordpress-importer.php:511
+#: inc/plugins/importer/wordpress-importer.php:652
+#, php-format
+msgid "Failed to import %s %s"
+msgstr "Не удалось импортировать %s %s"
+
+#: inc/plugins/importer/wordpress-importer.php:537
+#, php-format
+msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+msgstr "Не удалось импортировать &#8220;%s&#8221;: Неверный тип записи %s"
+
+#: inc/plugins/importer/wordpress-importer.php:559
+#, php-format
+msgid "%s &#8220;%s&#8221; already exists."
+msgstr "%s &#8220;%s&#8221; уже существует."
+
+#: inc/plugins/importer/wordpress-importer.php:618
+#, php-format
+msgid "Failed to import %s &#8220;%s&#8221;"
+msgstr "Не удалось импортировать %s &#8220;%s&#8221;"
+
+#: inc/plugins/importer/wordpress-importer.php:783
+msgid "Menu item skipped due to missing menu slug"
+msgstr "Элемент меню пропущен из-за отсутствия ссылки меню"
+
+#: inc/plugins/importer/wordpress-importer.php:790
+#, php-format
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr "Элемент меню пропущен из-за отсутствия ссылки меню: %s"
+
+#: inc/plugins/importer/wordpress-importer.php:872
+msgid "Fetching attachments is not enabled"
+msgstr "Извлечение вложений не включено"
+
+#: inc/plugins/importer/wordpress-importer.php:885
+msgid "Invalid file type"
+msgstr "Неверный тип файла"
+
+#: inc/plugins/importer/wordpress-importer.php:929
+msgid "Remote server did not respond"
+msgstr "Удаленный сервер не ответил"
+
+#: inc/plugins/importer/wordpress-importer.php:935
+#, php-format
+msgid "Remote server returned error response %1$d %2$s"
+msgstr "Удаленный сервер вернул ошибку %1$d %2$s"
+
+#: inc/plugins/importer/wordpress-importer.php:942
+msgid "Remote file is incorrect size"
+msgstr "Удаленный файл имеет некорректный размер"
+
+#: inc/plugins/importer/wordpress-importer.php:947
+msgid "Zero size file downloaded"
+msgstr "Нулевой размер файла загрузки"
+
+#: inc/plugins/importer/wordpress-importer.php:953
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr "Удаленный файл слишком большой, лимит %s"
+
+#: inc/plugins/importer/wordpress-importer.php:1051
+msgid "Import WordPress"
+msgstr "Импорт WordPress"
+
+#: inc/plugins/importer/wordpress-importer.php:1058
+#, php-format
+msgid ""
+"A new version of this importer is available. Please update to version %s to "
+"ensure compatibility with newer export files."
+msgstr ""
+"Новая версия импортера доступна. Пожалуйста, обновитесь до версии %s для "
+"обеспечения совместимости."
+
+#: inc/plugins/importer/wordpress-importer.php:1073
+msgid ""
+"Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import "
+"the posts, pages, comments, custom fields, categories, and tags into this "
+"site."
+msgstr ""
+"Загрузите  RSS (WXR) файл и импортируйте все записи, страницы, комментарии, "
+"пользовательские поля, рубрики и теги на сайт."
+
+#: inc/plugins/importer/wordpress-importer.php:1074
+msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
+msgstr ""
+"Выберите WXR (.xml) файл для загрузки, затем нажмите Загрузить файл и импорт."
+
+#: inc/plugins/plugins.php:169
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+"Извините, не достаточно прав для установки %s плагина. Свяжитесь с "
+"администратором этого сайта для получения помощи по вопросу обновления "
+"плагина."
+msgstr[1] ""
+"Извините, не достаточно прав для установки %s плагина. Свяжитесь с "
+"администратором этого сайта для получения помощи по вопросу обновления "
+"плагина."
+msgstr[2] ""
+"Извините, не достаточно прав для установки %s плагина. Свяжитесь с "
+"администратором этого сайта для получения помощи по вопросу обновления "
+"плагина."
+
+#: inc/plugins/plugins.php:172
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+"Извините, но вы не имеете достаточно прав для активации %s плагина. "
+"Свяжитесь с администратороа этого сайта для получения помощи по вопросу "
+"обновления плагина."
+msgstr[1] ""
+"Извините, но вы не имеете достаточно прав для активации %s плагина. "
+"Свяжитесь с администратороа этого сайта для получения помощи по вопросу "
+"обновления плагина."
+msgstr[2] ""
+"Извините, но вы не имеете достаточно прав для активации %s плагина. "
+"Свяжитесь с администратороа этого сайта для получения помощи по вопросу "
+"обновления плагина."
+
+#: inc/plugins/plugins.php:174
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+"Извините, не достаточно прав для обновления %s плагина. Свяжитесь с "
+"администратором этого сайта для получения помощи по вопросу обновления "
+"плагина."
+msgstr[1] ""
+"Извините, не достаточно прав для обновления %s плагина. Свяжитесь с "
+"администратором этого сайта для получения помощи по вопросу обновления "
+"плагина."
+msgstr[2] ""
+"Извините, не достаточно прав для обновления %s плагина. Свяжитесь с "
+"администратором этого сайта для получения помощи по вопросу обновления "
+"плагина."
+
+#: inc/plugins/plugins.php:176
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] "Активируйте установленный(ые) плагин(ы)"
+msgstr[1] "Активируйте установленный(ые) плагин(ы)"
+msgstr[2] "Активируйте установленный(ые) плагин(ы)"
+
+#: inc/plugins/plugins.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr "Все плагины установлены и активированы успешно. %s"
+
+#: page.php:28 woocommerce/share.php:24
+msgid "Share on"
+msgstr "Поделиться"
+
+#: single-portfolio.php:25
+msgid "Related <strong>Works</strong>"
+msgstr "Похожие <strong>Пользователи</strong>"
+
+#: single.php:25
+msgid "Related <strong>Posts</strong>"
+msgstr "Похожие <strong>Пользователи</strong>"
+
+#: vc_templates/vc_accordion_tab.php:32 vc_templates/vc_tab.php:34
+msgid "Empty section. Edit page to add content here."
+msgstr "Пустая секция. Изменить страницу для добавления контента здесь."
+
+#: woocommerce/cart/cart-totals.php:24 woocommerce/checkout/form-pay.php:24
+msgid "Totals"
+msgstr "Всего в корзине"
+
+#: woocommerce/cart/cart-totals.php:29 woocommerce/cart/mini-cart.php:76
+#: woocommerce/checkout/review-order.php:56
+msgid "Subtotal"
+msgstr "Подитог"
+
+#: woocommerce/cart/cart-totals.php:59
+msgid "Shipping"
+msgstr "Город доставки"
+
+#: woocommerce/cart/cart-totals.php:100 woocommerce/cart/cart.php:34
+#: woocommerce/checkout/review-order.php:24
+#: woocommerce/checkout/review-order.php:120
+#: woocommerce/myaccount/my-orders.php:38
+msgid "Total"
+msgstr "Всего"
+
+#: woocommerce/cart/cart-totals.php:112
+#, php-format
+msgid " (taxes estimated for %s)"
+msgstr " (налоги составят примерно %s)"
+
+#: woocommerce/cart/cart-totals.php:115
+#, php-format
+msgid ""
+"Note: Shipping and taxes are estimated%s and will be updated during checkout "
+"based on your billing and shipping information."
+msgstr ""
+"Примечание: Доставка и налоги приблизительно %s, они будут обновляться в "
+"зависимости от ваших покупок и доставки."
+
+#: woocommerce/cart/cart.php:32
+msgid "Price"
+msgstr "Цена"
+
+#: woocommerce/cart/cart.php:33
+msgid "Quantity"
+msgstr "Количество"
+
+#: woocommerce/cart/cart.php:51 woocommerce/cart/mini-cart.php:57
+msgid "Remove this item"
+msgstr "Удалить этот элемент"
+
+#: woocommerce/cart/cart.php:88
+msgid "Available on backorder"
+msgstr "Доступно для предзаказа"
+
+#: woocommerce/cart/cart.php:134
+msgid "Coupon"
+msgstr "Купон"
+
+#: woocommerce/cart/cart.php:134 woocommerce/checkout/form-coupon.php:25
+msgid "Coupon code"
+msgstr "Код купона"
+
+#: woocommerce/cart/cart.php:134 woocommerce/checkout/form-coupon.php:29
+msgid "Apply Coupon"
+msgstr "Применить купон"
+
+#: woocommerce/cart/cart.php:143 woocommerce/cart/cart.php:149
+msgid "Update Cart"
+msgstr "Обновить корзину"
+
+#: woocommerce/cart/cart.php:143
+msgid "Proceed to Checkout"
+msgstr "Перейти к оплате"
+
+#: woocommerce/cart/cross-sells.php:38
+msgid "You may be interested in&hellip;"
+msgstr "Вас может заинтересовать &hellip;"
+
+#: woocommerce/cart/mini-cart.php:68
+msgid "No products in the cart."
+msgstr "Нет продуктов в корзине."
+
+#: woocommerce/cart/mini-cart.php:82
+msgid "Checkout"
+msgstr "Выписка"
+
+#: woocommerce/cart/shipping-calculator.php:27
+#: woocommerce/cart/shipping-calculator.php:29
+msgid "Calculate Shipping"
+msgstr "Пдсчитать доставку"
+
+#: woocommerce/cart/shipping-calculator.php:36
+msgid "Select a country&hellip;"
+msgstr "Віберите страну&hellip;"
+
+#: woocommerce/cart/shipping-calculator.php:53
+#: woocommerce/cart/shipping-calculator.php:59
+#: woocommerce/cart/shipping-calculator.php:71
+msgid "State / county"
+msgstr "Область / Страна"
+
+#: woocommerce/cart/shipping-calculator.php:60
+msgid "Select a state&hellip;"
+msgstr "Віберите область&hellip;"
+
+#: woocommerce/cart/shipping-calculator.php:80
+msgid "City"
+msgstr "Город"
+
+#: woocommerce/cart/shipping-calculator.php:88
+msgid "Postcode / Zip"
+msgstr "Почтовый индекс"
+
+#: woocommerce/cart/shipping-calculator.php:93
+msgid "Update Totals"
+msgstr "Обновить сумму"
+
+#: woocommerce/checkout/form-checkout.php:22
+msgid "You must be logged in to checkout."
+msgstr "Вы должны войти, чтобы продолжить покупку."
+
+#: woocommerce/checkout/form-checkout.php:59
+msgid "Your order"
+msgstr "Ваш заказ"
+
+#: woocommerce/checkout/form-coupon.php:18
+msgid "Have a coupon?"
+msgstr "Есть купон?"
+
+#: woocommerce/checkout/form-coupon.php:18
+msgid "Click here to enter your code"
+msgstr "Нажмите здесь, чтобы ввести код"
+
+#: woocommerce/checkout/form-pay.php:23
+msgid "Qty"
+msgstr "К-во"
+
+#: woocommerce/checkout/form-pay.php:57
+msgid "Payment"
+msgstr "Метод оплаты"
+
+#: woocommerce/checkout/form-pay.php:82
+msgid ""
+"Sorry, it seems that there are no available payment methods for your "
+"location. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+"К сожалению, нет никаких доступных способов оплаты для вашего "
+"местоположения. Пожалуйста, свяжитесь с нами."
+
+#: woocommerce/checkout/form-pay.php:92
+msgid "Pay for order"
+msgstr "Оплатить"
+
+#: woocommerce/checkout/review-order.php:166
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+"Пожалуйста, введите данные в полях выше, чтобы увидеть доступные методы "
+"оплаты."
+
+#: woocommerce/checkout/review-order.php:168
+msgid ""
+"Sorry, it seems that there are no available payment methods for your state. "
+"Please contact us if you require assistance or wish to make alternate "
+"arrangements."
+msgstr ""
+"К сожалению, нет никаких доступных способов оплаты для вашего "
+"местоположения. Пожалуйста, свяжитесь с нами если вам требуется помощь или "
+"вы хотите произвести оплату альтернативным способом."
+
+#: woocommerce/checkout/review-order.php:179
+msgid ""
+"Since your browser does not support JavaScript, or it is disabled, please "
+"ensure you click the <em>Update Totals</em> button before placing your "
+"order. You may be charged more than the amount stated above if you fail to "
+"do so."
+msgstr ""
+"Поскольку Ваш браузер не поддерживает JavaScript, или он отключен, "
+"убедитесь, что вы нажали на <em>Обновить Итог,</em> кнопку перед оформлением "
+"заказа. Иначе вы можете заплатить больше, чем сумма, указанная выше, если вы "
+"этого не сделаете."
+
+#: woocommerce/checkout/review-order.php:179
+msgid "Update totals"
+msgstr "Обновить сумму"
+
+#: woocommerce/checkout/review-order.php:186
+msgid "Place order"
+msgstr "Заказ:"
+
+#: woocommerce/checkout/review-order.php:195
+#, php-format
+msgid ""
+"I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">terms &amp; "
+"conditions</a>"
+msgstr ""
+"﻿Я &rsquo; ознакомился и принимаю <a href=«%s» target=«_blank»>эти &amp; "
+"условия</a>"
+
+#: woocommerce/content-product_cat.php:52
+msgid "Products"
+msgstr "Товары"
+
+#: woocommerce/global/form-login.php:28
+#: woocommerce/myaccount/form-lost-password.php:31
+msgid "Username or email"
+msgstr "Имя пользователя или email"
+
+#: woocommerce/global/form-login.php:32
+#: woocommerce/myaccount/form-login.php:48
+#: woocommerce/myaccount/form-login.php:104
+msgid "Password"
+msgstr "Пароль"
+
+#: woocommerce/global/form-login.php:44
+#: woocommerce/myaccount/form-login.php:61
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: woocommerce/global/form-login.php:48
+#: woocommerce/myaccount/form-login.php:50
+msgid "Lost your password?"
+msgstr "Забыли свой пароль?"
+
+#: woocommerce/global/quantity-input.php:15
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr "К-во"
+
+#: woocommerce/loop/add-to-cart.php:50
+msgid "Quick View"
+msgstr "Просмотр"
+
+#: woocommerce/loop/orderby.php:16
+msgid "Sort By"
+msgstr "Сортировать по"
+
+#: woocommerce/loop/pagination.php:27 woocommerce/myaccount/my-orders.php:84
+msgid "View"
+msgstr "Просмотр"
+
+#: woocommerce/loop/sale-flash.php:20
+#: woocommerce/single-product/sale-flash.php:20
+msgid "Hot"
+msgstr "Хит продаж"
+
+#: woocommerce/loop/sale-flash.php:32
+#: woocommerce/single-product/sale-flash.php:31
+msgid "Sale"
+msgstr "Распродажа"
+
+#: woocommerce/loop/sale-flash.php:42
+msgid "Out of stock"
+msgstr "Нет в наличии"
+
+#: woocommerce/myaccount/form-add-payment-method.php:42
+msgid ""
+"Sorry, it seems that there are no payment methods which support adding a new "
+"payment method. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+"К сожалению, нельзя добавить новый метод оплаты. Пожалуйста, свяжитесь с "
+"нами, если Вам требуется помощь или Вы хотите произвести оплату "
+"альтернативным способом."
+
+#: woocommerce/myaccount/form-add-payment-method.php:50
+msgid "Add Payment Method"
+msgstr "Способ оплаты:"
+
+#: woocommerce/myaccount/form-edit-account.php:24
+msgid "First name"
+msgstr "первый"
+
+#: woocommerce/myaccount/form-edit-account.php:28
+msgid "Last name"
+msgstr "последний"
+
+#: woocommerce/myaccount/form-edit-account.php:34
+#: woocommerce/myaccount/form-login.php:97
+msgid "Email address"
+msgstr "Пожалуйста, введите действующий электронный адрес. "
+
+#: woocommerce/myaccount/form-edit-account.php:39
+msgid "Password Change"
+msgstr "Пароль"
+
+#: woocommerce/myaccount/form-edit-account.php:42
+msgid "Current Password (leave blank to leave unchanged)"
+msgstr "Текущий Пароль (оставьте пустым, если не хотите его менять)"
+
+#: woocommerce/myaccount/form-edit-account.php:46
+msgid "New Password (leave blank to leave unchanged)"
+msgstr "Новый Пароль (оставьте пустым, если не хотите его менять)"
+
+#: woocommerce/myaccount/form-edit-account.php:50
+msgid "Confirm New Password"
+msgstr "Введите повторно новый пароль"
+
+#: woocommerce/myaccount/form-edit-account.php:60
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: woocommerce/myaccount/form-edit-address.php:16
+#: woocommerce/myaccount/my-address.php:19
+#: woocommerce/myaccount/my-address.php:25
+msgid "Billing Address"
+msgstr "Платежный Адрес"
+
+#: woocommerce/myaccount/form-edit-address.php:16
+#: woocommerce/myaccount/my-address.php:20
+msgid "Shipping Address"
+msgstr "Адрес доставки"
+
+#: woocommerce/myaccount/form-edit-address.php:46
+msgid "Save Address"
+msgstr "Сохранить Адрес"
+
+#: woocommerce/myaccount/form-login.php:44
+msgid "Username or email address"
+msgstr ""
+"Забыли пароль? Пожалуйста, введите ваше имя пользователя или адрес "
+"электронной почты. Вы получите ссылку, чтобы создать новый пароль по "
+"электронной почте."
+
+#: woocommerce/myaccount/form-login.php:90
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: woocommerce/myaccount/form-login.php:111
+msgid "Anti-spam"
+msgstr "Защитите от спама с помощью %s"
+
+#: woocommerce/myaccount/form-lost-password.php:29
+msgid ""
+"Lost your password? Please enter your username or email address. You will "
+"receive a link to create a new password via email."
+msgstr ""
+"Забыли пароль? Пожалуйста, введите ваше имя пользователя или адрес "
+"электронной почты. Вы получите ссылку, чтобы создать новый пароль по "
+"электронной почте."
+
+#: woocommerce/myaccount/form-lost-password.php:35
+msgid "Enter a new password below."
+msgstr "Введите новый пароль ниже."
+
+#: woocommerce/myaccount/form-lost-password.php:38
+msgid "New password"
+msgstr "Новый пароль"
+
+#: woocommerce/myaccount/form-lost-password.php:42
+msgid "Re-enter new password"
+msgstr "Введите повторно новый пароль"
+
+#: woocommerce/myaccount/form-lost-password.php:55
+msgid "Click here to login"
+msgstr "Нажмите здесь, чтобы войти"
+
+#: woocommerce/myaccount/form-lost-password.php:58
+#: woocommerce/myaccount/form-lost-password.php:61
+msgid "Reset Password"
+msgstr "Сброс пароля"
+
+#: woocommerce/myaccount/form-lost-password.php:58
+#: woocommerce/myaccount/form-lost-password.php:61
+#: woocommerce/wishlist-view.php:34
+msgid "Save"
+msgstr "Сохранить"
+
+#: woocommerce/myaccount/my-account.php:21
+#, php-format
+msgid "Hello <strong>%1$s</strong> (not %1$s? <a href=\"%2$s\">Sign out</a>)."
+msgstr ""
+"Здравствуйте, <strong>%1$s</strong> (не %1$s? <a href=«%2$s»>Выйти</a>)."
+
+#: woocommerce/myaccount/my-account.php:26
+#, php-format
+msgid ""
+"From your account dashboard you can view your recent orders, manage your "
+"shipping and billing addresses and <a href=\"%s\">edit your password and "
+"account details</a>."
+msgstr ""
+"С главной панели вашего аккаунта вы можете просматривать недавние заказы, "
+"настроить адрес доставки и реквизиты оплаты, а также <a href="
+"%s>редактировать пароль и детали аккаунта</a>."
+
+#: woocommerce/myaccount/my-address.php:17
+msgid "My Addresses"
+msgstr "Мои Адреса"
+
+#: woocommerce/myaccount/my-address.php:23
+msgid "My Address"
+msgstr "Мой адрес"
+
+#: woocommerce/myaccount/my-address.php:35
+msgid "The following addresses will be used on the checkout page by default."
+msgstr ""
+"Следующие адреса будут использоваться на странице оформления заказа по "
+"умолчанию."
+
+#: woocommerce/myaccount/my-address.php:66
+msgid "You have not set up this type of address yet."
+msgstr "Вы еще не задали этот тип адреса."
+
+#: woocommerce/myaccount/my-downloads.php:23
+msgid "Available downloads"
+msgstr "Доступные сайдбары"
+
+#: woocommerce/myaccount/my-downloads.php:32
+#, php-format
+msgid "%s download remaining"
+msgid_plural "%s downloads remaining"
+msgstr[0] "скачать%s остальные"
+msgstr[1] "скачать%s остальные"
+msgstr[2] "скачать%s остальные"
+
+#: woocommerce/myaccount/my-orders.php:29
+msgid "Recent Orders"
+msgstr "Последние заказы"
+
+#: woocommerce/myaccount/my-orders.php:35
+msgid "Order"
+msgstr "Заказ"
+
+#: woocommerce/myaccount/my-orders.php:62
+#, php-format
+msgid "%s for %s item"
+msgid_plural "%s for %s items"
+msgstr[0] "%s для %s товара"
+msgstr[1] "%s для %s товара"
+msgstr[2] "%s для %s товара"
+
+#: woocommerce/myaccount/my-orders.php:71
+msgid "Pay"
+msgstr "Оплатить"
+
+#: woocommerce/myaccount/my-orders.php:78 woocommerce/wishlist-view.php:38
+msgid "Cancel"
+msgstr "Отмена"
+
+#: woocommerce/myaccount/view-order.php:20
+#, php-format
+msgid ""
+"Order #<mark class=\"order-number\">%s</mark> was placed on <mark class="
+"\"order-date\">%s</mark> and is currently <mark class=\"order-status\">%s</"
+"mark>."
+msgstr ""
+"Заказ #<mark class=\"order-number\">%s</mark> был сделан <mark class=\"order-"
+"date\">%s</mark> и на данный момент <mark class=\"order-status\">%s</mark>."
+
+#: woocommerce/myaccount/view-order.php:26
+msgid "Order Updates"
+msgstr "Сортировать по"
+
+#: woocommerce/myaccount/view-order.php:32
+msgid "l jS \\o\\f F Y, h:ia"
+msgstr "l jS \\o\\f F Y, h:ia"
+
+#: woocommerce/single-product-reviews.php:25
+#, php-format
+msgid "%s review for %s"
+msgid_plural "%s reviews for %s"
+msgstr[0] "%s обзор для %s"
+msgstr[1] "%s обзор для %s"
+msgstr[2] "%s обзор для %s"
+
+#: woocommerce/single-product-reviews.php:27
+msgid "Reviews"
+msgstr "Отзывы"
+
+#: woocommerce/single-product-reviews.php:48
+msgid "There are no reviews yet."
+msgstr "Нет ни одного отзыва."
+
+#: woocommerce/single-product-reviews.php:63
+#: woocommerce/single-product/rating.php:42
+msgid "Add a review"
+msgstr "Добавить отзыв"
+
+#: woocommerce/single-product-reviews.php:63
+#: woocommerce/single-product/rating.php:50
+msgid "Be the first to review"
+msgstr "Добавьте первый отзыв"
+
+#: woocommerce/single-product-reviews.php:64
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Оставить ответ на %s"
+
+#: woocommerce/single-product-reviews.php:68
+msgid "Name"
+msgstr "Имя"
+
+#: woocommerce/single-product-reviews.php:79
+msgid "Your Rating"
+msgstr "Ваша оценка"
+
+#: woocommerce/single-product-reviews.php:80
+msgid "Rate&hellip;"
+msgstr "Оценить&hellip;"
+
+#: woocommerce/single-product-reviews.php:81
+msgid "Perfect"
+msgstr "Идеально"
+
+#: woocommerce/single-product-reviews.php:82
+msgid "Good"
+msgstr "Хорошо"
+
+#: woocommerce/single-product-reviews.php:83
+msgid "Average"
+msgstr "Средний"
+
+#: woocommerce/single-product-reviews.php:84
+msgid "Not that bad"
+msgstr "Не плохо"
+
+#: woocommerce/single-product-reviews.php:85
+msgid "Very Poor"
+msgstr "Очень плохо"
+
+#: woocommerce/single-product-reviews.php:89
+msgid "Your Review"
+msgstr "Ваш отзыв"
+
+#: woocommerce/single-product-reviews.php:98
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+"Только зарегистрированные покупатели, которые приобрели этот товар, могут "
+"оставить отзыв."
+
+#: woocommerce/single-product/add-to-cart/variable.php:53
+msgid "Choose an option"
+msgstr "Выберите вариант"
+
+#: woocommerce/single-product/add-to-cart/variable.php:122
+msgid "Clear selection"
+msgstr "Очистить выбор"
+
+#: woocommerce/single-product/add-to-cart/variable.php:156
+msgid "This product is currently out of stock and unavailable."
+msgstr "В настоящее время данного товара нет в наличии"
+
+#: woocommerce/single-product/product-attributes.php:29
+msgid "Weight"
+msgstr "Вес"
+
+#: woocommerce/single-product/product-attributes.php:36
+msgid "Dimensions"
+msgstr "Габариты"
+
+#: woocommerce/single-product/rating.php:36
+#, php-format
+msgid "out of %s5%s"
+msgstr "из %s5%s"
+
+#: woocommerce/single-product/rating.php:42
+#, php-format
+msgid "%s customer review"
+msgid_plural "%s customer reviews"
+msgstr[0] "%s Отзыв клиента"
+msgstr[1] "%s Отзыв клиента"
+msgstr[2] "%s Отзыв клиента"
+
+#: woocommerce/single-product/related.php:42
+msgid "Related Products"
+msgstr "﻿Похожие статьи"
+
+#: woocommerce/single-product/review.php:37
+msgid "Your comment is awaiting approval"
+msgstr "﻿Ваш комментарий ожидает утверждения"
+
+#: woocommerce/single-product/review.php:46
+msgid "verified owner"
+msgstr "подтвержденно владельцем"
+
+#: woocommerce/single-product/up-sells.php:43
+msgid "You may also like&hellip;"
+msgstr "Вас может заинтересовать&hellip;"
+
+#: woocommerce/wishlist-view.php:25
+msgid "Edit title"
+msgstr "Редактировать заголовок"
+
+#: woocommerce/wishlist-view.php:58
+msgid "Product Name"
+msgstr "Наименование товара"
+
+#: woocommerce/wishlist-view.php:64
+msgid "Unit Price"
+msgstr "Цена за ед."
+
+#: woocommerce/wishlist-view.php:72
+msgid "Stock Status"
+msgstr "Есть ли в наличии"
+
+#: woocommerce/wishlist-view.php:109
+msgid "Remove this product"
+msgstr "Удалить этот продукт"
+
+#: woocommerce/wishlist-view.php:138
+msgid "Free!"
+msgstr "БЕСПЛАТНЫЙ"
+
+#: woocommerce/wishlist-view.php:149
+msgid "Out of Stock"
+msgstr "Нет в наличии"
+
+#: woocommerce/wishlist-view.php:152
+msgid "In Stock"
+msgstr "Есть в наличии"
+
+#: woocommerce/wishlist-view.php:178
+msgid "No products were added to the wishlist"
+msgstr "Нет товаров, добавленных в список желаний"
+
+#: woocommerce/wishlist-view.php:204
+msgid "Ask an estimate of costs"
+msgstr "Примерные расходы"

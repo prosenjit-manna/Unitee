@@ -1,0 +1,20 @@
+/* Boxed Layout */
+
+body.boxed {
+
+    .page-wrapper {
+        margin: 25px auto;
+        box-shadow: $wrapper-shadow;
+
+        @media #{$screen-normal} {
+            width: 100% !important;
+            margin: 0 auto;
+            border-width: 0;
+        }
+    }
+
+    .porto-container.container {
+        width: 100%;
+        padding: 0 ($grid-gutter-width / 2);
+    }
+}
