@@ -95,19 +95,19 @@
 														</div>
                                                         <label class="control-label col-md-3">Pais</label>
                                                         <div class="form-group col-md-9">
-                                                            <select id="select_country" onchange="get_depto(this.value);" class="form-control input-circle">
+                                                            <select id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">
                                                                
                                                             </select>
                                                         </div>
                                                         <label class="control-label col-md-3">Departamento</label>
                                                         <div class="form-group col-md-9">
-                                                            <select onchange="get_municipio(this.value);" id="select_depto" class="form-control input-circle">
+                                                            <select onchange="get_municipio(this.value);" id="select_depto" name="txt_depto" class="form-control input-circle">
                                                                
                                                             </select>
                                                         </div>
                                                         <label class="control-label col-md-3">Ciudad</label>
                                                         <div class="form-group col-md-9">
-                                                            <select id="select_city" class="form-control input-circle">
+                                                            <select id="select_city" class="form-control input-circle" name="txt_ciudad">
                                                                 
                                                             </select>
                                                         </div>
