@@ -151,8 +151,9 @@
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
-														<div class="radio-list" align="center">
-                                                                                                                    <input type="radio" name="rol1" id="rol1" value="1" >														</div>
+														<div class="form-group radio-list" align="center">
+                                                                                                                    <input type="radio" name="rol1" id="rol1" value="1" >
+                                                                                                                </div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -167,8 +168,9 @@
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
-														<div class="radio-list" align="center">
-                                                                                                                    <input type="radio" id="rol2" name="rol2" value="2" >														</div>
+														<div align="center">
+                                                                                                                    <input type="radio" id="rol2" name="rol2" value="2" >
+                                                                                                                </div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -183,8 +185,9 @@
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
-														<div class="radio-list" align="center">
-                                                                                                                    <input type="radio" name="rol3" id="rol3" value="3" >														</div><br><br>
+														<div  align="center">
+                                                                                                                    <input type="radio" name="rol3" id="rol3" value="3" >
+                                                                                                                </div><br><br>
 														<div class="form-actions" align="right">
 																<button type="button" class="btn default">Cancelar</button>
 																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
@@ -203,7 +206,7 @@
 								<!-- INICIO DEL SEGUNDO TAB PANE-->
 								<div class="tab-pane active" id="portlet_tab1">
 									<!-- INICIO DEL DIV DEL SCROLLER-->
-									<div class="scroller" style="height: 250px;">
+									<div class="scroller" style="height: 280px;">
 													<!--INICIO FORMULARIO INFO USUARIO-->
 													<?php echo form_open("/TheUser/Edit" , array("method" => "post")); ?>
 															<div class="col-md-6">
@@ -233,7 +236,7 @@
 																</div><br>
 																<label id="lbl_baja" class="control-label col-md-4">Dar de Baja</label>
 																<div class="form-group col-md-8">
-                                                                                                                                    <div id=""  class="radio-list">
+                                                                                                                                    <div id=""  class="form-group radio-list">
                                                                                                                                         <input value="-1" type="checkbox" name="txt_baja" id="txt_baja" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
 																	</div>
 																</div>
