@@ -25,4 +25,12 @@ class Country_engine extends CI_Model {
                         ->result_array();
     }
     
+     public function get_muni($id){
+        
+        $this->query = "SELECT codigo_municipio_depto as 'id' , nombre as 'name' FROM municipio_depto "
+                . " WHERE codigo_depto_pais LIKE ?";
+        return $this->db->query($this->query , array($id))
+                        ->result_array();
+    }
+    
 }

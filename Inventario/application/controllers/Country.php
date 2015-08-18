@@ -37,5 +37,17 @@ class Country extends CI_Controller{
         echo json_encode($data); 
 
     }
+    
+    public function GetMunicipio(){
+        
+        $iso = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+   
+        if($iso == NULL ) { echo ""; }
+        
+        $this->load->model("system/country_engine");
+        $data       = $this->country_engine->get_muni($iso);
+       
+        echo json_encode($data); 
+    }
    
 }

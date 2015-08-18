@@ -93,45 +93,20 @@
 														</div>
                                                         <label class="control-label col-md-3">Pais</label>
                                                         <div class="form-group col-md-9">
-                                                            <select onchange="get_depto(this.value);" class="form-control input-circle">
-                                                                <option selected="selected">Elige un Pais</option>
-                                                                <option value="SV" >El Salvador</option>
-                                                                <option>Honduras</option>
-                                                                <option>Guatemala</option>
+                                                            <select id="select_country" onchange="get_depto(this.value);" class="form-control input-circle">
+                                                               
                                                             </select>
                                                         </div>
                                                         <label class="control-label col-md-3">Departamento</label>
                                                         <div class="form-group col-md-9">
-                                                            <select class="form-control input-circle">
-                                                                <option selected="selected">Elige un Departamento</option>
-                                                                <option>San Salvador</option>
-                                                                <option>La Libertad</option>
-                                                                <option>Sonsonate</option>
-                                                                <option>Santa Ana</option>
-                                                                <option>San Vicente</option>
-                                                                <option>La Union</option>
-                                                                <option>San Miguel</option>
-                                                                <option>Morazan</option>
-                                                                <option>Caba�as</option>
-                                                                <option>Ahuachapan</option>
-                                                                <option>Chalatenango</option>
+                                                            <select onchange="get_municipio(this.value);" id="select_depto" class="form-control input-circle">
+                                                               
                                                             </select>
                                                         </div>
                                                         <label class="control-label col-md-3">Ciudad</label>
                                                         <div class="form-group col-md-9">
-                                                            <select class="form-control input-circle">
-                                                                <option selected="selected">Elige una Ciudad</option>
-                                                                <option>San Salvador</option>
-                                                                <option>La Libertad</option>
-                                                                <option>Sonsonate</option>
-                                                                <option>Santa Ana</option>
-                                                                <option>San Vicente</option>
-                                                                <option>La Union</option>
-                                                                <option>San Miguel</option>
-                                                                <option>Morazan</option>
-                                                                <option>Caba�as</option>
-                                                                <option>Ahuachapan</option>
-                                                                <option>Chalatenango</option>
+                                                            <select id="select_city" class="form-control input-circle">
+                                                                
                                                             </select>
                                                         </div>
 														
@@ -172,7 +147,19 @@
                 var tasking = new jtask();
                     tasking.url = "<?php echo site_url("/c/2" ); ?>";
                     tasking.success_callback(function(data){
-                            
+                          var j = JSON.parse(data);
+                          var c = $("#select_country");
+                          c.html("");
+                          //c.append('<option selected="selected">Elige un Pais</option>');
+                          $.map(j , function(k){
+                              if(k.id == "SV"){
+                                  c.prepend("<option value='" + k.id + "'>" + k.name + "</option>");
+                                  get_depto(k.id);
+                              }
+                              else{
+                                c.append("<option value='" + k.id + "'>" + k.name + "</option>");
+                              }
+                          });
                     });
                     tasking.do_task();
             };
@@ -182,8 +169,27 @@
                    var tasking = new jtask();
                     tasking.url = "<?php echo site_url("/country/GetDepto/" ); ?>";
                     tasking.data = { "iso" : iso} ;
+                  
                     tasking.success_callback(function(data){
-                          
+                         
+                          var c =$("#select_depto");
+                          c.html("");
+                          c.append('<option selected="selected">Elige un Departamento</option>');
+                          var j = JSON.parse(data);
+                          $.map(j , function(k){
+                              c.append('<option value="' + k.id + '">' + k.name + '</option>');
+                          });
+                    });
+                    tasking.do_task();
+            };
+            
+            var get_municipio = function(id){
+                   var tasking = new jtask();
+                    tasking.url = "<?php echo site_url("/country/GetMunicipio/" ); ?>";
+                    tasking.data = { "id" : id} ;
+                    tasking.success_callback(function(data){
+                         
+                        alert(data);
                     });
                     tasking.do_task();
             };
