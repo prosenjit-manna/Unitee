@@ -135,7 +135,7 @@
 								<!-- INICIO DEL PRIMER TAB PANE-->
 								<div class="tab-pane " id="portlet_tab2">
 									<!-- INICIO DEL DIV DEL SCROLLER-->
-									<div class="scroller" style="height: 270px;">
+									<div class="scroller" style="height: 300px;">
 												<!--INICIO FORMULARIO ROLES-->
 												<form action="#" class="horizontal-form">
 							                 		<div class="portlet light profile-sidebar-portlet col-md-4">
@@ -168,7 +168,7 @@
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
-														<div align="center">
+														<div class="form-group" align="center">
                                                                                                                     <input type="radio" id="rol2" name="rol2" value="2" >
                                                                                                                 </div>
 													</div>
