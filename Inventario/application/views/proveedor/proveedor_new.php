@@ -50,6 +50,7 @@
 											<div class="form-body">
 												<div class="row">
 													<div class="col-md-6">
+                                                                                                            <?php echo form_open("/TheProvider/NewProvider/"); ?>
                                                                                                             <h3 lass="form-section">Información de Contacto</h3><br>
 													   <label class="control-label col-md-2">Empresa</label>
 														<div class="form-group col-md-10">
@@ -75,6 +76,7 @@
 														<div class="form-group col-md-10">
                                                                                                                     <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Correo Electronico">
 														</div>
+                                                                                                                
 													</div>
 													<!--/span-->
 													<div class="col-md-6">
@@ -125,8 +127,9 @@
                                                 </div>
 											<div class="form-actions right">
                                                                                             <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                                                                                            <button  id="send" name="send" disabled="disabled" type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                                                                                            <button  id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
 											</div>
+                                                   <?php echo form_close(); ?>
 										<!-- FINAL FORM-->
 									</div>
 						</div>
