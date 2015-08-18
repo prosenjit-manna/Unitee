@@ -89,9 +89,11 @@ class User_edit extends CI_Model implements PInterface{
                 . " user.email ,"
                 . " user.id_user,"
                 . " user.id_rol,"
+                . " roles.nivel as 'rol_nivel',"
                 . " user.id_login "
                 . " FROM login "
                 . " LEFT JOIN user ON user.id_login=login.id_login "
+                . " LEFT JOIN roles ON roles.id_rol=user.id_rol"
                 . " WHERE login.id_login LIKE ?";
         return $this->db
                 ->query($this->query , array($id))

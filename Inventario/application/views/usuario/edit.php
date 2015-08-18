@@ -147,12 +147,12 @@
 														<!-- SIDEBAR USER TITLE -->
 														<div class="profile-usertitle">
 															<div class="profile-usertitle-name">
-															   Otorgar ROL #1 
+															  Administrador 
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 														<div class="radio-list" align="center">
-															<input type="radio" name="" value="" >														</div>
+                                                                                                                    <input type="radio" name="rol1" id="rol1" value="1" >														</div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -163,12 +163,12 @@
 														<!-- SIDEBAR USER TITLE -->
 														<div class="profile-usertitle">
 															<div class="profile-usertitle-name">
-															   Otorgar ROL #2 
+															   Operativo
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 														<div class="radio-list" align="center">
-															<input type="radio" name="" value="" >														</div>
+                                                                                                                    <input type="radio" id="rol2" name="rol2" value="2" >														</div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -179,12 +179,12 @@
 														<!-- SIDEBAR USER TITLE -->
 														<div class="profile-usertitle">
 															<div class="profile-usertitle-name">
-															   Otorgar ROL #3
+															   Administrativo
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 														<div class="radio-list" align="center">
-															<input type="radio" name="" value="" >														</div><br><br>
+                                                                                                                    <input type="radio" name="rol3" id="rol3" value="3" >														</div><br><br>
 														<div class="form-actions" align="right">
 																<button type="button" class="btn default">Cancelar</button>
 																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
@@ -328,6 +328,7 @@
                         );
                    });
                    tasking.success_callback(function(s){
+   
                       $("#messages").html("");
                       $user  = JSON.parse(s);
                      $.map($user, function(u){
@@ -345,7 +346,17 @@
                                $("#txt_baja").val("1");
                                $("#lbl_baja").html("Activar");
                           }
-                              
+      
+                          if(u.id_rol != null ){
+                              for(var i = 1 ; i <= 3 ; i++)
+                              {
+                                  var d = $("#rol" + i);
+                                  if(d.val() == u.id_rol){
+                                      document.getElementById("rol" + i).checked= true;
+                                      //d.attr("checked" , true);
+                                  }
+                              }
+                          }
 
                         });
                    });
