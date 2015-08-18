@@ -150,6 +150,13 @@
 															  Administrador 
 															</div>
 														</div>
+														<div class="form-group" align="center">
+														<div class="input-group col-md-12" >
+																	<div class="iradio_minimal-grey" style="position: relative;">
+																			<input type="radio" name="rol1" class="icheck" >
+																	</div>
+														</div>
+														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
@@ -164,6 +171,13 @@
 															   Operativo
 															</div>
 														</div>
+														<div class="form-group" align="center">
+														<div class="input-group col-md-12" >
+																	<div class="iradio_minimal-grey" style="position: relative;">
+																			<input type="radio" name="rol1" class="icheck" >
+																	</div>
+														</div>
+														</div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -177,43 +191,16 @@
 															   Administrativo
 															</div>
 														</div>
+														<div class="form-group" align="center">
+														<div class="input-group col-md-12" >
+																	<div class="iradio_minimal-grey" style="position: relative;">
+																			<input type="radio" name="rol1" class="icheck" >
+																	</div>
+														</div>
+														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 													</div>
-													<div class="form-group">
-														<div class="input-group">
-															<div class="icheck-inline">
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																	<div class="iradio_minimal-grey" style="position: relative;">
-																			<input type="radio" name="radio2" class="icheck" >
-																	</div>
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																	<div class="iradio_minimal-grey" style="position: relative;">
-																		<input type="radio" name="radio2" class="icheck" style="position: absolute; opacity: 0;">
-																	</div>
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																	<div class="iradio_minimal-grey" style="position: relative;">
-																		<input type="radio" name="radio2" class="icheck" style="position: absolute; opacity: 0;">
-																	</div>
-															</div>
-														</div>
-													</div>
+													
 													<br>
 													<div class="form-actions" align="right">
 														<button type="button" class="btn default">Cancelar</button>
