@@ -17,4 +17,12 @@ class Country_engine extends CI_Model {
                         ->result_array();
     }
     
+    public function get_depto($iso){
+        
+        $this->query = "SELECT codigo_depto_pais as 'id' , nombre as 'name' FROM depto_pais "
+                . " WHERE iso LIKE ?";
+        return $this->db->query($this->query , array($iso))
+                        ->result_array();
+    }
+    
 }

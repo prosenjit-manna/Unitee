@@ -93,9 +93,9 @@
 														</div>
                                                         <label class="control-label col-md-3">Pais</label>
                                                         <div class="form-group col-md-9">
-                                                            <select class="form-control input-circle">
+                                                            <select onchange="get_depto(this.value);" class="form-control input-circle">
                                                                 <option selected="selected">Elige un Pais</option>
-                                                                <option>El Salvador</option>
+                                                                <option value="SV" >El Salvador</option>
                                                                 <option>Honduras</option>
                                                                 <option>Guatemala</option>
                                                             </select>
@@ -172,10 +172,20 @@
                 var tasking = new jtask();
                     tasking.url = "<?php echo site_url("/c/2" ); ?>";
                     tasking.success_callback(function(data){
+                            
+                    });
+                    tasking.do_task();
+            };
+            
+            
+            var get_depto = function(iso){
+                   var tasking = new jtask();
+                    tasking.url = "<?php echo site_url("/country/GetDepto/" ); ?>";
+                    tasking.data = { "iso" : iso} ;
+                    tasking.success_callback(function(data){
                           
                     });
                     tasking.do_task();
-
             };
         
         </script>

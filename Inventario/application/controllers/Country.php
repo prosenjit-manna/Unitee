@@ -24,5 +24,18 @@ class Country extends CI_Controller{
                 break;
         }
     }
+    
+    public function GetDepto(){
+
+        $iso = isset($_REQUEST['iso']) ? $_REQUEST['iso'] : NULL;
+   
+        if($iso == NULL ) { echo ""; }
+        
+        $this->load->model("system/country_engine");
+        $data       = $this->country_engine->get_depto($iso);
+       
+        echo json_encode($data); 
+
+    }
    
 }
