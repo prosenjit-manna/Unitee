@@ -30,7 +30,8 @@ class User_edit extends CI_Model implements PInterface{
          return array(
            $this->route . "assert/plugins/bootstrap-toastr/toastr.min.css",
             $this->route . "assert/perfil/css/profile.css",
-           $this->route . "assert/perfil/css/profile-old.css"
+           $this->route . "assert/perfil/css/profile-old.css",
+             $this->route . "assert/plugins/icheck/skins.css"
        );
     }
 
@@ -46,8 +47,8 @@ class User_edit extends CI_Model implements PInterface{
     public function _js() {
          return array(
             $this->route . "assert/plugins/bootstrap-toastr/toastr.min.js",
-            $this->route . "assert/plugins/bootstrap-toastr/ui-toastr.js"
-
+            $this->route . "assert/plugins/bootstrap-toastr/ui-toastr.js",
+            $this->route . "assert/plugins/icheck/icheck.js"
        );
     }
 

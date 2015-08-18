@@ -151,9 +151,6 @@
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
-														<div class="form-group radio-list" align="center">
-                                                                                                                    <input type="radio" name="rol1" id="rol1" value="1" >
-                                                                                                                </div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -167,10 +164,6 @@
 															   Operativo
 															</div>
 														</div>
-														<!-- FINAL SIDEBAR USER TITLE -->
-														<div class="form-group" align="center">
-                                                                                                                    <input type="radio" id="rol2" name="rol2" value="2" >
-                                                                                                                </div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -185,15 +178,47 @@
 															</div>
 														</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
-														<div  align="center">
-                                                                                                                    <input type="radio" name="rol3" id="rol3" value="3" >
-                                                                                                                </div><br><br>
-														<div class="form-actions" align="right">
-																<button type="button" class="btn default">Cancelar</button>
-																<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
+													</div>
+													<div class="form-group">
+														<div class="input-group">
+															<div class="icheck-inline">
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	<div class="iradio_minimal-grey" style="position: relative;">
+																			<input type="radio" name="radio2" class="icheck" >
+																	</div>
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	<div class="iradio_minimal-grey" style="position: relative;">
+																		<input type="radio" name="radio2" class="icheck" style="position: absolute; opacity: 0;">
+																	</div>
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	<div class="iradio_minimal-grey" style="position: relative;">
+																		<input type="radio" name="radio2" class="icheck" style="position: absolute; opacity: 0;">
+																	</div>
+															</div>
 														</div>
 													</div>
-
+													<br>
+													<div class="form-actions" align="right">
+														<button type="button" class="btn default">Cancelar</button>
+														<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
+													</div>
 												</form>
 												<!--FINAL FORMULARIO ROLES-->
 
