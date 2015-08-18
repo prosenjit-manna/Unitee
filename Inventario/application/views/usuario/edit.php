@@ -152,8 +152,8 @@
 														</div>
 														<div class="form-group" align="center">
 														<div class="input-group col-md-12" >
-																	<div class="iradio_minimal-grey" style="position: relative;">
-																			<input type="radio" name="rol1" class="icheck" >
+                                                                                                                    <div id="r1" class="iradio_minimal-grey" style="position: relative;">
+                                                                                                                                            <input id="rol1" name="rol"  value="1" type="radio"  class="icheck" >
 																	</div>
 														</div>
 														</div>
@@ -173,8 +173,8 @@
 														</div>
 														<div class="form-group" align="center">
 														<div class="input-group col-md-12" >
-																	<div class="iradio_minimal-grey" style="position: relative;">
-																			<input type="radio" name="rol1" class="icheck" >
+                                                                                                                    <div id="r2"    class="iradio_minimal-grey" style="position: relative;">
+                                                                                                                                            <input id="rol2" name="rol"  type="radio"   value="2" class="icheck" >
 																	</div>
 														</div>
 														</div>
@@ -193,8 +193,8 @@
 														</div>
 														<div class="form-group" align="center">
 														<div class="input-group col-md-12" >
-																	<div class="iradio_minimal-grey" style="position: relative;">
-																			<input type="radio" name="rol1" class="icheck" >
+                                                                                                                    <div id="r3"  class="iradio_minimal-grey" style="position: relative;">
+                                                                                                                        <input name="rol" id="rol3"   value="3" type="radio"  class="icheck" >
 																	</div>
 														</div>
 														</div>
@@ -362,13 +362,13 @@
                                $("#lbl_baja").html("Activar");
                           }
       
+                          
                           if(u.id_rol != null ){
                               for(var i = 1 ; i <= 3 ; i++)
                               {
                                   var d = $("#rol" + i);
-                                  if(d.val() == u.id_rol){
-                                      document.getElementById("rol" + i).checked= true;
-                                      //d.attr("checked" , true);
+                                  if(d.val() == u.rol_nivel){
+                                      $("#rol" + i).attr("disabled" , true);
                                   }
                               }
                           }
@@ -379,6 +379,9 @@
                
             };
             
+            var _change = function(val){
+                    alert(val);
+            };
             
             
         </script>
