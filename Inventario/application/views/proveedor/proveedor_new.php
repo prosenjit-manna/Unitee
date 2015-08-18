@@ -54,27 +54,27 @@
                                                                                                             <h3 lass="form-section">Información de Contacto</h3><br>
 													   <label class="control-label col-md-2">Empresa</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Nombre de la Empresa">
+                                                                                                                    <input required="" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
 														</div>
 														<label class="control-label col-md-2">Contacto</label>
 														<div class="form-group col-md-10">
-                                                                                                                     <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                                                                                                     <input required="" type="text" id="" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
 														</div>
 														<label class="control-label col-md-2">Teléfono</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Numero de Telefono">
+                                                                                                                    <input required="" type="text" id="" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
 														</div>
                                                                                                                 <label class="control-label col-md-2">Celular</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Numero de Celular">
+                                                                                                                    <input required="" type="text" id="" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
 														</div>
                                                                                                                 <label class="control-label col-md-2">Fax</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Numero de FAX">
+                                                                                                                    <input required="" type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
 														</div>
                                                                                                                 <label class="control-label col-md-2">Correo</label>
 														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Correo Electronico">
+                                                                                                                    <input required="" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
 														</div>
                                                                                                                 
 													</div>
@@ -83,15 +83,15 @@
                                                                                                             <h3 lass="form-section">Dirección</h3><br>
 														<label class="control-label col-md-3">Local</label>
 														<div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Nombre del Local">
+                                                                                                                    <input required="" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
 														</div>
                                                                                                                 <label class="control-label col-md-3">Dirección 1</label>
 														<div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                                                                                                    <input required="" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
 														</div>
                                                                                                                 <label class="control-label col-md-3">Dirección 2</label>
 														<div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                                                                                                    <input required="" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
 														</div>
                                                         <label class="control-label col-md-3">Pais</label>
                                                         <div class="form-group col-md-9">

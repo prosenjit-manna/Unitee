@@ -158,7 +158,7 @@
 														</div>
 														</div>
 														<div class="alert alert-block alert-success fade in"  align="center"><p>
-                                               				<b>El usuario $nombre tiene rol $name_rol</b> 
+                                               				<b>$nombre_usuario tiene el rol de $name_rol</b> 
                                                				</p>
                                                     	</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
@@ -183,7 +183,7 @@
 														</div>
 														</div>
 														<div class="alert alert-block alert-success fade in"  align="center"><p>
-                                               				<b>El usuario $nombre tiene rol $name_rol</b> 
+                                               				<b>$nombre_usuario tiene el rol de $name_rol</b> 
                                                				</p>
                                                     	</div>
 													</div>
@@ -207,7 +207,7 @@
 														</div>
 														</div>
 														<div class="alert alert-block alert-success fade in"  align="center"><p>
-                                               				<b>El usuario $nombre tiene rol $name_rol</b> 
+                                               				<b>$nombre_usuario tiene el rol de $name_rol</b> 
                                                				</p>
                                                     	</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
