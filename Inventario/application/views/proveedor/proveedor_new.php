@@ -186,10 +186,21 @@
             var get_municipio = function(id){
                    var tasking = new jtask();
                     tasking.url = "<?php echo site_url("/country/GetMunicipio/" ); ?>";
+                    //Direccion del controlador donde se obtiene los datos
                     tasking.data = { "id" : id} ;
                     tasking.success_callback(function(data){
-                         
-                        alert(data);
+                      //tasking libreria de rolando para hacer procesos de segundo plano
+                          var ciu =$("#select_city");
+                          //seleccion del id del select donde se desean mostrar los datos
+                          ciu.html("");
+                          //html para cambiar algo del en una etiqueta html reemplazando la anterior
+                          ciu.append('<option selected="selected">Elige una Ciudad</option>');
+                          //para mandar como lista
+                          var j = JSON.parse(data);
+                          //JSON Parse para transformar un elemento json a un objeto
+                          $.map(j , function(k){
+                              ciu.append('<option value="' + k.id + '">' + k.name + '</option>');
+                            });
                     });
                     tasking.do_task();
             };
