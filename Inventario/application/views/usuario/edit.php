@@ -135,7 +135,7 @@
 								<!-- INICIO DEL PRIMER TAB PANE-->
 								<div class="tab-pane " id="portlet_tab2">
 									<!-- INICIO DEL DIV DEL SCROLLER-->
-									<div class="scroller" style="height: 300px;">
+									<div class="scroller" style="height: 340px;">
 												<!--INICIO FORMULARIO ROLES-->
 												<form action="#" class="horizontal-form">
 							                 		<div class="portlet light profile-sidebar-portlet col-md-4">
@@ -157,6 +157,10 @@
 																	</div>
 														</div>
 														</div>
+														<div class="alert alert-block alert-success fade in"  align="center"><p>
+                                               				<b>El usuario $nombre tiene rol $name_rol</b> 
+                                               				</p>
+                                                    	</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
@@ -178,6 +182,10 @@
 																	</div>
 														</div>
 														</div>
+														<div class="alert alert-block alert-success fade in"  align="center"><p>
+                                               				<b>El usuario $nombre tiene rol $name_rol</b> 
+                                               				</p>
+                                                    	</div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -198,6 +206,10 @@
 																	</div>
 														</div>
 														</div>
+														<div class="alert alert-block alert-success fade in"  align="center"><p>
+                                               				<b>El usuario $nombre tiene rol $name_rol</b> 
+                                               				</p>
+                                                    	</div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 													</div>
 													
