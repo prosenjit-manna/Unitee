@@ -37,7 +37,7 @@
 						<div class="portlet">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="fa fa-bell-o"></i>Advance Table
+									<i class="fa fa-bell-o"></i>Proveedores
 								</div>
 							</div>
 							<div class="portlet-body">
@@ -93,7 +93,7 @@
 										<td>
 											<p align="center">
 												<a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+												<a href="<?php echo site_url("/0/proveedor=edit_proveedor"); ?>"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
 										</td>
@@ -122,7 +122,7 @@
 										<td>
 											<p align="center">
 												<a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+												<a href="<?php echo site_url("/0/proveedor=edit_proveedor"); ?>"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
 										</td>
@@ -151,7 +151,7 @@
 										<td>
 											<p align="center">
 												<a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+												<a href="<?php echo site_url("/0/proveedor=edit_proveedor"); ?>"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
 										</td>
