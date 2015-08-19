@@ -112,6 +112,13 @@ class User_edit extends CI_Model implements PInterface{
     public function updateUsers($table , array $values , $condition){
         return $this->db->update($table , $values , $condition);
     }
+    
+    public function get_roles($nivel){
+        return $this->db
+                ->query("select id_rol from roles WHERE nivel like $nivel")
+                ->result()[0];
+    }
+
 
 
 }

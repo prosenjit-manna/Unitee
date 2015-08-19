@@ -123,6 +123,11 @@
                                                                         <b>Algo Salio mal !</b> Intente denuevo :(
                                                                         </p></div>';
                                                                     break;
+                                                                case 4:
+                                                                    echo '<div class="alert alert-block alert-danger fade in"><p>
+                                                                        <b>No hay cambios</b> No se detecto cambios de roles
+                                                                        </p></div>';
+                                                                    break;
                                                             }
                                                         }
                        
@@ -137,7 +142,8 @@
 									<!-- INICIO DEL DIV DEL SCROLLER-->
 									<div class="scroller" style="height: 340px;">
 												<!--INICIO FORMULARIO ROLES-->
-												<form action="#" class="horizontal-form">
+												<?php echo form_open("/TheUser/EditRol/" , array("method"=> "post")); ?>
+                                                                                                 <input type="hidden" value="" id="id_user" name="id_user" />
 							                 		<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
 														<div class="profile-userpic">
@@ -157,10 +163,7 @@
 																	</div>
 														</div>
 														</div>
-														<div class="alert alert-block alert-success fade in"  align="center"><p>
-                                               				<b>$nombre_usuario tiene el rol de $name_rol</b> 
-                                               				</p>
-                                                    	</div>
+														<div id="m1"></div>
 														<!-- FINAL SIDEBAR USER TITLE -->
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
@@ -182,10 +185,7 @@
 																	</div>
 														</div>
 														</div>
-														<div class="alert alert-block alert-success fade in"  align="center"><p>
-                                               				<b>$nombre_usuario tiene el rol de $name_rol</b> 
-                                               				</p>
-                                                    	</div>
+														<div id="m2"></div>
 													</div>
 													<div class="portlet light profile-sidebar-portlet col-md-4">
 														<!-- SIDEBAR USERPIC -->
@@ -206,10 +206,8 @@
 																	</div>
 														</div>
 														</div>
-														<div class="alert alert-block alert-success fade in"  align="center"><p>
-                                               				<b>$nombre_usuario tiene el rol de $name_rol</b> 
-                                               				</p>
-                                                    	</div>
+                                                                                                                <div id="m3"></div>
+														
 														<!-- FINAL SIDEBAR USER TITLE -->
 													</div>
 													
@@ -218,7 +216,7 @@
 														<button type="button" class="btn default">Cancelar</button>
 														<button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
 													</div>
-												</form>
+												<?php echo form_close(); ?>
 												<!--FINAL FORMULARIO ROLES-->
 
 									</div>
@@ -374,6 +372,11 @@
                                $("#lbl_baja").html("Activar");
                           }
       
+                          for(var j = 1 ; j <= 3 ; j++)
+                          {
+                             $("#rol" + j).attr("disabled" , false);
+                             $("#m" + j).html(''); 
+                          }
                           
                           if(u.id_rol != null ){
                               for(var i = 1 ; i <= 3 ; i++)
@@ -381,6 +384,7 @@
                                   var d = $("#rol" + i);
                                   if(d.val() == u.rol_nivel){
                                       $("#rol" + i).attr("disabled" , true);
+                                      $("#m" + i).html('<div class="alert alert-block alert-success fade in"  align="center"><p><b>Privilegio Actual</b></p></div>');
                                   }
                               }
                           }

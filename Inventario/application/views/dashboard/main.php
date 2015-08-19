@@ -5,6 +5,28 @@
                         <div id="peticiones">
                              <!-- Peticiones del sistema -->
                         </div>
+                        <div>
+                             <?php
+                             
+                             
+                              $type_message = array(
+                                  "prov"    => " Proveedor"
+                              );
+                              
+                              $err_message = array(
+                                  0     => "  Cambios se realizaron con exito !!",
+                                  1     => "  No se pudo guardar los cambios ,  favor intentar denuevo."
+                              );
+                             
+                              
+                              if(isset($_REQUEST['msj'])){
+                                  echo '<div class="alert alert-block alert-warning fade in"><p><b>¡Alerta! (' 
+                                  . $type_message[$_REQUEST['msj']] . ')</b>' 
+                                  . $err_message[$_REQUEST['err']] ? : NULL . '</p></div>';
+                              }
+                             
+                             ?>
+                        </div>
 			<h3 class="page-title">
 			Unitee - Dashboard <small></small>
 			</h3>

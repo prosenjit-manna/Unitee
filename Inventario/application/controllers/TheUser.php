@@ -231,4 +231,27 @@ class TheUser extends CI_Controller {
         }
     }
     
+    public function EditRol(){
+        $rol                = isset($_REQUEST['rol']) ? $_REQUEST['rol'] : NULL;
+        $id                 = $_REQUEST['id_user'];
+        if(is_null($rol)){
+            redirect("/0/user=user_edit?e=4&id=" . $id);
+            return;
+        }
+        
+        $this->load->model("user/user_edit");
+        
+        $id_rol = $this->user_edit->get_roles($rol);
+  
+        
+        $e  = $this->user_edit->updateUsers("user" , array("id_rol" => $id_rol->id_rol), "id_login=$id");
+        if($e){
+             redirect("/0/user=user_edit?e=0&id=" . $id );
+             return;
+        }else{
+             redirect("/0/user=user_edit?e=3&id=" . $id );
+             return;
+        }
+        
+    }
 }

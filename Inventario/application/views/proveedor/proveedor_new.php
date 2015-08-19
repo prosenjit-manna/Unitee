@@ -50,7 +50,7 @@
 											<div class="form-body">
 												<div class="row">
 													<div class="col-md-6">
-                                                                                                            <?php echo form_open("/TheProvider/NewProvider/"); ?>
+                                                                                                            <?php echo form_open("/TheProvider/NewProvider/" , array("method" => "post")); ?>
                                                                                                             <h3 lass="form-section">Información de Contacto</h3><br>
 													   <label class="control-label col-md-2">Empresa</label>
 														<div class="form-group col-md-10">
@@ -119,7 +119,7 @@
                                                     </div>
                                                     <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                                                     <div class="form-group col-md-9">
-                                                     <textarea rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
+                                                        <textarea name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
                                                      </textarea>
                                                     </div>
 

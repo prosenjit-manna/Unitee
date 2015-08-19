@@ -71,5 +71,21 @@ class New_proveedor extends CI_Model implements PInterface{
         //DESISTALACION 
     }
     
+    public function set_new($codigo , $nombre , $descripcion , $id_direccion , $id_contacto){
+        
+        $date   = new DateTime("now");
+        $current_d  = $date->format("Y-m-d H:m:s");
+        
+        return $this->db->insert("proveedor" , array(
+            "codigo"            => $codigo,
+            "nombre"            => $nombre,
+            "descripcion"       => $descripcion,
+            "id_direccion"      => $id_direccion,
+            "id_contacto"       => $id_contacto,
+            "fecha"             => $current_d
+        ));
+    }
+    
+
 
 }
