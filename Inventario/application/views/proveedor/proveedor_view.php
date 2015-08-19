@@ -92,7 +92,7 @@
 										</td>
 										<td>
 											<p align="center">
-												<a href="#"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+												<a class="" data-toggle="modal" href="#responsive"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a href="#"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
@@ -121,7 +121,7 @@
 										</td>
 										<td>
 											<p align="center">
-												<a href="#"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+												<a class="" data-toggle="modal" href="#responsive2"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a href="#"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
@@ -150,7 +150,7 @@
 										</td>
 										<td>
 											<p align="center">
-												<a href="#"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+												<a class="" data-toggle="modal" href="#responsive"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a href="#"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
@@ -158,6 +158,52 @@
 									</tr>
 									</tbody>
 									</table>
+									<div id="responsive" class="modal fade" tabindex="-1" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+													<h4 class="modal-title">Responsive & Scrollable</h4>
+												</div>
+												<div class="modal-body">
+													<div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
+														<div class="row">
+															<div class="col-md-6">
+																<h4>Some Input</h4>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" data-dismiss="modal" class="btn default">Close</button>
+													<button type="button" class="btn green">Save changes</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="responsive2" class="modal fade" tabindex="-1" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+													<h4 class="modal-title">Responsive & Scrollable</h4>
+												</div>
+												<div class="modal-body">
+													<div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
+														<div class="row">
+															<div class="col-md-6">
+																<h4>Some Inputakhdsadjksahdjksahdsah</h4>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" data-dismiss="modal" class="btn default">Close</button>
+													<button type="button" class="btn green">Save changes</button>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
