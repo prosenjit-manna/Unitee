@@ -43,23 +43,27 @@ class View_proveedor extends CI_Model implements PInterface{
         
         $config["base_url"]             = base_url() . "/0/proveedor=view_proveedor";
         $config["total_rows"]           = $count_;
-        $config["per_page"]             = 2;
+        $config["per_page"]             = 6;
         $config["uri_segment"]          = 3;
         $config['page_query_string']    = TRUE;
-        $config['prev_link']            = '<li>Inicio</li>&nbsp;&nbsp;';
-        $config['prev_tag_open']        = '';
-        $config['prev_tag_close']       = '';
-        $config['next_link']            = '&nbsp;&nbsp;<li>Final</li>';
-        $config['next_tag_open']        = '';
-        $config['next_tag_close']       = '';
+        $config['prev_link']            = 'Anterior';
+        $config['prev_tag_open']        = '<li>';
+        $config['prev_tag_close']       = '</li>';
+        $config['next_link']            = 'Siguiente';
+        $config['next_tag_open']        = '<li>';
+        $config['next_tag_close']       = '</li>';
         $config['full_tag_open']        = '<nav><ul class="pagination">';
         $config['num_tag_open']         ='<li>';
         $config['num_tag_close']        = '</li>';
-        $config['cur_tag_open']         ='<li>';
-        $config['cur_tag_close']        = '</li>';
+        $config['cur_tag_open']         ='<li><a>';
+        $config['cur_tag_close']        = '</li></a>';
         $config['full_tag_close']       = '</ul></nav>';
-
-        
+        $config['last_link']            = 'Ultimo';
+        $config['last_tag_open']        = "<li>";
+        $config['last_tag_close']        = "</li>";
+        $config['first_link']            = 'Primero';
+        $config['first_tag_open']        = "<li>";
+        $config['first_tag_close']        = "</li>";
 
         $this->pagination->initialize($config);
         
