@@ -14,7 +14,7 @@
                               );
                               
                               $err_message = array(
-                                  0     => "  Cambios se realizaron con exito !!",
+                                  0     => "  Cambios se realizaron con exito !!<a href='" . site_url("/0/") .  "' class='btn default input-circle'>Link</a>",
                                   1     => "  No se pudo guardar los cambios ,  favor intentar denuevo."
                               );
                              
@@ -62,7 +62,7 @@
             var t = $.trim(request);
             var $peticiones = $("#peticiones");
             if(t==0 || t== '0'){
-               $peticiones.append('<div class="alert alert-block alert-warning fade in"><p><b>¡Alerta!</b>Tienes que cambiar tu contraseña</p></div>');
+               $peticiones.append('<div class="alert alert-block alert-warning fade in"><p><b>¡Alerta!</b>Tienes que cambiar tu contraseña</p><a href="<?php echo site_url("/0/user=user_profile"); ?>" class="btn default input-circle">Cambiar Contraseña</a></div>');
             }
         });
         tasking.do_task();

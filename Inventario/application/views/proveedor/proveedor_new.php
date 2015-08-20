@@ -49,85 +49,81 @@
 										<!-- INICIO FORM-->
 											<div class="form-body">
 												<div class="row">
+                           <h5 lass="form-section">Los campos con * son Rqueridos</h5>
 													<div class="col-md-6">
-                                                                                                            <?php echo form_open("/TheProvider/NewProvider/" , array("method" => "post")); ?>
-                                                                                                            <h3 lass="form-section">Información de Contacto</h3><br>
-													   <label class="control-label col-md-2">Empresa</label>
-														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
+                                                                <?php echo form_open("/TheProvider/NewProvider/" , array("method" => "post")); ?>
+                             <h3 lass="form-section">Información de Contacto</h3><br>
+													   <label class="control-label col-md-3">* Empresa</label>
+														<div class="form-group col-md-9">
+                                     <input required="" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
 														</div>
-														<label class="control-label col-md-2">Contacto</label>
-														<div class="form-group col-md-10">
-                                                                                                                     <input required="" type="text" id="" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+														<label class="control-label col-md-3">* Contacto</label>
+														<div class="form-group col-md-9">
+                                     <input required="" type="text" id="" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
 														</div>
-														<label class="control-label col-md-2">Teléfono</label>
-														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+														<label class="control-label col-md-3">* Teléfono</label>
+														<div class="form-group col-md-9">
+                                     <input required="" type="text" id="" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
 														</div>
-                                                                                                                <label class="control-label col-md-2">Celular</label>
-														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                 <label class="control-label col-md-3">* Celular</label>
+														<div class="form-group col-md-9">
+                                     <input required="" type="text" id="" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
 														</div>
-                                                                                                                <label class="control-label col-md-2">Fax</label>
-														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                 <label class="control-label col-md-3">Fax</label>
+														<div class="form-group col-md-9">
+                                     <input type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
 														</div>
-                                                                                                                <label class="control-label col-md-2">Correo</label>
-														<div class="form-group col-md-10">
-                                                                                                                    <input required="" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+                                <label class="control-label col-md-3">* Correo</label>
+														<div class="form-group col-md-9">
+                                    <input required="" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
 														</div>
                                                                                                                 
 													</div>
 													<!--/span-->
 													<div class="col-md-6">
-                                                                                                            <h3 lass="form-section">Dirección</h3><br>
-														<label class="control-label col-md-3">Local</label>
-														<div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                            <h3 lass="form-section">Dirección</h3><br>
+														<label class="control-label col-md-4">Local</label>
+														<div class="form-group col-md-8">
+                                    <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
 														</div>
-                                                                                                                <label class="control-label col-md-3">Dirección 1</label>
-														<div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                <label class="control-label col-md-4">* Dirección 1</label>
+														<div class="form-group col-md-8">
+                                    <input required="" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
 														</div>
-                                                                                                                <label class="control-label col-md-3">Dirección 2</label>
-														<div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                <label class="control-label col-md-4">Dirección 2</label>
+														<div class="form-group col-md-8">
+                                    <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
 														</div>
-                                                        <label class="control-label col-md-3">Pais</label>
-                                                        <div class="form-group col-md-9">
-                                                            <select id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">
-                                                               
-                                                            </select>
-                                                        </div>
-                                                        <label class="control-label col-md-3">Departamento</label>
-                                                        <div class="form-group col-md-9">
-                                                            <select onchange="get_municipio(this.value);" id="select_depto" name="txt_depto" class="form-control input-circle">
-                                                               
-                                                            </select>
-                                                        </div>
-                                                        <label class="control-label col-md-3">Ciudad</label>
-                                                        <div class="form-group col-md-9">
-                                                            <select id="select_city" class="form-control input-circle" name="txt_ciudad">
-                                                                
-                                                            </select>
-                                                        </div>
+                                <label class="control-label col-md-4">* Pais</label>
+                                <div class="form-group col-md-8">
+                                    <select required="" id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">                     
+                                    </select>
+                                </div>
+                                <label class="control-label col-md-4">* Departamento</label>
+                                <div class="form-group col-md-8">
+                                    <select required="" onchange="get_municipio(this.value);" id="select_depto" name="txt_depto" class="form-control input-circle">                        
+                                    </select>
+                                </div>
+                                <label class="control-label col-md-4">* Ciudad</label>
+                                <div class="form-group col-md-8">
+                                    <select required="" id="select_city" class="form-control input-circle" name="txt_ciudad">                          
+                                    </select>
+                                </div>
 														
 													<!--/span-->
 												    </div>
-                                                    <div class="col-md-12">
-                                                        <h3 lass="form-section">Descripci&oacute;n</h3><br>
-                                                    </div>
-                                                    <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
-                                                    <div class="form-group col-md-9">
-                                                        <textarea name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
-                                                     </textarea>
-                                                    </div>
-
-
-                                                </div>
+                             <div class="col-md-12">
+                                 <h3 lass="form-section">Descripci&oacute;n</h3><br>
+                             </div>
+                            <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
+                            <div class="form-group col-md-9">
+                                <textarea required="" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
+                                </textarea>
+                             </div>
+                        </div>
 											<div class="form-actions right">
-                                                                                            <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                                                                                            <button  id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                          <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
+                          <button  id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
 											</div>
                                                    <?php echo form_close(); ?>
 										<!-- FINAL FORM-->
