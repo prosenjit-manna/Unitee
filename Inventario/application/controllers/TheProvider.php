@@ -34,7 +34,8 @@ class TheProvider extends CI_Controller {
               "dir2"    => $direccion2,
               "pais"    => $pais,
               "depto"   => $depto,
-              "ciudad"  => $ciudad
+              "ciudad"  => $ciudad,
+              "local"   => $local 
         ));
         
        $id_contact = $this->info_engine
