@@ -132,6 +132,18 @@ class TheProvider extends CI_Controller {
        }
     }
     
+    public function ViewProvider(){
+        
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        if(is_null($id)){
+            echo false;
+            return;
+        }
+        $this->load->model("proveedor/view_proveedor");
+        $data = $this->view_proveedor->get_provider($id);
+        echo json_encode($data);
+        exit();
+    }
 
     
 }
