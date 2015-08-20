@@ -19,6 +19,10 @@
                                                 <a href="<?php echo site_url("/0/"); ?>">Home</a>
 						<i class="icon-angle-right"></i>
 					</li>
+                                        <li>
+						<a href="<?php echo site_url("/0/proveedor=view_proveedor"); ?>">Ver Proveedor </a>
+                                                <i class="icon-angle-right"></i>
+					</li>
 					<li>
 						<a href="#">Editar Proveedor</a>
 					</li>
