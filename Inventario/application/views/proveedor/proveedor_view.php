@@ -69,95 +69,41 @@
 									</tr>
 									</thead>
 									<tbody>	
-									<tr>
-										<td class="highlight">
-											<p align="center">123</p>
-										</td>
-										<td  align="center">
-											 Google Inc.
-										</td>
-										<td>
-											<p align="center">La Libertad</p>
-										</td>
-										<td>
-											 <p align="center">Nestor U. Lima</p>
-										</td>
-										<td>
-											<p align="center">22222-0000 / 77778822</p>
-										</td>
-										<td>
-											 <p align="center">
-											 	Desarrollo de Software y Aplicaciones moviles Nativas 
-											 </p>
-										</td>
-										<td>
+									<?php 
+                                                                            
+                                                                            foreach($data as $provider){
+                                                                                
+                                                                               echo '<tr>';
+                                                                               echo '<td class="highlight"><p align="center">' . $provider->codigo . '</p></td>';
+                                                                               echo '<td class="highlight">' . $provider->empresa . '</td>'; 
+                                                                               echo '<td class="highlight"><p align="center">' . $provider->departamento . '</p></td>';
+                                                                               echo '<td class="highlight"><p align="center">' . $provider->contacto . '</p></td>';
+                                                                               echo '<td class="highlight"><p align="center">' . $provider->telefono . '</p></td>';
+                                                                               echo '<td class="highlight"><p align="center">' . $provider->descripcion . '</p></td>';
+                                                                               
+                                                                               echo '<td>
 											<p align="center">
 												<a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a href="<?php echo site_url("/0/proveedor=edit_proveedor"); ?>"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+												<a href="' . site_url("/0/proveedor=edit_proveedor?id=" . $provider->id_prov) . '"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
-										</td>
-									</tr>
-									<tr>
-										<td class="highlight">
-											<p align="center">123</p>
-										</td>
-										<td  align="center">
-											 Google Inc.
-										</td>
-										<td>
-											<p align="center">La Libertad</p>
-										</td>
-										<td>
-											 <p align="center">Nestor U. Lima</p>
-										</td>
-										<td>
-											<p align="center">22222-0000 / 77778822</p>
-										</td>
-										<td>
-											 <p align="center">
-											 	Desarrollo de Software y Aplicaciones moviles Nativas 
-											 </p>
-										</td>
-										<td>
-											<p align="center">
-												<a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a href="<?php echo site_url("/0/proveedor=edit_proveedor"); ?>"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
-											</p>
-										</td>
-									</tr>
-									<tr>
-										<td class="highlight">
-											<p align="center">123</p>
-										</td>
-										<td  align="center">
-											 Google Inc.
-										</td>
-										<td>
-											<p align="center">La Libertad</p>
-										</td>
-										<td>
-											 <p align="center">Nestor U. Lima</p>
-										</td>
-										<td>
-											<p align="center">22222-0000 / 77778822</p>
-										</td>
-										<td>
-											 <p align="center">
-											 	Desarrollo de Software y Aplicaciones moviles Nativas 
-											 </p>
-										</td>
-										<td>
-											<p align="center">
-												<a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a href="<?php echo site_url("/0/proveedor=edit_proveedor"); ?>"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
-											</p>
-										</td>
-									</tr>
+										</td>';
+                                                                               
+                                                                               echo '</tr>';
+                                                                               
+                                                                            }
+                                                                         
+                                                                         ?>
+							
 									</tbody>
 									</table>
+                                                                    <div>
+                                                                        <?php 
+                                                                        
+                                                                         echo $links;
+                                     
+                                                                        ?>
+                                                                    </div>
 									<div class="modal fade bs-modal-lg" id="responsive_view" tabindex="-1" role="dialog" aria-hidden="true">
 								<div class="modal-dialog modal-lg">
 									<div class="modal-content">

@@ -5,6 +5,7 @@ class TheProvider extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
+        $this->load->database();
     }
     
     public function NewProvider(){
@@ -46,13 +47,13 @@ class TheProvider extends CI_Controller {
         ));
         
      
-       $codigo  = "PROV" . rand(2, 2000) . rand(20000, 50000);
+       $codigo  = "PROV" . rand(10, 2000) ;
       
        $this->load->model("proveedor/new_proveedor");
        $this->load->helper("url");
        
        $ok = $this->new_proveedor->set_new($codigo , 
-               $empresa , null , 
+               $empresa , $decripcion  , 
                $id_adress ,
                $id_contact);
        
@@ -65,5 +66,7 @@ class TheProvider extends CI_Controller {
        }
         
     }
+    
+
     
 }
