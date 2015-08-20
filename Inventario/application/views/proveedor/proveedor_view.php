@@ -238,9 +238,36 @@
         </div>
         <script>
             
+            /*    [id_prov] => 9
+    [codigo] => PROV52722650
+    [empresa] => Alba Petrpleos
+    [descripcion] => 
+    [dir1] => Calle Cuscatlan, Col Escalon
+    [dir2] => Bulebard Monseñor Romero
+    [local] => 
+    [pais_iso] => SV
+    [pais_nombre] => El Salvador
+    [depto_codigo] => 06
+    [depto_nombre] => San Salvador
+    [municipio_codigo] => 13
+    [municipio_nombre] => Santa Catarina Masahuat
+    [contacto_tel1] => 28768923
+    [contacto_tel2] => 7711882266
+    [contacto_fax] => 23456789
+    [contacto_correo] => alhuien@albapetroleos.com
+    [contacto_nombre] => alguein
+)**/
+            
             view_provider = function(id){
                 
-                
+                 var tasking = new jtask();
+                 tasking.url = "<?php echo site_url("/TheProvider/ViewProvider" ); ?>";
+                 tasking.data = { "id" : id} ;
+                 tasking.success_callback(function(data){
+                      var c = JSON.parse(data);
+                      
+                 });
+                 tasking.do_task();
                
             };
             
