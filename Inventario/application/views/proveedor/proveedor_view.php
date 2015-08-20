@@ -1,5 +1,4 @@
 
-
 <!-- INICIO CONTENIDO -->
 	<div class="page-content-wrapper">
 
@@ -83,7 +82,7 @@
                                                                                
                                                                                echo '<td>
 											<p align="center">
-												<a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+												<a class="" onclick="view_provider(' .  $provider->id_prov  . ');" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a href="' . site_url("/0/proveedor=edit_proveedor?id=" . $provider->id_prov) . '"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
@@ -238,3 +237,13 @@
 		<!-- FINAL ESTILOS DE LA BARRA -->
 
 	</div>
+        </div>
+        <script>
+            
+            view_provider = function(id){
+                
+                
+               
+            };
+            
+        </script>
