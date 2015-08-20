@@ -116,31 +116,31 @@
 																											<h3 lass="form-section">Información deContacto</h3><br>
 																										   <label class="control-label col-md-2">Empresa</label>
 																											<div class="form-group col-md-10">
-													                                                            	 <input disabled="disabled" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
+													                                                            	 <input disabled="disabled" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
 																											</div>
 																											<label class="control-label col-md-2">Contacto</label>
 																											<div class="form-group col-md-10">
-													                                                             	 <input disabled="disabled" type="text" id="" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+													                                                             	 <input disabled="disabled" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
 																											</div>
 																											<label class="control-label col-md-2">Teléfono</label>
 																											<div class="form-group col-md-10">
-													                                                             	<input disabled="disabled" type="text" id="" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+													                                                             	<input disabled="disabled" type="text" id="txt_tel" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
 																											</div>
 													                                                        	 <label class="control-label col-md-2">Celular</label>
 																											<div class="form-group col-md-10">
-													                                                            	 <input disabled="disabled" type="text" id="" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+													                                                            	 <input disabled="disabled" type="text" id="txt_cel" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
 																											</div>
 													                                                        	 <label class="control-label col-md-2">Fax</label>
 																											<div class="form-group col-md-10">
-													                                                            	 <input disabled="disabled" type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+													                                                            	 <input disabled="disabled" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
 																											</div>
 													                                                         	<label class="control-label col-md-2">Correo</label>
 																											<div class="form-group col-md-10">
-													                                                             	<input disabled="disabled" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+													                                                             	<input disabled="disabled" type="text" id="txt_corre" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
 																											</div>
 																											<label class="control-label col-md-2">Ultima Actualización</label>
 														                                                    <div class="form-group col-md-10">
-														                                                    	<input disabled="disabled" type="text" id="" name="txt_" class="form-control input-circle" placeholder="Fecha -> 12/12/12">
+														                                                    	<input disabled="disabled" type="text" id="txt_ul" name="txt_ul" class="form-control input-circle" placeholder="Fecha -> 12/12/12">
 														                                                    </div>                                                     
 																										</div>
 																										<!--/span-->
@@ -148,27 +148,27 @@
 													                                                        <h3 lass="form-section">Dirección</h3><br>
 																											<label class="control-label col-md-3">Local</label>
 																											<div class="form-group col-md-9">
-													                                                                <input disabled="disabled" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+													                                                                <input disabled="disabled" type="text" id="txt_local" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
 																											</div>
 													                                                            <label class="control-label col-md-3">Dirección 1</label>
 																											<div class="form-group col-md-9">
-													                                                                <input disabled="disabled" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+													                                                                <input disabled="disabled" type="text" id="txt_dir1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
 																											</div>
 													                                                            <label class="control-label col-md-3">Dirección 2</label>
 																											<div class="form-group col-md-9">
-													                                                                <input disabled="disabled" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+													                                                                <input disabled="disabled" type="text" id="txt_dir2" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
 																											</div>
 													                                                        <label class="control-label col-md-3">Pais</label>
 													                                                        <div class="form-group col-md-9">
-													                                                            <input disabled="disabled"  type="text" id="" name="txt_pais" class="form-control input-circle" placeholder="Pais">
+													                                                            <input disabled="disabled"  type="text" id="txt_pais" name="txt_pais" class="form-control input-circle" placeholder="Pais">
 													                                                        </div>
 													                                                        <label class="control-label col-md-3">Departamento</label>
 													                                                        <div class="form-group col-md-9">
-													                                                            <input disabled="disabled" type="text" id="" name="txt_depto" class="form-control input-circle" placeholder="Departamento">
+													                                                            <input disabled="disabled" type="text" id="txt_depto" name="txt_depto" class="form-control input-circle" placeholder="Departamento">
 													                                                        </div>
 													                                                        <label class="control-label col-md-3">Ciudad</label>
 													                                                        <div class="form-group col-md-9">
-													                                                            <input disabled="disabled" type="text" id="" name="txt_ciudad" class="form-control input-circle" placeholder="Ciudad">
+													                                                            <input disabled="disabled" type="text" id="txt_ciu" name="txt_ciudad" class="form-control input-circle" placeholder="Ciudad">
 													                                                        </div>
 																											
 																										<!--/span-->
@@ -178,7 +178,7 @@
 													                                                    </div>
 													                                                    <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
 													                                                    <div class="form-group col-md-9">
-													                                                        <textarea disabled="disabled" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
+													                                                        <textarea disabled="disabled" name="txt_descripcion" id="txt_desc" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
 													                                                     </textarea>
 													                                                    </div>
 													                      	</div>
@@ -237,27 +237,7 @@
 	</div>
         </div>
         <script>
-            
-            /*    [id_prov] => 9
-    [codigo] => PROV52722650
-    [empresa] => Alba Petrpleos
-    [descripcion] => 
-    [dir1] => Calle Cuscatlan, Col Escalon
-    [dir2] => Bulebard Monseñor Romero
-    [local] => 
-    [pais_iso] => SV
-    [pais_nombre] => El Salvador
-    [depto_codigo] => 06
-    [depto_nombre] => San Salvador
-    [municipio_codigo] => 13
-    [municipio_nombre] => Santa Catarina Masahuat
-    [contacto_tel1] => 28768923
-    [contacto_tel2] => 7711882266
-    [contacto_fax] => 23456789
-    [contacto_correo] => alhuien@albapetroleos.com
-    [contacto_nombre] => alguein
-)**/
-            
+             
             view_provider = function(id){
                 
                  var tasking = new jtask();
@@ -265,7 +245,19 @@
                  tasking.data = { "id" : id} ;
                  tasking.success_callback(function(data){
                       var c = JSON.parse(data);
-                      
+                       $("#txt_empresa").val(c.empresa);
+                       $("#txt_contacto").val(c.contacto_nombre);
+                       $("#txt_tel").val(c.contacto_tel1);
+                       $("#txt_cel").val(c.contacto_tel2);
+                       $("#txt_fax").val(c.contacto_fax);
+                       $("#txt_corre").val(c.contacto_correo);
+                       $("#txt_ul").val(c.fecha);
+                       $("#txt_local").val(c.local);
+                       $("#txt_dir1").val(c.dir1);
+                       $("#txt_dir2").val(c.dir2);
+                       $("#txt_pais").val(c.pais_nombre);
+                       $("#txt_depto").val(c.depto_nombre);
+                       $("#txt_ciu").val(c.municipio_nombre);
                  });
                  tasking.do_task();
                
