@@ -68,6 +68,46 @@ class TheProvider extends CI_Controller {
         
     }
     
+    public function EditProvider(){
+        
+        $id             = $_REQUEST['the_id'];
+        
+        $empresa        = $_REQUEST['txt_empresa'];
+        
+        $contacto       = $_REQUEST['txt_contacto'];
+        $telefono       = $_REQUEST['txt_telefono'];
+        $celular        = $_REQUEST['txt_celular'];
+        $fax            = $_REQUEST['txt_fax'];
+        
+        $correo         = $_REQUEST['txt_correo'];
+        $local          = $_REQUEST['txt_local'];
+        
+        $direccion1 = $_REQUEST['txt_direccion1'];
+        $direccion2 = $_REQUEST['txt_direccion2'];
+        
+        $pais               = isset($_REQUEST['txt_pais']) ?  $_REQUEST['txt_pais'] : NULL;
+        $depto              = isset($_REQUEST['txt_pais']) ? $_REQUEST['txt_depto'] : NULL;
+        $ciudad             = isset($_REQUEST['txt_pais']) ? $_REQUEST['txt_ciudad'] : NULL;
+        $decripcion         = isset($_REQUEST['txt_descripcion']) ? $_REQUEST['txt_descripcion'] : NULL;
+        
+        $this->load->model("system/info_engine");
+        
+        
+   
+      
+       $this->load->model("proveedor/new_proveedor");
+       $this->load->helper("url");
+     
+       
+       if($ok){
+           redirect("/");
+           return;
+       }else{
+           redirect("/0/?msj=prov&err=1");
+           return;
+       }
+    }
+    
 
     
 }

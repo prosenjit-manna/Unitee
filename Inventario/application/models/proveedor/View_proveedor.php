@@ -126,5 +126,37 @@ class View_proveedor extends CI_Model implements PInterface{
                 ->result()[0]->count;
     }
     
-
+    public function get_provider($id){
+        $this->query  = "SELECT proveedor.id_proveedor as 'id_prov' , 
+                 proveedor.codigo as 'codigo' , 
+                 proveedor.nombre as 'empresa' ,
+                 proveedor.descripcion as 'descripcion',
+                 direccion.dir1 as 'dir1',
+                 direccion.dir2 as 'dir2',
+                 direccion.local as 'local',
+                 paises.iso as 'pais_iso',
+                 paises.nombre as 'pais_nombre',
+                 depto_pais.codigo_depto_pais as 'depto_codigo',
+                 depto_pais.nombre as 'depto_nombre',
+                 municipio_depto.codigo_municipio_depto as 'municipio_codigo',
+                 municipio_depto.nombre as 'municipio_nombre',
+                 contacto.tel1 as 'contacto_tel1',
+                 contacto.tel2 as 'contacto_tel2',
+                 contacto.fax as 'contacto_fax',
+                 contacto.correo as 'contacto_correo',
+                 contacto.nombre as 'contacto_nombre'
+                 FROM proveedor 
+                 INNER JOIN direccion ON direccion.id_direccion=proveedor.id_direccion
+                 INNER JOIN paises ON paises.iso=direccion.pais
+                 INNER JOIN depto_pais ON depto_pais.id_depto_pais=direccion.depto
+                 INNER JOIN municipio_depto ON municipio_depto.codigo_municipio_depto=direccion.ciudad
+                 INNER JOIN contacto ON contacto.id_contacto=proveedor.id_contacto
+                 WHERE id_proveedor LIKE ?
+                 ";
+        
+        return  $this->db
+                ->query($this->query , array($id))
+                ->result()[0];
+    }
+    
 }

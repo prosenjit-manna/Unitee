@@ -44,35 +44,36 @@
                          <h5 lass="form-section">Los campos con * son Rqueridos</h5>
                         <div class="row">
                           <div class="col-md-6">
-                                                                                                            <?php echo form_open("/TheProvider/NewProvider/" , array("method" => "post")); ?>
+                                                                                                            <?php echo form_open("/TheProvider/EditProvider/" , array("method" => "post")); ?>
+                              <input type="hidden" name="the_id" id="the_id" value="<?php $data->id_prov; ?>" />
                                                                                                             <h3 lass="form-section">Información de Contacto</h3><br>
                              <label class="control-label col-md-3">* Codigo</label>
                             <div class="form-group col-md-9">
-                                                                                                                    <input disabled="disabled" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="Codigo de la Empresa">
+                                                                                                                    <input value="<?php echo $data->codigo; ?>" disabled="disabled" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="">
                             </div>
                             <label class="control-label col-md-3">* Empresa</label>
                             <div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
+                                                                                                                    <input value="<?php echo $data->empresa; ?>" required="" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="">
                             </div>
                             <label class="control-label col-md-3">* Contacto</label>
                             <div class="form-group col-md-9">
-                                                                                                                     <input required="" type="text" id="" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                                                                                                     <input value="<?php echo $data->contacto_nombre; ?>" required="" type="text" id="" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                             </div>
                             <label class="control-label col-md-3">* Teléfono</label>
                             <div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+                                                                                                                    <input value="<?php echo $data->contacto_tel1; ?>" required="" type="text" id="" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
                             </div>
                                                                                                                 <label class="control-label col-md-3">* Celular</label>
                             <div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                                                                                                    <input value="<?php echo $data->contacto_tel2; ?>"  required="" type="text" id="" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
                             </div>
                                                                                                                 <label class="control-label col-md-3">Fax</label>
                             <div class="form-group col-md-9">
-                                                                                                                    <input type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                                                                                                    <input value="<?php echo $data->contacto_fax; ?>" type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
                             </div>
                                                                                                                 <label class="control-label col-md-3">* Correo</label>
                             <div class="form-group col-md-9">
-                                                                                                                    <input required="" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+                                                                                                                    <input value="<?php echo $data->contacto_correo; ?>" required="" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
                             </div>
                                                                                                                 
                           </div>
@@ -81,15 +82,15 @@
                                                                                                             <h3 lass="form-section">Dirección</h3><br>
                             <label class="control-label col-md-4">Local</label>
                             <div class="form-group col-md-8">
-                                                                                                                    <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                                                                                                    <input value="<?php echo $data->local; ?>" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
                             </div>
                                                                                                                 <label class="control-label col-md-4">* Dirección 1</label>
                             <div class="form-group col-md-8">
-                                                                                                                    <input required="" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                                                                                                    <input value="<?php echo $data->dir1; ?>" required="" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                             </div>
                                                                                                                 <label class="control-label col-md-4">Dirección 2</label>
                             <div class="form-group col-md-8">
-                                                                                                                    <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                                                                                                    <input value="<?php echo $data->dir2; ?>" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                             </div>
                                                         <label class="control-label col-md-4">* Pais</label>
                                                         <div class="form-group col-md-8">
@@ -106,7 +107,7 @@
                                                         <label class="control-label col-md-4">* Ciudad</label>
                                                         <div class="form-group col-md-8">
                                                             <select required="" id="select_city" class="form-control input-circle" name="txt_ciudad">
-                                                                
+                                                                <?php echo $data->descripcion; ?>
                                                             </select>
                                                         </div>
                             
@@ -144,6 +145,7 @@
 	<!-- FINAL CONTENIDO -->
         <script>
         
+        
             var load_paises = function(){
                 var tasking = new jtask();
                     tasking.url = "<?php echo site_url("/c/2" ); ?>";
@@ -151,9 +153,10 @@
                           var j = JSON.parse(data);
                           var c = $("#select_country");
                           c.html("");
-                          //c.append('<option selected="selected">Elige un Pais</option>');
+                          var iso = "<?php echo $data->pais_iso; ?>" ;
                           $.map(j , function(k){
-                              if(k.id == "SV"){
+                              
+                              if(k.id == iso){
                                   c.prepend("<option value='" + k.id + "'>" + k.name + "</option>");
                                   get_depto(k.id);
                               }
@@ -170,15 +173,20 @@
                    var tasking = new jtask();
                     tasking.url = "<?php echo site_url("/country/GetDepto/" ); ?>";
                     tasking.data = { "iso" : iso} ;
-                  
+                    
                     tasking.success_callback(function(data){
-                         
                           var c =$("#select_depto");
                           c.html("");
-                          c.append('<option selected="selected">Elige un Departamento</option>');
+                          c.append('<option >Elige un Departamento</option>');
                           var j = JSON.parse(data);
+                          var id = "<?php echo $data->depto_codigo; ?>";
                           $.map(j , function(k){
-                              c.append('<option value="' + k.id + '">' + k.name + '</option>');
+                              if(k.id == id){
+                                c.append('<option selected="selected" value="' + k.id + '">' + k.name + '</option>');
+                                get_municipio(k.id);
+                              }
+                              else
+                                c.append('<option value="' + k.id + '">' + k.name + '</option>');  
                           });
                     });
                     tasking.do_task();
@@ -199,9 +207,16 @@
                           //para mandar como lista
                           var j = JSON.parse(data);
                           //JSON Parse para transformar un elemento json a un objeto
+                          
+                          var id = "<?php echo $data->municipio_codigo; ?>";
+                          
+                          
                           $.map(j , function(k){
-                              ciu.append('<option value="' + k.id + '">' + k.name + '</option>');
-                            });
+                              if(id == k.id)
+                                 ciu.append('<option selected="selected" value="' + k.id + '">' + k.name + '</option>');
+                              else
+                                 ciu.append('<option value="' + k.id + '">' + k.name + '</option>'); 
+                          });
                     });
                     tasking.do_task();
             };

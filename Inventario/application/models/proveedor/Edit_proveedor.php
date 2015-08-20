@@ -31,7 +31,20 @@ class Edit_proveedor extends CI_Model implements PInterface{
 
     public function _init() {
         $this->load->helper("form");
-        $this->load->view("proveedor/proveedor_edit");
+        
+        $id         = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        
+        if(is_null($id)){
+             $this->load->view("dashboard/main");
+             return;
+        }
+        
+        $this->load->model("proveedor/view_proveedor");
+        
+        $data       = $this->view_proveedor->get_provider($id);
+        
+        $this->load->view("proveedor/proveedor_edit" , array("data" => $data));
+       
     }
 
     public function _install() {
@@ -63,6 +76,8 @@ class Edit_proveedor extends CI_Model implements PInterface{
     public function _unistall() {
         //DESISTALACION 
     }
+    
+  
     
 
 }
