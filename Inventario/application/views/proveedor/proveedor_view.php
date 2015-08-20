@@ -138,7 +138,7 @@
 																											<div class="form-group col-md-10">
 													                                                             	<input disabled="disabled" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
 																											</div>
-																											<label class="control-label col-md-2">Ultima Sessión</label>
+																											<label class="control-label col-md-2">Ultima Actualización</label>
 														                                                    <div class="form-group col-md-10">
 														                                                    	<input disabled="disabled" type="text" id="" name="txt_" class="form-control input-circle" placeholder="Fecha -> 12/12/12">
 														                                                    </div>                                                     
