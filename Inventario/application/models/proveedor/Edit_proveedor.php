@@ -77,6 +77,12 @@ class Edit_proveedor extends CI_Model implements PInterface{
         //DESISTALACION 
     }
     
+    public function update_provider( $id  ,$nombre , $descripcion ){
+       $this->db->where(array("id_proveedor" => $id ));
+       return $this->db->update(
+                "proveedor" , 
+                array("nombre"  => $nombre , "descripcion" => $descripcion));
+    }
   
     
 

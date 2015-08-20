@@ -45,7 +45,7 @@
                         <div class="row">
                           <div class="col-md-6">
                                                                                                             <?php echo form_open("/TheProvider/EditProvider/" , array("method" => "post")); ?>
-                              <input type="hidden" name="the_id" id="the_id" value="<?php $data->id_prov; ?>" />
+                              <input type="hidden" name="the_id" id="the_id" value="<?php echo $data->id_prov; ?>" />
                                                                                                             <h3 lass="form-section">Información de Contacto</h3><br>
                              <label class="control-label col-md-3">* Codigo</label>
                             <div class="form-group col-md-9">
@@ -118,8 +118,10 @@
                                                     </div>
                                                     <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                                                     <div class="form-group col-md-9">
-                                                        <textarea name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
-                                                     </textarea>
+                                                        <textarea id="txt_descripcion" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
+                                                            <?php echo $data->descripcion; ?>
+                                                        
+                                                        </textarea>
                                                     </div>
 
 

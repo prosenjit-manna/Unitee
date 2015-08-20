@@ -142,6 +142,8 @@ class View_proveedor extends CI_Model implements PInterface{
                  proveedor.codigo as 'codigo' , 
                  proveedor.nombre as 'empresa' ,
                  proveedor.descripcion as 'descripcion',
+                 proveedor.id_direccion,
+                 proveedor.id_contacto ,
                  direccion.dir1 as 'dir1',
                  direccion.dir2 as 'dir2',
                  direccion.local as 'local',

@@ -91,16 +91,40 @@ class TheProvider extends CI_Controller {
         $decripcion         = isset($_REQUEST['txt_descripcion']) ? $_REQUEST['txt_descripcion'] : NULL;
         
         $this->load->model("system/info_engine");
+        $this->load->model("proveedor/view_proveedor");
+        $this->load->model("proveedor/edit_proveedor");
+        $this->load->model("system/info_engine");
+        $this->load->helper("url");
         
+
+        $data                       = $this->view_proveedor->get_provider($id);
+        $id_contacto                = $data->id_contacto;
+        $id_direccion               = $data->id_direccion;
         
-   
-      
-       $this->load->model("proveedor/new_proveedor");
-       $this->load->helper("url");
-     
+        $ok = $this->edit_proveedor->update_provider($id , $empresa , $decripcion);
+        if($ok){
+            $ok = $this->info_engine->update_adress(array(
+              "dir1"    => $direccion1,
+              "dir2"    => $direccion2,
+              "pais"    => $pais,
+              "depto"   => $depto,
+              "ciudad"  => $ciudad,
+              "local"   => $local 
+            ) , $id_direccion);
+            if($ok){
+                $this->info_engine->update_contact(array(
+                      "tel1"          => $telefono,
+                      "tel2"          => $celular,
+                      "fax"           => $fax,
+                      "correo"        => $correo,
+                      "nombre"        => $contacto
+                ) , $id_contacto);
+            }
+        }
+        
        
        if($ok){
-           redirect("/");
+           redirect("/0/proveedor=edit_proveedor?id=" . $id );
            return;
        }else{
            redirect("/0/?msj=prov&err=1");

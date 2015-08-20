@@ -117,7 +117,7 @@
                              </div>
                             <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                             <div class="form-group col-md-9">
-                                <textarea required="" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
+                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
                                 </textarea>
                              </div>
                         </div>

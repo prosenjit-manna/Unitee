@@ -26,6 +26,16 @@ class Info_engine extends CI_Model{
         }
     }
     
+    public function update_adress(array $adress , $id){
+         $this->db->where(array("id_direccion" => $id ));
+         return $this->db->update("direccion" , $adress);
+    }
+    
+    public function update_contact(array $contact , $id){
+         $this->db->where(array("id_contacto" => $id ));
+         return $this->db->update("contacto" , $contact);
+    }
+    
     
     
 }
