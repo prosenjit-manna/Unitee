@@ -74,7 +74,7 @@
                                                                                 
                                                                                echo '<tr>';
                                                                                echo '<td class="highlight"><p align="center">' . $provider->codigo . '</p></td>';
-                                                                               echo '<td class="highlight">' . $provider->empresa . '</td>'; 
+                                                                               echo '<td class="highlight"><p align="center">' . $provider->empresa . '</td>'; 
                                                                                echo '<td class="highlight"><p align="center">' . $provider->departamento . '</p></td>';
                                                                                echo '<td class="highlight"><p align="center">' . $provider->contacto . '</p></td>';
                                                                                echo '<td class="highlight"><p align="center">' . $provider->telefono . '</p></td>';
@@ -96,13 +96,7 @@
 							
 									</tbody>
 									</table>
-                                                                    <div>
-                                                                        <?php 
-                                                                        
-                                                                         echo $links;
-                                     
-                                                                        ?>
-                                                                    </div>
+                                                                   
 									<div class="modal fade bs-modal-lg" id="responsive_view" tabindex="-1" role="dialog" aria-hidden="true">
 								<div class="modal-dialog modal-lg">
 									<div class="modal-content">
@@ -228,6 +222,13 @@
 							</div>
 						</div>
 						<!-- END SAMPLE TABLE PORTLET-->
+						 	<div>
+                            	<?php 
+                                                                        
+                             	echo $links;
+                                     
+                            	?>
+                        	</div>
 					</div>
 				</div>	
 			</div>
