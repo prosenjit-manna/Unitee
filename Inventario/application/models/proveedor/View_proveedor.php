@@ -52,12 +52,12 @@ class View_proveedor extends CI_Model implements PInterface{
         $config['next_link']            = 'Siguiente';
         $config['next_tag_open']        = '<li>';
         $config['next_tag_close']       = '</li>';
-        $config['full_tag_open']        = '<nav><ul class="pagination">';
+        $config['full_tag_open']        = '<center><nav><ul class="pagination">';
         $config['num_tag_open']         ='<li>';
         $config['num_tag_close']        = '</li>';
         $config['cur_tag_open']         ='<li><a>';
         $config['cur_tag_close']        = '</li></a>';
-        $config['full_tag_close']       = '</ul></nav>';
+        $config['full_tag_close']       = '</ul></nav></center';
         $config['last_link']            = 'Ultimo';
         $config['last_tag_open']        = "<li>";
         $config['last_tag_close']        = "</li>";
