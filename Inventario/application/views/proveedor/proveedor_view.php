@@ -72,7 +72,7 @@
                                                                             
                                                                             foreach($data as $provider){
                                                                                 
-                                                                               echo '<tr>';
+                                                                               echo '<tr id="' . $provider->id_prov . '">';
                                                                                echo '<td class="highlight"><p align="center">' . $provider->codigo . '</p></td>';
                                                                                echo '<td class="highlight"><p align="center">' . $provider->empresa . '</td>'; 
                                                                                echo '<td class="highlight"><p align="center">' . $provider->departamento . '</p></td>';
@@ -84,7 +84,7 @@
 											<p align="center">
 												<a class="" onclick="view_provider(' .  $provider->id_prov  . ');" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
 												<a href="' . site_url("/0/proveedor=edit_proveedor?id=" . $provider->id_prov) . '"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-												<a class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
+												<a class="" onclick="the_id(' . $provider->id_prov . ');"  data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
 											</p>
 										</td>';
                                                                                
@@ -206,14 +206,14 @@
 													<div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
 														<div class="row">
 															<div class="col-md-12">
-																<h4>¿Deseas eliminar a $name_proveedor de tu lista de proveedores?</h4>
+                                                                                                                            <h4>¿Deseas eliminar  de tu lista de proveedores?</h4>
 															</div>
 														</div>
 													</div>
 												</div>
 												<div class="modal-footer">
 													<button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-													<button type="button" class="btn green">Eliminar</button>
+                                                                                                        <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
 												</div>
 											</div>
 										</div>
@@ -237,8 +237,9 @@
 	</div>
         </div>
         <script>
+           var $id = null;
              
-            view_provider = function(id){
+           var view_provider = function(id){
                 
                  var tasking = new jtask();
                  tasking.url = "<?php echo site_url("/TheProvider/ViewProvider" ); ?>";
@@ -258,9 +259,25 @@
                        $("#txt_pais").val(c.pais_nombre);
                        $("#txt_depto").val(c.depto_nombre);
                        $("#txt_ciu").val(c.municipio_nombre);
+                       $("#txt_desc").val(c.descripcion);
                  });
                  tasking.do_task();
                
             };
+            
+            var the_id = function(id){
+                $id = id;
+            };
+            
+            var delete_provider = function(){
+                 var tasking = new jtask();
+                 tasking.url = "<?php echo site_url("/TheProvider/DelProvider" ); ?>";
+                 tasking.data = { "id" : $id} ;
+                 tasking.success_callback(function(d){
+                      $("#" + $id).remove();
+                 });
+                 tasking.do_task();
+            };
+            
             
         </script>

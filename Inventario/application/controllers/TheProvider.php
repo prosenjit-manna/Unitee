@@ -144,6 +144,16 @@ class TheProvider extends CI_Controller {
         echo json_encode($data);
         exit();
     }
+    public function DelProvider(){
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        if(is_null($id)){
+            echo false;
+            return;
+        }
+        $this->load->model("proveedor/view_proveedor");
+        $this->view_proveedor->del_provider($id);
+        exit();
+    }
 
     
 }

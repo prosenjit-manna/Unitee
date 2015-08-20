@@ -173,4 +173,15 @@ class View_proveedor extends CI_Model implements PInterface{
                 ->result()[0];
     }
     
+    public function del_provider($id){
+        
+        $data                = $this->get_provider($id);
+        $id_adress           = $data->id_direccion;
+        $id_contact          = $data->id_contacto;
+        
+        $this->db->delete("proveedor" , array("id_proveedor" => $id));
+        $this->db->delete("direccion" , array("id_direccion" => $id_adress));
+        $this->db->delete("contacto" , array("id_contacto" => $id_contact));
+    }
+    
 }
