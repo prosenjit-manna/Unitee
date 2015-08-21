@@ -4,7 +4,7 @@
 		<div class="page-content">
 			<!-- INICIO TITULO DE LA PAGINA -->
 			<h3 class="page-title">
-			Unitee - Nuevo Producto
+			Unitee - Editar Producto
 			</h3>
 			<!-- FINAL TITULO DE LA PAGINA -->
 			<!-- INICIO BREADCUMBS -->
@@ -16,7 +16,7 @@
 						<i class="icon-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Nuevo Producto</a>
+						<a href="#">Editar Producto</a>
 					</li>
 				</ul>
 				<div class="page-toolbar">               
@@ -33,7 +33,7 @@
 						<div class="portlet-title">
 							<div class="caption font-green-sharp">
 								<i class="icon-speech font-green-sharp"></i>
-								<span class="caption-subject">Nuevo Producto</span>
+								<span class="caption-subject">Editar Producto</span>
 							</div>
 						</div>
 						<div class="portlet-body">

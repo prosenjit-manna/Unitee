@@ -36,7 +36,12 @@
 						<div class="portlet">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="fa fa-bell-o"></i>Productos
+									<p>Buscar Productos</p>
+								</div>
+								<div class="col-md-4">
+									<span class="input-group-addon input-circle">
+										<input type="text" class="icon-search form-control input-circle" placeholder="Escribe el Nombre del Producto">
+									</span>
 								</div>
 							</div>
 							<div class="portlet-body">
@@ -45,22 +50,25 @@
 									<thead>
 									<tr>
 										<th>
-											<p align="center">Codigo</p>
+											<p align="center">SKU</p>
 										</th>
 										<th >
-											<p align="center">Empresa</p>
+											<p align="center">Nombre</p>
 										</th>
 										<th >
-											<p align="center">Departamento</p>
+											<p align="center">Color</p>
 										</th>
 										<th>
-											<p align="center">Nombre del Contacto</p>
+											<p align="center">Margen</p>
 										</th>
 										<th>
-											<p align="center">Números de Telefono</p>
+											<p align="center">Unidad</p>
 										</th>
 										<th>
 											<p align="center">Descripción</p>
+										</th>
+										<th>
+											<p align="center">Precio</p>
 										</th>
 										<th>
 											<p align="center">Operaciones</p>
@@ -68,6 +76,146 @@
 									</tr>
 									</thead>
 									<tbody>
+										<tr>
+											<td align="center">
+												<p>123231</p>
+											</td>
+											<td align="center">
+												<p> Mike Nilson</p>
+											</td>
+											<td align="center">
+												<p> Rojo</p>
+											</td>
+											<td align="center">
+												<p> 75 YDS</p>
+											</td>
+											<td align="center">
+												<p>25</p>
+											</td>
+											<td align="center">
+												<p>Tela para camisasetasTela para camisasetas</p>
+											</td>
+											<td align="center">
+												<p>$ 10</p>
+											</td>
+											<td align="center">
+												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
+												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
+												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<td align="center">
+												<p>123231</p>
+											</td>
+											<td align="center">
+												<p> Mike Nilson</p>
+											</td>
+											<td align="center">
+												<p> Rojo</p>
+											</td>
+											<td align="center">
+												<p> 75 YDS</p>
+											</td>
+											<td align="center">
+												<p>25</p>
+											</td>
+											<td align="center">
+												<p>Tela para camisasetasTela para camisasetas</p>
+											</td>
+											<td align="center">
+												<p>$ 10</p>
+											</td>
+											<td align="center">
+												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
+												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
+												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<td align="center">
+												<p>123231</p>
+											</td>
+											<td align="center">
+												<p> Mike Nilson</p>
+											</td>
+											<td align="center">
+												<p> Rojo</p>
+											</td>
+											<td align="center">
+												<p> 75 YDS</p>
+											</td>
+											<td align="center">
+												<p>25</p>
+											</td>
+											<td align="center">
+												<p>Tela para camisasetasTela para camisasetas</p>
+											</td>
+											<td align="center">
+												<p>$ 10</p>
+											</td>
+											<td align="center">
+												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
+												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
+												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<td align="center">
+												<p>123231</p>
+											</td>
+											<td align="center">
+												<p> Mike Nilson</p>
+											</td>
+											<td align="center">
+												<p> Rojo</p>
+											</td>
+											<td align="center">
+												<p> 75 YDS</p>
+											</td>
+											<td align="center">
+												<p>25</p>
+											</td>
+											<td align="center">
+												<p>Tela para camisasetasTela para camisasetas</p>
+											</td>
+											<td align="center">
+												<p>$ 10</p>
+											</td>
+											<td align="center">
+												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
+												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
+												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
+											</td>
+										</tr>
+										<tr>
+											<td align="center">
+												<p>123231</p>
+											</td>
+											<td align="center">
+												<p> Mike Nilson</p>
+											</td>
+											<td align="center">
+												<p> Rojo</p>
+											</td>
+											<td align="center">
+												<p> 75 YDS</p>
+											</td>
+											<td align="center">
+												<p>25</p>
+											</td>
+											<td align="center">
+												<p>Tela para camisasetasTela para camisasetas</p>
+											</td>
+											<td align="center">
+												<p>$ 10</p>
+											</td>
+											<td align="center">
+												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
+												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
+												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
+											</td>
+										</tr>
 									</tbody>
 									</table>
                          
@@ -174,13 +322,13 @@
 											<div class="modal-content">
 												<div class="modal-header">
 													<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-													<h4 class="modal-title">Eliminar Proveedor</h4>
+													<h4 class="modal-title">Eliminar Producto</h4>
 												</div>
 												<div class="modal-body">
 													<div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
 														<div class="row">
 															<div class="col-md-12">
-                                                                                                                            <h4>¿Deseas eliminar  de tu lista de proveedores?</h4>
+                                                                                                                            <h4>¿Deseas eliminar $name_producto de tu lista de productos?</h4>
 															</div>
 														</div>
 													</div>
