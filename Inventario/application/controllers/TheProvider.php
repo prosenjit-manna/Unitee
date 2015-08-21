@@ -1,14 +1,32 @@
 <?php
 
+/**
+   @@author: Lieison S.A de C.V
+   @@version: 1.0
+ * @@type: plugin
+ * @@name: TheProvider
+ * @@description : controlador de proveedores
+ * @@id : _provider_001
+ */
+
 
 class TheProvider extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
-        $this->load->database();
+        
+        $this->load->library("session");
+        if(!is_array($this->session->user))
+        {
+            redirect("Login/");
+            return;
+        }
+        
     }
     
     public function NewProvider(){
+        
+        
         $empresa        = $_REQUEST['txt_empresa'];
         
         $contacto       = $_REQUEST['txt_contacto'];
@@ -19,8 +37,9 @@ class TheProvider extends CI_Controller {
         $correo         = $_REQUEST['txt_correo'];
         $local          = $_REQUEST['txt_local'];
         
-        $direccion1 = $_REQUEST['txt_direccion1'];
-        $direccion2 = $_REQUEST['txt_direccion2'];
+        $direccion1     = $_REQUEST['txt_direccion1'];
+        $direccion2     = $_REQUEST['txt_direccion2'];
+        
         
         $pais               = isset($_REQUEST['txt_pais']) ?  $_REQUEST['txt_pais'] : NULL;
         $depto              = isset($_REQUEST['txt_pais']) ? $_REQUEST['txt_depto'] : NULL;
@@ -48,7 +67,7 @@ class TheProvider extends CI_Controller {
         ));
         
      
-       $codigo  = "PROV" . rand(10, 2000) ;
+       $codigo  = "PROV" . rand(10, 2000) . substr($empresa, 0 , 3) ;
       
        $this->load->model("proveedor/new_proveedor");
        $this->load->helper("url");
@@ -70,20 +89,20 @@ class TheProvider extends CI_Controller {
     
     public function EditProvider(){
         
-        $id             = $_REQUEST['the_id'];
+        $id                 = $_REQUEST['the_id'];
         
-        $empresa        = $_REQUEST['txt_empresa'];
+        $empresa            = $_REQUEST['txt_empresa'];
         
-        $contacto       = $_REQUEST['txt_contacto'];
-        $telefono       = $_REQUEST['txt_telefono'];
-        $celular        = $_REQUEST['txt_celular'];
-        $fax            = $_REQUEST['txt_fax'];
+        $contacto           = $_REQUEST['txt_contacto'];
+        $telefono           = $_REQUEST['txt_telefono'];
+        $celular            = $_REQUEST['txt_celular'];
+        $fax                = $_REQUEST['txt_fax'];
         
-        $correo         = $_REQUEST['txt_correo'];
-        $local          = $_REQUEST['txt_local'];
+        $correo             = $_REQUEST['txt_correo'];
+        $local              = $_REQUEST['txt_local'];
         
-        $direccion1 = $_REQUEST['txt_direccion1'];
-        $direccion2 = $_REQUEST['txt_direccion2'];
+        $direccion1         = $_REQUEST['txt_direccion1'];
+        $direccion2         = $_REQUEST['txt_direccion2'];
         
         $pais               = isset($_REQUEST['txt_pais']) ?  $_REQUEST['txt_pais'] : NULL;
         $depto              = isset($_REQUEST['txt_pais']) ? $_REQUEST['txt_depto'] : NULL;
@@ -144,6 +163,7 @@ class TheProvider extends CI_Controller {
         echo json_encode($data);
         exit();
     }
+   
     public function DelProvider(){
         $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
         if(is_null($id)){

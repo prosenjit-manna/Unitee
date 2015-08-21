@@ -161,7 +161,7 @@ class Dashboard extends CI_Controller {
             //DIVIDIMOS EN PARTES LA RUTA POR MEDIO DEL TOKEN ASIGNADO
             $parts = explode(system_token(), $model);
             
-            //ES HORA : LO BUENO 
+       
             try{
                 
                 
@@ -244,7 +244,8 @@ class Dashboard extends CI_Controller {
                            $priv_flag = TRUE;
                         }
                     } 
-                }else if(is_string($privs)){
+                }
+                else if(is_string($privs)){
                     $parts  = explode(",", $privs);
                     foreach ($parts as $p){
                         if(strcmp($this->session->user['rol_name'], $p) === 0){
@@ -302,7 +303,7 @@ class Dashboard extends CI_Controller {
                 $vars["js_loader"] = $javascript_loaders;
             }
 
-            //CARGAMOS LA VISTA DENTRO DEL INIT
+            //INICIAMOS EL MODELO 
             $this->$model->_init();
             
             //CARGAMOS EL FOOTER .. SOLO ESO FALTABA YEAH !!
@@ -338,6 +339,8 @@ class Dashboard extends CI_Controller {
     }
     
     public function unlock(){
+        
+        
            if(!isset($_REQUEST['password'])){
                 redirect("/block?err=1");
                 return;
@@ -396,8 +399,6 @@ class Dashboard extends CI_Controller {
 
     public function test(){
         
-     
-       
     }
     
 }

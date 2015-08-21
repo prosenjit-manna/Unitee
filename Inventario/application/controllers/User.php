@@ -76,30 +76,42 @@ class User extends CI_Controller {
     
     public function change_avatar(){
         
+        /***
+         * Funcion en la cual se encarga de cambiar al avatar 
+         * se necesita las credenciales de sesion del usuario 
+         * ***/
+        
+        
+         //SE NECESITA ELEMENTO $_FILES VERIFICAR 
          if(!isset($_FILES['avatar_img']))
          {
              redirect("/0/");
              return;
          }
          
+        //CONFIGURACION ESTANDAR  
          
-        $path          = "./images/dashboard/users/";
-        $name          = explode(".", $_FILES['avatar_img']['name']);
-        $ext           = end($name);  
+        $path          = "./images/dashboard/users/";  //RUTA
+        $name          = explode(".", $_FILES['avatar_img']['name']); //NOMBRE DE LA IMAGEN
+        $ext           = end($name);  // EXTENSION DE LA IMAGEN
          
-        $this->load->helper('string');
-        $rename =  random_string();
+        $this->load->helper('string'); // HELPER STRING
+        $rename =  random_string();  // CREAMOS UN NOMBRE ALEATORIO
            
-        $config['upload_path']      = $path;
+        //CONFIGURAMOS EL FILE UPLOAD
+        
+        $config['upload_path']      = $path;  
         $config['allowed_types']    = 'gif|jpg|png';
         $config['max_size']         = '1000';
         $config['file_name']        = $rename;
         
+        //CONFIGURAMOS LAS LIBRERIAS
      
-        $this->load->library('upload', $config);
-        $this->upload->do_upload("avatar_img");
+        $this->load->library('upload', $config); 
+        $this->upload->do_upload("avatar_img"); //SUBIMOS LA IMAGEN
+        $errors = $this->upload->display_errors(); // OBTENEMOS SI HAY ERROR 
         
-        $errors = $this->upload->display_errors();
+        //VERIFICAMOS SI EXISTE UN ERROR  EN DADO CASO
         if($errors == NULL || $errors == ''){
             $this->load->model("user/user_profile");
             $is_ok = $this->user_profile->change_avatar($rename . "." . $ext);
@@ -143,7 +155,7 @@ class User extends CI_Controller {
              echo $this->user_profile->exist_user($_REQUEST['name']);
         }
     }
-    
+
     public function users(){
         $this->load->model("user/user_profile");
         $u      = $this->user_profile->get_users();

@@ -83,7 +83,6 @@ class Plugin implements SystemPlugin {
        return $the_model;
     }
     
-    
     private function ModelInfo(){
         $docs   = array();    
         
@@ -118,7 +117,6 @@ class Plugin implements SystemPlugin {
         return $docs;
     }
     
-
     private function ControllerInfo(){
         
         $docs           = array();    
