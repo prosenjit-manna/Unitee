@@ -3,6 +3,7 @@
 
 interface PInterface {
     
+    
     /**
      * @todo inicia todos los componentes necesarios 
      *       esto pueden ser librerias , helpers y las vistas

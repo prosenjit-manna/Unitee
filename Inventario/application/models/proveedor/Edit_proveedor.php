@@ -5,9 +5,9 @@
    @@version: 1.2
  * @@update : lieison.com/unitee/update
  * @@type: plugin
- * @@name: nuevo usuario
- * @@parent: user
- * @@description : modulo en el cual se encarga de crear un nuevo usuario 
+ * @@name: nuevo_producto
+ * @@parent: producto
+ * @@description : modulo en el cual se encarga de crear un nuevo producto
  * @@id : _provider_001
  */
 
@@ -60,7 +60,13 @@ class Edit_proveedor extends CI_Model implements PInterface{
     }
 
     public function _rols() {
-        
+        $this->load->model("system/permission_engine");
+        $data = $this->permission_engine->_get(
+                $this->model, 
+                MODEL , 
+                INT
+         );
+        return $data;
     }
 
     public function _title() {

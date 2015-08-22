@@ -97,3 +97,4 @@
 		<!-- FINAL ESTILOS DE LA BARRA -->
 	</div>
 	<!-- FINAL CONTENIDO -->
+        <pre><?php print_r($dump); ?></pre>

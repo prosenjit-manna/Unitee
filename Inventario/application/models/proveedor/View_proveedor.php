@@ -91,7 +91,13 @@ class View_proveedor extends CI_Model implements PInterface{
     }
 
     public function _rols() {
-        
+        $this->load->model("system/permission_engine");
+        $data = $this->permission_engine->_get(
+                $this->model, 
+                MODEL , 
+                INT
+         );
+        return $data;
     }
 
     public function _title() {

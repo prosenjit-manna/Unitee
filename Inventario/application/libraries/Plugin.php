@@ -29,70 +29,58 @@ class Plugin implements SystemPlugin {
     }
 
     public function _show() {
-       
-       $the_model           =  array();
-       $the_controller      =  array();
-       $filter              =  $this->ModelInfo();
-       $filter_c            =  $this->ControllerInfo();
-       
-       foreach($filter as $f){
-           $id          = NULL;
-           if(is_array($f['data'])  && count($f['data']) >= 2){
-               foreach ($f['data'] as $i ){
-                   $fill = explode(":", $i);
-                   if(count($fill) >= 2 && strcmp(trim($fill[0]), "id") == 0){
-                       $id = $fill[1];
-                   }
-               }
-               if($id != NULL){
-                   $the_model[$id][] = $f;
-                   if(!isset($the_model[$id]['controller'])){
-                        $the_model[$id]['controller']         = array();
-                        $the_model[$id]['dependencies']       = array();
-                   }
-               }
-           } 
-       }
-       
-       foreach($filter_c as $c){
-           $id          = NULL;
-           if(is_array($c['data'])  && count($c['data']) >= 2){
-               foreach ($c['data'] as $i ){
-                   $fill = explode(":", $i);
-                   if(count($fill) >= 2 && strcmp(trim($fill[0]), "id") == 0){
-                       $id = $fill[1];
-                   }
-               }
-               if($id != NULL){
-                   $the_controller[$id][] = $c;
-               }
-           } 
-       }
-       
-       foreach($the_model as $i=>$m){
-            $m_id = $i;
-            foreach($the_controller as $ii=>$c){
-                if(strcmp(trim($m_id), trim($ii)) == 0){
-                    foreach($c as $cc){
-                        $the_model[$m_id]['controller'][] = $cc; 
-                    }
-                }
-            }
-       }
 
-       return $the_model;
+      $the_model         = array();
+      
+      foreach($this->model_ as $model){
+          
+           $this->class->load->model($model['init']);
+           
+           $_config     = isset($this->class->$model['name']->_config) 
+                                    ? $this->class->$model['name']->_Getconfig() : NULL;
+           
+           if(is_null($_config)){
+                $_config = isset($this->class->$model['name']->_config) 
+                                    ? $this->class->$model['name']->_config : NULL;
+           }
+           
+           if(!is_array($_config)){
+               continue;
+           }
+           
+           $the_model[$_config['id_model']][] = array(
+                        "model"         => $model['name'],
+                        "path"          => $model['init'],
+                        "config"        => $_config
+            );
+         
+           unset($this->class->$model['name']);
+      }
+        
+      return $the_model;
+        
     }
     
-    private function ModelInfo(){
-        $docs   = array();    
+    public function _unistall($id_model = NULL) {
         
+    }
+
+    public function _update($id_model = NULL) {
+        
+    }
+ 
+    private function ModelInfo(){
+        
+        $docs   = array();    
+       
         foreach ($this->model_ as $m){
-            
+             
             $this->class->load->model($m['init']);
-            
+         
             $document           = new ReflectionClass($this->class->$m['name']);
-            $data               = explode("@@",$document->getDocComment() );
+            $data               = explode("@@", $document->getDocComment());
            
+
             $array = array_map(
                 function($str) {
                     return str_replace('*', '', $str);
@@ -102,6 +90,8 @@ class Plugin implements SystemPlugin {
                 function($str) {
                     return str_replace('/', '', $str);
             },$array );
+            
+           
             
             $docs[] = array(
                 "model"                     => $m['name'],
@@ -113,6 +103,7 @@ class Plugin implements SystemPlugin {
             
             unset($this->class->$m['name']);
         }
+
 
         return $docs;
     }
@@ -184,5 +175,7 @@ class Plugin implements SystemPlugin {
         
         return $array_;
     }
+
+
 
 }

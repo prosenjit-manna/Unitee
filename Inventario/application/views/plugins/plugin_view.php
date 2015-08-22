@@ -222,13 +222,7 @@
 							</div>
 						</div>
 						<!-- END SAMPLE TABLE PORTLET-->
-						 	<div>
-                            	<?php 
-                                                                        
-                             	echo $links;
-                                     
-                            	?>
-                        	</div>
+						
 					</div>
 				</div>	
 			</div>

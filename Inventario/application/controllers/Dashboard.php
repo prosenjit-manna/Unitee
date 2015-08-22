@@ -44,7 +44,6 @@ class Dashboard extends CI_Controller {
     
     var $user_p             = NULL;
 
-
     public function __construct() 
     {
         parent::__construct();
@@ -169,7 +168,7 @@ class Dashboard extends CI_Controller {
                     //SI LAS PARTES SU TAMAÑO ES 1 ENTONCES 
                     $model = $parts[0];
                     
-                    //VERIFICAMOS SI ES MODELO SIN UN DIRECTORIO EJEMPLO login
+                    //VERIFICAMOS SI ES MODELO SIN UN DIRECTORIO EJEMPLO login.php
                     if(!check_model($model)){
                        $this->load->view("errors/html/404" , $vars);
                        return;
@@ -259,7 +258,7 @@ class Dashboard extends CI_Controller {
             }else if($privs === NULL){ $priv_flag = TRUE; }
             
             
-            //CONTROL DE PERMISOS OMG !!!
+            //CONTROL DE PERMISOS SI NO EXISTEN ....
             if(!$priv_flag){
                 $this->load->view("dashboard/header" , $vars );
                 $this->load->view("dashboard/left_sidebar" , $vars);
@@ -383,7 +382,7 @@ class Dashboard extends CI_Controller {
 
     }
     
-    public function modulos( ){
+    public function modulos(){
         
         $this->load->library("plugin");
         echo "<pre>";
