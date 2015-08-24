@@ -13,16 +13,33 @@
 
 
 get_instance()->load->interfaces("Interface");
+get_instance()->load->interfaces("PluginConfig");
 
 class Edit_proveedor extends CI_Model implements PInterface{
     
+    use PluginConfig;
     
     protected $model   = "edit_proveedor";
 
 
     public function __construct() {
         parent::__construct();
+        
         $this->load->database();
+        
+         $this->_config = array(
+                "version"       => 1.0,
+                "author"        => "Lieison S.A de C.V",
+                "type"          => "plugin",
+                "name"          => "Editar Proveedor",
+                "description"   => "Modulo para editar proveedor",
+                "id_model"      => "001",
+                "id_update"     => "004",
+                "update"        => "",
+                "license"       => "",
+                "controller"    => "",
+                "view"          => "proveedor/proveedor_edit"
+        );
     }
     
     public function _css() {
@@ -89,7 +106,13 @@ class Edit_proveedor extends CI_Model implements PInterface{
                 "proveedor" , 
                 array("nombre"  => $nombre , "descripcion" => $descripcion));
     }
-  
-    
+
+    public function _Getconfig() {
+        return $this->_config;
+    }
+
+    public function _widgets() {
+        
+    }
 
 }

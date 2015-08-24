@@ -119,6 +119,8 @@ class User_edit extends CI_Model implements PInterface{
                 ->result()[0];
     }
 
-
+    public function _widgets() {
+        
+    }
 
 }

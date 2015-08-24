@@ -48,10 +48,15 @@ class Plugin implements SystemPlugin {
                continue;
            }
            
+           $path_name= explode("/", $model['init']);
+           if(!isset($the_model[$_config['id_model']]['section'])){
+              $the_model[$_config['id_model']]['section'] = strtoupper(current($path_name));
+           }
+           
            $the_model[$_config['id_model']][] = array(
                         "model"         => $model['name'],
                         "path"          => $model['init'],
-                        "config"        => $_config
+                        "config"        => $_config,
             );
          
            unset($this->class->$model['name']);
@@ -81,7 +86,7 @@ class Plugin implements SystemPlugin {
             $data               = explode("@@", $document->getDocComment());
            
 
-            $array = array_map(
+           $array = array_map(
                 function($str) {
                     return str_replace('*', '', $str);
             },$data );

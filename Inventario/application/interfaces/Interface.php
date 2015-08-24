@@ -70,5 +70,8 @@ interface PInterface {
     public function _rols();
     
     
+    /**@todo funcion que maneja los widgets del sistema */
+    public function _widgets();
+    
   
 }

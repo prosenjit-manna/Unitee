@@ -98,5 +98,9 @@ class New_producto extends CI_Model  implements PInterface {
        
     }
 
+    public function _widgets() {
+        
+    }
+
 }
    

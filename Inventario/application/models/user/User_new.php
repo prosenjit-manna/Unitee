@@ -86,4 +86,8 @@ class User_new extends CI_Model implements PInterface{
         return $this->db->insert("user" , $data);
     }
 
+    public function _widgets() {
+        
+    }
+
 }

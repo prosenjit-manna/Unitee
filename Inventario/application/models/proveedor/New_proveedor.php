@@ -13,16 +13,33 @@
 
 
 get_instance()->load->interfaces("Interface");
+get_instance()->load->interfaces("PluginConfig");
 
 class New_proveedor extends CI_Model implements PInterface{
     
+    use PluginConfig;
     
     protected $model   = "new_proveedor";
 
 
     public function __construct() {
         parent::__construct();
+        
         $this->load->database();
+        
+        $this->_config = array(
+                "version"       => 1.0,
+                "author"        => "Lieison S.A de C.V",
+                "type"          => "plugin",
+                "name"          => "Nuevo Proveedor",
+                "description"   => "Modulo para agregar proveedor",
+                "id_model"      => "001",
+                "id_update"     => "004",
+                "update"        => "",
+                "license"       => "",
+                "controller"    => "",
+                "view"          => "producto/producto_new"
+        );
     }
     
     public function _css() {
@@ -85,7 +102,13 @@ class New_proveedor extends CI_Model implements PInterface{
             "fecha"             => $current_d
         ));
     }
-    
 
+    public function _Getconfig() {
+        return $this->_config;
+    }
+
+    public function _widgets() {
+        
+    }
 
 }

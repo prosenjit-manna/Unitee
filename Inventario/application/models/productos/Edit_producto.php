@@ -90,5 +90,9 @@ class Edit_producto extends CI_Model implements PInterface{
         return $this->_config;
     }
 
+    public function _widgets() {
+        
+    }
+
 }
    

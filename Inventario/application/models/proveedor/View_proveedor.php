@@ -13,9 +13,11 @@
 
 
 get_instance()->load->interfaces("Interface");
+get_instance()->load->interfaces("PluginConfig");
 
 class View_proveedor extends CI_Model implements PInterface{
     
+    use PluginConfig;
     
     protected $model   = "view_proveedor";
 
@@ -25,6 +27,20 @@ class View_proveedor extends CI_Model implements PInterface{
         parent::__construct();
         $this->load->database();
         $this->load->library("base_url");
+        
+          $this->_config = array(
+                "version"       => 1.0,
+                "author"        => "Lieison S.A de C.V",
+                "type"          => "plugin",
+                "name"          => "Ver Proveedor",
+                "description"   => "Modulo ver proveedores",
+                "id_model"      => "001",
+                "id_update"     => "004",
+                "update"        => "",
+                "license"       => "",
+                "controller"    => "",
+                "view"          => "producto/producto_new"
+        );
     }
     
     public function _css() {
@@ -189,5 +205,13 @@ class View_proveedor extends CI_Model implements PInterface{
         $this->db->delete("direccion" , array("id_direccion" => $id_adress));
         $this->db->delete("contacto" , array("id_contacto" => $id_contact));
     }
-    
+
+    public function _Getconfig() {
+        return $this->_config;
+    }
+
+    public function _widgets() {
+        
+    }
+
 }

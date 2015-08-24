@@ -100,4 +100,8 @@ class User_Profile extends CI_Model implements PInterface {
         
     }
 
+    public function _widgets() {
+        
+    }
+
 }
