@@ -58,7 +58,7 @@ class New_producto extends CI_Model  implements PInterface {
     }
 
     public function _jsLoader() {
-
+         return array("load_colors();");
     }
 
     public function _rols() {
@@ -87,6 +87,10 @@ class New_producto extends CI_Model  implements PInterface {
 
     public function _Getconfig() {
         return $this->_config;
+    }
+    
+    public function get_colors(){
+        
     }
 
 }

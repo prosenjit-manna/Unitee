@@ -105,4 +105,18 @@
 		<!-- FINAL ESTILOS DE LA BARRA -->
 	</div>
 	<!-- FINAL CONTENIDO -->
-        <pre><?php print_r($dump); ?></pre>
+  
+        <script>
+        
+        
+            var load_colors = function(){
+                var tasking = new jtask();
+                    tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
+                    tasking.success_callback(function(d){
+                        
+                    });
+                    tasking.do_task();
+            };
+        
+        
+        </script>
