@@ -59,7 +59,7 @@
 														</div>
                                  <label class="control-label col-md-3">* Unidad</label>
 					<div class="form-group col-md-9">
-                                            <select required="" id="select_country" name="txt_unidad" class="form-control input-circle">                     
+                                            <select required="" id="" name="txt_unidad" class="form-control input-circle">                     
                                             </select>
                                         </div>                                                                   
 													</div>

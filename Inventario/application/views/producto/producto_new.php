@@ -59,7 +59,8 @@
 														</div>
                                  <label class="control-label col-md-3">* Unidad</label>
 														<div class="form-group col-md-9">
-                                     <input type="text" id="" name="txt_unidad" class="form-control input-circle" placeholder="Numero de FAX">
+                                      <select required="" id="select_unidad" name="txt_color" class="form-control input-circle">                     
+                                    </select>
 														</div>                                                                   
 													</div>
 													<!--/span-->
@@ -77,6 +78,10 @@
                                 <label class="control-label col-md-3">* Precio</label>
 														<div class="form-group col-md-9">
                                     <input type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+														</div>
+                                 <label class="control-label col-md-3">* Cantidad</label>
+														<div class="form-group col-md-9">
+                                    <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="cantidad de Productos">
 														</div>
 													<!--/span-->
 												    </div>
