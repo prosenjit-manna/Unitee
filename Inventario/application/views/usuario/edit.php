@@ -66,7 +66,7 @@
 						<div class="portlet-title tabbable-line">
 							<div class="caption font-green-sharp">
 								<i class="icon-speech font-green-sharp"></i>
-								<span class="caption-subject">Editar Roles e Informacion de USuario</span>
+								<span class="caption-subject bold uppercase">Editar Roles e Informacion de USuario</span>
 							</div>
 							<ul class="nav nav-tabs">
 								<li>
