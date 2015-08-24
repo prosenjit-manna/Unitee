@@ -35,10 +35,11 @@
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet">
                         <div class="portlet-title">
-                            <div class="caption">
-                                <i class="icon-bell"></i>Proveedores
-                            </div>
-                        </div>
+                        <div class="caption font-green-sharp">
+                            <i class="icon-speech font-green-sharp"></i>
+                            <span class="caption-subject bold uppercase"> LISTA DE PROVEEDORES</span>
+                        </div>                       
+                    </div>
                         <div class="portlet-body">
                             <div class="table-scrollable">
                                 <table class="table table-striped table-bordered table-advance table-hover">
@@ -220,9 +221,9 @@
                     </div>
                     <!-- END SAMPLE TABLE PORTLET-->
                     <div>
-<?php
-echo $links;
-?>
+                        <?php
+                        echo $links;
+                        ?>
                     </div>
                 </div>
             </div>	

@@ -41,6 +41,12 @@
                 <div class="col-md-12">
                     <!-- INICIO Portlet PORTLET-->
                     <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption font-green-sharp">
+                                <i class="icon-speech font-green-sharp"></i>
+                                <span class="caption-subject bold uppercase"> EDITAR PROVEEDOR</span>
+                            </div>
+                        </div>
                         <div class="portlet-body">
                             <div class="portlet-body form">
                                 <!-- INICIO FORM-->
