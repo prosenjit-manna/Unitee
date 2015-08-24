@@ -45,7 +45,7 @@
 							<div class="portlet-body form">
 										<!-- INICIO FORM-->
 											<div class="form-body">
-                         <h5 lass="form-section">Los campos con * son Rqueridos</h5>
+                         <h5 lass="form-section">Los campos con * son Requeridos</h5>
                         <div class="row">
                           <div class="col-md-6">
                                                                                                             <?php echo form_open("/TheProvider/EditProvider/" , array("method" => "post")); ?>

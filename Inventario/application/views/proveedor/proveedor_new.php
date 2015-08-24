@@ -49,7 +49,7 @@
 										<!-- INICIO FORM-->
 											<div class="form-body">
 												<div class="row">
-                           <h5 lass="form-section">Los campos con * son Rqueridos</h5>
+                           <h5 lass="form-section">Los campos con * son Requeridos</h5>
 													<div class="col-md-6">
                                                                 <?php echo form_open("/TheProvider/NewProvider/" , array("method" => "post")); ?>
                              <h3 lass="form-section">Información de Contacto</h3><br>
