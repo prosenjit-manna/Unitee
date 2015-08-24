@@ -44,9 +44,7 @@
                                 </a>
                             </div>
                             <a href="javascript:;" class="btn btn-circle red-sunglo btn-sm">
-                                <i class="icon-plus"></i> Add </a>
-                            <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="" title="">
-                            </a>
+                                <i class="icon-plus"></i> Add </a>                            
                         </div>
                     </div>
                     <div class="portlet-body">
