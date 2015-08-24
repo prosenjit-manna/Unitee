@@ -90,7 +90,12 @@ class New_producto extends CI_Model  implements PInterface {
     }
     
     public function get_colors(){
-        
+   
+     $this->query = "select * from colors" ;
+      return $this->db
+                ->query($this->query)
+                ->result();
+       
     }
 
 }

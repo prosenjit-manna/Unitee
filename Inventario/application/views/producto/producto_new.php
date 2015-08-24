@@ -50,7 +50,7 @@
 														</div>
 														<label class="control-label col-md-3">* Color</label>
                                 <div class="form-group col-md-9">
-                                    <select required="" id="select_country" name="txt_color" class="form-control input-circle">
+                                    <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
                                         <option value="0">Elige un color</option>
                                     </select>
                                 </div>
@@ -113,7 +113,8 @@
                 var tasking = new jtask();
                     tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
                     tasking.success_callback(function(d){
-                        
+                    var data=JSON.parse(d);
+                    $('#select_colors').html(d);    
                     });
                     tasking.do_task();
             };
