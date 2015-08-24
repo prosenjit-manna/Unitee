@@ -57,6 +57,7 @@
                                  <label class="control-label col-md-3">* Margen</label>
 														<div class="form-group col-md-9">
                                      <input required="" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Margen">
+                                     <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
 														</div>
                                  <label class="control-label col-md-3">* Unidad</label>
 														<div class="form-group col-md-9">
@@ -83,7 +84,7 @@
 														</div>
                                  <label class="control-label col-md-3">* Cantidad</label>
 														<div class="form-group col-md-9">
-                                    <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad de Productos">
+                                    <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
 														</div>
 													<!--/span-->
 												    </div>

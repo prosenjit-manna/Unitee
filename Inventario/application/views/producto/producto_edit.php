@@ -12,11 +12,16 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="icon-home"></i>
-                <a href="<?php echo site_url("/0/"); ?>">Home</a>
+                                                 <a href="<?php echo site_url("/0/"); ?>">Home</a>
+						<i class="icon-angle-right"></i>
+					</li>
+                                        <li>
+                                                 <a href="<?php echo site_url("/0/productos=view_producto"); ?>">Ver Productos</a>
 						<i class="icon-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Editar Producto</a>
+                                                 <a href="<?php echo site_url("/0/productos=edit_producto"); ?>">Editar Productos</a>
+						<i class="icon-angle-right"></i>
 					</li>
 				</ul>
 				<div class="page-toolbar">               
