@@ -26,7 +26,7 @@
 			<!-- INICIO DASHBOARD STATS -->
            <div class="page-content-wrapper">
 			<!-- INICIO PAGE CONTENT-->
-			<div class="row scroller" style="height:470px" data-rail-visible="1" >
+			<div class="row scroller" style="height:460px" data-rail-visible="1" >
 				<div class="col-md-12">
 					<!-- INICIO Portlet PORTLET-->
 					<div class="portlet light">
@@ -58,9 +58,10 @@
                                      <input required="" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Numero de Celular">
 														</div>
                                  <label class="control-label col-md-3">* Unidad</label>
-														<div class="form-group col-md-9">
-                                     <input type="text" id="" name="txt_unidad" class="form-control input-circle" placeholder="Numero de FAX">
-														</div>                                                                   
+					<div class="form-group col-md-9">
+                                            <select required="" id="select_country" name="txt_unidad" class="form-control input-circle">                     
+                                            </select>
+                                        </div>                                                                   
 													</div>
 													<!--/span-->
 													<div class="col-md-6">
@@ -78,11 +79,15 @@
 														<div class="form-group col-md-9">
                                     <input type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
 														</div>
+                                 <label class="control-label col-md-3">* Cantidad</label>
+														<div class="form-group col-md-9">
+                                    <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="cantidad de Productos">
+														</div>
 													<!--/span-->
 												    </div>
                         </div>
 											<div class="form-actions right">
-                          <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
+                          <a href="<?php echo site_url("/0/productos=view_producto"); ?>" class="btn default">Cancelar</a>
                           <button  id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
 											</div>
 										<!-- FINAL FORM-->

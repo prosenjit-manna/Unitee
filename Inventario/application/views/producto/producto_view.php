@@ -36,13 +36,14 @@
 						<div class="portlet">
 							<div class="portlet-title">
 								<div class="caption">
-									<p>Buscar Productos</p>
+                                                                    <p>Buscar Productos</p>
 								</div>
-								<div class="col-md-4">
-									<span class="input-group-addon input-circle">
-										<input type="text" class="icon-search form-control input-circle" placeholder="Escribe el Nombre del Producto">
-									</span>
-								</div>
+								<div class="form-group col-xs-7 col-sm-4 col-md-4">
+                                                                            <div class="input-icon">
+                                                                                    <i class="icon-search"></i>
+                                                                                    <input class="input-circle form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Escribe el nombre del Producto" id="username" name="username"/>
+                                                                            </div>
+                                                                </div>
 							</div>
 							<div class="portlet-body">
 								<div class="table-scrollable">
@@ -62,7 +63,7 @@
 											<p align="center">Margen</p>
 										</th>
 										<th>
-											<p align="center">Unidad</p>
+											<p align="center">Cantidad</p>
 										</th>
 										<th>
 											<p align="center">Descripción</p>
@@ -99,7 +100,6 @@
 												<p>$ 10</p>
 											</td>
 											<td align="center">
-												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
 												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
 												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
 											</td>
@@ -127,7 +127,6 @@
 												<p>$ 10</p>
 											</td>
 											<td align="center">
-												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
 												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
 												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
 											</td>
@@ -155,7 +154,7 @@
 												<p>$ 10</p>
 											</td>
 											<td align="center">
-												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
+												
 												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
 												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
 											</td>
@@ -183,7 +182,6 @@
 												<p>$ 10</p>
 											</td>
 											<td align="center">
-												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
 												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
 												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
 											</td>
@@ -211,14 +209,12 @@
 												<p>$ 10</p>
 											</td>
 											<td align="center">
-												<a class="" onclick="view_provider(9);" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
 												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
 												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
 											</td>
 										</tr>
 									</tbody>
 									</table>
-                         
 									<div class="modal fade bs-modal-lg" id="responsive_view" tabindex="-1" role="dialog" aria-hidden="true">
 								<div class="modal-dialog modal-lg">
 									<div class="modal-content">
