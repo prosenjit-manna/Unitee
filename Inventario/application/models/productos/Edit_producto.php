@@ -73,7 +73,7 @@ class Edit_producto extends CI_Model implements PInterface{
     }
 
     public function _title() {
-        return "Unitee | Nuevo producto";
+        return "Unitee | Editar productos";
         
     }
 

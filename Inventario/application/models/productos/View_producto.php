@@ -75,7 +75,7 @@ class view_producto extends CI_Model implements PInterface{
     }
 
     public function _title() {
-        return "Unitee | Nuevo producto";
+        return "Unitee | Ver productos";
         
     }
 

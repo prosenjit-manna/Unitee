@@ -50,16 +50,18 @@
 														</div>
 														<label class="control-label col-md-3">* Color</label>
                                 <div class="form-group col-md-9">
-                                    <select required="" id="select_country" name="txt_color" class="form-control input-circle">                     
+                                    <select required="" id="select_country" name="txt_color" class="form-control input-circle"> 
+                                        <option value="0">Elige un color</option>
                                     </select>
                                 </div>
                                  <label class="control-label col-md-3">* Margen</label>
 														<div class="form-group col-md-9">
-                                     <input required="" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Numero de Celular">
+                                     <input required="" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Margen">
 														</div>
                                  <label class="control-label col-md-3">* Unidad</label>
 					<div class="form-group col-md-9">
-                                            <select required="" id="" name="txt_unidad" class="form-control input-circle">                     
+                                            <select required="" id="" name="txt_unidad" class="form-control input-circle">   
+                                                 <option value="0">Elige la unidad</option>
                                             </select>
                                         </div>                                                                   
 													</div>
@@ -68,16 +70,16 @@
                             <br><br><br><br>
 														<label class="control-label col-md-3">* Descripción</label>
                             <div class="form-group col-md-9">
-                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" cols="50" class="form-control input-circle" placeholder="Descripcion del producto">
+                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto">
                                 </textarea>
                             </div>
                                 <label class="control-label col-md-3">* SKU</label>
 														<div class="form-group col-md-9">
-                                    <input disabled="disabled" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                    <input disabled="disabled" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="SKU del producto">
 														</div>
                                 <label class="control-label col-md-3">* Precio</label>
 														<div class="form-group col-md-9">
-                                    <input type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                    <input type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Precio del Producto">
 														</div>
                                  <label class="control-label col-md-3">* Cantidad</label>
 														<div class="form-group col-md-9">
