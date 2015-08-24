@@ -58,7 +58,7 @@ class New_producto extends CI_Model  implements PInterface {
     }
 
     public function _jsLoader() {
-         return array("load_colors();");
+         return array("load_colors();","load_unidad();");
     }
 
     public function _rols() {
@@ -91,10 +91,19 @@ class New_producto extends CI_Model  implements PInterface {
     
     public function get_colors(){
    
-     $this->query = "select * from colors" ;
+      $this->query = "select id_color as 'id' ,  nombre as 'name' from color" ;
       return $this->db
-                ->query($this->query)
-                ->result();
+                  ->query($this->query)
+                  ->result();
+       
+    }
+    
+     public function get_unidad(){
+   
+      $this->query = "select id_unidad as 'id' ,  nombre as 'name' from unidad" ;
+      return $this->db
+                  ->query($this->query)
+                  ->result();
        
     }
 

@@ -46,12 +46,12 @@
                              <h3 lass="form-section">Información del Producto</h3><br>
 													   <label class="control-label col-md-3">* Nombre</label>
 														<div class="form-group col-md-9">
-                                     <input required="" type="text" id="" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del Producto">
+                                     <input required="" type="text" id="name_" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del Producto">
 														</div>
 														<label class="control-label col-md-3">* Color</label>
                                 <div class="form-group col-md-9">
                                     <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
-                                        <option value="0">Elige un color</option>
+                                        <option selected="true" disabled="disable" value="0">Elige un color</option>
                                     </select>
                                 </div>
                                  <label class="control-label col-md-3">* Margen</label>
@@ -61,8 +61,8 @@
 														</div>
                                  <label class="control-label col-md-3">* Unidad</label>
 														<div class="form-group col-md-9">
-                                      <select required="" id="select_unidad" name="txt_color" class="form-control input-circle">
-                                          <option value="0">Elige la unidad</option>
+                                      <select required="true" id="select_unidad" name="txt_color" class="form-control input-circle">
+                                          <option selected="true" disabled="disable" value="0">Elige la unidad</option>
                                     </select>
 														</div>                                                                   
 													</div>
@@ -76,7 +76,7 @@
                             </div>
                                 <label class="control-label col-md-3">* SKU</label>
 														<div class="form-group col-md-9">
-                                    <input disabled="disabled" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="SKU del Producto">
+                                    <input readonly="" type="text" id="SKU" name="txt_direccion1" class="form-control input-circle" placeholder="SKU del Producto">
 														</div>
                                 <label class="control-label col-md-3">* Precio</label>
 														<div class="form-group col-md-9">
@@ -114,10 +114,35 @@
                     tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
                     tasking.success_callback(function(d){
                     var data=JSON.parse(d);
-                    $('#select_colors').html(d);    
+                    $.map( data , function( a ) {
+                   $('#select_colors').append( "<option value="+ a.id + ">" + a.name + "</option>" );
                     });
-                    tasking.do_task();
+                });
+                 tasking.do_task();
             };
         
-        
+          var load_unidad = function(){
+                var tasking = new jtask();
+                    tasking.url = "<?php echo site_url("/Productos/get_unidad"); ?>";
+                    tasking.success_callback(function(d){
+                    var data=JSON.parse(d);
+                    $.map( data , function( a ) {
+                   $('#select_unidad').append( "<option value="+ a.id + ">" + a.name + "</option>" );
+                    });
+                });
+                 tasking.do_task();
+            };
+            
+            var generate_SKU = function(){
+                var name = $('#').val(); 
+                var tasking = new jtask();
+                    tasking.data = { "name": name };
+                    tasking.url = "<?php echo site_url("/Productos/generate_sku"); ?>";
+                    tasking.success_callback(function(d){
+                    var sku=JSON.parse(d);
+                    $('#SKU').val(sku);
+                });
+                 tasking.do_task();
+            }; 
+            
         </script>
