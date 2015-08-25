@@ -1,3 +1,4 @@
+
 <?php
 
 /**
@@ -79,4 +80,4 @@ class Conf_producto extends CI_Model implements PInterface{
     }
 
 }
-   
+
