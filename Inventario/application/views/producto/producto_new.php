@@ -71,7 +71,7 @@
                                          <label class="control-label col-md-3">* Color</label>
                              <div class="form-group col-md-9">
                                     <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
-                                        <option selected="true" disabled="disable" value="0">Elige un color</option>
+                                        <option selected="true" value="0">Elige un color</option>
                                     </select>
                                 </div>
                                  <label class="control-label col-md-3">* Margen</label>
@@ -82,7 +82,7 @@
                                  <label class="control-label col-md-3">* Unidad</label>
 														<div class="form-group col-md-9">
                                       <select required="true" id="select_unidad" name="txt_unidad" class="form-control input-circle">
-                                          <option selected="true" disabled="disable" value="0">Elige la unidad</option>
+                                          <option selected="true"  value="0">Elige la unidad</option>
                                     </select>
 														</div>                                                                   
 													</div>
@@ -176,11 +176,8 @@
             
         
    var validate_price = function(){
-                var precio             = $("#precio").val();
-                var select_colors      = $("#select_colors").val();
-                var select_unidad      = $("#select_unidad").val();
-                 
-            if ( precio == "" || select_unidad == 0 || select_colors == 0 || isNaN(precio) ){
+           var precio             = $("#precio").val();
+           if ( precio == "" || isNaN(precio) ){
                     $('#send').attr("disabled", true);  
                  }
                  else{
@@ -190,5 +187,8 @@
                  }
                   
            } ; 
+           
+           
+           
             
         </script>

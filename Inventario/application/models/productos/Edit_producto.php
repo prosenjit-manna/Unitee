@@ -47,7 +47,20 @@ class Edit_producto extends CI_Model implements PInterface{
 
     public function _init() {
         $this->load->helper("form");
-        $this->load->view("producto/producto_edit");
+        $this->load->view("producto/producto_edit" , array("data" => $data));
+        $id         = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        
+        if(is_null($id)){
+             $this->load->view("dashboard/main");
+             return;
+        }
+        
+        $this->load->model("proveedor/view_proveedor");
+        
+        $data       = $this->view_proveedor->get_provider($id);
+        
+        $this->load->view("proveedor/proveedor_edit" );
+       
     }
 
     public function _install() {
@@ -93,6 +106,17 @@ class Edit_producto extends CI_Model implements PInterface{
     public function _widgets() {
         
     }
-
+    
+    public function update_product($id ,
+               $nombre , $color , $margen , $unidad,
+               $descripcion , $precio , $cantidad , $sku){
+       $this->db->where(array("	id_producto" => $id ));
+       return $this->db->update(
+                "producto" , 
+                array("id_unidad"  => $unidad , 
+                      "descripcion" => $descripcion,"descripcion" => $descripcion,
+                      "sku" => $color, "nombre" => $nombre ,
+                      "id_color" => $color, "precio_est_unidad" => $precio ));
+    }
 }
    

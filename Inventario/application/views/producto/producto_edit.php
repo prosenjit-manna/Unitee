@@ -49,24 +49,28 @@
                            <h5 lass="form-section">Los campos con * son Requeridos</h5>
 													<div class="col-md-6">
                              <h3 lass="form-section">Información del Producto</h3><br>
+                             
+                                 <?php echo form_open("/Productos/EditProduct/", array("method" => "post")); ?>
+                                            <input type="hidden" name="the_id" id="the_id" value="<?php echo $data->id_pro; ?>" />
+                                           
 													   <label class="control-label col-md-3">* Nombre</label>
 														<div class="form-group col-md-9">
-                                     <input required="" type="text" id="" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del Producto">
+                                     <input required="" value="<?php echo $data->nombre; ?>" type="text" id="" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del Producto">
 														</div>
 														<label class="control-label col-md-3">* Color</label>
                                 <div class="form-group col-md-9">
-                                    <select required="" id="select_country" name="txt_color" class="form-control input-circle"> 
-                                        <option value="0">Elige un color</option>
+                                    <select required="" id="select_color" name="txt_color" class="form-control input-circle"> 
+                                   
                                     </select>
                                 </div>
                                  <label class="control-label col-md-3">* Margen</label>
 														<div class="form-group col-md-9">
-                                     <input required="" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Margen">
+                                     <input required="" value="<?php echo $data->margen; ?>" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Margen">
 														</div>
                                  <label class="control-label col-md-3">* Unidad</label>
 					<div class="form-group col-md-9">
-                                            <select required="" id="" name="txt_unidad" class="form-control input-circle">   
-                                                 <option value="0">Elige la unidad</option>
+                                            <select required="" id="select_unidad" name="txt_unidad" class="form-control input-circle">   
+                                                 
                                             </select>
                                         </div>                                                                   
 													</div>
@@ -76,19 +80,20 @@
 														<label class="control-label col-md-3">* Descripción</label>
                             <div class="form-group col-md-9">
                                 <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto">
+                              <?php echo $data->descripcion; ?>
                                 </textarea>
                             </div>
                                 <label class="control-label col-md-3">* SKU</label>
 														<div class="form-group col-md-9">
-                                    <input disabled="disabled" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="SKU del producto">
+                                    <input readonly type="text" id="" name="txt_sku" class="form-control input-circle" placeholder="SKU del producto">
 														</div>
                                 <label class="control-label col-md-3">* Precio</label>
 														<div class="form-group col-md-9">
-                                    <input type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Precio del Producto">
+                                    <input value="<?php echo $data->precio; ?>" type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Precio del Producto">
 														</div>
                                  <label class="control-label col-md-3">* Cantidad</label>
 														<div class="form-group col-md-9">
-                                    <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="cantidad de Productos">
+                                    <input value="<?php echo $data->cantidad; ?>" type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="cantidad de Productos">
 														</div>
 													<!--/span-->
 												    </div>
@@ -97,7 +102,7 @@
                           <a href="<?php echo site_url("/0/productos=view_producto"); ?>" class="btn default">Cancelar</a>
                           <button  id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
 											</div>
-										<!-- FINAL FORM-->
+				 <?php echo form_close(); ?>						<!-- FINAL FORM-->
 									</div>
 						</div>
 					</div>
