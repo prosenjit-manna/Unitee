@@ -71,7 +71,7 @@
                                                                                    $class->load->model("productos/view_producto");
                                                                                    $productos = $class->view_producto->show_products();
                                                                                    foreach ($productos as $prod){
-                                                                                       echo "<tr>";
+                                                                                       echo "<tr id='prod_" . $prod->id ."'>";
                                                                                        echo '<td align="center">
 												<p>' . $prod->sku . '</p>
                                                                                             </td>'
@@ -120,7 +120,7 @@
 												</div>
 												<div class="modal-footer">
 													<button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                                                                                        <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
+                                                                                                        <button type="button" data-dismiss="modal" onclick="delete_product();" class="btn green">Eliminar</button>
 												</div>
 											</div>
 										</div>
