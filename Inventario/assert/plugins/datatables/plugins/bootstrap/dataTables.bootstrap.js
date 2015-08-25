@@ -5,8 +5,8 @@ $.extend(true, $.fn.dataTable.defaults, {
     "language": {
         "lengthMenu": " _MENU_ records ",
         "paginate": {
-            "previous": '<i class="fa fa-angle-left"></i>',
-            "next": '<i class="fa fa-angle-right"></i>'
+            "previous": '<i class="icon-angle-left"></i>',
+            "next": '<i class="icon-angle-right"></i>'
         }
     }
 });
@@ -183,10 +183,10 @@ $.extend($.fn.dataTableExt.oPagination, {
 
             $(nPaging).append(
                 '<ul class="pagination">' +
-                '<li class="prev disabled"><a href="#" title="' + oLang.sFirst + '"><i class="fa fa-angle-double-left"></i></a></li>' +
-                '<li class="prev disabled"><a href="#" title="' + oLang.sPrevious + '"><i class="fa fa-angle-left"></i></a></li>' +
-                '<li class="next disabled"><a href="#" title="' + oLang.sNext + '"><i class="fa fa-angle-right"></i></a></li>' +
-                '<li class="next disabled"><a href="#" title="' + oLang.sLast + '"><i class="fa fa-angle-double-right"></i></a></li>' +
+                '<li class="prev disabled"><a href="#" title="' + oLang.sFirst + '"><i class="icon-angle-double-left"></i></a></li>' +
+                '<li class="prev disabled"><a href="#" title="' + oLang.sPrevious + '"><i class="icon-angle-left"></i></a></li>' +
+                '<li class="next disabled"><a href="#" title="' + oLang.sNext + '"><i class="icon-angle-right"></i></a></li>' +
+                '<li class="next disabled"><a href="#" title="' + oLang.sLast + '"><i class="icon-angle-double-right"></i></a></li>' +
                 '</ul>'
             );
             var els = $('a', nPaging);
@@ -281,9 +281,9 @@ $.extend($.fn.dataTableExt.oPagination, {
 
             $(nPaging).append(
                 '<div class="pagination-panel"> ' + oLang.page + ' ' +
-                '<a href="#" class="btn btn-sm default prev disabled" title="' + oLang.previous + '"><i class="fa fa-angle-left"></i></a>' +
+                '<a href="#" class="btn btn-sm default prev disabled" title="' + oLang.previous + '"><i class="icon-angle-left"></i></a>' +
                 '<input type="text" class="pagination-panel-input form-control input-mini input-inline input-sm" maxlenght="5" style="text-align:center; margin: 0 5px;">' +
-                '<a href="#" class="btn btn-sm default next disabled" title="' + oLang.next + '"><i class="fa fa-angle-right"></i></a> ' +
+                '<a href="#" class="btn btn-sm default next disabled" title="' + oLang.next + '"><i class="icon-angle-right"></i></a> ' +
                 oLang.pageOf + ' <span class="pagination-panel-total"></span>' +
                 '</div>'
             );
