@@ -127,11 +127,5 @@ class view_producto extends CI_Model implements PInterface{
                 ->query($query)
                 ->result();
     }
-    
-    public function delete_product($id){
-       return $this
-               ->db
-               ->delete("producto" , array("id_producto" => $id));
-    }
 }
    

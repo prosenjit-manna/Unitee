@@ -72,7 +72,7 @@
                                                                                    $class->load->model("productos/view_producto");
                                                                                    $productos = $class->view_producto->show_products();
                                                                                    foreach ($productos as $prod){
-                                                                                       echo "<tr id='prod_"  . $prod->id ."'>";
+                                                                                       echo "<tr>";
                                                                                        echo '<td align="center">
 												<p>' . $prod->sku . '</p>
                                                                                             </td>'
@@ -121,7 +121,7 @@
 												</div>
 												<div class="modal-footer">
 													<button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                                                                                        <button type="button" data-dismiss="modal" onclick="delete_product();" clroviderass="btn green">Eliminar</button>
+                                                                                                        <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
 												</div>
 											</div>
 										</div>
@@ -192,21 +192,9 @@
 
         };
         
-          var the_id = function(i){
+            var the_id = function(i){
                     $id = i;
-          };
-          
-          var delete_product = function(){
-              
-               var tasking = new jtask();
-               tasking.url = "<?php echo site_url("/Productos/delete_product"); ?>";
-               tasking.data = { "id" : $id};
-               tasking.success_callback(function(d){
-                    console.log(d);
-                    $("#prod_" + $id ).remove();
-               });
-              tasking.do_task();
-          };
+            };
            
             
             
