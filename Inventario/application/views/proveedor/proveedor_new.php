@@ -53,27 +53,27 @@
                                             <h3 lass="form-section">Información de Contacto</h3><br>
                                             <label class="control-label col-md-3">* Empresa</label>
                                             <div class="form-group col-md-9">
-                                                <input  onkeyup="val();" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
+                                                <input   onkeyup="val();" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
                                             </div>
                                             <label class="control-label col-md-3">* Contacto</label>
                                             <div class="form-group col-md-9">
-                                                <input onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                                <input  onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                                             </div>
                                             <label class="control-label col-md-3">* Teléfono</label>
                                             <div class="form-group col-md-9">
-                                                <input onkeyup="val();" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+                                                <input  onkeyup="val();" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
                                             </div>
                                             <label class="control-label col-md-3">* Celular</label>
                                             <div class="form-group col-md-9">
-                                                <input onkeyup="val();" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                                <input  onkeyup="val();" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
                                             </div>
                                             <label class="control-label col-md-3">Fax</label>
                                             <div class="form-group col-md-9">
-                                                <input type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                                <input  type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
                                             </div>
                                             <label class="control-label col-md-3">* Correo</label>
                                             <div class="form-group col-md-9">
-                                                <input onkeyup="val();" type="text" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+                                                <input  onkeyup="val();" type="email" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
                                             </div>
 
                                         </div>
@@ -82,15 +82,15 @@
                                             <h3 lass="form-section">Dirección</h3><br>
                                             <label class="control-label col-md-4">Local</label>
                                             <div class="form-group col-md-8">
-                                                <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                                <input  type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
                                             </div>
                                             <label class="control-label col-md-4">* Dirección 1</label>
                                             <div class="form-group col-md-8">
-                                                <input type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                                <input  type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                             </div>
                                             <label class="control-label col-md-4">Dirección 2</label>
                                             <div class="form-group col-md-8">
-                                                <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                                <input  type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                                             </div>
                                             <label class="control-label col-md-4">* Pais</label>
                                             <div class="form-group col-md-8">
@@ -208,7 +208,9 @@
                 var telefono = $("#txt_telefono").val();
                 var celular = $("#txt_celular").val();
                 var correo = $("#txt_correo").val();
-                if (empresa == "" || contacto == "" || telefono == "" || celular == "" || correo == "") {
+                
+                if (correo != "") {};
+                if (empresa == "" || contacto == "" || telefono == "" || celular == "" || !isValidEmail(correo)) {
                     document.getElementById("send").disabled = true;
                 }
                 else {
@@ -219,7 +221,12 @@
 
             function load() {
                 document.getElementById("send").disabled = true;
-            }
-            ;
+            };
 
+            function isValidEmail(mail)
+                {
+
+                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
+
+                }
         </script>
