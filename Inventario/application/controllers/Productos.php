@@ -16,21 +16,21 @@ class Productos extends CI_Controller {
      echo json_encode($colores);
            
     }
-      public function get_unidad(){
+     public function get_unidad(){
      
-     $unidades   = $this->New_producto->get_unidad();  
-     echo json_encode($unidades);
+        $unidades   = $this->New_producto->get_unidad();  
+        echo json_encode($unidades);
            
     }
     
-       public function generate_sku(){
+     public function generate_sku(){
      
-     $sku   = $this->New_producto->generate_sku();  
-     echo json_encode($sku);
+             $sku   = $this->New_producto->generate_sku();  
+            echo json_encode($sku);
            
     }
     
-        public function New_Product(){
+     public function New_Product(){
         
         
         $nombre        = $_REQUEST['txt_nombre'];
@@ -61,5 +61,18 @@ class Productos extends CI_Controller {
        }
         
     }
+    
+     public function delete_product(){
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        
+        if(is_null($id)){
+            echo FALSE;
+            exit();
+        }
+        $this->load->model("productos/view_producto");
+        echo $this->view_producto->delete_product($id);
+        exit();
+    }
+
     
 }
