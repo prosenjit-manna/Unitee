@@ -25,13 +25,12 @@ class Conf_producto extends CI_Model implements PInterface{
     var $route          = NULL;
 
     public function __construct() {
-<<<<<<< HEAD
+
         
         $this->load->library("base_url");
 
         $this->route= base_url();
 
-=======
        parent::__construct();
        
        $this->_config = array(
@@ -49,7 +48,7 @@ class Conf_producto extends CI_Model implements PInterface{
         );
        
        $this->load->database();
->>>>>>> 4ce9ed240b08250fc17c30b5814b7fdbf2b18895
+
     }
     
     public function _css() {
