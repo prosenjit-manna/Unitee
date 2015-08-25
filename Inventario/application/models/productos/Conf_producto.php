@@ -22,12 +22,21 @@ class Conf_producto extends CI_Model implements PInterface{
     
     protected $model   = "conf_producto";
 
+    var $route          = NULL;
+
     public function __construct() {
-       
+        
+        $this->load->library("base_url");
+
+        $this->route= base_url();
+
     }
     
     public function _css() {
-        //ACA IRAN TODOS LOS CSS 
+       return array(
+           $this->route . "assert/plugins/bootstrap-colorpicker/css/colorpicker.css",
+           $this->route . "assert/plugins/jquery-minicolors/jquery.minicolors.css"
+       );
     }
 
     public function _init() {
@@ -40,11 +49,17 @@ class Conf_producto extends CI_Model implements PInterface{
     }
 
     public function _js() {
-        //ACA IRAN TODOS LOS JAVASCRIPT
+        //ACA IRAN TODOS LOS JAVASCRIPT 
+         return array(
+            $this->route . "assert/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js",
+            $this->route . "assert/plugins/jquery-minicolors/jquery.minicolors.min.js",
+            $this->route . "assert/plugins/components-form-tools.js",
+            $this->route . "assert/plugins/components-form-tools2.js"
+       );
     }
 
     public function _jsLoader() {
-
+         return array("ComponentsFormTools2.init();");
     }
 
     public function _rols() {
