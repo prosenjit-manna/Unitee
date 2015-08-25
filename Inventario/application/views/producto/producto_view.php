@@ -34,20 +34,10 @@
 					<div class="col-md-12">
 						<!-- BEGIN SAMPLE TABLE PORTLET-->
 						<div class="portlet">
-							<div class="portlet-title">
-								<div class="caption">
-                                                                    <p>Buscar Productos</p>
-								</div>
-								<div class="form-group col-xs-7 col-sm-4 col-md-4">
-                                                                            <div class="input-icon">
-                                                                                    <i class="icon-search"></i>
-                                                                                    <input class="input-circle form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Escribe el nombre del Producto" id="username" name="username"/>
-                                                                            </div>
-                                                                </div>
-							</div>
+							
 							<div class="portlet-body">
 								<div class="table-scrollable">
-									<table class="table table-striped table-bordered table-advance table-hover">
+									<table class="table table-striped table-hover table-bordered" id="products_table">
 									<thead>
 									<tr>
 										<th>
@@ -77,142 +67,40 @@
 									</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td align="center">
-												<p>123231</p>
-											</td>
-											<td align="center">
-												<p> Mike Nilson</p>
-											</td>
-											<td align="center">
-												<p> Rojo</p>
-											</td>
-											<td align="center">
-												<p> 75 YDS</p>
-											</td>
-											<td align="center">
-												<p>25</p>
-											</td>
-											<td align="center">
-												<p>Tela para camisasetasTela para camisasetas</p>
-											</td>
-											<td align="center">
-												<p>$ 10</p>
-											</td>
-											<td align="center">
-												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<td align="center">
-												<p>123231</p>
-											</td>
-											<td align="center">
-												<p> Mike Nilson</p>
-											</td>
-											<td align="center">
-												<p> Rojo</p>
-											</td>
-											<td align="center">
-												<p> 75 YDS</p>
-											</td>
-											<td align="center">
-												<p>25</p>
-											</td>
-											<td align="center">
-												<p>Tela para camisasetasTela para camisasetas</p>
-											</td>
-											<td align="center">
-												<p>$ 10</p>
-											</td>
-											<td align="center">
-												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<td align="center">
-												<p>123231</p>
-											</td>
-											<td align="center">
-												<p> Mike Nilson</p>
-											</td>
-											<td align="center">
-												<p> Rojo</p>
-											</td>
-											<td align="center">
-												<p> 75 YDS</p>
-											</td>
-											<td align="center">
-												<p>25</p>
-											</td>
-											<td align="center">
-												<p>Tela para camisasetasTela para camisasetas</p>
-											</td>
-											<td align="center">
-												<p>$ 10</p>
-											</td>
-											<td align="center">
-												
-												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<td align="center">
-												<p>123231</p>
-											</td>
-											<td align="center">
-												<p> Mike Nilson</p>
-											</td>
-											<td align="center">
-												<p> Rojo</p>
-											</td>
-											<td align="center">
-												<p> 75 YDS</p>
-											</td>
-											<td align="center">
-												<p>25</p>
-											</td>
-											<td align="center">
-												<p>Tela para camisasetasTela para camisasetas</p>
-											</td>
-											<td align="center">
-												<p>$ 10</p>
-											</td>
-											<td align="center">
-												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<td align="center">
-												<p>123231</p>
-											</td>
-											<td align="center">
-												<p> Mike Nilson</p>
-											</td>
-											<td align="center">
-												<p> Rojo</p>
-											</td>
-											<td align="center">
-												<p> 75 YDS</p>
-											</td>
-											<td align="center">
-												<p>25</p>
-											</td>
-											<td align="center">
-												<p>Tela para camisasetasTela para camisasetas</p>
-											</td>
-											<td align="center">
-												<p>$ 10</p>
-											</td>
-											<td align="center">
-												<a href="http://localhost/Unitee/Inventario/0/productos=edit_producto"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-												<a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-											</td>
-										</tr>
+										<?php
+                                                                                   $class = get_instance();
+                                                                                   $class->load->model("productos/view_producto");
+                                                                                   $productos = $class->view_producto->show_products();
+                                                                                   foreach ($productos as $prod){
+                                                                                       echo "<tr>";
+                                                                                       echo '<td align="center">
+												<p>' . $prod->sku . '</p>
+                                                                                            </td>'
+                                                                                       ,'<td align="center">
+												<p>' . $prod->nombre . '</p>
+                                                                                             </td>'
+                                                                                        , '<td align="center">
+												<p>' . $prod->color . '</p>
+                                                                                             </td>'
+                                                                                       ,'<td align="center">
+												<p>' . $prod->margen . '</p>
+                                                                                             </td>'
+                                                                                        , '<td align="center">
+												<p>' . $prod->cantidad . '</p>
+                                                                                             </td>'
+                                                                                        , '<td align="center">
+												<p>' . $prod->descripcion . '</p>
+                                                                                             </td>'
+                                                                                        , '<td align="center">
+												<p>' . $prod->precio . '</p>
+                                                                                             </td>'
+                                                                                        , '<td align="center">
+												<a href="' . site_url("/0/productos=edit_producto?id=" . $prod->id ) . '"><i class="icon-pencil" style="font-size: 20px;"></i></a>
+												<a class="" onclick="the_id(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                                                             </td>';
+                                                                                        echo "</tr>";
+                                                                                   }
+                                                                                ?>
 									</tbody>
                                                                         </table>
 									<div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
@@ -226,7 +114,7 @@
 													<div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
 														<div class="row">
 															<div class="col-md-12">
-                                                                                                                            <h4>¿Deseas eliminar $name_producto de tu lista de productos?</h4>
+                                                                                                                            <h4>¿Deseas eliminar  de tu lista de productos?</h4>
 															</div>
 														</div>
 													</div>
@@ -250,3 +138,64 @@
 
 	</div>
 </div>
+        <script>
+            
+            var $id     = null;
+            
+            var table_loader = function(){
+
+            var table = $('#products_table');
+
+            var oTable = table.dataTable({
+
+
+            "lengthMenu": [
+                [5, 15],
+                [5, 10] // change per page values here
+            ],
+
+          
+            "pageLength": 5,
+
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                },
+                "emptyTable": "No data available in table",
+                "info": "Mostrando _START_ a _END_ de un _TOTAL_ productos",
+                "infoEmpty": "No se ha encontrado productos ...",
+                "infoFiltered": "(filtered1 from _MAX_ total records)",
+                "lengthMenu": "Mostrar _MENU_ Productos",
+                "search": "<b>Buscar Productos :</b> ",
+                "zeroRecords": "Ningun producto encontrado ...",
+                "paginate": {
+                    "previous":"anterior",
+                    "next": "siguiente",
+                    "last": "ultimo",
+                    "first": "primero"
+                }
+            },
+            "columnDefs": [{ // set default column settings
+                'orderable': true,
+                'targets': [0]
+            }, {
+                "searchable": true,
+                "targets": [0]
+            }],
+            "order": [
+                [0, "asc"]
+            ] // set first column as a default sort by asc
+        });
+        
+          
+
+        };
+        
+            var the_id = function(i){
+                    $id = i;
+            };
+           
+            
+            
+        </script>

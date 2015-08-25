@@ -383,12 +383,10 @@ class Dashboard extends CI_Controller {
     }
     
     public function modulos(){
-        
         $this->load->library("plugin");
-        echo "<pre>";
-        print_r($this->plugin->_show());
-        echo "</pre>";
+        return $this->plugin->_show();
     }
+    
     
     public function getsession(){
         echo "<pre>";

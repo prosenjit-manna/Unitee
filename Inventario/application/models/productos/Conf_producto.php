@@ -23,7 +23,23 @@ class Conf_producto extends CI_Model implements PInterface{
     protected $model   = "conf_producto";
 
     public function __construct() {
+       parent::__construct();
        
+       $this->_config = array(
+                "version"       => 1.0,
+                "author"        => "Lieison S.A de C.V",
+                "type"          => "plugin",
+                "name"          => "Configurar Producto",
+                "description"   => "Modulo para editar producto",
+                "id_model"      => "003",
+                "id_update"     => "004",
+                "update"        => "",
+                "license"       => "",
+                "controller"    => "",
+                "view"          => "producto/producto_edit"
+        );
+       
+       $this->load->database();
     }
     
     public function _css() {
