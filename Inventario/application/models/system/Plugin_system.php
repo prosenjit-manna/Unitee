@@ -5,9 +5,9 @@ get_instance()->load->interfaces("Interface");
 
 class Plugin_system extends CI_Model implements PInterface {
 
-    var $count = 0;
-    var $data = array();
-    var $route = NULL;
+    var $count      = 0;
+    var $data       = array();
+    var $route      = NULL;
 
     public function __construct() {
         parent::__construct();
@@ -35,13 +35,13 @@ class Plugin_system extends CI_Model implements PInterface {
 
     public function _js() {
         return array(
-            $this->route . "assert/plugins/bootstrap-gtreetable/bootstrap-gtreetable.min.js",
-            $this->route . "assert/system/table-tree.js"
+            $this->route . "assert/plugins/bootstrap-gtreetable/bootstrap-gtreetable.min.js"
+          
         );
     }
 
     public function _jsLoader() {
-        return array('TableTree.init();');
+        return array('plugins_system.init();');
     }
 
     public function _rols() {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html lang="es" class="no-js">
+<html lang="es">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
