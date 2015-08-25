@@ -62,8 +62,6 @@ jQuery(document).ready(function() {
         Tasks.initDashboardWidget();
         UIToastr.init();
         
-        
-        
    }catch(ex){
         console.log("Error al momento de cargar ... " + ex.message);
    }

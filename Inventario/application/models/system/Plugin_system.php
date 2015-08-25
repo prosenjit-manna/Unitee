@@ -5,9 +5,9 @@ get_instance()->load->interfaces("Interface");
 
 class Plugin_system extends CI_Model implements PInterface {
 
-    var $count = 0;
-    var $data = array();
-    var $route = NULL;
+    var $count      = 0;
+    var $data       = array();
+    var $route      = NULL;
 
     public function __construct() {
         parent::__construct();
@@ -38,6 +38,8 @@ class Plugin_system extends CI_Model implements PInterface {
 
     public function _js() {
         return array(
+            $this->route . "assert/plugins/bootstrap-gtreetable/bootstrap-gtreetable.min.js"
+          
             $this->route . "assert/plugins/select2/select2.min.js",
             $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.min.js",
             $this->route . "assert/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js",
@@ -50,6 +52,7 @@ class Plugin_system extends CI_Model implements PInterface {
 
     public function _jsLoader() {
         return array('TableAdvanced.init();');
+        return array('plugins_system.init();');
     }
 
     public function _rols() {

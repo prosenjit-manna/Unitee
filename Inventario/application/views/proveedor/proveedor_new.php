@@ -53,27 +53,27 @@
                                             <h3 lass="form-section">Información de Contacto</h3><br>
                                             <label class="control-label col-md-3">* Empresa</label>
                                             <div class="form-group col-md-9">
-                                                <input required="" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
+                                                <input   onkeyup="val();" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
                                             </div>
                                             <label class="control-label col-md-3">* Contacto</label>
                                             <div class="form-group col-md-9">
-                                                <input required="" type="text" id="" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                                <input  onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                                             </div>
                                             <label class="control-label col-md-3">* Teléfono</label>
                                             <div class="form-group col-md-9">
-                                                <input required="" type="text" id="" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+                                                <input  onkeyup="val();" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
                                             </div>
                                             <label class="control-label col-md-3">* Celular</label>
                                             <div class="form-group col-md-9">
-                                                <input required="" type="text" id="" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                                <input  onkeyup="val();" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
                                             </div>
                                             <label class="control-label col-md-3">Fax</label>
                                             <div class="form-group col-md-9">
-                                                <input type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                                <input  type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
                                             </div>
                                             <label class="control-label col-md-3">* Correo</label>
                                             <div class="form-group col-md-9">
-                                                <input required="" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+                                                <input  onkeyup="val();" type="email" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
                                             </div>
 
                                         </div>
@@ -82,29 +82,29 @@
                                             <h3 lass="form-section">Dirección</h3><br>
                                             <label class="control-label col-md-4">Local</label>
                                             <div class="form-group col-md-8">
-                                                <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                                <input  type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
                                             </div>
                                             <label class="control-label col-md-4">* Dirección 1</label>
                                             <div class="form-group col-md-8">
-                                                <input required="" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                                <input  type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                             </div>
                                             <label class="control-label col-md-4">Dirección 2</label>
                                             <div class="form-group col-md-8">
-                                                <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                                <input  type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                                             </div>
                                             <label class="control-label col-md-4">* Pais</label>
                                             <div class="form-group col-md-8">
-                                                <select required="" id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">                     
+                                                <select id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">                     
                                                 </select>
                                             </div>
                                             <label class="control-label col-md-4">* Departamento</label>
                                             <div class="form-group col-md-8">
-                                                <select required="" onchange="get_municipio(this.value);" id="select_depto" name="txt_depto" class="form-control input-circle">                        
+                                                <select onchange="get_municipio(this.value);" id="select_depto" name="txt_depto" class="form-control input-circle">                        
                                                 </select>
                                             </div>
                                             <label class="control-label col-md-4">* Ciudad</label>
                                             <div class="form-group col-md-8">
-                                                <select required="" id="select_city" class="form-control input-circle" name="txt_ciudad">                          
+                                                <select id="select_city" class="form-control input-circle" name="txt_ciudad">                          
                                                 </select>
                                             </div>
 
@@ -115,13 +115,13 @@
                                         </div>
                                         <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                                         <div class="form-group col-md-9">
-                                            <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
+                                            <textarea id="txt_descripcion" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
                                             </textarea>
                                         </div>
                                     </div>
                                     <div class="form-actions right">
                                         <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                                        <button  id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                                        <button id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                                     </div>
                                     <?php echo form_close(); ?>
                                     <!-- FINAL FORM-->
@@ -201,5 +201,32 @@
                 });
                 tasking.do_task();
             };
+            function val() {
 
+                var empresa = $("#txt_empresa").val();
+                var contacto = $("#txt_contacto").val();
+                var telefono = $("#txt_telefono").val();
+                var celular = $("#txt_celular").val();
+                var correo = $("#txt_correo").val();
+                
+                if (correo != "") {};
+                if (empresa == "" || contacto == "" || telefono == "" || celular == "" || !isValidEmail(correo)) {
+                    document.getElementById("send").disabled = true;
+                }
+                else {
+                    document.getElementById("send").disabled = false;
+                }
+            }
+            ;
+
+            function load() {
+                document.getElementById("send").disabled = true;
+            };
+
+            function isValidEmail(mail)
+                {
+
+                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
+
+                }
         </script>
