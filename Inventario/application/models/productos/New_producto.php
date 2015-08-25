@@ -45,6 +45,7 @@ class New_producto extends CI_Model  implements PInterface {
     }
 
     public function _init() {
+        
         $this->load->helper("form");
         $this->load->view("producto/producto_new" , array("dump" => $this->_Getconfig()));
     }
@@ -58,7 +59,7 @@ class New_producto extends CI_Model  implements PInterface {
     }
 
     public function _jsLoader() {
-         return array("load_colors();","load_unidad();");
+         return array("load_colors();","load_unidad();","generate_SKU();","validate_price();");
     }
 
     public function _rols() {
@@ -107,6 +108,35 @@ class New_producto extends CI_Model  implements PInterface {
        
     }
     
+    
+    public function generate_sku(){
+   
+      $this->query = "select id_producto as 'id' from producto
+       ORDER BY  id DESC LIMIT 1 " ;
+      return $this->db
+                  ->query($this->query)
+                  ->result();
+       
+    }
+    
+       public function new_product($nombre,$color ,$margen,$unidad , $sku ,$descripcion , $precio , $cantidad){
+         
+        $date   = new DateTime("now");
+        $current_d  = $date->format("Y-m-d H:m:s");
+        
+        return $this->db->insert("producto" , array(
+            "id_unidad"         => $unidad,
+            "id_color"          => $color,
+            "margen"            => $margen,
+            "nombre"            => $nombre,
+            "descripcion"       => $descripcion,
+            "sku"               => $sku,
+            "precio_est_unidad" => $precio,
+            "cantidad"          => $cantidad,
+            "date"              => $current_d
+            
+        ));
+    }
 
     public function _widgets() {
         
