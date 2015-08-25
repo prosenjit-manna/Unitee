@@ -117,7 +117,8 @@ class view_producto extends CI_Model implements PInterface{
                   concat(producto.margen , ' ' , unidad.nombre ) as 'margen',
                   producto.cantidad as 'cantidad',
                   producto.descripcion as 'descripcion',
-                  producto.precio as 'precio' 
+                  producto.precio as 'precio' ,
+                  producto.precio_est_unidad as 'estimado'
                   FROM producto 
                   INNER JOIN color ON color.id_color=producto.id_color
                   INNER JOIN unidad ON unidad.id_unidad=producto.id_unidad
