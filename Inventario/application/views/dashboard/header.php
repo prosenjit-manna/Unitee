@@ -51,7 +51,7 @@
 
 <!-- BEGIN THEME STYLES -->
 <link href="<?php echo $route;?>assert/dashboard/css/components.css" rel="stylesheet" type="text/css"/>
-<link href="<?php echo $route;?>assert/dashboard/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo $route;?>assert/dashboard/css/plugins.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>assert/dashboard/css/layout.css" rel="stylesheet" type="text/css"/>
 <link href="<?php echo $route;?>assert/dashboard/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 <link href="<?php echo $route;?>assert/dashboard/css/custom.css" rel="stylesheet" type="text/css"/>

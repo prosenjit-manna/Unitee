@@ -18,7 +18,10 @@ class Plugin_system extends CI_Model implements PInterface {
 
     public function _css() {
         return array(
-            $this->route . "assert/plugins/bootstrap-gtreetable/bootstrap-gtreetable.min.css"
+            $this->route . "assert/plugins/select2/select2.css",
+            $this->route . "assert/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css",
+            $this->route . "assert/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css",
+            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"
         );
     }
 
@@ -35,13 +38,18 @@ class Plugin_system extends CI_Model implements PInterface {
 
     public function _js() {
         return array(
-            $this->route . "assert/plugins/bootstrap-gtreetable/bootstrap-gtreetable.min.js",
-            $this->route . "assert/system/table-tree.js"
+            $this->route . "assert/plugins/select2/select2.min.js",
+            $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.min.js",
+            $this->route . "assert/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js",
+            $this->route . "assert/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js",
+            $this->route . "assert/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js",
+            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
+            $this->route . "assert/system/table-advanced.js"
         );
     }
 
     public function _jsLoader() {
-        return array('TableTree.init();');
+        return array('TableAdvanced.init();');
     }
 
     public function _rols() {
