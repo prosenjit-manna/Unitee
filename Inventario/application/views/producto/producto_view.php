@@ -1,5 +1,3 @@
-
-
 <!-- INICIO CONTENIDO -->
 	<div class="page-content-wrapper">
 
@@ -198,9 +196,6 @@
             };
            
             
-            
-=======
-
 <!-- INICIO CONTENIDO -->
 	<div class="page-content-wrapper">
 
