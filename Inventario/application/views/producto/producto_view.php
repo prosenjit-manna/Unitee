@@ -174,8 +174,8 @@
                     "info": "Mostrando _START_ a _END_ de un _TOTAL_ productos",
                     "infoEmpty": "No se ha encontrado productos ...",
                     "infoFiltered": "(filtered1 from _MAX_ total records)",
-                    "lengthMenu": "Mostrar _MENU_ Productos",
-                    "search": "<b>Buscar Productos :</b> ",
+                    "lengthMenu": "Mostar _MENU_ Productos",
+                    "search": "Buscar:",
                     "zeroRecords": "Ningun producto encontrado ..."
 
                 },
