@@ -19,6 +19,37 @@
 <div class="page-content-wrapper">
     <div class="page-content">
         <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <?php
+                    if (isset($_REQUEST['opps'])):
+                        switch ($_REQUEST['opps']):
+                            case 0:
+                                echo '<div class="alert alert-success" role="alert">
+                                                <p><b>Contraseña Cambiada con exito</b></p></div>';
+
+                                break;
+                            case 1:
+                                echo '<div class="alert alert-warning" role="alert">
+                                                <p><b>Lo sentimos , Tu contraseña actual es incorrecta .</b></p></div>';
+                                break;
+                            case 2:
+                                echo '<div class="alert alert-warning" role="alert">
+                                                <p><b>Lo sentimos , Hubo un error intente mas tarde</b></p></div>';
+                                break;
+                            case 3:
+                                echo '<div class="alert alert-success" role="alert">
+                                                <p><b>Avatar cambiado con exito</b></p></div>';
+                                break;
+                            case 4:
+                                echo '<div class="alert alert-warning" role="alert">
+                                                <p><b>Hubo un error al momento de guardar la imagen</b></p></div>';
+                                break;
+                            case 5:
+                                echo '<div class="alert alert-warning" role="alert">
+                                                <p><b>Lo sentimos la image debe de ser menor a un mega byte (1Mb)</b><(p></div>';
+                                break;
+                        endswitch;
+                    endif;
+                 ?>
         <h3 class="page-title">
             Unitee - Perfil 
         </h3>
@@ -95,37 +126,6 @@
 
                 </div>
                 <div class="col-md-9 ">
-                    <?php
-                    if (isset($_REQUEST['opps'])):
-                        switch ($_REQUEST['opps']):
-                            case 0:
-                                echo '<div class="alert alert-success" role="alert">
-                                                <p><b>Contraseña Cambiada con exito</b></p></div>';
-
-                                break;
-                            case 1:
-                                echo '<div class="alert alert-warning" role="alert">
-                                                <p><b>Lo sentimos , Tu contraseña actual es incorrecta .</b></p></div>';
-                                break;
-                            case 2:
-                                echo '<div class="alert alert-warning" role="alert">
-                                                <p><b>Lo sentimos , Hubo un error intente mas tarde</b></p></div>';
-                                break;
-                            case 3:
-                                echo '<div class="alert alert-success" role="alert">
-                                                <p><b>Avatar cambiado con exito</b></p></div>';
-                                break;
-                            case 4:
-                                echo '<div class="alert alert-warning" role="alert">
-                                                <p><b>Hubo un error al momento de guardar la imagen</b></p></div>';
-                                break;
-                            case 5:
-                                echo '<div class="alert alert-warning" role="alert">
-                                                <p><b>Lo sentimos la image debe de ser menor a un mega byte (1Mb)</b><(p></div>';
-                                break;
-                        endswitch;
-                    endif;
-                    ?>
                     <div class="tab-content class_tbody ">
                         <div id="tab_1-1" class="tab-pane active">
                             <form role="form">

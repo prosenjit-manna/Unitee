@@ -33,9 +33,14 @@
 					<div class="col-md-12">
 						<!-- BEGIN SAMPLE TABLE PORTLET-->
 						<div class="portlet">
-							
+							 <div class="portlet-title">
+	                            <div class="caption font-green-sharp">
+	                                <i class="icon-speech font-green-sharp"></i>
+	                                <span class="caption-subject bold uppercase"> Lista de Productos</span>
+	                            </div>                       
+	                        </div>
 							<div class="portlet-body">
-								<div class="table-scrollable">
+								<div class="">
 									<table class="table table-striped table-hover table-bordered" id="products_table">
 									<thead>
 									<tr>
@@ -104,7 +109,6 @@
                                                                                         echo '<td align="center">
 												<a title="editar producto" href="' . site_url("/0/productos=edit_producto?id=" . $prod->id ) . '"><i class="icon-pencil" style="font-size: 20px;"></i></a>
 												<a title="eliminar producto " class="" onclick="the_id(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                                                                                <a title="activar/desactivar" alt="activar/descativar" id="show_' . $prod->id . '" class="" onclick="prod_status(' . $prod->id . ');"  href="#"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
                                                                                              </td>';
                                                                                         echo "</tr>";
                                                                                    }
