@@ -30,7 +30,7 @@
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <!-- INICIO PAGE CONTENT-->
-            <div class="row scroller" style="height:470px" data-rail-visible="1" >
+            <div class="row scroller" style="height:440px" data-rail-visible="1" >
 
                 <?php
                 $err_message = array(
