@@ -24,28 +24,28 @@
                         switch ($_REQUEST['opps']):
                             case 0:
                                 echo '<div class="alert alert-success" role="alert">
-                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p><b>Contraseña Cambiada con exito</b></p></div>';
+                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Contraseña Cambiada con exito</p></div>';
 
                                 break;
                             case 1:
                                 echo '<div class="alert alert-warning" role="alert">
-                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p><b>Lo sentimos , Tu contraseña actual es incorrecta .</b></p></div>';
+                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Lo sentimos , Tu contraseña actual es incorrecta .</p></div>';
                                 break;
                             case 2:
                                 echo '<div class="alert alert-warning" role="alert">
-                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p><b>Lo sentimos , Hubo un error intente mas tarde</b></p></div>';
+                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Lo sentimos , Hubo un error intente mas tarde</p></div>';
                                 break;
                             case 3:
                                 echo '<div class="alert alert-success" role="alert">
-                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p><b>Avatar cambiado con exito</b></p></div>';
+                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Avatar cambiado con exito</p></div>';
                                 break;
                             case 4:
                                 echo '<div class="alert alert-warning" role="alert">
-                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p><b>Hubo un error al momento de guardar la imagen</b></p></div>';
+                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Hubo un error al momento de guardar la imagen</p></div>';
                                 break;
                             case 5:
                                 echo '<div class="alert alert-warning" role="alert">
-                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p><b>Lo sentimos la image debe de ser menor a un mega byte (1Mb)</b><(p></div>';
+                                                <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Lo sentimos la image debe de ser menor a un (1Mb)</p></div>';
                                 break;
                         endswitch;
                     endif;
