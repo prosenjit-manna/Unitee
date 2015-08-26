@@ -89,13 +89,22 @@
                                                                                              </td>'
                                                                                         , '<td align="center">
 												<p>' . $prod->descripcion . '</p>
-                                                                                             </td>'
-                                                                                        , '<td align="center">
-												<p>' . $prod->precio . '</p>
-                                                                                             </td>'
-                                                                                        , '<td align="center">
-												<a href="' . site_url("/0/productos=edit_producto?id=" . $prod->id ) . '"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-												<a class="" onclick="the_id(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                                                             </td>';
+                                                                                        
+                                                                                        if($prod->precio == NULL){
+                                                                                            echo '<td align="center">
+												<p>$' . $prod->estimado . '</p>
+                                                                                             </td>';
+                                                                                        }else{
+                                                                                            echo '<td align="center">
+												<p>$' . $prod->precio . '</p>
+                                                                                             </td>';
+                                                                                        }
+                                                                                       
+                                                                                        echo '<td align="center">
+												<a title="editar producto" href="' . site_url("/0/productos=edit_producto?id=" . $prod->id ) . '"><i class="icon-pencil" style="font-size: 20px;"></i></a>
+												<a title="eliminar producto " class="" onclick="the_id(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                                                                <a title="activar/desactivar" alt="activar/descativar" id="show_' . $prod->id . '" class="" onclick="prod_status(' . $prod->id . ');"  href="#"><i class="icon-eye-open" style="font-size: 20px;"></i></a>
                                                                                              </td>';
                                                                                         echo "</tr>";
                                                                                    }
@@ -167,13 +176,8 @@
                 "infoFiltered": "(filtered1 from _MAX_ total records)",
                 "lengthMenu": "Mostrar _MENU_ Productos",
                 "search": "<b>Buscar Productos :</b> ",
-                "zeroRecords": "Ningun producto encontrado ...",
-                "paginate": {
-                    "previous":"anterior",
-                    "next": "siguiente",
-                    "last": "ultimo",
-                    "first": "primero"
-                }
+                "zeroRecords": "Ningun producto encontrado ..."
+               
             },
             "columnDefs": [{ // set default column settings
                 'orderable': true,
