@@ -32,8 +32,8 @@
 
             <!-- INICIO PAGE CONTENT-->
             <div class="row scroller" style="height:450px" data-rail-visible="1" >
-
                 <!-- INICIO Portlet PORTLET-->
+            <div class="portlet">  
                 <div class="portlet light">
                     <div class="portlet-title">
                         <div class="caption font-green-sharp">
@@ -133,13 +133,11 @@
 
                 <!-- FINAL PAGE CONTENTENIDO-->
             </div>
+            </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
-
         </div>
-
         <!-- FINAL CONTENIDO -->
         <script>
-
             var load_paises = function () {
                 var tasking = new jtask();
                 tasking.url = "<?php echo site_url("/c/2"); ?>";
@@ -160,8 +158,7 @@
                 });
                 tasking.do_task();
             };
-
-
+            
             var get_depto = function (iso) {
                 var tasking = new jtask();
                 tasking.url = "<?php echo site_url("/country/GetDepto/"); ?>";

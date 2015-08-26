@@ -36,7 +36,7 @@
                         <div class="portlet-title">
                             <div class="caption font-green-sharp">
                                 <i class="icon-speech font-green-sharp"></i>
-                                <span class="caption-subject bold uppercase"> LISTA DE PROVEEDORES</span>
+                                <span class="caption-subject bold uppercase"> Lista de Proveedores</span>
                             </div>                       
                         </div><br>
                         <div class="portlet-body">

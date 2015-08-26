@@ -44,78 +44,80 @@
                 }
                 ?> 	
                 <!-- INICIO Portlet PORTLET-->
-                <div class="portlet light">
-                    <div class="portlet-title">
-                        <div class="caption font-green-sharp">
-                            <i class="icon-speech font-green-sharp"></i>
-                            <span class="caption-subject">Nuevo Producto</span>
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <div class="portlet-body form">
-                            <!-- INICIO FORM-->
-                            <?php echo form_open("/Productos/New_Product/", array("method" => "post")); ?>
-
-                            <div class="form-body">
-                                <div class="row">
-                                    <h5 lass="form-section">Los campos con * son Requeridos</h5>
-                                    <div class="col-md-6">
-                                        <h3 lass="form-section">Información del Producto</h3><br>
-                                        <label class="control-label col-md-3">* Nombre</label>
-                                        <div class="form-group col-md-9">
-                                            <input required="" type="text" id="name_" onchange = "generate_SKU();" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del Producto">
-                                        </div>
-                                        <label class="control-label col-md-3">* Color</label>
-                                        <div class="form-group col-md-9">
-                                            <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
-                                                <option selected="true" value="0">Elige un color</option>
-                                            </select>
-                                        </div>
-                                        <label class="control-label col-md-3">* Margen</label>
-                                        <div class="form-group col-md-9">
-                                            <input required="" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Margen">
-                                            <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
-                                        </div>
-                                        <label class="control-label col-md-3">* Unidad</label>
-                                        <div class="form-group col-md-9">
-                                            <select required="true" id="select_unidad" name="txt_unidad" class="form-control input-circle">
-                                                <option selected="true"  value="0">Elige la unidad</option>
-                                            </select>
-                                        </div>                                                                   
-                                    </div>
-                                    <!--/span-->
-                                    <div class="col-md-6">
-                                        <br><br><br><br>
-                                        <label class="control-label col-md-3">* Descripción</label>
-                                        <div class="form-group col-md-9">
-                                            <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto">
-                                            </textarea>
-                                        </div>
-                                        <label class="control-label col-md-3">* SKU</label>
-                                        <div class="form-group col-md-9">
-                                            <input readonly="" type="text" id="SKU" name="txt_sku" class="form-control input-circle" placeholder="SKU del Producto">
-                                        </div>
-                                        <label class="control-label col-md-3">* Precio</label>
-                                        <div class="form-group col-md-9">
-                                            <input type="text" onchange="validate_price();" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
-                                        </div>
-                                        <label class="control-label col-md-3">* Cantidad</label>
-                                        <div class="form-group col-md-9">
-                                            <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
-                                        </div>
-                                        <!--/span-->
-                                    </div>
-                                </div>
-                                <div class="form-actions right">
-                                    <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                                    <button  id="send" name="send"  disabled="disable" type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
-                                </div>
-                                <!-- FINAL FORM-->
-                                <?php echo form_close(); ?>
+                <div class="portlet">
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption font-green-sharp">
+                                <i class="icon-speech font-green-sharp"></i>
+                                <span class="caption-subject bold uppercase">Nuevo Producto</span>
                             </div>
                         </div>
+                        <div class="portlet-body">
+                            <div class="portlet-body form">
+                                <!-- INICIO FORM-->
+                                <?php echo form_open("/Productos/New_Product/", array("method" => "post")); ?>
+
+                                <div class="form-body">
+                                    <div class="row">
+                                        <h5 lass="form-section">Los campos con * son Requeridos</h5>
+                                        <div class="col-md-6">
+                                            <h3 lass="form-section">Información del Producto</h3><br>
+                                            <label class="control-label col-md-3">* Nombre</label>
+                                            <div class="form-group col-md-9">
+                                                <input required="" type="text" id="name_" onchange = "generate_SKU();" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del Producto">
+                                            </div>
+                                            <label class="control-label col-md-3">* Color</label>
+                                            <div class="form-group col-md-9">
+                                                <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
+                                                    <option selected="true" value="0">Elige un color</option>
+                                                </select>
+                                            </div>
+                                            <label class="control-label col-md-3">* Margen</label>
+                                            <div class="form-group col-md-9">
+                                                <input required="" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Margen">
+                                                <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
+                                            </div>
+                                            <label class="control-label col-md-3">* Unidad</label>
+                                            <div class="form-group col-md-9">
+                                                <select required="true" id="select_unidad" name="txt_unidad" class="form-control input-circle">
+                                                    <option selected="true"  value="0">Elige la unidad</option>
+                                                </select>
+                                            </div>                                                                   
+                                        </div>
+                                        <!--/span-->
+                                        <div class="col-md-6">
+                                            <br><br><br><br>
+                                            <label class="control-label col-md-3">* Descripción</label>
+                                            <div class="form-group col-md-9">
+                                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto">
+                                                </textarea>
+                                            </div>
+                                            <label class="control-label col-md-3">* SKU</label>
+                                            <div class="form-group col-md-9">
+                                                <input readonly="" type="text" id="SKU" name="txt_sku" class="form-control input-circle" placeholder="SKU del Producto">
+                                            </div>
+                                            <label class="control-label col-md-3">* Precio</label>
+                                            <div class="form-group col-md-9">
+                                                <input type="text" onchange="validate_price();" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                            </div>
+                                            <label class="control-label col-md-3">* Cantidad</label>
+                                            <div class="form-group col-md-9">
+                                                <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                    </div>
+                                    <div class="form-actions right">
+                                        <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
+                                        <button  id="send" name="send"  disabled="disable" type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                                    </div>
+                                    <!-- FINAL FORM-->
+                                    <?php echo form_close(); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FINAL Portlet PORTLET-->
                     </div>
-                    <!-- FINAL Portlet PORTLET-->
                 </div>
 
                 <!-- FINAL PAGE CONTENTENIDO-->
