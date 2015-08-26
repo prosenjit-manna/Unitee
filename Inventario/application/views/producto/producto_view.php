@@ -93,11 +93,11 @@
                                                                                         
                                                                                         if($prod->precio == NULL){
                                                                                             echo '<td align="center">
-												<p>' . $prod->estimado . '</p>
+												<p>$' . $prod->estimado . '</p>
                                                                                              </td>';
                                                                                         }else{
                                                                                             echo '<td align="center">
-												<p>' . $prod->precio . '</p>
+												<p>$' . $prod->precio . '</p>
                                                                                              </td>';
                                                                                         }
                                                                                        
