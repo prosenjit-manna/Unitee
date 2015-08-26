@@ -27,13 +27,13 @@
         <div class="page-content-wrapper">
             <!-- INICIO PAGE CONTENT-->
             <div class="row scroller" style="height:450px" data-rail-visible="1" >
-                <div class="col-md-12">
+                <div class="portlet">
                     <!-- INICIO Portlet PORTLET-->
                     <div class="portlet light">
                         <div class="portlet-title">
                             <div class="caption font-green-sharp">
                                 <i class="icon-speech font-green-sharp"></i>
-                                <span class="caption-subject">Configuración de Productos</span>
+                                <span class="caption-subject bold uppercase">Configuración de Productos</span>
                             </div>
                         </div>
                         <div class="portlet-body">

@@ -18,7 +18,7 @@
 
 
             if (isset($_REQUEST['msj'])) {
-                echo '<div class="alert alert-block alert-success fade in"><p>'
+                echo '<div class="alert alert-block alert-success fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>'
                 . $type_message[$_REQUEST['msj']]
                 . $err_message[$_REQUEST['err']] ? : NULL . '</p></div>';
             }
