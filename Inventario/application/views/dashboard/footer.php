@@ -35,6 +35,7 @@
 <script src="<?php echo $route;?>assert/dashboard/js/quick-sidebar.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/dashboard/js/demo.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/dashboard/js/index.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>assert/plugins/ui-general.js" type="text/javascript"></script>
 
 <!--LIBRERIA EN LA CUAL SUSTITUYE AJAX COMO GESTOR DE PROCESOS DE SEGUNDO PLANO : PRIORIDAD DEL SISTEMA  -->
 <script src="<?php echo $route;?>assert/dashboard/jstask/task.js" type="text/javascript"></script>
