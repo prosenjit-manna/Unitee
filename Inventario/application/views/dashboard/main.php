@@ -14,15 +14,14 @@
                               );
                               
                               $err_message = array(
-                                  0     => "  Agregado con Exito&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                  <a href='" . site_url("/0/proveedor=new_proveedor") .  "' class='btn default input-circle'>Agregar Nuevo Proveedor</a>",
-                                  1     => "  No se pudo guardar los cambios ,  favor intentar denuevo."
+                                  0     => "  Agregado con Exito",/*<a href='" . site_url("/0/proveedor=new_proveedor") .  "' class='btn default input-circle'>Agregar Nuevo Proveedor</a>*/
+                                  1     => "  No se pudo guardar los cambios ,  favor intentar de nuevo."
                               );
                              
                               
                               if(isset($_REQUEST['msj'])){
-                                  echo '<div class="alert alert-block alert-warning fade in"><p><b>¡Alerta! (' 
-                                  . $type_message[$_REQUEST['msj']] . ')</b>' 
+                                  echo '<div class="alert alert-block alert-success fade in"><p>' 
+                                  . $type_message[$_REQUEST['msj']] 
                                   . $err_message[$_REQUEST['err']] ? : NULL . '</p></div>';
                               }
                              
@@ -63,7 +62,7 @@
             var t = $.trim(request);
             var $peticiones = $("#peticiones");
             if(t==0 || t== '0'){
-               $peticiones.append('<div class="alert alert-block alert-warning fade in"><p><b>¡Alerta!</b>Tienes que cambiar tu contraseña</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo site_url("/0/user=user_profile"); ?>" class="btn default input-circle">Cambiar Contraseña</a></div>');
+               $peticiones.append('<div class="alert alert-block alert-warning fade in"><p>Tienes que cambiar tu contraseña</p></div>');/*<a href="<?php echo site_url("/0/user=user_profile"); ?>" class="btn default input-circle">Cambiar Contraseña</a>*/
             }
         });
         tasking.do_task();

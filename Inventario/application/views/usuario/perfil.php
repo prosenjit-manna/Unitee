@@ -100,28 +100,28 @@
                         switch ($_REQUEST['opps']):
                             case 0:
                                 echo '<div class="alert alert-success" role="alert">
-                                                <a href="#" class="alert-link">Contraseña Cambiada con exito</a></div>';
+                                                <p><b>Contraseña Cambiada con exito</b></p></div>';
 
                                 break;
                             case 1:
                                 echo '<div class="alert alert-warning" role="alert">
-                                                <a href="#" class="alert-link">Lo sentimos , Tu contraseña actual es incorrecta .</a></div>';
+                                                <p><b>Lo sentimos , Tu contraseña actual es incorrecta .</b></p></div>';
                                 break;
                             case 2:
                                 echo '<div class="alert alert-warning" role="alert">
-                                                <a href="#" class="alert-link">Lo sentimos , Hubo un error intente mas tarde</a></div>';
+                                                <p><b>Lo sentimos , Hubo un error intente mas tarde</b></p></div>';
                                 break;
                             case 3:
                                 echo '<div class="alert alert-success" role="alert">
-                                                <a href="#" class="alert-link">Avatar cambiado con exito</a></div>';
+                                                <p><b>Avatar cambiado con exito</b></p></div>';
                                 break;
                             case 4:
                                 echo '<div class="alert alert-warning" role="alert">
-                                                <a href="#" class="alert-link">Hubo un error al momento de guardar la imagen</a></div>';
+                                                <p><b>Hubo un error al momento de guardar la imagen</b></p></div>';
                                 break;
                             case 5:
                                 echo '<div class="alert alert-warning" role="alert">
-                                                <a href="#" class="alert-link">Lo sentimos la image debe de ser menor a un mega byte (1Mb)/a></div>';
+                                                <p><b>Lo sentimos la image debe de ser menor a un mega byte (1Mb)</b><(p></div>';
                                 break;
                         endswitch;
                     endif;

@@ -59,13 +59,13 @@ class View_proveedor extends CI_Model implements PInterface{
         
         $config["base_url"]             = base_url() . "/0/proveedor=view_proveedor";
         $config["total_rows"]           = $count_;
-        $config["per_page"]             = 6;
+        $config["per_page"]             = 5;
         $config["uri_segment"]          = 3;
         $config['page_query_string']    = TRUE;
-        $config['prev_link']            = 'Anterior';
+        $config['prev_link']            = '&lt;';
         $config['prev_tag_open']        = '<li>';
         $config['prev_tag_close']       = '</li>';
-        $config['next_link']            = 'Siguiente';
+        $config['next_link']            = '&gt;';
         $config['next_tag_open']        = '<li>';
         $config['next_tag_close']       = '</li>';
         $config['full_tag_open']        = '<center><nav><ul class="pagination">';

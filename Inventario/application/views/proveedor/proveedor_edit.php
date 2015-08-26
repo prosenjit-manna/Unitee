@@ -150,6 +150,8 @@
             <!-- FINAL ESTILOS DE LA BARRA -->
 
         </div>
+    </div>
+</div>
 
         <!-- FINAL CONTENIDO -->
         <script>

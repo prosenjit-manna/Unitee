@@ -30,16 +30,15 @@
 
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row col-md-12">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet">
                         <div class="portlet-title">
-                        <div class="caption font-green-sharp">
-                            <i class="icon-speech font-green-sharp"></i>
-                            <span class="caption-subject bold uppercase"> LISTA DE PROVEEDORES</span>
-                        </div>                       
-                    </div>
+                            <div class="caption font-green-sharp">
+                                <i class="icon-speech font-green-sharp"></i>
+                                <span class="caption-subject bold uppercase"> LISTA DE PROVEEDORES</span>
+                            </div>                       
+                        </div><br>
                         <div class="portlet-body">
                             <div class="table-scrollable">
                                 <table class="table table-striped table-bordered table-advance table-hover">
@@ -103,87 +102,75 @@
                                                 <h4 class="modal-title">Información de Proveedor</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
-                                                    <div class="row">
-                                                        <div class="portlet light">
-                                                            <div class="portlet-body">
-                                                                <div class="portlet-body form">
-                                                                    <div class="form-body">
-                                                                        <div class="row">
-                                                                            <div class="col-md-6">
-                                                                                <h3 lass="form-section">Información deContacto</h3><br>
-                                                                                <label class="control-label col-md-2">Empresa</label>
-                                                                                <div class="form-group col-md-10">
-                                                                                    <input disabled="disabled" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Contacto</label>
-                                                                                <div class="form-group col-md-10">
-                                                                                    <input disabled="disabled" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Teléfono</label>
-                                                                                <div class="form-group col-md-10">
-                                                                                    <input disabled="disabled" type="text" id="txt_tel" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Celular</label>
-                                                                                <div class="form-group col-md-10">
-                                                                                    <input disabled="disabled" type="text" id="txt_cel" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Fax</label>
-                                                                                <div class="form-group col-md-10">
-                                                                                    <input disabled="disabled" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Correo</label>
-                                                                                <div class="form-group col-md-10">
-                                                                                    <input disabled="disabled" type="text" id="txt_corre" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
-                                                                                </div>
-                                                                                <label class="control-label col-md-2">Ultima Actualización</label>
-                                                                                <div class="form-group col-md-10">
-                                                                                    <input disabled="disabled" type="text" id="txt_ul" name="txt_ul" class="form-control input-circle" placeholder="Fecha -> 12/12/12">
-                                                                                </div>                                                     
-                                                                            </div>
-                                                                            <!--/span-->
-                                                                            <div class="col-md-6">
-                                                                                <h3 lass="form-section">Dirección</h3><br>
-                                                                                <label class="control-label col-md-3">Local</label>
-                                                                                <div class="form-group col-md-9">
-                                                                                    <input disabled="disabled" type="text" id="txt_local" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
-                                                                                </div>
-                                                                                <label class="control-label col-md-3">Dirección 1</label>
-                                                                                <div class="form-group col-md-9">
-                                                                                    <input disabled="disabled" type="text" id="txt_dir1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
-                                                                                </div>
-                                                                                <label class="control-label col-md-3">Dirección 2</label>
-                                                                                <div class="form-group col-md-9">
-                                                                                    <input disabled="disabled" type="text" id="txt_dir2" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
-                                                                                </div>
-                                                                                <label class="control-label col-md-3">Pais</label>
-                                                                                <div class="form-group col-md-9">
-                                                                                    <input disabled="disabled"  type="text" id="txt_pais" name="txt_pais" class="form-control input-circle" placeholder="Pais">
-                                                                                </div>
-                                                                                <label class="control-label col-md-3">Departamento</label>
-                                                                                <div class="form-group col-md-9">
-                                                                                    <input disabled="disabled" type="text" id="txt_depto" name="txt_depto" class="form-control input-circle" placeholder="Departamento">
-                                                                                </div>
-                                                                                <label class="control-label col-md-3">Ciudad</label>
-                                                                                <div class="form-group col-md-9">
-                                                                                    <input disabled="disabled" type="text" id="txt_ciu" name="txt_ciudad" class="form-control input-circle" placeholder="Ciudad">
-                                                                                </div>
-
-                                                                                <!--/span-->
-                                                                            </div>
-                                                                            <div class="col-md-12">
-                                                                                <h3 lass="form-section">Descripci&oacute;n</h3><br>
-                                                                            </div>
-                                                                            <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
-                                                                            <div class="form-group col-md-9">
-                                                                                <textarea disabled="disabled" name="txt_descripcion" id="txt_desc" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
-                                                                                </textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                <div class="row scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
+                                                    <div class="col-md-6">
+                                                        <h3 lass="form-section">Información deContacto</h3><br>
+                                                        <label class="control-label col-md-3">Empresa</label>
+                                                        <div class="form-group col-md-9">
+                                                            <input disabled="disabled" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
                                                         </div>
+                                                        <label class="control-label col-md-3">Contacto</label>
+                                                        <div class="form-group col-md-9">
+                                                            <input disabled="disabled" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                                        </div>
+                                                        <label class="control-label col-md-3">Teléfono</label>
+                                                        <div class="form-group col-md-9">
+                                                            <input disabled="disabled" type="text" id="txt_tel" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+                                                        </div>
+                                                        <label class="control-label col-md-3">Celular</label>
+                                                        <div class="form-group col-md-9">
+                                                            <input disabled="disabled" type="text" id="txt_cel" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                                        </div>
+                                                        <label class="control-label col-md-3">Fax</label>
+                                                        <div class="form-group col-md-9">
+                                                            <input disabled="disabled" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                                        </div>
+                                                        <label class="control-label col-md-3">Correo</label>
+                                                        <div class="form-group col-md-9">
+                                                            <input disabled="disabled" type="text" id="txt_corre" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+                                                        </div>
+                                                        <label class="control-label col-md-3">Ultima Actualización</label>
+                                                        <div class="form-group col-md-9">
+                                                            <input disabled="disabled" type="text" id="txt_ul" name="txt_ul" class="form-control input-circle" placeholder="Fecha -> 12/12/12">
+                                                        </div>                                                     
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <h3 lass="form-section">Dirección</h3><br>
+                                                        <label class="control-label col-md-4">Local</label>
+                                                        <div class="form-group col-md-8">
+                                                            <input disabled="disabled" type="text" id="txt_local" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                                        </div>
+                                                        <label class="control-label col-md-4">Dirección 1</label>
+                                                        <div class="form-group col-md-8">
+                                                            <input disabled="disabled" type="text" id="txt_dir1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                                        </div>
+                                                        <label class="control-label col-md-4">Dirección 2</label>
+                                                        <div class="form-group col-md-8">
+                                                            <input disabled="disabled" type="text" id="txt_dir2" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                                        </div>
+                                                        <label class="control-label col-md-4">Pais</label>
+                                                        <div class="form-group col-md-8">
+                                                            <input disabled="disabled"  type="text" id="txt_pais" name="txt_pais" class="form-control input-circle" placeholder="Pais">
+                                                        </div>
+                                                        <label class="control-label col-md-4">Departamento</label>
+                                                        <div class="form-group col-md-8">
+                                                            <input disabled="disabled" type="text" id="txt_depto" name="txt_depto" class="form-control input-circle" placeholder="Departamento">
+                                                        </div>
+                                                        <label class="control-label col-md-4">Ciudad</label>
+                                                        <div class="form-group col-md-8">
+                                                            <input disabled="disabled" type="text" id="txt_ciu" name="txt_ciudad" class="form-control input-circle" placeholder="Ciudad">
+                                                        </div>
+
+                                                        <!--/span-->
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h3 lass="form-section">Descripci&oacute;n</h3><br>
+                                                    </div>
+                                                    <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
+                                                    <div class="form-group col-md-9">
+                                                        <textarea disabled="disabled" name="txt_descripcion" id="txt_desc" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
+                                                        </textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,14 +205,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <!-- END SAMPLE TABLE PORTLET-->
                     <div>
                         <?php
                         echo $links;
                         ?>
                     </div>
-                </div>
             </div>	
         </div>
         <!-- FINAL ESTILOS DE LA BARRA -->
