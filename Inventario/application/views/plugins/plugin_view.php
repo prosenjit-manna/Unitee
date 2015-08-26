@@ -1,4 +1,20 @@
-<!-- INICIO CONTENIDO -->
+<style>
+    .class_tr {
+        width: 100%;
+        display: inline-table;
+    }
+    .class_tbody
+    {
+        overflow-y: scroll;
+        overflow-wrap: scroll;
+        height: 380px;
+        width: 100%;
+        position: relative;
+    }
+
+
+</style>
+<!-- INICIO DE LA PAGINA -->
 <div class="page-content-wrapper">
 
     <!-- INICIO CONTENIDO -->
@@ -27,85 +43,88 @@
         </div>
         <!-- FINAL BREADCUMBS -->
 
-        <!-- BEGIN PAGE CONTENT-->
+        <!-- INICIA -->
         <div class="row">
             <div class="col-md-12">
 
                 <!-- BEGIN PAGE CONTENT-->
-                <div class="row">
-                    <div class="col-md-12">                        
-                        <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                        <div class="portlet box red-intense">
-                            <div class="portlet-title">
-                                <div class="caption uppercase">
-                                    <i class="icon-globe"></i>Modulos Instalados
-                                </div>
-                                <div class="actions">
-                                    <div class="btn-group">
-                                        <strong>X</strong> Instalaciones disponibles
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portlet-body">
-                                <table class="table table-striped table-bordered table-hover" id="table_fixed">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                Nombre del Modulo
-                                            </th>
-                                            <th>
-                                                Seccion
-                                            </th>
-                                            <th>
-                                                Descripcion
-                                            </th>
-                                            <th style="text-align: center">
-                                                <i class="icon-download-alt"></i>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                Editar Producto
-                                            </td>
-                                            <td>
-                                                Productos
-                                            </td>
-                                            <td>
-                                                Modulo para editar producto
-                                            </td>
-                                            <td style="text-align: center">
-                                                <i class="icon-download-alt"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Nuevo Producto
-                                            </td>
-                                            <td>
-                                                Productos
-                                            </td>
-                                            <td>
-                                                Modulo para nuevo producto
-                                            </td>
-                                            <td>
+                <div class="row scroller" style="height:450px" data-rail-visible="1">
 
-                                            </td>
-                                        </tr>                                        
-                                    </tbody>
-                                </table>
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption uppercase">
+                                <i class="icon-globe"></i>Modulos Instalados
+                            </div>
+                            <div class="actions">
+                                <div class="btn-group">
+                                    <strong>X</strong> Instalaciones disponibles
+                                </div>
                             </div>
                         </div>
-                        <!-- END EXAMPLE TABLE PORTLET-->
+                        <div class="portlet-body">
+                            <table class="table table-striped table-bordered table-hover" id="table_fixed">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Nombre del Modulo
+                                        </th>
+                                        <th>
+                                            Seccion
+                                        </th>
+                                        <th>
+                                            Descripcion
+                                        </th>
+                                        <th style="text-align: center">
+                                            <i class="icon-download-alt"></i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Editar Producto
+                                        </td>
+                                        <td>
+                                            Productos
+                                        </td>
+                                        <td>
+                                            Modulo para editar producto
+                                        </td>
+                                        <td style="text-align: center">
+                                            <i class="icon-download-alt"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Nuevo Producto
+                                        </td>
+                                        <td>
+                                            Productos
+                                        </td>
+                                        <td>
+                                            Modulo para nuevo producto
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>                                        
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+                    <!-- END EXAMPLE TABLE PORTLET-->
+
                 </div>            
             </div>
         </div>
-        <!-- END PAGE CONTENT-->
+        <!-- FINAL -->
 
     </div>
+    <!-- FINAL CONTENIDO -->
+    
 </div>
+<!-- FINAL DE LA PAGINA -->
 <script>
 
 
