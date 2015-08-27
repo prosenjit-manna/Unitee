@@ -63,9 +63,11 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <table class="table table-striped table-bordered table-hover" id="table_fixed">
-                                <thead>
+                            <table class="table table-striped table-bordered table-hover" id="table_plugin">
+                                <thead
+                                   
                                     <tr>
+                                        <th></th>
                                         <th>
                                             Nombre del Modulo
                                         </th>
@@ -81,34 +83,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            Editar Producto
-                                        </td>
-                                        <td>
-                                            Productos
-                                        </td>
-                                        <td>
-                                            Modulo para editar producto
-                                        </td>
-                                        <td style="text-align: center">
-                                            <i class="icon-download-alt"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Nuevo Producto
-                                        </td>
-                                        <td>
-                                            Productos
-                                        </td>
-                                        <td>
-                                            Modulo para nuevo producto
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                    </tr>                                        
+                                    <?php 
+                                       
+                                       $data_id = array();
+                                       
+                                       foreach ($data as $k=>$p){
+                                                $section = $p['section'];
+                                                for($i = 0 ; $i < count($p) - 1 ; $i++){
+                                                  $data_id[$k.$i][] = $p[$i];
+                                                  echo "<tr>",
+                                                    "<td><span title='". $k . "" . $i ."' class='row-details row-details-close'></span></td>",
+                                                    "<td>" .$p[$i]['config']['name'] . "</td>",
+                                                    "<td>" . $section   . "</td>",
+                                                    "<td>" .$p[$i]['config']['description'] . "</td>",
+                                                    "<td  style='text-align: center'>" . "<button class='btn' onclick='alert();'><i class='icon-download-alt'></i></button>" . "</td>",
+                                                    "</tr>";
+                                                }
+                                       }
+                                    
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -127,46 +120,89 @@
 <!-- FINAL DE LA PAGINA -->
 <script>
 
+ var $plugin_data = '<?php echo json_encode($data_id); ?>';
 
-    var plugins_system = function () {
-
-        var plugins = function () {
-
-            jQuery('#gtreetable').gtreetable({
-                'draggable': true,
-                'source': function (id) {
-                    return {
-                        type: 'POST',
-                        url: '<?php echo site_url("/Dashboard/modulos/"); ?>',
-                        data: {
-                            'id': id
-                        },
-                        dataType: 'json',
-                        error: function (XMLHttpRequest) {
-                            alert(XMLHttpRequest.status + ': ' + XMLHttpRequest.responseText);
-                        }
-                    }
-                },
-                'sort': function (a, b) {
-                    var aName = a.name.toLowerCase();
-                    var bName = b.name.toLowerCase();
-                    return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
-                },
-                'types': {default: 'glyphicon glyphicon-folder-open', folder: 'glyphicon glyphicon-folder-open'},
-                'inputWidth': '255px'
+ var InitPlugin= function () {
+        var table = $('#table_plugin');
+        
+        /* Formatting function for row expanded details */
+        function fnFormatDetails(oTable, nTr  , id) {
+            var object = JSON.parse($plugin_data);
+            var aData = oTable.fnGetData(nTr);
+            var sOut = '<table>';
+            $.each(object , function(k , d){
+                var config      = d[0].config;
+                var model       =d[0].model;
+                var path        = d[0].path;
+                if(k == id){
+                    sOut += '<tr><td>Version:</td><td>' + config.version + '</td></tr>';
+                    sOut += '<tr><td>Tipo:</td><td>' + config.type + '</td></tr>';
+                    sOut += '<tr><td>Autor:</td><td>' + config.author + '</td></tr>';
+                    sOut += '<tr><td>Actualizacion:</td><td><i class="icon-cloud-download"></i> <a href="#">Descargar 1.2</a></td></tr>';
+                    sOut += '<tr><td>Detalles:</td><td><i class="icon-external-link"></i> <a href="#">Mayor Informacion</a></td></tr>';
+                }
+                
             });
-
+  
+            sOut += '</table>';
+            return sOut;
         }
 
-        return {
-            //main function to initiate the module
-            init: function () {
-                plugins();
+        var oTable = table.dataTable({
+            // Internationalisation. For more info refer to http://datatables.net/manual/i18n
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                },
+                "emptyTable": "No data available in table",
+                "info": "Showing _START_ to _END_ of _TOTAL_ entries",
+                "infoEmpty": "No entries found",
+                "infoFiltered": "(filtered1 from _MAX_ total entries)",
+                "lengthMenu": "Show _MENU_ entries",
+                "search": "Search:",
+                "zeroRecords": "No matching records found"
+            },
+            "columnDefs": [{
+                    "orderable": false,
+                    "targets": [0]
+                }],
+            "order": [
+                [1, 'asc']
+            ],
+            "lengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"] // change per page values here
+            ],
+            // set the initial value
+            "pageLength": 5
+        });
+
+        var tableWrapper = $('#table_plugin_wrapper'); 
+        var tableColumnToggler = $('#table_plugin_column_toggler');
+
+       
+        tableWrapper.find('.dataTables_length select').select2(); 
+
+        
+        table.on('click', ' tbody td .row-details', function () {
+           var nTr = $(this).parents('tr')[0];
+           var id = $(this).attr("title");
+           if (oTable.fnIsOpen(nTr)) {
+                $(this).addClass("row-details-close").removeClass("row-details-open");
+                oTable.fnClose(nTr);
+            } else {
+                $(this).addClass("row-details-open").removeClass("row-details-close");
+                oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr , id), 'details' );
             }
+        });
 
-        };
-
-    }();
+        $('input[type="checkbox"]', tableColumnToggler).change(function () {
+            var iCol = parseInt($(this).attr("data-column"));
+            var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
+            oTable.fnSetColumnVis(iCol, (bVis ? false : true));
+        });
+    };
 
 
 
