@@ -3,6 +3,7 @@
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
         <!-- INICIO TITULO DE LA PAGINA -->
+
          <!--
         <div class="alert alert-block alert-success fade in">
             <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
@@ -13,6 +14,7 @@
             </button><p>No se pudo editar el producto,  favor intentar de nuevo.</p>
         </div>
         -->
+
         <h3 class="page-title">
             Unitee - Editar Producto
         </h3>
