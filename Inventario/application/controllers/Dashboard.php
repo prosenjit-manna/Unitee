@@ -147,8 +147,20 @@ class Dashboard extends CI_Controller {
              $this->load->view("dashboard/header" , $vars );
              $this->load->view("dashboard/left_sidebar" , $vars);
              
+             /**
+              * Peticiones generadas por el sistema que se cargaran en el dashboard
+              * estas peticiones esta controladas unicamente por el sistema 
+              * div de control <div id="request"></div>
+              * dependencia de jtask + site_url()
+              */
+             $js_request        = "var r = new Request('" . site_url() ."');"
+                                . "r.password();"
+                                . ""
+                                . "";
+             
+             
              $vars['js_loader'] = array(
-                 "pass_request();"
+                 $js_request
              );
              
              $this->load->view("dashboard/main" , $vars);
