@@ -201,7 +201,7 @@
                     [5, 15 , 30 , -1],
                     [5, 10 , 30 , "Todos" ] 
                 ],
-                "pageLength": 5,
+                "pageLength": 3,
                 "language": {
                     "aria": {
                         "sortAscending": ": activate to sort column ascending",
@@ -229,67 +229,6 @@
             });
 
            var tableWrapper = $('#products_color_wrapper'); 
-           tableWrapper.find('.dataTables_length select').select2(); 
-                     
-
-        };
-
-        var the_id = function (i) {
-            $id = i;
-        };
-
-        var delete_product = function () {
-
-            var tasking = new jtask();
-            tasking.url = "<?php echo site_url("/Productos/delete_product"); ?>";
-            tasking.data = {"id": $id};
-            tasking.success_callback(function (d) {
-                console.log(d);
-                $("#prod_" + $id).remove();
-            });
-            tasking.do_task();
-        };
-</script>
-<script>
-        var $id = null;
-
-        var table_loader = function () {
-
-            var table = $('#products_unidad');
-
-            var oTable = table.dataTable({
-                "lengthMenu": [
-                    [5, 15 , 30 , -1],
-                    [5, 10 , 30 , "Todos" ] 
-                ],
-                "pageLength": 5,
-                "language": {
-                    "aria": {
-                        "sortAscending": ": activate to sort column ascending",
-                        "sortDescending": ": activate to sort column descending"
-                    },
-                    "emptyTable": "No data available in table",
-                    "info": "Mostrando _START_ a _END_ en total de _TOTAL_ productos",
-                    "infoEmpty": "No se ha encontrado productos ...",
-                    "infoFiltered": "(filtered1 from _MAX_ total records)",
-                    "lengthMenu": "Mostar _MENU_ Productos",
-                    "search": "Buscar:",
-                    "zeroRecords": "Ningun producto encontrado ..."
-
-                },
-                "columnDefs": [{// set default column settings
-                        'orderable': true,
-                        'targets': [0]
-                    }, {
-                        "searchable": true,
-                        "targets": [0]
-                    }],
-                "order": [
-                    [0, "asc"]
-                ] 
-            });
-
-           var tableWrapper = $('#products_unidad_wrapper'); 
            tableWrapper.find('.dataTables_length select').select2(); 
                      
 

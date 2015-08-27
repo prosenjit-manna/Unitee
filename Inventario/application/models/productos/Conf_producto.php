@@ -95,7 +95,7 @@ class Conf_producto extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-         return array("ComponentsFormTools2.init();");
+         return array("ComponentsFormTools2.init();table_loader();");
     }
 
     public function _rols() {
