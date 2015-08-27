@@ -140,7 +140,6 @@
                     sOut += '<tr><td>Autor:</td><td>' + config.author + '</td></tr>';
                     sOut += '<tr><td>Actualizacion:</td><td><i class="icon-cloud-download"></i> <a href="#">Descargar 1.2</a></td></tr>';
                     sOut += '<tr><td>Detalles:</td><td><i class="icon-external-link"></i> <a href="#">Mayor Informacion</a></td></tr>';
-                    
                 }
                 
             });
