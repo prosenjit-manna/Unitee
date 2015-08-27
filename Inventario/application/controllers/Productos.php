@@ -80,36 +80,22 @@ class Productos extends CI_Controller {
         $sku           = $_REQUEST['txt_sku'];
         
        
-       $ok = $this->edit_proveedor->update_product($id ,
+       $ok = $this->Edit_producto->update_product($id ,
                $nombre , $color , $margen , $unidad,
                $descripcion , $precio , $cantidad , $sku);
    
         
        
         if($ok){
-           redirect("/0/productos=new_producto?err=0");
+           redirect("/0/productos=view_producto?err=0");
            return;
        }else{
-           redirect("/0/productos=new_producto?err=1");
+           redirect("/0/productos=view_producto?err=1");
            return;
        }
     }
     
-    public function ViewProduct(){
-        
-        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
-        if(is_null($id)){
-            echo false;
-            return;
-        }
-        //  $data = $this->view_proveedor->get_provider($id);
-       // echo json_encode($data);
-      //exit();
-    }
    
-    
-    
-    
     public function delete_product(){
         $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
         
