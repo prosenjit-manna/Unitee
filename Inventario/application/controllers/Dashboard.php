@@ -51,6 +51,7 @@ class Dashboard extends CI_Controller {
         $this->load->library("session");
         $this->load->library("base_url");
         $this->load->helper("setup");
+        $this->load->library("system");
         $this->route = $this->base_url->GetBaseUrl();
         
         /**
@@ -241,34 +242,12 @@ class Dashboard extends CI_Controller {
              *        patrones de diseño como un array() , string e incluso un db 
              */
                         
-            $privs          = $this->$model->_rols();
-            $priv_flag      = FALSE;
+          
             
             //VERIFICA LOS PRIVILEGIOS ACTIVOS ... SI DEVUELVE NULL ENTONCES LA URL ES PUBLICA ... 
-            if($privs != NULL){
-                if(is_array($privs)){
-                    foreach ($privs as $p){
-                        if(strcmp($this->session->user['rol_name'], $p) === 0){
-                           $priv_flag = TRUE;
-                        }
-                        else if($this->session->user['rol_nivel'] == $p){
-                           $priv_flag = TRUE;
-                        }
-                    } 
-                }
-                else if(is_string($privs)){
-                    $parts  = explode(",", $privs);
-                    foreach ($parts as $p){
-                        if(strcmp($this->session->user['rol_name'], $p) === 0){
-                           $priv_flag = TRUE;
-                        }
-                        else if($this->session->user['rol_nivel'] == $p){
-                           $priv_flag = TRUE;
-                        }
-                    }
-                }
-            }else if($privs === NULL){ $priv_flag = TRUE; }
             
+            $privs          = $this->$model->_rols();
+            $priv_flag      = $this->system->VerifyPrivs($privs);
             
             //CONTROL DE PERMISOS SI NO EXISTEN ....
             if(!$priv_flag){

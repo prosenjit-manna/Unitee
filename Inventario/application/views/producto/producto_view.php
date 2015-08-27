@@ -161,8 +161,8 @@
 
             var oTable = table.dataTable({
                 "lengthMenu": [
-                    [5, 15],
-                    [5, 10] // change per page values here
+                    [5, 15 , 30 , -1],
+                    [5, 10 , 30 , "Todos" ] 
                 ],
                 "pageLength": 5,
                 "language": {
@@ -171,7 +171,7 @@
                         "sortDescending": ": activate to sort column descending"
                     },
                     "emptyTable": "No data available in table",
-                    "info": "Mostrando _START_ a _END_ de un _TOTAL_ productos",
+                    "info": "Mostrando _START_ a _END_ en total de _TOTAL_ productos",
                     "infoEmpty": "No se ha encontrado productos ...",
                     "infoFiltered": "(filtered1 from _MAX_ total records)",
                     "lengthMenu": "Mostar _MENU_ Productos",
@@ -188,10 +188,12 @@
                     }],
                 "order": [
                     [0, "asc"]
-                ] // set first column as a default sort by asc
+                ] 
             });
 
-
+           var tableWrapper = $('#products_table_wrapper'); 
+           tableWrapper.find('.dataTables_length select').select2(); 
+                     
 
         };
 
@@ -211,6 +213,6 @@
             tasking.do_task();
         };
 
-
+            
 
     </script>

@@ -1,7 +1,6 @@
 
 var Request = function(directory){
     this.password = function(){
-        
         var tasking = new jtask();
         tasking.url = directory  + "/User/password/verify/";
         tasking.success_callback(function (request) {
