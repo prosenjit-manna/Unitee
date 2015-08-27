@@ -31,7 +31,7 @@
         <div class="page-content-wrapper">
 
             <!-- INICIO PAGE CONTENT-->
-            <div class="row scroller" style="height:450px" data-rail-visible="1" >
+            <div class="row scroller" style="height:430px" data-rail-visible="1" >
                 <!-- INICIO Portlet PORTLET-->
             <div class="portlet">  
                 <div class="portlet light">
