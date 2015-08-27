@@ -94,7 +94,7 @@ class New_producto extends CI_Model  implements PInterface {
     
     public function get_colors(){
    
-      $this->query = "select id_color as 'id' ,  nombre as 'name' from color" ;
+      $this->query = "select id_color as 'id' ,  nombre as 'name' , referencia as 'ref' from color" ;
       return $this->db
                   ->query($this->query)
                   ->result();
