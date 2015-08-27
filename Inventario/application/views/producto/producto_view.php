@@ -4,6 +4,16 @@
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
         <!-- INICIO TITULO DE LA PAGINA -->
+        <!--Inicio Alertas-->
+        <div class="alert alert-block alert-success fade in">
+            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
+            </button><p>Producto Eliminado con Exito</p>
+        </div>
+         <div class="alert alert-block alert-danger fade in">
+            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
+            </button><p>No se pudo eliminar el producto,  favor intentar de nuevo.</p>
+        </div>
+        <!--Fin Alertas-->
         <h3 class="page-title">
             Unitee - Ver Productos
         </h3>
@@ -29,8 +39,7 @@
 
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row scroller" style="height:375px" data-always-visible="1" data-rail-visible1="1">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet">
                         <div class="portlet-title">
@@ -143,8 +152,7 @@
                     </div>
                     <!-- END SAMPLE TABLE PORTLET-->
                     <div>
-                    </div>
-                </div>	
+                    </div>	
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
 
