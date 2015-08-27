@@ -124,7 +124,7 @@
                                                     <i name="change_" id="change_cantidad_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_cantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                                      
-                                                    <input required="" onkeyup="validate_cantidad();" type="text" id="cantidad" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                                    <input  onkeyup="validate_cantidad();" type="text" id="cantidad" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
                                                 </div>
                                             </div>
                                             <!--/span-->
