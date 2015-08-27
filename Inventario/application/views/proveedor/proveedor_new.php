@@ -136,6 +136,8 @@
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
         </div>
+    </div>
+</div>
         <!-- FINAL CONTENIDO -->
         <script>
             var load_paises = function () {
