@@ -38,7 +38,8 @@
 <script src="<?php echo $route;?>assert/plugins/ui-general.js" type="text/javascript"></script>
 
 <!--LIBRERIA EN LA CUAL SUSTITUYE AJAX COMO GESTOR DE PROCESOS DE SEGUNDO PLANO : PRIORIDAD DEL SISTEMA  -->
-<script src="<?php echo $route;?>assert/dashboard/jstask/task.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>assert/system/dashboard/jstask/task.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>assert/system/dashboard/request.js" type="text/javascript"></script>
 
 <?php
     if(isset($javascript) && is_array($javascript)){
