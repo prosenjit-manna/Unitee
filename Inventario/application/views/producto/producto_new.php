@@ -86,7 +86,7 @@
                                               <div class="input-icon right">
                                                     <i name="change_" id="change_margen_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_margen" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_margen();" required="" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
+                                                    <input onkeyup="validate();" required="" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
                                                     <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
                                               </div>
                                             </div>
@@ -112,7 +112,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_precio_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_price();" required="" type="text" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                                    <input onkeyup="validate();" required="" type="text" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
                                                 </div>
 
                                             </div>
@@ -124,7 +124,7 @@
                                                     <i name="change_" id="change_cantidad_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_cantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                                      
-                                                    <input  onkeyup="validate_cantidad();" type="text" id="cantidad" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                                    <input  onkeyup="validate();" type="text" id="cantidad" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
                                                 </div>
                                             </div>
                                             <!--/span-->
@@ -202,17 +202,17 @@
                 if (cantidad === "") {
                 change_cantidad_ok.css("display", "none");
                 change_cantidad.css("display", "none");
-                
-                 }
+                return false ;
+                }
                else if (isNaN(cantidad) && cantidad !=="") {
                 change_cantidad_ok.css("display", "none");
                 change_cantidad.css("display", "block");
-               $('#send').attr("disabled", true);
-                }
+                return true ;
+                 }
                 else {
-                $('#send').attr("disabled", false);
                 change_cantidad_ok.css("display", "block");
                 change_cantidad.css("display", "none");
+                 return false ;
                 }
             };
 
@@ -221,20 +221,20 @@
                 var change_margen = $("#change_margen");
                 var margen = $("#margen").val();
                 if (margen ==="") {
-                $('#send').attr("disabled", true);
                 change_margen_ok.css("display", "none");
                 change_margen.css("display", "none");
-                }
+                 return true ;
+                 }
                 else if (isNaN(margen) && margen !=="") {
-                $('#send').attr("disabled", true);
                 change_margen_ok.css("display", "none");
                 change_margen.css("display", "block");
+                return true ;
                 }
                 else {
-                $('#send').attr("disabled", false);
                 change_margen_ok.css("display", "block");
                 change_margen.css("display", "none");
-                }
+                return false ;
+               }
             };
             
              var validate_price = function () {
@@ -244,20 +244,32 @@
                  if (precio ==="") {
                 change_precio_ok.css("display", "none");
                 change_precio.css("display", "none");
-                $('#send').attr("disabled", true);
-                }
-               else  if (isNaN(precio) && precio !=="") {
+                  return true ;
+                  
+               }
+                else  if (isNaN(precio) && precio !=="") {
                 change_precio_ok.css("display", "none");
                 change_precio.css("display", "block");
-                $('#send').attr("disabled", true);
-                 }
+                  return true ;
+                  }
                 else {
-                $('#send').attr("disabled", false);    
                 change_precio_ok.css("display", "block");
                 change_precio.css("display", "none");
+                return false ;
                 }
             };
-            
+        
+             var validate = function () {
+                var precio = validate_price(); 
+                var margen = validate_margen();
+                var cantidad = validate_cantidad();
+                
+                if( precio === true || margen === true || cantidad === true ){
+                $('#send').attr("disabled", true); 
+                }else  {
+                $('#send').attr("disabled", false);    
+                 }
+            };
             
           
 
