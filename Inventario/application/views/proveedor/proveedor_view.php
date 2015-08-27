@@ -5,6 +5,14 @@
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
         <!-- INICIO TITULO DE LA PAGINA -->
+        <div class="alert alert-block alert-success fade in">
+            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
+            </button><p>Proveedor Eliminado con Exito</p>
+        </div>
+         <div class="alert alert-block alert-danger fade in">
+            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
+            </button><p>No se pudo eliminar el proveedor,  favor intentar de nuevo.</p>
+        </div>
         <h3 class="page-title">
             Unitee - Ver Proveedor
         </h3>
@@ -30,7 +38,7 @@
 
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
-            <div class="row col-md-12">
+            <div class="row scroller" style="height:375px" data-always-visible="1" data-rail-visible1="1">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet">
                         <div class="portlet-title">
