@@ -43,9 +43,12 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                     </div>
-                                        <h5 lass="form-section">Los campos con * son Requeridos</h5>
+                                        <h5 lass="form-section">Los campos con * son Requeridos
+                                        </h5>
                                         <div class="col-md-6">
-                                            <h3 lass="form-section">Agregar Colores y Unidades</h3><br>
+                                            <h3 lass="form-section">Agregar Colores
+                                                <button  id="send" name="send"  type="submit" class="btn blue col-md-offset-4"><i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Color</button>
+                                            </h3><br>
                                             <label class="control-label col-md-2">* Color</label>
                                             <div class="form-group col-md-4">
                                                 <input required="" type="text" id="" name="txt_color" class="form-control input-circle" placeholder="Nombre del color">
@@ -54,66 +57,74 @@
                                                  <input type="text" id="hue-demo" class="form-control demo" data-control="hue" value="#ff6161">
                                             </div>
                                              <div class="form-group col-md-12">
-                                                <table class="table table-striped table-bordered table-advance table-hover">
+                                               <table class="table table-striped table-hover table-bordered" id="products_color">
                                                     <thead>
-                                                        <tr>
-                                                            <th>
+                                                    <tr>
+                                                    <th>
                                                     <p align="center">Nombre</p>
                                                     </th>
                                                     <th >
                                                     <p align="center">Color</p>
                                                     </th>
-                                                    <th>
+                                                    <th >
                                                     <p align="center">Operaciones</p>
                                                     </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td align="center">
-                                                                Rojo</p>
-                                                            </td>
-                                                            <td class="danger" align="center">
-                                                                <p>#FFFFFF;</p>
-                                                            </td>
-                                                            <td align="center">
-
-                                                                <a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                                            </td>
-                                                        </tr>
+                                                       <tr align="center">
+                                                           <td>Rojo</td>
+                                                           <td>#FFFFFF</td>
+                                                           <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
+                                                       </tr>
+                                                       <tr align="center">
+                                                          <td>Amarillo</td>
+                                                           <td>#FFFFFF</td>
+                                                           <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
+                                                       </tr>
+                                                        <tr align="center">
+                                                          <td>Azul</td>
+                                                           <td>#FFFFFF</td>
+                                                          <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
+                                                       </tr>
                                                     </tbody>
                                                 </table>
                                             </div> 
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
-                                            <br><br><br><br>
+                                             <h3 lass="form-section">Agregar Unidades
+                                                <button  id="send" name="send"  type="submit" class="btn blue col-md-offset-3"><i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Unidad</button>
+                                            </h3><br>
                                             <label class="control-label col-md-3">* Unidad</label>
                                             <div class="form-group col-md-9">
                                                 <input type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Unidad de productos">
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <table class="table table-striped table-bordered table-advance table-hover">
+                                                <table class="table table-striped table-hover table-bordered" id="products_unidad">
                                                     <thead>
-                                                        <tr>
-                                                            <th>
+                                                    <tr>
+                                                    <th>
                                                     <p align="center">Unidad</p>
                                                     </th>
-                                                    <th>
+                                                    <th >
                                                     <p align="center">Operaciones</p>
                                                     </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td align="center">
-                                                                <p>Yardas</p>
-                                                            </td>
-                                                            <td align="center">
-
-                                                                <a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                                            </td>
-                                                        </tr>
+                                                       <tr align="center">
+                                                           <td>Metros</td>
+                                                           <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
+                                                       </tr>
+                                                        <tr align="center">
+                                                          <td>AYardas</td>
+                                                          <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
+                                                       </tr>
+                                                        <tr align="center">
+                                                           <td>Centimetros</td>
+                                                           <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
+                                                       </tr>
                                                     </tbody>
                                                 </table>
                                             </div> 
@@ -166,10 +177,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-actions right">
-                                        <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                                        <button  id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
-                                    </div>
                                     <!-- FINAL FORM-->
                                 </div>
 
@@ -185,3 +192,125 @@
         <!-- FINAL CONTENIDO -->
     </div>
 </div>
+<script>
+        var $id = null;
+
+        var table_loader = function () {
+
+            var table = $('#products_color');
+
+            var oTable = table.dataTable({
+                "lengthMenu": [
+                    [5, 15 , 30 , -1],
+                    [5, 10 , 30 , "Todos" ] 
+                ],
+                "pageLength": 5,
+                "language": {
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    },
+                    "emptyTable": "No data available in table",
+                    "info": "Mostrando _START_ a _END_ en total de _TOTAL_ productos",
+                    "infoEmpty": "No se ha encontrado productos ...",
+                    "infoFiltered": "(filtered1 from _MAX_ total records)",
+                    "lengthMenu": "Mostar _MENU_ Productos",
+                    "search": "Buscar:",
+                    "zeroRecords": "Ningun producto encontrado ..."
+
+                },
+                "columnDefs": [{// set default column settings
+                        'orderable': true,
+                        'targets': [0]
+                    }, {
+                        "searchable": true,
+                        "targets": [0]
+                    }],
+                "order": [
+                    [0, "asc"]
+                ] 
+            });
+
+           var tableWrapper = $('#products_color_wrapper'); 
+           tableWrapper.find('.dataTables_length select').select2(); 
+                     
+
+        };
+
+        var the_id = function (i) {
+            $id = i;
+        };
+
+        var delete_product = function () {
+
+            var tasking = new jtask();
+            tasking.url = "<?php echo site_url("/Productos/delete_product"); ?>";
+            tasking.data = {"id": $id};
+            tasking.success_callback(function (d) {
+                console.log(d);
+                $("#prod_" + $id).remove();
+            });
+            tasking.do_task();
+        };
+</script>
+<script>
+        var $id = null;
+
+        var table_loader = function () {
+
+            var table = $('#products_unidad');
+
+            var oTable = table.dataTable({
+                "lengthMenu": [
+                    [5, 15 , 30 , -1],
+                    [5, 10 , 30 , "Todos" ] 
+                ],
+                "pageLength": 5,
+                "language": {
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    },
+                    "emptyTable": "No data available in table",
+                    "info": "Mostrando _START_ a _END_ en total de _TOTAL_ productos",
+                    "infoEmpty": "No se ha encontrado productos ...",
+                    "infoFiltered": "(filtered1 from _MAX_ total records)",
+                    "lengthMenu": "Mostar _MENU_ Productos",
+                    "search": "Buscar:",
+                    "zeroRecords": "Ningun producto encontrado ..."
+
+                },
+                "columnDefs": [{// set default column settings
+                        'orderable': true,
+                        'targets': [0]
+                    }, {
+                        "searchable": true,
+                        "targets": [0]
+                    }],
+                "order": [
+                    [0, "asc"]
+                ] 
+            });
+
+           var tableWrapper = $('#products_unidad_wrapper'); 
+           tableWrapper.find('.dataTables_length select').select2(); 
+                     
+
+        };
+
+        var the_id = function (i) {
+            $id = i;
+        };
+
+        var delete_product = function () {
+
+            var tasking = new jtask();
+            tasking.url = "<?php echo site_url("/Productos/delete_product"); ?>";
+            tasking.data = {"id": $id};
+            tasking.success_callback(function (d) {
+                console.log(d);
+                $("#prod_" + $id).remove();
+            });
+            tasking.do_task();
+        };
+</script>

@@ -21,6 +21,8 @@ class View_proveedor extends CI_Model implements PInterface{
     
     protected $model   = "view_proveedor";
 
+    var $route         = null;
+
     protected $query   = NULL;
 
     public function __construct() {
@@ -44,7 +46,10 @@ class View_proveedor extends CI_Model implements PInterface{
     }
     
     public function _css() {
-        //ACA IRAN TODOS LOS CSS 
+         return array(
+            $this->route . "assert/plugins/select2/select2.css",
+            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"
+        );
     }
 
     public function _init() {
@@ -99,7 +104,7 @@ class View_proveedor extends CI_Model implements PInterface{
     }
 
     public function _js() {
-        //ACA IRAN TODOS LOS JAVASCRIPT
+          //AQUI VAN ÑLOS JAVASCRIPT
     }
 
     public function _jsLoader() {
