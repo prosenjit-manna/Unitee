@@ -118,7 +118,7 @@
                                             </div>
                                             
                                             
-                                            <label class="control-label col-md-3">* Cantidad</label>
+                                            <label class="control-label col-md-3"> Cantidad</label>
                                             <div class="form-group col-md-9">
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_cantidad_ok" style="display:none;" class="icon-check" data-original-title=""></i>
@@ -202,7 +202,7 @@
                 if (cantidad === "") {
                 change_cantidad_ok.css("display", "none");
                 change_cantidad.css("display", "none");
-                $('#send').attr("disabled", true);
+                
                  }
                else if (isNaN(cantidad) && cantidad !=="") {
                 change_cantidad_ok.css("display", "none");
