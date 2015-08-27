@@ -2,16 +2,27 @@
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
-        
+         <?php  if (isset($_REQUEST['err'])):
+                        switch ($_REQUEST['err']):
+                            case 0:
+                                echo '<div class="alert alert-block alert-success fade in">
+                                           <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Producto Guardado con Exito</p>
+                                                              </div>';
+                                 break;
+                            case 1:
+                                echo ' <div class="alert alert-block alert-danger fade in">
+                                                  <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"> </button><p>No se pudo guardar el producto,  favor intentar de nuevo.</p>
+                                                            </div>';
+                                break;
+                            
+                            
+                        endswitch;
+                    endif;
+                 ?>
         <!-- INICIO TITULO DE LA PAGINA -->
-        <div class="alert alert-block alert-success fade in">
-            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
-            </button><p>Producto Guardado con Exito</p>
-        </div>
-         <div class="alert alert-block alert-danger fade in">
-            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
-            </button><p>No se pudo guardar el producto,  favor intentar de nuevo.</p>
-        </div>
+       
+        
+        
         <h3 class="page-title">
             Unitee - Nuevo Producto
         </h3>
@@ -68,7 +79,6 @@
                                             <label class="control-label col-md-3">* Color</label>
                                             <div class="form-group col-md-9">
                                                 <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
-                                                    <option selected="true" value="0">Elige un color</option>
                                                 </select>
                                             </div>
                                             <label class="control-label col-md-3">* Margen</label>
@@ -79,7 +89,6 @@
                                             <label class="control-label col-md-3">* Unidad</label>
                                             <div class="form-group col-md-9">
                                                 <select required="true" id="select_unidad" name="txt_unidad" class="form-control input-circle">
-                                                    <option selected="true"  value="0">Elige la unidad</option>
                                                 </select>
                                             </div>                                                                   
                                         </div>
@@ -95,9 +104,15 @@
                                                 <input readonly="" type="text" id="SKU" name="txt_sku" class="form-control input-circle" placeholder="SKU del Producto">
                                             </div>
                                             <label class="control-label col-md-3">* Precio</label>
-                                            <div class="form-group col-md-9">
-                                                <input type="text" onchange="validate_price();" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                             <div class="form-group col-md-9">
+                                                <div class="input-icon right">
+                                                    <i name="change_" id="change_" style="display:none;" class="icon-check" data-original-title="Usuario aceptado ..."></i>
+                                                    <input onkeyup="validate_price(this.value);" required="" type="text" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                                </div>
+
                                             </div>
+                                            
+                                            
                                             <label class="control-label col-md-3">* Cantidad</label>
                                             <div class="form-group col-md-9">
                                                 <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
