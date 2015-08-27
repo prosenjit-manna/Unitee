@@ -72,7 +72,8 @@ class Edit_producto extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-      return array("load_colors();","load_unidad();");
+      return array("load_colors();","load_unidad();","validate_price();"
+             ,"validate_cantidad();","validate_margen();");
     }
 
     public function _rols() {
