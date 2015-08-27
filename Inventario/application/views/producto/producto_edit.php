@@ -41,7 +41,7 @@
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <!-- INICIO PAGE CONTENT-->
-            <div class="row scroller" style="height:460px" data-rail-visible="1" >
+            <div class="row scroller" style="height:400px" data-rail-visible="1" >
                 <div class="col-md-12">
                     <!-- INICIO Portlet PORTLET-->
                     <div class="portlet light">

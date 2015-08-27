@@ -50,7 +50,7 @@
 
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
-            <div class="row scroller" style="height:375px" data-always-visible="1" data-rail-visible1="1">
+            <div class="row scroller" style="height:430px" data-always-visible="1" data-rail-visible1="1">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet">
                         <div class="portlet-title">
