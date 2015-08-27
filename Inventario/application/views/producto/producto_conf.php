@@ -47,7 +47,8 @@
                                         </h5>
                                         <div class="col-md-6">
                                             <h3 lass="form-section">Agregar Colores
-                                                <button  id="send" name="send"  type="submit" class="btn blue col-md-offset-4"><i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Color</button>
+                                                <button onclick="save_color();"  id="send" name="send"   type="button" class="btn blue col-md-offset-4">
+                                                    <i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Color</button>
                                             </h3><br>
                                             <label class="control-label col-md-2">* Color</label>
                                             <div class="form-group col-md-4">
@@ -72,21 +73,17 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                       <tr align="center">
-                                                           <td>Rojo</td>
-                                                           <td>#FFFFFF</td>
-                                                           <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
-                                                       </tr>
-                                                       <tr align="center">
-                                                          <td>Amarillo</td>
-                                                           <td>#FFFFFF</td>
-                                                           <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
-                                                       </tr>
-                                                        <tr align="center">
-                                                          <td>Azul</td>
-                                                           <td>#FFFFFF</td>
-                                                          <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
-                                                       </tr>
+                                                        <?php
+                                                        
+                                                          foreach ($colors as $c){
+                                                              echo ' <tr align="center">',
+                                                                   ' <td>' . $c->name . '</td>',
+                                                                   ' <td>' . '<div class="minicolors minicolors-theme-bootstrap minicolors-position-bottom minicolors-position-left"><input disabled type="text" id="hue-demo" class="form-control demo minicolors-input" data-control="hue" value="#ff6161" size="7"><span class="minicolors-swatch minicolors-sprite"><span class="minicolors-swatch-color" style="background-color:' . $c->ref . ';"></span></span></div>' . '</td>',
+                                                                   '<td><a class="" onclick="the_id(' . $c->id . ');" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
+                                                          }
+                                                          
+                                                        
+                                                        ?>
                                                     </tbody>
                                                 </table>
                                             </div> 
@@ -113,18 +110,14 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                       <tr align="center">
-                                                           <td>Metros</td>
-                                                           <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
-                                                       </tr>
-                                                        <tr align="center">
-                                                          <td>AYardas</td>
-                                                          <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
-                                                       </tr>
-                                                        <tr align="center">
-                                                           <td>Centimetros</td>
-                                                           <td><a class="" onclick="the_id(9);" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>
-                                                       </tr>
+                                                      <?php 
+                                                        foreach ($unidad as $u){
+                                                            echo ' <tr align="center">',
+                                                                 ' <td>' . $u->name . '</td>',
+                                                                 ' <td><a class="" onclick="the_id(' . $u->id . ');" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
+                                                        }
+                                                      
+                                                      ?>
                                                     </tbody>
                                                 </table>
                                             </div> 
@@ -194,6 +187,10 @@
 </div>
 <script>
         var $id = null;
+        
+        var save_color = function(){
+           alert();  
+        };
 
         var table_loader = function () {
 

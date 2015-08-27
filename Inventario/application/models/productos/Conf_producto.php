@@ -63,7 +63,18 @@ class Conf_producto extends CI_Model implements PInterface{
 
     public function _init() {
         $this->load->helper("form");
-        $this->load->view("producto/producto_conf");
+        
+        $this->load->model("productos/new_producto");
+        
+        $colors         = $this->new_producto->get_colors();
+        $unidad         = $this->new_producto->get_unidad();
+        
+        $data           = array(
+              "colors"  => $colors,
+              "unidad"  => $unidad
+        );
+        
+        $this->load->view("producto/producto_conf" , $data);
     }
 
     public function _install() {
@@ -88,6 +99,7 @@ class Conf_producto extends CI_Model implements PInterface{
     }
 
     public function _rols() {
+        
         $this->load->model("system/permission_engine");
         $data = $this->permission_engine->_get(
                 $this->model, 
@@ -118,6 +130,8 @@ class Conf_producto extends CI_Model implements PInterface{
     public function _widgets() {
         
     }
+    
+   
 
 }
 
