@@ -30,6 +30,37 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
         <!-- INICIO TITULO DE LA PAGINA ACRUAL-->
+        <div id="messages">
+                <!-- DIV PARA MENSAJES POR JAVASCRIPT ...-->
+        </div>
+        <?php
+            $request = isset($_REQUEST['e']) ? $_REQUEST['e'] : NULL;
+            if ($request != null) {
+
+                switch ($request) {
+                    case 0:
+                        echo '<div class="alert alert-block alert-success fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
+                                                                                    El usuario se ha editado con exito.
+                                                                                    </p></div>';
+                        break;
+                    case 1:
+                        echo '<div class="alert alert-block alert-success fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
+                                                                                    Privilegios alterados con exito.
+                                                                                    </p></div>';
+                        break;
+                    case 3:
+                        echo '<div class="alert alert-block alert-danger fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
+                                                                                    Algo salio mal. Intente de nuevo :(
+                                                                                    </p></div>';
+                        break;
+                    case 4:
+                        echo '<div class="alert alert-block alert-danger fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
+                                                                                    No hay cambios. No se detecto cambios de roles
+                                                                                    </p></div>';
+                        break;
+                }
+            }
+            ?>
         <h3 class="page-title">
             Unitee - Editar Usuario 
         </h3>
@@ -96,39 +127,6 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
                             </ul>
                         </div>
                         <!-- FINAL PORTLET TABS-->
-                        <div id="messages">
-                            <!-- DIV PARA MENSAJES POR JAVASCRIPT ...-->
-                        </div>
-
-<?php
-$request = isset($_REQUEST['e']) ? $_REQUEST['e'] : NULL;
-if ($request != null) {
-
-    switch ($request) {
-        case 0:
-            echo '<div class="alert alert-block alert-success fade in"><p>
-                                                                        <b>Cambios Realizados !</b>  El usuario se ha editado con exito.
-                                                                        </p></div>';
-            break;
-        case 1:
-            echo '<div class="alert alert-block alert-success fade in"><p>
-                                                                        <b>Cambios Realizados !</b> Privilegios alterados con exito.
-                                                                        </p></div>';
-            break;
-        case 3:
-            echo '<div class="alert alert-block alert-danger fade in"><p>
-                                                                        <b>Algo Salio mal !</b> Intente denuevo :(
-                                                                        </p></div>';
-            break;
-        case 4:
-            echo '<div class="alert alert-block alert-danger fade in"><p>
-                                                                        <b>No hay cambios</b> No se detecto cambios de roles
-                                                                        </p></div>';
-            break;
-    }
-}
-?>
-
                         <!-- INICIO PORTLET NODY-->
                         <div class="portlet-body">
                             <!-- INICIO PORTLET TAB CONTENT-->
@@ -136,7 +134,7 @@ if ($request != null) {
                                 <!-- INICIO DEL PRIMER TAB PANE-->
                                 <div class="tab-pane " id="portlet_tab2">
                                     <!-- INICIO DEL DIV DEL SCROLLER-->
-                                    <div class="scroller" style="height: 340px;">
+                                    <div class="scroller" style="height: 250px;">
                                         <!--INICIO FORMULARIO ROLES-->
 <?php echo form_open("/TheUser/EditRol/", array("method" => "post")); ?>
                                         <input type="hidden" value="" id="id_user" name="id_user" />
@@ -153,7 +151,7 @@ if ($request != null) {
                                                 </div>
                                             </div>
                                             <div class="form-group" align="center">
-                                                <div class="input-group col-md-12" >
+                                                <div class="input-group" >
                                                     <div id="r1" class="iradio_minimal-grey" style="position: relative;">
                                                         <input id="rol1" name="rol"  value="1" type="radio"  class="icheck" >
                                                     </div>
@@ -175,7 +173,7 @@ if ($request != null) {
                                                 </div>
                                             </div>
                                             <div class="form-group" align="center">
-                                                <div class="input-group col-md-12" >
+                                                <div class="input-group" >
                                                     <div id="r2"    class="iradio_minimal-grey" style="position: relative;">
                                                         <input id="rol2" name="rol"  type="radio"   value="2" class="icheck" >
                                                     </div>
@@ -196,7 +194,7 @@ if ($request != null) {
                                                 </div>
                                             </div>
                                             <div class="form-group" align="center">
-                                                <div class="input-group col-md-12" >
+                                                <div class="input-group" >
                                                     <div id="r3"  class="iradio_minimal-grey" style="position: relative;">
                                                         <input name="rol" id="rol3"   value="3" type="radio"  class="icheck" >
                                                     </div>
@@ -224,7 +222,7 @@ if ($request != null) {
                                 <!-- INICIO DEL SEGUNDO TAB PANE-->
                                 <div class="tab-pane active" id="portlet_tab1">
                                     <!-- INICIO DEL DIV DEL SCROLLER-->
-                                    <div class="scroller" style="height: 280px;">
+                                    <div class="scroller" style="height: 220px;">
                                         <!--INICIO FORMULARIO INFO USUARIO-->
 <?php echo form_open("/TheUser/Edit", array("method" => "post")); ?>
                                         <div class="col-md-6">
@@ -348,7 +346,7 @@ if ($request != null) {
         tasking.config_before(function () {
             $("#messages").html(
                     '<div class="alert alert-block alert-success fade in">' +
-                    '<p><b>Cargando ...</b>   Por favor espere.</p>' +
+                    '<button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"><p></button></button>Cargando ...   Por favor espere.</p>' +
                     '</div>'
                     );
         });
@@ -384,7 +382,7 @@ if ($request != null) {
                         var d = $("#rol" + i);
                         if (d.val() == u.rol_nivel) {
                             $("#rol" + i).attr("disabled", true);
-                            $("#m" + i).html('<div class="alert alert-block alert-success fade in"  align="center"><p><b>Privilegio Actual</b></p></div>');
+                            $("#m" + i).html('<div class="alert alert-block alert-success fade in"  align="center"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"><p>Privilegio Actual</p></div>');
                         }
                     }
                 }

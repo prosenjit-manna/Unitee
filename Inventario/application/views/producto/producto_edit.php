@@ -3,16 +3,6 @@
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
         <!-- INICIO TITULO DE LA PAGINA -->
-         <!--Inicio Alertas-->
-        <div class="alert alert-block alert-success fade in">
-            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
-            </button><p>Producto Editado con Exito</p>
-        </div>
-         <div class="alert alert-block alert-danger fade in">
-            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
-            </button><p>No se pudo editar el producto,  favor intentar de nuevo.</p>
-        </div>
-        <!--Fin Alertas-->
         <h3 class="page-title">
             Unitee - Editar Producto
         </h3>
@@ -41,7 +31,7 @@
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <!-- INICIO PAGE CONTENT-->
-            <div class="row scroller" style="height:375px" data-rail-visible="1" >
+            <div class="row scroller" style="height:400px" data-rail-visible="1" >
                 <div class="col-md-12">
                     <!-- INICIO Portlet PORTLET-->
                     <div class="portlet light">
