@@ -132,7 +132,7 @@
                         else{
                           selected="";   
                         }
-                        $('#select_colors').append("<option" + selected + " value=" + a.id + ">" + a.name + "</option>");
+                        $('#select_colors').append("<option " + selected + " value=" + a.id + ">" + a.name + "</option>");
                     });
                 });
                 tasking.do_task();
