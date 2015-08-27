@@ -154,9 +154,9 @@ class Dashboard extends CI_Controller {
               * div de control <div id="request"></div>
               * dependencia de jtask + site_url()
               */
-             $js_request        = "var r = new Request('" . site_url() ."');"
+             $js_request        = 'var $peticiones = $("#request");'
+                                . "var r = new Request('" . site_url() ."');"
                                 . "r.password();"
-                                . ""
                                 . "";
              
              
