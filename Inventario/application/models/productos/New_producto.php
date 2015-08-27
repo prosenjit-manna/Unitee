@@ -59,7 +59,9 @@ class New_producto extends CI_Model  implements PInterface {
     }
 
     public function _jsLoader() {
-         return array("load_colors();","load_unidad();","generate_SKU();","validate_price();");
+         return array("load_colors();",
+             "load_unidad();","generate_SKU();","validate_price();"
+             ,"validate_cantidad();","validate_margen();");
     }
 
     public function _rols() {
