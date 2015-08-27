@@ -47,19 +47,19 @@ class Edit_producto extends CI_Model implements PInterface{
 
     public function _init() {
         $this->load->helper("form");
-        $this->load->view("producto/producto_edit" , array("data" => $data));
+       
+        $this->load->model("productos/View_producto");
+        
         $id         = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
         
         if(is_null($id)){
              $this->load->view("dashboard/main");
              return;
         }
+        $data       = $this->View_producto->get_product($id);
         
-        $this->load->model("proveedor/view_proveedor");
+        $this->load->view("producto/producto_edit" , array("data" => $data));
         
-        $data       = $this->view_proveedor->get_provider($id);
-        
-        $this->load->view("proveedor/proveedor_edit" );
        
     }
 
@@ -72,7 +72,7 @@ class Edit_producto extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-
+      return array("load_colors();","load_unidad();");
     }
 
     public function _rols() {
@@ -110,12 +110,13 @@ class Edit_producto extends CI_Model implements PInterface{
     public function update_product($id ,
                $nombre , $color , $margen , $unidad,
                $descripcion , $precio , $cantidad , $sku){
-       $this->db->where(array("	id_producto" => $id ));
-       return $this->db->update(
+               $this->db->where(array("	id_producto" => $id ));
+                  return $this->db->update(
                 "producto" , 
                 array("id_unidad"  => $unidad , 
-                      "descripcion" => $descripcion,"descripcion" => $descripcion,
-                      "sku" => $color, "nombre" => $nombre ,
+                      "descripcion" => $descripcion,
+                      "cantidad" => $cantidad,"sku" => $sku,
+                      "margen" => $margen, "nombre" => $nombre ,
                       "id_color" => $color, "precio_est_unidad" => $precio ));
     }
 }

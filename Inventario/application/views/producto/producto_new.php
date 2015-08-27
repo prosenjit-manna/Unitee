@@ -2,6 +2,7 @@
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
+        
         <!-- INICIO TITULO DE LA PAGINA -->
         <h3 class="page-title">
             Unitee - Nuevo Producto
@@ -32,17 +33,7 @@
             <!-- INICIO PAGE CONTENT-->
             <div class="row scroller" style="height:440px" data-rail-visible="1" >
 
-                <?php
-                $err_message = array(
-                    0 => "  <div class='alert alert-block alert-success fade in'><p> Producto Agregado con Exito &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>",
-                    1 => "  <div class='alert alert-block alert-warning fade in'><p>No se pudo guardar el Producto ,  favor intentar denuevo.</p></div>"
-                );
-
-
-                if (isset($_REQUEST['err'])) {
-                    echo $err_message[$_REQUEST['err']] ? : NULL;
-                }
-                ?> 	
+            	
                 <!-- INICIO Portlet PORTLET-->
                 <div class="portlet">
                     <div class="portlet light">
@@ -89,8 +80,7 @@
                                             <br><br><br><br>
                                             <label class="control-label col-md-3">* Descripción</label>
                                             <div class="form-group col-md-9">
-                                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto">
-                                                </textarea>
+                                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>
                                             </div>
                                             <label class="control-label col-md-3">* SKU</label>
                                             <div class="form-group col-md-9">

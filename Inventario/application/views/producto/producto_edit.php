@@ -51,7 +51,7 @@
                                             <h3 lass="form-section">Información del Producto</h3><br>
 
                                             <?php echo form_open("/Productos/EditProduct/", array("method" => "post")); ?>
-                                            <input type="hidden" name="the_id" id="the_id" value="<?php echo $data->id_pro; ?>" />
+                                            <input type="hidden" name="the_id" id="the_id" value="<?php echo $data->id_producto; ?>" />
 
                                             <label class="control-label col-md-3">* Nombre</label>
                                             <div class="form-group col-md-9">
@@ -59,7 +59,7 @@
                                             </div>
                                             <label class="control-label col-md-3">* Color</label>
                                             <div class="form-group col-md-9">
-                                                <select required="" id="select_color" name="txt_color" class="form-control input-circle"> 
+                                                <select required="" id="select_colors" name="txt_color" class="form-control input-circle"> 
 
                                                 </select>
                                             </div>
@@ -79,17 +79,15 @@
                                             <br><br><br><br>
                                             <label class="control-label col-md-3">* Descripción</label>
                                             <div class="form-group col-md-9">
-                                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto">
-                                                    <?php echo $data->descripcion; ?>
-                                                </textarea>
+                                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"><?php echo $data->descripcion; ?></textarea>
                                             </div>
                                             <label class="control-label col-md-3">* SKU</label>
                                             <div class="form-group col-md-9">
-                                                <input readonly type="text" id="" name="txt_sku" class="form-control input-circle" placeholder="SKU del producto">
+                                                <input value="<?php echo $data->sku; ?>" readonly type="text" id="" name="txt_sku" class="form-control input-circle" placeholder="SKU del producto">
                                             </div>
                                             <label class="control-label col-md-3">* Precio</label>
                                             <div class="form-group col-md-9">
-                                                <input value="<?php echo $data->precio; ?>" type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Precio del Producto">
+                                                <input value="<?php echo $data->precio_est_unidad; ?>" type="text" id="" name="txt_precio" class="form-control input-circle" placeholder="Precio del Producto">
                                             </div>
                                             <label class="control-label col-md-3">* Cantidad</label>
                                             <div class="form-group col-md-9">
@@ -116,3 +114,48 @@
         <!-- FINAL CONTENIDO -->
     </div>
 </div>
+
+<script>
+
+
+            var load_colors = function () {
+                var tasking = new jtask();
+                tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
+                tasking.success_callback(function (d) {
+                    var data = JSON.parse(d);
+                    var id ="<?php echo $data->id_color; ?>";
+                    var selected="";
+                    $.map(data, function (a) {
+                       if(id === a.id){
+                          selected="selected=true";
+                        } 
+                        else{
+                          selected="";   
+                        }
+                        $('#select_colors').append("<option" + selected + " value=" + a.id + ">" + a.name + "</option>");
+                    });
+                });
+                tasking.do_task();
+            };
+
+            var load_unidad = function () {
+                var tasking = new jtask();
+                tasking.url = "<?php echo site_url("/Productos/get_unidad"); ?>";
+                tasking.success_callback(function (d) {
+                    var data = JSON.parse(d);
+                     var id ="<?php echo $data->id_unidad; ?>";
+                    var selected="";
+                    $.map(data, function (a) {
+                         if(id===a.id){
+                          selected="selected=true";
+                        } 
+                         else{
+                          selected="";   
+                        }
+                        $('#select_unidad').append("<option " + selected + " value=" + a.id + ">" + a.name + "</option>");
+                    });
+                });
+                tasking.do_task();
+            };
+
+      </script>

@@ -51,10 +51,7 @@ class Edit_proveedor extends CI_Model implements PInterface{
         
         $id         = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
         
-        if(is_null($id)){
-             $this->load->view("dashboard/main");
-             return;
-        }
+     
         
         $this->load->model("proveedor/view_proveedor");
         

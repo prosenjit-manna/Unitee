@@ -134,6 +134,14 @@ class view_producto extends CI_Model implements PInterface{
                ->db
                ->delete("producto" , array("id_producto" => $id));
     }
+    
+        public function get_product($id){
+        $this->query  = "SELECT  * from producto where id_producto LIKE  ?  ";
+        
+        return  $this->db
+                ->query($this->query , array($id))
+                ->result()[0];
+    }
 
 }
    
