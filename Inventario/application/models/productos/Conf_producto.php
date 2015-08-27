@@ -53,8 +53,11 @@ class Conf_producto extends CI_Model implements PInterface{
     
     public function _css() {
        return array(
+           $this->route . "assert/plugins/select2/select2.css",
            $this->route . "assert/plugins/bootstrap-colorpicker/css/colorpicker.css",
-           $this->route . "assert/plugins/jquery-minicolors/jquery.minicolors.css"
+           $this->route . "assert/plugins/jquery-minicolors/jquery.minicolors.css",
+           $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"
+
        );
     }
 
@@ -70,10 +73,13 @@ class Conf_producto extends CI_Model implements PInterface{
     public function _js() {
         //ACA IRAN TODOS LOS JAVASCRIPT 
          return array(
+            $this->route . "assert/plugins/select2/select2.min.js",
             $this->route . "assert/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js",
             $this->route . "assert/plugins/jquery-minicolors/jquery.minicolors.min.js",
             $this->route . "assert/plugins/components-form-tools.js",
-            $this->route . "assert/plugins/components-form-tools2.js"
+            $this->route . "assert/plugins/components-form-tools2.js",
+            $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.js",
+            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"
        );
     }
 

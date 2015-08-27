@@ -41,7 +41,7 @@
                         </div><br>
                         <div class="portlet-body">
                             <div class="table-scrollable">
-                                <table class="table table-striped table-bordered table-advance table-hover">
+                                <table class="table table-striped table-hover table-bordered">
                                     <thead>
                                         <tr>
                                             <th>
