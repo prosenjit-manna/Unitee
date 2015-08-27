@@ -40,7 +40,6 @@
 
             <!-- INICIO PAGE CONTENT-->
             <div class="row scroller" style="height:450px" data-rail-visible="1" >
-                <div class="col-md-12">
                     <!-- INICIO Portlet PORTLET-->
                     <div class="portlet light">
                         <div class="portlet-title">
@@ -55,41 +54,42 @@
                                 <!-- INICIO FORM-->
                                 <?php echo form_open("TheUser/Add/", array("method" => "post")); ?>
                                 <div class="form-body">
+                                 <h5 lass="form-section">Los campos con * son Requeridos</h5><br>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label class="control-label col-md-2">Nombres</label>
-                                            <div class="form-group col-md-10">
+                                            <label class="control-label col-md-3">* Nombres</label>
+                                            <div class="form-group col-md-9">
                                                 <input required="" type="text" id="txt_nombre" name="txt_nombre" class="form-control input-circle" placeholder="Nombres">
                                             </div>
-                                            <label class="control-label col-md-2">Apellidos</label>
-                                            <div class="form-group col-md-10">
+                                            <label class="control-label col-md-3">* Apellidos</label>
+                                            <div class="form-group col-md-9">
                                                 <input required="" type="text" id="txt_apellido" name="txt_apellido" class="form-control input-circle" placeholder="Apellidos">
                                             </div>
-                                            <label class="control-label col-md-2">Correo</label>
-                                            <div class="form-group col-md-10">
+                                            <label class="control-label col-md-3">* Correo</label>
+                                            <div class="form-group col-md-9">
                                                 <input required="" id="txt_correo" name="txt_correo" type="email" class="form-control input-circle" placeholder="Email Address">
                                             </div>
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
-                                            <label class="control-label col-md-2">Usuario</label>
-                                            <div class="form-group col-md-10">
+                                            <label class="control-label col-md-3">* Usuario</label>
+                                            <div class="form-group col-md-9">
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_" style="display:none;" class="icon-check" data-original-title="Usuario aceptado ..."></i>
                                                     <input onkeyup="check_user(this.value);" required="" type="text" id="txt_user" name="txt_user" class="form-control input-circle" placeholder="Nombre de Usuario ">
                                                 </div>
 
                                             </div>
-                                            <label class="control-label col-md-2">Contraseña</label>
-                                            <div class="form-group col-md-10">
+                                            <label class="control-label col-md-3">Contraseña</label>
+                                            <div class="form-group col-md-9">
                                                 <input   type="password" id="txt_password" name="txt_password" class="form-control input-circle" placeholder="Contraseña">
                                             </div>
-                                            <label class="control-label col-md-2">Repetir</label>
-                                            <div class="form-group col-md-10">
+                                            <label class="control-label col-md-3">* Repetir</label>
+                                            <div class="form-group col-md-9">
                                                 <input  onkeyup="check_();" type="password" id="txt_repeat_pass" name="txt_repeat_pass" class="form-control input-circle" placeholder="Repetir Contraseña">
                                             </div>
-                                            <label class="control-label col-md-2">Autogenerar</label>
-                                            <div class="form-group col-md-10">
+                                            <label class="control-label col-md-3">Autogenerar</label>
+                                            <div class="form-group col-md-9">
                                                 <div class="radio-list">
                                                     <input onclick="check_();" onchange="check_();" type="checkbox" id="txt_generate" name="txt_generate" class="make-switch" data-size="small" data-on-color="info" data-on-text="SI" data-off-color="default" data-off-text="NO">
                                                 </div>
@@ -109,12 +109,12 @@
                         </div>
                         <!-- FINAL Portlet PORTLET-->
                     </div>
-                </div>
-                <!-- FINAL PAGE CONTENTENIDO-->
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
 
         </div>
+    </div>
+</div>
 
         <!-- FINAL CONTENIDO -->
 
