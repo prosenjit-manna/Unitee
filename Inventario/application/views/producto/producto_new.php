@@ -83,8 +83,12 @@
                                             </div>
                                             <label class="control-label col-md-3">* Margen</label>
                                             <div class="form-group col-md-9">
-                                                <input required="" type="text" id="" name="txt_margen" class="form-control input-circle" placeholder="Margen">
-                                                <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
+                                              <div class="input-icon right">
+                                                    <i name="change_" id="change_margen_ok" style="display:none;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_margen" style="display:block;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input onkeyup="validate_margen();" required="" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
+                                                    <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
+                                              </div>
                                             </div>
                                             <label class="control-label col-md-3">* Unidad</label>
                                             <div class="form-group col-md-9">
@@ -106,8 +110,9 @@
                                             <label class="control-label col-md-3">* Precio</label>
                                              <div class="form-group col-md-9">
                                                 <div class="input-icon right">
-                                                    <i name="change_" id="change_" style="display:none;" class="icon-check" data-original-title="Usuario aceptado ..."></i>
-                                                    <input onkeyup="validate_price(this.value);" required="" type="text" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                                    <i name="change_" id="change_precio_ok" style="display:none;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_precio" style="display:block;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input onkeyup="validate_price();" required="" type="text" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
                                                 </div>
 
                                             </div>
@@ -115,7 +120,12 @@
                                             
                                             <label class="control-label col-md-3">* Cantidad</label>
                                             <div class="form-group col-md-9">
-                                                <input type="text" id="" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                                <div class="input-icon right">
+                                                    <i name="change_" id="change_cantidad_ok" style="display:none;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_cantidad" style="display:block;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                     
+                                                    <input onkeyup="validate_cantidad();" type="text" id="cantidad" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                                </div>
                                             </div>
                                             <!--/span-->
                                         </div>
@@ -141,7 +151,7 @@
 
         <script>
 
-
+            var err=0;
             var load_colors = function () {
                 var tasking = new jtask();
                 tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
@@ -185,11 +195,52 @@
                 }
             };
 
+            var validate_cantidad = function () {
+                var change_cantidad_ok = $("#change_cantidad_ok");
+                var change_cantidad = $("#change_cantidad");
+                var cantidad = $("#cantidad").val();
+                if (cantidad === "" || isNaN(cantidad)) {
+                change_cantidad_ok.css("display", "block");
+                change_cantidad.css("display", "block");
+                }
+                else {
+                change_cantidad_ok.css("display", "block");
+                change_cantidad.css("display", "block");
+                }
+            };
 
-
-            var validate_price = function () {
+            var validate_margen = function () {
+                var change_margen_ok = $("#change_margen_ok");
+                var change_margen = $("#change_margen");
+                var margen = $("#margen").val();
+                if (margen === "" || isNaN(margen)) {
+                change_margen_ok.css("display", "block");
+                change_margen.css("display", "block");
+                }
+                else {
+                change_margen_ok.css("display", "block");
+                change_margen.css("display", "block");
+                }
+            };
+            
+             var validate_price = function () {
+                var change_precio_ok = $("#change_precio_ok");
+                var change_precio = $("#change_precio");
                 var precio = $("#precio").val();
-                if (precio == "" || isNaN(precio)) {
+                if (precio === "" || isNaN(precio)) {
+                change_precio_ok.css("display", "block");
+                change_precio.css("display", "block");
+                }
+                else {
+                change_precio_ok.css("display", "block");
+                change_precio.css("display", "block");
+                }
+            };
+            
+            
+            var check = function (err) {
+                 
+                if (err === 1) {
                     $('#send').attr("disabled", true);
                 }
                 else {
@@ -199,8 +250,6 @@
                 }
 
             };
-
-
 
 
         </script>
