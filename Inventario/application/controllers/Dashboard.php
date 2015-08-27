@@ -375,7 +375,7 @@ class Dashboard extends CI_Controller {
     
     public function modulos(){
         $this->load->library("plugin");
-        return $this->plugin->_show();
+        echo "<pre>" , print_r($this->plugin->_show()) , "</pre>";
     }
     
     

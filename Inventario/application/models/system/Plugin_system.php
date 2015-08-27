@@ -5,15 +5,17 @@ get_instance()->load->interfaces("Interface");
 
 class Plugin_system extends CI_Model implements PInterface {
 
-    var $count      = 0;
-    var $data       = array();
     var $route      = NULL;
 
     public function __construct() {
         parent::__construct();
         $this->load->database();
+        
         $this->load->library("base_url");
+        $this->load->library("plugin");
+        
         $this->route = $this->base_url->GetBaseUrl();
+       
     }
 
     public function _css() {
@@ -28,8 +30,7 @@ class Plugin_system extends CI_Model implements PInterface {
     public function _init() {
 
         $data = array(
-            "data"      => $this->data,
-            "count"     => $this->count
+            "data"      => $this->plugin->_show(),
         );
 
         $this->load->helper("form");
@@ -43,13 +44,12 @@ class Plugin_system extends CI_Model implements PInterface {
             $this->route . "assert/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js",
             $this->route . "assert/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js",
             $this->route . "assert/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js",
-            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
-            $this->route . "assert/system/table-advanced.js"
+            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"
         );
     }
 
     public function _jsLoader() {
-        return array('TableAdvanced.init();');
+        return array('InitPlugin();');
     }
 
     public function _rols() {
