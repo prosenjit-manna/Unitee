@@ -194,6 +194,12 @@
            var b        = $("#send_color");
            var t        = $("#txt_color");
            var c        = $("#hue-demo");
+           
+           if(t.val() == ""){
+               alert("el nombre del color debe ser obligatorio");
+               return;
+           }
+           
            var tasking = new jtask();
            tasking.url = "<?php echo site_url("/Productos/New_Color"); ?>";
            tasking.beforesend = true;
@@ -229,6 +235,13 @@
            var k        = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Unidad</button>';
            var b        = $("#send_unit");
            var t        = $("#txt_unidad");
+           
+           
+            if(t.val() == ""){
+               alert("el nombre de la unidad debe ser obligatorio");
+               return;
+           }
+
            var tasking = new jtask();
            tasking.url = "<?php echo site_url("/Productos/New_Unit"); ?>";
            tasking.beforesend = true;
