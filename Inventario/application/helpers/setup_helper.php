@@ -68,3 +68,12 @@ if(!function_exists("system_token")){
         return "=";
     }
 }
+
+
+if(!function_exists("internet_conection")){
+    function internet_conection(){
+        if(!@fsockopen("www.google.com", 80)){
+            return FALSE;
+        }else{ return TRUE; }
+    }
+}

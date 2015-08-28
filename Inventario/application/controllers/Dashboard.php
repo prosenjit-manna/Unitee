@@ -48,9 +48,9 @@ class Dashboard extends CI_Controller {
     {
         parent::__construct();
         
+        $this->load->helper("setup");
         $this->load->library("session");
         $this->load->library("base_url");
-        $this->load->helper("setup");
         $this->load->library("system");
         $this->route = $this->base_url->GetBaseUrl();
         
@@ -67,6 +67,8 @@ class Dashboard extends CI_Controller {
         }
         
         $this->user_p = $this->session->user;
+        
+        
         
     }
     
@@ -107,6 +109,14 @@ class Dashboard extends CI_Controller {
          *   ejemplo : usuario=user_name / usuario = directorio / user_name = model
          * 
          */
+        
+        //verifica si existe una conexion a internet , 
+        //en dado caso no exista tira el error
+        $conection = internet_conection();
+        if(!$conection){
+            $this->load->view("errors/html/404" , array("route" => site_url()));
+            return;
+        }
         
         
         //verifica si existe un bloqueo de sesion 
