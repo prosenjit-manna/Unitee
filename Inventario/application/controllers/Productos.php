@@ -17,14 +17,15 @@ class Productos extends CI_Controller {
      echo json_encode($colores);
            
     }
-     public function get_unidad(){
+    
+    public function get_unidad(){
      
         $unidades   = $this->New_producto->get_unidad();  
         echo json_encode($unidades);
            
     }
     
-     public function generate_sku(){
+    public function generate_sku(){
      
              $sku   = $this->New_producto->generate_sku();  
             echo json_encode($sku);
@@ -123,7 +124,7 @@ class Productos extends CI_Controller {
         
     }
     
-     public function New_Unit(){
+    public function New_Unit(){
         
         $name           = isset($_REQUEST['name']) ? $_REQUEST['name'] : NULL;
         
@@ -145,7 +146,7 @@ class Productos extends CI_Controller {
         exit();
     }
     
-     public function delete_unit(){
+    public function delete_unit(){
         $id           = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
         
         $this->load->model("productos/conf_producto" , 'conf');
