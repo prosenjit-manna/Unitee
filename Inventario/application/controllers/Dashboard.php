@@ -328,7 +328,8 @@ class Dashboard extends CI_Controller {
 
     }
     
-    public function blockscreen(){
+    public function blockscreen()
+    {
             $this->session->block = TRUE;
             $this->load->helper("form");
             $this->load->view("lock/lock" ,
@@ -387,7 +388,6 @@ class Dashboard extends CI_Controller {
         $this->load->library("plugin");
         echo "<pre>" , print_r($this->plugin->_show()) , "</pre>";
     }
-    
     
     public function getsession(){
         echo "<pre>";
