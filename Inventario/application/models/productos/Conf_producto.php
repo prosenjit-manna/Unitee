@@ -131,6 +131,29 @@ class Conf_producto extends CI_Model implements PInterface{
         
     }
     
+    public function save_( array $data , $type = "color"){
+        
+        switch ($type){
+            case "color":
+                $this->db->insert("color" , $data);
+                return $this->db->insert_id();
+            case "unit":
+                $this->db->insert("unidad" , $data);
+                return $this->db->insert_id();
+        }
+        
+    }
+    
+    public function delete_($id , $type="color"){
+        switch ($type){
+            case "color":
+                $this->db->delete("color" , array("id_color" => $id));
+                break;
+            case "unit":
+                $this->db->delete("unidad" , array("id_unidad" => $id));
+                break;
+        }
+    }
    
 
 }

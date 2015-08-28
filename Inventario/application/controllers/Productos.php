@@ -31,7 +31,7 @@ class Productos extends CI_Controller {
            
     }
     
-     public function New_Product(){
+    public function New_Product(){
         
         
         $nombre        = $_REQUEST['txt_nombre'];
@@ -63,7 +63,7 @@ class Productos extends CI_Controller {
         
     }
     
-       public function EditProduct(){
+    public function EditProduct(){
         
         $id            = $_REQUEST['the_id'];
         
@@ -95,7 +95,6 @@ class Productos extends CI_Controller {
        }
     }
     
-   
     public function delete_product(){
         $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
         
@@ -105,6 +104,52 @@ class Productos extends CI_Controller {
         }
         $this->load->model("productos/view_producto");
         echo $this->view_producto->delete_product($id);
+        exit();
+    }
+    
+    public function New_Color(){
+        
+        $name           = isset($_REQUEST['name']) ? $_REQUEST['name'] : NULL;
+        $value          = isset($_REQUEST['value']) ? $_REQUEST['value'] : NULL;
+        
+        $this->load->model("productos/conf_producto" , 'conf');
+        $id =  $this->conf->save_(array(
+            "nombre"            => $name,
+            "referencia"        => $value
+        ));
+        
+        echo $id;
+        exit();
+        
+    }
+    
+     public function New_Unit(){
+        
+        $name           = isset($_REQUEST['name']) ? $_REQUEST['name'] : NULL;
+        
+        $this->load->model("productos/conf_producto" , 'conf');
+        $id =  $this->conf->save_(array(
+            "nombre"            => $name,
+        ), "unit");
+        
+        echo $id;
+        exit();
+        
+    }
+    
+    public function delete_color(){
+        $id           = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        
+        $this->load->model("productos/conf_producto" , 'conf');
+        $this->conf->delete_($id);
+        exit();
+    }
+    
+     public function delete_unit(){
+        $id           = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        
+        $this->load->model("productos/conf_producto" , 'conf');
+        $this->conf->delete_($id , "unit");
         exit();
     }
 
