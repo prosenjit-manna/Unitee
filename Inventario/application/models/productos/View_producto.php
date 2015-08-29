@@ -125,8 +125,8 @@ class view_producto extends CI_Model implements PInterface{
                   producto.precio as 'precio' ,
                   producto.precio_est_unidad as 'estimado'
                   FROM producto 
-                  INNER JOIN color ON color.id_color=producto.id_color
-                  INNER JOIN unidad ON unidad.id_unidad=producto.id_unidad
+                  LEFT JOIN color ON color.id_color=producto.id_color
+                  LEFT JOIN unidad ON unidad.id_unidad=producto.id_unidad
                   ORDER BY producto.date ASC; ";
         
         return $this->db
