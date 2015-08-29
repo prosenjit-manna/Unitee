@@ -100,5 +100,70 @@ class Permission_engine extends CI_Model {
             return $current_rol;
     }
     
+    /**
+     * Esta funcion sirve para obtener permisos de operaciones u otras funciones 
+     * que en un modulo solo ciertos usuarios deben de tener 
+     * 
+     * ejemplo : necesitamos darle permisos de solo ver a un rol distinto de admin 
+     *           y por ello necesitamos deshabilitar el eliminar y editar si lo tiene 
+     * 
+     * desarrollamos nuestra estructura de permisos de operaciones en json file
+     * 
+     *      ejemplo:  
+     * 
+     *              {"edit" : "1,2" , "delete": "1" , "view": "1,2"}
+     * 
+     *le dimos permiso a los roles para edit , el rol 1 y 2 , delete el rol 1 y asi ...
+     *la funcion busca que roles tiene el usuario actual o un sub_rol 
+     * 
+     * y retorna un array con las operaciones habilitadas o deshabilitadas 
+     * 
+     *          array("edit" => true , "delete" => false , ... );
+     * 
+     * la funcion luego de retorar estos valores se puede utilizar tanto como en la interface
+     * como independientemente , claro esta la interface seria lo correcto como buena practica
+     * la interfaces se llama _operations(){}
+     * debe de devolver el valor de la funcion 
+     * 
+     */
+    public function GetOperationRoles($sidebar){
+        
+         $info = $this->db
+                ->query("SELECT operations FROM sidebar WHERE model LIKE '$sidebar' ")
+                ->result()[0];
+         
+         if(is_null($info->operations)){
+             return NULL;
+         }
+         
+         $decode = json_decode($info->operations);
+         if(is_null($decode) || !$decode){
+             return NULL;
+         }
+         
+         $this->load->model("user/user_auth" , "user");
+         $roles = $this->user->roles;
+         
+         $code = [];
+         
+         foreach ($decode as $k=>$v){
+             $explode = explode(",", $v);
+             foreach ($explode as $id){
+                 if($id == $roles['nivel'] || $id == $roles['sub_nivel']){
+                     $code[$k] = TRUE;
+                     break;
+                 }else{
+                     $code[$k] = FALSE;
+                 }
+             }
+         }
+         
+        
+         
+         return $code;
+         
+    }
     
+    
+   
 }

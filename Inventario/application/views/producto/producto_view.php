@@ -126,10 +126,25 @@
                                                                                              </td>';
                                             }
 
-                                            echo '<td align="center">
-												<a title="editar producto" href="' . site_url("/0/productos=edit_producto?id=" . $prod->id) . '"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-												<a title="eliminar producto " class="" onclick="the_id(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                                                                             </td>';
+                                            echo '<td align="center">';
+                                            if($operations == NULL){
+                                                echo '<a title="editar producto" href="' . site_url("/0/productos=edit_producto?id=" . $prod->id) . '"><i class="icon-pencil" style="font-size: 20px;"></i></a>';
+                                                echo '<a title="eliminar producto " class="" onclick="the_id(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>';
+                                            }else{
+                                                 if($operations['edit']){
+                                                   echo '<a title="editar producto" href="' . site_url("/0/productos=edit_producto?id=" . $prod->id) . '"><i class="icon-pencil" style="font-size: 20px;"></i></a>';
+                                                }
+                                                else{
+                                                    echo '<i class="icon-pencil" style="font-size: 20px;"></i>';
+                                                }
+                                                if($operations['delete']){
+                                                    echo '<a title="eliminar producto " class="" onclick="the_id(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>';
+                                                }else{
+                                                     echo '<i class="icon-trash" style="font-size: 20px;"></i>';
+                                                }
+                                            }
+					    
+                                            echo '</td>';
                                             echo "</tr>";
                                         }
                                         ?>

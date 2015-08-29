@@ -56,7 +56,12 @@ class view_producto extends CI_Model implements PInterface{
 
     public function _init() {
         $this->load->helper("form");
-        $this->load->view("producto/producto_view");
+        
+        $op = array(
+            "operations" => $this->_operations()
+        );
+        
+        $this->load->view("producto/producto_view" , $op);
     }
 
     public function _install() {
@@ -144,7 +149,9 @@ class view_producto extends CI_Model implements PInterface{
     }
 
     public function _operations() {
-        
+        $this->load->model("system/permission_engine" , 'engine');
+        $data = $this->engine->GetOperationRoles($this->model );
+        return $data;
     }
 
 }
