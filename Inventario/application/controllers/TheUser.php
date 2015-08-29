@@ -155,8 +155,7 @@ class TheUser extends CI_Controller {
         
         $id             = $_REQUEST['id_user'];
         
-        echo $id;
-        
+       
         $data_login     = array();
         $data_user      = array(
             "nombres"           => $nombre,
@@ -209,6 +208,7 @@ class TheUser extends CI_Controller {
                     $this->email->message($message_);
 
                     $this->email->send();
+                    
              
         }
         
@@ -237,7 +237,7 @@ class TheUser extends CI_Controller {
     
     public function EditRol(){
         $rol                = isset($_REQUEST['rol']) ? $_REQUEST['rol'] : NULL;
-        $id                 = $_REQUEST['id_user'];
+        $id                 = $_REQUEST['id_user_2'];
         if(is_null($rol)){
             redirect("/0/user=user_edit?e=4&id=" . $id);
             return;

@@ -31,36 +31,36 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
     <div class="page-content">
         <!-- INICIO TITULO DE LA PAGINA ACRUAL-->
         <div id="messages">
-                <!-- DIV PARA MENSAJES POR JAVASCRIPT ...-->
+            <!-- DIV PARA MENSAJES POR JAVASCRIPT ...-->
         </div>
         <?php
-            $request = isset($_REQUEST['e']) ? $_REQUEST['e'] : NULL;
-            if ($request != null) {
+        $request = isset($_REQUEST['e']) ? $_REQUEST['e'] : NULL;
+        if ($request != null) {
 
-                switch ($request) {
-                    case 0:
-                        echo '<div class="alert alert-block alert-success fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
+            switch ($request) {
+                case 0:
+                    echo '<div class="alert alert-block alert-success fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
                                                                                     El usuario se ha editado con exito.
                                                                                     </p></div>';
-                        break;
-                    case 1:
-                        echo '<div class="alert alert-block alert-success fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
+                    break;
+                case 1:
+                    echo '<div class="alert alert-block alert-success fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
                                                                                     Privilegios alterados con exito.
                                                                                     </p></div>';
-                        break;
-                    case 3:
-                        echo '<div class="alert alert-block alert-danger fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
+                    break;
+                case 3:
+                    echo '<div class="alert alert-block alert-danger fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
                                                                                     Algo salio mal. Intente de nuevo :(
                                                                                     </p></div>';
-                        break;
-                    case 4:
-                        echo '<div class="alert alert-block alert-danger fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
+                    break;
+                case 4:
+                    echo '<div class="alert alert-block alert-danger fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>
                                                                                     No hay cambios. No se detecto cambios de roles
                                                                                     </p></div>';
-                        break;
-                }
+                    break;
             }
-            ?>
+        }
+        ?>
         <h3 class="page-title">
             Unitee - Editar Usuario 
         </h3>
@@ -136,8 +136,8 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
                                     <!-- INICIO DEL DIV DEL SCROLLER-->
                                     <div class="scroller" style="height: 250px;">
                                         <!--INICIO FORMULARIO ROLES-->
-<?php echo form_open("/TheUser/EditRol/", array("method" => "post")); ?>
-                                        <input type="hidden" value="" id="id_user" name="id_user" />
+                                        <?php echo form_open("/TheUser/EditRol/", array("method" => "post")); ?>
+                                        <input type="hidden" id="id_user_2" name="id_user_2" value="0" />
                                         <div class="portlet light profile-sidebar-portlet col-md-4">
                                             <!-- SIDEBAR USERPIC -->
                                             <div class="profile-userpic">
@@ -210,7 +210,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
                                             <button type="button" class="btn default">Cancelar</button>
                                             <button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
                                         </div>
-<?php echo form_close(); ?>
+                                        <?php echo form_close(); ?>
                                         <!--FINAL FORMULARIO ROLES-->
 
                                     </div>
@@ -224,7 +224,8 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
                                     <!-- INICIO DEL DIV DEL SCROLLER-->
                                     <div class="scroller" style="height: 220px;">
                                         <!--INICIO FORMULARIO INFO USUARIO-->
-<?php echo form_open("/TheUser/Edit", array("method" => "post")); ?>
+                                        <?php echo form_open("/TheUser/Edit", array("method" => "post")); ?>
+                                        <input type="hidden" id="id_user" name="id_user" value="0" />
                                         <div class="col-md-6">
                                             <label class="control-label col-md-2">Nombres</label>
                                             <div class="form-group col-md-10">
@@ -241,7 +242,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
-                                            <input type="hidden" value="" id="id_user" name="id_user" />
+
                                             <label class="control-label col-md-2">Usuario</label>
                                             <div class="form-group col-md-10">
                                                 <input name="txt_user" id="txt_user" type="text" class="form-control input-circle" disabled="disable" placeholder="Nombre de " required>
@@ -269,7 +270,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
                                             <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
                                             <button type="submit" class="btn blue" id="showtoast"><i class="fa fa-check"></i>Guardar</button>
                                         </div>
-<?php echo form_close(); ?>
+                                        <?php echo form_close(); ?>
                                         <!--FINAL FORMULARIO INFO USUARIO-->
 
                                     </div>
@@ -306,7 +307,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
 
     var $user = null;
 
-    var i = function () {
+    var i = function() {
 
         var rol = "<?php echo $rol; ?>";
         if (!rol) {
@@ -323,7 +324,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
         }
     };
 
-    var p = function () {
+    var p = function() {
         var rol = "<?php echo $rol; ?>";
         var id = "<?php echo $id; ?>";
         if (!rol) {
@@ -334,7 +335,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
     };
 
 
-    var c = function (val) {
+    var c = function(val) {
         if (val === "undefined" || val == null) {
             return;
         }
@@ -343,24 +344,25 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
         tasking.url = "<?php echo site_url("/TheUser/GetUserInfo/"); ?>";
         tasking.data = {"data": val};
         tasking.beforesend = true;
-        tasking.config_before(function () {
+        tasking.config_before(function() {
             $("#messages").html(
                     '<div class="alert alert-block alert-success fade in">' +
                     '<button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"><p></button></button>Cargando ...   Por favor espere.</p>' +
                     '</div>'
                     );
         });
-        tasking.success_callback(function (s) {
+        tasking.success_callback(function(s) {
 
             $("#messages").html("");
             $user = JSON.parse(s);
-            $.map($user, function (u) {
+            $.map($user, function(u) {
                 $("#txt_nombres").val(u.nombres);
                 $("#txt_apellidos").val(u.apellidos);
                 $("#txt_email").val(u.email);
                 $("#txt_user").val(u.user);
                 $("#txt_conexion").val(u.last_date);
                 $("#id_user").val(u.id_login);
+                $("#id_user_2").val(u.id_login);
                 var status = u.status;
                 if (status == 1) {
                     $("#txt_baja").val("0");
@@ -382,7 +384,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
                         var d = $("#rol" + i);
                         if (d.val() == u.rol_nivel) {
                             $("#rol" + i).attr("disabled", true);
-                            $("#m" + i).html('<div class="alert alert-block alert-success fade in"  align="center"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"><p>Privilegio Actual</p></div>');
+                            $("#m" + i).html('<div class="alert alert-block alert-success fade in"  align="center"><p>Privilegio Actual</p></div>');
                         }
                     }
                 }
@@ -393,9 +395,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
 
     };
 
-    var _change = function (val) {
-        alert(val);
-    };
+
 
 
 </script>

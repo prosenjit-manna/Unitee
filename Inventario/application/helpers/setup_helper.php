@@ -23,10 +23,10 @@ if(!function_exists("email_config")){
     function email_config(){
         
          $config['protocol']='smtp';
-         $config['smtp_host']='ssl://marmot.arvixe.com';
+         $config['smtp_host']='ssl://p3plcpnl0226.prod.phx3.secureserver.net';
          $config['smtp_port']='465';
          $config['smtp_timeout']='10';
-         $config['smtp_user']='test@soft.lieison.com';
+         $config['smtp_user']='test@jauzz.net';
          $config['smtp_pass']='Support2015';
          $config['charset']='utf-8';
          $config['newline']="\r\n";

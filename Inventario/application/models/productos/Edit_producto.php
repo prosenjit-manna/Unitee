@@ -120,5 +120,10 @@ class Edit_producto extends CI_Model implements PInterface{
                       "margen" => $margen, "nombre" => $nombre ,
                       "id_color" => $color, "precio_est_unidad" => $precio ));
     }
+
+    public function _operations() {
+        
+    }
+
 }
    

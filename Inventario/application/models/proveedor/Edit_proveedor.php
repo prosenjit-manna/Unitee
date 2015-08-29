@@ -112,4 +112,8 @@ class Edit_proveedor extends CI_Model implements PInterface{
         
     }
 
+    public function _operations() {
+        
+    }
+
 }

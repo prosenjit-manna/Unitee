@@ -73,5 +73,7 @@ interface PInterface {
     /**@todo funcion que maneja los widgets del sistema */
     public function _widgets();
     
+    
+    public function _operations();
   
 }

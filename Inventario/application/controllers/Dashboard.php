@@ -396,7 +396,29 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
+             
+                    $this->load->library("email");
+                   
+                    if(email_config() != NULL){
+                        $this->email->initialize(email_config());
+                    }
         
+                    $from_      = email_from();
+                    
+                    $this->email->from($from_['from'], $from_['name']);
+                    $this->email->to("rmarroquin@lieison.com");
+
+                    $this->email->subject('Contraseña Unitee | Inventario');
+                    
+                    $message_ =
+                             'Tu nueva contraseña es : ' 
+                            . "HOLA COMO ESTAS ES UNA PRUEBA PAPI ";
+                    
+                    $this->email->message($message_);
+
+                    $this->email->send(FALSE);
+                    
+                    print_r($this->email->print_debugger(array('headers')));
     }
     
 }

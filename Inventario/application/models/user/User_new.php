@@ -90,4 +90,8 @@ class User_new extends CI_Model implements PInterface{
         
     }
 
+    public function _operations() {
+        
+    }
+
 }

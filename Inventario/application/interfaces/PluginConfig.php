@@ -18,4 +18,5 @@ trait PluginConfig
      
     public abstract function _Getconfig();
     
+    
 }

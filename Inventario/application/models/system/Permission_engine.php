@@ -61,7 +61,6 @@ class Permission_engine extends CI_Model {
         
     }
     
-    
     private function get_name($value){
         return $this->db
                 ->query("SELECT roles FROM sidebar WHERE name LIKE '%$value%' ")
@@ -79,7 +78,6 @@ class Permission_engine extends CI_Model {
                 ->query("SELECT roles FROM sidebar WHERE id_sidebar LIKE $value ")
                 ->result();
     }
-    
     
     public function GetDataRol($current_rol , $sub_rol){
 
@@ -101,5 +99,6 @@ class Permission_engine extends CI_Model {
             
             return $current_rol;
     }
+    
     
 }

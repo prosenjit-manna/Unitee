@@ -76,5 +76,9 @@ class Plugin_system extends CI_Model implements PInterface {
         
     }
 
+    public function _operations() {
+        
+    }
+
 }
 

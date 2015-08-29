@@ -154,7 +154,10 @@ class Conf_producto extends CI_Model implements PInterface{
                 break;
         }
     }
-   
+
+    public function _operations() {
+        
+    }
 
 }
 

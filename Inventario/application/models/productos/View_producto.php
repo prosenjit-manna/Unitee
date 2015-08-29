@@ -143,5 +143,9 @@ class view_producto extends CI_Model implements PInterface{
                 ->result()[0];
     }
 
+    public function _operations() {
+        
+    }
+
 }
    
