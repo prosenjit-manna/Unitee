@@ -57,19 +57,33 @@
                                         </div>
                                         <label class="control-label col-md-4">* Contacto</label>
                                         <div class="form-group col-md-8">
-                                            <input  required="required" onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                            <div class="input-icon right">
+                                                <input  required="required" onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                            </div>
                                         </div>
-                                        <label class="control-label col-md-4">* Teléfono</label>
+                                        <label class="control-label col-md-4">* Telefono</label>
                                         <div class="form-group col-md-8">
-                                            <input  required="required" onkeyup="val();" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+                                              <div class="input-icon right">
+                                                    <i name="change_" id="change_telefono_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_telefono" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input onkeyup="validate_telefono();" required="" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
+                                              </div>
                                         </div>
                                         <label class="control-label col-md-4">* Celular</label>
                                         <div class="form-group col-md-8">
-                                            <input  required="required" onkeyup="val();" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                                <div class="input-icon right">
+                                                    <i name="change_" id="change_celular_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_celular" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input onkeyup="validate_celular();" required="" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
+                                                </div>
                                         </div>
                                         <label class="control-label col-md-4">Fax</label>
                                         <div class="form-group col-md-8">
-                                            <input  required="required" type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                                <div class="input-icon right">
+                                                    <i name="change_" id="change_fax_ok" style="display:none;color:green;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input onkeyup="validate_fax();" required="" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
+                                                </div>
                                         </div>
                                         <label class="control-label col-md-4">* Correo</label>
                                         <div class="form-group col-md-8">
@@ -200,6 +214,69 @@
                 });
                 tasking.do_task();
             };
+             var validate_telefono = function () {
+                var change_telefono_ok = $("#change_telefono_ok");
+                var change_telefono = $("#change_telefono");
+                var telefono = $("#txt_telefono").val();
+                if (telefono ==="") {
+                change_telefono_ok.css("display", "none");
+                change_telefono.css("display", "none");
+                 return true ;
+                 }
+                else if (isNaN(telefono) && telefono !=="") {
+                change_telefono_ok.css("display", "none");
+                change_telefono.css("display", "block");
+                return true ;
+                }
+                else {
+                change_telefono_ok.css("display", "block");
+                change_telefono.css("display", "none");
+                return false ;
+               }
+            };
+
+                var validate_celular = function () {
+                var change_celular_ok = $("#change_celular_ok");
+                var change_celular = $("#change_celular");
+                var celular = $("#txt_celular").val();
+                if (celular ==="") {
+                change_celular_ok.css("display", "none");
+                change_celular.css("display", "none");
+                 return true ;
+                 }
+                else if (isNaN(celular) && celular !=="") {
+                change_celular_ok.css("display", "none");
+                change_celular.css("display", "block");
+                return true ;
+                }
+                else {
+                change_celular_ok.css("display", "block");
+                change_celular.css("display", "none");
+                return false ;
+               }
+            };
+
+                var validate_fax = function () {
+                var change_fax_ok = $("#change_fax_ok");
+                var change_fax = $("#change_fax");
+                var fax = $("#txt_fax").val();
+                if (fax ==="") {
+                change_fax_ok.css("display", "none");
+                change_fax.css("display", "none");
+                 return true ;
+                 }
+                else if (isNaN(fax) && fax !=="") {
+                change_fax_ok.css("display", "none");
+                change_fax.css("display", "block");
+                return true ;
+                }
+                else {
+                change_fax_ok.css("display", "block");
+                change_fax.css("display", "none");
+                return false ;
+               }
+            };
+
             function val() {
 
                 var empresa = $("#txt_empresa").val();
@@ -228,6 +305,4 @@
                 return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
 
             }
-
-            
         </script>
