@@ -80,14 +80,18 @@
                                         <label class="control-label col-md-4">Fax</label>
                                         <div class="form-group col-md-8">
                                                 <div class="input-icon right">
-                                                    <i name="change_" id="change_fax_ok" style="display:none;color:green;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                                     <input onkeyup="validate_fax();" required="" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
                                                 </div>
                                         </div>
                                         <label class="control-label col-md-4">* Correo</label>
                                         <div class="form-group col-md-8">
-                                            <input  required="required" onkeyup="val();" type="email" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+                                                <div class="input-icon right">
+                                                    <i name="change_" id="change_correo_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_correo" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input onkeyup="validate_correo();" required="" type="text" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Numero de correo">
+                                                </div>
                                         </div>
 
                                     </div>
@@ -100,7 +104,7 @@
                                         </div>
                                         <label class="control-label col-md-4">* Dirección 1</label>
                                         <div class="form-group col-md-8">
-                                            <input  required="required" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                            <input  required="required" onkeyup="val();" type="text" id="txt_direccion1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                         </div>
                                         <label class="control-label col-md-4">Dirección 2</label>
                                         <div class="form-group col-md-8">
@@ -204,7 +208,7 @@
                     //seleccion del id del select donde se desean mostrar los datos
                     ciu.html("");
                     //html para cambiar algo del en una etiqueta html reemplazando la anterior
-                    ciu.append('<option selected="selected">Elige una Ciudad</option>');
+                    ciu.append('<option selected="selected" value="-1">Elige una Ciudad</option>');
                     //para mandar como lista
                     var j = JSON.parse(data);
                     //JSON Parse para transformar un elemento json a un objeto
@@ -277,6 +281,28 @@
                }
             };
 
+            var validate_correo = function () {
+                var change_correo_ok = $("#change_correo_ok");
+                var change_correo = $("#change_correo");
+                var correo = $("#txt_correo").val();
+                if (correo ==="") {
+                change_correo_ok.css("display", "none");
+                change_correo.css("display", "none");
+                 return true ;
+                 }
+                else if (isValidEmail(correo) && correo !=="") {
+                change_correo_ok.css("display", "block");
+                change_correo.css("display", "none");
+                return true ;
+                }
+                else {
+                change_correo_ok.css("display", "none");
+                change_correo.css("display", "block");
+                return false ;
+               }
+            };
+
+
             function val() {
 
                 var empresa = $("#txt_empresa").val();
@@ -284,8 +310,16 @@
                 var telefono = $("#txt_telefono").val();
                 var celular = $("#txt_celular").val();
                 var correo = $("#txt_correo").val();
+                var dir = $("#txt_direccion1").val();
+                var ciudad = $("#select_city").val();
 
-                if (empresa == "" || contacto == "" || telefono == "" || celular == "" || !isValidEmail(correo)) {
+                if (empresa == "" 
+                        || contacto == "" 
+                        || telefono == ""
+                        || celular == "" 
+                        || dir == "" 
+                        || ciudad == "-1" 
+                        || !isValidEmail(correo)) {
                     document.getElementById("send").disabled = true;
                 }
                 else {
