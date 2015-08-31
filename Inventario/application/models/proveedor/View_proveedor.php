@@ -151,7 +151,7 @@ class View_proveedor extends CI_Model implements PInterface{
                  INNER JOIN direccion ON direccion.id_direccion=proveedor.id_direccion
                  INNER JOIN depto_pais ON depto_pais.id_depto_pais=direccion.depto
                  INNER JOIN contacto ON contacto.id_contacto=proveedor.id_contacto
-                 ORDER BY proveedor.nombre ASC limit $start , $limit;";
+                 ORDER BY proveedor.fecha Desc limit $start , $limit;";
         
         return $this->db
                 ->query($this->query)

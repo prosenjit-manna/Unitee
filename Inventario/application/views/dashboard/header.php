@@ -1,7 +1,4 @@
-
 <!DOCTYPE html>
-
-
 <html lang="es" class="no-js">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
@@ -62,6 +59,8 @@
 </head>
 <body class="page-header-fixed page-footer-fixed page-quick-sidebar-over-content">
 <!-- BEGIN HEADER -->
+<input type="hidden" id="base_url" value="<?php echo $route; ?>" />
+
 <?php echo $open_container; ?>
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
@@ -69,7 +68,7 @@
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="index.html">
-			<img src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" class="logo-default"/>
+                            <img id="system_logo" src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" title="logo" class="logo-default"/>
 			</a>
 		</div>
 		<!-- END LOGO -->

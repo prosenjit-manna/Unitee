@@ -40,6 +40,7 @@
 <!--LIBRERIA EN LA CUAL SUSTITUYE AJAX COMO GESTOR DE PROCESOS DE SEGUNDO PLANO : PRIORIDAD DEL SISTEMA  -->
 <script src="<?php echo $route;?>assert/system/dashboard/jstask/task.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/system/dashboard/request.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>assert/system/dashboard/metadata.js" type="text/javascript"></script>
 
 <?php
     if(isset($javascript) && is_array($javascript)){
@@ -74,6 +75,12 @@ jQuery(document).ready(function() {
        console.log("Error al momento de cargar archivos del sistema " + ex.message);
    }
    
+    try{
+       var meta = new metadata("<?php echo site_url(); ?>");
+       meta.get_logo();
+   }catch(ex){
+       console.log("Error al momento de cargar las metas " + ex.message);
+   }
    
    <?php
         if(isset($js_loader) && is_array($js_loader)){

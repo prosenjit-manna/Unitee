@@ -342,7 +342,8 @@ class Dashboard extends CI_Controller {
                     ));
     }
     
-    public function unlock(){
+    public function unlock()
+   {
         
         
            if(!isset($_REQUEST['password'])){
@@ -402,6 +403,14 @@ class Dashboard extends CI_Controller {
           $this->load->library("Metadata");
          
        
+    }
+    
+    public function getmeta(){
+        $key = isset($_REQUEST['key']) ? $_REQUEST['key']: NULL;
+        if(is_null($key)) echo false;
+        $this->load->library("metadata");
+        $result = $this->metadata->GetMeta($key);
+        echo json_encode($result);
     }
     
 }
