@@ -72,8 +72,13 @@ class Edit_producto extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-      return array("load_colors();","load_unidad();","validate_price();"
-             ,"validate_cantidad();","validate_margen();");
+      return array(
+            "load_colors();",
+            "load_unidad();",
+            "validate_price();",
+            "validate_cantidad();",
+            "validate_margen();"
+        );
     }
 
     public function _rols() {
@@ -109,16 +114,21 @@ class Edit_producto extends CI_Model implements PInterface{
     }
     
     public function update_product($id ,
-               $nombre , $color , $margen , $unidad,
-               $descripcion , $precio , $cantidad , $sku){
-               $this->db->where(array("	id_producto" => $id ));
-                  return $this->db->update(
-                "producto" , 
-                array("id_unidad"  => $unidad , 
-                      "descripcion" => $descripcion,
-                      "cantidad" => $cantidad,"sku" => $sku,
-                      "margen" => $margen, "nombre" => $nombre ,
-                      "id_color" => $color, "precio_est_unidad" => $precio ));
+        $nombre , $color , $margen , $unidad,
+        $descripcion , $precio , $cantidad , $sku)
+    {
+        $this->db->where(array("id_producto" => $id ));
+        return $this->db->update("producto" , 
+                array(
+                    "id_unidad"             => $unidad , 
+                     "descripcion"          => $descripcion,
+                     "cantidad"             => $cantidad,
+                     "sku"                  => $sku,
+                     "margen"               => $margen,
+                     "nombre"               => $nombre ,
+                     "id_color"             => $color,
+                     "precio_est_unidad"    => $precio 
+                ));
     }
 
     public function _operations() {

@@ -396,14 +396,9 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-             
-        $this->load->model("system/permission_engine");
-        $data = $this->permission_engine->_get(
-                "view_producto", 
-                MODEL , 
-                INT
-         );
-        echo "<pre>" , print_r($data) , "</pre>";
+          $this->load->library("Metadata");
+         
+       
     }
     
 }

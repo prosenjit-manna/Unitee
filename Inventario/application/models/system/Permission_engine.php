@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Model que otorga permisos al sistema 
+ * @version 2.1
+ * @author Rolando Arriaza
+ * @copyright (c) 2015, Rolando Arriaza
+ * @todo Este model representa el sistema de permisos en distintos ambitos 
+ *       para una explicacion mas detallada revisar documentacion de esta lib
+ * **/
+
+
 defined("NAME") or define("NAME", 0);
 defined("MODEL") or define("MODEL", 1);
 defined("ID") or define("ID", 2);
@@ -18,6 +28,17 @@ class Permission_engine extends CI_Model {
     }
     
     
+    /**
+     *@version 1.5
+     *@auhtor Rolando Arriaza
+     *@todo funcion _get la cual otorga permisos por medio del sidebar y sus ambitos de roles
+     *      la logica es la siguiente , obtenemos los roles actuales del uruario , luego verificaremos
+     *      esos roles de formas distinta (eleccion del programador)
+     *@param string $value nombre del modelo a verificar ejemplo user_new
+     *@param define/int $type tipo de dato que desea obtener sea por nombre , model o id [MODEL , NAME O ID]
+     *@param define/int $format formato de salida [STRING O INT ] default INT
+     *@return array/mixed devuelve los permisos encontrados en formato seleccionado  
+     **/
     public function _get($value , $type = NAME  , $format = INT){
        
         $data       = NULL;
@@ -61,24 +82,30 @@ class Permission_engine extends CI_Model {
         
     }
     
+    /**SOY UNA FUNCION PRIVADA :) */
     private function get_name($value){
         return $this->db
                 ->query("SELECT roles FROM sidebar WHERE name LIKE '%$value%' ")
                 ->result();
     }
-    
+     /**SOY UNA FUNCION PRIVADA :) */
     private function get_model($value){
         return $this->db
                 ->query("SELECT roles FROM sidebar WHERE model LIKE '$value' ")
                 ->result();
     }
-    
+     /**SOY UNA FUNCION PRIVADA :) */
     private function get_id($value){
         return $this->db
                 ->query("SELECT roles FROM sidebar WHERE id_sidebar LIKE $value ")
                 ->result();
     }
     
+    /**
+     *@todo obtiene los privilegios por medio del rol actual y sub rol
+     *@version 1.5
+     *@author Rolando Arriaza
+     * **/
     public function GetDataRol($current_rol , $sub_rol){
 
         if($sub_rol != 0 || !empty($sub_rol)){
@@ -100,7 +127,13 @@ class Permission_engine extends CI_Model {
             return $current_rol;
     }
     
+    /****************************************************************************/
+    /*   REGION DONDE SE AGREGARON LAS FUNCIONES A PARTIR DE LA VERSION 2.1     */
+    /***************************************************************************/
+    
     /**
+     * @version 1.2
+     * @author Rolando Arriaza
      * Esta funcion sirve para obtener permisos de operaciones u otras funciones 
      * que en un modulo solo ciertos usuarios deben de tener 
      * 
@@ -157,9 +190,7 @@ class Permission_engine extends CI_Model {
                  }
              }
          }
-         
-        
-         
+
          return $code;
          
     }
