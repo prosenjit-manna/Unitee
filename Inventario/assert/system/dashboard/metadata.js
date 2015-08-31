@@ -1,4 +1,16 @@
 
+/**
+ * @author Rolando Arriaza
+ * @version 1.0
+ * @type js
+ * 
+ * Libreria de metadata para multiples funciones , esta libreria
+ * favor de ver el manual de uso.
+ * 
+ * Dependencias : jtask , base_url , system_logo
+ * 
+ * **/
+
 var metadata = function(uri){
     
     var tasking;
