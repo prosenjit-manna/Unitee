@@ -72,17 +72,17 @@
                                         <h5 lass="form-section">Los campos con * son Requeridos</h5>
                                         <div class="col-md-6">
                                             <h3 lass="form-section">Información del Producto</h3><br>
-                                            <label class="control-label col-md-3">* Nombre</label>
-                                            <div class="form-group col-md-9">
+                                            <label class="control-label col-md-4">* Nombre</label>
+                                            <div class="form-group col-md-8">
                                                 <input required="" type="text" id="name_" onchange = "generate_SKU();" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del Producto">
                                             </div>
-                                            <label class="control-label col-md-3">* Color</label>
-                                            <div class="form-group col-md-9">
+                                            <label class="control-label col-md-4">* Color</label>
+                                            <div class="form-group col-md-8">
                                                 <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
                                                 </select>
                                             </div>
-                                            <label class="control-label col-md-3">* Margen</label>
-                                            <div class="form-group col-md-9">
+                                            <label class="control-label col-md-4">* Margen</label>
+                                            <div class="form-group col-md-8">
                                               <div class="input-icon right">
                                                     <i name="change_" id="change_margen_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_margen" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
@@ -90,8 +90,8 @@
                                                     <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
                                               </div>
                                             </div>
-                                            <label class="control-label col-md-3">* Unidad</label>
-                                            <div class="form-group col-md-9">
+                                            <label class="control-label col-md-4">* Unidad</label>
+                                            <div class="form-group col-md-8">
                                                 <select required="true" id="select_unidad" name="txt_unidad" class="form-control input-circle">
                                                 </select>
                                             </div>                                                                   

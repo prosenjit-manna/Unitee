@@ -51,28 +51,28 @@
                                     <div class="col-md-6">
                                         <?php echo form_open("/TheProvider/NewProvider/", array("method" => "post")); ?>
                                         <h3 lass="form-section">Información de Contacto</h3><br>
-                                        <label class="control-label col-md-3">* Empresa</label>
-                                        <div class="form-group col-md-9">
+                                        <label class="control-label col-md-4">* Empresa</label>
+                                        <div class="form-group col-md-8">
                                             <input   onkeyup="val();" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
                                         </div>
-                                        <label class="control-label col-md-3">* Contacto</label>
-                                        <div class="form-group col-md-9">
+                                        <label class="control-label col-md-4">* Contacto</label>
+                                        <div class="form-group col-md-8">
                                             <input  onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                                         </div>
-                                        <label class="control-label col-md-3">* Teléfono</label>
-                                        <div class="form-group col-md-9">
+                                        <label class="control-label col-md-4">* Teléfono</label>
+                                        <div class="form-group col-md-8">
                                             <input  onkeyup="val();" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
                                         </div>
-                                        <label class="control-label col-md-3">* Celular</label>
-                                        <div class="form-group col-md-9">
+                                        <label class="control-label col-md-4">* Celular</label>
+                                        <div class="form-group col-md-8">
                                             <input  onkeyup="val();" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
                                         </div>
-                                        <label class="control-label col-md-3">Fax</label>
-                                        <div class="form-group col-md-9">
+                                        <label class="control-label col-md-4">Fax</label>
+                                        <div class="form-group col-md-8">
                                             <input  type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
                                         </div>
-                                        <label class="control-label col-md-3">* Correo</label>
-                                        <div class="form-group col-md-9">
+                                        <label class="control-label col-md-4">* Correo</label>
+                                        <div class="form-group col-md-8">
                                             <input  onkeyup="val();" type="email" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
                                         </div>
 
@@ -113,15 +113,15 @@
                                     <div class="col-md-12">
                                         <h3 lass="form-section">Descripci&oacute;n</h3><br>
                                     </div>
-                                    <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
-                                    <div class="form-group col-md-9">
+                                    <label class="control-label col-md-4">Descripci&oacute;n de la Empresa</label>
+                                    <div class="form-group col-md-8">
                                         <textarea id="txt_descripcion" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
                                         </textarea>
                                     </div>
                                 </div>
                                 <div class="form-actions right">
                                     <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                                    <button id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                                    <button disabled="disabled" id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                                 </div>
                                 <?php echo form_close(); ?>
                                 <!-- FINAL FORM-->
@@ -208,9 +208,6 @@
                 var celular = $("#txt_celular").val();
                 var correo = $("#txt_correo").val();
 
-                if (correo != "") {
-                }
-                ;
                 if (empresa == "" || contacto == "" || telefono == "" || celular == "" || !isValidEmail(correo)) {
                     document.getElementById("send").disabled = true;
                 }
@@ -231,4 +228,6 @@
                 return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
 
             }
+
+            
         </script>
