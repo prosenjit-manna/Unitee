@@ -96,7 +96,7 @@
                                         <h3 lass="form-section">Dirección</h3><br>
                                         <label class="control-label col-md-4">Local</label>
                                         <div class="form-group col-md-8">
-                                            <input  required="required" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                            <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
                                         </div>
                                         <label class="control-label col-md-4">* Dirección 1</label>
                                         <div class="form-group col-md-8">
@@ -104,11 +104,11 @@
                                         </div>
                                         <label class="control-label col-md-4">Dirección 2</label>
                                         <div class="form-group col-md-8">
-                                            <input  required="required" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                            <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                                         </div>
                                         <label class="control-label col-md-4">* Pais</label>
                                         <div class="form-group col-md-8">
-                                            <select id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">                     
+                                            <select required="required" id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">                     
                                             </select>
                                         </div>
                                         <label class="control-label col-md-4">* Departamento</label>
