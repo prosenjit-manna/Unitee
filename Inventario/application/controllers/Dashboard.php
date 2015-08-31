@@ -62,7 +62,10 @@ class Dashboard extends CI_Controller {
         
         if(!is_array($this->session->user))
         {
-            redirect("Login/");
+            $url        = current_url();
+            $exp        = explode("/0/", $url);
+
+            redirect("Login/?call=" . end($exp));
             return;
         }
         

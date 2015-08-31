@@ -40,7 +40,10 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<?php echo form_open("Login/login/", array("class" => "login-form" , "method" => "post")); ?>
+	<?php echo form_open("Login/login/", 
+                array("class" => "login-form" , "method" => "post") , 
+                array("call" => $call));
+        ?>
 		<h3 class="form-title">Unitee - Inicia Sessión</h3>
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>

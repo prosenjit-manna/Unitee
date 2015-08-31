@@ -15,7 +15,7 @@ class Login extends CI_Controller {
     
     private $route   = NULL;
     
-    
+    private $call    = "";
     
     public function __construct() {
         parent::__construct();
@@ -36,15 +36,18 @@ class Login extends CI_Controller {
          * activa para llamar el dashboard
          */
         
+        $this->call = isset($_REQUEST['call']) 
+                                ? $_REQUEST['call'] : NULL;
+        
         if(is_array($this->session->user))
         {
-            redirect("/0/");
+            redirect("/0/" . $this->call);
             return;
         }
     }
     
     public function index($error = null ){
-        
+
         $meta = NULL;
         
         if($error != null)
@@ -61,7 +64,8 @@ class Login extends CI_Controller {
                  "login/index" , 
                  array( 
                      "route" => $this->route,
-                     "err"   => $meta
+                     "err"   => $meta,
+                     "call"  => $this->call
          ));
          
     }
@@ -69,11 +73,12 @@ class Login extends CI_Controller {
     public function login()
     {
 
+        $this->call = isset($_REQUEST['call']) 
+                                ? $_REQUEST['call'] : NULL;
         /*
          * Esta funcion controla el logueo desde la entrada de datos 
          * hasta la salida de ella misma
          */
-        
         
         $this->load->helper("setup"); // funciones de instalacion
     
@@ -105,7 +110,7 @@ class Login extends CI_Controller {
         
         //si el request existe entonces cargamos el dashboard
         if($request){
-            redirect("/0/");
+             redirect("/0/" . $this->call);
         }else
         {
             redirect("Login/index/1");
