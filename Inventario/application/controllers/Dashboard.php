@@ -400,8 +400,8 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-          $this->load->library("Metadata");
-         
+          $this->load->library("notifications");
+          echo "<pre>" , print_r($this->notifications->Show()) , "</pre>";
        
     }
     
