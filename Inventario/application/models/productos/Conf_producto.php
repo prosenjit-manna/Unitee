@@ -159,5 +159,13 @@ class Conf_producto extends CI_Model implements PInterface{
         
     }
 
+    public function _Dashboard() {
+        
+    }
+
+    public function _JSdashboard() {
+        
+    }
+
 }
 

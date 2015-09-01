@@ -74,6 +74,21 @@ interface PInterface {
     public function _widgets();
     
     
+    /**se carga el sistema de operaciones 
+     * si en dado caso necesita privilegios de ellas
+     */
     public function _operations();
+    
+    /**
+     * aca se carga todo lo que iniciara eventualmente en el dashboard
+     * por medio de un proceso en segundo plano js
+     */
+    public function _JSdashboard();
+    
+    
+    /**
+     * Si se necesita cargar algo de forma servidor esta funcion es la correcta
+     * **/
+    public function _Dashboard();
   
 }

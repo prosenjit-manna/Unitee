@@ -146,4 +146,12 @@ class view_producto extends CI_Model implements PInterface {
         return $data;
     }
 
+    public function _Dashboard() {
+        
+    }
+
+    public function _JSdashboard() {
+        
+    }
+
 }
