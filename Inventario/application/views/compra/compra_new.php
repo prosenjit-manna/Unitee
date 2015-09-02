@@ -73,7 +73,7 @@
                                     <div class="col-md-6">
                                         <div class="btn-group">
                                             <button id="sample_editable_1_new" class="btn green">
-                                            Add New <i class="fa fa-plus"></i>
+                                            Añadir <i class="fa fa-plus"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -103,163 +103,71 @@
                             <thead>
                             <tr>
                                 <th>
-                                     Username
+                                     <p align="center">Nombre</p>
                                 </th>
                                 <th>
-                                     Full Name
+                                     <p align="center">Color</p>
                                 </th>
                                 <th>
-                                     Points
+                                     <p align="center">Precio</p>
                                 </th>
                                 <th>
-                                     Notes
+                                     <p align="center">Cantidad</p>
                                 </th>
                                 <th>
-                                     Edit
-                                </th>
-                                <th>
-                                     Delete
+                                     <p align="center">Operaciones</p>
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>
+                                <td align="center">
                                      alex
                                 </td>
-                                <td>
+                                <td align="center">
                                      Alex Nilson
                                 </td>
-                                <td>
+                                <td align="center">
                                      1234
                                 </td>
-                                <td class="center">
+                                <td align="center" class="center">
                                      power user
                                 </td>
-                                <td>
-                                    <a class="edit" href="javascript:;">
-                                    Edit </a>
-                                </td>
-                                <td>
-                                    <a class="delete" href="javascript:;">
-                                    Delete </a>
+                                <td align="center">
+                               	<p align="center">
+									<a class="" data-toggle="modal" href="#"><i class="icon-save" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+									<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+									<a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
+								</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td align="center">
                                      lisa
                                 </td>
-                                <td>
+                                <td align="center">
                                      Lisa Wong
                                 </td>
-                                <td>
+                                <td align="center">
                                      434
                                 </td>
-                                <td class="center">
+                                <td align="center" class="center">
                                      new user
                                 </td>
-                                <td>
-                                    <a class="edit" href="javascript:;">
-                                    Edit </a>
-                                </td>
-                                <td>
-                                    <a class="delete" href="javascript:;">
-                                    Delete </a>
+                                <td align="center">
+                                  <p align="center">
+									<a class="" data-toggle="modal" href="#"><i class="icon-save" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+									<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+									<a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
+								</p>
                                 </td>
                             </tr>
+                     
                             <tr>
-                                <td>
-                                     nick12
-                                </td>
-                                <td>
-                                     Nick Roberts
-                                </td>
-                                <td>
-                                     232
-                                </td>
-                                <td class="center">
-                                     power user
-                                </td>
-                                <td>
-                                    <a class="edit" href="javascript:;">
-                                    Edit </a>
-                                </td>
-                                <td>
-                                    <a class="delete" href="javascript:;">
-                                    Delete </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                     goldweb
-                                </td>
-                                <td>
-                                     Sergio Jackson
-                                </td>
-                                <td>
-                                     132
-                                </td>
-                                <td class="center">
-                                     elite user
-                                </td>
-                                <td>
-                                    <a class="edit" href="javascript:;">
-                                    Edit </a>
-                                </td>
-                                <td>
-                                    <a class="delete" href="javascript:;">
-                                    Delete </a>
-                                </td>
-                            </tr>
                             </tbody>
                             </table>
                         </div>
                          <div class="row col-md-12">
-                            <!--
-                                 <div class="col-md-7"><br>
-                                    <form id="fileupload" action="<?php echo $route;?>assert/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
-                                        <div class="row fileupload-buttonbar">
-                                            <div class="col-lg-7">
-                                                <span class="btn green fileinput-button">
-                                                <i class="glyphicon glyphicon-plus-sign"></i>
-                                                <span>
-                                                Agregar </span>
-                                                <input type="file" name="files[]" multiple="">
-                                                </span>
-                                                <button type="submit" class="btn blue start">
-                                                <i class="glyphicon glyphicon-upload"></i>
-                                                <span>
-                                                Subir </span>
-                                                </button>
-                                                <button type="reset" class="btn warning cancel">
-                                                <i class=""></i>
-                                                <span>
-                                                Cancelar</span>
-                                                </button>
-                                                <span class="fileupload-process">
-                                                </span>
-                                            </div>
-            
-                                            <div class="col-lg-5 fileupload-progress fade">
-                        
-                                                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-success" style="width:0%;">
-                                                    </div>
-                                                </div>
-                
-                                                <div class="progress-extended">
-                                                     &nbsp;
-                                                </div>
-                                            </div>
-                                        </div>
-        
-                                        <table role="presentation" class="table table-striped clearfix">
-                                        <tbody class="files">
-                                        </tbody>
-                                        </table>
-                                    </form> 
-                               </div>
-                               -->
                                <div class="col-md-7">
                                     <h4>Adjuntar</h4>
                                     <form action="generados/index.php" enctype="multipart/form-data">
@@ -297,6 +205,29 @@
 
                 <!-- FINAL PAGE CONTENTENIDO-->
             </div>
+            				<div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">Eliminar Compras</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h4>¿Deseas eliminar  esta compra?</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
+                                                <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
         </div>
@@ -344,81 +275,3 @@
             };
 
 </script>
-<!--Validaciones-->
-<!--
-<script id="template-upload" type="text/x-tmpl">
-{% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-upload fade">
-        <td>
-            <span class="preview"></span>
-        </td>
-        <td>
-            <p class="name">{%=file.name%}</p>
-            <strong class="error text-danger label label-danger"></strong>
-        </td>
-        <td>
-            <p class="size">Processing...</p>
-            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-            </div>
-        </td>
-        <td>
-            {% if (!i && !o.options.autoUpload) { %}
-                <button class="btn blue start" disabled>
-                    <i class="fa fa-upload"></i>
-                    <span>Start</span>
-                </button>
-            {% } %}
-            {% if (!i) { %}
-                <button class="btn red cancel">
-                    <i class="fa fa-ban"></i>
-                    <span>Cancel</span>
-                </button>
-            {% } %}
-        </td>
-    </tr>
-{% } %}
-</script>
- The template to display files available for download 
-<script id="template-download" type="text/x-tmpl">
-        {% for (var i=0, file; file=o.files[i]; i++) { %}
-            <tr class="template-download fade">
-                <td>
-                    <span class="preview">
-                        {% if (file.thumbnailUrl) { %}
-                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-                        {% } %}
-                    </span>
-                </td>
-                <td>
-                    <p class="name">
-                        {% if (file.url) { %}
-                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-                        {% } else { %}
-                            <span>{%=file.name%}</span>
-                        {% } %}
-                    </p>
-                    {% if (file.error) { %}
-                        <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-                    {% } %}
-                </td>
-                <td>
-                    <span class="size">{%=o.formatFileSize(file.size)%}</span>
-                </td>
-                <td>
-                    {% if (file.deleteUrl) { %}
-                        <button class="btn red delete btn-sm" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-                            <i class="fa fa-trash-o"></i>
-                            <span>Delete</span>
-                        </button>
-                        <input type="checkbox" name="delete" value="1" class="toggle">
-                    {% } else { %}
-                        <button class="btn yellow cancel btn-sm">
-                            <i class="fa fa-ban"></i>
-                            <span>Cancel</span>
-                        </button>
-                    {% } %}
-                </td>
-            </tr>
-        {% } %}
-    </script>-->
