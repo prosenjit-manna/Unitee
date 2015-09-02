@@ -42,18 +42,18 @@
                         </div>
                     </div>
                            <div class="row col-md-12">
-                                <div class="col-md-6"><br><br><br>
+                                <div class="col-md-6">
                                    <label class="control-label col-md-3">* Proveedor</label>
                                    <div class="form-group col-md-7">
                                        <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
                                            <option value="">Seleccione un proveedor</option>
                                        </select>
                                    </div>
-                                   <a href="#" class="col-md-1 btn btn-default"><span style="font-size:14px;" class="glyphicon glyphicon-plus-sign"></span></a>
+                                   <a href="<?php echo site_url("/0/proveedor=new_proveedor"); ?>" class="col-md-1 btn btn-default"><span style="font-size:14px;" class="glyphicon glyphicon-plus-sign"></span></a>
                                </div>
                                <div class="well col-md-6">
                                     <h4 class="col-md-12">Dirección</h4>
-                                    <p>
+                                    <p class="col-md-12">
                                             San Salvador, Calle ..........  etc etc
                                     </p>
                                     <h4 class="col-md-6">Nombre</h4>
@@ -73,28 +73,8 @@
                                     <div class="col-md-6">
                                         <div class="btn-group">
                                             <button id="sample_editable_1_new" class="btn green">
-                                            Add New <i class="fa fa-plus"></i>
+                                            <i class="icon-plus"></i> &nbsp;Añadir 
                                             </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="btn-group pull-right">
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                    Print </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                    Save as PDF </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                    Export to Excel </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -103,166 +83,81 @@
                             <thead>
                             <tr>
                                 <th>
-                                     Username
+                                     <p align="center">Nombre</p>
                                 </th>
                                 <th>
-                                     Full Name
+                                     <p align="center">Color</p>
                                 </th>
                                 <th>
-                                     Points
+                                     <p align="center">Cantidad</p>
                                 </th>
                                 <th>
-                                     Notes
+                                     <p align="center">Precio</p>
                                 </th>
                                 <th>
-                                     Edit
-                                </th>
-                                <th>
-                                     Delete
+                                     <p align="center">Operaciones</p>
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>
+                                <td align="center">
                                      alex
                                 </td>
-                                <td>
+                                <td align="center">
                                      Alex Nilson
                                 </td>
-                                <td>
+                                <td align="center">
                                      1234
                                 </td>
-                                <td class="center">
+                                <td align="center" class="center">
                                      power user
                                 </td>
-                                <td>
-                                    <a class="edit" href="javascript:;">
-                                    Edit </a>
-                                </td>
-                                <td>
-                                    <a class="delete" href="javascript:;">
-                                    Delete </a>
+                                <td align="center">
+                               	<p align="center">
+									<a class="" data-toggle="modal" href="#"><i class="icon-save" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+									<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+									<a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
+								</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td align="center">
                                      lisa
                                 </td>
-                                <td>
+                                <td align="center">
                                      Lisa Wong
                                 </td>
-                                <td>
+                                <td align="center">
                                      434
                                 </td>
-                                <td class="center">
+                                <td align="center" class="center">
                                      new user
                                 </td>
-                                <td>
-                                    <a class="edit" href="javascript:;">
-                                    Edit </a>
-                                </td>
-                                <td>
-                                    <a class="delete" href="javascript:;">
-                                    Delete </a>
+                                <td align="center">
+                                  <p align="center">
+									<a class="" data-toggle="modal" href="#"><i class="icon-save" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+									<a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
+									<a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
+								</p>
                                 </td>
                             </tr>
+                     
                             <tr>
-                                <td>
-                                     nick12
-                                </td>
-                                <td>
-                                     Nick Roberts
-                                </td>
-                                <td>
-                                     232
-                                </td>
-                                <td class="center">
-                                     power user
-                                </td>
-                                <td>
-                                    <a class="edit" href="javascript:;">
-                                    Edit </a>
-                                </td>
-                                <td>
-                                    <a class="delete" href="javascript:;">
-                                    Delete </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                     goldweb
-                                </td>
-                                <td>
-                                     Sergio Jackson
-                                </td>
-                                <td>
-                                     132
-                                </td>
-                                <td class="center">
-                                     elite user
-                                </td>
-                                <td>
-                                    <a class="edit" href="javascript:;">
-                                    Edit </a>
-                                </td>
-                                <td>
-                                    <a class="delete" href="javascript:;">
-                                    Delete </a>
-                                </td>
-                            </tr>
                             </tbody>
                             </table>
                         </div>
                          <div class="row col-md-12">
-                                <div class="col-md-7"><br>
-                                    <form id="fileupload" action="<?php echo $route;?>assert/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
-                                        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                                        <div class="row fileupload-buttonbar">
-                                            <div class="col-lg-7">
-                                                <!-- The fileinput-button span is used to style the file input field as button -->
-                                                <span class="btn green fileinput-button">
-                                                <i class="glyphicon glyphicon-plus-sign"></i>
-                                                <span>
-                                                Agregar </span>
-                                                <input type="file" name="files[]" multiple="">
-                                                </span>
-                                                <button type="submit" class="btn blue start">
-                                                <i class="glyphicon glyphicon-upload"></i>
-                                                <span>
-                                                Subir </span>
-                                                </button>
-                                                <button type="reset" class="btn warning cancel">
-                                                <i class=""></i>
-                                                <span>
-                                                Cancelar</span>
-                                                </button>
-                                                <!-- The global file processing state -->
-                                                <span class="fileupload-process">
-                                                </span>
-                                            </div>
-                                            <!-- The global progress information -->
-                                            <div class="col-lg-5 fileupload-progress fade">
-                                                <!-- The global progress bar -->
-                                                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                                    <div class="progress-bar progress-bar-success" style="width:0%;">
-                                                    </div>
-                                                </div>
-                                                <!-- The extended global progress information -->
-                                                <div class="progress-extended">
-                                                     &nbsp;
-                                                </div>
-                                            </div>
+                               <div class="col-md-7">
+                                    <h4>Adjuntar</h4>
+                                    <form action="generados/index.php" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <input id="archivo" name="archivo" type="file" class="file" multiple=true data-preview-file-type="any" class="form-group"required>
                                         </div>
-                                        <!-- The table listing the files available for upload/download -->
-                                        <table role="presentation" class="table table-striped clearfix">
-                                        <tbody class="files">
-                                        </tbody>
-                                        </table>
-                                    </form> 
-                               </div>
-                               <div class="col-md-5">
-                                    <label class="control-label col-md-3">* P.O </label>
+                                    </form>
+                                </div>
+                               <div class="col-md-5"><br><br>
+                                    <label class="control-label col-md-3"> P.O </label>
                                    <div class="form-group col-md-9">
                                         <input onkeyup="validar();" type="text" name="txt_po" id="txt_po" value="" class="form-control input-circle" placeholder="Orden de compra">
                                    </div>
@@ -270,12 +165,17 @@
                                    <div class="form-group col-md-9">
                                         <input onkeyup="validar();" type="text" name="txt_factura" id="txt_factura" value="" class="form-control input-circle" placeholder="Factura">
                                    </div>
-                                   <label class="control-label col-md-3">* Total</label>
-                                   <div class="form-group col-md-9">
-                                        <input onkeyup="validar();" type="text" name="txt_ptotal" id="txt_ptotal" value="" class="form-control input-circle" placeholder="Precio Total">
-                                   </div>
+                                   <label class="control-label col-md-3">* Precio</label>
+                                    <div class="form-group col-md-9">
+                                            <div class="input-icon right">
+                                                <i name="change_" id="change_ptotal_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                <i name="change_x" id="change_ptotal" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                <input onkeyup="" required="" type="text" id="txt_ptotal" name="txt_ptotal" disabled="disabled" class="form-control input-circle" placeholder="Numero de ptotal">
+                                            </div>
+                                    </div>
                                </div>
-                           </div><br>
+                            
+                           </div><br><br>
                            <div class="form-actions right col-md-offset-10">
                                     <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
                                     <button disabled="disabled" id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
@@ -285,6 +185,29 @@
 
                 <!-- FINAL PAGE CONTENTENIDO-->
             </div>
+            				<div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">Eliminar Compras</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h4>¿Deseas eliminar  esta compra?</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
+                                                <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
         </div>
@@ -293,15 +216,13 @@
 <!--FIN DEL CONTENIDO-->
 <!--Validaciones-->
 <script>
+
+
     function validar() {
 
-                var po = $("#txt_po").val();
                 var factura = $("#txt_factura").val();
-                var preciot = $("#txt_ptotal").val();
 
-                if (po == "" 
-                        || factura == "" 
-                        || preciot == "") {
+                if (factura == "") {
                     document.getElementById("send").disabled = true;
                 }
                 else {
@@ -310,81 +231,3 @@
             };
 
 </script>
-<!--Validaciones-->
-
-<script id="template-upload" type="text/x-tmpl">
-{% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-upload fade">
-        <td>
-            <span class="preview"></span>
-        </td>
-        <td>
-            <p class="name">{%=file.name%}</p>
-            <strong class="error text-danger label label-danger"></strong>
-        </td>
-        <td>
-            <p class="size">Processing...</p>
-            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-            </div>
-        </td>
-        <td>
-            {% if (!i && !o.options.autoUpload) { %}
-                <button class="btn blue start" disabled>
-                    <i class="fa fa-upload"></i>
-                    <span>Start</span>
-                </button>
-            {% } %}
-            {% if (!i) { %}
-                <button class="btn red cancel">
-                    <i class="fa fa-ban"></i>
-                    <span>Cancel</span>
-                </button>
-            {% } %}
-        </td>
-    </tr>
-{% } %}
-</script>
-<!-- The template to display files available for download -->
-<script id="template-download" type="text/x-tmpl">
-        {% for (var i=0, file; file=o.files[i]; i++) { %}
-            <tr class="template-download fade">
-                <td>
-                    <span class="preview">
-                        {% if (file.thumbnailUrl) { %}
-                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-                        {% } %}
-                    </span>
-                </td>
-                <td>
-                    <p class="name">
-                        {% if (file.url) { %}
-                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-                        {% } else { %}
-                            <span>{%=file.name%}</span>
-                        {% } %}
-                    </p>
-                    {% if (file.error) { %}
-                        <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-                    {% } %}
-                </td>
-                <td>
-                    <span class="size">{%=o.formatFileSize(file.size)%}</span>
-                </td>
-                <td>
-                    {% if (file.deleteUrl) { %}
-                        <button class="btn red delete btn-sm" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-                            <i class="fa fa-trash-o"></i>
-                            <span>Delete</span>
-                        </button>
-                        <input type="checkbox" name="delete" value="1" class="toggle">
-                    {% } else { %}
-                        <button class="btn yellow cancel btn-sm">
-                            <i class="fa fa-ban"></i>
-                            <span>Cancel</span>
-                        </button>
-                    {% } %}
-                </td>
-            </tr>
-        {% } %}
-    </script>
