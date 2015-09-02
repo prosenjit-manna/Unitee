@@ -48,8 +48,7 @@ class New_compra extends CI_Model implements PInterface {
             $this->route . "assert/plugins/select2/select2.css",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css",
             $this->route . "assert/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css",
-            $this->route . "assert/plugins/jquery-file-upload/css/jquery.fileupload.css",
-            $this->route . "assert/plugins/jquery-file-upload/css/jquery.fileupload-ui.css",
+            $this->route . "assert/plugins/fileinput/css/fileinput.css",
         );
     }
 
@@ -79,8 +78,7 @@ class New_compra extends CI_Model implements PInterface {
             $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-audio.js",
             $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-video.js",
             $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-validate.js",
-            $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-ui.js",
-            $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload.js",
+            $this->route . "assert/plugins/fileinput/js/fileinput.js",
         );
     }
 

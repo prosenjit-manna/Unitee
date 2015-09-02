@@ -215,12 +215,11 @@
                             </table>
                         </div>
                          <div class="row col-md-12">
-                                <div class="col-md-7"><br>
+                            <!--
+                                 <div class="col-md-7"><br>
                                     <form id="fileupload" action="<?php echo $route;?>assert/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
-                                        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
                                         <div class="row fileupload-buttonbar">
                                             <div class="col-lg-7">
-                                                <!-- The fileinput-button span is used to style the file input field as button -->
                                                 <span class="btn green fileinput-button">
                                                 <i class="glyphicon glyphicon-plus-sign"></i>
                                                 <span>
@@ -237,31 +236,39 @@
                                                 <span>
                                                 Cancelar</span>
                                                 </button>
-                                                <!-- The global file processing state -->
                                                 <span class="fileupload-process">
                                                 </span>
                                             </div>
-                                            <!-- The global progress information -->
+            
                                             <div class="col-lg-5 fileupload-progress fade">
-                                                <!-- The global progress bar -->
+                        
                                                 <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                                                     <div class="progress-bar progress-bar-success" style="width:0%;">
                                                     </div>
                                                 </div>
-                                                <!-- The extended global progress information -->
+                
                                                 <div class="progress-extended">
                                                      &nbsp;
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- The table listing the files available for upload/download -->
+        
                                         <table role="presentation" class="table table-striped clearfix">
                                         <tbody class="files">
                                         </tbody>
                                         </table>
                                     </form> 
                                </div>
-                               <div class="col-md-5">
+                               -->
+                               <div class="col-md-7">
+                                    <h4>Adjuntar</h4>
+                                    <form action="generados/index.php" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <input id="archivo" name="archivo" type="file" class="file" multiple=true data-preview-file-type="any" class="form-group"required>
+                                        </div>
+                                    </form>
+                                </div>
+                               <div class="col-md-5"><br><br>
                                     <label class="control-label col-md-3">* P.O </label>
                                    <div class="form-group col-md-9">
                                         <input onkeyup="validar();" type="text" name="txt_po" id="txt_po" value="" class="form-control input-circle" placeholder="Orden de compra">
@@ -275,7 +282,8 @@
                                         <input onkeyup="validar();" type="text" name="txt_ptotal" id="txt_ptotal" value="" class="form-control input-circle" placeholder="Precio Total">
                                    </div>
                                </div>
-                           </div><br>
+                            
+                           </div><br><br>
                            <div class="form-actions right col-md-offset-10">
                                     <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
                                     <button disabled="disabled" id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
@@ -311,7 +319,7 @@
 
 </script>
 <!--Validaciones-->
-
+<!--
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
@@ -345,7 +353,7 @@
     </tr>
 {% } %}
 </script>
-<!-- The template to display files available for download -->
+ The template to display files available for download 
 <script id="template-download" type="text/x-tmpl">
         {% for (var i=0, file; file=o.files[i]; i++) { %}
             <tr class="template-download fade">
@@ -387,4 +395,4 @@
                 </td>
             </tr>
         {% } %}
-    </script>
+    </script>-->
