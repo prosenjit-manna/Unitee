@@ -41,6 +41,7 @@
 <script src="<?php echo $route;?>assert/system/dashboard/jstask/task.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/system/dashboard/request.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/system/dashboard/metadata.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>assert/system/dashboard/notifications.js" type="text/javascript"></script>
 
 <?php
     if(isset($javascript) && is_array($javascript)){
@@ -54,6 +55,7 @@
 <script>
 jQuery(document).ready(function() {    
  
+   var $uri = "<?php echo site_url(); ?>"; 
    
    try{
         Metronic.init(); // init metronic core componets
@@ -76,10 +78,17 @@ jQuery(document).ready(function() {
    }
    
     try{
-       var meta = new metadata("<?php echo site_url(); ?>");
+       var meta = new metadata($uri);
        meta.get_logo();
    }catch(ex){
        console.log("Error al momento de cargar las metas " + ex.message);
+   }
+   
+   try{
+       var n = new notifications($uri);
+       n.show();
+   }catch(ex){
+        console.log("Error al momento de cargar las notificaciones " + ex.message);
    }
    
    <?php

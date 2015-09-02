@@ -87,17 +87,95 @@
 					0 </span>
 					</a>
                                     <ul  class="dropdown-menu">
-						<li id="notification_show">
+						<li id="notification_header">
 							<p>
 								 Cargando notificaciones...
 							</p>
 						</li>
 						<li>
-                                                    <ul id="notification" class="dropdown-menu-list scroller" style="height: 250px;">
-								
+                                                    <ul id="notification_body" class="dropdown-menu-list scroller" style="height: 250px;">
+								<li>
+									<a href="#">
+									
+									New user registered. <span class="time">
+									Just now </span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+									<span class="label label-sm label-icon label-danger">
+									<i class="icon-bolt"></i>
+									</span>
+									Server #12 overloaded. <span class="time">
+									15 mins </span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+									<span class="label label-sm label-icon label-warning">
+									<i class="icon-bell"></i>
+									</span>
+									Server #2 not responding. <span class="time">
+									22 mins </span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+									<span class="label label-sm label-icon label-info">
+									<i class="icon-bullhorn"></i>
+									</span>
+									Application error. <span class="time">
+									40 mins </span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+									<span class="label label-sm label-icon label-danger">
+									<i class="icon-bolt"></i>
+									</span>
+									Database overloaded 68%. <span class="time">
+									2 hrs </span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+									<span class="label label-sm label-icon label-danger">
+									<i class="icon-bolt"></i>
+									</span>
+									2 user IP blocked. <span class="time">
+									5 hrs </span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+									<span class="label label-sm label-icon label-warning">
+									<i class="icon-bell-o"></i>
+									</span>
+									Storage Server #4 not responding. <span class="time">
+									45 mins </span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+									<span class="label label-sm label-icon label-info">
+									<i class="icon-bullhorn"></i>
+									</span>
+									System Error. <span class="time">
+									55 mins </span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+									<span class="label label-sm label-icon label-danger">
+									<i class="icon-bolt"></i>
+									</span>
+									Database overloaded 68%. <span class="time">
+									2 hrs </span>
+									</a>
+								</li>
                                                     </ul>
 						</li>
-						<li class="external">
+                                                <li id="notification_footer" class="external">
 							<a href="#">
 							 Ver todas las notificaciones <i class="m-icon-swapright"></i>
 							</a>
