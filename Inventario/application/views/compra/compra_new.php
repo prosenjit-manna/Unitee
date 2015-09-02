@@ -42,7 +42,7 @@
                         </div>
                     </div>
                            <div class="row col-md-12">
-                                <div class="col-md-6"><br><br><br>
+                                <div class="col-md-6">
                                    <label class="control-label col-md-3">* Proveedor</label>
                                    <div class="form-group col-md-7">
                                        <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
@@ -109,10 +109,10 @@
                                      <p align="center">Color</p>
                                 </th>
                                 <th>
-                                     <p align="center">Precio</p>
+                                     <p align="center">Cantidad</p>
                                 </th>
                                 <th>
-                                     <p align="center">Cantidad</p>
+                                     <p align="center">Precio</p>
                                 </th>
                                 <th>
                                      <p align="center">Operaciones</p>
