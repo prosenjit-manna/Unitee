@@ -53,7 +53,7 @@
                                </div>
                                <div class="well col-md-6">
                                     <h4 class="col-md-12">Dirección</h4>
-                                    <p>
+                                    <p class="col-md-12">
                                             San Salvador, Calle ..........  etc etc
                                     </p>
                                     <h4 class="col-md-6">Nombre</h4>
@@ -73,28 +73,8 @@
                                     <div class="col-md-6">
                                         <div class="btn-group">
                                             <button id="sample_editable_1_new" class="btn green">
-                                            Añadir <i class="fa fa-plus"></i>
+                                            <i class="icon-plus"></i> &nbsp;Añadir 
                                             </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="btn-group pull-right">
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                    Print </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                    Save as PDF </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                    Export to Excel </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
