@@ -400,9 +400,10 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-          $this->load->library("notifications");
-          echo "<pre>" , print_r($this->notifications->Show()) , "</pre>";
-       
+         // $this->load->library("notifications");
+         // echo "<pre>" , print_r($this->notifications->Show()) , "</pre>";
+         $this->load->library("tools");
+         print_r($this->tools->PrettyDate("2015-09-02 16:23:48"));
     }
     
     public function getmeta(){
