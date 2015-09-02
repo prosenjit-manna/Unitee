@@ -49,7 +49,7 @@
                                            <option value="">Seleccione un proveedor</option>
                                        </select>
                                    </div>
-                                   <a href="#" class="col-md-1 btn btn-default"><span style="font-size:14px;" class="glyphicon glyphicon-plus-sign"></span></a>
+                                   <a href="<?php echo site_url("/0/proveedor=new_proveedor"); ?>" class="col-md-1 btn btn-default"><span style="font-size:14px;" class="glyphicon glyphicon-plus-sign"></span></a>
                                </div>
                                <div class="well col-md-6">
                                     <h4 class="col-md-12">Dirección</h4>
@@ -277,10 +277,14 @@
                                    <div class="form-group col-md-9">
                                         <input onkeyup="validar();" type="text" name="txt_factura" id="txt_factura" value="" class="form-control input-circle" placeholder="Factura">
                                    </div>
-                                   <label class="control-label col-md-3">* Total</label>
-                                   <div class="form-group col-md-9">
-                                        <input onkeyup="validar();" type="text" name="txt_ptotal" id="txt_ptotal" value="" class="form-control input-circle" placeholder="Precio Total">
-                                   </div>
+                                   <label class="control-label col-md-3">* Precio</label>
+                                    <div class="form-group col-md-9">
+                                            <div class="input-icon right">
+                                                <i name="change_" id="change_ptotal_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                <i name="change_x" id="change_ptotal" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                <input onkeyup="validate_ptotal();validar();" required="" type="text" id="txt_ptotal" name="txt_ptotal" class="form-control input-circle" placeholder="Numero de ptotal">
+                                            </div>
+                                    </div>
                                </div>
                             
                            </div><br><br>
@@ -301,6 +305,28 @@
 <!--FIN DEL CONTENIDO-->
 <!--Validaciones-->
 <script>
+    var validate_ptotal = function () {
+                var change_ptotal_ok = $("#change_ptotal_ok");
+                var change_ptotal = $("#change_ptotal");
+                var ptotal = $("#txt_ptotal").val();
+                if (ptotal ==="") {
+                change_ptotal_ok.css("display", "none");
+                change_ptotal.css("display", "none");
+                 return true ;
+                 }
+                else if (isNaN(ptotal) && ptotal !=="") {
+                change_ptotal_ok.css("display", "none");
+                change_ptotal.css("display", "block");
+                return true ;
+                }
+                else {
+                change_ptotal_ok.css("display", "block");
+                change_ptotal.css("display", "none");
+                return false ;
+               }
+            };
+
+
     function validar() {
 
                 var po = $("#txt_po").val();
