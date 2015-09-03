@@ -66,6 +66,8 @@ class Notifications
                         . " last_date as 'date' ,"
                         . " redirect , "
                         . " status , "
+                        . " alert ,"
+                        . " icon ,"
                         . " notification.read ,"
                         . " id_roles as 'rols' ,"
                         . " id_user as 'user' "

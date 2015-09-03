@@ -421,14 +421,16 @@ class Dashboard extends CI_Controller {
         $count  = sizeof($data);
        
         echo json_encode(array(
-            "count"     => $count ,
+            "count"     => $count,
             "data"      => $data
         ));
        
     }
     
     public function verify_notification(){
-        
+        $id         = isset($_REQUEST['id'] ) ? $_REQUEST['id']:NULL;
+        $redirect   = isset($_REQUEST['redirect'] ) ? $_REQUEST['redirect']:NULL;
+        echo $redirect;
     }
     
 }
