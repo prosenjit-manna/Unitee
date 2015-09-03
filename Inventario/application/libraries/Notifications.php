@@ -14,7 +14,8 @@ class Notifications
         $this->class->load->database();
     }
     
-    public function GetNofication(){
+    public function GetNofication()
+    {
         
          $this->class->load->model("user/user_auth" , "auth");
          
@@ -93,6 +94,27 @@ class Notifications
         return $this->data;
     }
     
+    
+    public function IsRead($id , $read = TRUE){
+        switch ($read){
+            case TRUE;
+                $this->class
+                        ->db
+                        ->update("notification"  , 
+                                array("read" => 1), 
+                                array("id_notification" => $id )
+                         );
+                break;
+            case FALSE:
+                 $this->class
+                        ->db
+                        ->update("notification"  , 
+                                array("read" => 0), 
+                                array("id_notification" => $id )
+                         );
+                break;
+        }
+    }
     
    
 }

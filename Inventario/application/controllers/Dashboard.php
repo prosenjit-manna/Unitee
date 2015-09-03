@@ -428,9 +428,19 @@ class Dashboard extends CI_Controller {
     }
     
     public function verify_notification(){
+        
         $id         = isset($_REQUEST['id'] ) ? $_REQUEST['id']:NULL;
         $redirect   = isset($_REQUEST['redirect'] ) ? $_REQUEST['redirect']:NULL;
-        echo $redirect;
+        
+        $this->load->library("notifications");
+        $this->load->library("base_url");
+        
+        $this->notifications->IsRead($id ,TRUE );
+        
+        redirect("/0/" . $redirect);
+        
+        return;
+        
     }
     
 }
