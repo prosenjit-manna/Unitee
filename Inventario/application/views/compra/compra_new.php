@@ -8,7 +8,6 @@
             Unitee - Nueva Compra
         </h3>
         <!-- FINAL TITULO DE LA PAGINA -->
-
         <!-- INICIO BREADCUMBS -->
         <div class="page-bar">
             <ul class="page-breadcrumb">
@@ -51,19 +50,25 @@
                                    </div>
                                    <a href="<?php echo site_url("/0/proveedor=new_proveedor"); ?>" class="col-md-1 btn btn-default"><span style="font-size:14px;" class="glyphicon glyphicon-plus-sign"></span></a>
                                </div>
-                               <div class="well col-md-6">
-                                    <h4 class="col-md-12">Dirección</h4>
-                                    <p class="col-md-12">
-                                            San Salvador, Calle ..........  etc etc
-                                    </p>
-                                    <h4 class="col-md-6">Nombre</h4>
-                                    <h4 class="col-md-6">Telefono</h4>
-                                    <p class="col-md-6">
-                                            Juan Pedro Pablo Leon
-                                    </p>
-                                    <p class="col-md-6">
-                                            777-5698
-                                    </p>
+                               <div class="well col-md-12">
+                                    <div class="col-md-6">
+                                        <h4 class="col-md-12">Dirección</h4>
+                                        <p class="col-md-12">
+                                                San Salvador, Calle San Salvador, Calle San Salvador, Calle
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4 class="col-md-6">Nombre</h4>
+                                        <p class="col-md-12">
+                                                Juan Pedro Pablo Leon
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4 class="col-md-6">Telefono</h4>
+                                        <p class="col-md-12">
+                                                777-5698
+                                        </p>
+                                    </div>
                                     
                                </div>
                            </div>

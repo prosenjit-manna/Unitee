@@ -65,7 +65,6 @@ class New_compra extends CI_Model implements PInterface {
             $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.min.js",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
             $this->route . "assert/plugins/table-editable.js",
-            $this->route . "assert/plugins/fancybox/source/jquery.fancybox.pack.js",
             $this->route . "assert/plugins/fileinput/js/fileinput.js",
         );
     }
