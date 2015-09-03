@@ -86,6 +86,7 @@ class Tools {
     
     public function default_timezone(){
         date_default_timezone_set($this->timezone);
+        
     }
     
     
