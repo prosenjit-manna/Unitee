@@ -13,11 +13,11 @@
 get_instance()->load->interfaces("Interface");
 get_instance()->load->interfaces("PluginConfig");
 
-class New_compra extends CI_Model implements PInterface {
+class View_notifications extends CI_Model implements PInterface {
 
     use PluginConfig;
 
-    protected $model = "new_compra";
+    protected $model = "view_notifications";
     var $route = null;
 
     public function __construct() {
@@ -30,13 +30,13 @@ class New_compra extends CI_Model implements PInterface {
             "author" => "Lieison S.A de C.V",
             "type" => "plugin",
             "name" => "Nueva Compra",
-            "description" => "Modulo para agregar nuevas compras",
+            "description" => "Modulo para ver notificaciones",
             "id_model" => "003",
             "id_update" => "005",
             "update" => "",
             "license" => "",
             "controller" => "",
-            "view" => "compra/compra_new"
+            "view" => "notifications/notifications_view"
         );
 
         $this->load->library("base_url");
@@ -52,7 +52,7 @@ class New_compra extends CI_Model implements PInterface {
     }
 
     public function _init() {
-      $this->load->view("compra/compra_new");
+      $this->load->view("notifications/notifications_view");
     }
 
     public function _install() {
@@ -82,7 +82,7 @@ class New_compra extends CI_Model implements PInterface {
     }
 
     public function _title() {
-        return "Unitee | Nueva Compra";
+        return "Unitee | Ver Notificaciones";
     }
 
     public function _update() {
