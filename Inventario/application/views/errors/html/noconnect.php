@@ -30,14 +30,14 @@
     
 <!--INICIO DIV CONTENIDO-->
 <div class="container error-404">
-	<h1>404</h1>
-	<h2>Whoop, Algo salio mal!!</h2>
+	<img src="<?php echo $route;?>assert/error/error.png" style="width:200px; height:200px;">
+	<h2>Esta web no esta disponible</h2>
 	<p>
-		 La pagina que estas buscando no existe o se ha movido.
+		 No hay conexión de internet. 
 	</p>
 	<p>
-            <a href="<?php echo site_url("/0/"); ?>">
-		Regresar </a>
+            <a href="#" onclick="document.location.reload();">
+		Actualizar </a>
 		<br>
 	</p>
 </div>

@@ -400,10 +400,11 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-         // $this->load->library("notifications");
+           // $this->load->library("notifications");
          // echo "<pre>" , print_r($this->notifications->Show()) , "</pre>";
-         $this->load->library("tools");
-         print_r($this->tools->PrettyDate("2015-07-01 16:23:48"));
+        /* $this->load->library("tools");
+         print_r($this->tools->PrettyDate("2015-07-01 16:23:48"));*/
+          $this->load->view("errors/html/noconnect" , array("route" => site_url()));
     }
     
     public function getmeta(){
