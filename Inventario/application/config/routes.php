@@ -65,6 +65,8 @@ $route['logout']                    = "dashboard/session";
 $route['sidebar']                   = "dashboard/get_sidebar";
 $route['avatar']                    = "user/change_avatar";
 $route['modules']                   = "dashboard/modulos";
+$route['notifications']             = "dashboard/get_notification";
+$route['notify']                    = "dashboard/verify_notification";
 
 //OTRAS RUTAS 
 

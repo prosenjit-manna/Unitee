@@ -400,10 +400,9 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-         // $this->load->library("notifications");
-         // echo "<pre>" , print_r($this->notifications->Show()) , "</pre>";
-         $this->load->library("tools");
-         print_r($this->tools->PrettyDate("2015-07-01 16:23:48"));
+          $this->load->library("notifications");
+          echo "<pre>" , print_r($this->notifications->GetNofication()) , "</pre>";
+        
     }
     
     public function getmeta(){
@@ -412,6 +411,23 @@ class Dashboard extends CI_Controller {
         $this->load->library("metadata");
         $result = $this->metadata->GetMeta($key);
         echo json_encode($result);
+    }
+    
+    public function get_notification(){
+       
+        $this->load->library("notifications");
+        $data   = $this->notifications->GetNofication();
+        $count  = sizeof($data);
+       
+        echo json_encode(array(
+            "count"     => $count ,
+            "data"      => $data
+        ));
+       
+    }
+    
+    public function verify_notification(){
+        
     }
     
 }

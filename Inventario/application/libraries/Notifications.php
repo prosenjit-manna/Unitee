@@ -16,6 +16,43 @@ class Notifications
     
     public function GetNofication(){
         
+         $this->class->load->model("user/user_auth" , "auth");
+         
+         $roles                 = $this->class->auth->roles;
+         $user                  = $this->class->auth->get_usr;
+         $notifications         = $this->Show();
+         
+         $filter                = [];
+         
+         
+         $sub_level             = $roles['sub_nivel'] >= 1 ? $roles['sub_nivel'] : NULL;
+         $level                 = $roles['nivel'] >= 1 ? $roles['nivel'] : NULL;
+         
+         $level_merger          =  $sub_level != NULL ? $level . "," . $sub_level : $level;
+    
+         foreach ($notifications as $k=>$n){
+             $n_rol         = explode(",", $n->rols);
+             $n_user        = $n->user;
+             
+             if(!is_null($n_user)){
+                if(strcmp($user, $n_user) == 0){
+                    $filter[] = $notifications[$k];
+                }
+             }else{
+                  $l = explode(",", $level_merger);
+                  foreach ($l as $v){
+                      foreach ($n_rol as $r){
+                          if(strcmp($v, $r) == 0){
+                              $filter[] = $notifications[$k];
+                              break;
+                          }
+                      }
+                  }
+             }
+             
+         }
+         
+         return $filter;
     }
     
     
@@ -39,6 +76,17 @@ class Notifications
                         ->class
                         ->db->query($this->query)
                         ->result();
+        
+        $this->class
+                ->load
+                ->library("tools");
+        
+        for($i = 0; $i < count($this->data) ; $i++){
+            $this->data[$i]->date = $this
+                    ->class
+                    ->tools
+                    ->PrettyDate($this->data[$i]->date);
+        }
         
         return $this->data;
     }

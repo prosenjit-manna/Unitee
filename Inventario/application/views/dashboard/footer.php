@@ -86,6 +86,10 @@ jQuery(document).ready(function() {
    
    try{
        var n = new notifications($uri);
+       n.head = "notification_header";
+       n.body = "notification_body";
+       n.footer = "notification_footer";
+       n.ncount = "notification_count";
        n.show();
    }catch(ex){
         console.log("Error al momento de cargar las notificaciones " + ex.message);
