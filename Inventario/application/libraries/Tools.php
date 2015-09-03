@@ -30,9 +30,9 @@ class Tools {
     private $timezone       = "America/El_Salvador";
     
     public function __construct() {
-        if(function_exists("get_instance"))
-             $this->class = &get_instance();
-        
+        if (function_exists("get_instance")) {
+            $this->class = &get_instance();
+        }
     }
     
    
@@ -65,27 +65,16 @@ class Tools {
         $hour           = $interval->h;
         $min            = $interval->i;
         if($year != 0){
-            if($year == 1){
-                return $year . $this->lang_date[$lang]['year'];
-            }else{
-                return $year . $this->lang_date[$lang]['years'];
-            }
+                return $year == 1 ?  $year . $this->lang_date[$lang]['year'] :
+                    $year . $this->lang_date[$lang]['years'];
         }else if($month != 0){
-            if($month == 1){
-                return $month . $this->lang_date[$lang]['month'];
-            }else{
-                return $month . $this->lang_date[$lang]['months'];
-            }
+             return $month == 1 ? $month . $this->lang_date[$lang]['month'] :
+                    $month . $this->lang_date[$lang]['months'];
         }else if($days != 0){
-            if($days == 1){
-                return $days . $this->lang_date[$lang]['day'];
-            }else{
-                return $days . $this->lang_date[$lang]['days'];
-            }
+                return $days == 1 ? $days . $this->lang_date[$lang]['day'] :
+                    $days . $this->lang_date[$lang]['days'];
         }else if($hour != 0){
-             return $hour == 1
-                         ? $hour . $this->lang_date[$lang]['hour'] : 
-                           $hour . $this->lang_date[$lang]['hours'];
+             return $hour . $this->lang_date[$lang]['hour'];
         }
         else{
             return $min >= 0 && $min <= 2 

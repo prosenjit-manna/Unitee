@@ -33,7 +33,7 @@ class Notifications
                         . " id_roles as 'rols' ,"
                         . " id_user as 'user' "
                         . " FROM notification WHERE status LIKE 1 AND notification.read LIKE 0"
-                        . " ORDER BY last_date DESC LIMIT 100;";
+                        . " ORDER BY last_date ";
             
         $this->data = $this
                         ->class
