@@ -337,7 +337,29 @@ class Dashboard extends CI_Controller {
     {
         $this->load->library("plugin");
         $models     = $this->plugin->model_;
-        echo "<pre>" , print_r($models) , "</pre>";
+        
+        $executed   = [];
+        
+        foreach ($models as $m){
+            
+            /**CARGUEMOS EL MODELO**/
+            $this->load->model($m['init']);
+            
+            /**VERIFICAMOS SI EXISTE UNA INTERFAZ**/
+            $interfaz   = class_implements($this->$m['name']);
+            
+            if(sizeof($interfaz) == 0){
+                continue;
+            }
+            
+            /**EJECUTAMOS LA FUNCION DE LA INTERFAZ PARA LAS CARGAS DEL DASHBOARD*/
+
+            $executed[$m['name']] =  $this->$m['name']->_JSdashboard() != NULL ? TRUE : FALSE;
+            
+        }
+        
+        echo "<pre>" , print_r($executed) , "</pre>";
+        
     }
     
     
@@ -491,7 +513,7 @@ class Dashboard extends CI_Controller {
         
     }
     
-    
+
    
     
 }
