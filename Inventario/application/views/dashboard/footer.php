@@ -72,6 +72,13 @@ jQuery(document).ready(function() {
    }
    
    try{
+       var ds = new dashboard_loader();
+       ds.load();
+   }
+   catch(ex){}
+       
+   
+   try{
        SidebarSystem.init();
    }catch(ex){
        console.log("Error al momento de cargar archivos del sistema " + ex.message);
@@ -85,12 +92,22 @@ jQuery(document).ready(function() {
    }
    
    try{
-       var n = new notifications($uri);
-       n.head = "notification_header";
-       n.body = "notification_body";
-       n.footer = "notification_footer";
-       n.ncount = "notification_count";
-       n.show();
+       
+       var inotification = function(){
+            var n = new notifications($uri);
+            n.head = "notification_header";
+            n.body = "notification_body";
+            n.footer = "notification_footer";
+            n.ncount = "notification_count";
+            n.show();
+       };
+       
+       inotification();
+       
+       setInterval(function(){ 
+           inotification();
+       }, 30000);
+      
    }catch(ex){
         console.log("Error al momento de cargar las notificaciones " + ex.message);
    }

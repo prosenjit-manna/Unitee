@@ -22,6 +22,7 @@ var notifications = function(uri){
          if(this.ncount != null)
             c = $("#" + this.ncount);
         
+        
         var tasking = new jtask();
         tasking.url = uri + "notifications";
         tasking.success_callback(function(d){
@@ -30,6 +31,7 @@ var notifications = function(uri){
               var data          = parse.data;
               h.html("<p>" + count  +" Notificaciones Pendientes</p>");
               c.html(count);
+              b.html("");
               if(count == 0){
                      b.html('<li><a href="#"><span class="label label-sm label-icon label-success"><i class="icon-thumbs-up"></i></span>No hay notificaciones<span class="time"> Ahora</span></a></li>');
               }else{
@@ -49,9 +51,12 @@ var notifications = function(uri){
                      b.append(data);
                 });
               }
+              
+              console.log("Iteracion...");
+              
+             
         });
         tasking.do_task();
-        console.log("Terminando las notificaciones ...");
     };
     
 };

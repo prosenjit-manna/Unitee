@@ -67,6 +67,7 @@ $route['avatar']                    = "user/change_avatar";
 $route['modules']                   = "dashboard/modulos";
 $route['notifications']             = "dashboard/get_notification";
 $route['notify']                    = "dashboard/verify_notification";
+$route['jsloader']                  = "dashboard/LoadJs";
 
 //OTRAS RUTAS 
 

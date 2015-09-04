@@ -88,6 +88,17 @@ class Dashboard extends CI_Controller {
          $this->sidebar_engine->_echo();
     }
    
+    /**
+     * INDEX PRINCIPAL SU RUTA ES :
+     * 
+     *    $route['0']  = 'dashboard/index';
+     *    $route['0/([a-z_-]+)' 
+    .                   system_token() 
+    .                   '([a-z_-]+)'] = 'dashboard/index/$1=$2';
+     * 
+     * 
+     * **/
+    
     public function index( $model = NULL)
     {
         
@@ -316,6 +327,23 @@ class Dashboard extends CI_Controller {
         }
     }
     
+    
+    /****
+     * FUNCION DEL CONTROLADOR QUE REALIZA PROCESOS
+     * EN SEGUNDO PLANO DEL METODO INTERFACE
+     * 
+     * ****/
+    public function LoadJs()
+    {
+        $this->load->library("plugin");
+        $models     = $this->plugin->model_;
+        echo "<pre>" , print_r($models) , "</pre>";
+    }
+    
+    
+    /***
+     * CONTROLADOR DE CIERRE DE SESION
+     * **/
     public function session($close = true)
     {
         
@@ -332,6 +360,13 @@ class Dashboard extends CI_Controller {
 
     }
     
+    
+    /***
+     * CONTROLADOR BLOQUEO DE PANTALLA
+     * 
+     * $route['block'] = "dashboard/blockscreen";
+     * 
+     * **/
     public function blockscreen()
     {
             $this->session->block = TRUE;
@@ -343,6 +378,12 @@ class Dashboard extends CI_Controller {
                     ));
     }
     
+    
+    /***
+     * DESBLOQUEO DE PANTALLA 
+     * 
+     *      $route['unlock'] = "dashboard/unlock";
+     * **/
     public function unlock()
    {
         
@@ -414,6 +455,13 @@ class Dashboard extends CI_Controller {
         echo json_encode($result);
     }
     
+    
+    /***
+     * REGION DE NOTIFICACIONES 
+     *  CONTROLADORES NECESARIOS PARA LA NOTIFICACIONES 
+     * 
+     * ***************/
+    
     public function get_notification(){
        
         $this->load->library("notifications");
@@ -442,6 +490,9 @@ class Dashboard extends CI_Controller {
         return;
         
     }
+    
+    
+   
     
 }
 

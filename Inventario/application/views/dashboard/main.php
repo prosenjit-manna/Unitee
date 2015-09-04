@@ -50,4 +50,18 @@
 
 <!-- END CONTENT -->
 
+<script>
+    
+    var dashboard_loader = function(){
+        
+        this.load = function(){
+            alert();
+        };
+        
+    };
+    
+    
+    
+</script>
+
 

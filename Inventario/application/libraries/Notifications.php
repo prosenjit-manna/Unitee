@@ -9,7 +9,8 @@ class Notifications
 
     protected $query    = NULL;
 
-    public function __construct() {
+    public function __construct() 
+    {
         $this->class = &get_instance();
         $this->class->load->database();
     }
@@ -95,7 +96,8 @@ class Notifications
     }
     
     
-    public function IsRead($id , $read = TRUE){
+    public function IsRead($id , $read = TRUE)
+    {
         switch ($read){
             case TRUE;
                 $this->class
