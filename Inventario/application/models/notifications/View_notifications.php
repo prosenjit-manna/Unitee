@@ -29,7 +29,7 @@ class View_notifications extends CI_Model implements PInterface {
             "version" => 1.0,
             "author" => "Lieison S.A de C.V",
             "type" => "plugin",
-            "name" => "Nueva Compra",
+            "name" => "Ver Notificaciones",
             "description" => "Modulo para ver notificaciones",
             "id_model" => "003",
             "id_update" => "005",
@@ -47,7 +47,6 @@ class View_notifications extends CI_Model implements PInterface {
         return array(
             $this->route . "assert/plugins/select2/select2.css",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css",
-            $this->route . "assert/plugins/fileinput/css/fileinput.css",
         );
     }
 
@@ -61,11 +60,10 @@ class View_notifications extends CI_Model implements PInterface {
 
     public function _js() {
         return array(
-            $this->route . "assert/plugins/select2/select2.min.js",
-            $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.min.js",
+           $this->route . "assert/plugins/select2/select2.min.js",
+            $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.js",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
-            $this->route . "assert/plugins/table-editable.js",
-            $this->route . "assert/plugins/fileinput/js/fileinput.js",
+            $this->route . "assert/system/table-managed.js",
         );
     }
 
