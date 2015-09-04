@@ -98,7 +98,7 @@
                                                     </ul>
 						</li>
                                                 <li id="notification_footer" class="external">
-                                                    <a href="<?php echo site_url("0/notification=view_notification"); ?>">
+                                                    <a href="<?php echo site_url("0/notifications=view_notifications"); ?>">
 							 Ver todas las notificaciones <i class="m-icon-swapright"></i>
 							</a>
 						</li>

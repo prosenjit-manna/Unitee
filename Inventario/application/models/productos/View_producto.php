@@ -151,7 +151,76 @@ class view_producto extends CI_Model implements PInterface {
     }
 
     public function _JSdashboard() {
+        $this->InProduct(); //Verifica si la cantidad es mayor que el margen 
+        $this->OutProduct(); // Verifica si el margen es mayor que la cantidad
+        return true;
+    }
+    
+    
+    private function OutProduct(){
+        $query = "SELECT
+                  producto.id_producto as 'id' , 
+                  producto.nombre as 'nombre' , 
+                  producto.margen 'margen',
+                  producto.cantidad as 'cantidad',
+                  producto.descripcion as 'descripcion'
+                  FROM producto 
+                  WHERE producto.cantidad < producto.margen 
+                  ORDER BY producto.date ASC;  ";
         
+        $result   = $this->db
+                        ->query($query)
+                        ->result();
+        
+        foreach ($result as $r){
+            
+            $query      = "SELECT id_notification as 'id' , status as 'status' FROM notification "
+                        . " WHERE table_object LIKE 'producto' AND id_object LIKE ?";
+            $exist      = $this->db
+                               ->query($query, array($r->id))
+                               ->result();
+            
+            $this->load->library("notifications");
+            
+            $msj = "Producto " .$r->nombre . ' Terminado  (' . $r->descripcion . ')[Cantidad en inventario : ' . $r->cantidad . ']';
+            
+            if(count($exist) >= 1){
+                if($exist[0]->status == 0){
+                    $this->notifications->UpdateNotification($exist[0]->id , 1 , $msj);
+                }
+            }else{
+                
+                $this->notifications->AddNotification("producto" , 
+                        $r->id ,
+                        $msj ,
+                        "productos=edit_producto?id=" . $r->id ,
+                        "icon-file" ,
+                        "label-warning",
+                        1
+                );
+                
+            }
+        }
+    }
+    
+    private function InProduct(){
+        
+         $query = "SELECT notification.id_notification as 'id'
+                  FROM producto
+                  INNER JOIN notification ON notification.id_object = producto.id_producto
+                  WHERE producto.cantidad > producto.margen AND notification.table_object LIKE 'producto' 
+                  AND notification.`status` = 1
+                  ORDER BY producto.date ASC; ";
+        
+         $result = $this->db->query($query)->result();
+         if(count($result) >= 1){
+             
+             $this->load->library("notifications");
+             
+             foreach ($result as $n){
+                  $this->notifications->UpdateNotification($n->id ,0);
+             }
+         }
     }
 
 }

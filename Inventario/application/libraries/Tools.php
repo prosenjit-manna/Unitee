@@ -89,6 +89,9 @@ class Tools {
         
     }
     
-    
+    public function current_datetime(){
+        $d = new DateTime("now");
+        return $d->format("Y-m-d H:m:s");
+    }
    
 }

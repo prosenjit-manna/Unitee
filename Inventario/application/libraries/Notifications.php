@@ -118,5 +118,70 @@ class Notifications
         }
     }
     
+    
+public function AddNotification($table , 
+        $object , 
+        $description , 
+        $redirect , 
+        $icon ,
+        $alert,
+        $roles = NULL ,
+        $user = NULL)
+{
+    
+   $this->class->load->library("tools");
+            
+   $this->class->tools->default_timezone();
+   
+   $current_date    = $this->class->tools->current_datetime();
+    
+   return $this->class->db->insert("notification" , array(
+       "id_object"              => $object,
+       "table_object"           => $table,
+       "id_roles"               => $roles,
+       "id_user"                => $user,
+       "alert"                  => $alert,
+       "description"            => $description,
+       "redirect"               => $redirect,
+       "icon"                   => $icon,
+       "last_date"              => $current_date,
+       "status"                 => 1,
+       "read"                   => 0
+   ));
+        
+}
+
+
+public function UpdateNotification($id_notification , $status ,
+        $description = NULL ,
+        $redirect = NULL,
+        $roles = NULL , 
+        $user = NULL)
+{
+    
+    $rebase     = [];
+    
+    if(!is_null($description)){
+        $rebase["description"] = $description;
+    }
+    if(!is_null($redirect)){
+        $rebase['redirect'] = $redirect;
+    }
+    if(!is_null($roles)){
+        $rebase['id_roles'] = $roles;
+    }
+    if(!is_null($user)){
+        $rebase['id_user'] = $user;
+    }
+    
+    $rebase['status']   = $status;
+    $rebase['read']     = 0;
+    
+    return $this->class->db->update("notification" , 
+            $rebase , 
+            array("id_notification" => $id_notification));
+    
+}
+    
    
 }

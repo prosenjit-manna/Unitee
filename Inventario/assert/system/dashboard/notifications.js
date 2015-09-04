@@ -38,11 +38,11 @@ var notifications = function(uri){
                 $.map(data , function(da){
                     var data = '';
                         data += '<li>'
-                             +  '<a href="' + uri + 'notify?id=' + da.id + "&redirect=" + da.redirect + '">'
+                             +  '<a title="' + da.description + '" href="' + uri + 'notify?id=' + da.id + "&redirect=" + da.redirect + '">'
                              +  '<span class="label label-sm label-icon ' + da.alert + '">'
                              +  '<i class="' + da.icon + '"></i>'
                              +  '</span>' 
-                             +  da.description.substring(0,20) + "..."
+                             +  da.description.substring(0,15) + "..."
                              +  '<span class="time">&nbsp;'
                              +  da.date
                              +  '</span>'
