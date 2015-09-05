@@ -15,14 +15,14 @@ class Notifications
         $this->class->load->database();
     }
     
-    public function GetNofication()
+    public function GetNofication($read= 0 , $all = FALSE)
     {
         
          $this->class->load->model("user/user_auth" , "auth");
          
          $roles                 = $this->class->auth->roles;
          $user                  = $this->class->auth->get_usr;
-         $notifications         = $this->Show();
+         $notifications         = $this->Show($read , $all);
          
          $filter                = [];
          
@@ -58,9 +58,10 @@ class Notifications
     }
     
     
-    public function Show()
+    public function Show($read= 0 , $all = FALSE)
     {
-        $this->query = "SELECT "
+        if(!$all){
+            $this->query = "SELECT "
                         . " id_notification as 'id' ,"
                         . " id_object as 'object_id' ,"
                         . " table_object as 'object_table',"
@@ -73,8 +74,27 @@ class Notifications
                         . " notification.read ,"
                         . " id_roles as 'rols' ,"
                         . " id_user as 'user' "
-                        . " FROM notification WHERE status LIKE 1 AND notification.read LIKE 0"
+                        . " FROM notification WHERE status LIKE 1 AND "
+                        . " notification.read LIKE $read"
                         . " ORDER BY last_date ";
+        }
+        else{
+             $this->query = "SELECT "
+                        . " id_notification as 'id' ,"
+                        . " id_object as 'object_id' ,"
+                        . " table_object as 'object_table',"
+                        . " description as 'description' ,"
+                        . " last_date as 'date' ,"
+                        . " redirect , "
+                        . " status , "
+                        . " alert ,"
+                        . " icon ,"
+                        . " notification.read ,"
+                        . " id_roles as 'rols' ,"
+                        . " id_user as 'user' "
+                        . " FROM notification WHERE status LIKE 1 "
+                        . " ORDER BY last_date ";
+        }
             
         $this->data = $this
                         ->class
@@ -100,21 +120,19 @@ class Notifications
     {
         switch ($read){
             case TRUE;
-                $this->class
+               return $this->class
                         ->db
                         ->update("notification"  , 
                                 array("read" => 1), 
                                 array("id_notification" => $id )
                          );
-                break;
             case FALSE:
-                 $this->class
+                 return $this->class
                         ->db
                         ->update("notification"  , 
                                 array("read" => 0), 
                                 array("id_notification" => $id )
                          );
-                break;
         }
     }
     

@@ -18,6 +18,7 @@ class View_notifications extends CI_Model implements PInterface {
     use PluginConfig;
 
     protected $model = "view_notifications";
+    
     var $route = null;
 
     public function __construct() {
@@ -51,7 +52,12 @@ class View_notifications extends CI_Model implements PInterface {
     }
 
     public function _init() {
-      $this->load->view("notifications/notifications_view");
+        
+      $this->load->library("notifications");
+      $notifications        = $this->notifications->GetNofication(0 , TRUE);
+      $this->load->view("notifications/notifications_view" , array(
+                        "notify"        => $notifications
+      ));
     }
 
     public function _install() {
@@ -72,11 +78,7 @@ class View_notifications extends CI_Model implements PInterface {
     }
 
     public function _rols() {
-        $this->load->model("system/permission_engine");
-        $data = $this->permission_engine->_get(
-                $this->model, MODEL, INT
-        );
-        return $data;
+       //PARA TODA LA FAMILIA :)
     }
 
     public function _title() {
@@ -96,21 +98,19 @@ class View_notifications extends CI_Model implements PInterface {
     }
 
     public function _widgets() {
-        
+        //OHHH NO HAY NADA XD
     }
 
     public function _operations() {
-        $this->load->model("system/permission_engine", 'engine');
-        $data = $this->engine->GetOperationRoles($this->model);
-        return $data;
+      //SIN OPERACIONES
     }
 
     public function _Dashboard() {
-        
+        //SIN INICIO EN DASHBOARD
     }
 
     public function _JSdashboard() {
-        
+        //SIN CARGA JS EN DASHBOARD
     }
 
 }

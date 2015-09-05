@@ -61,6 +61,21 @@ class Dashboard extends CI_Controller {
          * al login
          * **/
         
+        /**
+         * USO DE LA VARIABLE ?call=ALGO
+         * 
+         * obtenemos la URL que se ha colocado ejemplo:
+         *          http://localhost/0/notification=view_notification
+         * esto lo parte en :
+         * 
+         *          http://
+         *          localhost/
+         *          0/
+         *          notification=view_notification
+         * 
+         * donde lo ultimo se tomara en cuenta para la nueva url despues de inicio de sesion
+         * **/
+        
         if(!is_array($this->session->user))
         {
             $url        = current_url();
@@ -512,6 +527,14 @@ class Dashboard extends CI_Controller {
         
         return;
         
+    }
+    
+    public function read_notification(){
+        $id         = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        $state      = isset($_REQUEST['state']) ? $_REQUEST['state'] : NULL;
+        $this->load->library("notifications");
+        $ok = $this->notifications->IsRead($id , $state);
+        if($ok) { echo TRUE ; } else { echo FALSE;}
     }
     
 

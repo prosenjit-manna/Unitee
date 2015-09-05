@@ -42,94 +42,55 @@
                     </div>
                     <div class="portlet-body">
                         <div class="">
-                           <table class="table table-striped table-hover table-bordered" id="notifications_table">
-                            <thead>
-                            <tr>
-                                <th>
-                                     
+                            <table class="table table-striped table-hover table-bordered" id="notifications_table">
+                                <thead>
+                                    <tr>
+                                        <th>
+
+                                        </th>
+                                        <th>
+                                <p align="center">Descripción</p>
                                 </th>
                                 <th>
-                                     <p align="center">Descripción</p>
+                                <p align="center">Fecha</p>
                                 </th>
                                 <th>
-                                     <p align="center">Fecha</p>
+                                <p align="center">Leido</p>
                                 </th>
                                 <th>
-                                    <p align="center">Leido</p>
+
                                 </th>
-                                <th>
-                                     
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td >
-                                     <p align="center">
-                                       <i class="icon-envelope" style="font-size:18px; color:green;"></i> 
-                                     </p>
-                                </td>
-                                <td >
-                                     <p align="center" style="font-size:14px;">Tienes un nuevo mensaje</p>
-                                </td>
-                                <td >
-                                    <p align="center" style="font-size:14px;">12/12/12</p>
-                                </td>
-                                <td >
-                                    <p align="center">
-                                        <i class="icon-eye-close" style="font-size:20px; color:red;"></i>
-                                        <i class="icon-eye-open" style="font-size:20px; color:green;"></i>    
-                                    </p>
-                                </td>
-                                <td >
-                                    <p align="center"><a href="#" class="btn btn-success btn-sm input-circle">Ver</a></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td >
-                                     <p align="center">
-                                       <i class="icon-exclamation" style="font-size:18px; color:red;"></i> 
-                                     </p>
-                                </td>
-                                <td >
-                                     <p align="center" style="font-size:14px;">Tienes un nuevo mensaje</p>
-                                </td>
-                                <td >
-                                    <p align="center" style="font-size:14px;">12/12/12</p>
-                                </td>
-                                <td >
-                                    <p align="center">
-                                        <i class="icon-eye-close" style="font-size:20px; color:red;"></i>
-                                        <i class="icon-eye-open" style="font-size:20px; color:green;"></i>    
-                                    </p>
-                                </td>
-                                <td >
-                                    <p align="center"><a href="#" class="btn btn-success btn-sm input-circle">Ver</a></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td >
-                                     <p align="center">
-                                       <i class="icon-thumbs-up-alt" style="font-size:18px; color:#B18904;"></i> 
-                                     </p>
-                                </td>
-                                <td >
-                                     <p align="center" style="font-size:14px;">Tienes un nuevo mensaje</p>
-                                </td>
-                                <td >
-                                    <p align="center" style="font-size:14px;">12/12/12</p>
-                                </td>
-                                <td >
-                                    <p align="center">
-                                        <i class="icon-eye-close" style="font-size:20px; color:red;"></i>
-                                        <i class="icon-eye-open" style="font-size:20px; color:green;"></i>    
-                                    </p>
-                                </td>
-                                <td >
-                                    <p align="center"><a href="#" class="btn btn-success btn-sm input-circle">Ver</a></p>
-                                </td>
-                            </tr>
-                            </tbody>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($notify as $n): ?>
+                                        <tr id="notify_<?php echo $n->id; ?>">
+                                            <td>
+                                                <p align="center">
+                                                    <i class="<?php echo $n->icon; ?>" style="font-size:18px; color:green;"></i> 
+                                                </p>
+                                            </td>
+                                            <td >
+                                                <p align="center" style="font-size:14px;"><?php echo $n->description; ?></p>
+                                            </td>
+                                            <td >
+                                                <p align="center" style="font-size:14px;"><?php echo $n->date; ?></p>
+                                            </td>
+                                            <td >
+                                                <p id="read_nofify_<?php echo $n->id; ?>" align="center">
+                                                    <?php if ($n->read == 0): ?>
+                                                        <a href="javascript:mark_read(<?php echo $n->id; ?> , 1);"><i class="icon-eye-close" style="font-size:20px; color:green;"></i> </a>  
+                                                    <?php else: ?>
+                                                        <a href="javascript:mark_read(<?php echo $n->id; ?> , 0);"><i class="icon-eye-open" style="font-size:20px; color:green;"></i> </a>  
+                                                    <?php endif; ?>
+                                                </p>
+                                            </td>
+                                            <td >
+                                                <p align="center"><a href="<?php echo site_url("/notify?id=" . $n->id . "&redirect=" . $n->redirect); ?>" class="btn btn-success btn-sm input-circle">Ver</a></p>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -150,7 +111,7 @@
 
         var table = $('#notifications_table');
 
-        var oTable = table.dataTable({
+        table.dataTable({
             "lengthMenu": [
                 [5, 15, 30, -1],
                 [5, 10, 30, "Todos"]
@@ -182,4 +143,28 @@
             ]
         });
     };
+
+    var mark_read = function(id , state){
+        var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/dashboard/read_notification"); ?>";
+        tasking.data = {"id": id , "state": state};
+        tasking.beforesend = true;
+        tasking.config_before(function(){
+            $("#read_nofify_" + id).html('<i class="icon-refresh" style="font-size:20px; color:green;"></i>');
+        });
+        tasking.success_callback(function(d) {
+                  switch(state)
+                  {
+                      case 0:
+                          $("#read_nofify_" + id).html('<a href="javascript:mark_read(' + id + ', 1);"><i class="icon-eye-close" style="font-size:20px; color:green;"></i> </a>  ');
+                          break;
+                      case 1:
+                          $("#read_nofify_" + id).html('<a href="javascript:mark_read(' + id + ', 0);"><i class="icon-eye-open" style="font-size:20px; color:green;"></i> </a>  ');
+                          break;
+                  }
+        });
+        tasking.do_task();
+    };
+    
+    
 </script>
