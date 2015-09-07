@@ -119,7 +119,7 @@ class view_producto extends CI_Model implements PInterface {
                   FROM producto 
                   LEFT JOIN color ON color.id_color=producto.id_color
                   LEFT JOIN unidad ON unidad.id_unidad=producto.id_unidad
-                  ORDER BY producto.date ASC; ";
+                  ORDER BY producto.date DESC; ";
 
         return $this->db
                         ->query($query)
