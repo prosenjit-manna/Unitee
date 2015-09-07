@@ -163,8 +163,10 @@ class view_producto extends CI_Model implements PInterface {
                   producto.nombre as 'nombre' , 
                   producto.margen 'margen',
                   producto.cantidad as 'cantidad',
-                  producto.descripcion as 'descripcion'
-                  FROM producto 
+                  producto.descripcion as 'descripcion',
+                  unidad.nombre as 'u_name',
+                  FROM producto  
+                  INNER JOIN unidad ON unidad.id_unidad=producto.id_unidad
                   WHERE producto.cantidad < producto.margen 
                   ORDER BY producto.date ASC;  ";
         
@@ -184,9 +186,12 @@ class view_producto extends CI_Model implements PInterface {
             
             $msj = "Producto " .$r->nombre . ' Terminado  (' . $r->descripcion . ')[Cantidad en inventario : ' . $r->cantidad . ']';
             
+              
+           
             if(count($exist) >= 1){
                 if($exist[0]->status == 0){
                     $this->notifications->UpdateNotification($exist[0]->id , 1 , $msj);
+                    
                 }
             }else{
                 
@@ -200,12 +205,27 @@ class view_producto extends CI_Model implements PInterface {
                 );
                 
             }
-            $this->Message();
+            
+            $cant = $r->cantidad . " " . $r->u_name ;
+            $m = $this->load->templates("productos");
+            $m = str_replace("{{cant}}", $cant  , $m);
+            $m = str_replace("{{prod}}", $r->nombre  , $m);
+            $this->Message($m);
         }
     }
     
-    private function Message(){
+    private function Message($message){
+        
+         $this->load->library("messages");
+         $this->load->library("metadata");
+         $email = $this->metadata->GetMeta("email");
          
+         return $this->messages
+                 ->email_from()
+                 ->email_subject("Unitee | Producto por terminar")
+                 ->email_to($email->value)
+                 ->email_body($message)
+                 ->email_send();
     }
     
     private function InProduct(){

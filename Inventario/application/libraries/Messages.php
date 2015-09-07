@@ -46,6 +46,13 @@ class Messages {
         return $this;
     }
     
+    public function email_attach($attach){
+        $this->class
+                ->email
+                ->attach($attach);
+        return $this;
+    }
+    
     public function email_send(){
          
         $this->class
@@ -58,7 +65,7 @@ class Messages {
 
         $this->class->email->message($this->msj_);
 
-        $this->class->email->send();
+        return $this->class->email->send();
     }
 
 }
