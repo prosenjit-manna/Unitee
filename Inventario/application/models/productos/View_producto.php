@@ -198,7 +198,7 @@ class view_producto extends CI_Model implements PInterface {
                 $this->notifications->AddNotification("producto" , 
                         $r->id ,
                         $msj ,
-                        "productos=edit_producto?id=" . $r->id ,
+                        "compra=new_compra",
                         "icon-file" ,
                         "label-warning",
                         1
@@ -210,6 +210,8 @@ class view_producto extends CI_Model implements PInterface {
             $m = $this->load->templates("productos");
             $m = str_replace("{{cant}}", $cant  , $m);
             $m = str_replace("{{prod}}", $r->nombre  , $m);
+            $m = str_replace("{{prov}}", site_url("/0/proveedor=view_proveedor")  , $m);
+            $m = str_replace("{{compra}}", site_url("/0/compra=new_compra") , $m);
             $this->Message($m);
         }
     }
