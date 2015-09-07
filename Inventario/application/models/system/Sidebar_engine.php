@@ -168,9 +168,6 @@ class Sidebar_engine extends CI_Model {
          $the_sidebar   = $this->_init();
          $view          = NULL;
          
-        // echo "<pre>" , print_r($the_sidebar) , "</pre>";  
-        // return;
-         
          foreach ($the_sidebar as $side)
          {
              

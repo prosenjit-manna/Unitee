@@ -200,7 +200,12 @@ class view_producto extends CI_Model implements PInterface {
                 );
                 
             }
+            $this->Message();
         }
+    }
+    
+    private function Message(){
+         
     }
     
     private function InProduct(){

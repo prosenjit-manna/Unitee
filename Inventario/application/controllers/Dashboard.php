@@ -85,6 +85,7 @@ class Dashboard extends CI_Controller {
             return;
         }
         
+        //SESION DEL USUARIO ACTUAL ...
         $this->user_p = $this->session->user;
         
         
@@ -425,11 +426,13 @@ class Dashboard extends CI_Controller {
    {
         
         
+          //VERIFICAR SI EXISTE UN PASSWORD EN EL REQUEST DEL FORM 
            if(!isset($_REQUEST['password'])){
                 redirect("/block?err=1");
                 return;
            }
-        
+           
+          
             $this->load->helper("form");
             $pass = $_REQUEST['password'];
             
@@ -439,6 +442,7 @@ class Dashboard extends CI_Controller {
                 return;
             }
             
+            //VERIFICAMOS LA ENCRIPTACION 
             $this->load->library("encryption");
             $this->load->helper("setup");
             
@@ -456,6 +460,7 @@ class Dashboard extends CI_Controller {
                                          ->user['password']
                                 );
             
+            
             if(strcmp($current_password, $pass) == 0){
                  $this->session->block = FALSE;
                  redirect("/0/");
@@ -466,6 +471,8 @@ class Dashboard extends CI_Controller {
             }
 
     }
+    
+    
     
     public function modulos(){
         $this->load->library("plugin");
@@ -485,6 +492,21 @@ class Dashboard extends CI_Controller {
         
     }
     
+    
+    /**
+     * FUNCIONES META DENTRO DEL CONTROLADOR DASHBOARD
+     * 
+     * LAS FUNCIONES META SON GENERICAS:
+     * 
+     * ****/
+    
+    
+    /**
+     * ESTA FUNCION SOLO DEBE DE UTILIZAR EN UNA PETICION DE TAREA 
+     * SEGUNDO PLANO SEA CON JTASK O AJAX 
+     * YA QUE SE NECESITA UNA VARIABLE TIPO POST O GET 
+     * Y DEVUELVE UN ECHO EN FORMATO JSON.
+     */
     public function getmeta(){
         $key = isset($_REQUEST['key']) ? $_REQUEST['key']: NULL;
         if(is_null($key)) echo false;
@@ -500,7 +522,21 @@ class Dashboard extends CI_Controller {
      * 
      * ***************/
     
+    
+    
     public function get_notification(){
+        
+        
+        /*******
+         * ESTA FUNCION SOLO SE PUEDE UTILIZAR EN AJAX O JTASK 
+         * OBTIENE LAS NOTIFICACIONES POR MEDIO DE LA LIBRERIA 
+         * "Notifications"
+         * GENERA UN ECHO EN LA CUAL CODIFICA UN JSON 
+         * CUYO TIENE DOS OBJETOS 
+         * 
+         * PRIMER OBJETO : UN CONTEO DE LAS NOTIFICACIONES
+         * SEGUNDO OBJETO : UN ARREGLO DE OBJETOS EN LA CUAL TIENE LAS NOTIFICACIONES
+         * *********/
        
         $this->load->library("notifications");
         $data   = $this->notifications->GetNofication();
