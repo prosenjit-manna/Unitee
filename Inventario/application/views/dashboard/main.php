@@ -43,105 +43,15 @@
             </div>
         </div>
         <div class="portlet">  
-           <br>
+            <br>
             <div class="portlet-body col-md-5 col-sm-6">
                 <span class="caption-subject font-blue-steel bold uppercase">Notificaciones Recientes</span><br><br>
-                <div class="scroller" style="height: 130px;" data-always-visible="1" data-rail-visible="0">
-                    <ul class="feeds">
-                        <li>
-                            <div class="col1">
-                                <div class="cont">
-                                    <div class="cont-col1">
-                                        <div class="label label-sm label-info">
-                                            <i class="icon-envelope"></i>
-                                        </div>
-                                    </div>
-                                    <div class="cont-col2">
-                                        <div class="desc">
-                                            Tienes 4 nuevos mensajes
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col2">
-                                <div class="date">
-                                    Ahora 
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-success">
-                                                <i class="icon-thumbs-up-alt"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc">
-                                                Tienes un nuevo mensaje
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date">
-                                        Ayer
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="col1">
-                                <div class="cont">
-                                    <div class="cont-col1">
-                                        <div class="label label-sm label-danger">
-                                            <i class="icon-warning-sign"></i>
-                                        </div>
-                                    </div>
-                                    <div class="cont-col2">
-                                        <div class="desc">
-                                            Tienes una nueva notificación
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col2">
-                                <div class="date">
-                                    Ahora
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-info">
-                                                <i class="icon-envelope"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc">
-                                                Tienes un nuevo mensaje
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date">
-                                        Ayer
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                <div id="noti" class="scroller" style="height: 130px;" data-always-visible="1" data-rail-visible="0" id="notificacion">
+
                 </div>
                 <div class="scroller-footer">
                     <div class="btn-arrow-link pull-right">
-                        <a href="<?php echo site_url("/0/notifications=view_notifications");?>">Ver todas las notificaciones</a>
+                        <a href="<?php echo site_url("/0/notifications=view_notifications"); ?>">Ver todas las notificaciones</a>
                         <i class="icon-arrow-right"></i>
                     </div>
                 </div>
@@ -163,7 +73,7 @@
                             Productos 
                         </div>
                     </div>
-                    <a class="more" href="<?php echo site_url("/0/productos=view_producto");?>">
+                    <a class="more" href="<?php echo site_url("/0/productos=view_producto"); ?>">
                         Ver Mas <i class="icon-eye"></i>
                     </a>
                 </div>
@@ -184,7 +94,7 @@
                             Productos en existencia
                         </div>
                     </div>
-                    <a class="more" href="<?php echo site_url("/0/productos=view_producto");?>">
+                    <a class="more" href="<?php echo site_url("/0/productos=view_producto"); ?>">
                         Ver Mas <i class="icon-eye"></i>
                     </a>
                 </div>
@@ -205,15 +115,23 @@
                 console.log(r);
             });
             task.do_task();
-           
+
         };
     };
 </script>
 
 <script>
-    
-    var widget_notification = function(){
-       
+
+    var widget_notification = function () {
+        var task = new jtask();
+        task.url = "<?php echo site_url("notifications/TRUE"); ?>";
+        task.beforesend = true;
+        task.config_before(function () {
+            $("#noti").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="160px" height="100px"/></center>');
+        });
+        task.success_callback(function (r) {
+            //EJECUCION DE SEGUNDO PLANO PARA MODULOS
+        });
+        task.do_task();
     };
-    
 </script>
