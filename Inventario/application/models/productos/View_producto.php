@@ -164,7 +164,7 @@ class view_producto extends CI_Model implements PInterface {
                   producto.margen 'margen',
                   producto.cantidad as 'cantidad',
                   producto.descripcion as 'descripcion',
-                  unidad.nombre as 'u_name',
+                  unidad.nombre as 'u_name'
                   FROM producto  
                   INNER JOIN unidad ON unidad.id_unidad=producto.id_unidad
                   WHERE producto.cantidad < producto.margen 
@@ -207,7 +207,7 @@ class view_producto extends CI_Model implements PInterface {
             }
             
             $cant = $r->cantidad . " " . $r->u_name ;
-            $m = $this->load->templates("productos");
+            $m = $this->load->templates("producto");
             $m = str_replace("{{cant}}", $cant  , $m);
             $m = str_replace("{{prod}}", $r->nombre  , $m);
             $m = str_replace("{{prov}}", site_url("/0/proveedor=view_proveedor")  , $m);
@@ -223,7 +223,7 @@ class view_producto extends CI_Model implements PInterface {
          $email = $this->metadata->GetMeta("email");
          
          return $this->messages
-                 ->email_from()
+                 ->emailFrom()
                  ->email_subject("Unitee | Producto por terminar")
                  ->email_to($email->value)
                  ->email_body($message)

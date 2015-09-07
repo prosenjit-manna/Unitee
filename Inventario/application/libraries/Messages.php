@@ -20,15 +20,16 @@ class Messages {
         $this->class->load->library("email");
 
         if (email_config() != NULL) {
-            $this->email->initialize(email_config());
+            $this->class->email->initialize(email_config());
         }
     }
     
-    public function email_from($email , $name = NULL){
+    public function emailFrom($email = NULL , $name = NULL){
        $this->from_ = $email != NULL ? array(
            "from"   => $email,
            "name"   => $name != NULL ? $name : $email
        ) : email_from();
+       return $this;
     }
     
     public function email_subject($subj){
