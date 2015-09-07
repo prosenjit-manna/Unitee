@@ -186,12 +186,18 @@ class view_producto extends CI_Model implements PInterface {
             
             $msj = "Producto " .$r->nombre . ' Terminado  (' . $r->descripcion . ')[Cantidad en inventario : ' . $r->cantidad . ']';
             
-              
-           
+            
+            $cant = $r->cantidad . " " . $r->u_name ;
+            $m = $this->load->templates("producto");
+            $m = str_replace("{{cant}}", $cant  , $m);
+            $m = str_replace("{{prod}}", $r->nombre  , $m);
+            $m = str_replace("{{prov}}", site_url("/0/proveedor=view_proveedor")  , $m);
+            $m = str_replace("{{compra}}", site_url("/0/compra=new_compra") , $m);
+
             if(count($exist) >= 1){
                 if($exist[0]->status == 0){
                     $this->notifications->UpdateNotification($exist[0]->id , 1 , $msj);
-                    
+                    $this->Message($m);
                 }
             }else{
                 
@@ -204,15 +210,12 @@ class view_producto extends CI_Model implements PInterface {
                         1
                 );
                 
+                
+                $this->Message($m);
+                
             }
             
-            $cant = $r->cantidad . " " . $r->u_name ;
-            $m = $this->load->templates("producto");
-            $m = str_replace("{{cant}}", $cant  , $m);
-            $m = str_replace("{{prod}}", $r->nombre  , $m);
-            $m = str_replace("{{prov}}", site_url("/0/proveedor=view_proveedor")  , $m);
-            $m = str_replace("{{compra}}", site_url("/0/compra=new_compra") , $m);
-            $this->Message($m);
+           
         }
     }
     

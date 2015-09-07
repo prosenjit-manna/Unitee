@@ -202,7 +202,8 @@ class Dashboard extends CI_Controller {
              
              
              $vars['js_loader'] = array(
-                 $js_request
+                 $js_request,
+                 "widget_notification();" //    SOLO PARA UNITEE
              );
              
              $this->load->view("dashboard/main" , $vars);
@@ -486,8 +487,7 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-         // $this->load->library("notifications");
-         $result = $this->load->templates("template");
+         //$this->load->library("notifications");
          echo "<pre>" , print_r($result) , "</pre>";
         
     }
@@ -524,7 +524,7 @@ class Dashboard extends CI_Controller {
     
     
     
-    public function get_notification(){
+    public function get_notification($all = FALSE){
         
         
         /*******
@@ -539,7 +539,7 @@ class Dashboard extends CI_Controller {
          * *********/
        
         $this->load->library("notifications");
-        $data   = $this->notifications->GetNofication();
+        $data   = $this->notifications->GetNofication(0 , $all);
         $count  = sizeof($data);
        
         echo json_encode(array(

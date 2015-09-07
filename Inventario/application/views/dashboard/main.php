@@ -205,6 +205,15 @@
                 console.log(r);
             });
             task.do_task();
+           
         };
     };
+</script>
+
+<script>
+    
+    var widget_notification = function(){
+       
+    };
+    
 </script>
