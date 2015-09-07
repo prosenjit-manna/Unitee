@@ -4,7 +4,7 @@
 		<?php $d = new DateTime("now");
                     echo $d->format("Y"); 
                 ?> 
-                &copy; Unitee Powered By <a href="http://lieison.com/" target="_blank" style="color:#BDBDBD; font-size:12px;">Lieison Working Together</a>.
+                &copy; Unitee Powered By <a href="http://lieison.com/" target="_blank" style="color:#BDBDBD; font-size:12px;">Lieison Working Together S.A. de C.V.</a>.
 	</div>
 	<div class="scroll-to-top">
 		<i class="icon-arrow-up"></i>

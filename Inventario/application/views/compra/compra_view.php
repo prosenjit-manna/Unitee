@@ -155,7 +155,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                        <button type="button" data-dismiss="modal" onclick="¿" class="btn green">Eliminar</button>
+                                        <button type="button" data-dismiss="modal" class="btn green">Eliminar</button>
                                     </div>
                                 </div>
                             </div>
