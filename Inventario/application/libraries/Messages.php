@@ -60,13 +60,21 @@ class Messages {
                 ->email
                 ->from($this->from_['from'] , $this->from_['name']);
         
-        $this->class->email->to($this->to_);
+        $this->class
+                ->email
+                ->to($this->to_);
 
-        $this->class->email->subject($this->subject_);
+        $this->class
+                ->email
+                ->subject($this->subject_);
 
-        $this->class->email->message($this->msj_);
+        $this->class
+                ->email
+                ->message($this->msj_);
 
-        return $this->class->email->send();
+        return $this->class
+                ->email
+                ->send();
     }
 
 }
