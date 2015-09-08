@@ -110,6 +110,20 @@ class view_producto extends CI_Model implements PInterface {
                 ->query("SELECT COUNT(*) as 'count' FROM producto")
                 ->result()[0];
     }
+    
+    public function get_colorByName($name){
+        $query = "  SELECT 
+                    producto.id_producto as 'id',
+                    producto.nombre as 'name',
+                    color.nombre as 'color_name',
+                    color.referencia as 'color_ref'
+                    FROM producto 
+                    INNER JOIN color ON  color.id_color=producto.id_color
+                    WHERE producto.nombre LIKE '%$name'";
+        return $this->db
+                        ->query($query)
+                        ->result();
+    }
 
     public function get_products() {
         $query = "  SELECT

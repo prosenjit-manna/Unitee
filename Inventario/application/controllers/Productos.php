@@ -159,6 +159,14 @@ class Productos extends CI_Controller {
         $count = $this->prod->count_products();
         echo json_encode($count);
     }
+    
+    public function get_color_byName(){
+        $name = isset($_REQUEST['name']) ? $_REQUEST['name'] : NULL;
+        if(is_null($name)){ echo NULL; }
+        $this->load->model("productos/view_producto" , "prod");
+        $data = $this->prod->get_colorByName($name);
+        echo json_encode($data);
+    }
 
     
 }

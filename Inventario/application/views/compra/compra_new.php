@@ -29,6 +29,7 @@
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <input type="hidden" id="providers" value='<?php echo json_encode($prov ,  JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>' />
+            <input type="hidden" id="products" value='<?php echo json_encode($prod ,  JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>' />
             <!-- INICIO PAGE CONTENT-->
             <div class="row scroller" style="height:430px" data-rail-visible="1" >
                 <!-- INICIO Portlet PORTLET-->
@@ -47,7 +48,7 @@
                                     <select onchange="provider_selected(this.value);" required="" id="select_colors" name="txt_color" class="form-control input-circle">
                                         <option value="-1">Seleccione un proveedor</option>
                                         <?php  foreach ($prov as $v): ?>
-                                            <option value="<?php echo $v->id_prov; ?>"><?php echo $v->empresa; ?></option>
+                                            <option value="<?php echo $v->id_prov ; ?>"><?php echo $v->empresa; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -69,7 +70,7 @@
                         <a class="btn btn-success"   data-toggle="modal" href="#responsive_add"><i class="icon-plus"> Añadir</i></a>
                         <div class="portlet-body">
                              <br>
-                             <table class="table table-striped table-hover table-bordered" id="productos_table">
+                             <table class="table table-striped table-hover table-bordered" >
                                 <thead>
                                     <tr>
                                         <th>
@@ -89,64 +90,8 @@
                                         </th>
                                         </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <p align="center">Telaa</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">Rojo</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">46</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">$100.52</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">
-                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p align="center">Telaa</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">Rojo</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">46</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">$100.52</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">
-                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p align="center">Telaa</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">Rojo</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">46</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">$100.52</p>
-                                        </td>
-                                        <td>
-                                            <p align="center">
-                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>
-                                            </p>
-                                        </td>
-                                    </tr>
+                                <tbody id="table_prod">
+                                  
                                 </tbody>
                             </table>
                         </div>
@@ -206,7 +151,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
+                                <button type="button" data-dismiss="modal" onclick="delete_node();" class="btn green">Eliminar</button>
                             </div>
                         </div>
                     </div>
@@ -223,13 +168,16 @@
                                         <br>
                                         <label class="control-label col-md-2">* Nombre</label>
                                        <div class="form-group col-md-4">
-                                           <select required="required" id="select_nombre" name="txt_pombre" class="form-control input-circle">                     
+                                           <select onchange="select_color(this.value);" required="required" id="select_nombre" name="txt_pombre" class="form-control input-circle">                     
                                                 <option value="">Seleccione el producto</option>
+                                                <?php  foreach ($prod as $v): ?>
+                                                     <option value="<?php echo $v->nombre; ?>"><?php echo $v->nombre; ?></option>
+                                                <?php endforeach; ?>
                                             </select>
                                        </div>
                                         <label class="control-label col-md-2">* Color</label>
                                        <div class="form-group col-md-4">
-                                            <select required="required" id="select_color" name="txt_color" class="form-control input-circle">                     
+                                           <select id="color_prod" required="required" id="select_color" name="txt_color" class="form-control input-circle">                     
                                                 <option value="">Seleccione el color</option>
                                             </select>
                                        </div>
@@ -238,7 +186,7 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_pcantidad_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_pcantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input required="" type="text" id="txt_pcantidad" name="txt_pcantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                                <input id="cant_prod" required="" type="number" id="txt_pcantidad" name="txt_pcantidad" class="form-control input-circle" placeholder="Cantidad del producto">
                                             </div>
                                         </div>
                                          <label class="control-label col-md-2">Precio</label>
@@ -246,12 +194,12 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_precio_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input required="" type="text" id="txt_precio" name="txt_precio" class="form-control input-circle" placeholder="Precio ......">
+                                                <input id="price_prod" required="" type="number" id="txt_precio" name="txt_precio" class="form-control input-circle" placeholder="Precio ......">
                                             </div>
                                         </div> <br><br><br> <br><br><br>
                                         <div class="modal-footer">
                                             <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                            <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Guardar</button>
+                                            <button type="button" data-dismiss="modal" onclick="save_product();" class="btn green">Guardar</button>
                                         </div>
                                 </div>
                             </div>
@@ -267,7 +215,8 @@
 <!--Validaciones-->
 <script>
 
-    var $pid    = null;
+    var $pid                = null;
+    var $node_table         = null;
 
     function validar() {
 
@@ -316,8 +265,7 @@
               }
           });
     };
-          var $id = null;
-
+          
     var table_loader = function() {
 
         var table = $('#productos_table');
@@ -359,4 +307,57 @@
 
 
     };
+    
+    var select_color = function(i){
+         var task       = new jtask();
+         var select     = $("#color_prod");  
+         task.url = "<?php echo site_url("productos/get_color_byName"); ?>";
+         task.beforesend = true;
+         task.data = {
+             "name" : i
+         };
+         task.config_before(function(){
+             select.html('<option value="">Buscando Colores ..</option>');
+         });
+         task.success_callback(function(j){
+             select.html('');
+             select.append('<option value="-1">Seleccione un color</option>');
+             $.map(JSON.parse(j) , function(k){
+                 select.append('<option value="' + k.id + ',' + k.color_name + ',' + k.name + '">' + k.color_name +'</option>');
+             });
+         });
+         task.do_task();
+    };
+    
+    var save_product = function(){
+        var color_prod              = $("#color_prod").val().split(","); 
+        var id                      = color_prod[0];
+        var color                   = color_prod[1];
+        var name                    = color_prod[2];
+        var price                   = $("#price_prod").val();
+        var cant                    = $("#cant_prod").val();
+        var body                    = $("#table_prod");
+        
+        var data  = '<tr id="table_' + id  + '">'   
+                   + '<td>' + '<p align="center">' + name + '</p>'+ '</td>'
+                   + '<td>' + '<p align="center">' + color + '</p>'+ '</td>'
+                   + '<td>' + '<p align="center">' + cant + '</p>'+ '</td>'
+                   + '<td>' + '<p align="center">' + price + '</p>'+ '</td>'
+                   + '<td>' + '<p align="center">' 
+                                + '<p align="center">' 
+                                + '<a class="" onclick="table_node(' + id + ');" data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>'
+                                + '</p>'
+                   + '</td></tr>';
+        body.prepend(data);
+                   
+    };
+    
+    var table_node = function(i){
+        $node_table = i;
+    };
+    
+    var delete_node = function(){
+        $("#table_" + $node_table).remove();  
+    };
+   
 </script>
