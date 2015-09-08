@@ -118,7 +118,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_ptotal_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_ptotal" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="" required="" type="text" id="txt_ptotal" name="txt_ptotal" disabled="disabled" class="form-control input-circle" placeholder="Numero de ptotal">
+                                        <input id="total_price_prod" onkeyup="" required="" type="text" id="txt_ptotal" name="txt_ptotal" disabled="disabled" class="form-control input-circle" placeholder="Numero de ptotal">
                                     </div>
                                 </div>
                             </div>
@@ -363,12 +363,14 @@
     };
     
     var total_price = function(){
-        var table_nodes       = $("#table_prod").contents();
-        $.map(table_nodes , function(n){
-            var td_node = n;
-            console.log(td_node);
+        var total_price     = 0.0;
+        
+        $("#table_prod tr").each(function(){
+            total_price += parseFloat($(this).find("td").eq(3).find("p").eq(0).html());
         });
         
+        $("#total_price_prod").val(total_price);
+
     };
     
      
