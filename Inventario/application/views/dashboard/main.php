@@ -140,4 +140,8 @@
         });
         task.do_task();
     };
+    
+    var widget_count_product = function(){
+            //   productos/count_product
+    };
 </script>

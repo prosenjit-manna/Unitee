@@ -153,6 +153,12 @@ class Productos extends CI_Controller {
         $this->conf->delete_($id , "unit");
         exit();
     }
+    
+    public function count_product(){
+        $this->load->model("productos/view_producto" , "prod");
+        $count = $this->prod->count_products();
+        echo json_encode($count);
+    }
 
     
 }

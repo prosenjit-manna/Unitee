@@ -203,7 +203,7 @@ class Dashboard extends CI_Controller {
              
              $vars['js_loader'] = array(
                  $js_request,
-                 "widget_notification();" //    SOLO PARA UNITEE
+                 "widget_notification();widget_count_product();" //    SOLO PARA UNITEE
              );
              
              $this->load->view("dashboard/main" , $vars);

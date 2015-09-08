@@ -104,6 +104,12 @@ class view_producto extends CI_Model implements PInterface {
     public function _widgets() {
         
     }
+    
+    public function count_products(){
+        return $this->db
+                ->query("SELECT COUNT(*) as 'count' FROM producto")
+                ->result()[0];
+    }
 
     public function get_products() {
         $query = "  SELECT
