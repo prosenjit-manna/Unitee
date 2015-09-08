@@ -1,4 +1,4 @@
- 
+
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -124,13 +124,19 @@
 
     var widget_notification = function () {
         var task = new jtask();
-        task.url = "<?php echo site_url("notifications/TRUE"); ?>";
+        task.url = "<?php echo site_url("dashboard/get_notification/TRUE"); ?>";
         task.beforesend = true;
         task.config_before(function () {
-            $("#noti").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="160px" height="100px"/></center>');
+            $("#noti").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="100px" height="100px"/></center>');
         });
-        task.success_callback(function (r) {
-            //EJECUCION DE SEGUNDO PLANO PARA MODULOS
+       task.success_callback(function (r) {
+            $("#noti").html('');
+            var obj = JSON.parse(r);
+            var c = obj.count;
+            var d = obj.data;
+            $.map(d, function (k){
+                   $("#noti").append('<ul class="feeds"><li><div class="col1"><div class="cont"><div class="cont-col1"><div class="label label-sm label-info"><i class="' + k.icon + '"></i></div></div><div class="cont-col2"><div class="desc" id="noti2">' + k.description.substring(0,45) + "..." + '</div></div></div></div><div class="col2"><div class="date">' + k.date + '</div></div></li></ul>');
+            });
         });
         task.do_task();
     };
