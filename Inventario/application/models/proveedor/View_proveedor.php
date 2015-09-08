@@ -159,9 +159,32 @@ class View_proveedor extends CI_Model implements PInterface{
         
     }
     
+    
+    
     private function get_count_providers(){
         return $this->db->query("SELECT count(*) as 'count' FROM proveedor")
                 ->result()[0]->count;
+    }
+    
+    
+    public function get_Allproviders(){
+        
+           $this->query = "SELECT proveedor.id_proveedor as 'id_prov' , 
+                 proveedor.codigo as 'codigo' , 
+                 proveedor.nombre as 'empresa' ,
+                 depto_pais.nombre as 'departamento',
+                 contacto.nombre as 'contacto' ,
+                 concat(contacto.tel1 , '/' , contacto.tel2 ) as 'telefono' ,
+                 direccion.dir1 as 'direccion',
+                 proveedor.descripcion as 'descripcion'  FROM proveedor 
+                 INNER JOIN direccion ON direccion.id_direccion=proveedor.id_direccion
+                 INNER JOIN depto_pais ON depto_pais.id_depto_pais=direccion.depto
+                 INNER JOIN contacto ON contacto.id_contacto=proveedor.id_contacto
+                 ORDER BY proveedor.fecha Desc";
+        
+        return $this->db
+                ->query($this->query)
+                ->result();
     }
     
     public function get_provider($id){

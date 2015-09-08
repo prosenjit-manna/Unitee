@@ -105,6 +105,20 @@ class view_producto extends CI_Model implements PInterface {
         
     }
 
+    public function get_products() {
+        $query = "  SELECT
+                    producto.nombre as 'nombre',
+                    producto.id_producto as 'id'
+                    FROM producto 
+                    GROUP BY producto.nombre
+                    HAVING count(*) >= 1
+                    ORDER BY producto.date DESC; ";
+
+        return $this->db
+                        ->query($query)
+                        ->result();
+    }
+
     public function show_products() {
         $query = "SELECT
                   producto.id_producto as 'id' , 
@@ -155,9 +169,8 @@ class view_producto extends CI_Model implements PInterface {
         $this->OutProduct(); // Verifica si el margen es mayor que la cantidad
         return true;
     }
-    
-    
-    private function OutProduct(){
+
+    private function OutProduct() {
         $query = "SELECT
                   producto.id_producto as 'id' , 
                   producto.nombre as 'nombre' , 
@@ -169,88 +182,79 @@ class view_producto extends CI_Model implements PInterface {
                   INNER JOIN unidad ON unidad.id_unidad=producto.id_unidad
                   WHERE producto.cantidad < producto.margen 
                   ORDER BY producto.date ASC;  ";
-        
-        $result   = $this->db
-                        ->query($query)
-                        ->result();
-        
-        foreach ($result as $r){
-            
-            $query      = "SELECT id_notification as 'id' , status as 'status' FROM notification "
-                        . " WHERE table_object LIKE 'producto' AND id_object LIKE ?";
-            $exist      = $this->db
-                               ->query($query, array($r->id))
-                               ->result();
-            
-            $this->load->library("notifications");
-            
-            $msj = "Producto " .$r->nombre . ' Terminado  (' . $r->descripcion . ')[Cantidad en inventario : ' . $r->cantidad . ']';
-            
-            
-            $cant = $r->cantidad . " " . $r->u_name ;
-            $m = $this->load->templates("producto");
-            $m = str_replace("{{cant}}", $cant  , $m);
-            $m = str_replace("{{prod}}", $r->nombre  , $m);
-            $m = str_replace("{{prov}}", site_url("/0/proveedor=view_proveedor")  , $m);
-            $m = str_replace("{{compra}}", site_url("/0/compra=new_compra") , $m);
 
-            if(count($exist) >= 1){
-                if($exist[0]->status == 0){
-                    $this->notifications->UpdateNotification($exist[0]->id , 1 , $msj);
+        $result = $this->db
+                ->query($query)
+                ->result();
+
+        foreach ($result as $r) {
+
+            $query = "SELECT id_notification as 'id' , status as 'status' FROM notification "
+                    . " WHERE table_object LIKE 'producto' AND id_object LIKE ?";
+            $exist = $this->db
+                    ->query($query, array($r->id))
+                    ->result();
+
+            $this->load->library("notifications");
+
+            $msj = "Producto " . $r->nombre . ' Terminado  (' . $r->descripcion . ')[Cantidad en inventario : ' . $r->cantidad . ']';
+
+
+            $cant = $r->cantidad . " " . $r->u_name;
+            $m = $this->load->templates("producto");
+            $m = str_replace("{{cant}}", $cant, $m);
+            $m = str_replace("{{prod}}", $r->nombre, $m);
+            $m = str_replace("{{prov}}", site_url("/0/proveedor=view_proveedor"), $m);
+            $m = str_replace("{{compra}}", site_url("/0/compra=new_compra"), $m);
+
+            if (count($exist) >= 1) {
+                if ($exist[0]->status == 0) {
+                    $this->notifications->UpdateNotification($exist[0]->id, 1, $msj);
                     $this->Message($m);
                 }
-            }else{
-                
-                $this->notifications->AddNotification("producto" , 
-                        $r->id ,
-                        $msj ,
-                        "compra=new_compra",
-                        "icon-file" ,
-                        "label-warning",
-                        1
+            } else {
+
+                $this->notifications->AddNotification("producto", $r->id, $msj, "compra=new_compra", "icon-file", "label-warning", 1
                 );
-                
-                
+
+
                 $this->Message($m);
-                
             }
-            
-           
         }
     }
-    
-    private function Message($message){
-        
-         $this->load->library("messages");
-         $this->load->library("metadata");
-         $email = $this->metadata->GetMeta("email");
-         
-         return $this->messages
-                 ->emailFrom()
-                 ->email_subject("Unitee | Producto por terminar")
-                 ->email_to($email->value)
-                 ->email_body($message)
-                 ->email_send();
+
+    private function Message($message) {
+
+        $this->load->library("messages");
+        $this->load->library("metadata");
+        $email = $this->metadata->GetMeta("email");
+
+        return $this->messages
+                        ->emailFrom()
+                        ->email_subject("Unitee | Producto por terminar")
+                        ->email_to($email->value)
+                        ->email_body($message)
+                        ->email_send();
     }
-    
-    private function InProduct(){
-        
-         $query = "SELECT notification.id_notification as 'id'
+
+    private function InProduct() {
+
+        $query = "SELECT notification.id_notification as 'id'
                   FROM producto
                   INNER JOIN notification ON notification.id_object = producto.id_producto
                   WHERE producto.cantidad > producto.margen AND notification.table_object LIKE 'producto' 
                   AND notification.`status` = 1
                   ORDER BY producto.date ASC; ";
-        
-         $result = $this->db->query($query)->result();
-         if(count($result) >= 1){
-             
-             $this->load->library("notifications");
-             
-             foreach ($result as $n){
-                  $this->notifications->UpdateNotification($n->id ,0);
-             }
-         }
+
+        $result = $this->db->query($query)->result();
+        if (count($result) >= 1) {
+
+            $this->load->library("notifications");
+
+            foreach ($result as $n) {
+                $this->notifications->UpdateNotification($n->id, 0);
+            }
+        }
     }
 
 }

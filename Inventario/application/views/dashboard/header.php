@@ -6,6 +6,7 @@
 
 <meta charset="utf-8"/>
 <title><?php echo isset($title) ? $title : "Unitee | Dashboard" ; ?></title>
+<link rel='shortcut icon' type='image/x-icon' href='<?php echo $route; ?>images/dashboard/icon.ico' />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
