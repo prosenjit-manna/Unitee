@@ -60,7 +60,7 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat blue-madison">
                     <div>
-                        <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Productos</h3>
+                        <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Articulos</h3>
                     </div>
                     <div class="visual">
                         <i class="icon-bar-chart"></i>
@@ -70,7 +70,7 @@
                             1349
                         </div>
                         <div class="desc">
-                            Productos 
+                            Articulos 
                         </div>
                     </div>
                     <a class="more" href="<?php echo site_url("/0/productos=view_producto"); ?>">
@@ -80,15 +80,15 @@
             </div>
             <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat red-intense">
-                    <div>
+                      <div>
                         <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Inventario</h3>
                     </div>
                     <div class="visual">
                         <i class="icon-warning-sign"></i>
                     </div>
                     <div class="details">
-                        <div class="number">
-                            19
+                        <div class="number" id="npro">
+                            
                         </div>
                         <div class="desc">
                             Productos en existencia
@@ -143,5 +143,18 @@
     
     var widget_count_product = function(){
             //   productos/count_product
+            var task = new jtask();
+            task.url = "<?php echo site_url("productos/count_product"); ?>";
+            task.beforesend = true;
+            task.config_before(function () {
+            $("#npro").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="70px" height="70px"/></center>');
+        });
+        task.success_callback(function (r) {
+                $("#npro").html('');
+                var obj = JSON.parse(r);
+                $("#npro").append('<div class="numbre">' + obj.count + '</div>')
+
+            });
+        task.do_task();
     };
 </script>
