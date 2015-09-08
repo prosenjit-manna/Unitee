@@ -52,13 +52,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 include APPPATH . "helpers/setup_helper.php";
 
+//CONTROLADOR POR DEFECTO
 $route['default_controller']        = 'login';
+
+//OTRAS RUTAS
 $route['404_override']              = 'dashboard/index';
 $route['translate_uri_dashes']      = FALSE;
+
+
+//DASHBOARD
 $route['0']                         = 'dashboard/index';
+
+//RUTA CONTROLADOR MVA ... /0/model=model_data
 $route['0/([a-z_-]+)' 
     . system_token() 
     . '([a-z_-]+)']                 = 'dashboard/index/$1=$2';
+
+//RUTAS ESTATICAS ...
 $route['block']                     = "dashboard/blockscreen";
 $route['unlock']                    = "dashboard/unlock";
 $route['logout']                    = "dashboard/session";
@@ -72,3 +82,8 @@ $route['jsloader']                  = "dashboard/LoadJs";
 //OTRAS RUTAS 
 
 $route['c/(:any)']                  = "country/GetCountry/$1";
+
+//RUTAS ESTATICAS MVA 
+
+$route['profile']                   = "dashboard/index/user=user_profile";
+$route['notification']              = "dashboard/index/notifications=view_notifications";

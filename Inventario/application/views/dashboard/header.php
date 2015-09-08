@@ -98,7 +98,7 @@
                                                     </ul>
 						</li>
                                                 <li id="notification_footer" class="external">
-                                                    <a href="<?php echo site_url("0/notifications=view_notifications"); ?>">
+                                                    <a href="<?php echo site_url("notification"); ?>">
 							 Ver todas las notificaciones <i class="m-icon-swapright"></i>
 							</a>
 						</li>
@@ -136,7 +136,7 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-                                                    <a href="<?php echo site_url("0/user=user_profile"); ?>">
+                                                    <a href="<?php echo site_url("profile"); ?>">
 							<i class="icon-user"></i> Mi Perfil </a>
 						</li>
 						<li>

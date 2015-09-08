@@ -285,6 +285,7 @@ class Dashboard extends CI_Controller {
              */
                         
           
+             
             
             //VERIFICA LOS PRIVILEGIOS ACTIVOS ... SI DEVUELVE NULL ENTONCES LA URL ES PUBLICA ... 
             
