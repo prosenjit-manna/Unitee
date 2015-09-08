@@ -349,6 +349,7 @@
                                 + '</p>'
                    + '</td></tr>';
         body.prepend(data);
+        total_price();
                    
     };
     
@@ -358,6 +359,18 @@
     
     var delete_node = function(){
         $("#table_" + $node_table).remove();  
+        total_price();
     };
+    
+    var total_price = function(){
+        var table_nodes       = $("#table_prod").contents();
+        $.map(table_nodes , function(n){
+            var td_node = n;
+            console.log(td_node);
+        });
+        
+    };
+    
+     
    
 </script>
