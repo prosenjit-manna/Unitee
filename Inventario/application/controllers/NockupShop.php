@@ -13,8 +13,7 @@ class NockupShop  extends CI_Controller{
     
     
     protected $key  = "LieisoftApi";
-    
-    
+
     public function encrypt($enc)
     {
          $this->load->library("encryption");
@@ -28,8 +27,8 @@ class NockupShop  extends CI_Controller{
 
     public function __construct() {
         parent::__construct();
-        $this->load->model("tshop/tshop_model");
-        $this->key = $this->tshop_model->get_privatekey();
+        $this->load->model("tshop/Unitee_plugin" , "unitee");
+        $this->key = $this->unitee->get_privatekey();
     }
     
     public function index(){
@@ -37,23 +36,33 @@ class NockupShop  extends CI_Controller{
         return null;
     }
     
+    
+    
     public function NonArticulos($private_key , $c = null){
+        
+         //CREAMOS UN HEADER AL MOMENTO DE HACER EL WEB SERVICES
          $this->output->set_header("Access-Control-Allow-Origin: *");
          
+         //SI LA LLAVE PRIVADA NO ES IGUAL ENTONCES SALU
          if(!$this->get_key($private_key)) return NULL;
          
-          $r =  $this->tshop_model
+          //OBTENEMOS LOS ARTICULOS 
+          $r = $this->unitee
              ->get_non_articulos();
         
           print json_encode($r);
     }
     
     public function Articulos($private_key , $id_articulo  , $c = null){
+        
+        //CREAMOS UN HEADER AL MOMENTO DE HACER EL WEB SERVICES
         $this->output->set_header("Access-Control-Allow-Origin: *");
        
+        //SI LA LLAVE PRIVADA NO ES IGUAL ENTONCES SALU
         if(!$this->get_key($private_key)) return NULL;
         
-        $r =  $this->tshop_model
+        //OBTENEMOS LOS ARTICULOS Y SUS VARIACIONES
+        $r =  $this->unitee
              ->get_articulos($id_articulo);
         
        print json_encode($r);
@@ -68,7 +77,7 @@ class NockupShop  extends CI_Controller{
     
     public function generate_key($old_key , $c = NULL){
            if(!$this->get_key($old_key)) return;
-           print $this->tshop_model->change_private_key();
+           print $this->unitee->change_private_key();
     }
     
     private function  get_key($private_key){
