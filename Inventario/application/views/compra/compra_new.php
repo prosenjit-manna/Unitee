@@ -66,83 +66,87 @@
 
                             </div>
                         </div>
+                        <a class="btn btn-success"   data-toggle="modal" href="#responsive_add"><i class="icon-plus"> Añadir</i></a>
                         <div class="portlet-body">
-                            <div class="table-toolbar">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="btn-group">
-                                            <button id="sample_editable_1_new" class="btn green">
-                                                <i class="icon-plus"></i> &nbsp;Añadir 
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                             <br>
+                             <table class="table table-striped table-hover table-bordered" id="productos_table">
                                 <thead>
                                     <tr>
                                         <th>
-                                <p align="center">Nombre</p>
-                                </th>
-                                <th>
-                                <p align="center">Color</p>
-                                </th>
-                                <th>
-                                <p align="center">Cantidad</p>
-                                </th>
-                                <th>
-                                <p align="center">Precio</p>
-                                </th>
-                                <th>
-                                <p align="center">Operaciones</p>
-                                </th>
-                                </tr>
+                                            <p align="center">Nombre</p>
+                                        </th>
+                                        <th >
+                                            <p align="center">Color</p>
+                                        </th>
+                                        <th >
+                                            <p align="center">Cantidad</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Precio</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Operaciones</p>
+                                        </th>
+                                        </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td align="center">
-                                            alex
+                                        <td>
+                                            <p align="center">Telaa</p>
                                         </td>
-                                        <td align="center">
-                                            Alex Nilson
+                                        <td>
+                                            <p align="center">Rojo</p>
                                         </td>
-                                        <td align="center">
-                                            1234
+                                        <td>
+                                            <p align="center">46</p>
                                         </td>
-                                        <td align="center" class="center">
-                                            power user
+                                        <td>
+                                            <p align="center">$100.52</p>
                                         </td>
-                                        <td align="center">
+                                        <td>
                                             <p align="center">
-                                                <a class="" data-toggle="modal" href="#"><i class="icon-save" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-                                                <a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
+                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>
                                             </p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td align="center">
-                                            lisa
+                                        <td>
+                                            <p align="center">Telaa</p>
                                         </td>
-                                        <td align="center">
-                                            Lisa Wong
+                                        <td>
+                                            <p align="center">Rojo</p>
                                         </td>
-                                        <td align="center">
-                                            434
+                                        <td>
+                                            <p align="center">46</p>
                                         </td>
-                                        <td align="center" class="center">
-                                            new user
+                                        <td>
+                                            <p align="center">$100.52</p>
                                         </td>
-                                        <td align="center">
+                                        <td>
                                             <p align="center">
-                                                <a class="" data-toggle="modal" href="#"><i class="icon-save" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-                                                <a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
+                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>
                                             </p>
                                         </td>
                                     </tr>
-
                                     <tr>
+                                        <td>
+                                            <p align="center">Telaa</p>
+                                        </td>
+                                        <td>
+                                            <p align="center">Rojo</p>
+                                        </td>
+                                        <td>
+                                            <p align="center">46</p>
+                                        </td>
+                                        <td>
+                                            <p align="center">$100.52</p>
+                                        </td>
+                                        <td>
+                                            <p align="center">
+                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>
+                                            </p>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -207,6 +211,53 @@
                         </div>
                     </div>
                 </div>
+                 <div class="modal fade bs-modal-lg" id="responsive_add" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                <h4 class="modal-title">Ingrese la información del producto</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12 row scroller" style="height:190px" data-always-visible="1" data-rail-visible1="1">
+                                        <br>
+                                        <label class="control-label col-md-2">* Nombre</label>
+                                       <div class="form-group col-md-4">
+                                           <select required="required" id="select_nombre" name="txt_pombre" class="form-control input-circle">                     
+                                                <option value="">Seleccione el producto</option>
+                                            </select>
+                                       </div>
+                                        <label class="control-label col-md-2">* Color</label>
+                                       <div class="form-group col-md-4">
+                                            <select required="required" id="select_color" name="txt_color" class="form-control input-circle">                     
+                                                <option value="">Seleccione el color</option>
+                                            </select>
+                                       </div>
+                                       <label class="control-label col-md-2">Cantidad</label>
+                                        <div class="form-group col-md-4">
+                                            <div class="input-icon right">
+                                                <i name="change_" id="change_pcantidad_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                <i name="change_x" id="change_pcantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                <input required="" type="text" id="txt_pcantidad" name="txt_pcantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                            </div>
+                                        </div>
+                                         <label class="control-label col-md-2">Precio</label>
+                                        <div class="form-group col-md-4">
+                                            <div class="input-icon right">
+                                                <i name="change_" id="change_precio_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                <input required="" type="text" id="txt_precio" name="txt_precio" class="form-control input-circle" placeholder="Precio ......">
+                                            </div>
+                                        </div> <br><br><br> <br><br><br>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
+                                            <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Guardar</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
         </div>
@@ -265,5 +316,47 @@
               }
           });
     };
+          var $id = null;
 
+    var table_loader = function() {
+
+        var table = $('#productos_table');
+
+        var oTable = table.dataTable({
+            "lengthMenu": [
+                [5, 15, 30, -1],
+                [5, 10, 30, "Todos"]
+            ],
+            "pageLength": 5,
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                },
+                "emptyTable": "No data available in table",
+                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ productos",
+                "infoEmpty": "No se ha encontrado productos ...",
+                "infoFiltered": "(filtered1 from _MAX_ total records)",
+                "lengthMenu": "Mostar _MENU_ Productos",
+                "search": "Buscar:",
+                "zeroRecords": "Ningun producto encontrado ..."
+
+            },
+            "columnDefs": [{// set default column settings
+                    'orderable': true,
+                    'targets': [0]
+                }, {
+                    "searchable": true,
+                    "targets": [0]
+                }],
+            "order": [
+                [0, "asc"]
+            ]
+        });
+
+        var tableWrapper = $('#productos_table_wrapper');
+        tableWrapper.find('.dataTables_length select').select2();
+
+
+    };
 </script>
