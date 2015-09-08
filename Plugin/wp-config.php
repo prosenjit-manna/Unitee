@@ -16,7 +16,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'unitee_plugin');
+define('DB_NAME', 'wp_unitee');
 
 /** MySQL database username */
 define('DB_USER', 'root');
