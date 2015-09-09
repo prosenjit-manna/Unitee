@@ -366,7 +366,9 @@
         var total_price     = 0.0;
         
         $("#table_prod tr").each(function(){
-            total_price += parseFloat($(this).find("td").eq(3).find("p").eq(0).html());
+            total_price += parseFloat($(this).find("td")
+                    .eq(3).find("p")
+                    .eq(0).html());
         });
         
         $("#total_price_prod").val(total_price);
