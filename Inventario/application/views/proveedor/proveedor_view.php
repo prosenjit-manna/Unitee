@@ -42,30 +42,30 @@
                         </div><br>
                         <div class="portlet-body">
                             <div class="table-scrollable">
-                                <table class="table table-striped table-hover table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                    <p align="center">Codigo</p>
-                                    </th>
-                                    <th >
-                                    <p align="center">Empresa</p>
-                                    </th>
-                                    <th >
-                                    <p align="center">Departamento</p>
-                                    </th>
-                                    <th>
-                                    <p align="center">Nombre del Contacto</p>
-                                    </th>
-                                    <th>
-                                    <p align="center">Números de Telefono</p>
-                                    </th>
-                                    <th>
-                                    <p align="center">Descripción</p>
-                                    </th>
-                                    <th>
-                                    <p align="center">Operaciones</p>
-                                    </th>
+                                <table class="table table-striped table-hover table-bordered" id="compras_table">
+                                 <thead>
+                                    <tr>
+                                        <th>
+                                        <p align="center">Codigo</p>
+                                        </th>
+                                        <th >
+                                        <p align="center">Empresa</p>
+                                        </th>
+                                        <th >
+                                        <p align="center">Departamento</p>
+                                        </th>
+                                        <th>
+                                        <p align="center">Nombre del Contacto</p>
+                                        </th>
+                                        <th>
+                                        <p align="center">Números de Telefono</p>
+                                        </th>
+                                        <th>
+                                        <p align="center">Descripción</p>
+                                        </th>
+                                        <th>
+                                        <p align="center">Operaciones</p>
+                                        </th>
                                     </tr>
                                     </thead>
                                     <tbody> 
@@ -73,12 +73,12 @@
                                         foreach ($data as $provider) {
 
                                             echo '<tr id="' . $provider->id_prov . '">';
-                                            echo '<td class="highlight"><p align="center">' . $provider->codigo . '</p></td>';
-                                            echo '<td class="highlight"><p align="center">' . $provider->empresa . '</td>';
-                                            echo '<td class="highlight"><p align="center">' . $provider->departamento . '</p></td>';
-                                            echo '<td class="highlight"><p align="center">' . $provider->contacto . '</p></td>';
-                                            echo '<td class="highlight"><p align="center">' . $provider->telefono . '</p></td>';
-                                            echo '<td class="highlight"><p align="center">' . $provider->descripcion . '</p></td>';
+                                            echo '<td><p align="center">' . $provider->codigo . '</p></td>';
+                                            echo '<td><p align="center">' . $provider->empresa . '</td>';
+                                            echo '<td><p align="center">' . $provider->departamento . '</p></td>';
+                                            echo '<td><p align="center">' . $provider->contacto . '</p></td>';
+                                            echo '<td><p align="center">' . $provider->telefono . '</p></td>';
+                                            echo '<td><p align="center">' . $provider->descripcion . '</p></td>';
 
                                             echo '<td>
                                             <p align="center">
@@ -170,8 +170,7 @@
                                                     </div>
                                                     <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                                                     <div class="form-group col-md-9">
-                                                        <textarea disabled="disabled" name="txt_descripcion" id="txt_desc" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
-                                                        </textarea>
+                                                        <input type="text" disabled="disabled" name="txt_descripcion" id="txt_desc" style="height:125px;" class="form-control input-circle" placeholder="Descri´pción del proveedor">
                                                     </div>
                                                 </div>
                                             </div>
@@ -208,9 +207,6 @@
                         </div>
                     <!-- END SAMPLE TABLE PORTLET-->
                     <div>
-                        <?php
-                        echo $links;
-                        ?>
                     </div>
             </div>  
         </div>
@@ -259,6 +255,53 @@
             $("#" + $id).remove();
         });
         tasking.do_task();
+    };
+
+
+    var table_loader = function() {
+
+        var table = $('#compras_table');
+
+        var oTable = table.dataTable({
+            "lengthMenu": [
+                [5, 15, 30, -1],
+                [5, 10, 30, "Todos"]
+            ],
+            "pageLength": 5,
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                },
+                "emptyTable": "No data available in table",
+                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ compras",
+                "infoEmpty": "No se ha encontrado Compras ...",
+                "infoFiltered": "(filtered1 from _MAX_ total records)",
+                "lengthMenu": "Mostar _MENU_ Compras",
+                "search": "Buscar:",
+                "zeroRecords": "Ningun producto encontrado ..."
+
+            },
+            "columnDefs": [{// set default column settings
+                    'orderable': true,
+                    'targets': [0]
+                }, {
+                    "searchable": true,
+                    "targets": [0]
+                }],
+            "order": [
+                [0, "asc"]
+            ]
+        });
+
+        var tableWrapper = $('#compras_table_wrapper');
+        tableWrapper.find('.dataTables_length select').select2();
+
+
+    };
+
+    var the_id = function(i) {
+        $id = i;
     };
 
 

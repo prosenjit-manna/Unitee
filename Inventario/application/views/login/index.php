@@ -33,7 +33,7 @@
 <!-- BEGIN LOGO -->
 <br>
 <div class="logo">
-	<img src="<?php echo $route;?>images/login/logo.png" height="" style="width:190px;"/>
+	<img src="<?php echo $route;?>images/login/logo.png" style="width:190px;"/>
 	</a>
 </div>
 <!-- END LOGO -->

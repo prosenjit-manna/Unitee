@@ -47,7 +47,7 @@ class View_compra extends CI_Model implements PInterface {
         return array(
             $this->route . "assert/plugins/select2/select2.css",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css",
-            $this->route . "assert/plugins/fileinput/css/fileinput.css",
+            $this->route . "assert/plugins/fileinput/css/fileinput.css"
         );
     }
 

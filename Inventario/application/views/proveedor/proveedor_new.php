@@ -82,7 +82,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_fax();" required="" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
+                                                    <input onkeyup="validate_fax();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
                                                 </div>
                                         </div>
                                         <label class="control-label col-md-4">* Correo</label>
@@ -93,7 +93,6 @@
                                                     <input onkeyup="validate_correo();" required="" type="text" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Numero de correo">
                                                 </div>
                                         </div>
-
                                     </div>
                                     <!--/span-->
                                     <div class="col-md-6">
@@ -133,8 +132,7 @@
                                     </div>
                                     <label class="control-label col-md-4">Descripci&oacute;n de la Empresa</label>
                                     <div class="form-group col-md-8">
-                                        <textarea id="txt_descripcion" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
-                                        </textarea>
+                                       <input type="text" id="txt_descripcion" name="txt_descripcion" style="height:125px;" class="form-control input-circle" placeholder="Descri´pción del proveedor">
                                     </div>
                                 </div>
                                 <div class="form-actions right">

@@ -63,29 +63,44 @@
                                             </div>
                                             <label class="control-label col-md-3">* Empresa</label>
                                             <div class="form-group col-md-9">
-                                                <input value="<?php echo $data->empresa; ?>" required="" type="text" id="" name="txt_empresa" class="form-control input-circle" placeholder="">
+                                                <input value="<?php echo $data->empresa; ?>" onkeyup="val();" required="" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="">
                                             </div>
                                             <label class="control-label col-md-3">* Contacto</label>
                                             <div class="form-group col-md-9">
-                                                <input value="<?php echo $data->contacto_nombre; ?>" required="" type="text" id="" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                                <input value="<?php echo $data->contacto_nombre; ?>" onkeyup="val();" required="" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                                             </div>
                                             <label class="control-label col-md-3">* Teléfono</label>
-                                            <div class="form-group col-md-9">
-                                                <input value="<?php echo $data->contacto_tel1; ?>" required="" type="text" id="" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+                                             <div class="form-group col-md-9">
+                                                  <div class="input-icon right">
+                                                        <i name="change_" id="change_telefono_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                        <i name="change_x" id="change_telefono" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input value="<?php echo $data->contacto_tel1; ?>" onkeyup="validate_telefono();val();" required="" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+                                                </div>
                                             </div>
-                                            <label class="control-label col-md-3">* Celular</label>
+                                             <label class="control-label col-md-3">* Celular</label>
                                             <div class="form-group col-md-9">
-                                                <input value="<?php echo $data->contacto_tel2; ?>"  required="" type="text" id="" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                                <div class="input-icon right">
+                                                        <i name="change_" id="change_celular_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                        <i name="change_x" id="change_celular" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input value="<?php echo $data->contacto_tel2; ?>"  onkeyup="validate_celular();val();" required="" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                                </div>
                                             </div>
                                             <label class="control-label col-md-3">Fax</label>
                                             <div class="form-group col-md-9">
-                                                <input value="<?php echo $data->contacto_fax; ?>" type="text" id="" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                                <div class="input-icon right">
+                                                    <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                <input value="<?php echo $data->contacto_fax; ?>" onkeyup="validate_fax();val();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                                </div>
                                             </div>
                                             <label class="control-label col-md-3">* Correo</label>
                                             <div class="form-group col-md-9">
-                                                <input value="<?php echo $data->contacto_correo; ?>" required="" type="text" id="" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+                                                <div class="input-icon right">
+                                                    <i name="change_" id="change_correo_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_correo" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                <input value="<?php echo $data->contacto_correo; ?>" onkeyup="validate_correo();val();" required="" type="text" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Correo Electronico">
+                                                </div>
                                             </div>
-
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
@@ -96,7 +111,7 @@
                                             </div>
                                             <label class="control-label col-md-4">* Dirección 1</label>
                                             <div class="form-group col-md-8">
-                                                <input value="<?php echo $data->dir1; ?>" required="" type="text" id="" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                                <input value="<?php echo $data->dir1; ?>" onkeyup="val();" required="" type="text" id="txt_direccion1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                             </div>
                                             <label class="control-label col-md-4">Dirección 2</label>
                                             <div class="form-group col-md-8">
@@ -128,10 +143,7 @@
                                         </div>
                                         <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                                         <div class="form-group col-md-9">
-                                            <textarea id="txt_descripcion" name="txt_descripcion" rows="4" cols="50" class="form-control input-circle" placeholder="Descripcion de la Empresa">
-                                                <?php echo $data->descripcion; ?>
-                                                        
-                                            </textarea>
+                                            <input value="<?php echo $data->descripcion; ?>" type="text" id="txt_descripcion" name="txt_descripcion" style="height:125px;" class="form-control input-circle" placeholder="No hay descri´pción del proveedor">
                                         </div>
 
 
@@ -233,4 +245,125 @@
                 tasking.do_task();
             };
 
+            var validate_telefono = function () {
+                var change_telefono_ok = $("#change_telefono_ok");
+                var change_telefono = $("#change_telefono");
+                var telefono = $("#txt_telefono").val();
+                if (telefono ==="") {
+                change_telefono_ok.css("display", "none");
+                change_telefono.css("display", "none");
+                 return true ;
+                 }
+                else if (isNaN(telefono) && telefono !=="") {
+                change_telefono_ok.css("display", "none");
+                change_telefono.css("display", "block");
+                return true ;
+                }
+                else {
+                change_telefono_ok.css("display", "block");
+                change_telefono.css("display", "none");
+                return false ;
+               }
+            };
+
+                var validate_celular = function () {
+                var change_celular_ok = $("#change_celular_ok");
+                var change_celular = $("#change_celular");
+                var celular = $("#txt_celular").val();
+                if (celular ==="") {
+                change_celular_ok.css("display", "none");
+                change_celular.css("display", "none");
+                 return true ;
+                 }
+                else if (isNaN(celular) && celular !=="") {
+                change_celular_ok.css("display", "none");
+                change_celular.css("display", "block");
+                return true ;
+                }
+                else {
+                change_celular_ok.css("display", "block");
+                change_celular.css("display", "none");
+                return false ;
+               }
+            };
+
+                var validate_fax = function () {
+                var change_fax_ok = $("#change_fax_ok");
+                var change_fax = $("#change_fax");
+                var fax = $("#txt_fax").val();
+                if (fax ==="") {
+                change_fax_ok.css("display", "none");
+                change_fax.css("display", "none");
+                 return true ;
+                 }
+                else if (isNaN(fax) && fax !=="") {
+                change_fax_ok.css("display", "none");
+                change_fax.css("display", "block");
+                return true ;
+                }
+                else {
+                change_fax_ok.css("display", "block");
+                change_fax.css("display", "none");
+                return false ;
+               }
+            };
+
+            var validate_correo = function () {
+                var change_correo_ok = $("#change_correo_ok");
+                var change_correo = $("#change_correo");
+                var correo = $("#txt_correo").val();
+                if (correo ==="") {
+                change_correo_ok.css("display", "none");
+                change_correo.css("display", "none");
+                 return true ;
+                 }
+                else if (isValidEmail(correo) && correo !=="") {
+                change_correo_ok.css("display", "block");
+                change_correo.css("display", "none");
+                return true ;
+                }
+                else {
+                change_correo_ok.css("display", "none");
+                change_correo.css("display", "block");
+                return false ;
+               }
+            };
+
+
+            function val() {
+
+                var empresa = $("#txt_empresa").val();
+                var contacto = $("#txt_contacto").val();
+                var telefono = $("#txt_telefono").val();
+                var celular = $("#txt_celular").val();
+                var correo = $("#txt_correo").val();
+                var dir = $("#txt_direccion1").val();
+                var ciudad = $("#select_city").val();
+
+                if (empresa == "" 
+                        || contacto == "" 
+                        || telefono == ""
+                        || celular == "" 
+                        || dir == "" 
+                        || ciudad == "-1" 
+                        || !isValidEmail(correo)) {
+                    document.getElementById("send").disabled = true;
+                }
+                else {
+                    document.getElementById("send").disabled = false;
+                }
+            }
+            ;
+
+            function load() {
+                document.getElementById("send").disabled = true;
+            }
+            ;
+
+            function isValidEmail(mail)
+            {
+
+                return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
+
+            }
         </script>

@@ -47,7 +47,7 @@ class View_proveedor extends CI_Model implements PInterface{
     
     public function _css() {
          return array(
-            $this->route . "assert/plugins/select2/select2.css",
+           $this->route . "assert/plugins/select2/select2.css",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"
         );
     }
@@ -104,11 +104,16 @@ class View_proveedor extends CI_Model implements PInterface{
     }
 
     public function _js() {
-          //AQUI VAN ÑLOS JAVASCRIPT
+          return array(
+             $this->route . "assert/plugins/select2/select2.min.js",
+            $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.js",
+            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
+            $this->route . "assert/system/table-managed.js"
+        );
     }
 
     public function _jsLoader() {
-        return array("load_paises();");
+        return array("table_loader();","TableEditable.init();","load_paises();");
     }
 
     public function _rols() {
