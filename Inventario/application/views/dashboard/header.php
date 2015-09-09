@@ -68,8 +68,8 @@
 	<div class="page-header-inner">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
-			<a href="index.html">
-                            <img id="system_logo" src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" title="logo" height="30px" width="200px" class="logo-default"/>
+			<a href="index.html" class="col-md-offset-1 col-xs-offset-4">
+                            <img id="system_logo" src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" title="logo" height="30px" width="150px" class="logo-default"/>
 			</a>
 		</div>
 		<!-- END LOGO -->

@@ -81,7 +81,7 @@
             <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat red-intense">
                       <div>
-                        <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Prontos a agotarse</h3>
+                        <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Productos</h3>
                     </div>
                     <div class="visual">
                         <i class="icon-warning-sign"></i>
@@ -91,7 +91,7 @@
                             3
                         </div>
                         <div class="desc">
-                            $name_prod en existencia
+                            Productos bajos en existencia
                         </div>
                     </div>
                     <a class="more" href="<?php echo site_url("/0/productos=view_producto"); ?>">
