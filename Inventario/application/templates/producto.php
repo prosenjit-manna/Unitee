@@ -304,7 +304,7 @@ a {
 							<table width="100%" cellpadding="0" cellspacing="0">
 								<tr>
 									<td class="content-block">
-										Te quedan solo <strong>{{cant}}</strong> de <strong>{{prod}}</strong> en existencia.
+										Te quedan solo <strong>{{cant}}</strong> de <strong>{{prod}}</strong> color <strong>{{color}}</strong> en existencia.
 									</td>
 								</tr>
 								<tr>

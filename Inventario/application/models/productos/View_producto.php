@@ -197,9 +197,11 @@ class view_producto extends CI_Model implements PInterface {
                   producto.margen 'margen',
                   producto.cantidad as 'cantidad',
                   producto.descripcion as 'descripcion',
-                  unidad.nombre as 'u_name'
+                  unidad.nombre as 'u_name',
+                  color.nombre as 'color_name'
                   FROM producto  
                   INNER JOIN unidad ON unidad.id_unidad=producto.id_unidad
+                  INNER JOIN color ON color.id_color=producto.id_color
                   WHERE producto.cantidad < producto.margen 
                   ORDER BY producto.date ASC;  ";
 
@@ -226,11 +228,12 @@ class view_producto extends CI_Model implements PInterface {
             $m = str_replace("{{prod}}", $r->nombre, $m);
             $m = str_replace("{{prov}}", site_url("/0/proveedor=view_proveedor"), $m);
             $m = str_replace("{{compra}}", site_url("/0/compra=new_compra"), $m);
+            $m = str_replace("{{color}}", " " . $r->color_name , $m);
 
             if (count($exist) >= 1) {
                 if ($exist[0]->status == 0) {
                     $this->notifications->UpdateNotification($exist[0]->id, 1, $msj);
-                    $this->Message($m);
+                    $this->Message($m , $r->nombre );
                 }
             } else {
 
@@ -238,12 +241,12 @@ class view_producto extends CI_Model implements PInterface {
                 );
 
 
-                $this->Message($m);
+                $this->Message($m , $r->nombre );
             }
         }
     }
 
-    private function Message($message) {
+    private function Message($message , $prod_name) {
 
         $this->load->library("messages");
         $this->load->library("metadata");
@@ -251,7 +254,7 @@ class view_producto extends CI_Model implements PInterface {
 
         return $this->messages
                         ->emailFrom()
-                        ->email_subject("Unitee | Producto por terminar")
+                        ->email_subject("Unitee | Producto $prod_name por terminar")
                         ->email_to($email->value)
                         ->email_body($message)
                         ->email_send();
