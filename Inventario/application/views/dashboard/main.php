@@ -135,7 +135,7 @@
             var c = obj.count;
             var d = obj.data;
             $.map(d, function (k){
-                   $("#noti").append('<ul class="feeds"><li><div class="col1"><div class="cont"><div class="cont-col1"><div class="label label-sm label-info"><i class="' + k.icon + '"></i></div></div><div class="cont-col2"><div class="desc" id="noti2">' + k.description.substring(0,45) + "..." + '</div></div></div></div><div class="col2"><div class="date">' + k.date + '</div></div></li></ul>');
+                   $("#noti").append('<ul class="feeds"><li><div class="col1"><div class="cont"><div class="cont-col1"><div class="label label-sm label-info"><i class="' + k.icon + '"></i></div></div><div class="cont-col2"><div class="desc" id="noti2">' + k.description.substring(0,40) + "..." + '</div></div></div></div><div class="col2"><div class="date">' + k.date + '</div></div></li></ul>');
             });
         });
         task.do_task();
