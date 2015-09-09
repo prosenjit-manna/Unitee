@@ -25,7 +25,7 @@
             ?>
         </div>
         <h3 class="page-title">
-            Unitee - Dashboard <small></small>
+            Unitee - Dashboard<small></small>
         </h3>
         <div class="page-bar">
             <ul class="page-breadcrumb">
@@ -60,17 +60,17 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat blue-madison">
                     <div>
-                        <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Articulos</h3>
+                        <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Productos</h3>
                     </div>
                     <div class="visual">
                         <i class="icon-bar-chart"></i>
                     </div>
                     <div class="details">
-                        <div class="number">
-                            1349
+                         <div class="number" id="npro">
+                            
                         </div>
                         <div class="desc">
-                            Articulos 
+                            Productos en total 
                         </div>
                     </div>
                     <a class="more" href="<?php echo site_url("/0/productos=view_producto"); ?>">
@@ -81,17 +81,17 @@
             <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat red-intense">
                       <div>
-                        <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Inventario</h3>
+                        <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Prontos a agotarse</h3>
                     </div>
                     <div class="visual">
                         <i class="icon-warning-sign"></i>
                     </div>
                     <div class="details">
                         <div class="number" id="npro">
-                            
+                            3
                         </div>
                         <div class="desc">
-                            Productos en existencia
+                            $name_prod en existencia
                         </div>
                     </div>
                     <a class="more" href="<?php echo site_url("/0/productos=view_producto"); ?>">
@@ -157,4 +157,5 @@
             });
         task.do_task();
     };
+
 </script>

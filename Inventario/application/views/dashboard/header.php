@@ -69,7 +69,7 @@
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="index.html">
-                            <img id="system_logo" src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" title="logo" class="logo-default"/>
+                            <img id="system_logo" src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" title="logo" height="30px" width="200px" class="logo-default"/>
 			</a>
 		</div>
 		<!-- END LOGO -->
