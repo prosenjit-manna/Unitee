@@ -91,7 +91,13 @@
                                         </tr>
                                 </thead>
                                 <tbody id="table_prod">
-                                  
+                                    <?php 
+                                        
+                                        $prod_id = isset($_REQUEST['i']) ? $_REQUEST['i'] : NULL;
+                                        if(!is_null($prod_id)){
+                                            
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -126,7 +132,7 @@
                         </div><br><br>
                         <div class="form-actions right col-md-offset-10">
                             <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                            <button disabled="disabled" id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                            <button onclick="save_buy();"  disabled="disabled" id="send" name="send"  type="button" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                         </div>
                         <!-- FINAL Portlet PORTLET-->
                     </div>
@@ -373,6 +379,50 @@
         
         $("#total_price_prod").val(total_price);
 
+    };
+    
+    var save_buy = function(){
+        var id_ , name , color , cant , price ;
+        var data    = new Array();
+        
+        $("#table_prod tr").each(function(){
+            id_         = $(this).attr("id").split("table_")[1];
+            
+            name        = $(this).find("td")
+                            .eq(0).find("p")
+                            .eq(0).html();
+            color        = $(this).find("td")
+                            .eq(1).find("p")
+                            .eq(0).html();
+            cant        = parseFloat($(this).find("td")
+                            .eq(2).find("p")
+                            .eq(0).html());
+            price        = parseFloat($(this).find("td")
+                            .eq(3).find("p")
+                            .eq(0).html());
+                    
+            var o = new Object();
+            o.id    = id_;
+            o.name  = name;
+            o.color = color;
+            o.cant  = cant;
+            o.price = price;
+            
+            data.push(o);
+        });
+        
+        var task = new jtask();
+        task.url = "";
+        task.beforesend = true;
+        task.config_before(function(){
+            
+        });
+        task.success_callback(function(r){
+            
+        });
+        task.do_task();
+            
+        
     };
     
      
