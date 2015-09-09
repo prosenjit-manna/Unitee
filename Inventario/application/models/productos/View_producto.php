@@ -227,7 +227,7 @@ class view_producto extends CI_Model implements PInterface {
             $m = str_replace("{{cant}}", $cant, $m);
             $m = str_replace("{{prod}}", $r->nombre, $m);
             $m = str_replace("{{prov}}", site_url("/0/proveedor=view_proveedor"), $m);
-            $m = str_replace("{{compra}}", site_url("/0/compra=new_compra"), $m);
+            $m = str_replace("{{compra}}", site_url("/0/compra=new_compra?i=" . $r->id . "&n=" . $r->nombre . "&c=" . $r->color_name), $m);
             $m = str_replace("{{color}}", " " . $r->color_name , $m);
 
             if (count($exist) >= 1) {
@@ -237,7 +237,12 @@ class view_producto extends CI_Model implements PInterface {
                 }
             } else {
 
-                $this->notifications->AddNotification("producto", $r->id, $msj, "compra=new_compra", "icon-file", "label-warning", 1
+                $this->notifications->AddNotification("producto", 
+                        $r->id, 
+                        $msj, 
+                        "compra=new_compra?i=" . $r->id . "&n=" . $r->nombre . "&c=" . $r->color_name, 
+                        "icon-file", 
+                        "label-warning", 1
                 );
 
 
