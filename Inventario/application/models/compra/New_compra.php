@@ -123,9 +123,7 @@ class New_compra extends CI_Model implements PInterface {
     }
 
     public function _operations() {
-        $this->load->model("system/permission_engine", 'engine');
-        $data = $this->engine->GetOperationRoles($this->model);
-        return $data;
+        
     }
 
     public function _Dashboard() {
@@ -136,4 +134,16 @@ class New_compra extends CI_Model implements PInterface {
         
     }
 
+    public function Save(array $data){
+        $this->db->insert("compras" , $data);
+        return $this->db->insert_id();
+    }
+    
+    public function SaveHistory($id_buy , $id_prod){
+        $this->db->insert("historial_compra" , array(
+            "id_compra"     => $id_buy,
+            "id_producto"   => $id_prod
+        ));
+        return $this->db->insert_id();
+    }
 }

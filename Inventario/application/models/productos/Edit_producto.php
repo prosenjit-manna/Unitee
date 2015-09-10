@@ -130,6 +130,18 @@ class Edit_producto extends CI_Model implements PInterface{
                      "precio_est_unidad"    => $precio 
                 ));
     }
+    
+    public function update_($id , $cant , $price){
+       
+        $query = 'UPDATE producto SET cantidad = TRUNCATE((cantidad + ' . $cant . ') , 2) ,'
+                . ' precio =' .  $price . ' WHERE id_producto LIKE ' . $id;
+        
+        return $this
+                ->db
+                ->query($query)
+                ->result();
+       
+    }
 
     public function _operations() {
         
