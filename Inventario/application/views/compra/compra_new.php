@@ -229,10 +229,10 @@
         var factura = $("#txt_factura").val();
 
         if (factura == "") {
-            document.getElementById("send").disabled = true;
+            $("#send_buy").attr("disabled" , true);
         }
         else {
-            document.getElementById("send").disabled = false;
+           $("#send_buy").attr("disabled" , false);
         }
     };
     
@@ -417,19 +417,22 @@
         });
         
         var task = new jtask();
-        task.url = "<?php echo site_url("Compras/SaveCompra");  ?>";
+        task.url = "<?php echo site_url("Buy/SaveBuy/");  ?>";
         task.beforesend = true;
         task.data = {
-            "products"  : data,
+            "products"  : JSON.stringify(data),
             "po"        : po,
-            "fact"      : fac,
+            "fac"      : fac,
             "total"     : total
         };
         task.config_before(function(){
-            
+             $("#send_buy").html("Guardando espere ...");
+             $("#send_buy").attr("disabled" , true);
         });
         task.success_callback(function(r){
-            
+             $("#send_buy").html("Guardar");
+             $("#send_buy").attr("disabled" ,false);
+             console.log(r);
         });
         task.do_task();
             
