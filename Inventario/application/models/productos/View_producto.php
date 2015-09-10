@@ -159,6 +159,15 @@ class view_producto extends CI_Model implements PInterface {
                         ->query($query)
                         ->result();
     }
+    
+    public function get_count_low_product(){
+        return $this->db->query("SELECT 
+                                    COUNT(*) as 'count'
+                                    FROM producto 
+                                    WHERE 
+                                    TRUNCATE((producto.margen * 0.20) + producto.margen , 2) >= producto.cantidad;")
+                ->result()[0];
+    }
 
     public function delete_product($id) {
         return $this

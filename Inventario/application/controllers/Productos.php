@@ -8,8 +8,12 @@ class Productos extends CI_Controller {
         $this->load->helper("url");
         $this->load->model("productos/New_producto");
         $this->load->model("productos/Edit_producto");
-     
+        $this->load->model("productos/View_producto" , "prod");
     }
+    
+    /***
+     * CONTROLADORES QUE DEVUELVEN ECHOS DE TIPO JSON 
+     * **/
     
     public function get_colors(){
      
@@ -27,10 +31,11 @@ class Productos extends CI_Controller {
     
     public function generate_sku(){
      
-             $sku   = $this->New_producto->generate_sku();  
-            echo json_encode($sku);
+       $sku   = $this->New_producto->generate_sku();  
+       echo json_encode($sku);
            
     }
+   
     
     public function New_Product(){
         
@@ -155,7 +160,6 @@ class Productos extends CI_Controller {
     }
     
     public function count_product(){
-        $this->load->model("productos/view_producto" , "prod");
         $count = $this->prod->count_products();
         echo json_encode($count);
     }
@@ -163,10 +167,15 @@ class Productos extends CI_Controller {
     public function get_color_byName(){
         $name = isset($_REQUEST['name']) ? $_REQUEST['name'] : NULL;
         if(is_null($name)){ echo NULL; }
-        $this->load->model("productos/view_producto" , "prod");
         $data = $this->prod->get_colorByName($name);
         echo json_encode($data);
     }
 
+    public function get_low_product(){
+        echo json_encode($this
+                ->prod
+                ->get_count_low_product()
+        );
+    }
     
 }
