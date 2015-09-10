@@ -577,15 +577,22 @@
             "total": total,
             "prov": $pid
         };
+
         task.config_before(function () {
             $("#send_buy").html("Guardando espere ...");
             $("#send_buy").attr("disabled", true);
+
+        task.config_before(function(){
+             $("#send_buy").html("Guardando espere ...");
+             //$("#send_buy").attr("disabled" , true);
+
         });
         task.success_callback(function (r) {
             $("#send_buy").html("Guardar");
             $("#send_buy").attr("disabled", false);
             console.log(r);
         });
+        
         task.do_task();
 
 
