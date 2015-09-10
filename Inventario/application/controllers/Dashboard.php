@@ -488,8 +488,7 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-         //$this->load->library("notifications");
-         echo "<pre>" , print_r($result) , "</pre>";
+      
         
     }
     
