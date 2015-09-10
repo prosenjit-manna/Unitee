@@ -24,6 +24,10 @@ class Buy extends CI_Controller {
         
         $product    = json_decode($product);
         
+        $this->load->model("user/User_Auth" , "user");
+        
+        $id_user            = $this->user->get_usr;
+        
         foreach($product as $prod ){
             
         }

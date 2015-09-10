@@ -45,7 +45,7 @@
                             <div class="col-md-6">
                                 <label class="control-label col-md-3">* Proveedor</label>
                                 <div class="form-group col-md-7">
-                                    <select onchange="provider_selected(this.value);" required="" id="select_colors" name="txt_color" class="form-control input-circle">
+                                    <select onchange="provider_selected(this.value);" required="" id="select_provider" name="select_provider" class="form-control input-circle">
                                         <option value="-1">Seleccione un proveedor</option>
                                         <?php  foreach ($prov as $v): ?>
                                             <option value="<?php echo $v->id_prov ; ?>"><?php echo $v->empresa; ?></option>
@@ -422,8 +422,9 @@
         task.data = {
             "products"  : JSON.stringify(data),
             "po"        : po,
-            "fac"      : fac,
-            "total"     : total
+            "fac"       : fac,
+            "total"     : total,
+            "prov"      : $pid
         };
         task.config_before(function(){
              $("#send_buy").html("Guardando espere ...");
