@@ -262,7 +262,7 @@
 
         var table = $('#compras_table');
 
-        var oTable = table.dataTable({
+        table.dataTable({
             "lengthMenu": [
                 [5, 15, 30, -1],
                 [5, 10, 30, "Todos"]

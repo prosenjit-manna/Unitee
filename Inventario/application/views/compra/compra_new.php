@@ -132,7 +132,7 @@
                         </div><br><br>
                         <div class="form-actions right col-md-offset-10">
                             <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                            <button onclick="save_buy();"  disabled="disabled" id="send" name="send"  type="button" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                            <button onclick="save_buy();"  disabled="disabled" id="send_buy" name="send_buy"  type="button" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                         </div>
                         <!-- FINAL Portlet PORTLET-->
                     </div>
@@ -383,7 +383,12 @@
     
     var save_buy = function(){
         var id_ , name , color , cant , price ;
+        
         var data    = new Array();
+        
+        var po      = $("#txt_po").val();
+        var fac     = $("#txt_factura").val();
+        var total   = $("#total_price_prod").val();
         
         $("#table_prod tr").each(function(){
             id_         = $(this).attr("id").split("table_")[1];
@@ -412,8 +417,14 @@
         });
         
         var task = new jtask();
-        task.url = "";
+        task.url = "<?php echo site_url("Compras/SaveCompra");  ?>";
         task.beforesend = true;
+        task.data = {
+            "products"  : data,
+            "po"        : po,
+            "fact"      : fac,
+            "total"     : total
+        };
         task.config_before(function(){
             
         });

@@ -27,8 +27,10 @@ class View_proveedor extends CI_Model implements PInterface{
 
     public function __construct() {
         parent::__construct();
+        
         $this->load->database();
         $this->load->library("base_url");
+        $this->route = $this->base_url->GetBaseUrl();
         
           $this->_config = array(
                 "version"       => 1.0,
@@ -60,9 +62,9 @@ class View_proveedor extends CI_Model implements PInterface{
         
         //CONFIGURACION DE LA PAGINACION DE DATOS 
         
-        $count_                         = $this->get_count_providers();
+        //$count_                         = $this->get_count_providers();
         
-        $config["base_url"]             = base_url() . "/0/proveedor=view_proveedor";
+        /*$config["base_url"]             = base_url() . "/0/proveedor=view_proveedor";
         $config["total_rows"]           = $count_;
         $config["per_page"]             = 5;
         $config["uri_segment"]          = 3;
@@ -84,16 +86,17 @@ class View_proveedor extends CI_Model implements PInterface{
         $config['last_tag_close']        = "</li>";
         $config['first_link']            = 'Primero';
         $config['first_tag_open']        = "<li>";
-        $config['first_tag_close']        = "</li>";
+        $config['first_tag_close']        = "</li>";*/
 
-        $this->pagination->initialize($config);
+        //$this->pagination->initialize($config);
         
-        $page = isset($_REQUEST['per_page']) ? $_REQUEST['per_page'] : 0;
+        //$page = isset($_REQUEST['per_page']) ? $_REQUEST['per_page'] : 0;
         
+        //"data"           => $this->get_limit_providers( $config["per_page"] , $page)
         
         $data = array(
            "links"          => $this->pagination->create_links(),
-           "data"           => $this->get_limit_providers( $config["per_page"] , $page),
+           "data"           => $this->get_limit_providers( 1000,0)
         );
         
         $this->load->view("proveedor/proveedor_view" , $data);
@@ -105,10 +108,10 @@ class View_proveedor extends CI_Model implements PInterface{
 
     public function _js() {
           return array(
-             $this->route . "assert/plugins/select2/select2.min.js",
-            $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.js",
-            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
-            $this->route . "assert/system/table-managed.js"
+                $this->route . "assert/plugins/select2/select2.min.js",
+                $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.js",
+                $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
+                $this->route . "assert/system/table-managed.js"
         );
     }
 
