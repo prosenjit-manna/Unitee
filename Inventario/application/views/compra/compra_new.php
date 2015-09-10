@@ -101,36 +101,69 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="row col-md-12">
-                            <div class="col-md-7">
-                                <h4>Adjuntar</h4>
-                                <form action="generados/index.php" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <input id="archivo" name="archivo" type="file" class="file" multiple=true data-preview-file-type="any" class="form-group"required>
-                                    </div>
+                            <div class="row col-md-12">
+                                 <form  class="col-md-7" id="fileupload" action="../../assets/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+                                     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                                     <div class="row fileupload-buttonbar">
+                                     <br><br>
+                                       <div class="col-md-4">
+                                            <h4>Adjuntar archivos</h4>
+                                        </div>
+                                         <div>
+                                             <!-- The fileinput-button span is used to style the file input field as button -->
+                                             <span class="btn green fileinput-button">
+                                             <i class="icon-search"></i>
+                                             <span>
+                                             Buscar...</span>
+                                             <input type="file" name="files[]" multiple="">
+                                             </span>
+                                             <button type="submit" class="btn blue start">
+                                             <i class="icon-upload"></i>
+                                             <span>
+                                             Subir</span>
+                                             </button>
+                                         </div>
+                                         <!-- The global progress information -->
+                                         <div class=" fileupload-progress fade">
+                                             <!-- The global progress bar -->
+                                             <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                                 <div class="progress-bar progress-bar-success" style="width:0%;">
+                                                 </div>
+                                             </div>
+                                             <!-- The extended global progress information -->
+                                             <div class="progress-extended">
+                                                  &nbsp;
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <!-- The table listing the files available for upload/download -->
+                                     <table role="presentation" class="table table-striped clearfix">
+                                     <tbody class="files">
+                                     </tbody>
+                                    </table>
                                 </form>
+                                 <div class="col-md-5"><br><br>
+                                      <label class="control-label col-md-3"> P.O </label>
+                                      <div class="form-group col-md-9">
+                                          <input onkeyup="validar();" type="text" name="txt_po" id="txt_po" value="" class="form-control input-circle" placeholder="Orden de compra">
+                                      </div>
+                                      <label class="control-label col-md-3">* Factura</label>
+                                      <div class="form-group col-md-9">
+                                          <input onkeyup="validar();" type="text" name="txt_factura" id="txt_factura" value="" class="form-control input-circle" placeholder="Factura">
+                                      </div>
+                                      <label class="control-label col-md-3">* Precio</label>
+                                      <div class="form-group col-md-9">
+                                          <div class="input-icon right">
+                                              <i name="change_" id="change_ptotal_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                              <i name="change_x" id="change_ptotal" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                              <input id="total_price_prod" onkeyup="" required="" type="text" id="txt_ptotal" name="txt_ptotal" disabled="disabled" class="form-control input-circle" placeholder="Numero de ptotal">
+                                          </div>
+                                      </div>
+                                </div>
                             </div>
-                            <div class="col-md-5"><br><br>
-                                <label class="control-label col-md-3"> P.O </label>
-                                <div class="form-group col-md-9">
-                                    <input onkeyup="validar();" type="text" name="txt_po" id="txt_po" value="" class="form-control input-circle" placeholder="Orden de compra">
-                                </div>
-                                <label class="control-label col-md-3">* Factura</label>
-                                <div class="form-group col-md-9">
-                                    <input onkeyup="validar();" type="text" name="txt_factura" id="txt_factura" value="" class="form-control input-circle" placeholder="Factura">
-                                </div>
-                                <label class="control-label col-md-3">* Precio</label>
-                                <div class="form-group col-md-9">
-                                    <div class="input-icon right">
-                                        <i name="change_" id="change_ptotal_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
-                                        <i name="change_x" id="change_ptotal" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input id="total_price_prod" onkeyup="" required="" type="text" id="txt_ptotal" name="txt_ptotal" disabled="disabled" class="form-control input-circle" placeholder="Numero de ptotal">
-                                    </div>
-                                </div>
-                            </div>
-
+                        </div>
                         </div><br><br>
-                        <div class="form-actions right col-md-offset-10">
+                        <div class="form-actions right col-md-offset-9">
                             <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
                             <button onclick="save_buy();"  disabled="disabled" id="send_buy" name="send_buy"  type="button" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                         </div>
@@ -219,6 +252,79 @@
 </div>
 <!--FIN DEL CONTENIDO-->
 <!--Validaciones-->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade col-md-12">
+        <td>
+            <span class="preview"></span>
+        </td>
+        <td>
+            <p class="name">{%=file.name%}</p>
+            <strong class="error text-danger label label-danger"></strong>
+        </td>
+        <td>
+            <p class="size">Processing...</p>
+            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+            </div>
+        </td>
+        <td>
+            {% if (!i && !o.options.autoUpload) { %}
+                
+            {% } %}
+            {% if (!i) { %}
+                <button class="btn red cancel">
+                    <i class="icon-remove-sign"></i>
+                    <span>Eliminar</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+            <tr class="template-download fade col-md-6">
+                <td>
+                    <span class="preview">
+                        {% if (file.thumbnailUrl) { %}
+                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                        {% } %}
+                    </span>
+                </td>
+                <td>
+                    <p class="name">
+                        {% if (file.url) { %}
+                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                        {% } else { %}
+                            <span>{%=file.name%}</span>
+                        {% } %}
+                    </p>
+                    {% if (file.error) { %}
+                        <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+                    {% } %}
+                </td>
+                <td>
+                    <span class="size">{%=o.formatFileSize(file.size)%}</span>
+                </td>
+                <td>
+                    {% if (file.deleteUrl) { %}
+                        <button class="btn red delete btn-sm" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                            <i class="fa fa-trash-o"></i>
+                            <span>Delete</span>
+                        </button>
+                        <input type="checkbox" name="delete" value="1" class="toggle">
+                    {% } else { %}
+                        <button class="btn yellow cancel btn-sm">
+                            <i class="fa fa-ban"></i>
+                            <span>Cancel</span>
+                        </button>
+                    {% } %}
+                </td>
+            </tr>
+        {% } %}
+</script>
 <script>
 
     var $pid                = null;
