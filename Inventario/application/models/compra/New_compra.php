@@ -57,6 +57,7 @@ class New_compra extends CI_Model implements PInterface {
             
          $this->load->model("proveedor/view_proveedor" , "prov");
          $this->load->model("productos/view_producto" , "prod");
+         $this->load->heper("form");
          $this->load->view("compra/compra_new" , array(
              "prov"     => $this->prov->get_Allproviders(),
              "prod"     => $this->prod->get_products()
