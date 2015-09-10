@@ -136,10 +136,10 @@ class Edit_producto extends CI_Model implements PInterface{
         $query = 'UPDATE producto SET cantidad = TRUNCATE((cantidad + ' . $cant . ') , 2) ,'
                 . ' precio =' .  $price . ' WHERE id_producto LIKE ' . $id;
         
-     
         return $this
                 ->db
-                ->query($query);
+                ->query($query)
+                ->result();
        
     }
 

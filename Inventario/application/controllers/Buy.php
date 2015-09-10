@@ -46,13 +46,13 @@ class Buy extends CI_Controller {
         
         foreach($product as $prod ){
             
-            $this->prod->update_(
+             $this->prod->update_(
                      $prod->id , 
                      $prod->cant ,
                      $prod->price 
              );
-           
-             $this->buy->SaveHistory($id_buy , $prod->id);
+             
+            $this->buy->SaveHistory($id_buy , $prod->id);
         }
         
         echo TRUE;
