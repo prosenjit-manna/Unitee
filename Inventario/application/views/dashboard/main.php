@@ -87,8 +87,8 @@
                         <i class="icon-warning-sign"></i>
                     </div>
                     <div class="details">
-                        <div class="number" id="npro">
-                            3
+                        <div class="number" id="nprob">
+                            
                         </div>
                         <div class="desc">
                             Productos bajos en existencia
@@ -148,14 +148,26 @@
             task.beforesend = true;
             task.config_before(function () {
             $("#npro").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="70px" height="70px"/></center>');
+
         });
         task.success_callback(function (r) {
                 $("#npro").html('');
                 var obj = JSON.parse(r);
-                $("#npro").append('<div class="numbre">' + obj.count + '</div>')
-
+                $("#npro").append('<div class="numbre">' + obj.count + '</div>');
             });
         task.do_task();
-    };
 
+         var task2 = new jtask();
+            task2.url = "<?php echo site_url("productos/get_low_product"); ?>";
+            task2.beforesend = true;
+            task2.config_before(function () {
+           			$("#nprob").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="70px" height="70px"/></center>');
+        	});
+        task2.success_callback(function (r) {
+         		$("#nprob").html('');
+                var obj = JSON.parse(r);
+           		$("#nprob").append('<div class="numbre">' + obj.count + '</div>');
+            });
+        task2.do_task();
+    };
 </script>

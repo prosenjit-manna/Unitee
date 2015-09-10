@@ -309,7 +309,7 @@ a {
 								</tr>
 								<tr>
 									<td class="content-block">
-										Pomte en contacto con uno de tus proveedores o realiza una nueva compra.		
+										Puedes contactar a uno de tus proveedores o realiza una nueva compra.		
 									</td>
 								</tr>
 								<tr>

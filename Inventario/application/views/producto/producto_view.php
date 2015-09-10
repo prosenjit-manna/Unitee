@@ -61,7 +61,7 @@
                         </div>                       
                     </div>
                     <div class="portlet-body">
-                        <div class="">
+                        <div class="scroller" style="height:350px">
                             <table class="table table-striped table-hover table-bordered" id="products_table">
                                 <thead>
                                     <tr>

@@ -31,7 +31,7 @@
 
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
-            <div class="row scroller" style="height:375px" data-always-visible="1" data-rail-visible1="1">
+            <div class="row " data-always-visible="1" data-rail-visible1="1">
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet">
                         <div class="portlet-title">
@@ -39,10 +39,10 @@
                                 <i class="icon-speech font-green-sharp"></i>
                                 <span class="caption-subject bold uppercase"> Lista de Proveedores</span>
                             </div>                       
-                        </div><br>
+                        </div>
                         <div class="portlet-body">
-                            <div class="table-scrollable">
-                                <table class="table table-striped table-hover table-bordered" id="compras_table">
+                            <div class="table-scrollable scroller" style="height:350px">
+                                <table class="table table-striped table-hover table-bordered scrille" id="compras_table">
                                  <thead>
                                     <tr>
                                         <th>
@@ -103,7 +103,7 @@
                                                 <h4 class="modal-title">Información de Proveedor</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="row scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
+                                                <div class="row" data-always-visible="1" data-rail-visible1="1">
                                                     <div class="col-md-6">
                                                         <h3 lass="form-section">Información deContacto</h3><br>
                                                         <label class="control-label col-md-3">Empresa</label>
@@ -267,17 +267,17 @@
                 [5, 15, 30, -1],
                 [5, 10, 30, "Todos"]
             ],
-            "pageLength": 5,
+            "pageLength": 4,
             "language": {
                 "aria": {
                     "sortAscending": ": activate to sort column ascending",
                     "sortDescending": ": activate to sort column descending"
                 },
                 "emptyTable": "No data available in table",
-                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ compras",
-                "infoEmpty": "No se ha encontrado Compras ...",
+                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ proveedores",
+                "infoEmpty": "No se ha encontrado proveedores ...",
                 "infoFiltered": "(filtered1 from _MAX_ total records)",
-                "lengthMenu": "Mostar _MENU_ Compras",
+                "lengthMenu": "Mostar _MENU_ Proveedores",
                 "search": "Buscar:",
                 "zeroRecords": "Ningun producto encontrado ..."
 
