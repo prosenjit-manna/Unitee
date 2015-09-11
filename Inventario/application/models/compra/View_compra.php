@@ -47,7 +47,12 @@ class View_compra extends CI_Model implements PInterface {
         return array(
             $this->route . "assert/plugins/select2/select2.css",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css",
-            $this->route . "assert/plugins/fileinput/css/fileinput.css"
+            $this->route . "assert/plugins/clockface/css/clockface.css",
+            $this->route . "assert/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css",
+            $this->route . "assert/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css",
+            $this->route . "assert/plugins/bootstrap-colorpicker/css/colorpicker.css",
+            $this->route . "assert/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css",
+            $this->route . "assert/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"
         );
     }
 
@@ -61,10 +66,18 @@ class View_compra extends CI_Model implements PInterface {
 
     public function _js() {
         return array(
-             $this->route . "assert/plugins/select2/select2.min.js",
+            $this->route . "assert/plugins/select2/select2.min.js",
             $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.js",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
-            $this->route . "assert/system/table-managed.js"
+            $this->route . "assert/system/table-managed.js",
+            $this->route . "assert/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",
+            $this->route . "assert/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js",
+            $this->route . "assert/plugins/clockface/js/clockface.js",
+            $this->route . "assert/plugins/bootstrap-daterangepicker/moment.min.js",
+            $this->route . "assert/plugins/bootstrap-daterangepicker/daterangepicker.js",
+            $this->route . "assert/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js",
+            $this->route . "assert/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js",
+            $this->route . "assert/plugins/components-pickers.js"
         );
     }
 
