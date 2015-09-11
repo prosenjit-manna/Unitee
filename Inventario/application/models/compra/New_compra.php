@@ -17,8 +17,9 @@ class New_compra extends CI_Model implements PInterface {
 
     use PluginConfig;
 
-    protected $model = "new_compra";
-    var $route = null;
+    protected $model        = "new_compra";
+    
+    var $route              = null;
 
     public function __construct() {
         parent::__construct();
@@ -54,14 +55,14 @@ class New_compra extends CI_Model implements PInterface {
     }
 
     public function _init() {
-            
-         $this->load->model("proveedor/view_proveedor" , "prov");
-         $this->load->model("productos/view_producto" , "prod");
-         $this->load->helper("form");
-         $this->load->view("compra/compra_new" , array(
-             "prov"     => $this->prov->get_Allproviders(),
-             "prod"     => $this->prod->get_products()
-         ));
+
+        $this->load->model("proveedor/view_proveedor", "prov");
+        $this->load->model("productos/view_producto", "prod");
+        $this->load->helper("form");
+        $this->load->view("compra/compra_new", array(
+            "prov" => $this->prov->get_Allproviders(),
+            "prod" => $this->prod->get_products()
+        ));
     }
 
     public function _install() {
@@ -86,13 +87,15 @@ class New_compra extends CI_Model implements PInterface {
             $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-audio.js",
             $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-video.js",
             $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-validate.js",
-            $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-ui.js",
-            $this->route . "assert/plugins/form-fileupload.js"        
+            $this->route . "assert/plugins/jquery-file-upload/js/jquery.fileupload-ui.js"
         );
     }
 
     public function _jsLoader() {
-        return array("table_loader();","TableEditable.init();" ,"FormFileUpload.init();" );
+        return array(
+            "table_loader();", 
+            "TableEditable.init();",
+            "FormFileUpload.init();" );
     }
 
     public function _rols() {
@@ -135,16 +138,17 @@ class New_compra extends CI_Model implements PInterface {
         
     }
 
-    public function Save(array $data){
-        $this->db->insert("compras" , $data);
+    public function Save(array $data) {
+        $this->db->insert("compras", $data);
         return $this->db->insert_id();
     }
-    
-    public function SaveHistory($id_buy , $id_prod){
-        $this->db->insert("historial_compra" , array(
-            "id_compra"     => $id_buy,
-            "id_producto"   => $id_prod
+
+    public function SaveHistory($id_buy, $id_prod) {
+        $this->db->insert("historial_compra", array(
+            "id_compra" => $id_buy,
+            "id_producto" => $id_prod
         ));
         return $this->db->insert_id();
     }
+
 }

@@ -101,7 +101,12 @@
                             </table>
                         </div>
                         <div class="row col-md-12">
-                            <form  class="col-md-7" id="fileupload" action="../../assets/global/plugins/jquery-file-upload/server/php/" method="POST" enctype="multipart/form-data">
+                            <?php echo form_open_multipart("Buy/SaveAttachment/" , 
+                                    array(
+                                        "id"        => "fileupload" , 
+                                        "class"     => "col-md-7"
+                                ));
+                             ?>
                                 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
                                 <div class="row fileupload-buttonbar">
                                     <br><br>
@@ -116,7 +121,7 @@
                                                 Buscar...</span>
                                             <input type="file" name="files[]" multiple="">
                                         </span>
-                                        <button type="submit" class="btn blue start">
+                                        <button  id="send_upload" type="button" class="btn blue start">
                                             <i class="icon-upload"></i>
                                             <span>
                                                 Subir</span>
@@ -140,7 +145,7 @@
                                     <tbody class="files">
                                     </tbody>
                                 </table>
-                            </form>
+                            <?php echo form_close(); ?>
                             <div class="col-md-5"><br><br>
                                 <label class="control-label col-md-3"> P.O </label>
                                 <div class="form-group col-md-9">
@@ -326,8 +331,19 @@
 </script>
 <script>
 
+    
+
     var $pid = null;
     var $node_table = null;
+    
+    
+       /*$("#fileupload").submit(function(event){
+                alert();
+                return ;
+            });*/
+
+  
+ 
 
     function validar() {
 
@@ -591,6 +607,81 @@
 
 
     };
+    
+    
+    var FormFileUpload = function () {
+
+    return {
+        //main function to initiate the module
+        init: function () {
+            
+             $("#send_upload").on("click" , function(){
+                
+               
+                 
+            $.ajax({
+                url: $('#fileupload').attr("action"),
+                dataType: 'json',
+                context: $('#fileupload')[0]
+            }).always(function () {
+                $(this).removeClass('fileupload-processing');
+            }).fail(function(e , q){
+                alert("wtf " + q);
+            })
+             .done(function (result) {
+                alert();
+                $(this).fileupload('option', 'done')
+                .call(this, $.Event('done'), {result: result});
+            });
+            
+                   
+            });
+  
+            
+             // Initialize the jQuery File Upload widget:
+            $('#fileupload').fileupload({
+                disableImageResize: false,
+                autoUpload: false,
+                disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
+                maxFileSize: 5000000,
+                acceptFileTypes: /(\.|\/)(gif|jpe?g|png|doc|docx|pdf|txt|xls|pst)$/i
+                // Uncomment the following to send cross-domain cookies:
+                //xhrFields: {withCredentials: true},                
+            });
+
+            // Enable iframe cross-domain access via redirect option:
+            $('#fileupload').fileupload(
+                'option',
+                'redirect',
+                window.location.href.replace(
+                    /\/[^\/]*$/,
+                    '/cors/result.html?%s'
+                )
+            );
+            
+            // Upload server status check for browsers with CORS support:
+            if ($.support.cors) {
+                $.ajax({
+                    type: 'HEAD'
+                }).fail(function () {
+                    alert();
+                    $('<div class="alert alert-danger"/>')
+                        .text('Upload server currently unavailable - ' +
+                                new Date())
+                        .appendTo('#fileupload');
+                });
+            }
+            
+            // Load & display existing files:
+            $('#fileupload').addClass('fileupload-processing');
+        }
+        
+       
+
+    };
+
+}();
+
 
 
 
