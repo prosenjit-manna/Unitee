@@ -35,14 +35,19 @@
                         </div>
                         <div class="row col-md-12">
                             <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label ">Fecha</label>
-                                    <div class="">
-                                        <input class="form-control form-control-inline input-medium date-picker" size="16" type="text" value=""/>
-                                        <span class="help-block">
-                                        Selecciona la fecha</span>
-                                    </div>
+                                <label class="control-label ">Buscar por</label>
+                               <div class="form-group">
+                                   <select id="select" name="select" class="form-control input-circle">
+                                        <option value="0">Seleccione una opción</option> 
+                                        <option value="0">Factura</option>
+                                        <option value="0">P.O.</option>
+                                        <option value="0">Precio</option>                    
+                                   </select>
                                 </div>
+                                <label class="control-label">Valor</label>
+                                    <div class="form-group">
+                                        <input type="text" id="txt_vslot" name="txt_valor" class="form-control input-circle" placeholder="Valor de la busqueda">
+                                    </div>
                             </div>
                             <div class="col-md-9">
                               <div class="col-md-12" align="center">
@@ -50,6 +55,12 @@
                                   <a href="#" class="btn btn-success">Generar PDF</a>
                                   <a href="#" class="btn btn-success">Generar PDF</a>
                               </div><br><br><br>
+                                <div class="well col-md-12" align="center">
+                                    <h4 class="col-md-6">Número de factura</h4>
+                                    <h4 class="col-md-6">Fecha de Factura</h4>
+                                    <p class="col-md-6">FACT-2353435-243</p>
+                                    <p class="col-md-6">12/12/12</p>
+                                </div>
                                <div class="col-md-12">
                                     <table class="table table-striped table-hover table-bordered" id="compras_table">
                                         <thead>
@@ -125,6 +136,15 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                     <div class="col-md-12">
+                                           <h4 class="col-md-12">Archivos Adjuntos</h4><br><br><br><br>
+                                           <p class="col-md-12">
+                                               <i class="icon-folder-open" style="font-size:50px;"></i>
+                                               <i class="icon-film" style="font-size:50px;"></i>
+                                               <i class="icon-envelope" style="font-size:50px;"></i>
+                                               <i class="icon-edit" style="font-size:50px;"></i>
+                                           </p>
+                                    </div>
                                     <div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
