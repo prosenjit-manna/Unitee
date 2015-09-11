@@ -48,38 +48,36 @@
                                     <div class="form-group">
                                         <input type="text" id="txt_vslot" name="txt_valor" class="form-control input-circle" placeholder="Valor de la busqueda">
                                     </div>
+                                    
                             </div>
                             <div class="col-md-9">
                               <div class="col-md-12" align="center">
                                   <a href="#" class="btn btn-success">Generar PDF</a>
-                                  <a href="#" class="btn btn-success">Generar PDF</a>
-                                  <a href="#" class="btn btn-success">Generar PDF</a>
+                                  <a href="#" class="btn btn-success">GenerarWORD</a>
+                                  <a href="#" class="btn btn-success">Generar EXCEL</a>
                               </div><br><br><br>
-                                <div class="well col-md-12" align="center">
+                                <!--<div class="well col-md-12" align="center">
                                     <h4 class="col-md-6">Número de factura</h4>
                                     <h4 class="col-md-6">Fecha de Factura</h4>
                                     <p class="col-md-6">FACT-2353435-243</p>
                                     <p class="col-md-6">12/12/12</p>
-                                </div>
+                                </div>-->
                                <div class="col-md-12">
                                     <table class="table table-striped table-hover table-bordered" id="compras_table">
                                         <thead>
                                             <tr>
                                                 <th>
-                                        <p align="center">Fecha</p>
+                                        <p align="center">Nombre</p>
                                         </th>
                                         <th >
-                                        <p align="center">Factura</p>
+                                        <p align="center">Cantidad</p>
                                         </th>
                                         <th >
-                                        <p align="center">P.O.</p>
+                                        <p align="center">Precio</p>
                                         </th>
                                         <th>
-                                        <p align="center">Proveedor</p>
+                                        <p align="center">Color</p>
                                         </th>
-                                        <th>
-                                        <p align="center">Precio Total</p>
-                                        </td>
                                         <th>
                                         <p align="center">Operaciones</p>
                                         </th>
@@ -88,63 +86,70 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <p align="center">12/12/12</p>
+                                                    <p align="center">Tela</p>
                                                 </td>
                                                 <td>
-                                                    <p align="center">123123</p>
+                                                    <p align="center">199 yds</p>
                                                 </td>
                                                 <td>
-                                                    <p align="center">456456</p>
+                                                    <p align="center">$21.12</p>
                                                 </td>
                                                 <td>
-                                                    <p align="center">Google</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$ 120.00</p>
+                                                    <p align="center">Rojo</p>
                                                 </td>
                                                 <td>
                                                     <p align="center">
-                                                        <a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 16px;"></i></i></a>&nbsp;&nbsp;
-                                                        <a href="#"><i class="icon-pencil" style="font-size: 16px;"></i></i></a>&nbsp;&nbsp;
                                                         <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
                                                     </p>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <p align="center">12/12/12</p>
+                                                    <p align="center">Tela</p>
                                                 </td>
                                                 <td>
-                                                    <p align="center">123123</p>
+                                                    <p align="center">199 yds</p>
                                                 </td>
                                                 <td>
-                                                    <p align="center">456456</p>
+                                                    <p align="center">$21.12</p>
                                                 </td>
                                                 <td>
-                                                    <p align="center">Google</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$ 120.00</p>
+                                                    <p align="center">Rojo</p>
                                                 </td>
                                                 <td>
                                                     <p align="center">
-                                                        <a class="" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 16px;"></i></i></a>&nbsp;&nbsp;
-                                                        <a href="#"><i class="icon-pencil" style="font-size: 16px;"></i></i></a>&nbsp;&nbsp;
                                                         <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
                                                     </p>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                     <div class="col-md-12">
-                                           <h4 class="col-md-12">Archivos Adjuntos</h4><br><br><br><br>
-                                           <p class="col-md-12">
+                                    <h4 class="block">Información de la compra</h4>
+                                    <ul class="list-group col-md-12">
+                                        <li class="list-group-item">
+                                             <p class="col-md-4">Número de Factura</p>     
+                                             <p class="col-md-3">FACT-1212-12</p>
+                                              <p class="col-md-2">Fecha de Factura</p>     
+                                             <p class="col-md-2">12/12/12</p><br>
+                                        </li>
+                                         <li class="list-group-item">
+                                             <p class="col-md-4">Precio total de la compra</p>     
+                                             <p class="col-md-3">$250.00</p>
+                                              <p class="col-md-2">P.O.</p>     
+                                             <p class="col-md-2">$250.00</p><br>
+                                        </li>
+                                        <li class="list-group-item">
+                                           <p class="col-md-12">Archivos adjuntos</p>
+                                            <p class="col-md-12 col-md-offset-3">
                                                <i class="icon-folder-open" style="font-size:50px;"></i>
                                                <i class="icon-film" style="font-size:50px;"></i>
                                                <i class="icon-envelope" style="font-size:50px;"></i>
                                                <i class="icon-edit" style="font-size:50px;"></i>
-                                           </p>
-                                    </div>
+                                                <i class="icon-folder-open" style="font-size:50px;"></i>
+                                                <i class="icon-film" style="font-size:50px;"></i>
+                                           </p><br><br><br><br>
+                                        </li>
+                                    </ul>
                                     <div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
