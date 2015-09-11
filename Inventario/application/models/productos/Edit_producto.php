@@ -138,8 +138,7 @@ class Edit_producto extends CI_Model implements PInterface{
         
         return $this
                 ->db
-                ->query($query)
-                ->result();
+                ->query($query);
        
     }
 
