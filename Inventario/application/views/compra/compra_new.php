@@ -254,8 +254,6 @@
     </div>
     <!-- FINAL ESTILOS DE LA BARRA -->
 </div>
-</div>
-</div>
 <!--FIN DEL CONTENIDO-->
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
@@ -571,7 +569,7 @@
         
         if($fileUpload_Stay != null && $fileUpload_Context.length <= 0)
         {
-            alert("Hay archivos que subir , favor subir antes de continuar");
+            alert(" favor subir o cancelar los archivos pendientes antes de continuar");
             return;
         }
    
