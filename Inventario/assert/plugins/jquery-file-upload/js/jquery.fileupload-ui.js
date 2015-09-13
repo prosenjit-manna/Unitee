@@ -12,6 +12,9 @@
 /* jshint nomen:false */
 /* global define, window */
 
+var $fileUpload_Context = Array();
+var $fileUpload_Stay    = null;
+
 (function (factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
@@ -87,9 +90,11 @@
             // widget (via file input selection, drag & drop or add API call).
             // See the basic file upload widget for more information:
             add: function (e, data) {
+                
                 if (e.isDefaultPrevented()) {
                     return false;
                 }
+                $fileUpload_Stay = data;
                 var $this = $(this),
                     that = $this.data('blueimp-fileupload') ||
                         $this.data('fileupload'),
@@ -155,9 +160,11 @@
             },
             // Callback for successful uploads:
             done: function (e, data) {
+                
                 if (e.isDefaultPrevented()) {
                     return false;
                 }
+                $fileUpload_Context.push(data); // variable global contexto ...
                 var that = $(this).data('blueimp-fileupload') ||
                         $(this).data('fileupload'),
                     getFilesFromResponse = data.getFilesFromResponse ||

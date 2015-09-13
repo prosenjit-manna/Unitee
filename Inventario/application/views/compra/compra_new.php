@@ -107,6 +107,7 @@
                                         "class"     => "col-md-7"
                                 ));
                              ?>
+                            
                                 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
                                 <div class="row fileupload-buttonbar">
                                     <br><br>
@@ -121,7 +122,7 @@
                                                 Buscar...</span>
                                             <input type="file" name="files[]" multiple="">
                                         </span>
-                                        <button  id="send_upload" type="button" class="btn blue start">
+                                        <button type="submit" class="btn blue start">
                                             <i class="icon-upload"></i>
                                             <span>
                                                 Subir</span>
@@ -145,6 +146,7 @@
                                     <tbody class="files">
                                     </tbody>
                                 </table>
+                                <input type="hidden" value="<?php echo $upload_dir; ?> " name="directory" />
                             <?php echo form_close(); ?>
                             <div class="col-md-5"><br><br>
                                 <label class="control-label col-md-3"> P.O </label>
@@ -255,96 +257,83 @@
 </div>
 </div>
 <!--FIN DEL CONTENIDO-->
-<!--Validaciones-->
 <script id="template-upload" type="text/x-tmpl">
-    {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-upload fade col-md-12">
-    <td>
-    <span class="preview"></span>
-    </td>
-    <td>
-    <p class="name">{%=file.name%}</p>
-    <strong class="error text-danger label label-danger"></strong>
-    </td>
-    <td>
-    <p class="size">Processing...</p>
-    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-    </div>
-    </td>
-    <td>
-    {% if (!i && !o.options.autoUpload) { %}
-
-    {% } %}
-    {% if (!i) { %}
-    <button class="btn red cancel">
-    <i class="icon-remove-sign"></i>
-    <span>Eliminar</span>
-    </button>
-    {% } %}
-    </td>
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td>
+            <span class="preview"></span>
+        </td>
+        <td>
+            <p class="name">{%=file.name%}</p>
+            <strong class="error text-danger"></strong>
+        </td>
+        <td>
+            <p class="size">Processing...</p>
+            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+        </td>
+        <td>
+            {% if (!i && !o.options.autoUpload) { %}
+                <button style="display:none;" class="btn btn-primary start" disabled="disabled">
+                </button>
+            {% } %}
+            {% if (!i) { %}
+                <button class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
     </tr>
-    {% } %}
+{% } %}
 </script>
 <!-- The template to display files available for download -->
 <script id="template-download" type="text/x-tmpl">
-    {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-download fade col-md-6">
-    <td>
-    <span class="preview">
-    {% if (file.thumbnailUrl) { %}
-    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-    {% } %}
-    </span>
-    </td>
-    <td>
-    <p class="name">
-    {% if (file.url) { %}
-    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-    {% } else { %}
-    <span>{%=file.name%}</span>
-    {% } %}
-    </p>
-    {% if (file.error) { %}
-    <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-    {% } %}
-    </td>
-    <td>
-    <span class="size">{%=o.formatFileSize(file.size)%}</span>
-    </td>
-    <td>
-    {% if (file.deleteUrl) { %}
-    <button class="btn red delete btn-sm" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-    <i class="fa fa-trash-o"></i>
-    <span>Delete</span>
-    </button>
-    <input type="checkbox" name="delete" value="1" class="toggle">
-    {% } else { %}
-    <button class="btn yellow cancel btn-sm">
-    <i class="fa fa-ban"></i>
-    <span>Cancel</span>
-    </button>
-    {% } %}
-    </td>
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        <td>
+            <span class="preview">
+                {% if (file.thumbnailUrl) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                {% } %}
+            </span>
+        </td>
+        <td>
+            <p class="name">
+                {% if (file.url) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                {% } else { %}
+                    <span>{%=file.name%}</span>
+                {% } %}
+            </p>
+            {% if (file.error) { %}
+                <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+            {% } %}
+        </td>
+        <td>
+            <span class="size">{%=o.formatFileSize(file.size)%}</span>
+        </td>
+        <td>
+            {% if (file.deleteUrl) { %}
+                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                    <i class="glyphicon glyphicon-trash"></i>
+                    <span>Delete</span>
+                </button>
+                <input type="checkbox" name="delete" value="1" class="toggle">
+            {% } else { %}
+                <button class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
     </tr>
-    {% } %}
+{% } %}
 </script>
 <script>
 
-    
-
     var $pid = null;
     var $node_table = null;
-    
-    
-       /*$("#fileupload").submit(function(event){
-                alert();
-                return ;
-            });*/
-
-  
- 
-
+   
     function validar() {
 
         var factura = $("#txt_factura").val();
@@ -370,7 +359,7 @@
     }
     ;
 
-        var validate_pcant = function () {
+    var validate_pcant = function () {
                 var change_pcantidad_ok = $("#change_pcantidad_ok");
                 var change_pcantidad = $("#change_pcantidad");
                 var pcantidad = $("#cant_prod").val();
@@ -386,7 +375,7 @@
                 }
             };
 
-             var validate_pre = function () {
+    var validate_pre = function () {
                 var change_precio_ok = $("#change_precio_ok");
                 var change_precio = $("#change_precio");
                 var precio = $("#price_prod").val();
@@ -436,8 +425,6 @@
             }
         });
     };
-
-            
 
     var table_loader = function () {
 
@@ -549,10 +536,10 @@
     };
 
     var save_buy = function () {
+        
         var id_, name, color, cant, price;
-
-        var data = new Array();
-
+        var data = new Array()
+        var upload_data = Array();
         var po = $("#txt_po").val();
         var fac = $("#txt_factura").val();
         var total = $("#total_price_prod").val();
@@ -579,10 +566,22 @@
             o.color = color;
             o.cant = cant;
             o.price = price;
-
             data.push(o);
         });
-
+        
+        if($fileUpload_Stay != null && $fileUpload_Context.length <= 0)
+        {
+            alert("Hay archivos que subir , favor subir antes de continuar");
+            return;
+        }
+   
+        
+        if($fileUpload_Context != null){
+            $.each($fileUpload_Context , function(k,v){
+                upload_data.push(v.jqXHR.responseJSON.files[0].data);
+            });
+        }
+    
         var task = new jtask();
         task.url = "<?php echo site_url("Buy/SaveBuy/"); ?>";
         task.beforesend = true;
@@ -591,16 +590,17 @@
             "po": po,
             "fac": fac,
             "total": total,
-            "prov": $pid
+            "prov": $pid,
+            "upload" : JSON.stringify(upload_data)
         };
         task.config_before(function(){
              $("#send_buy").html("Guardando espere ...");
-             //$("#send_buy").attr("disabled" , true);
+             $("#send_buy").attr("disabled" , true);
         });
         task.success_callback(function (r) {
             $("#send_buy").html("Guardar");
             $("#send_buy").attr("disabled", false);
-            console.log(r);
+            
         });
         
         task.do_task();
@@ -608,36 +608,12 @@
 
     };
     
-    
     var FormFileUpload = function () {
 
     return {
         //main function to initiate the module
         init: function () {
-            
-             $("#send_upload").on("click" , function(){
-                
-               
-                 
-            $.ajax({
-                url: $('#fileupload').attr("action"),
-                dataType: 'json',
-                context: $('#fileupload')[0]
-            }).always(function () {
-                $(this).removeClass('fileupload-processing');
-            }).fail(function(e , q){
-                alert("wtf " + q);
-            })
-             .done(function (result) {
-                alert();
-                $(this).fileupload('option', 'done')
-                .call(this, $.Event('done'), {result: result});
-            });
-            
-                   
-            });
-  
-            
+
              // Initialize the jQuery File Upload widget:
             $('#fileupload').fileupload({
                 disableImageResize: false,
@@ -671,6 +647,18 @@
                         .appendTo('#fileupload');
                 });
             }
+            
+           $.ajax({
+                url: $('#fileupload').attr("action"),
+                dataType: 'json',
+                context: $('#fileupload')[0]
+            }).always(function () {
+                $(this).removeClass('fileupload-processing');
+            })
+             .done(function (result) {
+               // $(this).fileupload('option', 'done')
+               // .call(this, $.Event('done'), {result: result});
+            });
             
             // Load & display existing files:
             $('#fileupload').addClass('fileupload-processing');
