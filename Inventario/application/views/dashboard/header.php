@@ -72,6 +72,7 @@
 		<div class="page-logo">
 			<a href="index.html" class="col-md-offset-2 col-xs-offset-4">
                             <img id="system_logo" src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" title="logo" width="130px" class="logo-default"/>
+                           
 			</a>
 		</div>
 		<!-- END LOGO -->

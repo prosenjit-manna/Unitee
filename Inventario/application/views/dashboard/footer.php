@@ -5,6 +5,9 @@
                     echo $d->format("Y"); 
                 ?> 
                 &copy; Unitee Powered By <a href="http://lieison.com/" target="_blank" style="color:#BDBDBD; font-size:12px;">Lieison Working Together S.A. de C.V</a>.
+                <?php 
+                                echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong align='right'>$ttl seg</strong>";
+                ?>
 	</div>
 	<div class="scroll-to-top">
 		<i class="icon-arrow-up"></i>

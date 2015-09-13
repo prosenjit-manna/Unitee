@@ -103,6 +103,8 @@ class Dashboard extends CI_Controller {
          $this->load->model("system/sidebar_engine");
          $this->sidebar_engine->_echo();
     }
+    
+    
    
     /**
      * INDEX PRINCIPAL SU RUTA ES :
@@ -141,6 +143,8 @@ class Dashboard extends CI_Controller {
          * 
          */
         
+        $init_time = $this->GetTime();
+
         //verifica si existe una conexion a internet , 
         //en dado caso no exista tira el error
         $conection = internet_conection();
@@ -158,7 +162,6 @@ class Dashboard extends CI_Controller {
             }
         }
 
-        
         /**
          * 
          * Importante 
@@ -207,6 +210,10 @@ class Dashboard extends CI_Controller {
              );
              
              $this->load->view("dashboard/main" , $vars);
+             
+            $ttl                = round(($this->GetTime() - $init_time) , 6);
+            $vars['ttl']        = $ttl;
+             
              $this->load->view("dashboard/footer" , $vars);
         }
         else
@@ -340,6 +347,10 @@ class Dashboard extends CI_Controller {
             $this->$model->_init();
             
             //CARGAMOS EL FOOTER .. SOLO ESO FALTABA YEAH !!
+            $ttl                = round(($this->GetTime() - $init_time) , 6);
+            $vars['ttl']        = $ttl;
+            
+            
             $this->load->view("dashboard/footer" , $vars );
            
         }
@@ -573,6 +584,12 @@ class Dashboard extends CI_Controller {
         $ok = $this->notifications->IsRead($id , $state);
         if($ok) { echo TRUE ; } else { echo FALSE;}
     }
+    
+    
+   private function GetTime(){
+        list($usec, $sec) = explode(" ",microtime()); 
+        return ((float)$usec + (float)$sec); 
+   }
     
 
    
