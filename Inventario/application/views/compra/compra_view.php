@@ -34,122 +34,157 @@
                             </div>
                         </div>
                         <div class="row col-md-12">
-                            <div class="col-md-3">
-                                <label class="control-label ">Buscar por</label>
-                               <div class="form-group">
-                                   <select id="select" name="select" class="form-control input-circle">
-                                        <option value="0">Seleccione una opción</option> 
-                                        <option value="0">Factura</option>
-                                        <option value="0">P.O.</option>
-                                        <option value="0">Precio</option>                    
-                                   </select>
-                                </div>
-                                <label class="control-label">Valor</label>
-                                    <div class="form-group">
-                                        <input type="text" id="txt_vslot" name="txt_valor" class="form-control input-circle" placeholder="Valor de la busqueda">
+                            <div class="col-md-4">
+                                <label class="control-label col-md-4">Buscar por</label>
+                                    <div class="dropdown col-md-8">
+                                          <button class="btn btn-default dropdown-toggle input-circle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Seleccione una opción
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" align="center">
+                                            <li><a href="#">Factura</a></li>
+                                            <li><a href="#">P.O.</a></li>
+                                            <li><a href="#">Fecha</a></li>
+                                          </ul>
+                                    </div><br><br>
+                               
+                                <div class="form-group" align="center">
+                                    <div class="col-md-12">
+                                       <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+                                           <input type="text" class="form-control" name="from">
+                                           <span class="input-group-addon">
+                                           Hasta</span>
+                                           <input type="text" class="form-control" name="to">
+                                       </div>
+                                       <!-- /input-group -->
+                                       <span class="help-block">
+                                       Seleccione el rango de fecha </span>
                                     </div>
-                                    
+                                </div>
+                                 <label class="control-label col-md-5">Valor</label>
+                                <div class="input-group col-md-7">
+                                      <span class="input-group-addon input-circle-left" id="basic-addon1"><i class="icon-search"></i></span>
+                                      <input type="text" class="form-control input-circle" placeholder="Busqueda" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="col-md-12" align="center">
+                                <ul class="list-group">
+                                        <li class="list-group-item">
+                                    <div class="date-picker" data-date-format="mm/dd/yyyy">
+                                    </div>
+                                        </li>
+                                </ul>
+                                </div>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-8">
+                            <h4 class="block">Generar reportes</h4>
                               <div class="col-md-12" align="center">
                                   <a href="#" class="btn btn-success">Generar PDF</a>
                                   <a href="#" class="btn btn-success">GenerarWORD</a>
                                   <a href="#" class="btn btn-success">Generar EXCEL</a>
                               </div><br><br><br>
-                                <!--<div class="well col-md-12" align="center">
-                                    <h4 class="col-md-6">Número de factura</h4>
-                                    <h4 class="col-md-6">Fecha de Factura</h4>
-                                    <p class="col-md-6">FACT-2353435-243</p>
-                                    <p class="col-md-6">12/12/12</p>
-                                </div>-->
                                <div class="col-md-12">
-                                    <table class="table table-striped table-hover table-bordered" id="compras_table">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                        <p align="center">Nombre</p>
-                                        </th>
-                                        <th >
-                                        <p align="center">Cantidad</p>
-                                        </th>
-                                        <th >
-                                        <p align="center">Precio</p>
-                                        </th>
-                                        <th>
-                                        <p align="center">Color</p>
-                                        </th>
-                                        <th>
-                                        <p align="center">Operaciones</p>
-                                        </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">
-                                                        <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">
-                                                        <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <h4 class="block">Información de la compra</h4>
                                     <ul class="list-group col-md-12">
                                         <li class="list-group-item">
-                                             <p class="col-md-4">Número de Factura</p>     
-                                             <p class="col-md-3">FACT-1212-12</p>
-                                              <p class="col-md-2">Fecha de Factura</p>     
-                                             <p class="col-md-2">12/12/12</p><br>
-                                        </li>
-                                         <li class="list-group-item">
-                                             <p class="col-md-4">Precio total de la compra</p>     
-                                             <p class="col-md-3">$250.00</p>
-                                              <p class="col-md-2">P.O.</p>     
-                                             <p class="col-md-2">$250.00</p><br>
-                                        </li>
-                                        <li class="list-group-item">
-                                           <p class="col-md-12">Archivos adjuntos</p>
-                                            <p class="col-md-12 col-md-offset-3">
-                                               <i class="icon-folder-open" style="font-size:50px;"></i>
-                                               <i class="icon-film" style="font-size:50px;"></i>
-                                               <i class="icon-envelope" style="font-size:50px;"></i>
-                                               <i class="icon-edit" style="font-size:50px;"></i>
-                                                <i class="icon-folder-open" style="font-size:50px;"></i>
-                                                <i class="icon-film" style="font-size:50px;"></i>
-                                           </p><br><br><br><br>
+                                            <table class="table table-striped table-hover table-bordered" id="compras_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                <p align="center">Nombre</p>
+                                                </th>
+                                                <th >
+                                                <p align="center">Cantidad</p>
+                                                </th>
+                                                <th >
+                                                <p align="center">Precio</p>
+                                                </th>
+                                                <th>
+                                                <p align="center">Color</p>
+                                                </th>
+                                                <th>
+                                                <p align="center">Operaciones</p>
+                                                </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <p align="center">Tela</p>
+                                                        </td>
+                                                        <td>
+                                                            <p align="center">199 yds</p>
+                                                        </td>
+                                                        <td>
+                                                            <p align="center">$21.12</p>
+                                                        </td>
+                                                        <td>
+                                                            <p align="center">Rojo</p>
+                                                        </td>
+                                                        <td>
+                                                            <p align="center">
+                                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p align="center">Tela</p>
+                                                        </td>
+                                                        <td>
+                                                            <p align="center">199 yds</p>
+                                                        </td>
+                                                        <td>
+                                                            <p align="center">$21.12</p>
+                                                        </td>
+                                                        <td>
+                                                            <p align="center">Rojo</p>
+                                                        </td>
+                                                        <td>
+                                                            <p align="center">
+                                                                <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </li>
                                     </ul>
+                                    <h4 class="block">Información de la compra</h4>
+                                    <div class="portlet-body">
+                                        <ul class="list-group col-md-12">
+                                            <li class="list-group-item">
+                                                 <p class="col-md-4">Número de Factura</p>     
+                                                 <p class="col-md-3">FACT-1212-12</p>
+                                                  <p class="col-md-2">Fecha de Factura</p>     
+                                                 <p class="col-md-2">12/12/12</p><br>
+                                            </li>
+                                             <li class="list-group-item">
+                                                 <p class="col-md-4">Precio total de la compra</p>     
+                                                 <p class="col-md-3">$250.00</p>
+                                                  <p class="col-md-2">P.O.</p>     
+                                                 <p class="col-md-2">$250.00</p><br>
+                                            </li>
+                                            <li  class="list-group-item">
+                                                 <div class="panel-heading">
+                                                    <h6 class="panel-title">
+                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse_1">
+                                                    Archivos adjuntos </a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse_1" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <p class="col-md-12 col-md-offset-3">
+                                                           <i class="icon-folder-open" style="font-size:50px;"></i>
+                                                           <i class="icon-film" style="font-size:50px;"></i>
+                                                           <i class="icon-envelope" style="font-size:50px;"></i>
+                                                           <i class="icon-edit" style="font-size:50px;"></i>
+                                                            <i class="icon-folder-open" style="font-size:50px;"></i>
+                                                        <i class="icon-film" style="font-size:50px;"></i>
+                                                       </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                     <div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">

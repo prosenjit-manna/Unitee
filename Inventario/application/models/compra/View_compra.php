@@ -82,7 +82,7 @@ class View_compra extends CI_Model implements PInterface {
     }
 
     public function _jsLoader() {
-        return array("table_loader();","TableEditable.init();","FormFileUpload.init();","ComponentsPickers.init();");
+        return array("table_loader();","ComponentsPickers.init();");
     }
 
     public function _rols() {
