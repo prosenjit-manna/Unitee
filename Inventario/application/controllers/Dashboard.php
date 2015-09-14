@@ -508,9 +508,9 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-         //$this->load->library("notifications");
-         print_r(explode(".", "hola.png"));
         
+         $this->load->library("pdf");
+         
     }
     
     
