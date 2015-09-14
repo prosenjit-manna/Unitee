@@ -604,6 +604,7 @@
              $("#send_buy").attr("disabled" , true);
         });
         task.success_callback(function (r) {
+            window.location.href = "<?php echo site_url("/0/compra=new_compra?sucess=true"); ?>";
             $("#send_buy").html("Guardar");
             $("#send_buy").attr("disabled", false);
             
