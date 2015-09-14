@@ -105,6 +105,26 @@ class view_producto extends CI_Model implements PInterface {
         
     }
     
+    public function GetProductById($id){
+        $query = "SELECT
+                  producto.id_producto as 'id' , 
+                  producto.sku as 'sku',
+                  producto.nombre as 'nombre' , 
+                  color.nombre as 'color',
+                  concat(producto.margen , ' ' , unidad.nombre ) as 'margen',
+                  producto.cantidad as 'cantidad',
+                  producto.descripcion as 'descripcion',
+                  producto.precio as 'precio' ,
+                  producto.precio_est_unidad as 'estimado'
+                  FROM producto 
+                  LEFT JOIN color ON color.id_color=producto.id_color
+                  LEFT JOIN unidad ON unidad.id_unidad=producto.id_unidad
+                  WHERE id_producto LIKE ? ";
+        return $this->db
+                ->query($query , array($id))
+                ->result()[0];
+    }
+    
     public function count_products(){
         return $this->db
                 ->query("SELECT COUNT(*) as 'count' FROM producto")

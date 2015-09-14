@@ -94,7 +94,25 @@
                                     <?php
                                     $prod_id = isset($_REQUEST['i']) ? $_REQUEST['i'] : NULL;
                                     if (!is_null($prod_id)) {
+                                        $data           = NULL;
+                                        $instance       = &get_instance();
                                         
+                                        $instance->load->model("productos/view_producto" , "prod");
+                                        $prod = $instance->prod->GetProductById($prod_id);
+                                        
+                                        $data = '<tr id="table_' . $prod->id . '">'
+                                        . '<td>' . '<p align="center">' . $prod->nombre . '</p>' . '</td>'
+                                        . '<td>' . '<p align="center">' . $prod->color . '</p>' . '</td>'
+                                        . '<td>' . '<p id="cant_node" align="center"><input id="ncant" class="form-control input-circle" type="number" value="" placeholder=" digite la cantidad" /></p>'. '</td>'
+                                        . '<td>' . '<p id="price_node" align="center"><input id="nprice" class="form-control input-circle" type="number" value="" placeholder=" digite el precio" /></p>' . '</td>'
+                                        . '<td>' . '<p align="center">'
+                                        . '<p align="center">'
+                                        . '<a id="save_node" class="" href="javascript:save_node();"><i class="icon-save" style="font-size: 25px; color:#FA5858;"></i></i></a>'      
+                                        . '&nbsp;&nbsp;<a class="" onclick="table_node(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>'
+                                        . '</p>'
+                                        . '</td></tr>';
+                                        
+                                        echo $data;
                                     }
                                     ?>
                                 </tbody>
@@ -331,6 +349,37 @@
 
     var $pid = null;
     var $node_table = null;
+    
+    function CheckNodes(){
+        setInterval(function(){
+          
+           var sum = IsTableNode() + IsProvider() +IsInvoice() + IsPrice();
+           if(sum >= 4) $("#send_buy").attr("disabled", false);
+           else $("#send_buy").attr("disabled", true);
+
+        } , 500);
+    };
+    
+    function IsTableNode(){
+        if($("#table_prod tr ").length <= 0){ return 0; }
+        else{ return 1;}
+    }
+    
+    function IsProvider(){
+          if($pid === null){return 0;}
+          else{return 1;}
+    }
+    
+    function IsInvoice(){
+        if($("#txt_factura").val() == "") return 0;
+        else return 1;
+    }
+    
+    function IsPrice(){
+        var p = $("price_prod").val();
+        if(p != null ||  p != "IsNaN" || p != 0  ){return 1;}
+        else{ return 0;} 
+    }
    
     function validar() {
 
@@ -342,8 +391,9 @@
         else {
             $("#send_buy").attr("disabled", false);
         }
-    }
-    ;
+    };
+    
+   
 
      function validarModal() {
         var cantidad = $("#cant_prod").val();
@@ -422,48 +472,6 @@
 
             }
         });
-    };
-
-    var table_loader = function () {
-
-        var table = $('#productos_table');
-
-        var oTable = table.dataTable({
-            "lengthMenu": [
-                [5, 15, 30, -1],
-                [5, 10, 30, "Todos"]
-            ],
-            "pageLength": 5,
-            "language": {
-                "aria": {
-                    "sortAscending": ": activate to sort column ascending",
-                    "sortDescending": ": activate to sort column descending"
-                },
-                "emptyTable": "No data available in table",
-                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ productos",
-                "infoEmpty": "No se ha encontrado productos ...",
-                "infoFiltered": "(filtered1 from _MAX_ total records)",
-                "lengthMenu": "Mostar _MENU_ Productos",
-                "search": "Buscar:",
-                "zeroRecords": "Ningun producto encontrado ..."
-
-            },
-            "columnDefs": [{// set default column settings
-                    'orderable': true,
-                    'targets': [0]
-                }, {
-                    "searchable": true,
-                    "targets": [0]
-                }],
-            "order": [
-                [0, "asc"]
-            ]
-        });
-
-        var tableWrapper = $('#productos_table_wrapper');
-        tableWrapper.find('.dataTables_length select').select2();
-
-
     };
 
     var select_color = function (i) {
@@ -670,5 +678,23 @@
 
 
 
+    var save_node = function(){
+        
+     
+        var cant        = $("#ncant").val();
+        var price       = $("#nprice").val();
+        
+        if(price == "" || cant == "")
+        {
+            alert("Debe de especificar un precio y una cantidad ");
+            return;
+        }
+        
+        $("#cant_node").html(cant);
+        $("#price_node").html(price);
+        $("#save_node").attr("disabled" , true);
+        $("#save_node").html('<i class="icon-ok" style="font-size: 25px; color:#FA5858;"></i></i>');
+        
+    };
 
 </script>

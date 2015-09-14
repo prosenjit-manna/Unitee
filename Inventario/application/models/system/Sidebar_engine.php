@@ -163,6 +163,12 @@ class Sidebar_engine extends CI_Model {
 
     }
     
+    public function _ParseJson(){
+        
+        return json_encode($this->_init());
+        
+    }
+    
     public function _echo(){
          
          $the_sidebar   = $this->_init();

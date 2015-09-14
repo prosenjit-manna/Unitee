@@ -102,6 +102,15 @@ class Dashboard extends CI_Controller {
         
          $this->load->model("system/sidebar_engine");
          $this->sidebar_engine->_echo();
+         
+         /*  //echo json_encode($this->sidebar_engine->_ParseJson()); 
+          * 
+          * OJO LA NUEVA VERSION  del sidebar LA TRANSFORMADA Y ECO SERA JSON 
+          * ESTO ES PARA QUE LA CARGA SEA MAS RAPIDA ... 
+          * 
+          * VERSION HTML -> JSON PRONTO 1.2
+          * 
+          * **/
     }
     
     

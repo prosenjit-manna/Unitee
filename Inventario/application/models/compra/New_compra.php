@@ -95,9 +95,11 @@ class New_compra extends CI_Model implements PInterface {
 
     public function _jsLoader() {
         return array(
-            "table_loader();", 
-            "TableEditable.init();",
-            "FormFileUpload.init();" );
+                 "CheckNodes();",
+                "TableEditable.init();",
+                "FormFileUpload.init();"
+               
+        );
     }
 
     public function _rols() {
