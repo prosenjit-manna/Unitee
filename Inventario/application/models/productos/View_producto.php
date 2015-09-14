@@ -248,7 +248,7 @@ class view_producto extends CI_Model implements PInterface {
 
             $this->load->library("notifications");
 
-            $msj = "Producto " . $r->nombre . ' Terminado  (' . $r->descripcion . ')[Cantidad en inventario : ' . $r->cantidad . ']';
+            $msj = "Producto " . $r->nombre . " Terminado  , [Color: " . $r->color_name . '][Cantidad en inventario : ' . $r->cantidad . ']';
 
 
             $cant = $r->cantidad . " " . $r->u_name;
