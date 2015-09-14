@@ -35,20 +35,27 @@
                         </div>
                         <div class="row col-md-12">
                             <div class="col-md-4">
-                                <label class="control-label col-md-4">Buscar por</label>
-                                    <div class="dropdown col-md-8">
-                                          <button class="btn btn-default dropdown-toggle input-circle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Seleccione una opción
-                                            <span class="caret"></span>
-                                          </button>
-                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" align="center">
-                                            <li><a href="#">Factura</a></li>
-                                            <li><a href="#">P.O.</a></li>
-                                            <li><a href="#">Fecha</a></li>
-                                          </ul>
-                                    </div><br><br>
-                               
-                                <div class="form-group" align="center">
+                                <div class="portlet light bordered col-md-12">
+                                    <label class="control-label col-md-5">Buscar por</label>
+                                        <div class="dropdown col-md-7">
+                                              <button class="btn btn-default dropdown-toggle input-circle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                Seleccionar
+                                                <span class="caret"></span>
+                                              </button>
+                                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" align="center">
+                                                <li><a href="#">Factura</a></li>
+                                                <li><a href="#">P.O.</a></li>
+                                                <li><a href="#">Producto</a></li>
+                                              </ul>
+                                        </div><br><br>
+                                     <label class="control-label col-md-5">Valor</label>
+                                    <div class="input-group col-md-7">
+                                       <input class="form-control input-circle-left" placeholder="Busqueda" type="text">
+                                        <span class="input-group-addon input-circle-right">
+                                            <a href="#"><i class="icon-search"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
                                     <div class="col-md-12">
                                        <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
                                            <input type="text" class="form-control" name="from">
@@ -60,31 +67,30 @@
                                        <span class="help-block">
                                        Seleccione el rango de fecha </span>
                                     </div>
-                                </div>
-                                 <label class="control-label col-md-5">Valor</label>
-                                <div class="input-group col-md-7">
-                                      <span class="input-group-addon input-circle-left" id="basic-addon1"><i class="icon-search"></i></span>
-                                      <input type="text" class="form-control input-circle" placeholder="Busqueda" aria-describedby="basic-addon1">
-                                </div>
-                                <div class="col-md-12" align="center">
-                                <ul class="list-group">
-                                        <li class="list-group-item">
-                                    <div class="date-picker" data-date-format="mm/dd/yyyy">
+                                    <div class="col-md-12" align="center">
+                                        <div class="date-picker" data-date-format="mm/dd/yyyy">
+                                        </div>
                                     </div>
-                                        </li>
-                                </ul>
-                                </div>
                             </div>
                             <div class="col-md-8">
-                            <h4 class="block">Generar reportes</h4>
-                              <div class="col-md-12" align="center">
-                                  <a href="#" class="btn btn-success">Generar PDF</a>
-                                  <a href="#" class="btn btn-success">GenerarWORD</a>
-                                  <a href="#" class="btn btn-success">Generar EXCEL</a>
-                              </div><br><br><br>
+                              <div class="portlet light bordered col-md-12">
+                                <h4 class="block">Reportes</h4>
+                                  <div align="center">
+                                      <a href="#" class="btn btn-success glyphicon glyphicon-file"> PDF</a>
+                                      <a href="#" class="btn btn-success glyphicon glyphicon-print"> Imprimir</a>
+                                      <a href="#" class="btn btn-success glyphicon glyphicon-list-alt"> Excel</a>
+                                  </div><br>
+                              </div><br><br>
                                <div class="col-md-12">
-                                    <ul class="list-group col-md-12">
-                                        <li class="list-group-item">
+                                  <div class="portlet light bordered col-md-12">
+                                        <ul class="list-group col-md-12">
+                                            <li class="list-group-item">
+                                                 <p class="col-md-4">Número de compra</p>     
+                                                 <p class="col-md-3">FACT-1212-12</p>
+                                                  <p class="col-md-4">Fecha de ´compra</p>     
+                                                 <p class="col-md-1">12/12/12</p><br>
+                                            </li>
+                                        </ul>
                                             <table class="table table-striped table-hover table-bordered" id="compras_table">
                                                 <thead>
                                                     <tr>
@@ -145,24 +151,18 @@
                                                         </td>
                                                     </tr>
                                                 </tbody>
-                                            </table>
-                                        </li>
-                                    </ul>
-                                    <h4 class="block">Información de la compra</h4>
-                                    <div class="portlet-body">
+                                            </table><br>
                                         <ul class="list-group col-md-12">
-                                            <li class="list-group-item">
-                                                 <p class="col-md-4">Número de Factura</p>     
-                                                 <p class="col-md-3">FACT-1212-12</p>
-                                                  <p class="col-md-2">Fecha de Factura</p>     
-                                                 <p class="col-md-2">12/12/12</p><br>
-                                            </li>
                                              <li class="list-group-item">
-                                                 <p class="col-md-4">Precio total de la compra</p>     
+                                                 <p class="col-md-5">Precio total de la compra</p>     
                                                  <p class="col-md-3">$250.00</p>
                                                   <p class="col-md-2">P.O.</p>     
                                                  <p class="col-md-2">$250.00</p><br>
                                             </li>
+                                        </ul>
+                                        </div>
+                                    <div class="portlet-body">
+                                        <ul class="list-group col-md-12">
                                             <li  class="list-group-item">
                                                  <div class="panel-heading">
                                                     <h6 class="panel-title">
