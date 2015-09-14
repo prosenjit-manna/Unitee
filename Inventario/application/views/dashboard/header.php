@@ -6,9 +6,7 @@
 
 <meta charset="utf-8"/>
 <title><?php echo isset($title) ? $title : "Unitee | Dashboard" ; ?></title>
-<link rel='shortcut icon' type='image/x-icon' href='<?php echo $route; ?>images/dashboard/icon.ico' />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="" name="description"/>
 <meta content="" name="author"/>
@@ -45,6 +43,7 @@
 
 ?>
 <!-- END PAGE LEVEL PLUGIN STYLES -->
+<link rel='shortcut icon' type='image/x-icon' href='<?php echo $route; ?>images/dashboard/icon.ico' />
 
 <!-- BEGIN PAGE STYLES -->
 <link href="<?php echo $route;?>assert/dashboard/css/tasks.css" rel="stylesheet" type="text/css"/>
@@ -58,7 +57,8 @@
 <link href="<?php echo $route;?>assert/dashboard/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 
-<link rel="shortcut icon" href="favicon.ico"/>
+
+
 </head>
 <body class="page-header-fixed page-footer-fixed page-quick-sidebar-over-content">
 <!-- BEGIN HEADER -->

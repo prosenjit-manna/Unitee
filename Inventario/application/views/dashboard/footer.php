@@ -15,7 +15,8 @@
 </div>
 
 <script src="<?php echo $route;?>assert/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="assert/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="<?php echo $route;?>assert/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+
 
 <script src="<?php echo $route;?>assert/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -54,12 +55,16 @@
     }
 ?>
 
+
+
+
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
+
+var $uri = "<?php echo site_url(); ?>";
+    
 jQuery(document).ready(function() {    
  
-   var $uri = "<?php echo site_url(); ?>"; 
-   
    try{
         Metronic.init(); // init metronic core componets
         Layout.init(); // init layout
@@ -88,8 +93,9 @@ jQuery(document).ready(function() {
    }
    
     try{
-       var meta = new metadata($uri);
-       meta.get_logo();
+        //DEPRECADO VERSION 1.2
+       //var meta = new metadata($uri);
+       //meta.get_logo();
    }catch(ex){
        console.log("Error al momento de cargar las metas " + ex.message);
    }
