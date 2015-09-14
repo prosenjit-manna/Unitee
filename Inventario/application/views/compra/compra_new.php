@@ -98,17 +98,17 @@
                                         $instance       = &get_instance();
                                         
                                         $instance->load->model("productos/view_producto" , "prod");
-                                        $prod = $instance->prod->GetProductById($prod_id);
+                                        $p = $instance->prod->GetProductById($prod_id);
                                         
-                                        $data = '<tr id="table_' . $prod->id . '">'
-                                        . '<td>' . '<p align="center">' . $prod->nombre . '</p>' . '</td>'
-                                        . '<td>' . '<p align="center">' . $prod->color . '</p>' . '</td>'
+                                        $data = '<tr id="table_' . $p->id . '">'
+                                        . '<td>' . '<p align="center">' . $p->nombre . '</p>' . '</td>'
+                                        . '<td>' . '<p align="center">' . $p->color . '</p>' . '</td>'
                                         . '<td>' . '<p id="cant_node" align="center"><input id="ncant" class="form-control input-circle" type="number" value="" placeholder=" digite la cantidad" /></p>'. '</td>'
                                         . '<td>' . '<p id="price_node" align="center"><input id="nprice" class="form-control input-circle" type="number" value="" placeholder=" digite el precio" /></p>' . '</td>'
                                         . '<td>' . '<p align="center">'
                                         . '<p align="center">'
                                         . '<a id="save_node" class="" href="javascript:save_node();"><i class="icon-save" style="font-size: 25px; color:#FA5858;"></i></i></a>'      
-                                        . '&nbsp;&nbsp;<a class="" onclick="table_node(' . $prod->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>'
+                                        . '&nbsp;&nbsp;<a class="" onclick="table_node(' . $p->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>'
                                         . '</p>'
                                         . '</td></tr>';
                                         
@@ -694,7 +694,7 @@
         $("#price_node").html(price);
         $("#save_node").attr("disabled" , true);
         $("#save_node").html('<i class="icon-ok" style="font-size: 25px; color:#FA5858;"></i></i>');
-        
+        total_price();
     };
 
 </script>
