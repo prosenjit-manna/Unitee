@@ -509,7 +509,7 @@ class Dashboard extends CI_Controller {
 
     public function test(){
         
-         $this->load->library("pdf");
+         $this->load->library("excel");
          
     }
     
