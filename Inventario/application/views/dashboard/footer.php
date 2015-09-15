@@ -93,9 +93,18 @@ jQuery(document).ready(function() {
    }
    
     try{
-        //DEPRECADO VERSION 1.2
-       //var meta = new metadata($uri);
-       //meta.get_logo();
+       if( window.localStorage.getItem("metadata") === null){
+           /**
+            * @author Rolando Arriaza
+            * @version 1.0
+            *   SISTEMA DE METADATA PARA UNA MEJOR 
+            *   CARGA SE GENERA EN UN ALMACENAMIENTO LOCAL.
+            *   
+            *   -------------------------------------
+            *   ESTA APP NO LLEVA CARGA DE METADATOS ....
+            * */
+           
+       }
    }catch(ex){
        console.log("Error al momento de cargar las metas " + ex.message);
    }

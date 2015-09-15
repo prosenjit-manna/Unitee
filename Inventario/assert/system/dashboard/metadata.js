@@ -25,7 +25,6 @@ var metadata = function(uri){
         };
         tasking.success_callback(function(r){
             var t = JSON.parse(r);
-            $("#system_logo").attr("src" , base + "images/dashboard/" + t.value);
         });
         tasking.do_task();
     };

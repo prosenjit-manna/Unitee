@@ -8,6 +8,7 @@ class Info_engine extends CI_Model{
         $this->load->database();
     }
     
+    
     public function set_adress(array $adress){
         $e = $this->db->insert("direccion" , $adress); 
         if($e){
@@ -16,6 +17,7 @@ class Info_engine extends CI_Model{
             return NULL;
         }
     }
+    
     
     public function set_contact(array $contact){
         $e = $this->db->insert("contacto" , $contact); 

@@ -2,7 +2,7 @@
 
 /**
    @@author: Lieison S.A de C.V
-   @@version: 1.5
+   @@version: 1.1
  * @@type: system
  * @@name: Controlador del login 
  * @@description : 
@@ -27,6 +27,7 @@ class Login extends CI_Controller {
         $this->load->helper("form");
         $this->load->library('base_url');
         $this->load->library("session");
+        $this->load->helper("setup");
         
         $this->route = $this->base_url->GetBaseUrl();
         
@@ -47,9 +48,19 @@ class Login extends CI_Controller {
     }
     
     public function index($error = null ){
+        
+        
+        //EN LA VERSION 1.1 SE AGREGO VERIFICAR LA CONEXION DE INTERNET
+        $conection = internet_conection();
+        if(!$conection){
+            $this->load->view("errors/html/noconnect" , array("route" => site_url()));
+            return;
+        }
 
+        //verificamos las metas
         $meta = NULL;
         
+        //verificamos si existe algun error en el cual nos tenemos que dar cuenta
         if($error != null)
         {
             switch($error)
@@ -60,6 +71,7 @@ class Login extends CI_Controller {
             }
         }
         
+         //cargamos la vista con todo lo necesario ... la ruta o route siempre es necesario
          $this->load->view(
                  "login/index" , 
                  array( 

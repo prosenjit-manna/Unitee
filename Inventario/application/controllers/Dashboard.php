@@ -3,11 +3,42 @@
 
 /**
    @@author: Lieison S.A de C.V
-   @@version: 1.5
+   @@version: 1.5.4
  * @@type: system
  * @@name: Controlador de dashboard
  * @@description : el controlador mas importante del sistema
  * @@id : system
+ * 
+ * ------------------------------------------------------------------------
+ *                  LO NUEVO EN LAS VERSIONES
+ * ------------------------------------------------------------------------
+ * 
+ * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * 
+ * VERSION 1.5.1 : 
+ *                  SE AGREGO LA VERIFICACION DE CONEXION A INTERNET 
+ *                  SE AGREGO LA VISTA DE CONTROL DE CONEXION INTERNET
+ * 
+ * VERSION 1.5.2 :
+ *                  SE ARREGLARON ERRORES DE SEGURIDAD Y FIABILIDAD
+ * 
+ * VERSION 1.5.3 :  
+ *               
+ *                  SE CREARON NUEVAS FUNCIONES , ESTAS FUNCIONES SON 
+ *                  PARA NOTIFICACIONES.
+ * 
+ * VERSION 1.5.4 :
+ *                  SE AGREGO EN EL INDEX LA FUNCION DE STOPWATCH 
+ *                  ESTO SE PUEDE APRECIAR CON LA VARIABLE $ttl
+ * 
+ *                  SE ARREGLARON ALGUNOS BUGS
+ *                  SE MODIFICO LA EL ALGORITMO DE INDEX EN PRO DE CARGA
+ *                  DASHBOARD.
+ * 
+ *                  SE CREO UNA LIBRERIA QUE CONTROLA LOS PARAMETROS DE 
+ *                  JAVASCRIPT , STYLE , TITLE TIPO INTERFAZ PERO SOLO 
+ *                  PARA DASHBOARD.
+ * 
  */
 
 
@@ -158,7 +189,7 @@ class Dashboard extends CI_Controller {
         //en dado caso no exista tira el error
         $conection = internet_conection();
         if(!$conection){
-            $this->load->view("errors/html/404" , array("route" => site_url()));
+            $this->load->view("errors/html/noconnect" , array("route" => site_url()));
             return;
         }
         
@@ -198,31 +229,34 @@ class Dashboard extends CI_Controller {
 
         if($model === NULL){
             
+             //Libreria agregada en version 1.5.4 
+             $this->load->library("dashboard_system");
+            
+             /**
+              * DASHBOARD SE HA TRANSFORMADO TIPO INTERFAZ PERO 
+              * CON CIERTAS LIMITACIONES EN ELLA. SE AGREGO LA FUNCIONES 
+              * QUE PERMITE AGREGAR MAS CSS , TITULO Y CARGA EN JAVASCRIPT 
+              * ***/
+             
+             //VERSION 1.5.4
+             $vars['styles']        = $this->dashboard_system->_css();
+             $vars['title']         = $this->dashboard_system->_title();
+             
+             //VISTAS :3
              $this->load->view("dashboard/header" , $vars );
              $this->load->view("dashboard/left_sidebar" , $vars);
              
-             /**
-              * Peticiones generadas por el sistema que se cargaran en el dashboard
-              * estas peticiones esta controladas unicamente por el sistema 
-              * div de control <div id="request"></div>
-              * dependencia de jtask + site_url()
-              */
-             $js_request        = 'var $peticiones = $("#request");'
-                                . "var r = new Request('" . site_url() ."');"
-                                . "r.password();"
-                                . "";
+             //$(document).ready() JAVASCRIPT CARGAS
+             $vars['js_loader']     = $this->dashboard_system->_javascript();
              
-             
-             $vars['js_loader'] = array(
-                 $js_request,
-                 "widget_notification();widget_count_product();" //    SOLO PARA UNITEE
-             );
-             
+             //MAIN DEL DASHBOARD
              $this->load->view("dashboard/main" , $vars);
              
-            $ttl                = round(($this->GetTime() - $init_time) , 6);
-            $vars['ttl']        = $ttl;
+                //TTL O CRONOMETRO
+                $ttl                = round(($this->GetTime() - $init_time) , 6);
+                $vars['ttl']        = $ttl;
              
+              //VISTA DEL FOOTER
              $this->load->view("dashboard/footer" , $vars);
         }
         else
@@ -359,7 +393,7 @@ class Dashboard extends CI_Controller {
             $ttl                = round(($this->GetTime() - $init_time) , 6);
             $vars['ttl']        = $ttl;
             
-            
+            //EJECUTANDO LA VISTA DEL FOOTER
             $this->load->view("dashboard/footer" , $vars );
            
         }
