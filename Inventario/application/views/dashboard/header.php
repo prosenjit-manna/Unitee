@@ -5,11 +5,12 @@
 <head>
 
 <meta charset="utf-8"/>
-<title><?php echo isset($title) ? $title : "Unitee | Dashboard" ; ?></title>
+<title id="dashboard_title"><?php echo isset($title) ? $title : "Unitee | Dashboard" ; ?></title>
+<meta content="<?php echo isset($title) ? $title : "Unitee | Dashboard" ; ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="" name="description"/>
-<meta content="" name="author"/>
+<meta content="" name="lieison"/>
 
 
 
@@ -72,7 +73,6 @@
 		<div class="page-logo">
 			<a href="index.html" class="col-md-offset-2 col-xs-offset-4">
                             <img id="system_logo" src="<?php echo $route; ?>images/dashboard/logo.png" alt="logo" title="logo" width="130px" class="logo-default"/>
-                           
 			</a>
 		</div>
 		<!-- END LOGO -->
@@ -88,7 +88,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<i class="icon-bell"></i>
                                         <span id="notification_count" class="badge badge-default">
-					0 </span>
+					...</span>
 					</a>
                                     <ul  class="dropdown-menu">
 						<li id="notification_header">
@@ -98,7 +98,7 @@
 						</li>
 						<li>
                                                     <ul id="notification_body" class="dropdown-menu-list scroller" style="height: 250px;">
-								
+								...
                                                     </ul>
 						</li>
                                                 <li id="notification_footer" class="external">

@@ -29,8 +29,14 @@ var notifications = function(uri){
               var parse         = JSON.parse(d);
               var count         = parse.count;
               var data          = parse.data;
+              
               h.html("<p>" + count  +" Notificaciones Pendientes</p>");
-              c.html(count);
+              
+              if(parseInt(count) != 0)
+                    c.html(count);
+              else
+                    c.html("");
+                
               b.html("");
               if(count == 0){
                      b.html('<li><a href="#"><span class="label label-sm label-icon label-success"><i class="icon-thumbs-up"></i></span>No hay notificaciones<span class="time"> Ahora</span></a></li>');
@@ -52,7 +58,7 @@ var notifications = function(uri){
                 });
               }
               
-              console.log("Iteracion...");
+             // console.log("Iteracion...");
               
              
         });
