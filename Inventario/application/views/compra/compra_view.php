@@ -35,18 +35,15 @@
                         </div>
                         <div class="row col-md-12">
                             <div class="col-md-4">
-                                <div class="portlet light bordered col-md-12">
-                                    <label class="control-label col-md-5">Buscar por</label>
-                                        <div class="dropdown col-md-7">
-                                              <button class="btn btn-default dropdown-toggle input-circle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                Seleccionar
-                                                <span class="caret"></span>
-                                              </button>
-                                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" align="center">
-                                                <li><a href="#">Factura</a></li>
-                                                <li><a href="#">P.O.</a></li>
-                                                <li><a href="#">Producto</a></li>
-                                              </ul>
+                                <div class="portlet light bordered col-md-12"><br>
+                                    <label class="control-label col-md-4">Ver por</label>
+                                        <div class="dropdown col-md-8">
+                                           <select required="required" id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">
+                                                <option value="-1">Seleccionar</option>
+                                                <option value="1">P.O.</option>
+                                                <option value="2">Factura</option>
+                                                <option value="3">Producto</option>                     
+                                            </select>
                                         </div><br><br>
                                      <label class="control-label col-md-5">Valor</label>
                                     <div class="input-group col-md-7">
@@ -54,23 +51,39 @@
                                         <span class="input-group-addon input-circle-right">
                                             <a href="#"><i class="icon-search"></i></a>
                                         </span>
-                                    </div>
+                                    </div><br>
                                 </div>
-                                    <div class="col-md-12">
-                                       <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
-                                           <input type="text" class="form-control" name="from">
-                                           <span class="input-group-addon">
-                                           Hasta</span>
-                                           <input type="text" class="form-control" name="to">
+                                   <div class="portlet light bordered col-md-12">
+                                        <div align="center">
+                                          <div class="input-group input-medium date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+                                              <input type="text" class="form-control" name="from">
+                                              <span class="input-group-addon">
+                                              Hasta</span>
+                                              <input type="text" class="form-control" name="to">
+                                          </div>
+                                          <!-- /input-group -->
+                                          <span class="help-block">
+                                          Seleccione el rango de fecha </span>
                                        </div>
-                                       <!-- /input-group -->
-                                       <span class="help-block">
-                                       Seleccione el rango de fecha </span>
-                                    </div>
-                                    <div class="col-md-12" align="center">
-                                        <div class="date-picker" data-date-format="mm/dd/yyyy">
-                                        </div>
-                                    </div>
+                                       <div class="col-md-12" align="center">
+                                           <div class="date-picker" data-date-format="mm/dd/yyyy">
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="portlet light bordered col-md-12">
+                                        <li class="list-group-item">
+                                             Compra de tela<span class="badge badge-margine">
+                                            1/09/2015 </span>
+                                        </li>
+                                        <li class="list-group-item">
+                                             Compra de botones<span class="badge badge-margine">
+                                            10/09/2015 </span>
+                                        </li>
+                                        <li class="list-group-item">
+                                             Compra de lino<span class="badge badge-margine">
+                                            20/20/2015 </span>
+                                        </li>
+                                   </div>
                             </div>
                             <div class="col-md-8">
                               <div class="portlet light bordered col-md-12">
