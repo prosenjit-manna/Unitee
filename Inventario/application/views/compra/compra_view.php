@@ -36,17 +36,17 @@
                     <div class="row col-md-12">
                         <div class="col-md-4">
                             <div class="portlet light bordered col-md-12"><br>
-                                <label class="control-label col-md-4">Ver por</label>
-                                <div class="dropdown col-md-8">
-                                    <select required="required" id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">
+                                <label class="control-label col-md-3">Ver</label>
+                                <div class="dropdown col-md-9">
+                                    <select required="required" id="select" onchange="" style="width:150px;" name="txt_pais" class="form-control input-circle">
                                         <option value="-1">Seleccionar</option>
                                         <option value="1">P.O.</option>
                                         <option value="2">Factura</option>
                                         <option value="3">Producto</option>                     
                                     </select>
                                 </div><br><br>
-                                <label class="control-label col-md-5">Valor</label>
-                                <div class="input-group col-md-7">
+                                <label class="control-label col-md-4">Valor</label>
+                                <div class="input-group col-md-8">
                                     <input class="form-control input-circle-left" placeholder="Busqueda" type="text">
                                     <span class="input-group-addon input-circle-right">
                                         <a href="#"><i class="icon-search"></i></a>
@@ -90,20 +90,19 @@
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <div class="portlet light bordered col-md-12">
-                                <h4 class="block">Reportes</h4>
-                                <div align="center">
+                                
+                                <div class="col-md-12">
+                                    <h4 class="col-md-3">Exportar a:</h4>
                                     <a href="#" class="btn btn-success glyphicon glyphicon-file"> PDF</a>
                                     <a href="#" class="btn btn-success glyphicon glyphicon-print"> Imprimir</a>
                                     <a href="#" class="btn btn-success glyphicon glyphicon-list-alt"> Excel</a>
                                 </div><br>
-                            </div><br><br>
                                 <div class="portlet light bordered col-md-12">
                                     <ul class="list-group col-md-12">
                                         <li class="list-group-item">
                                             <p class="col-md-4">Número de compra</p>     
-                                            <p class="col-md-3">FACT-1212-12</p>
-                                            <p class="col-md-4">Fecha de ´compra</p>     
+                                            <p class="col-md-2">COM-12</p>
+                                            <p class="col-md-4">Fecha de compra</p>     
                                             <p class="col-md-1">12/12/12</p><br>
                                         </li>
                                     </ul>

@@ -4,15 +4,15 @@
     <div class="page-content">
         <!-- INICIO TITULO DE LA PAGINA -->
 
-         <!--
-        <div class="alert alert-block alert-success fade in">
-            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
-            </button><p>Producto Editado con Exito</p>
-        </div>
-         <div class="alert alert-block alert-danger fade in">
-            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
-            </button><p>No se pudo editar el producto,  favor intentar de nuevo.</p>
-        </div>
+        <!--
+       <div class="alert alert-block alert-success fade in">
+           <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
+           </button><p>Producto Editado con Exito</p>
+       </div>
+        <div class="alert alert-block alert-danger fade in">
+           <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true">
+           </button><p>No se pudo editar el producto,  favor intentar de nuevo.</p>
+       </div>
         -->
 
         <h3 class="page-title">
@@ -77,12 +77,12 @@
                                             </div>
                                             <label class="control-label col-md-3">* Margen</label>
                                             <div class="form-group col-md-9">
-                                                 <div class="input-icon right">
+                                                <div class="input-icon right">
                                                     <i name="change_" id="change_margen_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_margen" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                                     <input onkeyup="validate();" required="" value="<?php echo $data->margen; ?>" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
-                                                 </div>
-                                             </div>
+                                                </div>
+                                            </div>
                                             <label class="control-label col-md-3">* Unidad</label>
                                             <div class="form-group col-md-9">
                                                 <select required="" id="select_unidad" name="txt_unidad" class="form-control input-circle">   
@@ -103,21 +103,21 @@
                                             </div>
                                             <label class="control-label col-md-3">* Precio</label>
                                             <div class="form-group col-md-9">
-                                               <div class="input-icon right">
+                                                <div class="input-icon right">
                                                     <i name="change_" id="change_precio_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                     
-                                                <input onkeyup="validate();" required="" type="text" id="precio" value="<?php echo $data->precio_est_unidad; ?>"   name="txt_precio" class="form-control input-circle" placeholder="Precio del Producto">
-                                               </div>
-                                           </div>
+
+                                                    <input onkeyup="validate();" required="" type="text" id="precio" value="<?php echo $data->precio_est_unidad; ?>"   name="txt_precio" class="form-control input-circle" placeholder="Precio del Producto">
+                                                </div>
+                                            </div>
                                             <label class="control-label col-md-3">* Cantidad</label>
                                             <div class="form-group col-md-9">
-                                               <div class="input-icon right">
+                                                <div class="input-icon right">
                                                     <i name="change_" id="change_cantidad_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_cantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    
-                                                <input onkeyup="validate();" type="text" id="cantidad" value="<?php echo $data->cantidad; ?>"  name="txt_cantidad" class="form-control input-circle" placeholder="cantidad de Productos">
-                                               </div>
+
+                                                    <input onkeyup="validate();" type="text" id="cantidad" value="<?php echo $data->cantidad; ?>"  name="txt_cantidad" class="form-control input-circle" placeholder="cantidad de Productos">
+                                                </div>
                                             </div>
                                             <!--/span-->
                                         </div>
@@ -144,121 +144,121 @@
 <script>
 
 
-            var load_colors = function () {
-                var tasking = new jtask();
-                tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
-                tasking.success_callback(function (d) {
-                    var data = JSON.parse(d);
-                    var id ="<?php echo $data->id_color; ?>";
-                    var selected="";
-                    $.map(data, function (a) {
-                       if(id === a.id){
-                          selected="selected=true";
-                        } 
-                        else{
-                          selected="";   
-                        }
-                        $('#select_colors').append("<option " + selected + " value=" + a.id + ">" + a.name + "</option>");
-                    });
-                });
-                tasking.do_task();
-            };
+    var load_colors = function () {
+        var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
+        tasking.success_callback(function (d) {
+            var data = JSON.parse(d);
+            var id = "<?php echo $data->id_color; ?>";
+            var selected = "";
+            $.map(data, function (a) {
+                if (id === a.id) {
+                    selected = "selected=true";
+                }
+                else {
+                    selected = "";
+                }
+                $('#select_colors').append("<option " + selected + " value=" + a.id + ">" + a.name + "</option>");
+            });
+        });
+        tasking.do_task();
+    };
 
-            var load_unidad = function () {
-                var tasking = new jtask();
-                tasking.url = "<?php echo site_url("/Productos/get_unidad"); ?>";
-                tasking.success_callback(function (d) {
-                    var data = JSON.parse(d);
-                     var id ="<?php echo $data->id_unidad; ?>";
-                    var selected="";
-                    $.map(data, function (a) {
-                         if(id===a.id){
-                          selected="selected=true";
-                        } 
-                         else{
-                          selected="";   
-                        }
-                        $('#select_unidad').append("<option " + selected + " value=" + a.id + ">" + a.name + "</option>");
-                    });
-                });
-                tasking.do_task();
-            };
-            
-            var validate_cantidad = function () {
-                var change_cantidad_ok = $("#change_cantidad_ok");
-                var change_cantidad = $("#change_cantidad");
-                var cantidad = $("#cantidad").val();
-                if (cantidad === "") {
-                change_cantidad_ok.css("display", "none");
-                change_cantidad.css("display", "none");
-                return false ;
+    var load_unidad = function () {
+        var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/Productos/get_unidad"); ?>";
+        tasking.success_callback(function (d) {
+            var data = JSON.parse(d);
+            var id = "<?php echo $data->id_unidad; ?>";
+            var selected = "";
+            $.map(data, function (a) {
+                if (id === a.id) {
+                    selected = "selected=true";
                 }
-               else if (isNaN(cantidad) && cantidad !=="") {
-                change_cantidad_ok.css("display", "none");
-                change_cantidad.css("display", "block");
-                return true ;
-                 }
                 else {
-                change_cantidad_ok.css("display", "block");
-                change_cantidad.css("display", "none");
-                 return false ;
+                    selected = "";
                 }
-            };
+                $('#select_unidad').append("<option " + selected + " value=" + a.id + ">" + a.name + "</option>");
+            });
+        });
+        tasking.do_task();
+    };
 
-            var validate_margen = function () {
-                var change_margen_ok = $("#change_margen_ok");
-                var change_margen = $("#change_margen");
-                var margen = $("#margen").val();
-                if (margen ==="") {
-                change_margen_ok.css("display", "none");
-                change_margen.css("display", "none");
-                 return true ;
-                 }
-                else if (isNaN(margen) && margen !=="") {
-                change_margen_ok.css("display", "none");
-                change_margen.css("display", "block");
-                return true ;
-                }
-                else {
-                change_margen_ok.css("display", "block");
-                change_margen.css("display", "none");
-                return false ;
-               }
-            };
-            
-             var validate_price = function () {
-                var change_precio_ok = $("#change_precio_ok");
-                var change_precio = $("#change_precio");
-                var precio = $("#precio").val();
-                 if (precio ==="") {
-                change_precio_ok.css("display", "none");
-                change_precio.css("display", "none");
-                  return true ;
-                  
-               }
-                else  if (isNaN(precio) && precio !=="") {
-                change_precio_ok.css("display", "none");
-                change_precio.css("display", "block");
-                  return true ;
-                  }
-                else {
-                change_precio_ok.css("display", "block");
-                change_precio.css("display", "none");
-                return false ;
-                }
-            };
-        
-             var validate = function () {
-                var precio = validate_price(); 
-                var margen = validate_margen();
-                var cantidad = validate_cantidad();
-                
-                if( precio === true || margen === true || cantidad === true ){
-                $('#send').attr("disabled", true); 
-                }else  {
-                $('#send').attr("disabled", false);    
-                 }
-            };
-            
-          
-      </script>
+    var validate_cantidad = function () {
+        var change_cantidad_ok = $("#change_cantidad_ok");
+        var change_cantidad = $("#change_cantidad");
+        var cantidad = $("#cantidad").val();
+        if (cantidad === "") {
+            change_cantidad_ok.css("display", "none");
+            change_cantidad.css("display", "none");
+            return false;
+        }
+        else if (isNaN(cantidad) && cantidad !== "") {
+            change_cantidad_ok.css("display", "none");
+            change_cantidad.css("display", "block");
+            return true;
+        }
+        else {
+            change_cantidad_ok.css("display", "block");
+            change_cantidad.css("display", "none");
+            return false;
+        }
+    };
+
+    var validate_margen = function () {
+        var change_margen_ok = $("#change_margen_ok");
+        var change_margen = $("#change_margen");
+        var margen = $("#margen").val();
+        if (margen === "") {
+            change_margen_ok.css("display", "none");
+            change_margen.css("display", "none");
+            return true;
+        }
+        else if (isNaN(margen) && margen !== "") {
+            change_margen_ok.css("display", "none");
+            change_margen.css("display", "block");
+            return true;
+        }
+        else {
+            change_margen_ok.css("display", "block");
+            change_margen.css("display", "none");
+            return false;
+        }
+    };
+
+    var validate_price = function () {
+        var change_precio_ok = $("#change_precio_ok");
+        var change_precio = $("#change_precio");
+        var precio = $("#precio").val();
+        if (precio === "") {
+            change_precio_ok.css("display", "none");
+            change_precio.css("display", "none");
+            return true;
+
+        }
+        else if (isNaN(precio) && precio !== "") {
+            change_precio_ok.css("display", "none");
+            change_precio.css("display", "block");
+            return true;
+        }
+        else {
+            change_precio_ok.css("display", "block");
+            change_precio.css("display", "none");
+            return false;
+        }
+    };
+
+    var validate = function () {
+        var precio = validate_price();
+        var margen = validate_margen();
+        var cantidad = validate_cantidad();
+
+        if (precio === true || margen === true || cantidad === true) {
+            $('#send').attr("disabled", true);
+        } else {
+            $('#send').attr("disabled", false);
+        }
+    };
+
+
+</script>

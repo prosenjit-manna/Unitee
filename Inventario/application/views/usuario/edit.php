@@ -307,7 +307,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
 
     var $user = null;
 
-    var i = function() {
+    var i = function () {
 
         var rol = "<?php echo $rol; ?>";
         if (!rol) {
@@ -324,7 +324,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
         }
     };
 
-    var p = function() {
+    var p = function () {
         var rol = "<?php echo $rol; ?>";
         var id = "<?php echo $id; ?>";
         if (!rol) {
@@ -335,7 +335,7 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
     };
 
 
-    var c = function(val) {
+    var c = function (val) {
         if (val === "undefined" || val == null) {
             return;
         }
@@ -344,18 +344,18 @@ $rol = isset($_REQUEST['rol']) ? TRUE : FALSE;
         tasking.url = "<?php echo site_url("/TheUser/GetUserInfo/"); ?>";
         tasking.data = {"data": val};
         tasking.beforesend = true;
-        tasking.config_before(function() {
+        tasking.config_before(function () {
             $("#messages").html(
                     '<div class="alert alert-block alert-success fade in">' +
                     '<button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"><p></button></button>Cargando ...   Por favor espere.</p>' +
                     '</div>'
                     );
         });
-        tasking.success_callback(function(s) {
+        tasking.success_callback(function (s) {
 
             $("#messages").html("");
             $user = JSON.parse(s);
-            $.map($user, function(u) {
+            $.map($user, function (u) {
                 $("#txt_nombres").val(u.nombres);
                 $("#txt_apellidos").val(u.apellidos);
                 $("#txt_email").val(u.email);

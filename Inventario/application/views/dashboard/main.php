@@ -66,8 +66,8 @@
                         <i class="icon-bar-chart"></i>
                     </div>
                     <div class="details">
-                         <div class="number" id="npro">
-                            
+                        <div class="number" id="npro">
+
                         </div>
                         <div class="desc">
                             Productos en total 
@@ -80,7 +80,7 @@
             </div>
             <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat red-intense">
-                      <div>
+                    <div>
                         <h3 class="col-lg-offset-1 col-md-offset-1 col-xs-offset-1" style="color:white;">Productos</h3>
                     </div>
                     <div class="visual">
@@ -88,7 +88,7 @@
                     </div>
                     <div class="details">
                         <div class="number" id="nprob">
-                            
+
                         </div>
                         <div class="desc">
                             Productos bajos en existencia
@@ -129,45 +129,45 @@
         task.config_before(function () {
             $("#noti").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="100px" height="100px"/></center>');
         });
-       task.success_callback(function (r) {
+        task.success_callback(function (r) {
             $("#noti").html('');
             var obj = JSON.parse(r);
             var c = obj.count;
             var d = obj.data;
-            $.map(d, function (k){
-                   $("#noti").append('<ul class="feeds"><li><div class="col1"><div class="cont"><div class="cont-col1"><div class="label label-sm label-info"><i class="' + k.icon + '"></i></div></div><div class="cont-col2"><div class="desc" id="noti2">' + k.description.substring(0,40) + "..." + '</div></div></div></div><div class="col2"><div class="date">' + k.date + '</div></div></li></ul>');
+            $.map(d, function (k) {
+                $("#noti").append('<ul class="feeds"><li><div class="col1"><div class="cont"><div class="cont-col1"><div class="label label-sm label-info"><i class="' + k.icon + '"></i></div></div><div class="cont-col2"><div class="desc" id="noti2">' + k.description.substring(0, 40) + "..." + '</div></div></div></div><div class="col2"><div class="date">' + k.date + '</div></div></li></ul>');
             });
         });
         task.do_task();
     };
-    
-    var widget_count_product = function(){
-            //   productos/count_product
-            var task = new jtask();
-            task.url = "<?php echo site_url("productos/count_product"); ?>";
-            task.beforesend = true;
-            task.config_before(function () {
+
+    var widget_count_product = function () {
+        //   productos/count_product
+        var task = new jtask();
+        task.url = "<?php echo site_url("productos/count_product"); ?>";
+        task.beforesend = true;
+        task.config_before(function () {
             $("#npro").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="70px" height="70px"/></center>');
 
         });
         task.success_callback(function (r) {
-                $("#npro").html('');
-                var obj = JSON.parse(r);
-                $("#npro").append('<div class="numbre">' + obj.count + '</div>');
-            });
+            $("#npro").html('');
+            var obj = JSON.parse(r);
+            $("#npro").append('<div class="numbre">' + obj.count + '</div>');
+        });
         task.do_task();
 
-         var task2 = new jtask();
-            task2.url = "<?php echo site_url("productos/get_low_product"); ?>";
-            task2.beforesend = true;
-            task2.config_before(function () {
-           			$("#nprob").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="70px" height="70px"/></center>');
-        	});
+        var task2 = new jtask();
+        task2.url = "<?php echo site_url("productos/get_low_product"); ?>";
+        task2.beforesend = true;
+        task2.config_before(function () {
+            $("#nprob").html('<center><img src="' + "<?php echo $route; ?>images/dashboard/loading.gif" + '" align="center" width="70px" height="70px"/></center>');
+        });
         task2.success_callback(function (r) {
-         		$("#nprob").html('');
-                var obj = JSON.parse(r);
-           		$("#nprob").append('<div class="numbre">' + obj.count + '</div>');
-            });
+            $("#nprob").html('');
+            var obj = JSON.parse(r);
+            $("#nprob").append('<div class="numbre">' + obj.count + '</div>');
+        });
         task2.do_task();
     };
 </script>

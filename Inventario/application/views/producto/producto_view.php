@@ -189,7 +189,7 @@
 
     var $id = null;
 
-    var table_loader = function() {
+    var table_loader = function () {
 
         var table = $('#products_table');
 
@@ -231,16 +231,16 @@
 
     };
 
-    var the_id = function(i) {
+    var the_id = function (i) {
         $id = i;
     };
 
-    var delete_product = function() {
+    var delete_product = function () {
 
         var tasking = new jtask();
         tasking.url = "<?php echo site_url("/Productos/delete_product"); ?>";
         tasking.data = {"id": $id};
-        tasking.success_callback(function(d) {
+        tasking.success_callback(function (d) {
             console.log(d);
             $("#prod_" + $id).remove();
         });

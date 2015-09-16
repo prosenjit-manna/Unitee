@@ -2,27 +2,28 @@
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
-         <?php  if (isset($_REQUEST['err'])):
-                        switch ($_REQUEST['err']):
-                            case 0:
-                                echo '<div class="alert alert-block alert-success fade in">
+        <?php
+        if (isset($_REQUEST['err'])):
+            switch ($_REQUEST['err']):
+                case 0:
+                    echo '<div class="alert alert-block alert-success fade in">
                                            <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Producto Guardado con Exito</p>
                                                               </div>';
-                                 break;
-                            case 1:
-                                echo ' <div class="alert alert-block alert-danger fade in">
+                    break;
+                case 1:
+                    echo ' <div class="alert alert-block alert-danger fade in">
                                                   <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"> </button><p>No se pudo guardar el producto,  favor intentar de nuevo.</p>
                                                             </div>';
-                                break;
-                            
-                            
-                        endswitch;
-                    endif;
-                 ?>
+                    break;
+
+
+            endswitch;
+        endif;
+        ?>
         <!-- INICIO TITULO DE LA PAGINA -->
-       
-        
-        
+
+
+
         <h3 class="page-title">
             Unitee - Nuevo Producto
         </h3>
@@ -52,7 +53,7 @@
             <!-- INICIO PAGE CONTENT-->
             <div class="row scroller" style="height:375px" data-rail-visible="1" >
 
-            	
+
                 <!-- INICIO Portlet PORTLET-->
                 <div class="portlet">
                     <div class="portlet light">
@@ -65,7 +66,7 @@
                         <div class="portlet-body">
                             <div class="portlet-body form">
                                 <!-- INICIO FORM-->
-                                <?php echo form_open("/Productos/New_Product/", array("method" => "post")); ?>
+<?php echo form_open("/Productos/New_Product/", array("method" => "post")); ?>
 
                                 <div class="form-body">
                                     <div class="row">
@@ -83,12 +84,12 @@
                                             </div>
                                             <label class="control-label col-md-4">* Margen</label>
                                             <div class="form-group col-md-8">
-                                              <div class="input-icon right">
+                                                <div class="input-icon right">
                                                     <i name="change_" id="change_margen_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_margen" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                                     <input onkeyup="validate();" required="" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
                                                     <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
-                                              </div>
+                                                </div>
                                             </div>
                                             <label class="control-label col-md-4">* Unidad</label>
                                             <div class="form-group col-md-8">
@@ -108,7 +109,7 @@
                                                 <input readonly="" type="text" id="SKU" name="txt_sku" class="form-control input-circle" placeholder="SKU del Producto">
                                             </div>
                                             <label class="control-label col-md-3">* Precio</label>
-                                             <div class="form-group col-md-9">
+                                            <div class="form-group col-md-9">
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_precio_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
@@ -116,14 +117,14 @@
                                                 </div>
 
                                             </div>
-                                            
-                                            
+
+
                                             <label class="control-label col-md-3"> Cantidad</label>
                                             <div class="form-group col-md-9">
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_cantidad_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_cantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                     
+
                                                     <input  onkeyup="validate();" type="text" id="cantidad" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
                                                 </div>
                                             </div>
@@ -135,7 +136,7 @@
                                         <button  id="send" name="send"  disabled="disable" type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                                     </div>
                                     <!-- FINAL FORM-->
-                                    <?php echo form_close(); ?>
+<?php echo form_close(); ?>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +152,7 @@
 
         <script>
 
-          
+
             var load_colors = function () {
                 var tasking = new jtask();
                 tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
@@ -200,19 +201,19 @@
                 var change_cantidad = $("#change_cantidad");
                 var cantidad = $("#cantidad").val();
                 if (cantidad === "") {
-                change_cantidad_ok.css("display", "none");
-                change_cantidad.css("display", "none");
-                return false ;
+                    change_cantidad_ok.css("display", "none");
+                    change_cantidad.css("display", "none");
+                    return false;
                 }
-               else if (isNaN(cantidad) && cantidad !=="") {
-                change_cantidad_ok.css("display", "none");
-                change_cantidad.css("display", "block");
-                return true ;
-                 }
+                else if (isNaN(cantidad) && cantidad !== "") {
+                    change_cantidad_ok.css("display", "none");
+                    change_cantidad.css("display", "block");
+                    return true;
+                }
                 else {
-                change_cantidad_ok.css("display", "block");
-                change_cantidad.css("display", "none");
-                 return false ;
+                    change_cantidad_ok.css("display", "block");
+                    change_cantidad.css("display", "none");
+                    return false;
                 }
             };
 
@@ -220,58 +221,58 @@
                 var change_margen_ok = $("#change_margen_ok");
                 var change_margen = $("#change_margen");
                 var margen = $("#margen").val();
-                if (margen ==="") {
-                change_margen_ok.css("display", "none");
-                change_margen.css("display", "none");
-                 return true ;
-                 }
-                else if (isNaN(margen) && margen !=="") {
-                change_margen_ok.css("display", "none");
-                change_margen.css("display", "block");
-                return true ;
+                if (margen === "") {
+                    change_margen_ok.css("display", "none");
+                    change_margen.css("display", "none");
+                    return true;
+                }
+                else if (isNaN(margen) && margen !== "") {
+                    change_margen_ok.css("display", "none");
+                    change_margen.css("display", "block");
+                    return true;
                 }
                 else {
-                change_margen_ok.css("display", "block");
-                change_margen.css("display", "none");
-                return false ;
-               }
+                    change_margen_ok.css("display", "block");
+                    change_margen.css("display", "none");
+                    return false;
+                }
             };
-            
-             var validate_price = function () {
+
+            var validate_price = function () {
                 var change_precio_ok = $("#change_precio_ok");
                 var change_precio = $("#change_precio");
                 var precio = $("#precio").val();
-                 if (precio ==="") {
-                change_precio_ok.css("display", "none");
-                change_precio.css("display", "none");
-                  return true ;
-                  
-               }
-                else  if (isNaN(precio) && precio !=="") {
-                change_precio_ok.css("display", "none");
-                change_precio.css("display", "block");
-                  return true ;
-                  }
+                if (precio === "") {
+                    change_precio_ok.css("display", "none");
+                    change_precio.css("display", "none");
+                    return true;
+
+                }
+                else if (isNaN(precio) && precio !== "") {
+                    change_precio_ok.css("display", "none");
+                    change_precio.css("display", "block");
+                    return true;
+                }
                 else {
-                change_precio_ok.css("display", "block");
-                change_precio.css("display", "none");
-                return false ;
+                    change_precio_ok.css("display", "block");
+                    change_precio.css("display", "none");
+                    return false;
                 }
             };
-        
-             var validate = function () {
-                var precio = validate_price(); 
+
+            var validate = function () {
+                var precio = validate_price();
                 var margen = validate_margen();
                 var cantidad = validate_cantidad();
-                
-                if( precio === true || margen === true || cantidad === true ){
-                $('#send').attr("disabled", true); 
-                }else  {
-                $('#send').attr("disabled", false);    
-                 }
+
+                if (precio === true || margen === true || cantidad === true) {
+                    $('#send').attr("disabled", true);
+                } else {
+                    $('#send').attr("disabled", false);
+                }
             };
-            
-          
+
+
 
 
         </script>

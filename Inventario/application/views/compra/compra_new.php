@@ -94,24 +94,24 @@
                                     <?php
                                     $prod_id = isset($_REQUEST['i']) ? $_REQUEST['i'] : NULL;
                                     if (!is_null($prod_id)) {
-                                        $data           = NULL;
-                                        $instance       = &get_instance();
-                                        
-                                        $instance->load->model("productos/view_producto" , "prod");
+                                        $data = NULL;
+                                        $instance = &get_instance();
+
+                                        $instance->load->model("productos/view_producto", "prod");
                                         $p = $instance->prod->GetProductById($prod_id);
-                                        
+
                                         $data = '<tr id="table_' . $p->id . '">'
-                                        . '<td>' . '<p align="center">' . $p->nombre . '</p>' . '</td>'
-                                        . '<td>' . '<p align="center">' . $p->color . '</p>' . '</td>'
-                                        . '<td>' . '<p id="cant_node" align="center"><input id="ncant" class="form-control input-circle" type="number" value="" placeholder=" digite la cantidad" /></p>'. '</td>'
-                                        . '<td>' . '<p id="price_node" align="center"><input id="nprice" class="form-control input-circle" type="number" value="" placeholder=" digite el precio" /></p>' . '</td>'
-                                        . '<td>' . '<p align="center">'
-                                        . '<p align="center">'
-                                        . '<a id="save_node" class="" href="javascript:save_node();"><i class="icon-save" style="font-size: 25px; color:#FA5858;"></i></i></a>'      
-                                        . '&nbsp;&nbsp;<a class="" onclick="table_node(' . $p->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>'
-                                        . '</p>'
-                                        . '</td></tr>';
-                                        
+                                                . '<td>' . '<p align="center">' . $p->nombre . '</p>' . '</td>'
+                                                . '<td>' . '<p align="center">' . $p->color . '</p>' . '</td>'
+                                                . '<td>' . '<p id="cant_node" align="center"><input id="ncant" class="form-control input-circle" type="number" value="" placeholder=" digite la cantidad" /></p>' . '</td>'
+                                                . '<td>' . '<p id="price_node" align="center"><input id="nprice" class="form-control input-circle" type="number" value="" placeholder=" digite el precio" /></p>' . '</td>'
+                                                . '<td>' . '<p align="center">'
+                                                . '<p align="center">'
+                                                . '<a id="save_node" class="" href="javascript:save_node();"><i class="icon-save" style="font-size: 25px; color:#FA5858;"></i></i></a>'
+                                                . '&nbsp;&nbsp;<a class="" onclick="table_node(' . $p->id . ');" data-toggle="modal" href="#responsive_delete"><i class="icon-remove-circle" style="font-size: 25px; color:#FA5858;"></i></i></a>'
+                                                . '</p>'
+                                                . '</td></tr>';
+
                                         echo $data;
                                     }
                                     ?>
@@ -119,52 +119,52 @@
                             </table>
                         </div>
                         <div class="row col-md-12">
-                            <?php echo form_open_multipart("Buy/SaveAttachment/" , 
-                                    array(
-                                        "id"        => "fileupload" , 
-                                        "class"     => "col-md-7"
-                                ));
-                             ?>
-                            
-                                <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                                <div class="row fileupload-buttonbar">
-                                    <br><br>
-                                    <div class="col-md-4">
-                                        <h4>Adjuntar archivos</h4>
-                                    </div>
-                                    <div>
-                                        <!-- The fileinput-button span is used to style the file input field as button -->
-                                        <span class="btn green fileinput-button">
-                                            <i class="glyphicon glyphicon-paperclip"></i>
-                                            <span>
-                                                Añadir..</span>
-                                            <input type="file" name="files[]" multiple="">
-                                        </span>
-                                        <button type="submit" class="btn blue start">
-                                            <i class="glyphicon glyphicon-upload"></i>
-                                            <span>
-                                                Subir</span>
-                                        </button>
-                                    </div>
-                                    <!-- The global progress information -->
-                                    <div class=" fileupload-progress fade">
-                                        <!-- The global progress bar -->
-                                        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-bar progress-bar-success" style="width:0%;">
-                                            </div>
+                            <?php
+                            echo form_open_multipart("Buy/SaveAttachment/", array(
+                                "id" => "fileupload",
+                                "class" => "col-md-7"
+                            ));
+                            ?>
+
+                            <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                            <div class="row fileupload-buttonbar">
+                                <br><br>
+                                <div class="col-md-4">
+                                    <h4>Adjuntar archivos</h4>
+                                </div>
+                                <div>
+                                    <!-- The fileinput-button span is used to style the file input field as button -->
+                                    <span class="btn green fileinput-button">
+                                        <i class="glyphicon glyphicon-paperclip"></i>
+                                        <span>
+                                            Añadir..</span>
+                                        <input type="file" name="files[]" multiple="">
+                                    </span>
+                                    <button type="submit" class="btn blue start">
+                                        <i class="glyphicon glyphicon-upload"></i>
+                                        <span>
+                                            Subir</span>
+                                    </button>
+                                </div>
+                                <!-- The global progress information -->
+                                <div class=" fileupload-progress fade">
+                                    <!-- The global progress bar -->
+                                    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar progress-bar-success" style="width:0%;">
                                         </div>
-                                        <!-- The extended global progress information -->
-                                        <div class="progress-extended">
-                                            &nbsp;
-                                        </div>
+                                    </div>
+                                    <!-- The extended global progress information -->
+                                    <div class="progress-extended">
+                                        &nbsp;
                                     </div>
                                 </div>
-                                <!-- The table listing the files available for upload/download -->
-                                <table role="presentation" class="table table-striped clearfix">
-                                    <tbody class="files">
-                                    </tbody>
-                                </table>
-                                <input type="hidden" value="<?php echo $upload_dir; ?> " name="directory" />
+                            </div>
+                            <!-- The table listing the files available for upload/download -->
+                            <table role="presentation" class="table table-striped clearfix">
+                                <tbody class="files">
+                                </tbody>
+                            </table>
+                            <input type="hidden" value="<?php echo $upload_dir; ?> " name="directory" />
                             <?php echo form_close(); ?>
                             <div class="col-md-5"><br><br>
                                 <label class="control-label col-md-3"> P.O </label>
@@ -249,7 +249,8 @@
                                 <div class="input-icon right">
                                     <i name="change_" id="change_pcantidad_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                     <i name="change_x" id="change_pcantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                    <input onkeyup="validarModal();validate_pcant();" id="cant_prod" required="" type="number" id="txt_pcantidad" name="txt_pcantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                    <input onkeyup="validarModal();
+                                            validate_pcant();" id="cant_prod" required="" type="number" id="txt_pcantidad" name="txt_pcantidad" class="form-control input-circle" placeholder="Cantidad del producto">
                                 </div>
                             </div>
                             <label class="control-label col-md-2">Precio</label>
@@ -257,12 +258,14 @@
                                 <div class="input-icon right">
                                     <i name="change_" id="change_precio_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                     <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                    <input onkeyup="validarModal();validate_pre();" id="price_prod" required="" type="number" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                    <input onkeyup="validarModal();
+                                            validate_pre();" id="price_prod" required="" type="number" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
                                 </div>
                             </div> <br><br><br> <br><br><br>
                             <div class="modal-footer">
                                 <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                <button type="button" id="send" data-dismiss="modal" onclick="save_product(); " class="btn green" disabled="disabled">Guardar</button>
+                                <button type="button" id="send" data-dismiss="modal" onclick="save_product();
+                                        " class="btn green" disabled="disabled">Guardar</button>
                             </div>
                         </div>
                     </div>
@@ -274,113 +277,130 @@
 </div>
 <!--FIN DEL CONTENIDO-->
 <script id="template-upload" type="text/x-tmpl">
-{% for (var i=0, file; file=o.files[i]; i++) { %}
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
-        <td>
-            <span class="preview"></span>
-        </td>
-        <td>
-            <p class="name">{%=file.name%}</p>
-            <strong class="error text-danger"></strong>
-        </td>
-        <td>
-            <p class="size">Processing...</p>
-            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
-        </td>
-        <td>
-            {% if (!i && !o.options.autoUpload) { %}
-                <button style="display:none;" class="btn btn-primary start" disabled="disabled">
-                </button>
-            {% } %}
-            {% if (!i) { %}
-                <button class="btn btn-warning cancel">
-                    <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel</span>
-                </button>
-            {% } %}
-        </td>
+    <td>
+    <span class="preview"></span>
+    </td>
+    <td>
+    <p class="name">{%=file.name%}</p>
+    <strong class="error text-danger"></strong>
+    </td>
+    <td>
+    <p class="size">Processing...</p>
+    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+    </td>
+    <td>
+    {% if (!i && !o.options.autoUpload) { %}
+    <button style="display:none;" class="btn btn-primary start" disabled="disabled">
+    </button>
+    {% } %}
+    {% if (!i) { %}
+    <button class="btn btn-warning cancel">
+    <i class="glyphicon glyphicon-ban-circle"></i>
+    <span>Cancel</span>
+    </button>
+    {% } %}
+    </td>
     </tr>
-{% } %}
+    {% } %}
 </script>
 <!-- The template to display files available for download -->
 <script id="template-download" type="text/x-tmpl">
-{% for (var i=0, file; file=o.files[i]; i++) { %}
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-download fade">
-        <td>
-            <span class="preview">
-                {% if (file.thumbnailUrl) { %}
-                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-                {% } %}
-            </span>
-        </td>
-        <td>
-            <p class="name">
-                {% if (file.url) { %}
-                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-                {% } else { %}
-                    <span>{%=file.name%}</span>
-                {% } %}
-            </p>
-            {% if (file.error) { %}
-                <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-            {% } %}
-        </td>
-        <td>
-            <span class="size">{%=o.formatFileSize(file.size)%}</span>
-        </td>
-        <td>
-            {% if (file.deleteUrl) { %}
-                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-                    <i class="glyphicon glyphicon-trash"></i>
-                    <span>Delete</span>
-                </button>
-                <input type="checkbox" name="delete" value="1" class="toggle">
-            {% } else { %}
-                <button class="btn btn-warning cancel">
-                    <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel</span>
-                </button>
-            {% } %}
-        </td>
+    <td>
+    <span class="preview">
+    {% if (file.thumbnailUrl) { %}
+    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+    {% } %}
+    </span>
+    </td>
+    <td>
+    <p class="name">
+    {% if (file.url) { %}
+    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+    {% } else { %}
+    <span>{%=file.name%}</span>
+    {% } %}
+    </p>
+    {% if (file.error) { %}
+    <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+    {% } %}
+    </td>
+    <td>
+    <span class="size">{%=o.formatFileSize(file.size)%}</span>
+    </td>
+    <td>
+    {% if (file.deleteUrl) { %}
+    <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+    <i class="glyphicon glyphicon-trash"></i>
+    <span>Delete</span>
+    </button>
+    <input type="checkbox" name="delete" value="1" class="toggle">
+    {% } else { %}
+    <button class="btn btn-warning cancel">
+    <i class="glyphicon glyphicon-ban-circle"></i>
+    <span>Cancel</span>
+    </button>
+    {% } %}
+    </td>
     </tr>
-{% } %}
+    {% } %}
 </script>
 <script>
 
     var $pid = null;
     var $node_table = null;
-    
-    function CheckNodes(){
-        setInterval(function(){
-          
-           var sum = IsTableNode() + IsProvider() +IsInvoice() + IsPrice();
-           if(sum >= 4) $("#send_buy").attr("disabled", false);
-           else $("#send_buy").attr("disabled", true);
 
-        } , 500);
-    };
-    
-    function IsTableNode(){
-        if($("#table_prod tr ").length <= 0){ return 0; }
-        else{ return 1;}
+    function CheckNodes() {
+        setInterval(function () {
+
+            var sum = IsTableNode() + IsProvider() + IsInvoice() + IsPrice();
+            if (sum >= 4)
+                $("#send_buy").attr("disabled", false);
+            else
+                $("#send_buy").attr("disabled", true);
+
+        }, 500);
     }
-    
-    function IsProvider(){
-          if($pid === null){return 0;}
-          else{return 1;}
+    ;
+
+    function IsTableNode() {
+        if ($("#table_prod tr ").length <= 0) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
     }
-    
-    function IsInvoice(){
-        if($("#txt_factura").val() == "") return 0;
-        else return 1;
+
+    function IsProvider() {
+        if ($pid === null) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
     }
-    
-    function IsPrice(){
+
+    function IsInvoice() {
+        if ($("#txt_factura").val() == "")
+            return 0;
+        else
+            return 1;
+    }
+
+    function IsPrice() {
         var p = $("price_prod").val();
-        if(p != null ||  p != "IsNaN" || p != 0  ){return 1;}
-        else{ return 0;} 
+        if (p != null || p != "IsNaN" || p != 0) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
-   
+
     function validar() {
 
         var factura = $("#txt_factura").val();
@@ -391,11 +411,12 @@
         else {
             $("#send_buy").attr("disabled", false);
         }
-    };
-    
-   
+    }
+    ;
 
-     function validarModal() {
+
+
+    function validarModal() {
         var cantidad = $("#cant_prod").val();
         var precio = $("#price_prod").val();
         if (cantidad == "" || precio == "") {
@@ -408,36 +429,36 @@
     ;
 
     var validate_pcant = function () {
-                var change_pcantidad_ok = $("#change_pcantidad_ok");
-                var change_pcantidad = $("#change_pcantidad");
-                var pcantidad = $("#cant_prod").val();
-                if (pcantidad === "") {
-                change_pcantidad_ok.css("display", "none");
-               change_pcantidad.css("display", "block");
-                return false ;
-                }
-                else {
-                change_pcantidad_ok.css("display", "block");
-                change_pcantidad.css("display", "none");
-                 return false ;
-                }
-            };
+        var change_pcantidad_ok = $("#change_pcantidad_ok");
+        var change_pcantidad = $("#change_pcantidad");
+        var pcantidad = $("#cant_prod").val();
+        if (pcantidad === "") {
+            change_pcantidad_ok.css("display", "none");
+            change_pcantidad.css("display", "block");
+            return false;
+        }
+        else {
+            change_pcantidad_ok.css("display", "block");
+            change_pcantidad.css("display", "none");
+            return false;
+        }
+    };
 
     var validate_pre = function () {
-                var change_precio_ok = $("#change_precio_ok");
-                var change_precio = $("#change_precio");
-                var precio = $("#price_prod").val();
-                if (precio === "") {
-                change_precio_ok.css("display", "none");
-               change_precio.css("display", "block");
-                return false ;
-                }
-                else {
-                change_precio_ok.css("display", "block");
-                change_precio.css("display", "none");
-                 return false ;
-                }
-            };
+        var change_precio_ok = $("#change_precio_ok");
+        var change_precio = $("#change_precio");
+        var precio = $("#price_prod").val();
+        if (precio === "") {
+            change_precio_ok.css("display", "none");
+            change_precio.css("display", "block");
+            return false;
+        }
+        else {
+            change_precio_ok.css("display", "block");
+            change_precio.css("display", "none");
+            return false;
+        }
+    };
 
     var provider_selected = function (id) {
         $pid = id;
@@ -542,7 +563,7 @@
     };
 
     var save_buy = function () {
-        
+
         var id_, name, color, cant, price;
         var data = new Array()
         var upload_data = Array();
@@ -574,20 +595,20 @@
             o.price = price;
             data.push(o);
         });
-        
-        if($fileUpload_Stay != null && $fileUpload_Context.length <= 0)
+
+        if ($fileUpload_Stay != null && $fileUpload_Context.length <= 0)
         {
             alert(" favor subir o cancelar los archivos pendientes antes de continuar");
             return;
         }
-   
-        
-        if($fileUpload_Context != null){
-            $.each($fileUpload_Context , function(k,v){
+
+
+        if ($fileUpload_Context != null) {
+            $.each($fileUpload_Context, function (k, v) {
                 upload_data.push(v.jqXHR.responseJSON.files[0].data);
             });
         }
-    
+
         var task = new jtask();
         task.url = "<?php echo site_url("Buy/SaveBuy/"); ?>";
         task.beforesend = true;
@@ -597,103 +618,103 @@
             "fac": fac,
             "total": total,
             "prov": $pid,
-            "upload" : JSON.stringify(upload_data)
+            "upload": JSON.stringify(upload_data)
         };
-        task.config_before(function(){
-             $("#send_buy").html("Guardando espere ...");
-             $("#send_buy").attr("disabled" , true);
+        task.config_before(function () {
+            $("#send_buy").html("Guardando espere ...");
+            $("#send_buy").attr("disabled", true);
         });
         task.success_callback(function (r) {
             window.location.href = "<?php echo site_url("/0/compra=new_compra?sucess=true"); ?>";
             $("#send_buy").html("Guardar");
             $("#send_buy").attr("disabled", false);
-            
+
         });
-        
+
         task.do_task();
 
 
     };
-    
+
     var FormFileUpload = function () {
 
-    return {
-        //main function to initiate the module
-        init: function () {
+        return {
+            //main function to initiate the module
+            init: function () {
 
-             // Initialize the jQuery File Upload widget:
-            $('#fileupload').fileupload({
-                disableImageResize: false,
-                autoUpload: false,
-                disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
-                maxFileSize: 5000000,
-                acceptFileTypes: /(\.|\/)(gif|jpe?g|png|doc|docx|pdf|txt|xls|pst)$/i
-                // Uncomment the following to send cross-domain cookies:
-                //xhrFields: {withCredentials: true},                
-            });
-
-            // Enable iframe cross-domain access via redirect option:
-            $('#fileupload').fileupload(
-                'option',
-                'redirect',
-                window.location.href.replace(
-                    /\/[^\/]*$/,
-                    '/cors/result.html?%s'
-                )
-            );
-            
-            // Upload server status check for browsers with CORS support:
-            if ($.support.cors) {
-                $.ajax({
-                    type: 'HEAD'
-                }).fail(function () {
-                    alert();
-                    $('<div class="alert alert-danger"/>')
-                        .text('Upload server currently unavailable - ' +
-                                new Date())
-                        .appendTo('#fileupload');
+                // Initialize the jQuery File Upload widget:
+                $('#fileupload').fileupload({
+                    disableImageResize: false,
+                    autoUpload: false,
+                    disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
+                            maxFileSize: 5000000,
+                    acceptFileTypes: /(\.|\/)(gif|jpe?g|png|doc|docx|pdf|txt|xls|pst)$/i
+                            // Uncomment the following to send cross-domain cookies:
+                            //xhrFields: {withCredentials: true},                
                 });
+
+                // Enable iframe cross-domain access via redirect option:
+                $('#fileupload').fileupload(
+                        'option',
+                        'redirect',
+                        window.location.href.replace(
+                                /\/[^\/]*$/,
+                                '/cors/result.html?%s'
+                                )
+                        );
+
+                // Upload server status check for browsers with CORS support:
+                if ($.support.cors) {
+                    $.ajax({
+                        type: 'HEAD'
+                    }).fail(function () {
+                        alert();
+                        $('<div class="alert alert-danger"/>')
+                                .text('Upload server currently unavailable - ' +
+                                        new Date())
+                                .appendTo('#fileupload');
+                    });
+                }
+
+                $.ajax({
+                    url: $('#fileupload').attr("action"),
+                    dataType: 'json',
+                    context: $('#fileupload')[0]
+                }).always(function () {
+                    $(this).removeClass('fileupload-processing');
+                })
+                        .done(function (result) {
+                            // $(this).fileupload('option', 'done')
+                            // .call(this, $.Event('done'), {result: result});
+                        });
+
+                // Load & display existing files:
+                $('#fileupload').addClass('fileupload-processing');
             }
-            
-           $.ajax({
-                url: $('#fileupload').attr("action"),
-                dataType: 'json',
-                context: $('#fileupload')[0]
-            }).always(function () {
-                $(this).removeClass('fileupload-processing');
-            })
-             .done(function (result) {
-               // $(this).fileupload('option', 'done')
-               // .call(this, $.Event('done'), {result: result});
-            });
-            
-            // Load & display existing files:
-            $('#fileupload').addClass('fileupload-processing');
-        }
-        
-       
-
-    };
-
-}();
 
 
 
-    var save_node = function(){
-        
-     
-        var cant        = $("#ncant").val();
-        var price       = $("#nprice").val();
-        
-        if(price == "" || cant == "")
+        };
+
+    }();
+
+
+
+    var save_node = function () {
+
+
+        var cant = $("#ncant").val();
+        var price = $("#nprice").val();
+
+        if (price == "" || cant == "")
         {
             alert("Debe de especificar un precio y una cantidad ");
             return;
         }
-        
+
         $("#cant_node").html(cant);
         $("#price_node").html(price);
-        $("#save_node").attr("disabled" , true);
+        $("#save_node").attr("disabled", true);
         $("#save_node").html('<i class="icon-ok" style="font-size: 25px; color:#FA5858;"></i></i>');
         total_price();
     };

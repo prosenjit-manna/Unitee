@@ -107,7 +107,7 @@
 <script>
     var $id = null;
 
-    var table_loader = function() {
+    var table_loader = function () {
 
         var table = $('#notifications_table');
 
@@ -144,27 +144,27 @@
         });
     };
 
-    var mark_read = function(id , state){
+    var mark_read = function (id, state) {
         var tasking = new jtask();
         tasking.url = "<?php echo site_url("/dashboard/read_notification"); ?>";
-        tasking.data = {"id": id , "state": state};
+        tasking.data = {"id": id, "state": state};
         tasking.beforesend = true;
-        tasking.config_before(function(){
+        tasking.config_before(function () {
             $("#read_nofify_" + id).html('<i class="icon-refresh" style="font-size:20px; color:green;"></i>');
         });
-        tasking.success_callback(function(d) {
-                  switch(state)
-                  {
-                      case 0:
-                          $("#read_nofify_" + id).html('<a href="javascript:mark_read(' + id + ', 1);"><i class="icon-eye-close" style="font-size:20px; color:green;"></i> </a>  ');
-                          break;
-                      case 1:
-                          $("#read_nofify_" + id).html('<a href="javascript:mark_read(' + id + ', 0);"><i class="icon-eye-open" style="font-size:20px; color:green;"></i> </a>  ');
-                          break;
-                  }
+        tasking.success_callback(function (d) {
+            switch (state)
+            {
+                case 0:
+                    $("#read_nofify_" + id).html('<a href="javascript:mark_read(' + id + ', 1);"><i class="icon-eye-close" style="font-size:20px; color:green;"></i> </a>  ');
+                    break;
+                case 1:
+                    $("#read_nofify_" + id).html('<a href="javascript:mark_read(' + id + ', 0);"><i class="icon-eye-open" style="font-size:20px; color:green;"></i> </a>  ');
+                    break;
+            }
         });
         tasking.do_task();
     };
-    
-    
+
+
 </script>

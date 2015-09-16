@@ -42,7 +42,7 @@
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-5">
-                                    </div>
+                                        </div>
                                         <h5 lass="form-section">Los campos con * son Requeridos
                                         </h5>
                                         <div class="col-md-6">
@@ -57,11 +57,11 @@
                                             <div class="form-group col-md-4">
                                                 <input type="text" id="hue-demo" name="hue-demo" class="form-control demo" data-control="hue" value="#ff6161">
                                             </div>
-                                             <div class="form-group col-md-12">
-                                               <table class="table table-striped table-hover table-bordered" id="products_color">
+                                            <div class="form-group col-md-12">
+                                                <table class="table table-striped table-hover table-bordered" id="products_color">
                                                     <thead>
-                                                    <tr>
-                                                    <th>
+                                                        <tr>
+                                                            <th>
                                                     <p align="center">Nombre</p>
                                                     </th>
                                                     <th >
@@ -74,15 +74,12 @@
                                                     </thead>
                                                     <tbody id="color_body">
                                                         <?php
-                                                        
-                                                          foreach ($colors as $c){
-                                                              echo ' <tr id="color_' . $c->id . '" align="center">',
-                                                                   ' <td>' . $c->name . '</td>',
-                                                                   ' <td>' . '<div class="minicolors minicolors-theme-bootstrap minicolors-position-bottom minicolors-position-left"><input disabled type="text" id="hue-demo" class="form-control demo minicolors-input" data-control="hue" value="#ff6161" size="7"><span class="minicolors-swatch minicolors-sprite"><span class="minicolors-swatch-color" style="background-color:' . $c->ref . ';"></span></span></div>' . '</td>',
-                                                                   '<td><a class="" onclick="the_id(' . $c->id . ');" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
-                                                          }
-                                                          
-                                                        
+                                                        foreach ($colors as $c) {
+                                                            echo ' <tr id="color_' . $c->id . '" align="center">',
+                                                            ' <td>' . $c->name . '</td>',
+                                                            ' <td>' . '<div class="minicolors minicolors-theme-bootstrap minicolors-position-bottom minicolors-position-left"><input disabled type="text" id="hue-demo" class="form-control demo minicolors-input" data-control="hue" value="#ff6161" size="7"><span class="minicolors-swatch minicolors-sprite"><span class="minicolors-swatch-color" style="background-color:' . $c->ref . ';"></span></span></div>' . '</td>',
+                                                            '<td><a class="" onclick="the_id(' . $c->id . ');" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
+                                                        }
                                                         ?>
                                                     </tbody>
                                                 </table>
@@ -90,8 +87,8 @@
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
-                                             <h3 lass="form-section">Agregar Unidades
-                                                 <button  id="send_unit" name="send_unit" onclick="save_unit();"  type="text" class="btn blue col-md-offset-3"><i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Unidad</button>
+                                            <h3 lass="form-section">Agregar Unidades
+                                                <button  id="send_unit" name="send_unit" onclick="save_unit();"  type="text" class="btn blue col-md-offset-3"><i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Unidad</button>
                                             </h3><br>
                                             <label class="control-label col-md-3">* Unidad</label>
                                             <div class="form-group col-md-9">
@@ -100,8 +97,8 @@
                                             <div class="form-group col-md-12">
                                                 <table class="table table-striped table-hover table-bordered" id="products_unidad">
                                                     <thead>
-                                                    <tr>
-                                                    <th>
+                                                        <tr>
+                                                            <th>
                                                     <p align="center">Unidad</p>
                                                     </th>
                                                     <th >
@@ -110,14 +107,13 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody id="body_unit">
-                                                      <?php 
-                                                        foreach ($unidad as $u){
-                                                            echo ' <tr id="unit_' . $u->id . '" align="center">',
-                                                                 ' <td>' . $u->name . '</td>',
-                                                                 ' <td><a class="" onclick="the_id(' . $u->id . ');" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
-                                                        }
-                                                      
-                                                      ?>
+<?php
+foreach ($unidad as $u) {
+    echo ' <tr id="unit_' . $u->id . '" align="center">',
+    ' <td>' . $u->name . '</td>',
+    ' <td><a class="" onclick="the_id(' . $u->id . ');" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
+}
+?>
                                                     </tbody>
                                                 </table>
                                             </div> 
@@ -186,186 +182,186 @@
     </div>
 </div>
 <script>
-        var $id = null;
-        
-        var save_color = function(){
-           var d        = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardando ...</button>';
-           var k        = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Color</button>';
-           var b        = $("#send_color");
-           var t        = $("#txt_color");
-           var c        = $("#hue-demo");
-           
-           if(t.val() == ""){
-               alert("el nombre del color debe ser obligatorio");
-               return;
-           }
-           
-           var tasking = new jtask();
-           tasking.url = "<?php echo site_url("/Productos/New_Color"); ?>";
-           tasking.beforesend = true;
-           tasking.data = {
-               "name" : t.val(),
-               "value" : c.val()
-           };
-           tasking.config_before(function(){
-               b.html(d);
-               t.attr("disabled" , true);
-               c.attr("disabled" , true);
-           });
-           tasking.success_callback(function (request) {
-                b.html(k);
-                t.attr("disabled" , false);
-                c.attr("disabled" , false);
-                var body_color = $("#color_body");
-                var htm = ' <tr id="color_' + $.trim(request) + '" align="center">' +
-                  ' <td>' 
-                  + t.val() 
-                  + '</td>' 
-                  + ' <td>'  
-                  + '<div class="minicolors minicolors-theme-bootstrap minicolors-position-bottom minicolors-position-left"><input disabled type="text" id="hue-demo" class="form-control demo minicolors-input" data-control="hue" value="#ff6161" size="7"><span class="minicolors-swatch minicolors-sprite"><span class="minicolors-swatch-color" style="background-color:' 
-                  + c.val() + ';"></span></span></div>'  + '</td>' +
-                  '<td><a class="" onclick="the_id(' + $.trim(request) + ');" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
-                body_color.prepend(htm);
-            });
-            tasking.do_task();
+    var $id = null;
+
+    var save_color = function () {
+        var d = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardando ...</button>';
+        var k = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Color</button>';
+        var b = $("#send_color");
+        var t = $("#txt_color");
+        var c = $("#hue-demo");
+
+        if (t.val() == "") {
+            alert("el nombre del color debe ser obligatorio");
+            return;
+        }
+
+        var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/Productos/New_Color"); ?>";
+        tasking.beforesend = true;
+        tasking.data = {
+            "name": t.val(),
+            "value": c.val()
         };
-        
-        var save_unit = function(){
-           var d        = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardando ...</button>';
-           var k        = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Unidad</button>';
-           var b        = $("#send_unit");
-           var t        = $("#txt_unidad");
-           
-           
-            if(t.val() == ""){
-               alert("el nombre de la unidad debe ser obligatorio");
-               return;
-           }
+        tasking.config_before(function () {
+            b.html(d);
+            t.attr("disabled", true);
+            c.attr("disabled", true);
+        });
+        tasking.success_callback(function (request) {
+            b.html(k);
+            t.attr("disabled", false);
+            c.attr("disabled", false);
+            var body_color = $("#color_body");
+            var htm = ' <tr id="color_' + $.trim(request) + '" align="center">' +
+                    ' <td>'
+                    + t.val()
+                    + '</td>'
+                    + ' <td>'
+                    + '<div class="minicolors minicolors-theme-bootstrap minicolors-position-bottom minicolors-position-left"><input disabled type="text" id="hue-demo" class="form-control demo minicolors-input" data-control="hue" value="#ff6161" size="7"><span class="minicolors-swatch minicolors-sprite"><span class="minicolors-swatch-color" style="background-color:'
+                    + c.val() + ';"></span></span></div>' + '</td>' +
+                    '<td><a class="" onclick="the_id(' + $.trim(request) + ');" data-toggle="modal" href="#responsive_delete_color"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
+            body_color.prepend(htm);
+        });
+        tasking.do_task();
+    };
 
-           var tasking = new jtask();
-           tasking.url = "<?php echo site_url("/Productos/New_Unit"); ?>";
-           tasking.beforesend = true;
-           tasking.data = {
-               "name" : t.val()
-           };
-           tasking.config_before(function(){
-               b.html(d);
-               t.attr("disabled" , true);
-           });
-           tasking.success_callback(function (request) {
-                b.html(k);
-                t.attr("disabled" , false);
-                var unit_color = $("#body_unit");
-                var htm = ' <tr id="unit_' + $.trim(request) + '" align="center">' +
-                          ' <td>' + t.val() +'</td>' +
-                          ' <td><a class="" onclick="the_id(' + $.trim(request) + ');" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
-                unit_color.prepend(htm);
-            });
-            tasking.do_task();
+    var save_unit = function () {
+        var d = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardando ...</button>';
+        var k = '<i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Unidad</button>';
+        var b = $("#send_unit");
+        var t = $("#txt_unidad");
+
+
+        if (t.val() == "") {
+            alert("el nombre de la unidad debe ser obligatorio");
+            return;
+        }
+
+        var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/Productos/New_Unit"); ?>";
+        tasking.beforesend = true;
+        tasking.data = {
+            "name": t.val()
         };
-        var table_loader = function () {
+        tasking.config_before(function () {
+            b.html(d);
+            t.attr("disabled", true);
+        });
+        tasking.success_callback(function (request) {
+            b.html(k);
+            t.attr("disabled", false);
+            var unit_color = $("#body_unit");
+            var htm = ' <tr id="unit_' + $.trim(request) + '" align="center">' +
+                    ' <td>' + t.val() + '</td>' +
+                    ' <td><a class="" onclick="the_id(' + $.trim(request) + ');" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a></td>';
+            unit_color.prepend(htm);
+        });
+        tasking.do_task();
+    };
+    var table_loader = function () {
 
-            var table = $('#products_color');
+        var table = $('#products_color');
 
-            table.dataTable({
-                "lengthMenu": [
-                    [5, 15 , 30 , -1],
-                    [5, 10 , 30 , "Todos" ] 
-                ],
-                "pageLength": 3,
-                "language": {
-                    "aria": {
-                        "sortAscending": ": activate to sort column ascending",
-                        "sortDescending": ": activate to sort column descending"
-                    },
-                    "emptyTable": "No data available in table",
-                    "info": "Mostrando _START_ a _END_ en total de _TOTAL_ ",
-                    "infoEmpty": "No se ha encontrado productos ...",
-                    "infoFiltered": "(filtered1 from _MAX_ total records)",
-                    "lengthMenu": "Mostar _MENU_ Productos",
-                    "search": "Buscar:",
-                    "zeroRecords": "Ningun color encontrado ..."
-
+        table.dataTable({
+            "lengthMenu": [
+                [5, 15, 30, -1],
+                [5, 10, 30, "Todos"]
+            ],
+            "pageLength": 3,
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
                 },
-                "columnDefs": [{// set default column settings
-                        'orderable': true,
-                        'targets': [0]
-                    }, {
-                        "searchable": true,
-                        "targets": [0]
-                    }],
-                "order": [
-                    [0, "asc"]
-                ] 
-            });
+                "emptyTable": "No data available in table",
+                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ ",
+                "infoEmpty": "No se ha encontrado productos ...",
+                "infoFiltered": "(filtered1 from _MAX_ total records)",
+                "lengthMenu": "Mostar _MENU_ Productos",
+                "search": "Buscar:",
+                "zeroRecords": "Ningun color encontrado ..."
 
-           var tableWrapper = $('#products_color_wrapper'); 
-           tableWrapper.find('.dataTables_length select').select2(); 
-           
-           
-            var table2 = $('#products_unidad');
+            },
+            "columnDefs": [{// set default column settings
+                    'orderable': true,
+                    'targets': [0]
+                }, {
+                    "searchable": true,
+                    "targets": [0]
+                }],
+            "order": [
+                [0, "asc"]
+            ]
+        });
 
-            table2.dataTable({
-                "lengthMenu": [
-                    [5, 15 , 30 , -1],
-                    [5, 10 , 30 , "Todos" ] 
-                ],
-                "pageLength": 3,
-                "language": {
-                    "aria": {
-                        "sortAscending": ": activate to sort column ascending",
-                        "sortDescending": ": activate to sort column descending"
-                    },
-                    "emptyTable": "No data available in table",
-                    "info": "Mostrando _START_ a _END_ en total de _TOTAL_ ",
-                    "infoEmpty": "No se ha encontrado productos ...",
-                    "infoFiltered": "(filtered1 from _MAX_ total records)",
-                    "lengthMenu": "Mostar _MENU_ Productos",
-                    "search": "Buscar:",
-                    "zeroRecords": "Ningun color encontrado ..."
+        var tableWrapper = $('#products_color_wrapper');
+        tableWrapper.find('.dataTables_length select').select2();
 
+
+        var table2 = $('#products_unidad');
+
+        table2.dataTable({
+            "lengthMenu": [
+                [5, 15, 30, -1],
+                [5, 10, 30, "Todos"]
+            ],
+            "pageLength": 3,
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
                 },
-                "columnDefs": [{// set default column settings
-                        'orderable': true,
-                        'targets': [0]
-                    }, {
-                        "searchable": true,
-                        "targets": [0]
-                    }],
-                "order": [
-                    [0, "asc"]
-                ] 
-            });
+                "emptyTable": "No data available in table",
+                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ ",
+                "infoEmpty": "No se ha encontrado productos ...",
+                "infoFiltered": "(filtered1 from _MAX_ total records)",
+                "lengthMenu": "Mostar _MENU_ Productos",
+                "search": "Buscar:",
+                "zeroRecords": "Ningun color encontrado ..."
 
-           var tableWrapper2 = $('#products_unidad_wrapper'); 
-           tableWrapper2.find('.dataTables_length select').select2(); 
-                     
+            },
+            "columnDefs": [{// set default column settings
+                    'orderable': true,
+                    'targets': [0]
+                }, {
+                    "searchable": true,
+                    "targets": [0]
+                }],
+            "order": [
+                [0, "asc"]
+            ]
+        });
 
-        };
+        var tableWrapper2 = $('#products_unidad_wrapper');
+        tableWrapper2.find('.dataTables_length select').select2();
 
-        var the_id = function (i) {
-            $id = i;
-        };
-        
-        var delete_color = function(){
-            var tasking = new jtask();
-            tasking.url = "<?php echo site_url("/Productos/delete_color"); ?>";
-            tasking.data = {"id": $id};
-            tasking.success_callback(function (d) {
-                $("#color_" + $id).remove();
-            });
-            tasking.do_task();
-        };
-        
-        var delete_unit = function(){
-            var tasking = new jtask();
-            tasking.url = "<?php echo site_url("/Productos/delete_unit"); ?>";
-            tasking.data = {"id": $id};
-            tasking.success_callback(function (d) {
-                $("#unit_" + $id).remove();
-            });
-            tasking.do_task();
-        };
 
-       
+    };
+
+    var the_id = function (i) {
+        $id = i;
+    };
+
+    var delete_color = function () {
+        var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/Productos/delete_color"); ?>";
+        tasking.data = {"id": $id};
+        tasking.success_callback(function (d) {
+            $("#color_" + $id).remove();
+        });
+        tasking.do_task();
+    };
+
+    var delete_unit = function () {
+        var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/Productos/delete_unit"); ?>";
+        tasking.data = {"id": $id};
+        tasking.success_callback(function (d) {
+            $("#unit_" + $id).remove();
+        });
+        tasking.do_task();
+    };
+
+
 </script>
