@@ -135,13 +135,13 @@
                                     <div>
                                         <!-- The fileinput-button span is used to style the file input field as button -->
                                         <span class="btn green fileinput-button">
-                                            <i class="icon-search"></i>
+                                            <i class="glyphicon glyphicon-paperclip"></i>
                                             <span>
-                                                Buscar...</span>
+                                                Añadir..</span>
                                             <input type="file" name="files[]" multiple="">
                                         </span>
                                         <button type="submit" class="btn blue start">
-                                            <i class="icon-upload"></i>
+                                            <i class="glyphicon glyphicon-upload"></i>
                                             <span>
                                                 Subir</span>
                                         </button>
