@@ -72,15 +72,15 @@
                                    </div>
                                    <div class="portlet light bordered col-md-12">
                                         <li class="list-group-item">
-                                             Compra de tela<span class="badge badge-margine">
+                                            <a href="#" style="text-decoration:none; color:black;">Compra de tela</a><span class="badge badge-margine">
                                             1/09/2015 </span>
                                         </li>
                                         <li class="list-group-item">
-                                             Compra de botones<span class="badge badge-margine">
+                                              <a href="#" style="text-decoration:none; color:black;">Compra de botones</a><span class="badge badge-margine">
                                             10/09/2015 </span>
                                         </li>
                                         <li class="list-group-item">
-                                             Compra de lino<span class="badge badge-margine">
+                                              <a href="#" style="text-decoration:none; color:black;">Compra de lino</a><span class="badge badge-margine">
                                             20/20/2015 </span>
                                         </li>
                                    </div>
