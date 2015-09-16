@@ -41,7 +41,7 @@
 <script src="<?php echo $route;?>assert/dashboard/js/index.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/plugins/ui-general.js" type="text/javascript"></script>
 
-<!--LIBRERIA EN LA CUAL SUSTITUYE AJAX COMO GESTOR DE PROCESOS DE SEGUNDO PLANO : PRIORIDAD DEL SISTEMA  -->
+<!-- SYSTEM LIBRARIES  -->
 <script src="<?php echo $route;?>assert/system/dashboard/jstask/task.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/system/dashboard/request.js" type="text/javascript"></script>
 <script src="<?php echo $route;?>assert/system/dashboard/metadata.js" type="text/javascript"></script>
