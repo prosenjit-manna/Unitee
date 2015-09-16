@@ -98,7 +98,6 @@
                                     <a href="#" class="btn btn-success glyphicon glyphicon-list-alt"> Excel</a>
                                 </div><br>
                             </div><br><br>
-                            <div class="col-md-12">
                                 <div class="portlet light bordered col-md-12">
                                     <ul class="list-group col-md-12">
                                         <li class="list-group-item">
@@ -244,7 +243,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
