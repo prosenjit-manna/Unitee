@@ -543,7 +543,27 @@ class Dashboard extends CI_Controller {
 
     public function test(){
         
-         $this->load->library("excel");
+            $this->load->library("email");
+                   
+                    if(email_config() != NULL){
+                        $this->email->initialize(email_config());
+                    }
+        
+                    $from_      = email_from();
+                    
+                    $this->email->from($from_['from'], $from_['name']);
+                    $this->email->to("rmarroquin@lieison.com");
+
+                    $this->email->subject('Contraseña Unitee | Inventario');
+                    
+                    $message_ = '<br> Tu Usuario es : ' 
+                            . "lllllaaaaa" . '<br>' 
+                            . 'Tu contraseña es : ' 
+                            . "--->";
+                    
+                    $this->email->message($message_);
+
+                    $this->email->send();
          
     }
     
