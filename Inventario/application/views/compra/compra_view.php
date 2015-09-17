@@ -118,89 +118,19 @@
                                             <p class="col-md-1">12/12/12</p><br>
                                         </li>
                                     </ul>
-                                    <table class="table table-striped table-hover table-bordered" id="compras_table">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                        <p align="center">Nombre</p>
-                                        </th>
-                                        <th >
-                                        <p align="center">Cantidad</p>
-                                        </th>
-                                        <th >
-                                        <p align="center">Precio</p>
-                                        </th>
-                                        <th>
-                                        <p align="center">Color</p>
-                                        </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="portlet light bordered col-md-12">
+                                        <center><img src="<?php echo $route; ?>images/dashboard/loading.gif" align="center" width="100px" height="100px"/></center>
+                                        <center><p>Buscando compras..</p></center>
+                                    </div>
                                     <br>
                                     <ul class="list-group col-md-12">
                                         <li class="list-group-item">
                                             <p class="col-md-5">Precio total de la compra</p>     
                                             <p class="col-md-3">$250.00</p>
                                             <p class="col-md-2">P.O.</p>     
-                                            <p class="col-md-2">$250.00</p><br>
+                                            <p class="col-md-2">PO-LOPK12</p>
+                                            <p class="col-md-3">Agregado por</p>
+                                            <p class="col-md-9">Michelle Heredia Sinfontes Solorzano</p>
                                         </li>
                                     </ul>
                                 <a data-toggle="modal" href="#responsive_delete" class="btn btn-danger glyphicon glyphicon-remove-circle"> Eliminar</a>
@@ -255,7 +185,7 @@
                                             <h4 class="modal-title">Eliminar Compra</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
+                                            <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible="1">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <h4>¿Deseas eliminar esta compra?</h4>
