@@ -126,5 +126,9 @@ class View_compra extends CI_Model implements PInterface {
     public function _JSdashboard() {
         
     }
+    
+    public function  Find($option , $value ){
+        
+    }
 
 }
