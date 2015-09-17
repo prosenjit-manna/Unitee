@@ -25,7 +25,7 @@
         <div class="page-content-wrapper">
             <!-- INICIO PAGE CONTENT-->
             <!-- INICIO Portlet PORTLET-->
-            <div class="portlet scroller" style="height:430px" data-rail-visible="1">  
+            <div class="portlet scroller" style="height:440px;" data-rail-visible="1">  
                 <div class="portlet light">
                     <div class="portlet-title">
                         <div class="portlet-title caption font-green-sharp">
@@ -37,21 +37,23 @@
                         <div class="col-md-4">
                             <div class="portlet light bordered col-md-12"><br>
                                 <label class="control-label col-md-3">Ver</label>
-                                <div class="dropdown col-md-9">
-                                    <select required="required" id="select" onchange="" style="width:150px;" name="txt_pais" class="form-control input-circle">
-                                        <option value="-1">Seleccionar</option>
+                                <div class="form-group dropdown col-md-9">
+                                    <select required="required" id="select" onchange="" style="width:165px;" name="txt_pais" class="form-control">
+                                        <option value="-1">Seleccionar opción</option>
                                         <option value="1">P.O.</option>
                                         <option value="2">Factura</option>
                                         <option value="3">Producto</option>                     
                                     </select>
                                 </div><br><br>
-                                <label class="control-label col-md-4">Valor</label>
-                                <div class="input-group col-md-8">
-                                    <input class="form-control input-circle-left" placeholder="Busqueda" type="text">
-                                    <span class="input-group-addon input-circle-right">
-                                        <a href="#"><i class="icon-search"></i></a>
-                                    </span>
-                                </div><br>
+                                <label class="control-label col-md-3">Valor</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" style="width:125px;" placeholder="Valor">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info" type="button"><i class="icon-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="portlet light bordered col-md-12">
                                 <div align="center">
@@ -71,22 +73,32 @@
                                 </div>
                             </div>
                             <div class="portlet light bordered col-md-12">
-                                <li class="list-group-item">
-                                    <a href="#" style="text-decoration:none; color:black;">Compra de tela</a><span class="badge badge-margine">
-                                        1/09/2015 </span>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="#" style="text-decoration:none; color:black;">Compra de botones</a><span class="badge badge-margine">
-                                        10/09/2015 </span>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="#" style="text-decoration:none; color:black;">Compra de pellum</a><span class="badge badge-margine">
-                                        20/20/2015 </span>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="#" style="text-decoration:none; color:black;">Compra de Elastico</a><span class="badge badge-margine">
-                                        20/20/2015 </span>
-                                </li>
+                                <ul class="list-group  scroller" style="height:160px">
+                                    <li class="list-group-item">
+                                        <a href="#" style="text-decoration:none; color:black;">Compra de tela</a><span class="badge badge-margine">
+                                            1/09/2015 </span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" style="text-decoration:none; color:black;">Compra de boto..</a><span class="badge badge-margine">
+                                            10/09/2015 </span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" style="text-decoration:none; color:black;">Compra de pellum</a><span class="badge badge-margine">
+                                            20/20/2015 </span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" style="text-decoration:none; color:black;">Compra de Elastico</a><span class="badge badge-margine">
+                                            20/20/2015 </span>
+                                    </li>
+                                     <li class="list-group-item">
+                                        <a href="#" style="text-decoration:none; color:black;">Compra de Elastico</a><span class="badge badge-margine">
+                                            25/20/2015 </span>
+                                    </li>
+                                     <li class="list-group-item">
+                                        <a href="#" style="text-decoration:none; color:black;">Compra de Elastico</a><span class="badge badge-margine">
+                                            20/20/2015 </span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -121,9 +133,6 @@
                                         <th>
                                         <p align="center">Color</p>
                                         </th>
-                                        <th>
-                                        <p align="center">Operaciones</p>
-                                        </th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -140,10 +149,19 @@
                                                 <td>
                                                     <p align="center">Rojo</p>
                                                 </td>
+                                            </tr>
+                                            <tr>
                                                 <td>
-                                                    <p align="center">
-                                                        <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
-                                                    </p>
+                                                    <p align="center">Tela</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">199 yds</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">$21.12</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">Rojo</p>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -159,11 +177,6 @@
                                                 <td>
                                                     <p align="center">Rojo</p>
                                                 </td>
-                                                <td>
-                                                    <p align="center">
-                                                        <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
-                                                    </p>
-                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -177,11 +190,6 @@
                                                 </td>
                                                 <td>
                                                     <p align="center">Rojo</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">
-                                                        <a class=""   data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 16px;"></i></i></a>
-                                                    </p>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -194,43 +202,62 @@
                                             <p class="col-md-2">$250.00</p><br>
                                         </li>
                                     </ul>
+                                <a data-toggle="modal" href="#responsive_delete" class="btn btn-danger glyphicon glyphicon-remove-circle"> Eliminar</a>
                                 </div>
                                 <div class="portlet-body">
-                                    <ul class="list-group col-md-12">
-                                        <li  class="list-group-item">
+                                    <div class="panel-group accordion" id="accordion3">
+                                        <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                <h6 class="panel-title">
-                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse_1">
-                                                        Archivos adjuntos </a>
-                                                </h6>
+                                                <h4 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">
+                                                Collapsible asdsa Item #1 </a>
+                                                </h4>
                                             </div>
-                                            <div id="collapse_1" class="panel-collapse collapse">
+                                            <div id="collapse_3_1" class="panel-collapse in">
                                                 <div class="panel-body">
-                                                    <p class="col-md-12 col-md-offset-3">
-                                                        <i class="icon-folder-open" style="font-size:50px;"></i>
-                                                        <i class="icon-film" style="font-size:50px;"></i>
-                                                        <i class="icon-envelope" style="font-size:50px;"></i>
-                                                        <i class="icon-edit" style="font-size:50px;"></i>
-                                                        <i class="icon-folder-open" style="font-size:50px;"></i>
-                                                        <i class="icon-film" style="font-size:50px;"></i>
-                                                    </p>
+                                                    <p>
+                                                   <table>
+                                                   <tr>
+                                                       <td>
+                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/png.png" style="height:80px;" alt=""></a>
+                                                       </td>
+                                                       <td>
+                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/jpg.png" style="height:80px;" alt=""></a>
+                                                       </td>
+                                                       <td>
+                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/gif.png" style="height:80px;" alt=""></a>
+                                                       </td>
+                                                       <td>
+                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/txt.png" style="height:80px;" alt=""></a>
+                                                       </td>
+                                                       <td>
+                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/word.png" style="height:80px;" alt=""></a>
+                                                       </td>
+                                                       <td>
+                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/excel.png" style="height:80px;" alt=""></a>
+                                                       </td>
+                                                       <td>
+                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/pdf.png" style="height:80px;" alt=""></a>
+                                                       </td>
+                                                   </tr>
+                                                   </table>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog">
-                                        <div class="modal-content">
+                                        <div clssa="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                <h4 class="modal-title">Eliminar Compra</h4>
+                                                <h4 class="modal-title">Eliminar Factura</h4>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h4>¿Deseas eliminar  esta compra de tu lista?</h4>
+                                                            <h4>¿Deseas eliminar  esta factura?</h4>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -261,7 +288,7 @@
                 [5, 15, 30, -1],
                 [5, 10, 30, "Todos"]
             ],
-            "pageLength": 3,
+            "pageLength": 5,
             "language": {
                 "aria": {
                     "sortAscending": ": activate to sort column ascending",
