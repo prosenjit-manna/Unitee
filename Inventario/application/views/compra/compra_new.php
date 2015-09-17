@@ -25,7 +25,25 @@
             </div>
         </div>
         <!-- FINAL BREADCUMBS -->
+          <div>
+            <?php
+            $type_message = array(
+                "buy" => " Compra "
+            );
 
+            $err_message = array(
+                0 => " Realizada con exito ...", /* <a href='" . site_url("/0/proveedor=new_proveedor") .  "' class='btn default input-circle'>Agregar Nuevo Proveedor</a> */
+                1 => " No se pudo guardar los cambios ,  favor intentar de nuevo."
+            );
+
+
+            if (isset($_REQUEST['success'])) {
+                echo '<div class="alert alert-block alert-success fade in"><button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>'
+                . $type_message['buy']
+                . $err_message[0] ? : NULL . '</p></div>';
+            }
+            ?>
+        </div>
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <input type="hidden" id="providers" value='<?php echo json_encode($prov, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>' />
@@ -189,7 +207,7 @@
                 </div><br><br>
                 <div class="form-actions right col-md-offset-9">
                     <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                    <button onclick="save_buy();"  disabled="disabled" id="send_buy" name="send_buy"  type="button" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                    <a href="#responsive_question" data-toggle="modal"  id="send_buy" name="send_buy"  type="button" class="btn blue"><i class="fa fa-check"></i>Guardar</a>
                 </div>
                 <!-- FINAL Portlet PORTLET-->
             </div>
@@ -215,6 +233,29 @@
                     <div class="modal-footer">
                         <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
                         <button type="button" data-dismiss="modal" onclick="delete_node();" class="btn green">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="responsive_question" class="modal fade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Aviso ...</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Antes de continuar revise bien si los productos tanto como adjuntos son los correctos en dado caso , se podra eliminar la compra en ver compras.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
+                        <button type="button" data-dismiss="modal" onclick="save_buy();" class="btn green">Guardar</button>
                     </div>
                 </div>
             </div>
@@ -625,7 +666,7 @@
             $("#send_buy").attr("disabled", true);
         });
         task.success_callback(function (r) {
-            window.location.href = "<?php echo site_url("/0/compra=new_compra?sucess=true"); ?>";
+            window.location.href = "<?php echo site_url("/0/compra=new_compra?success=true"); ?>";
             $("#send_buy").html("Guardar");
             $("#send_buy").attr("disabled", false);
 

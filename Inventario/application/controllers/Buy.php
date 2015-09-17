@@ -16,24 +16,27 @@ class Buy extends CI_Controller {
 
         if (is_null($product)) {
             echo FALSE;
+            return;
         }
 
-        $po = isset($_REQUEST['po']) ? $_REQUEST['po'] : NULL;
-        $fac = isset($_REQUEST['fac']) ? $_REQUEST['fac'] : NULL;
-        $total = isset($_REQUEST['total']) ? $_REQUEST['total'] : NULL;
-        $prov = isset($_REQUEST['prov']) ? $_REQUEST['prov'] : NULL;
-        $upload = isset($_REQUEST['upload']) ? $_REQUEST['upload'] : NULL;
+        $po         = isset($_REQUEST['po']) ? $_REQUEST['po'] : NULL;
+        $fac        = isset($_REQUEST['fac']) ? $_REQUEST['fac'] : NULL;
+        $total      = isset($_REQUEST['total']) ? $_REQUEST['total'] : NULL;
+        $prov       = isset($_REQUEST['prov']) ? $_REQUEST['prov'] : NULL;
+        $upload     = isset($_REQUEST['upload']) ? $_REQUEST['upload'] : NULL;
 
         $this->load->model("user/User_Auth", "user");
         $this->load->model("compra/new_compra", "buy");
         $this->load->model("productos/edit_producto", "prod");
+        $this->load->helper("string");
         $this->load->library("tools");
         
         
         $id_upload = NULL;
-        if(!is_null($upload)){
+        
+        if(!is_null($upload) &&  $upload != "[]"){
              $this->load->model("tshop/Adjuntos" , "adj");
-             $id_upload = $this->adj->Add($upload , "compras" , "");
+             $id_upload = $this->adj->Add($upload , "compras" , "Cod:" . random_string());
         }
 
         $this->tools->default_timezone();
@@ -41,13 +44,13 @@ class Buy extends CI_Controller {
         $id_user = $this->user->get_usr;
 
         $id_buy = $this->buy->Save(array(
-            "id_proveedor" => $prov,
-            "precio_total" => $total,
-            "ref_factura" => $fac,
-            "PO" => $po,
-            "id_adjunto" => $id_upload,
-            "id_user" => $id_user,
-            "date" => $this->tools->current_datetime()
+            "id_proveedor"          => $prov,
+            "precio_total"          => $total,
+            "ref_factura"           => $fac,
+            "PO"                    => $po,
+            "id_adjunto"            => $id_upload,
+            "id_user"               => $id_user,
+            "date"                  => $this->tools->current_datetime()
         ));
 
         foreach ($product as $prod) {
@@ -95,7 +98,8 @@ class Buy extends CI_Controller {
         $f[0]['deleteUrl']          = NULL;
         $f[0]['deleteType']         = NULL;
         $f[0]['error']              = NULL;
-        $f[0]['data']               = json_encode(array(
+        
+        $f[0]['data']  = json_encode(array(
               "name"        => $_FILES['files']['name'],
               "document"    => $name,
               "directory"   => $dir
