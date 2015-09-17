@@ -130,11 +130,16 @@ class View_compra extends CI_Model implements PInterface {
     public function  Find($option , $value ){
           $query = "SELECT 
                         compras.id_compras as 'id',
-                        compras.id_proveedor as 'id_prov',
-                        compras.id_adjunto as 'id_adj',
-                        
-                    
-              
+                        compras.ref_factura as 'factura',
+                        compras.PO as 'po',
+                        compras.date as 'fecha',
+                        concat(user.nombres , ' ' , user.apellidos) as 'user',
+                        proveedor.nombre as 'proveedor',
+                        adjunto.adjunto as 'adjunto'
+                        FROM compras 
+                        INNER JOIN proveedor ON proveedor.id_proveedor=compras.id_proveedor
+                        INNER JOIN user on user.id_user=compras.id_user
+                        INNER JOIN adjunto ON adjunto.id_adjunto=compras.id_adjunto
                    ";
                   
     }
