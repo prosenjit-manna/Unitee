@@ -210,7 +210,7 @@
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
                                                 <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">
-                                                Collapsible asdsa Item #1 </a>
+                                                Archivos adjuntos: </a>
                                                 </h4>
                                             </div>
                                             <div id="collapse_3_1" class="panel-collapse in">
