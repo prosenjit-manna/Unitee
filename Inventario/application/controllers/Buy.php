@@ -109,5 +109,11 @@ class Buy extends CI_Controller {
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('files' => $f)));
     }
+    
+    public function Data(){
+         $option    = isset($_REQUEST['option']) ? $_REQUEST['option'] : NULL;
+         $value     = isset($_REQUEST['value']) ? $_REQUEST['value'] : NULL;
+         $range     = isset($_REQUEST['range']) ? $_REQUEST['range'] : NULL;
+    }
 
 }

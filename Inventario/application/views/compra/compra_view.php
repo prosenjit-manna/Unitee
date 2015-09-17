@@ -38,7 +38,7 @@
                             <div class="portlet light bordered col-md-12"><br>
                                 <label class="control-label col-md-3">Ver</label>
                                 <div class="form-group dropdown col-md-9">
-                                    <select required="required" id="select" onchange="" style="width:165px;" name="txt_pais" class="form-control">
+                                    <select id="find_option"  required="required" id="select" onchange="" style="width:165px;" name="txt_pais" class="form-control">
                                         <option value="-1">Seleccionar opción</option>
                                         <option value="1">P.O.</option>
                                         <option value="2">Factura</option>
@@ -48,9 +48,9 @@
                                 <label class="control-label col-md-3">Valor</label>
                                 <div class="col-md-9">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" style="width:125px;" placeholder="Valor">
+                                        <input id="txt_find" type="text" class="form-control" style="width:125px;" placeholder="Valor">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-info" type="button"><i class="icon-search"></i></button>
+                                            <button name="button_find" id="button_find" class="btn btn-info" type="button"><i class="icon-search"></i></button>
                                         </span>
                                     </div>
                                 </div>
@@ -193,7 +193,8 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table><br>
+                                    </table>
+                                    <br>
                                     <ul class="list-group col-md-12">
                                         <li class="list-group-item">
                                             <p class="col-md-5">Precio total de la compra</p>     
@@ -278,51 +279,57 @@
 </div>
 <script>
     var $id = null;
-
-    var table_loader = function () {
-
-        var table = $('#compras_table');
-
-        var oTable = table.dataTable({
-            "lengthMenu": [
-                [5, 15, 30, -1],
-                [5, 10, 30, "Todos"]
-            ],
-            "pageLength": 5,
-            "language": {
-                "aria": {
-                    "sortAscending": ": activate to sort column ascending",
-                    "sortDescending": ": activate to sort column descending"
-                },
-                "emptyTable": "No data available in table",
-                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ productos",
-                "infoEmpty": "No se ha encontrado productos ...",
-                "infoFiltered": "(filtered1 from _MAX_ total records)",
-                "lengthMenu": "Mostar _MENU_ Productos",
-                "search": "Buscar:",
-                "zeroRecords": "Ningun producto encontrado ..."
-
-            },
-            "columnDefs": [{// set default column settings
-                    'orderable': true,
-                    'targets': [0]
-                }, {
-                    "searchable": true,
-                    "targets": [0]
-                }],
-            "order": [
-                [0, "asc"]
-            ]
-        });
-
-        var tableWrapper = $('#compras_table_wrapper');
-        tableWrapper.find('.dataTables_length select').select2();
-
+    
+    var buy_loader = function(){
+    
+           /**
+                * VALUES : 
+                * NULL      = -1
+                * P.O       = 1
+                * FACTURA   = 2
+                * PRODUCTO  = 3
+                * DATE = 4
+                * DATE RANGE = 5
+                * **/
+        
+           $("#button_find").on("click" , function(){
+              
+                var option_  = $("#find_option").val();
+                var value    = $("#txt_find").val();
+                
+                find_(option_ , value , 0 , "button_find");
+                
+            });
 
     };
-
-    var the_id = function (i) {
-        $id = i;
+    
+    
+    var find_ = function(option , value , range , request)
+    {
+        
+               var task     = new jtask();
+               task.url = "<?php echo site_url("Buy/Data"); ?>";
+               
+               task.data =  {
+                   "option": option,
+                   "value" : value,
+                   "range" : range
+               }; 
+               
+               task.beforesend = true;
+               
+               task.config_before(function(){
+                      $("#button_find").attr("disabled" , true);
+               });
+               task.success_callback(function(v){
+                      // $("#button_find").attr("disabled" , false);
+               });
+               task.do_task();
     };
+
+
+  
+    
+   
 
 </script>
