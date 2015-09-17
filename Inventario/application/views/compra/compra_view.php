@@ -119,8 +119,8 @@
                                         </li>
                                     </ul>
                                     <div class="portlet light bordered col-md-12">
-                                        <center><img src="<?php echo $route; ?>images/dashboard/loading.gif" align="center" width="100px" height="100px"/></center>
-                                        <center><p>Buscando compras..</p></center>
+                                        <center><i class="icon-search" style="font-size:20px;"></i></center>
+                                        <center><p>No se encontraron resultados</p></center>
                                     </div>
                                     <br>
                                     <ul class="list-group col-md-12">
@@ -128,9 +128,11 @@
                                             <p class="col-md-5">Precio total de la compra</p>     
                                             <p class="col-md-3">$250.00</p>
                                             <p class="col-md-2">P.O.</p>     
-                                            <p class="col-md-2">PO-LOPK12</p>
-                                            <p class="col-md-3">Agregado por</p>
-                                            <p class="col-md-9">Michelle Heredia Sinfontes Solorzano</p>
+                                            <p class="col-md-2">PO-LOPK12</p><br>
+                                        </li>
+                                         <li class="list-group-item">
+                                            <p class="col-md-4">Agregado por</p>     
+                                            <p class="col-md-8">Michelle Heredia Solorzano Sinfontes</p><br>
                                         </li>
                                     </ul>
                                 <a data-toggle="modal" href="#responsive_delete" class="btn btn-danger glyphicon glyphicon-remove-circle"> Eliminar</a>
@@ -263,3 +265,84 @@
    
 
 </script>
+<!--
+Table
+
+                                    <table class="table table-striped table-hover table-bordered" id="compras_table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                        <p align="center">Nombre</p>
+                                        </th>
+                                        <th >
+                                        <p align="center">Cantidad</p>
+                                        </th>
+                                        <th >
+                                        <p align="center">Precio</p>
+                                        </th>
+                                        <th>
+                                        <p align="center">Color</p>
+                                        </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p align="center">Tela</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">199 yds</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">$21.12</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">Rojo</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p align="center">Tela</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">199 yds</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">$21.12</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">Rojo</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p align="center">Tela</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">199 yds</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">$21.12</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">Rojo</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p align="center">Tela</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">199 yds</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">$21.12</p>
+                                                </td>
+                                                <td>
+                                                    <p align="center">Rojo</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table><br>
+
+-->
