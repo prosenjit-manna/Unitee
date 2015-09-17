@@ -47,7 +47,7 @@
             <div class="portlet-body col-md-5 col-sm-6">
                 <span class="caption-subject font-blue-steel bold uppercase">Notificaciones Recientes</span><br><br>
                 <div id="noti" class="scroller" style="height: 130px;" data-always-visible="1" data-rail-visible="0" id="notificacion">
-
+                   
                 </div>
                 <div class="scroller-footer">
                     <div class="btn-arrow-link pull-right">
@@ -134,9 +134,13 @@
             var obj = JSON.parse(r);
             var c = obj.count;
             var d = obj.data;
-            $.map(d, function (k) {
-                $("#noti").append('<ul class="feeds"><li><div class="col1"><div class="cont"><div class="cont-col1"><div class="label label-sm label-info"><i class="' + k.icon + '"></i></div></div><div class="cont-col2"><div class="desc" id="noti2">' + k.description.substring(0, 40) + "..." + '</div></div></div></div><div class="col2"><div class="date">' + k.date + '</div></div></li></ul>');
-            });
+            if (c == 0) {
+            $("#noti").append('<center><img src="<?php echo $route; ?>images/dashboard/no.png" height="75px"><br><p>No hay notificaciones recientes</p></center>');
+            }else{
+                $.map(d, function (k) {
+                    $("#noti").append('<ul class="feeds"><li><div class="col1"><div class="cont"><div class="cont-col1"><div class="label label-sm label-info"><i class="' + k.icon + '"></i></div></div><div class="cont-col2"><div class="desc" id="noti2">' + k.description.substring(0, 40) + "..." + '</div></div></div></div><div class="col2"><div class="date">' + k.date + '</div></div></li></ul>');
+                });
+            }
         });
         task.do_task();
     };
