@@ -1,0 +1,48 @@
+
+
+COMO UTILIZAR OPERATIONS:
+
+    -OPERATIONS ES UN CAMPO DENTRO DE LA TABLA SIDEBAR
+    - LA CONFIGURACION DE OPERATIONS ES DE TIPO JSON
+    - EJEMPLO
+
+                : {"edit":"1,2" , "delete" : "1,2"  }
+                    
+                 -- donde "edit" = nombre del objeto 
+                    y "1,2" son los privilegios otorgados 
+                 
+                -- el resultado de esta operacion esta dentro de la interfaz
+                
+                la programacion estandar es mas o menos asi 
+
+                $this->load->model("system/permission_engine", 'engine');
+                $data = $this->engine->GetOperationRoles($this->model);
+                return $data;
+
+                    --devuelve un arreglo de las operaciones aceptadas para el 
+                       usuario logado en ese momento
+
+                el valor devuelto debe de colocarse en una variable dentro del _init
+                
+                ejemplo:
+
+                        
+                $op = array(
+                        "operations" => $this->_operations()
+                );
+
+                $this->load->view("producto/producto_view", $op);
+
+                
+                --- DENTRO DE $operations sera un array asi :
+
+                    operation = array(
+
+                        "edit"  => true ,
+                        "delete => false,
+                    );
+                    
+    OJO: EL SISTEMA OPERATION ES ESTATICO, ESTO QUIERE DECIR QUE SE PROGRAMARA
+         EL RESULTADO DE DATOS.
+
+            
