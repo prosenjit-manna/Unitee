@@ -1,0 +1,83 @@
+
+ 
+GUIA RAPIDA PARA AGREGAR UNA SECCION Y MENU DENTRO DEL SIDEBAR
+
+   -- PRIMERO TENEMOS QUE SABER EN QUE NAMESPACE QUIERE QUE APAREZCA:
+            --IR A : namespaces y copiar el id al que desea que salga 
+                     o crear un namespace dentro de la bdd : ojo el id es 
+                     de tipo autonumerico
+
+   -- NOS VAMOS A LA TABLA seccion :
+            DISTRIBUCION DE  LA TABLA:
+
+                `id_seccion` INT(11) NOT NULL AUTO_INCREMENT,
+                `id_namespace` INT(11) NULL DEFAULT NULL,
+                `sub_seccion` INT(11) NULL DEFAULT NULL,
+                `roles` TEXT NULL,
+                `name` TEXT NULL,
+                `icon` TEXT NULL,
+                `start` INT(11) NULL DEFAULT NULL,
+                `status` INT(11) NULL DEFAULT NULL,
+                `complement` TEXT NULL
+
+
+          id_seccion            = automatico
+          id_namespace          = el id del namespace creado
+          sub_seccion           = si la seccion que se esta manejando es una sub-seccion de ella 
+                                  si en dado caso es una sub-seccion se coloca el id de la seccion 
+                                  en la cual se quiere mostrar esta sub seccion
+
+          roles                 = los roles que podran ver esta seccion o subseccion 
+                                  los roles estan en un formato string cuyo separador 
+                                  sera (,) o comma , entonces los roles pueden ser o solo uno 
+                                  o muchos.
+                                    
+                                  ejemplo : 1 o (1,2,5,6) , estos son los ids de los roles
+                                  
+         
+          icon                  = font awesome icon o flat icon
+          start                 = es numerico , indica que seccion ira antes de la otra dentro 
+                                   del mismo namespace
+
+          status                = si esta seccion esta activa o no , sirve mas que todo para mantenimiento
+                                   del sistema en si.
+
+                                   
+         complement             = texto/html , puede ser un valor textual o html que ira dentro de la seccion
+                
+
+    --TABLA sidebar (ultimo nivel):
+        
+            ESTA TABLA ES LA QUE SE COLOCAN TODAS LAS URL EN LAS CUALES DESEAN DAR ACCESO
+            
+
+            compuesto de la tabla:
+
+                `id_sidebar` INT(11) NOT NULL AUTO_INCREMENT,
+                `id_seccion` INT(11) NULL DEFAULT NULL,
+                `roles` TEXT NULL,
+                `name` TEXT NULL,
+                `model_dir` TEXT NULL,
+                `model` TEXT NULL,
+                `type` TEXT NULL,
+                `status` INT(11) NULL DEFAULT NULL,
+                `icon` TEXT NULL,
+                `start` INT(11) NULL DEFAULT NULL,
+                `complement` TEXT NULL,
+                `operations` TEXT NULL
+
+                
+                id_sidebar  =  id autogenerado 
+                id_seccion  = el id de la seccion donde quieren que aparezca 
+                roles       = los roles en la cual desean dar acceso
+                name        = nombre del hipervinculo
+
+
+                model_dir   = directorio donde esta alojado el model a llamar
+                model       = nombre del model a llamar , MVA
+                type        = tipo de modelo si es plugin o system
+                icon        = icono , fontawesome
+                start       = nivel de jerarquia
+                complement  = text/html algun complemento 
+                operations  = json / operaciones extra dentro de ese model
+                status      = visible si o no ?

@@ -12,6 +12,7 @@ class Sidebar_engine extends CI_Model {
     }
     
     public function _init(){
+        
         $namespaces     = $this->get_namespaces();
         $sections       = $this->get_seccion();
         $sidebars       = $this->get_sidebars();
@@ -55,8 +56,9 @@ class Sidebar_engine extends CI_Model {
                                             $roles['nivel'] ,
                                             $roles['sub_nivel'] 
                                     );
+        
         unset($this->permission_engine);
- 
+
         foreach($sections as $sec)
         {
            
@@ -65,7 +67,8 @@ class Sidebar_engine extends CI_Model {
             $sp             = 0;
             
             $flag           = $this->check_rol($current_rol, $rol_);
-
+           
+            
             if($flag){
                 
                 $array_ = array(

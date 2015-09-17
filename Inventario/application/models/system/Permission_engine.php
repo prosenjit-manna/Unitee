@@ -109,13 +109,15 @@ class Permission_engine extends CI_Model {
     public function GetDataRol($current_rol , $sub_rol){
 
         if($sub_rol != 0 || !empty($sub_rol)){
-            
+
             $p      = explode(",", $sub_rol);
             if(sizeof($p) >=2){
                  $r                 = $current_rol;
                  $current_rol       = array();
                  $current_rol[]     = $r;
+                 
                  foreach ($p as $v){ $current_rol[] = $v; }
+                 
             }else{
                   
                 $current_rol = array(
@@ -123,7 +125,7 @@ class Permission_engine extends CI_Model {
                     1   => current($p)
                 );
             }}
-            
+           
             return $current_rol;
     }
     
