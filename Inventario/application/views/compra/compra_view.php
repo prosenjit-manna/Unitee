@@ -247,28 +247,28 @@
                                     </div>
                                 </div>
                                 <div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div clssa="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                <h4 class="modal-title">Eliminar Factura</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <h4>¿Deseas eliminar  esta factura?</h4>
-                                                        </div>
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">Eliminar Compra</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h4>¿Deseas eliminar esta compra?</h4>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                                <button type="button" data-dismiss="modal" class="btn green">Eliminar</button>
-                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
+                                            <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
