@@ -59,7 +59,7 @@ class Buy extends CI_Controller {
                     $prod->id, $prod->cant, $prod->price
             );
 
-            $this->buy->SaveHistory($id_buy, $prod->id);
+            $this->buy->SaveHistory($id_buy, $prod->id, $prod->cant, $prod->price);
         }
         
         

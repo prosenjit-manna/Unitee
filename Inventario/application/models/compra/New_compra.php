@@ -147,10 +147,12 @@ class New_compra extends CI_Model implements PInterface {
         return $this->db->insert_id();
     }
 
-    public function SaveHistory($id_buy, $id_prod) {
+    public function SaveHistory($id_buy, $id_prod, $cant , $price) {
         $this->db->insert("historial_compra", array(
-            "id_compra" => $id_buy,
-            "id_producto" => $id_prod
+            "id_compra"         => $id_buy,
+            "id_producto"       => $id_prod,
+            "cant"              => $cant,
+            "price"             =>$price
         ));
         return $this->db->insert_id();
     }

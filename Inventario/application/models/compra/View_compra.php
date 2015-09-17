@@ -17,8 +17,8 @@ class View_compra extends CI_Model implements PInterface {
 
     use PluginConfig;
 
-    protected $model = "view_compra";
-    var $route = null;
+    protected $model        = "view_compra";
+    var $route              = null;
 
     public function __construct() {
         parent::__construct();
@@ -128,7 +128,15 @@ class View_compra extends CI_Model implements PInterface {
     }
     
     public function  Find($option , $value ){
-        
+          $query = "SELECT 
+                        compras.id_compras as 'id',
+                        compras.id_proveedor as 'id_prov',
+                        compras.id_adjunto as 'id_adj',
+                        
+                    
+              
+                   ";
+                  
     }
 
 }
