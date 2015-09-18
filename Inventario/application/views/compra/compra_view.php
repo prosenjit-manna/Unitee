@@ -36,21 +36,21 @@
                     <div class="row col-md-12">
                         <div class="col-md-4">
                             <div class="portlet light bordered col-md-12"><br>
-                                <label class="control-label col-md-3">Ver</label>
-                                <div class="form-group dropdown col-md-9">
-                                    <select id="find_option"  required="required" id="select" onchange="" style="width:165px;" name="txt_pais" class="form-control">
+                               
+                                <div class="form-group dropdown col-md-12">
+                                    <select id="find_option"  required="required" id="select" onchange=""  name="txt_pais" class="form-control">
                                         <option value="-1">Seleccionar opción</option>
                                         <option value="1">P.O.</option>
                                         <option value="2">Factura</option>
                                         <option value="3">Producto</option>                     
                                     </select>
                                 </div><br><br>
-                                <label class="control-label col-md-3">Valor</label>
-                                <div class="col-md-9">
+                              
+                                <div class="col-md-12">
                                     <div class="input-group">
-                                        <input id="txt_find" type="text" class="form-control" style="width:125px;" placeholder="Valor">
+                                        <input id="txt_find" type="text" class="form-control" placeholder="busca algo ">
                                         <span class="input-group-btn">
-                                            <button name="button_find" id="button_find" class="btn btn-info" type="button"><i class="icon-search"></i></button>
+                                            <button title="dar click para realizar la busqueda" name="button_find" id="button_find" class="btn btn-info" type="button"><i class="icon-search"></i></button>
                                         </span>
                                     </div>
                                 </div>
@@ -72,32 +72,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="portlet light bordered col-md-12">
-                                <ul class="list-group  scroller" style="height:160px">
-                                    <li class="list-group-item">
-                                        <a href="#" style="text-decoration:none; color:black;">Compra de tela</a><span class="badge badge-margine">
-                                            1/09/2015 </span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="#" style="text-decoration:none; color:black;">Compra de boto..</a><span class="badge badge-margine">
-                                            10/09/2015 </span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="#" style="text-decoration:none; color:black;">Compra de pellum</a><span class="badge badge-margine">
-                                            20/20/2015 </span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="#" style="text-decoration:none; color:black;">Compra de Elastico</a><span class="badge badge-margine">
-                                            20/20/2015 </span>
-                                    </li>
-                                     <li class="list-group-item">
-                                        <a href="#" style="text-decoration:none; color:black;">Compra de Elastico</a><span class="badge badge-margine">
-                                            25/20/2015 </span>
-                                    </li>
-                                     <li class="list-group-item">
-                                        <a href="#" style="text-decoration:none; color:black;">Compra de Elastico</a><span class="badge badge-margine">
-                                            20/20/2015 </span>
-                                    </li>
+                            <div  class="portlet light bordered col-md-12">
+                                <ul id="result_set" class="list-group  scroller" style="height:160px">
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -110,151 +87,25 @@
                                     <a href="#" class="btn btn-success glyphicon glyphicon-list-alt"> Excel</a>
                                 </div><br><br>
                                 <div class="portlet light bordered col-md-12">
-                                    <ul class="list-group col-md-12">
-                                        <li class="list-group-item">
-                                            <p class="col-md-4">Número de compra</p>     
-                                            <p class="col-md-2">COM-12</p>
-                                            <p class="col-md-4">Fecha de compra</p>     
-                                            <p class="col-md-1">12/12/12</p><br>
-                                        </li>
+                                    <ul id="buy_invoice" class="list-group col-md-12">
+                                         <!-- N° de compra , precio etc ... -->
+                                         
                                     </ul>
-                                    <div class="portlet light bordered col-md-12">
-                                           <table class="table table-striped table-hover table-bordered" id="compras_table">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                        <p align="center">Nombre</p>
-                                        </th>
-                                        <th >
-                                        <p align="center">Cantidad</p>
-                                        </th>
-                                        <th >
-                                        <p align="center">Precio</p>
-                                        </th>
-                                        <th>
-                                        <p align="center">Color</p>
-                                        </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p align="center">Tela</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">199 yds</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">$21.12</p>
-                                                </td>
-                                                <td>
-                                                    <p align="center">Rojo</p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div id="tab_responsive" class="portlet light bordered col-md-12">
+                                           <!-- TABULACIONES DE ELEMENTOS ENCONTRADOS EN COMPRAS  -->
+                                           <center><i class="icon-search" style="font-size:20px;"></i></center>
+                                           <br>
+                                           <center><p><b>Realiza una busqueda de tus compras ...</b></p></center>
                                     </div>
                                     <br>
-                                    <ul class="list-group col-md-12">
-                                        <li class="list-group-item">
-                                            <p class="col-md-5">Precio total de la compra</p>     
-                                            <p class="col-md-3">$250.00</p>
-                                            <p class="col-md-2">P.O.</p>     
-                                            <p class="col-md-2">PO-LOPK12</p><br><br>
-                                        </li>
-                                         <li class="list-group-item">
-                                            <p class="col-md-4">Agregado por : </p>     
-                                            <p class="col-md-8">Michelle Heredia Solorzano Sinfontes</p><br>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <p class="col-md-4">Proveedor: </p>     
-                                            <p class="col-md-8">Lieison ...</p><br>
-                                        </li>
+                                    <ul id="buy_data" class="list-group col-md-12">
+                                        <!-- compras emitidas por  -->
                                     </ul>
                                 <a data-toggle="modal" href="#responsive_delete" class="btn btn-danger glyphicon glyphicon-remove-circle"> Eliminar</a>
                                 </div>
                                 <div class="portlet-body">
-                                    <div class="panel-group accordion" id="accordion3">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">
-                                                Archivos adjuntos: </a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapse_3_1" class="panel-collapse in">
-                                                <div class="panel-body">
-                                                    <p>
-                                                   <table>
-                                                   <tr>
-                                                       <td>
-                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/png.png" style="height:80px;" alt=""></a>
-                                                       </td>
-                                                       <td>
-                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/jpg.png" style="height:80px;" alt=""></a>
-                                                       </td>
-                                                       <td>
-                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/gif.png" style="height:80px;" alt=""></a>
-                                                       </td>
-                                                       <td>
-                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/txt.png" style="height:80px;" alt=""></a>
-                                                       </td>
-                                                       <td>
-                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/word.png" style="height:80px;" alt=""></a>
-                                                       </td>
-                                                       <td>
-                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/excel.png" style="height:80px;" alt=""></a>
-                                                       </td>
-                                                       <td>
-                                                            <a href="#"><img src="<?php echo $route;?>images/unitee/pdf.png" style="height:80px;" alt=""></a>
-                                                       </td>
-                                                   </tr>
-                                                   </table>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div id="buy_adj" class="panel-group accordion" id="accordion3">
+                                        <!-- Adjuntos , eliminar etc.. -->
                                     </div>
                                 </div>
                                 <div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
@@ -288,7 +139,9 @@
     </div>
 </div>
 <script>
-    var $id = null;
+    var $id_                = null;
+    
+    var $result_            = null;
     
     var buy_loader = function(){
     
@@ -307,14 +160,14 @@
                 var option_  = $("#find_option").val();
                 var value    = $("#txt_find").val();
                 
-                find_(option_ , value , 0 , "button_find");
+                find_(option_ , value , "button_find");
                 
             });
 
     };
     
     
-    var find_ = function(option , value , range , request)
+    var find_ = function(option , value ,  request)
     {
         
                var task     = new jtask();
@@ -322,19 +175,116 @@
                
                task.data =  {
                    "option": option,
-                   "value" : value,
-                   "range" : range
+                   "value" : value
                }; 
                
                task.beforesend = true;
                
                task.config_before(function(){
-                      $("#button_find").attr("disabled" , true);
+                      
+                      $("#" + request).attr("disabled" , true);
+                      $("#tab_responsive").html('<div class="portlet light bordered col-md-12"> <center><img src="<?php echo $route; ?>images/dashboard/loading.gif" align="center" width="100px" height="100px"/></center><center><p>Buscando compras..</p></center></div>');
                });
                task.success_callback(function(v){
-                      // $("#button_find").attr("disabled" , false);
+                       $("#" + request ).attr("disabled" , false);
+                       $result_ = JSON.parse(v);
+                       if($result_.length == 0){
+                           $("#tab_responsive").html('<center><i class="icon-search" style="font-size:20px;"></i></center><center><p><b>No se encontraron resultados</b></p></center>');
+                       }else{
+                           $("#tab_responsive").html("");
+                           $("#result_set").html("");
+                           $("#tab_responsive").append('<ul  class="list-group">');
+                          // $("#result_set").append('<ul class="list-group  scroller" style="height:160px">');
+                           $.map($result_ , function(data){
+                                result_view("tab_responsive" , data , option, 1);
+                                result_view("result_set" , data , option , 0);
+                           });
+                           $("#tab_responsive").append('</ul>');
+                          // $("#result_set").append('</ul>');
+                       }
+                      
                });
                task.do_task();
+    };
+    
+    
+    var result_view = function(request , object , option , size)
+    {
+    
+          var print_ = '<li class="list-group-item">';
+          
+          if(size == 1)
+                print_ += '<a href="javascript:view_buy(' + object.id + ')" style="text-decoration:none; color:black;"><span class="badge  badge-warning"><b>Factura</b> :' +  object.factura + ' </span><span class="badge  badge-info"><b>PO :</b>' + object.po + '</span></a><span class="badge badge-margine">';
+          else
+          {
+              if(parseInt(option) == 1)
+                   print_ += '<a href="javascript:view_buy(' + object.id + ')" style="text-decoration:none; color:black;"><b>PO :</b>' + object.po + '</a><span class="badge badge-margine">';
+              else 
+                   print_ += '<a href="javascript:view_buy(' + object.id + ')" style="text-decoration:none; color:black;"><b>Factura</b> :' +  object.factura + '</a><span class="badge  badge-danger ">';
+          }
+
+          switch(parseInt(option))
+          {
+              case 3:
+                  if(size == 1)
+                        print_ +=  object.color + '</span><span class="badge ">' + object.fecha + '</span>';
+                   else
+                        print_ +=  object.color + '</span>';
+                  break;
+              default:
+                  print_ += object.fecha + '</span>';
+                  break;
+          }
+          
+          print_ += ' </li>';
+          
+          $("#" +  request ).append(print_);
+    };
+    
+    
+    var view_buy = function(i)
+    {
+       
+           var task     = new jtask();
+           task.url = "<?php echo site_url("Buy/Product"); ?>";
+           task.data =  {  "id": i }; 
+           task.success_callback(function(r){
+               
+           });
+           task.do_task();
+           
+           $.map($result_ , function(data){
+                if(parseInt(data.id) === parseInt(i))
+                {
+                  
+                   var d = '<li class="list-group-item">';
+                       d+= '<p class="col-md-2"><b>Factura </b></p>';
+                       d+= '<p class="col-md-3">' + data.factura + '</p>';
+                       d+= '<p class="col-md-3"><b>Fecha compra</b></p>';
+                       d+= '<p class="col-md-4">' + data.fecha + '</p><br>';
+                       d+= '</li>';
+                       
+                   var p = '<li class="list-group-item">';
+                       p += '<p class="col-md-5"><b>Precio total de la compra</b></p>';
+                       p += '<p class="col-md-3">$' + data.total + '</p>';
+                       p += '<p class="col-md-2"><b>P.O.</b></p>';
+                       p += '<p class="col-md-2">' + data.po + '</p><br><br>'
+                       p += '</li>';
+                       p += '<li class="list-group-item">';
+                       p += '<p class="col-md-4"><b>Emitida por : </b></p>'; 
+                       p += '<p class="col-md-8">' + data.user + '</p><br>'
+                       p += '</li>';
+                       p += '<li class="list-group-item">';
+                       p += '<p class="col-md-4"><b>Proveedor:</b> </p>';
+                       p += '<p class="col-md-8">' + data.proveedor + '</p><br>';
+                       p += '</li>';
+                       
+                   $("#buy_data").html(p);
+                   $("#buy_invoice").html(d);
+                     
+                }
+           });
+               
     };
 
 

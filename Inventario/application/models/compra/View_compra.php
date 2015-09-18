@@ -128,19 +128,74 @@ class View_compra extends CI_Model implements PInterface {
     }
     
     public function  Find($option , $value ){
-          $query = "SELECT 
+        
+               /**
+                * VALUES : 
+                * NULL      = -1
+                * P.O       = 1
+                * FACTURA   = 2
+                * PRODUCTO  = 3
+                * DATE = 4
+                * DATE RANGE = 5
+                * **/
+        
+          $query = "SELECT DISTINCT
                         compras.id_compras as 'id',
                         compras.ref_factura as 'factura',
                         compras.PO as 'po',
                         compras.date as 'fecha',
+                        compras.precio_total as 'total',
                         concat(user.nombres , ' ' , user.apellidos) as 'user',
                         proveedor.nombre as 'proveedor',
-                        adjunto.adjunto as 'adjunto'
-                        FROM compras 
-                        INNER JOIN proveedor ON proveedor.id_proveedor=compras.id_proveedor
-                        INNER JOIN user on user.id_user=compras.id_user
-                        INNER JOIN adjunto ON adjunto.id_adjunto=compras.id_adjunto
-                   ";
+                        adjunto.adjunto as 'adjunto'";
+          
+          $data_option              = "";
+          
+          if(!is_array($value)){
+                $data                     = " LIKE '%$value'";
+          }
+          else{
+              $data = NULL;
+          }
+          
+          switch($option){
+              case -1:
+                  return;
+              case 1:
+                  $data_option = "compras.PO";
+                  break;
+              case 2:
+                  $data_option = "compras.ref_factura";
+                  break;
+              case 3:
+                  $data_option = "producto.nombre";
+                  $query .= ", producto.nombre as 'producto',
+                                color.nombre as 'color' ";
+                  break;
+              case 4:
+                  $data_option = "compras.date";
+                  break;
+              case 5:
+                  $data_option  = "compras.date ";
+                  $from         = $value['from'];
+                  $to           = $value['to'];
+                  $data         = "between '$from' and '$to' order by compras.date desc ";
+                  break;
+          }
+          
+          $query .= "   FROM compras 
+                        LEFT JOIN proveedor ON proveedor.id_proveedor=compras.id_proveedor
+                        LEFT JOIN user on user.id_user=compras.id_user
+                        LEFT JOIN adjunto ON adjunto.id_adjunto=compras.id_adjunto
+                        CROSS JOIN historial_compra ON compras.id_compras=historial_compra.id_compra
+                        CROSS JOIN producto ON producto.id_producto=historial_compra.id_producto
+                        CROSS JOIN color ON color.id_color=producto.id_color WHERE  ";
+          
+          $query .= " " . $data_option . " " . $data;
+          
+          return $this->db
+                  ->query($query)
+                  ->result();
                   
     }
 

@@ -114,13 +114,12 @@ class Buy extends CI_Controller {
         
         $option    = isset($_REQUEST['option']) ? $_REQUEST['option'] : 0;
         $value     = isset($_REQUEST['value']) ? $_REQUEST['value'] : NULL;
-        $range     = isset($_REQUEST['range']) ? $_REQUEST['range'] : 0;
-         
+
         $this->load->model("compra/view_compra" , "buy");
 
-        $request = $this->buy->FindBuy(
-             $range != 0 ? "range" : $option,
-             $range != 0 ? $range  : $value
+        $request = $this->buy->Find(
+             $option,
+             $option != 5 ? $value : json_decode($value)
         );
          
         if(is_array($request)){
