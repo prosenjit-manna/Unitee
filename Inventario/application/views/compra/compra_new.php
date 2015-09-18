@@ -245,7 +245,7 @@
                         <h4 class="modal-title">Aviso ...</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
+                        <div class="scroller" style="height:40px" data-always-visible="1" data-rail-visible1="1">
                             <div class="row">
                                 <div class="col-md-12">
                                     <p>Antes de continuar revise bien si los productos tanto como adjuntos son los correctos en dado caso , se podra eliminar la compra en ver compras.</p>
