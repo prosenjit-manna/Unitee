@@ -106,6 +106,16 @@
                                 <div class="portlet-body">
                                     <div id="buy_adj" class="panel-group accordion" id="accordion3">
                                         <!-- Adjuntos , eliminar etc.. -->
+                                         <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                               
+                                            </div>
+                                            <div id="collapse_3_1" class="panel-collapse in">
+                                                <div class="panel-body">
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
@@ -187,20 +197,23 @@
                });
                task.success_callback(function(v){
                        $("#" + request ).attr("disabled" , false);
+                       
+                       $("#buy_data").html("");
+                       $("#buy_invoice").html("");
+                       
                        $result_ = JSON.parse(v);
+                       
                        if($result_.length == 0){
                            $("#tab_responsive").html('<center><i class="icon-search" style="font-size:20px;"></i></center><center><p><b>No se encontraron resultados</b></p></center>');
                        }else{
                            $("#tab_responsive").html("");
                            $("#result_set").html("");
                            $("#tab_responsive").append('<ul  class="list-group">');
-                          // $("#result_set").append('<ul class="list-group  scroller" style="height:160px">');
                            $.map($result_ , function(data){
                                 result_view("tab_responsive" , data , option, 1);
                                 result_view("result_set" , data , option , 0);
                            });
                            $("#tab_responsive").append('</ul>');
-                          // $("#result_set").append('</ul>');
                        }
                       
                });
@@ -247,7 +260,7 @@
        
            var task     = new jtask();
            task.url = "<?php echo site_url("Buy/Product"); ?>";
-           task.data =  {  "id": i }; 
+           task.data =  {  "i": i }; 
            task.success_callback(function(r){
                
            });
@@ -279,12 +292,78 @@
                        p += '<p class="col-md-8">' + data.proveedor + '</p><br>';
                        p += '</li>';
                        
+                   if(data.adjunto != null){
+                       
+                        var adj             = JSON.parse(data.adjunto);
+                        var buy_adj         = $("#buy_adj");
+                        var ht              = '';
+                        var resp            = '';
+                        
+                        buy_adj.html("");
+                       
+                        
+                         ht +=  ('<div class="panel panel-default">');
+                         ht +=  ('<div class="panel-heading">');
+                         ht +=  ('<h4 class="panel-title">');
+                         ht +=  ('<a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">');
+                         ht +=  ( '(' + adj.length + ') Archivos adjuntos: </a>');
+                         ht +=  ('</h4></div>');
+                         ht +=  (' <div id="collapse_3_1" class="panel-collapse in">');
+                         ht +=  ('<div class="panel-body"><p><table><tr>');
+                      
+                        
+                        $.map(adj , function(k){
+                              resp += '<td>';
+                              var adj_data = JSON.parse(k);
+                              var name   = String(adj_data.name);
+                              var ext    = name.split('.');
+                              var dtype  = doc_type(ext[1]);
+                              resp   += ('<a href="<?php echo site_url();?>/Buy/Download?n=' 
+                                     + adj_data.name + '&doc=' 
+                                     + adj_data.document + '&d=' 
+                                     + adj_data.directory 
+                                     + '"><img title="'
+                                     + adj_data.name 
+                                     + '" src="<?php echo $route;?>images/unitee/documents/' 
+                                     + dtype
+                                     +'" style="height:80px;" alt=""></a>');
+                              resp += '</td>';
+                        });
+                        ht += resp;
+                        ht += '</tr></table></div></div>';
+                        buy_adj.html(ht);
+                   }
+                  
                    $("#buy_data").html(p);
                    $("#buy_invoice").html(d);
                      
                 }
            });
                
+    };
+    
+    var doc_type = function(e)
+    {
+        switch(e){
+            case 'docx':
+            case 'doc':
+                return 'word.png';
+            case 'xls':
+                return 'excel.png';
+            case 'gif':
+                return 'gif.png';
+            case 'jpg':
+            case 'jpeg':
+                return 'jpg.png';
+            case 'txt' :
+                return 'txt.png';
+            case 'pdf' : 
+                return 'pdf.png';
+            case 'png' :
+                return 'png.png'; 
+        }
+        
+         return 'blank.png';
     };
 
 

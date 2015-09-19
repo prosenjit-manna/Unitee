@@ -155,5 +155,19 @@ class Buy extends CI_Controller {
         readfile($uri);
         
     }
+    
+    public function Product(){
+         $id    = isset($_REQUEST['i']) ? $_REQUEST['i'] : NULL;
+         
+         if(is_null($id)){
+             $this->output->set_output('[]');
+             return;
+         }
+         
+         $this->load->model("productos/view_producto" , "prod");
+         
+         $result = $this->prod->GetByBuy($id);
+         
+    }
 
 }
