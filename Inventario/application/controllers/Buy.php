@@ -131,5 +131,29 @@ class Buy extends CI_Controller {
         }
          
     }
+    
+    public function Download(){
+        
+        
+        $name           = isset($_REQUEST['n']) ? $_REQUEST['n'] : NULL;
+        $document       = isset($_REQUEST['doc']) ? $_REQUEST['doc'] : NULL;
+        $dir            = isset($_REQUEST['d']) ? $_REQUEST['d'] : NULL;
+        
+        if(is_null($name)){
+            return null;
+        }
+        
+        $exp        = explode(".", $name);
+        $ext        = end($exp);
+        
+        $this->load->helper("url");
+        
+        $uri    = base_url("files/unitee/compras/$dir/$document.$ext");
+        
+        header("Content-disposition: attachment; filename=$name");
+        header("Content-type: application/octet-stream");
+        readfile($uri);
+        
+    }
 
 }
