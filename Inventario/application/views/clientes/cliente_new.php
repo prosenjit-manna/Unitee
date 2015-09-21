@@ -44,12 +44,11 @@
                             <h5 lass="form-section">Los campos con * son Requeridos</h5>
                             <div class="col-md-12">
                                 <br><label class="control-label col-md-2">* Nombre del cliente</label>
-                                <div class="form-group col-md-5">
-                                    <input  required="required"  onkeyup="val();" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Escriba el nombre del cliente">
+                                <div class="form-group col-md-10">
+                                    <input  required="required" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Escriba el nombre del cliente">
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                              
+                            <div class="col-md-6 col-sm-12">
                                 <h3 lass="form-section">Información de Contacto</h3><br>
                                 <label class="control-label col-md-4">* Empresa</label>
                                 <div class="form-group col-md-8">
@@ -71,7 +70,7 @@
                                 </div>
                             </div>
                             <!--/span-->
-                            <div class="col-md-6"><br><br><br><br>
+                            <div class="col-md-6 col-sm-12"><div class="visible-lg visible-md"><br><br><br><br></div>
                                 <label class="control-label col-md-4">* Celular</label>
                                 <div class="form-group col-md-8">
                                     <div class="input-icon right">
@@ -98,8 +97,8 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <h3 lass="form-section">Dirección</h3><br>
+                                <div class="col-md-6 col-sm-12">
+                                    <h3 class="form-section">Dirección</h3><br>
                                     <label class="control-label col-md-4">Local</label>
                                     <div class="form-group col-md-8">
                                       <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
@@ -113,7 +112,7 @@
                                       <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                                     </div>
                                 </div>
-                                <div class="col-md-6"><br><br><br><br>
+                                <div class="col-md-6 col-sm-12"><div class="visible-lg visible-md"><br><br><br><br></div>
                                     <label class="control-label col-md-4">* Pais</label>
                                     <div class="form-group col-md-8">
                                         <select required="required" id="select_country" onchange="get_depto(this.value);" name="txt_pais" class="form-control input-circle">                     
@@ -132,63 +131,67 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-sm-12">
                                     <h3 lass="form-section">Descripci&oacute;n</h3><br>
                                     <label class="control-label col-md-4">Descripci&oacute;n del cliente</label>
                                     <div class="form-group col-md-8">
                                         <textarea class="form-control input-circle" rows="3" placeholder="Descripción del cliente"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-6"><br><br><br><br>
+                                <div class="col-md-6"><div class="visible-lg visible-md"><br><br><br><br></div>
                                     <label class="control-label col-md-1">Tipo</label>
                                     <div class="form-group col-md-5">
-                                      <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                        <select required="required" id="select_tipo" name="txt_tipo" class="form-control input-circle"> 
+                                            <option value="-1">Seleccionar opción</option>
+                                            <option value="1">Persona Natural</option>
+                                            <option value="2">Persona Juridica</option>
+                                        </select>                                    
                                     </div>
-                                    <label class="control-label col-md-1">NIT</label>
+                                    <label class="control-label col-md-1">IVA</label>
                                     <div class="form-group col-md-5">
                                       <input  required="required" onkeyup="val();" type="text" id="txt_direccion1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                     </div>
-                                    <label class="control-label col-md-1">IVA</label>
+                                    <label class="control-label col-md-1">NIT</label>
                                     <div class="form-group col-md-11">
                                       <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                                     </div>
                                 </div>
-                                <div class="row col-md-12">
-                                        <?php
-                                        echo form_open_multipart("", array(
-                                            "id" => "fileupload",
-                                            "class" => "col-md-12"
-                                        ));
-                                        ?>
+                                    <div class="row col-md-12">
+                                            <?php
+                                            echo form_open_multipart("", array(
+                                                "id" => "fileupload",
+                                                "class" => "col-md-12"
+                                            ));
+                                            ?>
 
-                                        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                                        <div class="row fileupload-buttonbar">
-                                            <br><br>
-                                            <div class="col-md-3">
-                                                <h4>Adjuntar archivos</h4>
+                                            <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                                            <div class="row fileupload-buttonbar">
+                                                <br><br>
+                                                <div class="col-md-3">
+                                                    <h4>Adjuntar archivos</h4>
+                                                </div>
+                                                <div>
+                                                    <!-- The fileinput-button span is used to style the file input field as button -->
+                                                    <span class="btn default fileinput-button">
+                                                        <i class="glyphicon glyphicon-paperclip"></i>
+                                                        <span>
+                                                            Añadir..</span>
+                                                        <input type="file" name="files[]" multiple="">
+                                                    </span>
+                                                    <button type="submit" class="btn blue start">
+                                                        <i class="glyphicon glyphicon-upload"></i>
+                                                        <span>
+                                                            Subir</span>
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <!-- The fileinput-button span is used to style the file input field as button -->
-                                                <span class="btn green fileinput-button">
-                                                    <i class="glyphicon glyphicon-paperclip"></i>
-                                                    <span>
-                                                        Añadir..</span>
-                                                    <input type="file" name="files[]" multiple="">
-                                                </span>
-                                                <button type="submit" class="btn blue start">
-                                                    <i class="glyphicon glyphicon-upload"></i>
-                                                    <span>
-                                                        Subir</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <!-- The table listing the files available for upload/download -->
-                                        <table role="presentation" class="col-md-4 table table-striped clearfix">
-                                            <tbody class="files">
-                                            </tbody>
-                                        </table>
-                                        <input type="hidden" value="" name="directory" />
-                                        <?php echo form_close(); ?>
+                                            <!-- The table listing the files available for upload/download -->
+                                            <table role="presentation" class="col-md-4 table table-striped clearfix">
+                                                <tbody class="files">
+                                                </tbody>
+                                            </table>
+                                            <input type="hidden" value="" name="directory" />
+                                            <?php echo form_close(); ?>
                                     </div>          
                                 <div class="col-md-12">
                                     <div class="form-actions col-md-offset-9">
@@ -344,6 +347,7 @@
         });
         tasking.do_task();
     };
+
     var validate_telefono = function () {
         var change_telefono_ok = $("#change_telefono_ok");
         var change_telefono = $("#change_telefono");
@@ -428,23 +432,19 @@
         }
     };
 
-
     function val() {
-
         var empresa = $("#txt_empresa").val();
         var contacto = $("#txt_contacto").val();
         var telefono = $("#txt_telefono").val();
         var celular = $("#txt_celular").val();
         var correo = $("#txt_correo").val();
         var dir = $("#txt_direccion1").val();
-        var ciudad = $("#select_city").val();
 
         if (empresa == ""
                 || contacto == ""
                 || telefono == ""
                 || celular == ""
                 || dir == ""
-                || ciudad == "-1"
                 || !isValidEmail(correo)) {
             document.getElementById("send").disabled = true;
         }
