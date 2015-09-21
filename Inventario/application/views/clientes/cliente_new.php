@@ -49,6 +49,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
+                              
                                 <h3 lass="form-section">Información de Contacto</h3><br>
                                 <label class="control-label col-md-4">* Empresa</label>
                                 <div class="form-group col-md-8">

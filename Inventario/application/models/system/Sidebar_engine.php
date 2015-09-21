@@ -125,7 +125,8 @@ class Sidebar_engine extends CI_Model {
                     "url"               =>$uri,
                     "icon"              =>$side->icon,
                     "start"             =>$side->start,
-                    "cmp"               =>$side->complement
+                    "cmp"               =>$side->complement,
+                    "route"             =>$side->routes
                 );
                 
                 foreach ($spaces as $k=>$v)
@@ -166,6 +167,10 @@ class Sidebar_engine extends CI_Model {
 
     }
     
+    
+    /**
+     * @deprecated since version 1.0
+     * **/
     public function _ParseJson(){
         
         return json_encode($this->_init());
@@ -219,9 +224,9 @@ class Sidebar_engine extends CI_Model {
                       if(count($sub['sidebars']) >= 1){
                        $view .= '<ul class="sub-menu">';  
                       foreach($sub['sidebars'] as $s){
-                        
+                          $R_       = is_null($s['route']) ? $s['url'] : $s['route'];
                           $view .= '<li>';
-                          $view .= '<a href="' . site_url("/0/" . $s['url']) . '">';
+                          $view .= '<a href="' . site_url("/0/" . $R_) . '">';
                           $view .= '<i class="' . $s['icon'] . '"></i>&nbsp;';
                           $view .= $s['name'];
                           $view .= $s['cmp'];
@@ -243,8 +248,9 @@ class Sidebar_engine extends CI_Model {
 
                      foreach($data['sidebars'] as $s){
                         
+                          $R_       = is_null($s['route']) ? $s['url'] : $s['route'];
                           $view .= '<li>';
-                          $view .= '<a href="' . site_url("/0/" . $s['url']) . '">';
+                          $view .= '<a href="' . site_url("/0/" . $R_) . '">';
                           $view .= '<i class="' . $s['icon'] . '"></i>&nbsp;';
                           $view .= $s['name'];
                           $view .= $s['cmp'];

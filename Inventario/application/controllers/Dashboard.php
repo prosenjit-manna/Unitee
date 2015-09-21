@@ -3,7 +3,7 @@
 
 /**
    @@author: Lieison S.A de C.V
-   @@version: 1.5.4
+   @@version: 1.5.5
  * @@type: system
  * @@name: Controlador de dashboard
  * @@description : el controlador mas importante del sistema
@@ -38,6 +38,10 @@
  *                  SE CREO UNA LIBRERIA QUE CONTROLA LOS PARAMETROS DE 
  *                  JAVASCRIPT , STYLE , TITLE TIPO INTERFAZ PERO SOLO 
  *                  PARA DASHBOARD.
+ * VERSION 1.5.5 :
+ *                  SE AGREGO EL SISTEMA DE URL ROUTES PARA MVA , 
+ *                  SE CREO UNA CLAUSULA EN CODEIGNITER
+ *                  DE LA ROUTA A ACEPTAR DADO EN EL PATRON PRETTY ROUTE
  * 
  */
 
@@ -119,6 +123,16 @@ class Dashboard extends CI_Controller {
         //SESION DEL USUARIO ACTUAL ...
         $this->user_p = $this->session->user;
         
+        
+          /**
+             * VERSION 1.5.5 SE AGREGO MVA ROUTES
+             * LA CLASE MVA ROUTES ESTA DENTRO DE LIBRARY
+          */
+            
+         $this->load->library("Routes"); // LIBRERIA ROUTES DE MVA 
+            
+         $this->routes->Set("user=user_new" , "nuevo_usuario"); //AGREGAMOS UNA RUTA ESTATICA 
+         $this->routes->Set("user=user_edit" , "editar_usuario"); //AGREGAMOS UNA RUTA ESTATICA
         
         
     }
@@ -263,8 +277,23 @@ class Dashboard extends CI_Controller {
         {
             
             //DIVIDIMOS EN PARTES LA RUTA POR MEDIO DEL TOKEN ASIGNADO
-            $parts = explode(system_token(), $model);
+
             
+            $MVA_ROUTES     = $this->routes->Get($model); //OBTENEMOS LA RUTA SEGUN EL VALOR DEL MODEL
+            
+            $parts          = NULL;  // DECLARAMOS PARTS COMO NULL
+            
+            /***
+             * PEQUEÑO CODIGO QUE VERIFICA SI EXISTE LA 
+             * RUTA EN DADO CASO NO ES UNA RUTA Y ES UN MVA
+             * **/
+            
+            if(!is_null($MVA_ROUTES)){
+                $parts = explode(system_token(), $MVA_ROUTES[$model]);
+            }else{
+                $parts = explode(system_token(), $model);
+            }
+
        
             try{
                 
@@ -283,7 +312,7 @@ class Dashboard extends CI_Controller {
                     $this->load->model($model);
                     
                 }
-                else if(sizeof($parts) >= 2){
+                else {
                     
                     
                     //EN DADO CASO EL MODELO CONTIENE UN DIRECTORIO

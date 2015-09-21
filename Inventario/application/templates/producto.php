@@ -330,7 +330,7 @@ a {
 				<div class="footer">
 					<table width="100%">
 						<tr>
-							<td class="aligncenter content-block">2015  Unitee Powered By<a href="http://www.mailgun.com"> Lieison Working Together.</a></td>
+							<td class="aligncenter content-block">2015  Unitee Powered By<a href="http://lieison.com"> Lieison Working Together.</a></td>
 						</tr>
 					</table>
 				</div></div>

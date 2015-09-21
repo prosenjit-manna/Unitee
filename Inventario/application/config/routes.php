@@ -68,6 +68,8 @@ $route['0/([a-z_-]+)'
     . system_token() 
     . '([a-z_-]+)']                 = 'dashboard/index/$1=$2';
 
+$route['0/([a-z_-]+)']              = 'dashboard/index/$1';
+
 //RUTAS ESTATICAS ...
 $route['block']                     = "dashboard/blockscreen";
 $route['unlock']                    = "dashboard/unlock";

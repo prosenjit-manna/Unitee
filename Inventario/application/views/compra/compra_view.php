@@ -291,15 +291,16 @@
                        p += '<p class="col-md-4"><b>Proveedor:</b> </p>';
                        p += '<p class="col-md-8">' + data.proveedor + '</p><br>';
                        p += '</li>';
+                      
+                   var buy_adj         = $("#buy_adj");
+                   buy_adj.html("");
                        
                    if(data.adjunto != null){
                        
                         var adj             = JSON.parse(data.adjunto);
-                        var buy_adj         = $("#buy_adj");
                         var ht              = '';
                         var resp            = '';
                         
-                        buy_adj.html("");
                        
                         
                          ht +=  ('<div class="panel panel-default">');
