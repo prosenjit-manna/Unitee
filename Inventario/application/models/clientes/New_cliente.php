@@ -79,7 +79,7 @@ class New_cliente extends CI_Model implements PInterface {
     }
 
     public function _jsLoader() {
-       return array("load_paises();", "load();","FormFileUpload.init();");
+       return array("load_paises();","FormFileUpload.init();" , "LoadValidation();");
     }
 
     public function _rols() {

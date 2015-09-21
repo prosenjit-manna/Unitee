@@ -45,19 +45,19 @@
                             <div class="col-md-12">
                                 <br><label class="control-label col-md-2">* Nombre del cliente</label>
                                 <div class="form-group col-md-10">
-                                    <input  required="required" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Escriba el nombre del cliente">
+                                    <input  required="required" type="text" id="txt1" name="txt_empresa" class="form-control input-circle" placeholder="Escriba el nombre del cliente">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <h3 lass="form-section">Información de Contacto</h3><br>
                                 <label class="control-label col-md-4">* Empresa</label>
                                 <div class="form-group col-md-8">
-                                    <input  required="required"  onkeyup="val();" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
+                                    <input  required="required"  type="text" id="txt2" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
                                 </div>
                                 <label class="control-label col-md-4">* Contacto</label>
                                 <div class="form-group col-md-8">
                                     <div class="input-icon right">
-                                        <input  required="required" onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                        <input  required="required" type="text" id="txt3" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Telefono</label>
@@ -65,7 +65,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_telefono_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_telefono" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_telefono();" required="" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
+                                        <input onkeyup="validate_telefono();" required="" type="text" id="txt4" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_celular_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_celular" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_celular();" required="" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
+                                        <input onkeyup="validate_celular();" required="" type="text" id="txt5" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">Fax</label>
@@ -84,7 +84,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_fax();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
+                                        <input onkeyup="validate_fax();" type="text" id="txt6" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Correo</label>
@@ -92,7 +92,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_correo_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_correo" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_correo();" required="" type="text" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Numero de correo">
+                                        <input onkeyup="validate_correo();" required="" type="text" id="txt7" name="txt_correo" class="form-control input-circle" placeholder="Numero de correo">
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                                     </div>
                                     <label class="control-label col-md-4">* Dirección 1</label>
                                     <div class="form-group col-md-8">
-                                      <input  required="required" onkeyup="val();" type="text" id="txt_direccion1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                      <input  required="required" type="text" id="txt9" name="txt8" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                     </div>
                                     <label class="control-label col-md-4">Dirección 2</label>
                                     <div class="form-group col-md-8">
@@ -147,13 +147,21 @@
                                             <option value="2">Persona Juridica</option>
                                         </select>                                    
                                     </div>
-                                    <label class="control-label col-md-1">IVA</label>
+                                     <label class="control-label col-md-1">IVA</label>
                                     <div class="form-group col-md-5">
-                                      <input  required="required" onkeyup="val();" type="text" id="txt_direccion1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                        <div class="input-icon right">
+                                            <i name="change_" id="change_iva_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                            <i name="change_x" id="change_iva" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                            <input onkeyup="validate_iva();" required="" type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de iva">
+                                        </div>
                                     </div>
                                     <label class="control-label col-md-1">NIT</label>
                                     <div class="form-group col-md-11">
-                                      <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                        <div class="input-icon right">
+                                            <i name="change_" id="change_nit_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                            <i name="change_x" id="change_nit" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                            <input onkeyup="validate_nit();" required="" type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de nit">
+                                        </div>
                                     </div>
                                 </div>
                                     <div class="row col-md-12">
@@ -287,6 +295,33 @@
 </script>
 
 <script>
+
+    var $field_count = 9;
+  
+  var LoadValidation = function(){
+
+     setInterval(function(){
+           var total = 0;
+           for(var i =1; i <= $field_count ; i++)
+           {
+              total += validar(i);
+           }
+           if(total == $field_count){
+               $("#send").attr("disabled" , false);
+           }else{
+                $("#send").attr("disabled" , true);
+           }
+
+        } , 500);
+
+  };
+
+  var validar = function(field){
+            var data = $("#txt" + field).val();
+            if(data == '') return 0;
+            return 1;
+   };
+
     var load_paises = function () {
         var tasking = new jtask();
         tasking.url = "<?php echo site_url("/c/2"); ?>";
@@ -306,6 +341,7 @@
             });
         });
         tasking.do_task();
+
     };
 
     var get_depto = function (iso) {
@@ -348,10 +384,11 @@
         tasking.do_task();
     };
 
+
     var validate_telefono = function () {
         var change_telefono_ok = $("#change_telefono_ok");
         var change_telefono = $("#change_telefono");
-        var telefono = $("#txt_telefono").val();
+        var telefono = $("#txt4").val();
         if (telefono === "") {
             change_telefono_ok.css("display", "none");
             change_telefono.css("display", "none");
@@ -372,7 +409,7 @@
     var validate_celular = function () {
         var change_celular_ok = $("#change_celular_ok");
         var change_celular = $("#change_celular");
-        var celular = $("#txt_celular").val();
+        var celular = $("#txt5").val();
         if (celular === "") {
             change_celular_ok.css("display", "none");
             change_celular.css("display", "none");
@@ -393,7 +430,7 @@
     var validate_fax = function () {
         var change_fax_ok = $("#change_fax_ok");
         var change_fax = $("#change_fax");
-        var fax = $("#txt_fax").val();
+        var fax = $("#txt6").val();
         if (fax === "") {
             change_fax_ok.css("display", "none");
             change_fax.css("display", "none");
@@ -414,7 +451,7 @@
     var validate_correo = function () {
         var change_correo_ok = $("#change_correo_ok");
         var change_correo = $("#change_correo");
-        var correo = $("#txt_correo").val();
+        var correo = $("#txt7").val();
         if (correo === "") {
             change_correo_ok.css("display", "none");
             change_correo.css("display", "none");
@@ -432,32 +469,48 @@
         }
     };
 
-    function val() {
-        var empresa = $("#txt_empresa").val();
-        var contacto = $("#txt_contacto").val();
-        var telefono = $("#txt_telefono").val();
-        var celular = $("#txt_celular").val();
-        var correo = $("#txt_correo").val();
-        var dir = $("#txt_direccion1").val();
-
-        if (empresa == ""
-                || contacto == ""
-                || telefono == ""
-                || celular == ""
-                || dir == ""
-                || !isValidEmail(correo)) {
-            document.getElementById("send").disabled = true;
+     var validate_iva = function () {
+        var change_iva_ok = $("#change_iva_ok");
+        var change_iva = $("#change_iva");
+        var iva = $("#txt_iva").val();
+        if (iva === "") {
+            change_iva_ok.css("display", "none");
+            change_iva.css("display", "none");
+            return true;
+        }
+        else if (isNaN(iva) && iva !== "") {
+            change_iva_ok.css("display", "none");
+            change_iva.css("display", "block");
+            return true;
         }
         else {
-            document.getElementById("send").disabled = false;
+            change_iva_ok.css("display", "block");
+            change_iva.css("display", "none");
+            return false;
         }
-    }
-    ;
+    };
 
-    function load() {
-        document.getElementById("send").disabled = true;
-    }
-    ;
+     var validate_nit = function () {
+        var change_nit_ok = $("#change_nit_ok");
+        var change_nit = $("#change_nit");
+        var nit = $("#txt_nit").val();
+        if (nit === "") {
+            change_nit_ok.css("display", "none");
+            change_nit.css("display", "none");
+            return true;
+        }
+        else if (isNaN(nit) && nit !== "") {
+            change_nit_ok.css("display", "none");
+            change_nit.css("display", "block");
+            return true;
+        }
+        else {
+            change_iva_ok.css("display", "block");
+            change_iva.css("display", "none");
+            return false;
+        }
+    };
+
 
     function isValidEmail(mail){
         return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
