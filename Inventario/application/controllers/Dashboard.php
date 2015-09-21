@@ -84,6 +84,8 @@ class Dashboard extends CI_Controller {
     {
         parent::__construct();
         
+        //WELCOME TO MVA  ...
+        
         $this->load->helper("setup");
         $this->load->library("session");
         $this->load->library("base_url");
@@ -130,9 +132,17 @@ class Dashboard extends CI_Controller {
           */
             
          $this->load->library("Routes"); // LIBRERIA ROUTES DE MVA 
-            
-         $this->routes->Set("user=user_new" , "nuevo_usuario"); //AGREGAMOS UNA RUTA ESTATICA 
-         $this->routes->Set("user=user_edit" , "editar_usuario"); //AGREGAMOS UNA RUTA ESTATICA
+         
+         
+         /**
+          * ACA SE AGREGARAN LAS RUTAS DEL SISTEMA 
+          * COMO ES UNA CLASE RECURSIVA PUEDE AGREGAR LOS 
+          * "Set que sean necesarios" , SIEMPRE Y CUANDO 
+          * SEA UNA MVA ROUTE
+          **/
+         $this->routes
+                 ->Set("user=user_new" , "nuevo_usuario")
+                 ->Set("user=user_edit" , "editar_usuario");
         
         
     }
@@ -148,14 +158,6 @@ class Dashboard extends CI_Controller {
          $this->load->model("system/sidebar_engine");
          $this->sidebar_engine->_echo();
          
-         /*  //echo json_encode($this->sidebar_engine->_ParseJson()); 
-          * 
-          * OJO LA NUEVA VERSION  del sidebar LA TRANSFORMADA Y ECO SERA JSON 
-          * ESTO ES PARA QUE LA CARGA SEA MAS RAPIDA ... 
-          * 
-          * VERSION HTML -> JSON PRONTO 1.2
-          * 
-          * **/
     }
     
     
@@ -571,7 +573,10 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-     
+        $this->load->library("Routes");
+        
+          //$this->routes->Push("prueba=prueba" , "prueba");
+          $this->routes->Pop("prueba");
     }
     
     
