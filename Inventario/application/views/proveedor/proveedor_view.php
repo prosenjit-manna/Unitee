@@ -170,7 +170,8 @@
                                                 </div>
                                                 <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                                                 <div class="form-group col-md-9">
-                                                    <input type="text" disabled="disabled" name="txt_descripcion" id="txt_desc" style="height:125px;" class="form-control input-circle" placeholder="Descri´pción del proveedor">
+                                                    <textarea disabled="disabled" name="txt_descripcion" id="txt_desc" class="form-control input-circle" rows="4" placeholder="Descripción del cliente">
+                                                    </textarea>
                                                 </div>
                                             </div>
                                         </div>

@@ -147,7 +147,9 @@
                                         </div>
                                         <label class="control-label col-md-3">Descripci&oacute;n de la Empresa</label>
                                         <div class="form-group col-md-9">
-                                            <input value="<?php echo $data->descripcion; ?>" type="text" id="txt_descripcion" name="txt_descripcion" style="height:125px;" class="form-control input-circle" placeholder="No hay descri´pción del proveedor">
+                                            <textarea id="txt_descripcion" name="txt_descripcion" class="form-control input-circle" rows="4" placeholder="Descripción del cliente">
+                                                <?php echo $data->descripcion; ?>
+                                            </textarea>
                                         </div>
 
 

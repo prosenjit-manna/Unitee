@@ -132,7 +132,7 @@
                                         </div>
                                         <label class="control-label col-md-4">Descripci&oacute;n de la Empresa</label>
                                         <div class="form-group col-md-8">
-                                            <input type="text" id="txt_descripcion" name="txt_descripcion" style="height:125px;" class="form-control input-circle" placeholder="Descri´pción del proveedor">
+                                            <textarea id="txt_descripcion" name="txt_descripcion" class="form-control input-circle" rows="4" placeholder="Descripción del cliente"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-actions right">
