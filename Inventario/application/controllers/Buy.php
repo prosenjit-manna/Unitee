@@ -165,9 +165,86 @@ class Buy extends CI_Controller {
          }
          
          $this->load->model("productos/view_producto" , "prod");
-         
          $result = $this->prod->GetByBuy($id);
+         $this->output->set_output(json_encode($result));
          
     }
+    
+    public function Document(){
+        
+         $type = isset($_REQUEST['t']) ? $_REQUEST['t'] : "pdf";
+         $id   = isset($_REQUEST['i']) ? $_REQUEST['i'] : NULL;  
+         $d    = isset($_REQUEST['d']) ? $_REQUEST['d'] : NULL;
+         
+         $data  = json_decode($d)[0];
+         
+         $this->load->helper("url");
+         switch($type){
+             case "pdf":
+                 
+                 $this->load->library("Pdf");
+                 
+                 /**********
+                  * HEADER
+                  * *********/
+
+                $this->pdf->AddPage();
+               
+                 //$this->pdf->Cell(195,35,'',1,0,'C');
+                 //$this->pdf->Cell(0,35,'HOLA',0,0,'C');
+                 
+                 
+                 $this->pdf->Image(FCPATH .  "images/dashboard/logo_black.jpg" , 9 , 10 , 40);
+                 $this->pdf->Line(0, 25, 225 , 25);
+                 $this->pdf->SetFont('Times','B',14);
+                 $this->pdf->Text(160, 10 , "Ref:");
+                 $this->pdf->SetFont('Times','',14);
+                 $this->pdf->Text(172, 10 , $data->factura);
+                 $this->pdf->SetFont('Times','B',14);
+                 $this->pdf->Text(160, 18 , "Fecha:");
+                 $this->pdf->SetFont('Times','',14);
+                 $date = new DateTime($data->fecha);
+                 $this->pdf->Text(177,18 , $date->format("d/m/Y"));
+                 
+                 
+                 
+                 /***
+                  * BODY
+                  * ***/
+             
+                 $this->pdf->Rect(20,30,170,20);
+                 
+                 $this->pdf->SetFont('Times','B',12);
+                 $this->pdf->Text(21, 37 , "Emitida Por: ");
+                 $this->pdf->SetFont('Times','',12);
+                 $this->pdf->Text(45, 37 , $data->user);
+                 $this->pdf->SetFont('Times','B',12);
+                 $this->pdf->Text(145, 37 , "PO: ");
+                 $this->pdf->SetFont('Times','',12);
+                 $this->pdf->Text(153, 37 , $data->po);
+                 
+                 
+                 $this->pdf->SetFont('Times','B',12);
+                 $this->pdf->Text(21, 45 , "Proveedor: ");
+                 $this->pdf->SetFont('Times','',12);
+                 $this->pdf->Text(45, 45 , $data->proveedor);
+                 $this->pdf->SetFont('Times','B',12);
+                 $this->pdf->Text(145, 45 , "Total: ");
+                 $this->pdf->SetFont('Times','',12);
+                 $this->pdf->Text(158, 45, "$" . $data->total);
+                 
+                 
+                 /**
+                  * TABLE 
+                  * **/
+               
+                 $this->pdf->Output();
+                 
+                 break;
+             case "excel":
+                 break;
+         }
+    }
+
 
 }

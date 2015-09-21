@@ -80,12 +80,7 @@
                         </div>
                         <div class="col-md-8">
                                 
-                                <div class="col-md-12">
-                                    <h4 class="col-md-3">Exportar a:</h4>
-                                    <a href="#" class="btn btn-success glyphicon glyphicon-file"> PDF</a>
-                                    <a href="#" class="btn btn-success glyphicon glyphicon-print"> Imprimir</a>
-                                    <a href="#" class="btn btn-success glyphicon glyphicon-list-alt"> Excel</a>
-                                </div><br><br>
+                                <br><br>
                                 <div class="portlet light bordered col-md-12">
                                     <ul id="buy_invoice" class="list-group col-md-12">
                                          <!-- N° de compra , precio etc ... -->
@@ -102,6 +97,7 @@
                                         <!-- compras emitidas por  -->
                                     </ul>
                                 <a data-toggle="modal" href="#responsive_delete" class="btn btn-danger glyphicon glyphicon-remove-circle"> Eliminar</a>
+                                <a rel="" id="pdf_export" target="_blank" href="javascript:alert('PDF Deshabilitado , favor elegir compra');" class="btn btn-success glyphicon glyphicon-file">Exportar PDF</a>
                                 </div>
                                 <div class="portlet-body">
                                     <div id="buy_adj" class="panel-group accordion" id="accordion3">
@@ -261,7 +257,48 @@
            var task     = new jtask();
            task.url = "<?php echo site_url("Buy/Product"); ?>";
            task.data =  {  "i": i }; 
+           task.beforesend = true;
+           task.config_before(function(){
+                $("#tab_responsive").html('<center><i class="icon-laptop" style="font-size:20px;"></i></center><center><p><b>Agregando Productos</b></p></center>');
+           });
            task.success_callback(function(r){
+               
+               var tab_         = $("#tab_responsive");
+               var values       = '';
+               var json_obj     = JSON.parse(r);
+               values += '<table class="table table-striped table-hover table-bordered" id="compras_table">';
+               values += ' <thead><tr>';
+               values += '<th> <p align="center">Nombre</p></th>';
+               values += '<th> <p align="center">Cantidad</p></th>';
+               values += '<th> <p align="center">Precio</p></th>';
+               values += '<th> <p align="center">Color</p></th>';
+               values += '</tr></thead>';
+               values += '<tbody>';
+               $.map(json_obj , function(pd){
+                    values += '<tr>';
+                    values += '<td>';
+                    values += '<p align="center">' + pd.nombre + '</p>';
+                    values += '</td>';
+                    values += '<td>';
+                    values += '<p align="center">' + pd.cantidad + '</p>';
+                    values += '</td>';
+                    values += '<td>';
+                    values += '<p align="center">$' + pd.precio + '</p>';
+                    values += '</td>';
+                    values += '<td>';
+                    values += '<p align="center">' + pd.color + '</p>';
+                    values += '</td>';
+                    values += '</tr>';
+               });
+               values += '</tbody>';
+               values += '</table>';
+               tab_.html(values);
+               
+               $("#pdf_export").attr("href" , 
+                       '<?php echo site_url("Buy/Document?t=pdf");?>&i=' 
+                       + i + '&d=' + JSON.stringify($result_)
+                );
+               
                
            });
            task.do_task();

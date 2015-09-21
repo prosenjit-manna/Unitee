@@ -218,6 +218,25 @@ class view_producto extends CI_Model implements PInterface {
         $this->OutProduct(); // Verifica si el margen es mayor que la cantidad
         return true;
     }
+    
+    
+    public function GetByBuy($id_buy){
+        $query = "SELECT 
+                producto.nombre as 'nombre',
+                concat(historial_compra.cant , ' ' , unidad.nombre) as 'cantidad',
+                historial_compra.price as 'precio',
+                color.nombre as 'color'
+                FROM historial_compra
+                INNER JOIN producto ON producto.id_producto=historial_compra.id_producto
+                INNER JOIN compras ON compras.id_compras=historial_compra.id_compra
+                INNER JOIN color ON color.id_color=producto.id_color
+                INNER JOIN unidad on unidad.id_unidad=producto.id_unidad
+                WHERE compras.id_compras=?";
+        
+        return $this->db
+                ->query($query, array($id_buy))
+                ->result();
+    }
 
     private function OutProduct() {
         $query = "SELECT

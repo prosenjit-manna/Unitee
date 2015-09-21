@@ -7,6 +7,9 @@
 * Author:  Olivier PLATHEY                                                     *
 *******************************************************************************/
 
+// Namespace definition add by itbz 2012-05-13
+namespace fpdf;
+
 define('FPDF_VERSION','1.7');
 
 class FPDF
@@ -73,8 +76,8 @@ var $PDFVersion;         // PDF version number
 *                               Public methods                                 *
 *                                                                              *
 *******************************************************************************/
-function FPDF($orientation='P', $unit='mm', $size='A4')
-{
+function __construct($orientation='P', $unit='mm', $size='A4')
+{  
 	// Some checks
 	$this->_dochecks();
 	// Initialization of properties
@@ -101,17 +104,23 @@ function FPDF($orientation='P', $unit='mm', $size='A4')
 	$this->TextColor = '0 g';
 	$this->ColorFlag = false;
 	$this->ws = 0;
-	// Font path
+
 	if(defined('FPDF_FONTPATH'))
 	{
 		$this->fontpath = FPDF_FONTPATH;
 		if(substr($this->fontpath,-1)!='/' && substr($this->fontpath,-1)!='\\')
 			$this->fontpath .= '/';
+              
 	}
-	elseif(is_dir(dirname(__FILE__).'/font'))
-		$this->fontpath = dirname(__FILE__).'/font/';
-	else
-		$this->fontpath = '';
+	elseif(is_dir( APPPATH . 'complement/FPDF/font')){
+                     
+                      $this->fontpath = APPPATH . 'complement/FPDF/font/';
+        }
+	else{
+           
+            $this->fontpath = '';
+        }
+		
 	// Core fonts
 	$this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
 	// Scale factor
@@ -277,6 +286,11 @@ function Error($msg)
 {
 	// Fatal error
 	die('<b>FPDF error:</b> '.$msg);
+
+	// Altered by itbz 2012-05-13
+        // 
+
+       // throw new \RuntimeException($msg);
 }
 
 function Open()
@@ -521,6 +535,9 @@ function SetFont($family, $style='', $size=0)
 	if(!isset($this->fonts[$fontkey]))
 	{
 		// Test if one of the core fonts
+                if(is_null($this->CoreFonts) || empty($this->CoreFonts)){
+                    $this->CoreFonts = array('courier', 'helvetica', 'times', 'symbol', 'zapfdingbats');
+                }
 		if($family=='arial')
 			$family = 'helvetica';
 		if(in_array($family,$this->CoreFonts))
@@ -985,6 +1002,7 @@ function Output($name='', $dest='')
 	// Output PDF to some destination
 	if($this->state<3)
 		$this->Close();
+        
 	$dest = strtoupper($dest);
 	if($dest=='')
 	{
@@ -1142,6 +1160,7 @@ function _endpage()
 function _loadfont($font)
 {
 	// Load a font definition file from the font directory
+   
 	include($this->fontpath.$font);
 	$a = get_defined_vars();
 	if(!isset($a['name']))
