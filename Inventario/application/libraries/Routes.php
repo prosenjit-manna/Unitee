@@ -93,6 +93,7 @@ class Routes {
                  $this->Path, 
                  json_encode($this->MVA_ROUTES)
         );
+        return $this;
     }
     
     public function  Pop($name){
@@ -102,6 +103,7 @@ class Routes {
                  $this->Path, 
                  json_encode($this->MVA_ROUTES)
         );
+        return $this;
     }
    
 }

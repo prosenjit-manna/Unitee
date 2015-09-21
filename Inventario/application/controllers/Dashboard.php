@@ -575,8 +575,8 @@ class Dashboard extends CI_Controller {
     public function test(){
         $this->load->library("Routes");
         
-          //$this->routes->Push("prueba=prueba" , "prueba");
-          $this->routes->Pop("prueba");
+          $this->routes->Push("prueba=prueba" , "prueba");
+         
     }
     
     
