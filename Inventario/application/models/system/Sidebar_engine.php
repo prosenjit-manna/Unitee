@@ -1,5 +1,94 @@
 <?php
 
+/**
+ * @version 1.2
+ * @author Rolando Arriaza
+ * @copyright (c) 2015, Rolando Arriaza
+ * 
+ * -----------------------------------------------------------
+ * ESTE CODIGO FUNCIONA SOLO PARA EL SIDEBAR DE LADO IZQUIERDO 
+ * Y PARA LA PLANTILLA METRONICS , SI DESEA CAMBIAR LA INTERFAZ GRAFICA
+ * NO SE PREOCUPE ES SIMPLE , SOLO NECESITA CAMBIAR LA FUNCION _echo();
+ * ESTA IMPRIME EL SIDEBAR DE METRONICS, PERO LA FUNCION _init() ES LA 
+ * QUE SIRVE PARA GENERAR EL ARREGLO O MULTI ARREGLO QUE TIENE TODO LO NECESARIO 
+ * PARA CREAR EL SIDEBAR
+ * 
+ * ------------------------------------------------------------
+ * 
+ * ACLARO EL CODIGO SE DESARROLLO EN UN TIEMPO DE 7 HORAS 
+ * POR LO TANTO ESTA EN SU ETAPA JOVEN, SE PUEDE OPTIMIZAR Y POR 
+ * ENDE MEJORAR, SE VERSIONA YA QUE SE AGREGA ALGUNAS CARACTERISTICAS EN EL ARRAY 
+ * 
+ * ------------------------------------------------------------
+ * 
+ * VERSION 1.2:
+ *              
+ *              SE AGREGO EN _INIT() DENTRO DEL ARRAY QUE GENERA EL SIDEBAR
+ *              LA SOCIACION route => routes de la base de datos para rutas 
+ *              mas bonitas.
+ * 
+ *-------------------------------------------------------------
+ * 
+ * OJOOOOOOOOOOOOOOOOOOOO!!!!
+ * 
+ *          ESTA CLASE NECESITA DE LAS SIGUIENTES TABLAS 
+ * 
+ *          CREATE TABLE `namespaces` (
+                `id_namespace` INT(11) NOT NULL AUTO_INCREMENT,
+                `name` TEXT NULL,
+                `start` INT(11) NULL DEFAULT NULL,
+                PRIMARY KEY (`id_namespace`)
+            )
+            COLLATE='latin1_swedish_ci'
+            ENGINE=MyISAM
+            AUTO_INCREMENT=4;
+ * 
+ *          
+ *           CREATE TABLE `seccion` (
+                `id_seccion` INT(11) NOT NULL AUTO_INCREMENT,
+                `id_namespace` INT(11) NULL DEFAULT NULL,
+                `sub_seccion` INT(11) NULL DEFAULT NULL,
+                `roles` TEXT NULL,
+                `name` TEXT NULL,
+                `icon` TEXT NULL,
+                `start` INT(11) NULL DEFAULT NULL,
+                `status` INT(11) NULL DEFAULT NULL,
+                `complement` TEXT NULL,
+                PRIMARY KEY (`id_seccion`)
+            )
+            COLLATE='latin1_swedish_ci'
+            ENGINE=MyISAM
+            AUTO_INCREMENT=22;
+
+
+
+            CREATE TABLE `sidebar` (
+	`id_sidebar` INT(11) NOT NULL AUTO_INCREMENT,
+	`id_seccion` INT(11) NULL DEFAULT NULL,
+	`roles` TEXT NULL,
+	`name` TEXT NULL,
+	`model_dir` TEXT NULL,
+	`model` TEXT NULL,
+	`routes` TEXT NULL,
+	`type` TEXT NULL,
+	`status` INT(11) NULL DEFAULT NULL,
+	`icon` TEXT NULL,
+	`start` INT(11) NULL DEFAULT NULL,
+	`complement` TEXT NULL,
+	`operations` TEXT NULL,
+	PRIMARY KEY (`id_sidebar`)
+        )
+        COLLATE='latin1_swedish_ci'
+        ENGINE=MyISAM
+        AUTO_INCREMENT=32;
+
+
+        ESTAS TRES TABLAS ESTAN ANIDADAS CON LA TABLA ROLES ASI QUE TAMBIEN ES
+ *      INDISPENSABLE , ESO SI ACA NO SE VE ESTA TABLA.
+
+ * 
+ * ****/
+
 class Sidebar_engine extends CI_Model {
     
     protected $query = NULL;
@@ -169,7 +258,7 @@ class Sidebar_engine extends CI_Model {
     
     
     /**
-     * @deprecated since version 1.0
+     * @deprecated since version 1.1
      * **/
     public function _ParseJson(){
         
@@ -177,7 +266,8 @@ class Sidebar_engine extends CI_Model {
         
     }
     
-    public function _echo(){
+    public function _echo()
+    {
          
          $the_sidebar   = $this->_init();
          $view          = NULL;
