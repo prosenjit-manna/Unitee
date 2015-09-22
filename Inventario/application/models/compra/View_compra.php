@@ -152,7 +152,7 @@ class View_compra extends CI_Model implements PInterface {
           $data_option              = "";
           
           if(!is_array($value)){
-                $data                     = " LIKE '%$value'";
+                $data                     = " LIKE '%$value%'";
           }
           else{
               $data = NULL;

@@ -176,7 +176,7 @@ class Buy extends CI_Controller {
          $id   = isset($_REQUEST['i']) ? $_REQUEST['i'] : NULL;  
          $d    = isset($_REQUEST['d']) ? $_REQUEST['d'] : NULL;
          
-         $data  = json_decode($d)[0];
+         $data  = json_decode($d);
          
          $this->load->helper("url");
          switch($type){
@@ -194,7 +194,7 @@ class Buy extends CI_Controller {
                  //$this->pdf->Cell(0,35,'HOLA',0,0,'C');
                  
                  
-                 $this->pdf->Image(FCPATH .  "images/dashboard/logo_black.jpg" , 9 , 10 , 40);
+                 $this->pdf->Image(FCPATH .  "images/dashboard/logo_black.jpg" , 9 , 7 , 40);
                  $this->pdf->Line(0, 25, 225 , 25);
                  $this->pdf->SetFont('Times','B',14);
                  $this->pdf->Text(160, 10 , "Ref:");
@@ -237,7 +237,63 @@ class Buy extends CI_Controller {
                  /**
                   * TABLE 
                   * **/
-               
+
+                  $this->load->model("productos/view_producto" , "prod");
+                  
+                  $result       = $this->prod->GetByBuy($id);
+
+             
+                  
+                  $header = array(
+                      "Producto ",
+                      "Cantidad ",
+                      "Precio ",
+                      "Color "
+                  );
+                  
+                 
+                 $this->pdf->Rect(20,55,170,200);
+                 
+                 $this->pdf->SetFont('Times','B',12);
+                 
+                 $y     = 60;
+                 $x     = 21;
+                 
+                 for($i=0 ; $i < count($header) ; $i++){
+                      $this->pdf->Text($x, $y , $header[$i]);
+                      if($i== 0){
+                           $x = $x+80;
+                      }else{
+                           $x = $x+30;
+                      }
+                 }
+                 $this->pdf->Line(20, 62, 190 , 62);
+                 
+                 $this->pdf->SetFont('Times','',12);
+                 
+                 $y         = 62;
+                 $x         = 21;
+                 $flag      = FALSE;
+                 foreach($result as $v){
+                     $y = $y+6;
+                     
+                     if($y >= 240 && $flag == FALSE){
+                         $this->pdf->AddPage();
+                         $flag = TRUE;
+                         $y = 10;
+                     }
+                     
+                     $this->pdf->Text($x , $y , $v->nombre );
+                     $x = $x+80;
+                     $this->pdf->Text($x , $y , $v->cantidad);
+                     $x = $x+30;
+                     $this->pdf->Text($x , $y , "$" . $v->precio);
+                     $x = $x+30;
+                     $this->pdf->Text($x , $y ,  $v->color);
+                     $x=21;
+                 }
+             
+                 
                  $this->pdf->Output();
                  
                  break;

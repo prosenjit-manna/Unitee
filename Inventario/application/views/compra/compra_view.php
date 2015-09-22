@@ -293,19 +293,19 @@
                values += '</tbody>';
                values += '</table>';
                tab_.html(values);
-               
-               $("#pdf_export").attr("href" , 
-                       '<?php echo site_url("Buy/Document?t=pdf");?>&i=' 
-                       + i + '&d=' + JSON.stringify($result_)
-                );
-               
-               
+
            });
            task.do_task();
            
            $.map($result_ , function(data){
                 if(parseInt(data.id) === parseInt(i))
                 {
+                  
+                       
+                    $("#pdf_export").attr("href" , 
+                       '<?php echo site_url("Buy/Document?t=pdf");?>&i=' 
+                       + i + '&d=' + JSON.stringify(data) 
+                     );
                   
                    var d = '<li class="list-group-item">';
                        d+= '<p class="col-md-2"><b>Factura </b></p>';
