@@ -58,10 +58,10 @@
                             <div class="portlet light bordered col-md-12">
                                 <div align="center">
                                     <div class="input-group input-medium date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
-                                        <input type="text" class="form-control" name="from">
+                                        <input id="date_rang1" type="text" class="form-control" name="from">
                                         <span class="input-group-addon">
-                                            Hasta</span>
-                                        <input type="text" class="form-control" name="to">
+                                            Hasta</span> 
+                                        <input id="date_rang2" type="text" class="form-control" name="to">
                                     </div>
                                     <!-- /input-group -->
                                     <span class="help-block">
@@ -132,7 +132,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                            <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
+                                            <button type="button" data-dismiss="modal" onclick="delete_buy();" class="btn green">Eliminar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -148,6 +148,8 @@
     var $id_                = null;
     
     var $result_            = null;
+    
+    var $i_                 = 0;
     
     var buy_loader = function(){
     
@@ -168,6 +170,19 @@
                 
                 find_(option_ , value , "button_find");
                 
+            });
+            
+            $("#date_rang2").on("change" , function(){
+                     var option_  = $("#find_option").val();
+                     var v1       = $("#date_rang1").val();
+                     var v2       = $("#date_rang2").val();
+                     
+                     var obj      = new Object();
+                     obj.from     = v1;
+                     obj.to       = v2;
+                     
+                     console.log(JSON.stringify(obj));
+                     find_(5 , JSON.stringify(obj) , "button_find");
             });
 
     };
@@ -192,6 +207,7 @@
                       $("#tab_responsive").html('<div class="portlet light bordered col-md-12"> <center><img src="<?php echo $route; ?>images/dashboard/loading.gif" align="center" width="100px" height="100px"/></center><center><p>Buscando compras..</p></center></div>');
                });
                task.success_callback(function(v){
+                  
                        $("#" + request ).attr("disabled" , false);
                        
                        $("#buy_data").html("");
@@ -213,6 +229,7 @@
                        }
                       
                });
+             
                task.do_task();
     };
     
@@ -254,6 +271,7 @@
     var view_buy = function(i)
     {
        
+           $i_          = parseInt(i);
            var task     = new jtask();
            task.url = "<?php echo site_url("Buy/Product"); ?>";
            task.data =  {  "i": i }; 
@@ -404,6 +422,25 @@
          return 'blank.png';
     };
 
+    
+    var delete_buy = function(){
+        
+        var task     = new jtask();
+        task.url = "<?php echo site_url("Buy/Delete"); ?>";
+        task.data = { "i" : $i_} ;
+        task.beforesend = true;
+        task.config_before(function(){
+               $("#tab_responsive").html('<center><i class="icon-trash" style="font-size:20px;"></i></center><center><p><b>Eliminando Compra ...</b></p></center>');
+        });
+        task.success_callback(function(t){
+            
+               $("#tab_responsive").html('<center><i class="icon-search" style="font-size:20px;"></i></center><center><p><b>Realiza una busqueda de tus compras ...</b></p></center>');
+               $("#buy_data").html("");
+               $("#buy_invoice").html("");
+        });
+        task.do_task();
+        
+    };
 
   
     

@@ -119,7 +119,7 @@ class Buy extends CI_Controller {
 
         $request = $this->buy->Find(
              $option,
-             $option != 5 ? $value : json_decode($value)
+             $option != 5 ? $value : json_decode($value , TRUE)
         );
          
         if(is_array($request)){
@@ -302,5 +302,27 @@ class Buy extends CI_Controller {
          }
     }
 
+    public function Delete(){
+        
+        $this->load->library("session");
+        
+        if(!is_array($this->session->user)){
+            $this->output->set_output(FALSE);
+            RETURN;
+        }
+        
+        $i = isset($_REQUEST['i']) ? $_REQUEST['i']  : 0;
+        
+        if($i == 0){
+            $this->output->set_output(FALSE);
+            RETURN;
+        }
+        
+        $this->load->model("compra/view_compra" , "buy");
+        $this->buy->Delete($i);
+        
+        $this->output->set_output(TRUE);
+        
+    }
 
 }

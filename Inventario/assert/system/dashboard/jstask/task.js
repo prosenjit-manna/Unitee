@@ -80,6 +80,9 @@ var jtask = function(){
                         404: function() {
                         alert( "Opps!!! page not found" );
                     }
+              },
+              error: function(e){
+                  alert(e);
               }
         });
          

@@ -179,6 +179,10 @@ class View_compra extends CI_Model implements PInterface {
                   $data_option  = "compras.date ";
                   $from         = $value['from'];
                   $to           = $value['to'];
+                  $d1           = new DateTime($from);
+                  $d2           = new DateTime($to);
+                  $from         = $d1->format("Y-m-d");
+                  $to           = $d2->format("Y-m-d");
                   $data         = "between '$from' and '$to' order by compras.date desc ";
                   break;
           }
@@ -197,6 +201,20 @@ class View_compra extends CI_Model implements PInterface {
                   ->query($query)
                   ->result();
                   
+    }
+    
+    public function Delete($id){
+        
+        $adj  = $this->db
+                ->query("SELECT id_adjunto as 'ida' FROM compras WHERE id_compras LIKE $id")
+                ->result();
+        
+         if(sizeof($adj) >= 1){
+             $this->db->delete("adjunto" , array("id_adjunto" => $adj[0]->ida));
+         }
+        
+        $this->db->delete("historial_compra" , array("id_compra" => $id));
+        $this->db->delete("compras" , array("id_compras" => $id ));
     }
 
 }
