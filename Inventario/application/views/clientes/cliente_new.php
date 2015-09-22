@@ -19,15 +19,10 @@
                     <a href="#">Nuevo Cliente</a>
                 </li>
             </ul>
-            <div class="page-toolbar">
-
-            </div>
         </div>
         <!-- FINAL BREADCUMBS -->
-
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
-
             <!-- INICIO PAGE CONTENT-->
             <div class="row scroller" style="height:430px" data-rail-visible="1" >
                 <!-- INICIO Portlet PORTLET-->
@@ -43,9 +38,38 @@
                             <!-- INICIO FORM-->
                             <h5 lass="form-section">Los campos con * son Requeridos</h5>
                             <div class="col-md-12">
-                                <br><label class="control-label col-md-2">* Nombre del cliente</label>
-                                <div class="form-group col-md-10">
-                                    <input  required="required" type="text" id="txt1" name="txt_empresa" class="form-control input-circle" placeholder="Escriba el nombre del cliente">
+                                <h3 lass="form-section">Información del Cliente</h3><br>
+                                <div class="col-md-6">
+                                    <br><label class="control-label col-md-4">* Nombre</label>
+                                    <div class="form-group col-md-8">
+                                        <input  required="required" type="text" id="txt1" name="txt_empresa" class="form-control input-circle" placeholder="Escriba el nombre del cliente">
+                                    </div>
+                                    <label class="control-label col-md-4">Tipo</label>
+                                    <div class="form-group col-md-8">
+                                        <select required="required" id="select_tipo" name="txt_tipo" class="form-control input-circle"> 
+                                            <option value="-1">Seleccionar una opción</option>
+                                            <option value="1">Persona Natural</option>
+                                            <option value="2">Persona Juridica</option>
+                                        </select>                                    
+                                    </div>
+                                </div>
+                                <div class="col-md-6"><div class="visible-lg visible-md"><br></div>
+                                    <label class="control-label col-md-4">IVA</label>
+                                        <div class="form-group col-md-8">
+                                            <div class="input-icon right">
+                                                <i name="change_" id="change_iva_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                <i name="change_x" id="change_iva" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                <input onkeyup="validate_iva();" required="" type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de iva">
+                                            </div>
+                                        </div>
+                                    <label class="control-label col-md-4">NIT</label>
+                                        <div class="form-group col-md-8">
+                                            <div class="input-icon right">
+                                                <i name="change_" id="change_nit_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                <i name="change_x" id="change_nit" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                <input  required="" type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de nit">
+                                            </div>
+                                         </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
@@ -131,39 +155,6 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="col-md-6 col-sm-12">
-                                    <h3 lass="form-section">Descripci&oacute;n</h3><br>
-                                    <label class="control-label col-md-4">Descripci&oacute;n del cliente</label>
-                                    <div class="form-group col-md-8">
-                                        <textarea class="form-control input-circle" rows="3" placeholder="Descripción del cliente"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6"><div class="visible-lg visible-md"><br><br><br><br></div>
-                                    <label class="control-label col-md-1">Tipo</label>
-                                    <div class="form-group col-md-5">
-                                        <select required="required" id="select_tipo" name="txt_tipo" class="form-control input-circle"> 
-                                            <option value="-1">Seleccionar opción</option>
-                                            <option value="1">Persona Natural</option>
-                                            <option value="2">Persona Juridica</option>
-                                        </select>                                    
-                                    </div>
-                                     <label class="control-label col-md-1">IVA</label>
-                                    <div class="form-group col-md-5">
-                                        <div class="input-icon right">
-                                            <i name="change_" id="change_iva_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
-                                            <i name="change_x" id="change_iva" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                            <input onkeyup="validate_iva();" required="" type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de iva">
-                                        </div>
-                                    </div>
-                                    <label class="control-label col-md-1">NIT</label>
-                                    <div class="form-group col-md-11">
-                                        <div class="input-icon right">
-                                            <i name="change_" id="change_nit_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
-                                            <i name="change_x" id="change_nit" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                            <input onkeyup="validate_nit();" required="" type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de nit">
-                                        </div>
-                                    </div>
-                                </div>
                                     <div class="row col-md-12">
                                             <?php
                                             echo form_open_multipart("", array(
@@ -171,14 +162,15 @@
                                                 "class" => "col-md-12"
                                             ));
                                             ?>
-
                                             <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
                                             <div class="row fileupload-buttonbar">
-                                                <br><br>
-                                                <div class="col-md-3">
-                                                    <h4>Adjuntar archivos</h4>
+                                                <h3 lass="form-section">Descripci&oacute;n y Adjuntar</h3><br>
+                                                <label class="control-label col-md-2">Descripci&oacute;n</label>
+                                                <div class="form-group col-md-4">
+                                                    <textarea class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
                                                 </div>
-                                                <div>
+                                                <label class="control-label col-md-2">Adjuntar archivos</label>
+                                                <div class="col-md-4">
                                                     <!-- The fileinput-button span is used to style the file input field as button -->
                                                     <span class="btn default fileinput-button">
                                                         <i class="glyphicon glyphicon-paperclip"></i>
@@ -194,13 +186,13 @@
                                                 </div>
                                             </div>
                                             <!-- The table listing the files available for upload/download -->
-                                            <table role="presentation" class="col-md-4 table table-striped clearfix">
+                                            <table role="presentation" class="table table-striped clearfix">
                                                 <tbody class="files">
                                                 </tbody>
                                             </table>
                                             <input type="hidden" value="" name="directory" />
                                             <?php echo form_close(); ?>
-                                    </div>          
+                                    </div>      
                                 <div class="col-md-12">
                                     <div class="form-actions col-md-offset-9">
                                         <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
@@ -223,7 +215,7 @@
 <!-- FINAL CONTENIDO -->
 <script id="template-upload" type="text/x-tmpl">
     {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-upload fade col-md-6">
+    <tr class="template-upload fade">
     <td>
     <span class="preview"></span>
     </td>
@@ -253,7 +245,7 @@
 <!-- The template to display files available for download -->
 <script id="template-download" type="text/x-tmpl">
     {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-download fade col-md-6">
+    <tr class="template-download fade">
     <td>
     <span class="preview">
     {% if (file.thumbnailUrl) { %}
@@ -295,11 +287,46 @@
 </script>
 
 <script>
-
     var $field_count = 9;
-  
-  var LoadValidation = function(){
 
+     var init_client = function(){
+        $("#txt_nit").on("keyup" , function(k){
+        var nit = $("#txt_nit").val();
+        var change_nit_ok = $("#change_nit_ok");
+        var change_nit = $("#change_nit");
+        var count = nit.length;
+
+        if (k.key != 'Backspace') {
+            switch (count){
+                case 4:
+                    $("#txt_nit").val(nit + "-");
+                    break;
+                case 11:
+                    $("#txt_nit").val(nit + "-");
+                    break;
+                case 15 :
+                    $("#txt_nit").val(nit + "-");
+                    break;
+         } }
+
+        if(nit.length >= 18){
+            change_nit_ok.css("display", "none");
+            change_nit.css("display", "block");
+            return true;
+            }
+        else if (/^(\d{4})-(\d{6})-(\d{3})-(\d{1})/.test(nit) ) {
+            change_nit_ok.css("display", "block");
+            change_nit.css("display", "none");
+            return true;
+        }else {
+            change_nit_ok.css("display", "none");
+            change_nit.css("display", "block");
+            return false;
+            }
+        });
+     };
+
+    var LoadValidation = function(){
      setInterval(function(){
            var total = 0;
            for(var i =1; i <= $field_count ; i++)
@@ -313,7 +340,6 @@
            }
 
         } , 500);
-
   };
 
   var validar = function(field){
@@ -341,7 +367,6 @@
             });
         });
         tasking.do_task();
-
     };
 
     var get_depto = function (iso) {
@@ -448,36 +473,24 @@
         var change_iva_ok = $("#change_iva_ok");
         var change_iva = $("#change_iva");
         var iva = $("#txt_iva").val();
-        if (isNaN(iva) || iva == "") {
-            change_iva_ok.css("display", "none");
-            change_iva.css("display", "block");
-            return true;
-        }else {
+         if (/^(\d{6})-(\d{1})/.test(iva) ) {
             change_iva_ok.css("display", "block");
             change_iva.css("display", "none");
-            return false;
-        }
-    };
-
-     var validate_nit = function () {
-        var change_nit_ok = $("#change_nit_ok");
-        var change_nit = $("#change_nit");
-        var nit = $("#txt_nit").val();
-        if (isNaN(nit) || nit == "") {
-            change_nit_ok.css("display", "none");
-            change_nit.css("display", "block");
             return true;
         }else {
-            change_nit_ok.css("display", "block");
-            change_nit.css("display", "none");
+            change_iva_ok.css("display", "none");
+            change_iva.css("display", "block");
             return false;
         }
     };
-
 
     function isValidEmail(mail){
         return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
     };
+
+    function isValidNit(nit){
+
+    }
 
     var FormFileUpload = function () {
         return {
@@ -507,7 +520,7 @@
                     $.ajax({
                         type: 'HEAD'
                     }).fail(function () {
-                        alert();
+                       
                         $('<div class="alert alert-danger"/>')
                                 .text('Upload server currently unavailable - ' +
                                         new Date())
