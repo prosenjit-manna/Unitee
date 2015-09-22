@@ -112,7 +112,7 @@
             task.url = "<?php echo site_url("jsloader"); ?>";
             task.success_callback(function (r) {
                 //EJECUCION DE SEGUNDO PLANO PARA MODULOS 
-                console.log(r);
+                // console.log(r);
             });
             task.do_task();
 
@@ -122,6 +122,11 @@
 
 <script>
 
+   /**************
+    *
+    * UNITEE SYSTEM NOTIFICATION 
+    * 
+    ****************/
     var widget_notification = function () {
         var task = new jtask();
         task.url = "<?php echo site_url("dashboard/get_notification/TRUE"); ?>";

@@ -80,6 +80,11 @@ jQuery(document).ready(function() {
    }
    
    try{
+       /**
+        * script que funciona para la carga de los elementos 
+        * al inicio del dashboard
+        * con la interface _JSdashboard() 
+        * */
        var ds = new dashboard_loader();
        ds.load();
    }
@@ -87,6 +92,7 @@ jQuery(document).ready(function() {
        
    
    try{
+       //INICIA EL SIDEBAR IZQUIERDO DEL SISTEMA ...
        SidebarSystem.init();
    }catch(ex){
        console.log("Error al momento de cargar archivos del sistema " + ex.message);
@@ -111,6 +117,9 @@ jQuery(document).ready(function() {
    
    try{
        
+       
+       //FUNCION PARA CARGAR LAS NOTIFICACIONES DEL SISTEMA
+       //ESTAS NOTIFICACIONES SE VERAN EN EL HEAD
        var inotification = function(){
             var n = new notifications($uri);
             n.head = "notification_header";
@@ -125,6 +134,8 @@ jQuery(document).ready(function() {
        setInterval(function(){ 
            inotification();
        }, 30000);
+       
+       
       
    }catch(ex){
         console.log("Error al momento de cargar las notificaciones " + ex.message);

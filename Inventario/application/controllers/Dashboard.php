@@ -432,6 +432,8 @@ class Dashboard extends CI_Controller {
     
     
     /****
+     * @version 1.0
+     * 
      * FUNCION DEL CONTROLADOR QUE REALIZA PROCESOS
      * EN SEGUNDO PLANO DEL METODO INTERFACE
      * 

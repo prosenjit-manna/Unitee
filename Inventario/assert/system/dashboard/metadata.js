@@ -15,7 +15,6 @@ var metadata = function(uri){
     
     var tasking;
     
-    var base    = $("#base_url").val();
     
     this.get_logo = function(){
         tasking = new jtask();
