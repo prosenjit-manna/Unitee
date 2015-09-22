@@ -384,12 +384,11 @@
         tasking.do_task();
     };
 
-
     var validate_telefono = function () {
         var change_telefono_ok = $("#change_telefono_ok");
         var change_telefono = $("#change_telefono");
         var telefono = $("#txt4").val();
-        if (isNaN(telefono) && telefono !== "") {
+        if (isNaN(telefono) || telefono == "") {
             change_telefono_ok.css("display", "none");
             change_telefono.css("display", "block");
             return true;
@@ -404,7 +403,7 @@
         var change_celular_ok = $("#change_celular_ok");
         var change_celular = $("#change_celular");
         var celular = $("#txt5").val();
-       if (isNaN(celular) && celular !== "") {
+       if (isNaN(celular) || celular == "") {
             change_celular_ok.css("display", "none");
             change_celular.css("display", "block");
             return true;
@@ -419,7 +418,7 @@
         var change_fax_ok = $("#change_fax_ok");
         var change_fax = $("#change_fax");
         var fax = $("#txt6").val();
-        if (isNaN(fax) && fax !== "") {
+        if (isNaN(fax) || fax == "") {
             change_fax_ok.css("display", "none");
             change_fax.css("display", "block");
             return true;
@@ -449,7 +448,7 @@
         var change_iva_ok = $("#change_iva_ok");
         var change_iva = $("#change_iva");
         var iva = $("#txt_iva").val();
-        if (isNaN(iva) && iva !== "") {
+        if (isNaN(iva) || iva == "") {
             change_iva_ok.css("display", "none");
             change_iva.css("display", "block");
             return true;
@@ -464,7 +463,7 @@
         var change_nit_ok = $("#change_nit_ok");
         var change_nit = $("#change_nit");
         var nit = $("#txt_nit").val();
-        if (isNaN(nit) && nit !== "") {
+        if (isNaN(nit) || nit == "") {
             change_nit_ok.css("display", "none");
             change_nit.css("display", "block");
             return true;
