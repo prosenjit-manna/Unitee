@@ -152,7 +152,7 @@
                                 </div>
                                 <div>
                                     <!-- The fileinput-button span is used to style the file input field as button -->
-                                    <span class="btn green fileinput-button">
+                                    <span class="btn default fileinput-button">
                                         <i class="glyphicon glyphicon-paperclip"></i>
                                         <span>
                                             Añadir..</span>

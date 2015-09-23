@@ -15,23 +15,16 @@
                                                   <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"> </button><p>No se pudo guardar el producto,  favor intentar de nuevo.</p>
                                                             </div>';
                     break;
-
-
             endswitch;
         endif;
         ?>
         <!-- INICIO TITULO DE LA PAGINA -->
-
-
-
         <h3 class="page-title">
             Unitee - Nuevo Producto
         </h3>
         <!-- FINAL TITULO DE LA PAGINA -->
         <!-- INICIO BREADCUMBS -->
         <div class="page-bar">
-
-
             <ul class="page-breadcrumb">
                 <li>
                     <i class="icon-home"></i>
@@ -45,8 +38,6 @@
             <div class="page-toolbar">               
             </div>
         </div>
-
-
         <!-- FINAL BREADCUMBS -->
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
@@ -67,7 +58,6 @@
                             <div class="portlet-body form">
                                 <!-- INICIO FORM-->
 <?php echo form_open("/Productos/New_Product/", array("method" => "post")); ?>
-
                                 <div class="form-body">
                                     <div class="row">
                                         <h5 lass="form-section">Los campos con * son Requeridos</h5>
@@ -117,14 +107,11 @@
                                                 </div>
 
                                             </div>
-
-
                                             <label class="control-label col-md-3"> Cantidad</label>
                                             <div class="form-group col-md-9">
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_cantidad_ok" style="display:none;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_cantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-
                                                     <input  onkeyup="validate();" type="text" id="cantidad" name="txt_cantidad" class="form-control input-circle" placeholder="Cantidad del producto">
                                                 </div>
                                             </div>
@@ -143,16 +130,12 @@
                         <!-- FINAL Portlet PORTLET-->
                     </div>
                 </div>
-
                 <!-- FINAL PAGE CONTENTENIDO-->
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
         </div>
         <!-- FINAL CONTENIDO -->
-
         <script>
-
-
             var load_colors = function () {
                 var tasking = new jtask();
                 tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";
@@ -271,8 +254,5 @@
                     $('#send').attr("disabled", false);
                 }
             };
-
-
-
 
         </script>

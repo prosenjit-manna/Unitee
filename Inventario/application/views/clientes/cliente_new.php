@@ -38,16 +38,16 @@
                             <!-- INICIO FORM-->
                             <h5 lass="form-section">Los campos con * son Requeridos</h5>
                             <div class="col-md-12">
-                                <h3 lass="form-section">Información del Cliente</h3><br>
+                                <h3 lass="form-section">Información del cliente</h3><br>
                                 <div class="col-md-6">
                                     <br><label class="control-label col-md-4">* Nombre</label>
                                     <div class="form-group col-md-8">
-                                        <input  required="required" type="text" id="txt1" name="txt_empresa" class="form-control input-circle" placeholder="Escriba el nombre del cliente">
+                                        <input  required="required" type="text" id="txt1" name="txt_empresa" class="form-control input-circle" placeholder="Nombre del cliente">
                                     </div>
                                     <label class="control-label col-md-4">Tipo</label>
                                     <div class="form-group col-md-8">
                                         <select required="required" id="select_tipo" name="txt_tipo" class="form-control input-circle"> 
-                                            <option value="-1">Seleccionar una opción</option>
+                                            <option value="-1">Selecciona una opción</option>
                                             <option value="1">Persona Natural</option>
                                             <option value="2">Persona Juridica</option>
                                         </select>                                    
@@ -59,7 +59,7 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_iva_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_iva" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input onkeyup="validate_iva();" required="" type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de iva">
+                                                <input required="" type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de IVA">
                                             </div>
                                         </div>
                                     <label class="control-label col-md-4">NIT</label>
@@ -67,13 +67,13 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_nit_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_nit" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input  required="" type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de nit">
+                                                <input  required="" type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de NIT">
                                             </div>
                                          </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <h3 lass="form-section">Información de Contacto</h3><br>
+                                <h3 lass="form-section">Información de contacto</h3><br>
                                 <label class="control-label col-md-4">* Empresa</label>
                                 <div class="form-group col-md-8">
                                     <input  required="required"  type="text" id="txt2" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
@@ -108,7 +108,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_fax();" type="text" id="txt6" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
+                                        <input onkeyup="validate_fax();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Correo</label>
@@ -116,7 +116,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_correo_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_correo" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_correo();" required="" type="text" id="txt7" name="txt_correo" class="form-control input-circle" placeholder="Numero de correo">
+                                        <input onkeyup="validate_correo();" required="" type="text" id="txt6" name="txt_correo" class="form-control input-circle" placeholder="Escriba el correo">
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                     </div>
                                     <label class="control-label col-md-4">* Dirección 1</label>
                                     <div class="form-group col-md-8">
-                                      <input  required="required" type="text" id="txt9" name="txt8" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                      <input  required="required" type="text" id="txt7" name="txt7" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                     </div>
                                     <label class="control-label col-md-4">Dirección 2</label>
                                     <div class="form-group col-md-8">
@@ -164,7 +164,7 @@
                                             ?>
                                             <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
                                             <div class="row fileupload-buttonbar">
-                                                <h3 lass="form-section">Descripci&oacute;n y Adjuntar</h3><br>
+                                                <h3 lass="form-section">Descripci&oacute;n y adjuntar</h3><br>
                                                 <label class="control-label col-md-2">Descripci&oacute;n</label>
                                                 <div class="form-group col-md-4">
                                                     <textarea class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
@@ -287,9 +287,9 @@
 </script>
 
 <script>
-    var $field_count = 9;
-
+    var $field_count = 7;
      var init_client = function(){
+
         $("#txt_nit").on("keyup" , function(k){
         var nit = $("#txt_nit").val();
         var change_nit_ok = $("#change_nit_ok");
@@ -324,6 +324,33 @@
             return false;
             }
         });
+
+         $("#txt_iva").on("keyup" , function(k){
+                var iva = $("#txt_iva").val();
+                var change_iva_ok = $("#change_iva_ok");
+                var change_iva = $("#change_iva");
+                var count = iva.length;
+                if (k.key != 'Backspace') {
+                    if (count == 6) {
+                        $("#txt_iva").val(iva + "-");
+                    };
+                };
+
+                if(iva.length >= 9){
+                    change_iva_ok.css("display", "none");
+                    change_iva.css("display", "block");
+                    return true;
+                    }
+                 else if (/^(\d{6})-(\d{1})/.test(iva) ) {
+                    change_iva_ok.css("display", "block");
+                    change_iva.css("display", "none");
+                    return true;
+                }else {
+                    change_iva_ok.css("display", "none");
+                    change_iva.css("display", "block");
+                    return false;
+                }
+            });
      };
 
     var LoadValidation = function(){
@@ -442,7 +469,7 @@
     var validate_fax = function () {
         var change_fax_ok = $("#change_fax_ok");
         var change_fax = $("#change_fax");
-        var fax = $("#txt6").val();
+        var fax = $("#txt_fax").val();
         if (isNaN(fax) || fax == "") {
             change_fax_ok.css("display", "none");
             change_fax.css("display", "block");
@@ -457,7 +484,7 @@
     var validate_correo = function () {
         var change_correo_ok = $("#change_correo_ok");
         var change_correo = $("#change_correo");
-        var correo = $("#txt7").val();
+        var correo = $("#txt6").val();
         if (isValidEmail(correo) && correo !== "") {
             change_correo_ok.css("display", "block");
             change_correo.css("display", "none");
@@ -469,28 +496,9 @@
         }
     };
 
-     var validate_iva = function () {
-        var change_iva_ok = $("#change_iva_ok");
-        var change_iva = $("#change_iva");
-        var iva = $("#txt_iva").val();
-         if (/^(\d{6})-(\d{1})/.test(iva) ) {
-            change_iva_ok.css("display", "block");
-            change_iva.css("display", "none");
-            return true;
-        }else {
-            change_iva_ok.css("display", "none");
-            change_iva.css("display", "block");
-            return false;
-        }
-    };
-
     function isValidEmail(mail){
         return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
     };
-
-    function isValidNit(nit){
-
-    }
 
     var FormFileUpload = function () {
         return {

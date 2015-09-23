@@ -23,14 +23,11 @@
             endswitch;
         endif;
         ?>
-
-
         <!--Fin Alertas-->
         <h3 class="page-title">
             Unitee - Ver Productos
         </h3>
         <!-- FINAL TITULO DE LA PAGINA -->
-
         <!-- INICIO BREADCUMBS -->
         <div class="page-bar">
             <ul class="page-breadcrumb">
@@ -43,12 +40,8 @@
                     <a href="#">Ver Productos</a>
                 </li>
             </ul>
-            <div class="page-toolbar">
-
-            </div>
         </div>
         <!-- FINAL BREADCUMBS -->
-
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <div class="row scroller" style="height:385px" data-always-visible="1" data-rail-visible1="1">
@@ -181,7 +174,6 @@
                 </div>	
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
-
         </div>
     </div>
 </div>
@@ -224,11 +216,8 @@
                 [0, "DESC"]
             ]
         });
-
         var tableWrapper = $('#products_table_wrapper');
         tableWrapper.find('.dataTables_length select').select2();
-
-
     };
 
     var the_id = function (i) {
@@ -246,7 +235,5 @@
         });
         tasking.do_task();
     };
-
-
 
 </script>
