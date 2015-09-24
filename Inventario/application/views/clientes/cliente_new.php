@@ -116,7 +116,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_correo_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_correo" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_correo();" required="" type="text" id="txt6" name="txt_correo" class="form-control input-circle" placeholder="Escriba el correo">
+                                        <input required="" onkeyup="isValidEmail();" type="text" id="txt6" name="txt_correo" class="form-control input-circle" placeholder="Escriba el correo">
                                     </div>
                                 </div>
                             </div>
@@ -353,14 +353,30 @@
             });
      };
 
+     var isValidEmail = function () {
+        var change_correo_ok = $("#change_correo_ok");
+        var change_correo = $("#change_correo");
+        var correo = $("#txt6").val();
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(correo) && correo !== "") {
+            change_correo_ok.css("display", "block");
+            change_correo.css("display", "none");
+            return true;
+        }else {
+            change_correo_ok.css("display", "none");
+            change_correo.css("display", "block");
+            return false;
+        }
+    };
+
     var LoadValidation = function(){
      setInterval(function(){
            var total = 0;
+           var correo = isValidEmail();
            for(var i =1; i <= $field_count ; i++)
            {
               total += validar(i);
            }
-           if(total == $field_count){
+           if(total == $field_count && correo === true){
                $("#send").attr("disabled" , false);
            }else{
                 $("#send").attr("disabled" , true);
@@ -479,25 +495,6 @@
             change_fax.css("display", "none");
             return false;
         }
-    };
-
-    var validate_correo = function () {
-        var change_correo_ok = $("#change_correo_ok");
-        var change_correo = $("#change_correo");
-        var correo = $("#txt6").val();
-        if (isValidEmail(correo) && correo !== "") {
-            change_correo_ok.css("display", "block");
-            change_correo.css("display", "none");
-            return true;
-        }else {
-            change_correo_ok.css("display", "none");
-            change_correo.css("display", "block");
-            return false;
-        }
-    };
-
-    function isValidEmail(mail){
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
     };
 
     var FormFileUpload = function () {
