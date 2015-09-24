@@ -17,6 +17,7 @@ class Main extends CI_Model implements DInterfaces {
        
        $this->MainObject->Header  = $this->HEADER_NAME;
        $this->MainObject->Footer  = $this->FOOTER_NAME;
+      
        
     }
 
@@ -86,6 +87,11 @@ class Main extends CI_Model implements DInterfaces {
     }
 
     public function SetObject($name, $data) {
+        
+        if ($name == null || $data == null) {
+            return $this;
+        }
+
         $this->MainObject->$name = $data;
         return $this;
     }

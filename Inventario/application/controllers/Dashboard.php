@@ -217,6 +217,8 @@ class Dashboard extends CI_Controller {
         
         //INTRODUCIDO EN LA VERSION 1.5.6
         $this->load->model("dashboard/main" , "main");
+        
+        
       
         //verifica si existe una conexion a internet , 
         //en dado caso no exista tira el error
@@ -234,6 +236,38 @@ class Dashboard extends CI_Controller {
                 return;
             }
         }
+        
+        
+        /*
+         * ESTABLECEMOS LOS NOMBRES DE LOS OBJETOS PARA LAS FUNCIONES 
+         * DENTRO DEL HEADER , FOOTER ETC...
+         * 
+         * HAY QUE RECORDAR QUE EL MVA NECESITA UNAS VARAIBLES PREDEFINIDAS
+         * LA VENTAJA QUE HOY SE PODRA ESTABLECER UN NOMBRE DISTINTA A ESAS VARIABLES
+         * 
+         * VERSION 1.5.7
+         * **/
+        
+        //OBJETOS PREDEFINIDOS
+        //SI LAS VARIABLES CAMBIAN SU NOMBRE CAMBIAR SU VALOR
+        $this->main
+                ->SetObject("route" , "route")
+                ->SetObject("styles" , "styles")
+                ->SetObject("user" , "user_data")
+                ->SetObject("ajax" , "js_loader")
+                ->SetObject("javascript" , "javascript")
+                ->SetObject("title" , "title")
+                ->SetObject("stopwatch" , "ttl");
+        
+        
+        /***
+         *  objetos que no son del todo necesario
+         *  por ejemplo son objetos que dependen del view y del template
+         * ****/
+        
+         $this->main->SetObject("copen", "open_container");
+         $this->main->SetObject("cclose", "close_container");
+         
 
         /**
          * 
@@ -244,12 +278,17 @@ class Dashboard extends CI_Controller {
          *          en todas las vistas , si se agrega un nuevo dato o parametro
          *          la variable de arreglo se encargara de cargarlo a la vista
          * **/
+        
+        $object                         = $this->main->GetObject();
+        
+        
+        
      
         $vars =  array(   
-               "route"                  => $this->base_url->GetBaseUrl(),
-               "user_data"              => $this->user_p,
-               "open_container"         => '<div class="page-container">',
-               "close_container"        => '</div>'
+               $object->route                       => $this->base_url->GetBaseUrl(),
+               $object->user                        => $this->user_p,
+               $object->copen                       => '<div class="page-container">',
+               $object->cclose                      => '</div>'
         );
       
         /**
@@ -277,8 +316,8 @@ class Dashboard extends CI_Controller {
              
              
              //VERSION 1.5.6 
-             $vars['styles']        = $this->main->CSS();
-             $vars['title']         = $this->main->TITLE();
+             $vars[$object->styles]        = $this->main->CSS();
+             $vars[$object->title]         = $this->main->TITLE();
              
              //INICIAMOS EL HEADER VERSION 1.5.6
              $this->main->Header($vars);
@@ -287,14 +326,14 @@ class Dashboard extends CI_Controller {
              $this->main->Complements($vars);
              
              //$(document).ready() JAVASCRIPT CARGAS
-             $vars['js_loader']     = $this->main->JS();
+             $vars[$object->ajax]     = $this->main->JS();
              
              //MAIN DEL DASHBOARD
              $this->main->Main($vars);
              
                 //TTL O CRONOMETRO
                 $ttl                = round(($this->GetTime() - $init_time) , 6);
-                $vars['ttl']        = $ttl;
+                $vars[$object->stopwatch]        = $ttl;
              
               //VISTA DEL FOOTER
              $this->main->Footer($vars);
@@ -337,7 +376,7 @@ class Dashboard extends CI_Controller {
                     
                     //VERIFICAMOS SI ES MODELO SIN UN DIRECTORIO EJEMPLO login.php
                     if(!check_model($model)){
-                       $this->load->view("errors/html/404" , $vars);
+                       $this->main->_404($vars);
                        return;
                     }
                     
