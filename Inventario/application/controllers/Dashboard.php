@@ -54,8 +54,10 @@
  * 
  * VERSION 1.5.7 :
  * 
- *                  MUY PRONTO , LO NUEVO : OPERADORES DE RESOLUCION DE OBJETO 
- *                  PARA PODER DINAMIZAR LAS VARIABLES INICIALES
+ *              -OPERADOR DE RESOLUCION DE OBJETOS 
+ *              -MEJORAS DE FIABILIDAD
+ * 
+ *                  
  * 
  */
 
@@ -90,8 +92,11 @@ class Dashboard extends CI_Controller {
  */
     
     
+    //RUTA PROTEJIDA VERSION 1.0.0
     protected $route        = NULL;
     
+    
+    //USUARIO VERSION 1.1.0
     var $user_p             = NULL;
 
     public function __construct() 
@@ -183,6 +188,11 @@ class Dashboard extends CI_Controller {
      *    $route['0/([a-z_-]+)' 
     .                   system_token() 
     .                   '([a-z_-]+)'] = 'dashboard/index/$1=$2';
+     * 
+     * 
+     * VERSION 1.5.5
+     * 
+     *          IMPLEMENTACION DE RUTAS ... O PRETTY ROUTES
      * 
      * 
      * **/
@@ -635,6 +645,23 @@ class Dashboard extends CI_Controller {
     
     
     
+    /***
+     * VERSION 1.5.6
+     * AGREGA UNA RUTA DEL MVA
+     * **/
+    public function PushRoutes($name , $model){
+        if($this->user_p == NULL) {
+            return NULL;
+        }
+        
+        $this->load->library("Routes");
+        $this->routes->Push($model , $name);
+        
+        return TRUE;
+        
+    }
+    
+    
     public function modulos(){
         $this->load->library("plugin");
         echo "<pre>" , print_r($this->plugin->_show()) , "</pre>";
@@ -647,9 +674,10 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-        $this->load->library("Routes");
+        print_r($this->user_p);
+        //$this->load->library("Routes");
         
-          $this->routes->Push("prueba=prueba" , "prueba");
+          //$this->routes->Push("prueba=prueba" , "prueba");
          
     }
     
@@ -703,10 +731,12 @@ class Dashboard extends CI_Controller {
         $data   = $this->notifications->GetNofication(0 , $all);
         $count  = sizeof($data);
        
-        echo json_encode(array(
-            "count"     => $count,
-            "data"      => $data
-        ));
+        $this->output->set_output(
+                json_encode(array(
+                    "count"     => $count,
+                    "data"      => $data
+            )));
+     
        
     }
     

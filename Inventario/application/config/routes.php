@@ -81,6 +81,8 @@ $route['notifications']             = "dashboard/get_notification";
 $route['notify']                    = "dashboard/verify_notification";
 $route['jsloader']                  = "dashboard/LoadJs";
 
+$route['push_route/(:any)/(:any)']  = "dashboard/PushRoutes/$1/$2";
+
 //OTRAS RUTAS 
 
 $route['c/(:any)']                  = "country/GetCountry/$1";

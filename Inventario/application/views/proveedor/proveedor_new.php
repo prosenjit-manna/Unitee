@@ -163,10 +163,9 @@
             var j = JSON.parse(data);
             var c = $("#select_country");
             c.html("");
-            //c.append('<option selected="selected">Elige un Pais</option>');
             $.map(j, function (k) {
                 if (k.id == "SV") {
-                    c.prepend("<option value='" + k.id + "'>" + k.name + "</option>");
+                    c.prepend("<option selected='selected' value='" + k.id + "'>" + k.name + "</option>");
                     get_depto(k.id);
                 }
                 else {
