@@ -51,7 +51,7 @@ class New_cliente extends CI_Model implements PInterface {
 
     public function _init() {
         $this->load->helper("form");
-      $this->load->view("clientes/cliente_new");
+        $this->load->view("clientes/cliente_new");
     }
 
     public function _install() {

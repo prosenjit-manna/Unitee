@@ -36,6 +36,7 @@
                         </div>
                         <div class="portlet-body">
                             <!-- INICIO FORM-->
+                            <?php echo form_open_multipart("Client/Add" , array("method" => "post")); ?>
                             <h5 lass="form-section">Los campos con * son Requeridos</h5>
                             <div class="col-md-12">
                                 <h3 lass="form-section">Información del cliente</h3><br>
@@ -164,9 +165,10 @@
                                 </div>
                                 <div class="form-group scroller" style="height:100px">
                                     <label class="control-label col-md-4">Adjuntar archivos</label>
-                                    <div class="col-md-8">
-                                            <span class="btn btn-primary btn-file">
-                                                Añadir.. <input id="files" name="file[]" type="file">
+                                    <button id="file_add" class="btn btn-default"><i class="icon-plus"></i></button>
+                                    <div id="file_data" class="col-md-8">
+                                            <span id="f1" class="btn btn-default ">
+                                               <input id="files1" name="file[]" type="file">
                                             </span>
                                     </div>
                                 </div>
@@ -178,6 +180,7 @@
                                     </div>
                                 </div>
                             </div>
+                        <?php echo form_close(); ?>
                             <!-- FINAL FORM-->
                         </div>
                         <!-- FINAL Portlet PORTLET-->
@@ -192,6 +195,7 @@
 </div>
 <script>
     var $field_count = 7;
+    var $file_count  = 1;
     
     var init_client = function(){
 
@@ -256,6 +260,17 @@
                     return false;
                 }
             });
+            
+         $("#file_add").on("click" , function(){
+               $file_count++;
+               var data = '<span id="f' 
+                       + $file_count 
+                       + '" class="btn btn-default "><input id="files' 
+                       + $file_count + '" name="file[]" type="file"></span>';
+               $("#file_data").prepend(data);
+         });
+            
+ 
      };
 
      var isValidEmail = function () {
