@@ -163,7 +163,7 @@
                                         <textarea class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
                                     </div>
                                 </div>
-                                <div class="form-group scroller" style="height:100px">
+                                <div class="form-group scroller" style="height:200px">
                                     <label class="control-label col-md-4">Adjuntar archivos</label>
                                     <button id="file_add" class="btn btn-default"><i class="icon-plus"></i></button>
                                     <div id="file_data" class="col-md-8">
