@@ -288,7 +288,8 @@
 
 <script>
     var $field_count = 7;
-     var init_client = function(){
+    
+    var init_client = function(){
 
         $("#txt_nit").on("keyup" , function(k){
         var nit = $("#txt_nit").val();
@@ -385,11 +386,11 @@
         } , 500);
   };
 
-  var validar = function(field){
+    var validar = function(field){
             var data = $("#txt" + field).val();
             if(data == '') return 0;
             return 1;
-   };
+    };
 
     var load_paises = function () {
         var tasking = new jtask();
@@ -398,10 +399,9 @@
             var j = JSON.parse(data);
             var c = $("#select_country");
             c.html("");
-            //c.append('<option selected="selected">Elige un Pais</option>');
             $.map(j, function (k) {
                 if (k.id == "SV") {
-                    c.prepend("<option value='" + k.id + "'>" + k.name + "</option>");
+                    c.prepend("<option selected='selected' value='" + k.id + "'>" + k.name + "</option>");
                     get_depto(k.id);
                 }
                 else {
