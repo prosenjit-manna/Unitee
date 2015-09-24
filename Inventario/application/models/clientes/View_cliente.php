@@ -13,11 +13,11 @@
 get_instance()->load->interfaces("Interface");
 get_instance()->load->interfaces("PluginConfig");
 
-class New_cliente extends CI_Model implements PInterface {
+class View_cliente extends CI_Model implements PInterface {
 
     use PluginConfig;
 
-    protected $model        = "new_cliente";
+    protected $model        = "view_cliente";
     var $route              = null;
 
     public function __construct() {
@@ -30,13 +30,13 @@ class New_cliente extends CI_Model implements PInterface {
             "author" => "Lieison S.A de C.V",
             "type" => "view",
             "name" => "Ver clientes",
-            "description" => "Modulo para crear clientes",
+            "description" => "Modulo para ver clientes",
             "id_model" => "003",
             "id_update" => "005",
             "update" => "",
             "license" => "",
             "controller" => "",
-            "view" => "clientes/cliente_new"
+            "view" => "clientes/cliente_view"
         );
 
         $this->load->library("base_url");
@@ -45,13 +45,13 @@ class New_cliente extends CI_Model implements PInterface {
 
     public function _css() {
         return array(
-            $this->route . "assert/plugins/fileupload.css" 
+            $this->route . "assert/plugins/fileupload.css"       
         );
     }
 
     public function _init() {
         $this->load->helper("form");
-      $this->load->view("clientes/cliente_new");
+      $this->load->view("clientes/cliente_view");
     }
 
     public function _install() {
@@ -60,15 +60,12 @@ class New_cliente extends CI_Model implements PInterface {
 
     public function _js() {
         return array(
-          
+            
         );
     }
 
     public function _jsLoader() {
-       return array(
-        "load_paises();",
-         "LoadValidation();" ,
-         "init_client();");
+      
     }
 
     public function _rols() {

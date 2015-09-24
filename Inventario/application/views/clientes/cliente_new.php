@@ -42,7 +42,7 @@
                                 <div class="col-md-6">
                                     <br><label class="control-label col-md-4">* Nombre</label>
                                     <div class="form-group col-md-8">
-                                        <input  required="required" type="text" id="txt1" name="txt_empresa" class="form-control input-circle" placeholder="Nombre del cliente">
+                                        <input  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del cliente">
                                     </div>
                                     <label class="control-label col-md-4">Tipo</label>
                                     <div class="form-group col-md-8">
@@ -129,7 +129,7 @@
                                     </div>
                                     <label class="control-label col-md-4">* Dirección 1</label>
                                     <div class="form-group col-md-8">
-                                      <input  required="required" type="text" id="txt7" name="txt7" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                      <input  required="required" type="text" id="txt7" name="txt_direccion" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                     </div>
                                     <label class="control-label col-md-4">Dirección 2</label>
                                     <div class="form-group col-md-8">
@@ -155,44 +155,22 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                    <div class="row col-md-12">
-                                            <?php
-                                            echo form_open_multipart("", array(
-                                                "id" => "fileupload",
-                                                "class" => "col-md-12"
-                                            ));
-                                            ?>
-                                            <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                                            <div class="row fileupload-buttonbar">
-                                                <h3 lass="form-section">Descripci&oacute;n y adjuntar</h3><br>
-                                                <label class="control-label col-md-2">Descripci&oacute;n</label>
-                                                <div class="form-group col-md-4">
-                                                    <textarea class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
-                                                </div>
-                                                <label class="control-label col-md-2">Adjuntar archivos</label>
-                                                <div class="col-md-4">
-                                                    <!-- The fileinput-button span is used to style the file input field as button -->
-                                                    <span class="btn default fileinput-button">
-                                                        <i class="glyphicon glyphicon-paperclip"></i>
-                                                        <span>
-                                                            Añadir..</span>
-                                                        <input type="file" name="files[]" multiple="">
-                                                    </span>
-                                                    <button type="submit" class="btn blue start">
-                                                        <i class="glyphicon glyphicon-upload"></i>
-                                                        <span>
-                                                            Subir</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <!-- The table listing the files available for upload/download -->
-                                            <table role="presentation" class="table table-striped clearfix">
-                                                <tbody class="files">
-                                                </tbody>
-                                            </table>
-                                            <input type="hidden" value="" name="directory" />
-                                            <?php echo form_close(); ?>
-                                    </div>      
+                            <h3 class="form-section">Descripción y adjintar archivos</h3><br>
+                                <div class="col-md-6">
+                                    <label class="control-label col-md-4">Descripci&oacute;n</label>
+                                    <div class="form-group col-md-8">
+                                        <textarea class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group scroller" style="height:100px">
+                                    <label class="control-label col-md-4">Adjuntar archivos</label>
+                                    <div class="col-md-8">
+                                            <span class="btn btn-primary btn-file">
+                                                Añadir.. <input id="files" name="file[]" type="file">
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>      
                                 <div class="col-md-12">
                                     <div class="form-actions col-md-offset-9">
                                         <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
@@ -212,80 +190,6 @@
         </div>
     </div>
 </div>
-<!-- FINAL CONTENIDO -->
-<script id="template-upload" type="text/x-tmpl">
-    {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-upload fade">
-    <td>
-    <span class="preview"></span>
-    </td>
-    <td>
-    <p class="name">{%=file.name%}</p>
-    <strong class="error text-danger"></strong>
-    </td>
-    <td>
-    <p class="size">Processing...</p>
-    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
-    </td>
-    <td>
-    {% if (!i && !o.options.autoUpload) { %}
-    <button style="display:none;" class="btn btn-primary start" disabled="disabled">
-    </button>
-    {% } %}
-    {% if (!i) { %}
-    <button class="btn btn-warning cancel">
-    <i class="glyphicon glyphicon-ban-circle"></i>
-    <span>Cancel</span>
-    </button>
-    {% } %}
-    </td>
-    </tr>
-    {% } %}
-</script>
-<!-- The template to display files available for download -->
-<script id="template-download" type="text/x-tmpl">
-    {% for (var i=0, file; file=o.files[i]; i++) { %}
-    <tr class="template-download fade">
-    <td>
-    <span class="preview">
-    {% if (file.thumbnailUrl) { %}
-    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
-    {% } %}
-    </span>
-    </td>
-    <td>
-    <p class="name">
-    {% if (file.url) { %}
-    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-    {% } else { %}
-    <span>{%=file.name%}</span>
-    {% } %}
-    </p>
-    {% if (file.error) { %}
-    <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-    {% } %}
-    </td>
-    <td>
-    <span class="size">{%=o.formatFileSize(file.size)%}</span>
-    </td>
-    <td>
-    {% if (file.deleteUrl) { %}
-    <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-    <i class="glyphicon glyphicon-trash"></i>
-    <span>Delete</span>
-    </button>
-    <input type="checkbox" name="delete" value="1" class="toggle">
-    {% } else { %}
-    <button class="btn btn-warning cancel">
-    <i class="glyphicon glyphicon-ban-circle"></i>
-    <span>Cancel</span>
-    </button>
-    {% } %}
-    </td>
-    </tr>
-    {% } %}
-</script>
-
 <script>
     var $field_count = 7;
     
@@ -497,56 +401,4 @@
         }
     };
 
-    var FormFileUpload = function () {
-        return {
-            //main function to initiate the module
-            init: function () {
-                // Initialize the jQuery File Upload widget:
-                $('#fileupload').fileupload({
-                    disableImageResize: false,
-                    autoUpload: false,
-                    disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
-                            maxFileSize: 5000000,
-                    acceptFileTypes: /(\.|\/)(gif|jpe?g|png|doc|docx|pdf|txt|xls|pst)$/i
-                            // Uncomment the following to send cross-domain cookies:
-                            //xhrFields: {withCredentials: true},                
-                });
-                // Enable iframe cross-domain access via redirect option:
-                $('#fileupload').fileupload(
-                        'option',
-                        'redirect',
-                        window.location.href.replace(
-                                /\/[^\/]*$/,
-                                '/cors/result.html?%s'
-                                )
-                        );
-                // Upload server status check for browsers with CORS support:
-                if ($.support.cors) {
-                    $.ajax({
-                        type: 'HEAD'
-                    }).fail(function () {
-                       
-                        $('<div class="alert alert-danger"/>')
-                                .text('Upload server currently unavailable - ' +
-                                        new Date())
-                                .appendTo('#fileupload');
-                    });
-                }
-                $.ajax({
-                    url: $('#fileupload').attr("action"),
-                    dataType: 'json',
-                    context: $('#fileupload')[0]
-                }).always(function () {
-                    $(this).removeClass('fileupload-processing');
-                })
-                        .done(function (result) {
-                            // $(this).fileupload('option', 'done')
-                            // .call(this, $.Event('done'), {result: result});
-                        });
-
-                // Load & display existing files:
-                $('#fileupload').addClass('fileupload-processing');
-            }
-        };
-    }();
 </script>
