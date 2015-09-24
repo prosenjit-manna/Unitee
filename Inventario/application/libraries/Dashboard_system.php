@@ -1,6 +1,11 @@
 <?php
 
-
+/**
+ * @deprecated since version 1.5.6
+ * @todo dashboard system 
+ * @version 0.1
+ * 
+ * **/
 class Dashboard_system {
     
     public function __construct() {

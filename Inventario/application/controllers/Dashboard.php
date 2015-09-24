@@ -43,6 +43,20 @@
  *                  SE CREO UNA CLAUSULA EN CODEIGNITER
  *                  DE LA ROUTA A ACEPTAR DADO EN EL PATRON PRETTY ROUTE
  * 
+ * VERSION 1.5.6:
+ *                - SE DEPRECO LA LIBRERIA dashboard_system
+ *                 SE CREO LA INTERFACE DInterface Y SE AGREGO 
+ *                 EL MODEL Main El cual es obligatorio para el 
+ *                 sistema , este model controla la interface 
+ *                 que permite ajustar los inicios constantes
+ * 
+ *               - NUEVO ALGORITMO DE RESOLUCION MVA
+ * 
+ * VERSION 1.5.7 :
+ * 
+ *                  MUY PRONTO , LO NUEVO : OPERADORES DE RESOLUCION DE OBJETO 
+ *                  PARA PODER DINAMIZAR LAS VARIABLES INICIALES
+ * 
  */
 
 
@@ -173,7 +187,7 @@ class Dashboard extends CI_Controller {
      * 
      * **/
     
-    public function index( $model = NULL)
+    public function index( $model = NULL )
     {
         
         /**
@@ -200,12 +214,15 @@ class Dashboard extends CI_Controller {
          */
         
         $init_time = $this->GetTime();
-
+        
+        //INTRODUCIDO EN LA VERSION 1.5.6
+        $this->load->model("dashboard/main" , "main");
+      
         //verifica si existe una conexion a internet , 
         //en dado caso no exista tira el error
         $conection = internet_conection();
         if(!$conection){
-            $this->load->view("errors/html/noconnect" , array("route" => site_url()));
+            $this->main->_500(array("route" => site_url()));
             return;
         }
         
@@ -242,11 +259,14 @@ class Dashboard extends CI_Controller {
          *          carga el dashboard como por defecto.
          * 
          * **/
+        
+       
 
-        if($model === NULL){
+        if($model === NULL || $model == $this->main->Route()){
             
              //Libreria agregada en version 1.5.4 
-             $this->load->library("dashboard_system");
+             //DEPRECADA 1.5.6
+             //$this->load->library("dashboard_system");
             
              /**
               * DASHBOARD SE HA TRANSFORMADO TIPO INTERFAZ PERO 
@@ -254,40 +274,51 @@ class Dashboard extends CI_Controller {
               * QUE PERMITE AGREGAR MAS CSS , TITULO Y CARGA EN JAVASCRIPT 
               * ***/
              
-             //VERSION 1.5.4
-             $vars['styles']        = $this->dashboard_system->_css();
-             $vars['title']         = $this->dashboard_system->_title();
              
-             //VISTAS :3
-             $this->load->view("dashboard/header" , $vars );
-             $this->load->view("dashboard/left_sidebar" , $vars);
+             
+             //VERSION 1.5.6 
+             $vars['styles']        = $this->main->CSS();
+             $vars['title']         = $this->main->TITLE();
+             
+             //INICIAMOS EL HEADER VERSION 1.5.6
+             $this->main->Header($vars);
+             
+             //INICIAMOS LOS COMPLEMENTOS ANTES DEL MAIN EJEMPLO UN SIDEBAR 
+             $this->main->Complements($vars);
              
              //$(document).ready() JAVASCRIPT CARGAS
-             $vars['js_loader']     = $this->dashboard_system->_javascript();
+             $vars['js_loader']     = $this->main->JS();
              
              //MAIN DEL DASHBOARD
-             $this->load->view("dashboard/main" , $vars);
+             $this->main->Main($vars);
              
                 //TTL O CRONOMETRO
                 $ttl                = round(($this->GetTime() - $init_time) , 6);
                 $vars['ttl']        = $ttl;
              
               //VISTA DEL FOOTER
-             $this->load->view("dashboard/footer" , $vars);
+             $this->main->Footer($vars);
+             
+             
         }
         else
         {
             
             //DIVIDIMOS EN PARTES LA RUTA POR MEDIO DEL TOKEN ASIGNADO
 
+            //OBTENEMOS LA RUTA SEGUN EL VALOR DEL MODEL
+            //VERSION 1.5.5
+            $MVA_ROUTES     = $this->routes->Get($model); 
             
-            $MVA_ROUTES     = $this->routes->Get($model); //OBTENEMOS LA RUTA SEGUN EL VALOR DEL MODEL
             
-            $parts          = NULL;  // DECLARAMOS PARTS COMO NULL
+            
+            // DECLARAMOS PARTS COMO NULL
+            $parts          = NULL;  
             
             /***
              * PEQUEÑO CODIGO QUE VERIFICA SI EXISTE LA 
              * RUTA EN DADO CASO NO ES UNA RUTA Y ES UN MVA
+             * VERSIO 1.5.5
              * **/
             
             if(!is_null($MVA_ROUTES)){
@@ -322,7 +353,7 @@ class Dashboard extends CI_Controller {
                     
                     //SIEMPRE VERIFICAMOS SI ES UN MODELO ACTIVO 
                     if(!check_model($location)){
-                       $this->load->view("errors/html/404" , $vars);
+                       $this->main->_404($vars);
                        return;
                     }
                     
@@ -350,7 +381,7 @@ class Dashboard extends CI_Controller {
             
             
             if(sizeof($class_implement) == 0 ){
-                $this->load->view("errors/html/404" , $vars);
+                $this->main->_404($vars);
                 return;
             }
             
@@ -375,10 +406,10 @@ class Dashboard extends CI_Controller {
             
             //CONTROL DE PERMISOS SI NO EXISTEN ....
             if(!$priv_flag){
-                $this->load->view("dashboard/header" , $vars );
-                $this->load->view("dashboard/left_sidebar" , $vars);
-                $this->load->view("errors/html/error_permissions", $vars);
-                $this->load->view("dashboard/footer" , $vars);
+                $this->main->Header($vars );
+                $this->main->Complements($vars);
+                $this->main->Priv($vars);
+                $this->main->Footer($vars);
                 return;
             }
             
@@ -396,8 +427,8 @@ class Dashboard extends CI_Controller {
             $vars['title'] = $this->$model->_title();
             
             //CARGA DE LAS VISTAS HEADER , SIDEBAR
-            $this->load->view("dashboard/header" , $vars );
-            $this->load->view("dashboard/left_sidebar" , $vars);
+            $this->main->Header($vars );
+            $this->main->Complements($vars);
             
             //DEPENDENCIAS DEL JS
             $footer_dependencies = $this->$model->_js();
@@ -425,7 +456,7 @@ class Dashboard extends CI_Controller {
             $vars['ttl']        = $ttl;
             
             //EJECUTANDO LA VISTA DEL FOOTER
-            $this->load->view("dashboard/footer" , $vars );
+            $this->main->Footer($vars);
            
         }
     }
