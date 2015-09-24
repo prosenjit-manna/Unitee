@@ -82,7 +82,7 @@ var jtask = function(){
                     }
               },
               error: function(e){
-                  alert(e);
+                  console.log("Error to send request ...");
               }
         });
          

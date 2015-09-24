@@ -456,14 +456,14 @@ class Dashboard extends CI_Controller {
             $header_dependence = $this->$model->_css();
             if(!is_null($header_dependence)){
                  if(is_array($header_dependence)){
-                     $vars["styles"] = $header_dependence;
+                     $vars[$object->styles] = $header_dependence;
                  }else{
-                     $vars["styles"] = array($header_dependence);
+                     $vars[$object->styles] = array($header_dependence);
                  } 
             }
             
             //TITULO DEL HEADER 
-            $vars['title'] = $this->$model->_title();
+            $vars[$object->title] = $this->$model->_title();
             
             //CARGA DE LAS VISTAS HEADER , SIDEBAR
             $this->main->Header($vars );
@@ -473,26 +473,28 @@ class Dashboard extends CI_Controller {
             $footer_dependencies = $this->$model->_js();
             
             
+            //VERSION 1.1.0 -> 1.5.6
             if(!is_null($footer_dependencies)){
                  if(is_array($footer_dependencies)){
-                     $vars["javascript"] = $footer_dependencies ;
+                     $vars[$object->javascript] = $footer_dependencies ;
                  }else{
-                     $vars["javascript"] = array($footer_dependencies);
+                     $vars[$object->javascript] = array($footer_dependencies);
                  }
             }
             
             //TODO LO QUE CARGARA DENTRO DEL JQUERY.READY ...
-            $javascript_loaders    = $this->$model->_jsLoader();
+            $javascript_loaders             = $this->$model->_jsLoader();
+            
             if(!is_null($javascript_loaders) && is_array($javascript_loaders)){
-                $vars["js_loader"] = $javascript_loaders;
+                $vars[$object->ajax]        = $javascript_loaders;
             }
 
             //INICIAMOS EL MODELO 
             $this->$model->_init();
             
             //CARGAMOS EL FOOTER .. SOLO ESO FALTABA YEAH !!
-            $ttl                = round(($this->GetTime() - $init_time) , 6);
-            $vars['ttl']        = $ttl;
+            $ttl                                = round(($this->GetTime() - $init_time) , 6);
+            $vars[$object->stopwatch]           = $ttl;
             
             //EJECUTANDO LA VISTA DEL FOOTER
             $this->main->Footer($vars);
