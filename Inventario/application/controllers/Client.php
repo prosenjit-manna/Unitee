@@ -15,6 +15,7 @@ class Client extends CI_Controller{
     
     public function Add(){
         
+        $name   = isset($_REQUEST['txt1']) ? $_REQUEST['txt1'] : NULL;
         
         
     }
