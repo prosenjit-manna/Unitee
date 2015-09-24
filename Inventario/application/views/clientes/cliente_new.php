@@ -60,7 +60,7 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_iva_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_iva" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input required="" type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de IVA">
+                                                <input  type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de IVA">
                                             </div>
                                         </div>
                                     <label class="control-label col-md-4">NIT</label>
@@ -68,7 +68,7 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_nit_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_nit" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input  required="" type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de NIT">
+                                                <input  type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de NIT">
                                             </div>
                                          </div>
                                 </div>
