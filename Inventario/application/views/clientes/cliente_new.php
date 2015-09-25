@@ -29,6 +29,20 @@
                 <div class="portlet">  
                     <div class="portlet light">
                         <div class="portlet-title">
+                            <?php
+                                
+                                 $response = isset($_REQUEST['s']) ? $_REQUEST['s'] : -1;
+                                 if($response != -1){
+                                     switch($response){
+                                         case TRUE:
+                                             echo "CLIENTE CREADO CON EXITO ...";
+                                             break;
+                                         case FALSE:
+                                             echo "NO SE PUDO CREAR EL CLIENTE";
+                                             break;
+                                     }
+                                 }
+                            ?>
                             <div class="caption font-green-sharp">
                                 <i class="icon-speech font-green-sharp"></i>
                                 <span class="caption-subject bold uppercase">Nuevo Cliente</span>
@@ -48,9 +62,8 @@
                                     <label class="control-label col-md-4">Tipo</label>
                                     <div class="form-group col-md-8">
                                         <select required="required" id="select_tipo" name="txt_tipo" class="form-control input-circle"> 
-                                            <option value="-1">Selecciona una opción</option>
-                                            <option value="1">Persona Natural</option>
-                                            <option value="2">Persona Juridica</option>
+                                            <option selected="" value="Persona Natural">Persona Natural</option>
+                                            <option value="Persona Natural">Persona Juridica</option>
                                         </select>                                    
                                     </div>
                                 </div>
@@ -75,10 +88,7 @@
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <h3 lass="form-section">Información de contacto</h3><br>
-                                <label class="control-label col-md-4">* Empresa</label>
-                                <div class="form-group col-md-8">
-                                    <input  required="required"  type="text" id="txt2" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
-                                </div>
+                                
                                 <label class="control-label col-md-4">* Contacto</label>
                                 <div class="form-group col-md-8">
                                     <div class="input-icon right">
@@ -93,9 +103,6 @@
                                         <input onkeyup="validate_telefono();" required="" type="text" id="txt4" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
                                     </div>
                                 </div>
-                            </div>
-                            <!--/span-->
-                            <div class="col-md-6 col-sm-12"><div class="visible-lg visible-md"><br><br><br><br></div>
                                 <label class="control-label col-md-4">* Celular</label>
                                 <div class="form-group col-md-8">
                                     <div class="input-icon right">
@@ -104,6 +111,10 @@
                                         <input onkeyup="validate_celular();" required="" type="text" id="txt5" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
                                     </div>
                                 </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6 col-sm-12"><div class="visible-lg visible-md"><br><br><br><br></div>
+                                
                                 <label class="control-label col-md-4">Fax</label>
                                 <div class="form-group col-md-8">
                                     <div class="input-icon right">
@@ -160,12 +171,12 @@
                                 <div class="col-md-6">
                                     <label class="control-label col-md-4">Descripci&oacute;n</label>
                                     <div class="form-group col-md-8">
-                                        <textarea class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
+                                        <textarea name="txt_desc" class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group scroller" style="height:200px">
                                     <label class="control-label col-md-4">Adjuntar archivos</label>
-                                    <button id="file_add" class="btn btn-default"><i class="icon-plus"></i></button>
+                                    <button type="button" id="file_add" class="btn btn-default"><i class="icon-plus"></i></button>
                                     <div id="file_data" class="col-md-8">
                                             <span id="f1" class="btn btn-default ">
                                                <input id="files1" name="file[]" type="file">

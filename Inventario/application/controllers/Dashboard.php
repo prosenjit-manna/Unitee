@@ -674,7 +674,11 @@ class Dashboard extends CI_Controller {
     }
 
     public function test(){
-        print_r($this->user_p);
+        $json = '["{\"name\":[\"LogoLieison1000px-01.png\"],\"document\":\"8ee9e6d1ab270758bc99a75ad6198fdc\",\"directory\":\"0ViDo8Nt \"}","{\"name\":[\"Capitulo2_PMA_2015.pdf\"],\"document\":\"3b50979ebcd47139a790d33bfb9d86e1\",\"directory\":\"0ViDo8Nt \"}","{\"name\":[\"componente1.docx\"],\"document\":\"d8e947cd8cf5eaf155641ae1ee828861\",\"directory\":\"0ViDo8Nt \"}"]';
+        $decode = json_decode($json);
+        
+        echo "<pre>" , print_r($decode) , "</pre>";
+        echo "<code>" , json_encode($decode) , "</code>";
         //$this->load->library("Routes");
         
           //$this->routes->Push("prueba=prueba" , "prueba");

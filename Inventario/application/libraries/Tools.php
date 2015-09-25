@@ -86,12 +86,16 @@ class Tools {
     
     public function default_timezone(){
         date_default_timezone_set($this->timezone);
-        
     }
     
     public function current_datetime(){
         $d = new DateTime("now");
         return $d->format("Y-m-d H:m:s");
+    }
+    
+    public function current_date(){
+        $d = new DateTime("now");
+        return $d->format("Y-m-d");
     }
    
 }

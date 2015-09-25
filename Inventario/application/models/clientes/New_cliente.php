@@ -112,4 +112,11 @@ class New_cliente extends CI_Model implements PInterface {
     public function _JSdashboard() {
         
     }
+    
+    public function Create($id_direccion , $id_contacto , $id_adjunto , array $info){
+        $info['id_direccion']       = $id_direccion;
+        $info['id_contacto']        = $id_contacto;
+        $info['id_adjunto']         = $id_adjunto;
+        return $this->db->insert("cliente" , $info);
+    }
 }
