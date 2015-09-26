@@ -1,1 +1,6 @@
-{"nuevo_usuario":"user=user_new","editar_usuario":"user=user_edit","nuevo_cliente":"clientes=new_cliente","nueva_compra":"compra=new_compra","compras":"compra=view_compra"}
+{"nuevo_usuario":"user=user_new",
+    "editar_usuario":"user=user_edit",
+    "nuevo_cliente":"clientes=new_cliente",
+    "clientes" : "clientes=view_cliente",
+    "nueva_compra":"compra=new_compra",
+    "compras":"compra=view_compra"}
