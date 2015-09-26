@@ -18,7 +18,10 @@ class View_cliente extends CI_Model implements PInterface {
     use PluginConfig;
 
     protected $model        = "view_cliente";
+    
     var $route              = null;
+    var $query              = null;
+    
 
     public function __construct() {
         parent::__construct();
@@ -51,8 +54,10 @@ class View_cliente extends CI_Model implements PInterface {
     }
 
     public function _init() {
-        $this->load->helper("form");
-      $this->load->view("clientes/cliente_view");
+      $this->load->helper("form");
+      $this->load->view("clientes/cliente_view" , array(
+           "data_client" => $this->GetTableClient()
+      ));
     }
 
     public function _install() {
@@ -113,4 +118,21 @@ class View_cliente extends CI_Model implements PInterface {
     public function _JSdashboard() {
         
     }
+    
+    private function GetTableClient(){
+         $this->query = "SELECT 
+                            cliente.id_cliente as 'id',
+                            cliente.nombre as 'nombre',
+                            cliente.tipo as 'tipo',
+                            concat(contacto.nombre , '/' , contacto.tel1) as 'contacto',
+                            contacto.correo as 'email'
+                            FROM cliente 
+                            INNER JOIN contacto ON contacto.id_contacto=cliente.id_contacto;";
+         $result = $this->db
+                 ->query($this->query)
+                 ->result();
+         
+         return is_array($result) ? $result : NULL;
+    }
+    
 }

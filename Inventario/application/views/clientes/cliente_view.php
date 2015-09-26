@@ -42,10 +42,10 @@
                                             <p align="center">Nombre</p>
                                         </th>
                                         <th >
-                                            <p align="center">Empresa</p>
+                                            <p align="center">Tipo</p>
                                         </th>
                                         <th >
-                                            <p align="center">Números de telefono</p>
+                                            <p align="center">Contacto</p>
                                         </th>
                                         <th>
                                             <p align="center">Correo</p>
@@ -56,27 +56,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                      <p align="center">Carleto Ancelotti</p>  
-                                    </td>
-                                    <td>
-                                        <p align="center">Facebook</p>
-                                    </td>
-                                    <td>
-                                        <p align="center">7777-2154 / 2154-4578</p>
-                                    </td>
-                                    <td>
-                                        <p align="center">nesulise@hotmail.com</p>
-                                    </td>
-                                    <td>
-                                        <p align="center">
-                                            <a data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-                                            <a href="#"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;
-                                            <a class="" onclick=""  data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>
-                                        </p>
-                                    </td>
-                                </tr>
+                                        <?php
+                                             if(!is_null($data_client)){
+                                                 $data = null;
+                                                 foreach($data_client as $c){
+                                                     $data .= "<tr>";
+                                                     $data .= "<td><p align='center'>" . $c->nombre  . "</p></td>";
+                                                     $data .= "<td><p align='center'>" . $c->tipo  . "</p></td>";
+                                                     $data .= "<td><p align='center'>" . $c->contacto  . "</p></td>";
+                                                     $data .= "<td><p align='center'>" . $c->email  . "</p></td>";
+                                                     $data .= "<td></td>";
+                                                     $data .= "</tr>";
+                                                
+                                                 }
+                                                 
+                                                 echo $data;
+                                             }
+                                        ?>
                                 </tbody>
                             </table>
                             <!-- FINAL FORM-->
