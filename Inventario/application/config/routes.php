@@ -80,6 +80,7 @@ $route['modules']                   = "dashboard/modulos";
 $route['notifications']             = "dashboard/get_notification";
 $route['notify']                    = "dashboard/verify_notification";
 $route['jsloader']                  = "dashboard/LoadJs";
+$route['test']                      = "dashboard/test";
 
 $route['push_route/(:any)/(:any)']  = "dashboard/PushRoutes/$1/$2";
 

@@ -2,11 +2,11 @@
 <?php
 
 /**
-   @@author: Lieison S.A de C.V
-   @@version: 1.5.5
+   @@author: Rolando Arriaza 
+   @@version: 1.5.8
  * @@type: system
  * @@name: Controlador de dashboard
- * @@description : el controlador mas importante del sistema
+ * @@description : el controlador mas importante del sistema MVA
  * @@id : system
  * 
  * ------------------------------------------------------------------------
@@ -55,9 +55,12 @@
  * VERSION 1.5.7 :
  * 
  *              -OPERADOR DE RESOLUCION DE OBJETOS 
- *              -MEJORAS DE FIABILIDAD
+ *              -MEJORAS DE FIABILIDAD Y ESTABILIDAD
  * 
- *                  
+ * VERSION 1.5.8: 
+ *          
+ *              - MEJORA DE VELOCIDAD , CAMBIO DE VARIABLES PARTS EN ENTIDADES
+ *                            
  * 
  */
 
@@ -92,7 +95,7 @@ class Dashboard extends CI_Controller {
  */
     
     
-    //RUTA PROTEJIDA VERSION 1.0.0
+    //RUTA PROTEGIDA VERSION 1.0.0
     protected $route        = NULL;
     
     
@@ -200,6 +203,11 @@ class Dashboard extends CI_Controller {
     public function index( $model = NULL )
     {
         
+        error_reporting(0); //reporte de errores reportar todos los errores
+        
+        ob_start(); //bufer de salida inicio
+        
+        
         /**
          * Documentacion acerca la logica del sistema dashboard/index 
          * 
@@ -224,6 +232,7 @@ class Dashboard extends CI_Controller {
          */
         
         $init_time = $this->GetTime();
+        
         
         //INTRODUCIDO EN LA VERSION 1.5.6
         $this->load->model("dashboard/main" , "main");
@@ -289,11 +298,9 @@ class Dashboard extends CI_Controller {
          *          la variable de arreglo se encargara de cargarlo a la vista
          * **/
         
-        $object                         = $this->main->GetObject();
+        $object                                     = $this->main->GetObject();
         
-        
-        
-     
+   
         $vars =  array(   
                $object->route                       => $this->base_url->GetBaseUrl(),
                $object->user                        => $this->user_p,
@@ -342,7 +349,7 @@ class Dashboard extends CI_Controller {
              $this->main->Main($vars);
              
                 //TTL O CRONOMETRO
-                $ttl                = round(($this->GetTime() - $init_time) , 6);
+                $ttl                             = round(($this->GetTime() - $init_time) , 6);
                 $vars[$object->stopwatch]        = $ttl;
              
               //VISTA DEL FOOTER
@@ -367,53 +374,50 @@ class Dashboard extends CI_Controller {
             /***
              * PEQUEÑO CODIGO QUE VERIFICA SI EXISTE LA 
              * RUTA EN DADO CASO NO ES UNA RUTA Y ES UN MVA
-             * VERSIO 1.5.5
+             * VERSION 1.5.5
              * **/
             
-            if(!is_null($MVA_ROUTES)){
-                $parts = explode(system_token(), $MVA_ROUTES[$model]);
-            }else{
-                $parts = explode(system_token(), $model);
-            }
+            
+            $cluser   = function() use (&$MVA_ROUTES , &$model , &$parts){
+                $parts = !is_null($MVA_ROUTES) 
+                        ? explode(system_token(), $MVA_ROUTES[$model]) 
+                        : explode(system_token(), $model);
+            };
+            
+            $cluser();
 
        
             try{
                 
+                //AGREGAMOS EL NOMBRE DEL MODEL ACTUAL
+                $model = sizeof($parts) == 1 ? $parts[0] : $parts[1];
                 
-                if(sizeof($parts) == 1){
-                    //SI LAS PARTES SU TAMAÑO ES 1 ENTONCES 
-                    $model = $parts[0];
-                    
-                    //VERIFICAMOS SI ES MODELO SIN UN DIRECTORIO EJEMPLO login.php
-                    if(!check_model($model)){
-                       $this->main->_404($vars);
-                       return;
-                    }
-                    
-                    //CARGAMOS EL MODELO SIN DIRECTORIO 
-                    $this->load->model($model);
-                    
+                //ALGORITMO CAMBIADO DESDE LA VERSION 1.5.7
+                if(!check_model(sizeof($parts) == 1 
+                        ? $parts[0] 
+                        : $parts[0] . "/" . $parts[1]))
+                {
+                        $this->main->_404($vars);
+                        return;
                 }
-                else {
-                    
-                    
-                    //EN DADO CASO EL MODELO CONTIENE UN DIRECTORIO
-                    $location = $parts[0] . "/" . $parts[1];
-                    
-                    //SIEMPRE VERIFICAMOS SI ES UN MODELO ACTIVO 
-                    if(!check_model($location)){
-                       $this->main->_404($vars);
-                       return;
-                    }
-                    
-                    //CARGAMOS EL MODELO 
-                    $this->load->model("$location");
-                    $model = $parts[1];
-                }
+            
+                //DEVUELVE EL MODEL CARGADO SIENDO UN DIRECTORIO O NO 
+                $load_  = function () use (&$parts){
+                      $this->load->model(
+                              count($parts) == 1 ? $parts[0] 
+                              : $parts[0] . "/" . $parts[1] 
+                      );
+                };
+                
+                //CARGAMOS LA FUNCION
+                $load_();
+ 
             
             } 
             catch (Exception $ex){ //CONTROL DE EXCEPCIONES
                 trigger_error("Error Critico del sistema : " . $ex->getMessage());
+                $this->main->_404($vars);
+                return;
             }
             
             
@@ -510,6 +514,8 @@ class Dashboard extends CI_Controller {
             $this->main->Footer($vars);
            
         }
+        
+        ob_end_flush(); //bufer de salida
     }
     
     
@@ -649,7 +655,8 @@ class Dashboard extends CI_Controller {
      * VERSION 1.5.6
      * AGREGA UNA RUTA DEL MVA
      * **/
-    public function PushRoutes($name , $model){
+    public function PushRoutes($name , $model)
+    {
         if($this->user_p == NULL) {
             return NULL;
         }
@@ -662,27 +669,33 @@ class Dashboard extends CI_Controller {
     }
     
     
-    public function modulos(){
+    public function plugins(){
         $this->load->library("plugin");
         echo "<pre>" , print_r($this->plugin->_show()) , "</pre>";
     }
     
+   
+
+    /**
+     * @version 1.0.0
+     * @todo esta funcion controla todos los test del sistema 
+     *        en pocas palabras sirve para testear pequeños codigos 
+     * 
+     * valor :   http://domain/Dashboard/test       ->SIMPLE
+     *           http://domain/test                 ->ROUTE  
+     * 
+     * **/
+    public function test(){
+       
+         
+    }
+    
+    
+     
     public function getsession(){
         echo "<pre>";
         print_r($this->session->user);
         echo "</pre>";
-    }
-
-    public function test(){
-        $json = '["{\"name\":[\"LogoLieison1000px-01.png\"],\"document\":\"8ee9e6d1ab270758bc99a75ad6198fdc\",\"directory\":\"0ViDo8Nt \"}","{\"name\":[\"Capitulo2_PMA_2015.pdf\"],\"document\":\"3b50979ebcd47139a790d33bfb9d86e1\",\"directory\":\"0ViDo8Nt \"}","{\"name\":[\"componente1.docx\"],\"document\":\"d8e947cd8cf5eaf155641ae1ee828861\",\"directory\":\"0ViDo8Nt \"}"]';
-        $decode = json_decode($json);
-        
-        echo "<pre>" , print_r($decode) , "</pre>";
-        echo "<code>" , json_encode($decode) , "</code>";
-        //$this->load->library("Routes");
-        
-          //$this->routes->Push("prueba=prueba" , "prueba");
-         
     }
     
     
@@ -769,6 +782,29 @@ class Dashboard extends CI_Controller {
     }
     
     
+    
+    
+   /**
+    * --------------------------------------------------------------------------
+    * 
+    * FUNCIONES PRIVADAS DENTRO DEL CONTROLADOR 
+    * ESTAS FUNCIONES SE ACTIVAN EN LAGUNA PARTE DE LAS FUNCIONES 
+    * PUBLICAS DENTRO DEL CONTROLADOR , ELIMINARLAS SIN CONSENTIMIENTO 
+    * DEL ARQUITECTO DE SOFTWARE PUEDE PROBOCAR SEVEROS DAÑOS AL SISTEMA
+    * 
+    * 
+    * @version 1
+    * @author Rolando Arriaza
+    * 
+    * --------------------------------------------------------------------------
+    * **/
+    
+    
+   /**
+    * @author Rolando Arriaza 
+    * @todo devuelve un valor predeterminado de tiempo en nanosegundos
+    * @test pi*3
+    */
    private function GetTime(){
         list($usec, $sec) = explode(" ",microtime()); 
         return ((float)$usec + (float)$sec); 
