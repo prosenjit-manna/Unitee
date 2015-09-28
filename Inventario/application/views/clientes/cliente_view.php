@@ -444,7 +444,8 @@
                 task.url = "<?php echo site_url("Client/Delete"); ?>";
                 task.data = { "i" : $i };
                 task.success_callback(function(s){
-                    
+                     var token = "node_";
+                     $("#" + token + $i).remove();
                 });
                 task.do_task();
             });

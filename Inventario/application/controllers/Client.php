@@ -152,7 +152,8 @@ class Client extends CI_Controller{
           * EN DADO CASO SE DIO PERMISO LA BANDERA CAMBIA A CIERTO
           * ****/
          
-         $auth              = $this->auth->get_auth['rol_nivel'];
+         $auth              = isset($this->auth->get_auth['rol_nivel']) 
+                                    ? $this->auth->get_auth['rol_nivel'] : NULL;
          $current_rols      = $this->cliente->_rols();
          $flag              = FALSE;
          
@@ -180,6 +181,8 @@ class Client extends CI_Controller{
          
          $result = $this->cliente->Delete($id);
          
+         if($result) {  $this->output->set_output(true); } 
+         else {  $this->output->set_output(false); }
          
     }
 }

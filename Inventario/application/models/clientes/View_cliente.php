@@ -138,15 +138,66 @@ class View_cliente extends CI_Model implements PInterface {
     
     public function Delete($id){
 
-         $result = $this->db->query(
+         $id_adj = $this->db->query(
                  "SELECT id_adjunto as 'adjunto' FROM cliente WHERE id_cliente LIKE ?" ,
                  array($id))
                  ->result()[0]
                  ->adjunto;
          
-         if(!is_null($result)){
+         if(!is_null($id_adj)){
+             $adj = $this
+                     ->db
+                     ->query("select adjunto FROM adjunto WHERE id_adjunto LIKE ?" , array($id_adj))
+                     ->result()[0]->adjunto;
+            
+             $decode = json_decode($adj);
+             
+             $dir   = NULL;
+             
+             foreach($decode as $v){
+                 $a             = json_decode($v);
+                 $name          = NULL;
+                 
+                 if(is_array($a->name)){
+                     $name = isset($a->name[0]) ? $a->name[0] : NULL;
+                 }else{
+                     $name = $a->name;
+                 }
+                 
+                 $ext  = explode(".", $name);
+                 $ext  = end($ext);
+                 
+                 $f     =  FCPATH
+                         . "files/unitee/clientes/" 
+                         . $a->directory 
+                         . "/" 
+                         . $a->file
+                         . "." 
+                         . $ext;
+                 
+                 $dir    = FCPATH . "files/unitee/clientes/$a->directory";
+
+                 
+                 if(file_exists($f)){
+                     unlink($f);
+                 }
+ 
+             }
+             
+             try{
+                if(!is_null($dir) && file_exists($dir)){  rmdir($dir); }
+             } catch (Exception $ex) {
+                 trigger_error( $ex->getMessage());
+             }
+             
+             
+             $this->db->delete("adjunto" , array("id_adjunto" => $id_adj ));
              
          }
+         
+         return $this->db
+                 ->delete("cliente" , array("id_cliente" => $id ));
+                 
          
     }
     
