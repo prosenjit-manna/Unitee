@@ -56,7 +56,8 @@ class View_cliente extends CI_Model implements PInterface {
     public function _init() {
       $this->load->helper("form");
       $this->load->view("clientes/cliente_view" , array(
-           "data_client" => $this->GetTableClient()
+           "data_client"        => $this->GetTableClient(),
+           "operations"          => $this->_operations()
       ));
     }
 

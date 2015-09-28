@@ -1,3 +1,4 @@
+
 <!-- INICIO CONTENIDO -->
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
@@ -35,6 +36,7 @@
                             </div>
                         </div>
                         <div class="portlet-body">
+
                             <table class="table table-striped table-hover table-bordered scrille" id="clientes_table">
                                 <thead>
                                     <tr>
@@ -65,9 +67,18 @@
                                                      $data .= "<td><p align='center'>" . $c->tipo  . "</p></td>";
                                                      $data .= "<td><p align='center'>" . $c->contacto  . "</p></td>";
                                                      $data .= "<td><p align='center'>" . $c->email  . "</p></td>";
-                                                     $data .= "<td></td>";
+                                                     $data .= '<td><p align="center"><a onclick="i(' . $c->id . ');" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;';
+                                                     if(is_array($operations)){
+                                                         $data .= $operations['edit'] == TRUE 
+                                                                 ? '<a href="' . site_url("0/clientes=edit_cliente?i=" . $c->id) . '"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;' 
+                                                                 : "";
+                                                         $data .= $operations['delete'] == TRUE 
+                                                                 ? '  <a class="" onclick="i(' . $c->id . ')"  data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>' 
+                                                                 : '';
+                                                         
+                                                     }
+                                                     $data .= "</p></td>";
                                                      $data .= "</tr>";
-                                                
                                                  }
                                                  
                                                  echo $data;
@@ -382,6 +393,12 @@
     </div>
 </div>
 <script>
+      var $i = null;
+      
+      var i  = function(n){
+           $i = n;
+      };
+    
       var table_loader = function () {
 
             var table = $('#clientes_table');
@@ -423,4 +440,5 @@
 
 
         };
+        
 </script>
