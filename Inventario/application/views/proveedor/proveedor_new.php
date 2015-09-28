@@ -121,7 +121,7 @@
                                             </div>
                                             <label class="control-label col-md-4">* Ciudad</label>
                                             <div class="form-group col-md-8">
-                                                <select id="select_city" class="form-control input-circle" name="txt_ciudad">                        
+                                                <select id="select_city" class="form-control input-circle" name="txt_ciudad">                       
                                                 </select>
                                             </div>
 

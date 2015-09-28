@@ -80,7 +80,7 @@ class New_cliente extends CI_Model implements PInterface {
     }
 
     public function _title() {
-        return "Unitee | Ver clientes";
+        return "Unitee | Nuevo clientes";
     }
 
     public function _update() {
