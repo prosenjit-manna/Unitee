@@ -62,7 +62,7 @@
                                              if(!is_null($data_client)){
                                                  $data = null;
                                                  foreach($data_client as $c){
-                                                     $data .= "<tr>";
+                                                     $data .= "<tr id='node_" . $c->id . "'>";
                                                      $data .= "<td><p align='center'>" . $c->nombre  . "</p></td>";
                                                      $data .= "<td><p align='center'>" . $c->tipo  . "</p></td>";
                                                      $data .= "<td><p align='center'>" . $c->contacto  . "</p></td>";
@@ -106,7 +106,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                            <button type="button" data-dismiss="modal" onclick="delete_provider();" class="btn green">Eliminar</button>
+                                            <button id="delete_client" type="button" data-dismiss="modal" class="btn green">Eliminar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -437,8 +437,21 @@
 
             var tableWrapper = $('#clientes_table_wrapper');
             tableWrapper.find('.dataTables_length select').select2();
+            
+            
+            $("#delete_client").on("click" , function(){
+                var task = new jtask();
+                task.url = "<?php echo site_url("Client/Delete"); ?>";
+                task.data = { "i" : $i };
+                task.success_callback(function(s){
+                    
+                });
+                task.do_task();
+            });
 
 
-        };
+     };
+        
+     
         
 </script>

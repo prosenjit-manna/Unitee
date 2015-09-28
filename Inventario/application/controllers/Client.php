@@ -7,8 +7,7 @@ class Client extends CI_Controller{
     
     public function __construct() {
         parent::__construct();
-       $this->path = FCPATH;
-        
+        $this->path = FCPATH;
     }
     
     
@@ -139,5 +138,46 @@ class Client extends CI_Controller{
         
     }
     
-    
+    public function Delete(){
+        
+        //CARGANDO LOS MODELS NECESARIOS 
+         $this->load->model("user/user_auth" , "auth");
+         $this->load->model("clientes/view_cliente" , "cliente");
+         
+         /**
+          * SISTEMA DE SEGURIDAD 
+          * VERIFICAMOS SI EL USAURIO ESTA LOGUEADO ADEMAS 
+          * VERIFICAREMOS LOS PERMISOS DENTRO DE _rols()
+          * LUEGO DE ESO VERIFICAMOS SI SU PERMISO ES GRANTED
+          * EN DADO CASO SE DIO PERMISO LA BANDERA CAMBIA A CIERTO
+          * ****/
+         
+         $auth              = $this->auth->get_auth['rol_nivel'];
+         $current_rols      = $this->cliente->_rols();
+         $flag              = FALSE;
+         
+         foreach ($current_rols as $r){
+             if($r == $auth){
+                 $flag = TRUE;
+                 break;
+             }
+         }
+         
+         if(!$flag){
+             $this->output->set_output(false);
+             return;
+         }
+         
+         //FIN DE SEGURIDAD 
+        
+         
+         $id = isset($_REQUEST['i']) ? $_REQUEST['i'] : NULL;
+         
+         if(is_null($id)) {
+             $this->output->set_output(false);
+             return;
+         }
+         
+         
+    }
 }

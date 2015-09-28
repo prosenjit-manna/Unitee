@@ -60,7 +60,7 @@
  * VERSION 1.5.8: 
  *          
  *              - MEJORA DE VELOCIDAD , CAMBIO DE VARIABLES PARTS EN ENTIDADES
- *                            
+ *              - USO DE EXPRESIONES LAMBDA PARA MEJOR COMPATIBILIDAD
  * 
  */
 
