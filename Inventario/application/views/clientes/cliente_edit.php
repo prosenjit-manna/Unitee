@@ -212,7 +212,7 @@
                             </div>      
                                 <div class="col-md-12">
                                     <div class="form-actions col-md-offset-9">
-                                        <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
+                                        <a href="<?php echo site_url("/0/clientes=view_cliente"); ?>" class="btn default">Cancelar</a>
                                         <button disabled="disabled" id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                                     </div>
                                 </div>
