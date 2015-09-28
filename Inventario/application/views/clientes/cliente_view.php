@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="modal-body">
                                          <div class="scroller" style="height:430px;">
-                                                <h3 class="form-section">Información del cliente</h3>
+                                                <h3 class="form-section">Información del cliente</h3><br>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
@@ -424,7 +424,7 @@
 
                 },
                 "columnDefs": [{// set default column settings
-                        'orderable': true,
+                        'orderable': true, 
                         'targets': [0]
                     }, {
                         "searchable": true,
