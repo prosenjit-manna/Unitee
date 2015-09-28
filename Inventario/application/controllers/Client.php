@@ -178,6 +178,8 @@ class Client extends CI_Controller{
              return;
          }
          
+         $result = $this->cliente->Delete($id);
+         
          
     }
 }

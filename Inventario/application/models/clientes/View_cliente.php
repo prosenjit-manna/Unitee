@@ -137,13 +137,17 @@ class View_cliente extends CI_Model implements PInterface {
     }
     
     public function Delete($id){
-        
-         
-        
+
          $result = $this->db->query(
                  "SELECT id_adjunto as 'adjunto' FROM cliente WHERE id_cliente LIKE ?" ,
-                 array($id));
-         print_r($result);
+                 array($id))
+                 ->result()[0]
+                 ->adjunto;
+         
+         if(!is_null($result)){
+             
+         }
+         
     }
     
 }
