@@ -10,7 +10,6 @@ class Client extends CI_Controller{
         $this->path = FCPATH;
     }
     
-    
     public function index(){
         //CLIENTE SIN INDEX ...
     }
@@ -53,6 +52,15 @@ class Client extends CI_Controller{
             //CREARMOS UN NUEVO DIRECTORIO PARA LA DATA DEL CLIENTE
             $dir                = random_string("numeric");                
             $directory          = "files/unitee/clientes/" . $dir . "/";
+            
+            
+            //BEGIN BUG , si se elimina el directorio raiz clientes , colapsa el sistema
+            //REPAIR: verificar si existe el directorio
+            
+            if(!file_exists(FCPATH . "files/unitee/clientes/")){
+                mkdir($this->path ."files/unitee/clientes/" , 0777);
+            }
+            //END BUG 
             
             //CREACION DE UN DIRECTORIO
             if(!file_exists( $this->path . $directory)){
@@ -184,5 +192,26 @@ class Client extends CI_Controller{
          if($result) {  $this->output->set_output(true); } 
          else {  $this->output->set_output(false); }
          
+    }
+    
+    public function Show(){
+        
+        
+        
+        $id = isset($_REQUEST['i']) ? $_REQUEST['i'] : NULL;
+        
+        //IF IS NULL DESTROY ...
+        if(is_null($id)) { $this->output->set_output(false) ; return ; }
+        
+        $this->load->model("clientes/view_cliente" , "cliente");
+        
+        
+        //DATA 
+        $data = $this->cliente
+                ->ShowClient($id);
+        
+        
+        
+        
     }
 }

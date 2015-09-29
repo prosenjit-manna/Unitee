@@ -201,4 +201,16 @@ class View_cliente extends CI_Model implements PInterface {
          
     }
     
+    public function ShowClient($id){
+        
+        $this->query = "";
+        
+        
+        return $this->db
+                ->query($this->query , array($id))
+                ->result()[0];
+        
+    }
+    
+    
 }
