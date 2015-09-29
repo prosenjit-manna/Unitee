@@ -221,7 +221,7 @@ class View_proveedor extends CI_Model implements PInterface{
                  INNER JOIN direccion ON direccion.id_direccion=proveedor.id_direccion
                  INNER JOIN paises ON paises.iso=direccion.pais
                  INNER JOIN depto_pais ON depto_pais.id_depto_pais=direccion.depto
-                 INNER JOIN municipio_depto ON municipio_depto.codigo_municipio_depto=direccion.ciudad
+                 INNER JOIN municipio_depto ON municipio_depto.codigo_municipio_depto=direccion.ciudad and municipio_depto.codigo_depto_pais=direccion.depto
                  INNER JOIN contacto ON contacto.id_contacto=proveedor.id_contacto
                  WHERE id_proveedor LIKE ?
                  ";

@@ -203,7 +203,29 @@ class View_cliente extends CI_Model implements PInterface {
     
     public function ShowClient($id){
         
-        $this->query = "";
+        $this->query = " SELECT 
+            cliente.id_cliente as 'id',
+            cliente.nombre as 'nombre',
+            cliente.descripcion as 'descripcion',
+            cliente.tipo as 'tipo',
+            cliente.nit as 'nit',
+            cliente.iva as 'iva',
+            cliente.fecha as 'fecha',
+            adjunto.adjunto as 'adjunto',
+            direccion.dir1 as 'direccion1',
+            direccion.dir2 as 'direccion2',
+            paises.nombre as 'pais', 
+            depto_pais.codigo_depto_pais as 'depto_codigo',
+            depto_pais.nombre as 'departamento',
+            municipio_depto.codigo_municipio_depto as 'municipio_codigo',
+            municipio_depto.nombre as 'municipio'
+            FROM cliente 
+            LEFT JOIN adjunto ON adjunto.id_adjunto=cliente.id_adjunto
+            INNER JOIN direccion ON direccion.id_direccion=cliente.id_direccion
+            INNER JOIN paises ON paises.iso=direccion.pais
+            INNER JOIN depto_pais ON depto_pais.codigo_depto_pais=direccion.depto
+            INNER JOIN municipio_depto ON municipio_depto.codigo_municipio_depto=direccion.ciudad and municipio_depto.codigo_depto_pais=direccion.depto
+            WHERE id_cliente LIKE ? ";
         
         
         return $this->db

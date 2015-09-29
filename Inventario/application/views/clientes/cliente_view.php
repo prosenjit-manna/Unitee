@@ -453,8 +453,14 @@
 
      };
      
-     var show = function(){
-            
+     var show = function(i){
+             var task = new jtask();
+             task.url = "<?php echo site_url("Client/Show"); ?>";
+             task.data = { "i" : $i };
+             task.success_callback(function(s){
+                     
+             });
+             task.do_task();
      };
         
      
