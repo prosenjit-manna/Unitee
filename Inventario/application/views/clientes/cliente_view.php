@@ -67,7 +67,7 @@
                                                      $data .= "<td><p align='center'>" . $c->tipo  . "</p></td>";
                                                      $data .= "<td><p align='center'>" . $c->contacto  . "</p></td>";
                                                      $data .= "<td><p align='center'>" . $c->email  . "</p></td>";
-                                                     $data .= '<td><p align="center"><a onclick="i(' . $c->id . ');" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;';
+                                                     $data .= '<td><p align="center"><a onclick="show(' . $c->id . ');" data-toggle="modal" href="#responsive_view"><i class="icon-eye-open" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;';
                                                      if(is_array($operations)){
                                                          $data .= $operations['edit'] == TRUE 
                                                                  ? '<a href="' . site_url("0/clientes=edit_cliente?i=" . $c->id) . '"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;' 
@@ -451,6 +451,10 @@
             });
 
 
+     };
+     
+     var show = function(){
+            
      };
         
      

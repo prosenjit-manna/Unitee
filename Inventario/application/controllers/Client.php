@@ -203,6 +203,7 @@ class Client extends CI_Controller{
         //IF IS NULL DESTROY ...
         if(is_null($id)) { $this->output->set_output(false) ; return ; }
         
+        //MODEL CLIENTE
         $this->load->model("clientes/view_cliente" , "cliente");
         
         
