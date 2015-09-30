@@ -53,12 +53,12 @@
                                             <h3 lass="form-section">Información de Contacto</h3><br>
                                             <label class="control-label col-md-4">* Empresa</label>
                                             <div class="form-group col-md-8">
-                                                <input  required="required"  onkeyup="val();" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
+                                                <input autocomplete="off"  required="required"  onkeyup="val();" type="text" id="txt_empresa" name="txt_empresa" class="form-control input-circle" placeholder="Nombre de la Empresa">
                                             </div>
                                             <label class="control-label col-md-4">* Contacto</label>
                                             <div class="form-group col-md-8">
                                                 <div class="input-icon right">
-                                                    <input  required="required" onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                                    <input autocomplete="off"  required="required" onkeyup="val();" type="text" id="txt_contacto" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-4">* Telefono</label>
@@ -66,7 +66,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_telefono_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_telefono" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_telefono();" maxlength="8" required="" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
+                                                    <input autocomplete="off" onkeyup="validate_telefono();" maxlength="8" required="" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-4">* Celular</label>
@@ -74,7 +74,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_celular_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_celular" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_celular();" maxlength="8" required="" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
+                                                    <input autocomplete="off" onkeyup="validate_celular();" maxlength="8" required="" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-4">Fax</label>
@@ -82,7 +82,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_fax();" type="text" maxlength="8" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
+                                                    <input autocomplete="off" onkeyup="validate_fax();" type="text" maxlength="8" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-4">* Correo</label>
@@ -90,7 +90,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_correo_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_correo" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_correo();" required="" type="text" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Numero de correo">
+                                                    <input autocomplete="off" onkeyup="validate_correo();" required="" type="text" id="txt_correo" name="txt_correo" class="form-control input-circle" placeholder="Numero de correo">
                                                 </div>
                                             </div>
                                         </div>
@@ -99,15 +99,15 @@
                                             <h3 lass="form-section">Dirección</h3><br>
                                             <label class="control-label col-md-4">Local</label>
                                             <div class="form-group col-md-8">
-                                                <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                                <input autocomplete="off" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
                                             </div>
                                             <label class="control-label col-md-4">* Dirección 1</label>
                                             <div class="form-group col-md-8">
-                                                <input  required="required" onkeyup="val();" type="text" id="txt_direccion1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                                <input autocomplete="off"  required="required" onkeyup="val();" type="text" id="txt_direccion1" name="txt_direccion1" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                             </div>
                                             <label class="control-label col-md-4">Dirección 2</label>
                                             <div class="form-group col-md-8">
-                                                <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                                <input autocomplete="off" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                                             </div>
                                             <label class="control-label col-md-4">* Pais</label>
                                             <div class="form-group col-md-8">
@@ -296,14 +296,12 @@
         var celular = $("#txt_celular").val();
         var correo = $("#txt_correo").val();
         var dir = $("#txt_direccion1").val();
-        var ciudad = $("#select_city").val();
 
         if (empresa == ""
                 || contacto == ""
                 || telefono == ""
                 || celular == ""
                 || dir == ""
-                || ciudad == "-1"
                 || !isValidEmail(correo)) {
             document.getElementById("send").disabled = true;
         }
