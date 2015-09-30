@@ -713,7 +713,7 @@ Horizontal Menu
     width: auto !important;
   }
   .page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu {
-    margin-right: -180px;
+    margin-right: -70px;
   }
   .page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu:after, .page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu:before {
     margin-right: 180px;
