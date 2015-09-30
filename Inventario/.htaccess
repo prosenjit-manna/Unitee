@@ -1,13 +1,26 @@
 <IfModule mod_rewrite.c>
 
 RewriteEngine on
+
+#SERVIDOR LOCAL
 RewriteBase /Unitee/Inventario/
+#SERVIDOR WEB 
+#RewriteBase /
+
+#CONFIGURACION DE ARCHIVOS CODEIGNITER
 RewriteRule ^(application|system|\.svn) index.php/$1 [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
 RewriteCond $1 !^(index\.php|public|images|robots\.txt|css)
-RewriteRule ^(.*)$ index.php?/$1 [L]
+
+
+#SERVIDOR LOCAL , ARVIXE , HOSTGATOR ETC.
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+#GODADDY DESCOMENTAR Y COMENTAR SERVIDOR LOCAL
+#RewriteRule ^(.*)$ index.php?/$1  [QSA,L]
+
+#ESTAS CONFIGURACIONES FUERON TESTEADAS POR ROLANDO ARRIAZA 
 
 </IfModule>
 

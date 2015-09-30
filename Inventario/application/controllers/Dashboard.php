@@ -61,6 +61,7 @@
  *          
  *              - MEJORA DE VELOCIDAD , CAMBIO DE VARIABLES PARTS EN ENTIDADES
  *              - USO DE EXPRESIONES LAMBDA PARA MEJOR COMPATIBILIDAD
+ *              - COMPATIBILIDAD PARA SERVIDORES LAMP y XAMPP
  * 
  */
 
@@ -112,7 +113,13 @@ class Dashboard extends CI_Controller {
         $this->load->library("session");
         $this->load->library("base_url");
         $this->load->library("system");
+        $this->load->library("tools");
         $this->route = $this->base_url->GetBaseUrl();
+        
+        
+        //AGREGAR EL TIMEZONE POR DEFECTO 
+        //SE NECESITA PARA SERVIDORES CUYO TIMEZONES SON UTF
+        $this->tools->default_timezone();
         
         /**
          * Verifica si el usuario tiene una sesion 
@@ -392,10 +399,12 @@ class Dashboard extends CI_Controller {
                 //AGREGAMOS EL NOMBRE DEL MODEL ACTUAL
                 $model = sizeof($parts) == 1 ? $parts[0] : $parts[1];
                 
+               
                 //ALGORITMO CAMBIADO DESDE LA VERSION 1.5.7
+                //BUG FIXED VERSION 1.5.8
                 if(!check_model(sizeof($parts) == 1 
-                        ? $parts[0] 
-                        : $parts[0] . "/" . $parts[1]))
+                        ? array($parts[0]) 
+                        : array($parts[0] , $parts[1])))
                 {
                         $this->main->_404($vars);
                         return;
@@ -411,6 +420,9 @@ class Dashboard extends CI_Controller {
                 
                 //CARGAMOS LA FUNCION
                 $load_();
+                
+               
+               
  
             
             } 

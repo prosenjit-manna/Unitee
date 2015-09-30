@@ -53,11 +53,29 @@ if(!function_exists("email_from")){
  */
 
 if(!function_exists("check_model")){
-    function check_model($model){
-        if(file_exists(APPPATH . "models/$model" . ".php")){
+    
+    //PARCHE ANALIZADOR SINTACTICO PARA LAMP Y WAMP
+    function check_model(array $model){
+        
+        $path1       = APPPATH . "models/" ;
+        $path2       = APPPATH . "models/";
+        
+        if(count($model) == 1){
+           $path1 .=  ucwords($model[0]);
+           $path2 .=  $model[0];
+        }else{
+            $path1 .= $model[0] . "/" . ucwords($model[1]);
+            $path2 .= $model[0] . "/" . $model[1];
+        }
+ 
+        if(file_exists( $path1 . ".php")){
             return TRUE;
         }else
         {
+            if(file_exists($path2 . ".php")){
+                return TRUE;
+            }
+            
             return FALSE;
         }
     }
