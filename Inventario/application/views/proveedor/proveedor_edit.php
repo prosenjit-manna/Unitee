@@ -285,12 +285,16 @@
         }
     };
 
-    var validate_fax = function () {
+   var validate_fax = function () {
         var change_fax_ok = $("#change_fax_ok");
         var change_fax = $("#change_fax");
         var fax = $("#txt_fax").val();
         var count = fax.length;
-        if (isNaN(fax) || fax == "" || count <=7) {
+        if (count < 1) {
+            change_fax_ok.css("display", "none");
+            change_fax.css("display", "none");
+        }
+        else if (isNaN(fax) || count <=7) {
             change_fax_ok.css("display", "none");
             change_fax.css("display", "block");
             return true;

@@ -34,6 +34,7 @@
             <div class="row " data-always-visible="1" data-rail-visible1="1">
                 <!-- BEGIN SAMPLE TABLE PORTLET-->
                 <div class="portlet">
+                <div class="portlet light">
                     <div class="portlet-title">
                         <div class="caption font-green-sharp">
                             <i class="icon-speech font-green-sharp"></i>
@@ -41,7 +42,6 @@
                         </div>                       
                     </div>
                     <div class="portlet-body">
-                        <div class="table-scrollable scroller" style="height:350px">
                             <table class="table table-striped table-hover table-bordered scrille" id="compras_table">
                                 <thead>
                                     <tr>
@@ -94,7 +94,6 @@
 
                                 </tbody>
                             </table>
-
                             <div class="modal fade bs-modal-lg" id="responsive_view" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
@@ -204,11 +203,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <!-- END SAMPLE TABLE PORTLET-->
                     <div>
                     </div>
+                </div>
                 </div>  
             </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
