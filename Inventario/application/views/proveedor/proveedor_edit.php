@@ -75,7 +75,7 @@
                                                     <i name="change_" id="change_telefono_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_telefono" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                                     <input value="<?php echo $data->contacto_tel1; ?>" onkeyup="validate_telefono();
-                                                            val();" required="" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
+                                                        val();" required="" type="text" maxlength="8" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de Telefono">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-3">* Celular</label>
@@ -84,7 +84,7 @@
                                                     <i name="change_" id="change_celular_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_celular" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                                     <input value="<?php echo $data->contacto_tel2; ?>"  onkeyup="validate_celular();
-                                                            val();" required="" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
+                                                        val();" required="" maxlength="8" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de Celular">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-3">Fax</label>
@@ -93,7 +93,7 @@
                                                     <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                                     <input value="<?php echo $data->contacto_fax; ?>" onkeyup="validate_fax();
-                                                        val();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
+                                                        val();" type="text" maxlength="8" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de FAX">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-3">* Correo</label>
@@ -251,68 +251,56 @@
                 tasking.do_task();
             };
 
-            var validate_telefono = function () {
-                var change_telefono_ok = $("#change_telefono_ok");
-                var change_telefono = $("#change_telefono");
-                var telefono = $("#txt_telefono").val();
-                if (telefono === "") {
-                    change_telefono_ok.css("display", "none");
-                    change_telefono.css("display", "none");
-                    return true;
-                }
-                else if (isNaN(telefono) && telefono !== "") {
-                    change_telefono_ok.css("display", "none");
-                    change_telefono.css("display", "block");
-                    return true;
-                }
-                else {
-                    change_telefono_ok.css("display", "block");
-                    change_telefono.css("display", "none");
-                    return false;
-                }
-            };
+        var validate_telefono = function () {
+        var change_telefono_ok = $("#change_telefono_ok");
+        var change_telefono = $("#change_telefono");
+        var telefono = $("#txt_telefono").val();
+        var count = telefono.length;
+        if (isNaN(telefono) || telefono == "" || count <=7) {
+            change_telefono_ok.css("display", "none");
+            change_telefono.css("display", "block");
+            return true;
+        }
+        else {
+            change_telefono_ok.css("display", "block");
+            change_telefono.css("display", "none");
+            return false;
+        }
+    };
 
-            var validate_celular = function () {
-                var change_celular_ok = $("#change_celular_ok");
-                var change_celular = $("#change_celular");
-                var celular = $("#txt_celular").val();
-                if (celular === "") {
-                    change_celular_ok.css("display", "none");
-                    change_celular.css("display", "none");
-                    return true;
-                }
-                else if (isNaN(celular) && celular !== "") {
-                    change_celular_ok.css("display", "none");
-                    change_celular.css("display", "block");
-                    return true;
-                }
-                else {
-                    change_celular_ok.css("display", "block");
-                    change_celular.css("display", "none");
-                    return false;
-                }
-            };
+    var validate_celular = function () {
+        var change_celular_ok = $("#change_celular_ok");
+        var change_celular = $("#change_celular");
+        var celular = $("#txt_celular").val();
+        var count = celular.length;
+        if (isNaN(celular) || celular == "" || count <=7) {
+            change_celular_ok.css("display", "none");
+            change_celular.css("display", "block");
+            return true;
+        }
+        else {
+            change_celular_ok.css("display", "block");
+            change_celular.css("display", "none");
+            return false;
+        }
+    };
 
-            var validate_fax = function () {
-                var change_fax_ok = $("#change_fax_ok");
-                var change_fax = $("#change_fax");
-                var fax = $("#txt_fax").val();
-                if (fax === "") {
-                    change_fax_ok.css("display", "none");
-                    change_fax.css("display", "none");
-                    return true;
-                }
-                else if (isNaN(fax) && fax !== "") {
-                    change_fax_ok.css("display", "none");
-                    change_fax.css("display", "block");
-                    return true;
-                }
-                else {
-                    change_fax_ok.css("display", "block");
-                    change_fax.css("display", "none");
-                    return false;
-                }
-            };
+    var validate_fax = function () {
+        var change_fax_ok = $("#change_fax_ok");
+        var change_fax = $("#change_fax");
+        var fax = $("#txt_fax").val();
+        var count = fax.length;
+        if (isNaN(fax) || fax == "" || count <=7) {
+            change_fax_ok.css("display", "none");
+            change_fax.css("display", "block");
+            return true;
+        }
+        else {
+            change_fax_ok.css("display", "block");
+            change_fax.css("display", "none");
+            return false;
+        }
+    };
 
             var validate_correo = function () {
                 var change_correo_ok = $("#change_correo_ok");

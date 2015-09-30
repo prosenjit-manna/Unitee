@@ -74,7 +74,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_celular_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_celular" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_celular();" required="" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
+                                                    <input onkeyup="validate_celular();" maxlength="8" required="" type="text" id="txt_celular" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-4">Fax</label>
@@ -82,7 +82,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_fax();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
+                                                    <input onkeyup="validate_fax();" type="text" maxlength="8" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-4">* Correo</label>
@@ -236,12 +236,8 @@
         var change_celular_ok = $("#change_celular_ok");
         var change_celular = $("#change_celular");
         var celular = $("#txt_celular").val();
-        if (celular === "") {
-            change_celular_ok.css("display", "none");
-            change_celular.css("display", "none");
-            return true;
-        }
-        else if (isNaN(celular) && celular !== "") {
+        var count = celular.length;
+        if (isNaN(celular) || celular == "" || count <=7) {
             change_celular_ok.css("display", "none");
             change_celular.css("display", "block");
             return true;
@@ -257,12 +253,8 @@
         var change_fax_ok = $("#change_fax_ok");
         var change_fax = $("#change_fax");
         var fax = $("#txt_fax").val();
-        if (fax === "") {
-            change_fax_ok.css("display", "none");
-            change_fax.css("display", "none");
-            return true;
-        }
-        else if (isNaN(fax) && fax !== "") {
+        var count = fax.length;
+        if (isNaN(fax) || fax == "" || count <=7) {
             change_fax_ok.css("display", "none");
             change_fax.css("display", "block");
             return true;
