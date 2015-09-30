@@ -374,7 +374,7 @@
                               var name   = String(adj_data.name);
                               var ext    = name.split('.');
                               var dtype  = doc_type(ext[1]);
-                              resp   += ('<a href="<?php echo site_url();?>/Buy/Download?n=' 
+                              resp   += ('<a href="<?php echo site_url();?>Buy/Download?n=' 
                                      + adj_data.name + '&doc=' 
                                      + adj_data.document + '&d=' 
                                      + adj_data.directory 
