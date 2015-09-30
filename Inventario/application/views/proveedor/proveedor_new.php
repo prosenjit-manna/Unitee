@@ -66,7 +66,7 @@
                                                 <div class="input-icon right">
                                                     <i name="change_" id="change_telefono_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_telefono" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate_telefono();" required="" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
+                                                    <input onkeyup="validate_telefono();" maxlength="8" required="" type="text" id="txt_telefono" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
                                                 </div>
                                             </div>
                                             <label class="control-label col-md-4">* Celular</label>
@@ -219,12 +219,8 @@
         var change_telefono_ok = $("#change_telefono_ok");
         var change_telefono = $("#change_telefono");
         var telefono = $("#txt_telefono").val();
-        if (telefono === "") {
-            change_telefono_ok.css("display", "none");
-            change_telefono.css("display", "none");
-            return true;
-        }
-        else if (isNaN(telefono) && telefono !== "") {
+        var count = telefono.length;
+        if (isNaN(telefono) || telefono == "" || count <=7) {
             change_telefono_ok.css("display", "none");
             change_telefono.css("display", "block");
             return true;

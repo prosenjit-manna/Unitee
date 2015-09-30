@@ -716,7 +716,7 @@ Horizontal Menu
     margin-right: -180px;
   }
   .page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu:after, .page-header.navbar .top-menu .navbar-nav > li.dropdown-notification .dropdown-menu:before {
-    margin-right: 180px;
+    margin-right: 75px;
   }
   .page-header.navbar .top-menu .navbar-nav > li.dropdown-inbox .dropdown-menu {
     margin-right: -140px;
