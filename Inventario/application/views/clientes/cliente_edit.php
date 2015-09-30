@@ -56,7 +56,7 @@
                                 <div class="col-md-6">
                                     <br><label class="control-label col-md-4">* Nombre</label>
                                     <div class="form-group col-md-8">
-                                        <input  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del cliente">
+                                        <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del cliente">
                                     </div>
                                     <label class="control-label col-md-4">Tipo</label>
                                     <div class="form-group col-md-8">
@@ -72,7 +72,7 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_iva_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_iva" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input  type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de IVA">
+                                                <input autocomplete="off"  type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de IVA">
                                             </div>
                                         </div>
                                     <label class="control-label col-md-4">NIT</label>
@@ -80,7 +80,7 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_nit_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_nit" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input  type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de NIT">
+                                                <input autocomplete="off"  type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de NIT">
                                             </div>
                                          </div>
                                 </div>
@@ -91,7 +91,7 @@
                                 <label class="control-label col-md-4">* Contacto</label>
                                 <div class="form-group col-md-8">
                                     <div class="input-icon right">
-                                        <input  required="required" type="text" id="txt3" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                        <input autocomplete="off"  required="required" type="text" id="txt3" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Telefono</label>
@@ -99,7 +99,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_telefono_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_telefono" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_telefono();" required="" type="text" id="txt4" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
+                                        <input autocomplete="off" onkeyup="validate_telefono();" required="" type="text" id="txt4" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Celular</label>
@@ -107,7 +107,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_celular_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_celular" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_celular();" required="" type="text" id="txt5" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
+                                        <input autocomplete="off" onkeyup="validate_celular();" required="" type="text" id="txt5" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input onkeyup="validate_fax();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
+                                        <input autocomplete="off" onkeyup="validate_fax();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Correo</label>
@@ -127,7 +127,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_correo_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_correo" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input required="" onkeyup="isValidEmail();" type="text" id="txt6" name="txt_correo" class="form-control input-circle" placeholder="Escriba el correo">
+                                        <input autocomplete="off" required="" onkeyup="isValidEmail();" type="text" id="txt6" name="txt_correo" class="form-control input-circle" placeholder="Escriba el correo">
                                     </div>
                                 </div>
                             </div>
@@ -136,15 +136,15 @@
                                     <h3 class="form-section">Dirección</h3><br>
                                     <label class="control-label col-md-4">Local</label>
                                     <div class="form-group col-md-8">
-                                      <input type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                      <input autocomplete="off" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
                                     </div>
                                     <label class="control-label col-md-4">* Dirección 1</label>
                                     <div class="form-group col-md-8">
-                                      <input  required="required" type="text" id="txt7" name="txt_direccion" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                      <input autocomplete="off"  required="required" type="text" id="txt7" name="txt_direccion" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                     </div>
                                     <label class="control-label col-md-4">Dirección 2</label>
                                     <div class="form-group col-md-8">
-                                      <input type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                      <input autocomplete="off" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12"><div class="visible-lg visible-md"><br><br><br><br></div>
@@ -233,7 +233,7 @@
     var $field_count = 7;
     var $file_count  = 1;
     
-    var init_client = function(){
+   var init_client = function(){
 
         $("#txt_nit").on("keyup" , function(k){
         var nit = $("#txt_nit").val();
@@ -254,7 +254,11 @@
                     break;
          } }
 
-        if(nit.length >= 18){
+         if (nit.length < 1) {
+            change_nit.css("display", "none");
+            change_nit_ok.css("display", "none");
+
+         }else if(nit.length >= 18){
             change_nit_ok.css("display", "none");
             change_nit.css("display", "block");
             return true;
@@ -279,9 +283,12 @@
                     if (count == 6) {
                         $("#txt_iva").val(iva + "-");
                     };
-                };
+                }
 
-                if(iva.length >= 9){
+                if (count < 1) {
+                    change_iva_ok.css("display", "none");
+                    change_iva.css("display", "none");
+                }else if(iva.length >= 9){
                     change_iva_ok.css("display", "none");
                     change_iva.css("display", "block");
                     return true;
@@ -411,11 +418,13 @@
         var change_telefono_ok = $("#change_telefono_ok");
         var change_telefono = $("#change_telefono");
         var telefono = $("#txt4").val();
-        if (isNaN(telefono) || telefono == "") {
+        var count = telefono.length;
+        if (isNaN(telefono) || telefono == "" || count <=7) {
             change_telefono_ok.css("display", "none");
             change_telefono.css("display", "block");
             return true;
-        }else {
+        }
+        else {
             change_telefono_ok.css("display", "block");
             change_telefono.css("display", "none");
             return false;
@@ -426,11 +435,13 @@
         var change_celular_ok = $("#change_celular_ok");
         var change_celular = $("#change_celular");
         var celular = $("#txt5").val();
-       if (isNaN(celular) || celular == "") {
+        var count = celular.length;
+        if (isNaN(celular) || celular == "" || count <=7) {
             change_celular_ok.css("display", "none");
             change_celular.css("display", "block");
             return true;
-        }else {
+        }
+        else {
             change_celular_ok.css("display", "block");
             change_celular.css("display", "none");
             return false;
@@ -441,11 +452,16 @@
         var change_fax_ok = $("#change_fax_ok");
         var change_fax = $("#change_fax");
         var fax = $("#txt_fax").val();
-        if (isNaN(fax) || fax == "") {
+        var count = fax.length;
+        if (count < 1) {
+            change_fax_ok.css("display", "none");
+            change_fax.css("display", "none");
+        }else if (isNaN(fax) || count <=7) {
             change_fax_ok.css("display", "none");
             change_fax.css("display", "block");
             return true;
-        }else {
+        }
+        else {
             change_fax_ok.css("display", "block");
             change_fax.css("display", "none");
             return false;
