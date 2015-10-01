@@ -178,48 +178,38 @@
                                    		        <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">
                                    		            (3) Archivos adjuntos: 
                                    		        </a>
+                                                <button type="button" id="file_add" class="btn btn-default"><i class="icon-plus"></i></button>
                                    		    </h4>
                                    		<div style="" id="collapse_3_1" class="panel-collapse collapse in">
                                    		    <div class="panel-body">
                                    		        <table>
                                    		            <tbody>
                                    		                <tr class="col-md-12">
-                                                            <td class="col-md-7">
-                                                                <p>FacturaCrediodonJuanBauchi007.jpg</p>
-                                                            </td>
                                                             <td class="col-md-1">
                                                                 <a href="#">
                                                                     <img title="" src="<?php echo $route;;?>images/unitee/documents/png.png" style="height:30px;" alt="">
                                                                 </a>
                                                             </td>
+                                                            <td class="col-md-7 visible-md visible-lg visible-sm">
+                                                                <p>FacturaCrediodonJuanBauchi007.jpg</p>
+                                                            </td>
+                                                            
                                                             <td class="col-md-4">
-                                                                <a href="#" class="btn input-circle btn-danger glyphicon glyphicon-trash"> Eliminar</a>
+                                                                <a href="#" class="glyphicon glyphicon-trash"></a>
                                                             </td>
                                                         </tr>
                                                         <tr class="col-md-12">
-                                                            <td class="col-md-7">
-                                                                <p>FacturaCrediodonJuanBauchi007.pdf</p>
-                                                            </td>
                                                             <td class="col-md-1">
                                                                  <a href="#">
                                                                     <img title="" src="<?php echo $route;;?>images/unitee/documents/pdf.png" style="height:30px;" alt="">
                                                                 </a>
                                                             </td>
+                                                            <td class="col-md-7 visible-md visible-lg visible-sm">
+                                                                <p>FacturaCrediodonJuanBauchi007.pdf</p>
+                                                            </td>
+                                                            
                                                             <td class="col-md-4">
-                                                                <a href="#" class="btn input-circle btn-danger glyphicon glyphicon-trash"> Eliminar</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="col-md-12">
-                                                            <td class="col-md-7">
-                                                                <p>FacturaCrediodonJuanBauchi007.docx</p>
-                                                            </td>
-                                                            <td class="col-md-1">
-                                                                 <a href="#">
-                                                                    <img title="" src="<?php echo $route;;?>images/unitee/documents/word.png" style="height:30px;" alt="">
-                                                                </a>
-                                                            </td>
-                                                            <td class="col-md-4">
-                                                                <a href="#" class="btn input-circle btn-danger glyphicon glyphicon-trash"> Eliminar</a>
+                                                                <a href="#" class="glyphicon glyphicon-trash"></a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
