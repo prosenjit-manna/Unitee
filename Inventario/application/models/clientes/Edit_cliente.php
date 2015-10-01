@@ -70,7 +70,7 @@ class Edit_cliente extends CI_Model implements PInterface {
               ->ShowClient($id);
       
       $this->load->view("clientes/cliente_edit" , array(
-           "data_client"    => $info
+           "dc"    => $info[0]
       ));
       
     }

@@ -56,13 +56,18 @@
                                 <div class="col-md-6">
                                     <br><label class="control-label col-md-4">* Nombre</label>
                                     <div class="form-group col-md-8">
-                                        <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del cliente">
+                                        <input value="<?php echo $dc->nombre; ?>" autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del cliente">
                                     </div>
                                     <label class="control-label col-md-4">Tipo</label>
                                     <div class="form-group col-md-8">
                                         <select required="required" id="select_tipo" name="txt_tipo" class="form-control input-circle"> 
-                                            <option selected="" value="Persona Natural">Persona Natural</option>
-                                            <option value="Persona Natural">Persona Juridica</option>
+                                            <?php if($dc->tipo == 'Persona Natural'): ?>
+                                                 <option selected="" value="Persona Natural">Persona Natural</option>
+                                                 <option value="Persona Juridica">Persona Juridica</option>
+                                            <?php else: ?>
+                                                <option selected="" value="Persona Natural">Persona Juridica</option>
+                                                <option  value="Persona Juridica">Persona Natural</option>
+                                            <?php endif; ?>
                                         </select>                                    
                                     </div>
                                 </div>
@@ -72,7 +77,7 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_iva_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_iva" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input autocomplete="off"  type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de IVA">
+                                                <input value="<?php echo $dc->iva; ?>" autocomplete="off"  type="text" id="txt_iva" name="txt_iva" class="form-control input-circle" placeholder="Numero de IVA">
                                             </div>
                                         </div>
                                     <label class="control-label col-md-4">NIT</label>
@@ -80,7 +85,7 @@
                                             <div class="input-icon right">
                                                 <i name="change_" id="change_nit_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                                 <i name="change_x" id="change_nit" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                <input autocomplete="off"  type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de NIT">
+                                                <input value="<?php  echo $dc->nit; ?>" autocomplete="off"  type="text" id="txt_nit" name="txt_nit" class="form-control input-circle" placeholder="Numero de NIT">
                                             </div>
                                          </div>
                                 </div>
@@ -91,7 +96,7 @@
                                 <label class="control-label col-md-4">* Contacto</label>
                                 <div class="form-group col-md-8">
                                     <div class="input-icon right">
-                                        <input autocomplete="off"  required="required" type="text" id="txt3" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
+                                        <input value="<?php echo $dc->contacto; ?>" autocomplete="off"  required="required" type="text" id="txt3" name="txt_contacto" class="form-control input-circle" placeholder="Nombre de Contacto">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Telefono</label>
@@ -99,7 +104,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_telefono_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_telefono" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input autocomplete="off" onkeyup="validate_telefono();" required="" type="text" id="txt4" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
+                                        <input value="<?php echo $dc->telefono; ?>" autocomplete="off" onkeyup="validate_telefono();" required="" type="text" id="txt4" name="txt_telefono" class="form-control input-circle" placeholder="Numero de telefono">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Celular</label>
@@ -107,7 +112,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_celular_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_celular" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input autocomplete="off" onkeyup="validate_celular();" required="" type="text" id="txt5" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
+                                        <input value="<?php echo $dc->celular; ?>" autocomplete="off" onkeyup="validate_celular();" required="" type="text" id="txt5" name="txt_celular" class="form-control input-circle" placeholder="Numero de celular">
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +124,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_fax_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_fax" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input autocomplete="off" onkeyup="validate_fax();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
+                                        <input value="<?php echo $dc->fax; ?>" autocomplete="off" onkeyup="validate_fax();" type="text" id="txt_fax" name="txt_fax" class="form-control input-circle" placeholder="Numero de fax">
                                     </div>
                                 </div>
                                 <label class="control-label col-md-4">* Correo</label>
@@ -127,7 +132,7 @@
                                     <div class="input-icon right">
                                         <i name="change_" id="change_correo_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                         <i name="change_x" id="change_correo" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                        <input autocomplete="off" required="" onkeyup="isValidEmail();" type="text" id="txt6" name="txt_correo" class="form-control input-circle" placeholder="Escriba el correo">
+                                        <input value="<?php echo $dc->correo; ?>" autocomplete="off" required="" onkeyup="isValidEmail();" type="text" id="txt6" name="txt_correo" class="form-control input-circle" placeholder="Escriba el correo">
                                     </div>
                                 </div>
                             </div>
@@ -136,15 +141,15 @@
                                     <h3 class="form-section">Dirección</h3><br>
                                     <label class="control-label col-md-4">Local</label>
                                     <div class="form-group col-md-8">
-                                      <input autocomplete="off" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
+                                      <input value="<?php echo $dc->local; ?>" autocomplete="off" type="text" id="" name="txt_local" class="form-control input-circle" placeholder="Nombre del Local">
                                     </div>
                                     <label class="control-label col-md-4">* Dirección 1</label>
                                     <div class="form-group col-md-8">
-                                      <input autocomplete="off"  required="required" type="text" id="txt7" name="txt_direccion" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
+                                      <input value="<?php echo $dc->direccion1; ?>" autocomplete="off"  required="required" type="text" id="txt7" name="txt_direccion" class="form-control input-circle" placeholder="Nombre de la Direccion 1">
                                     </div>
                                     <label class="control-label col-md-4">Dirección 2</label>
                                     <div class="form-group col-md-8">
-                                      <input autocomplete="off" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
+                                      <input value="<?php echo $dc->direccion2; ?>" autocomplete="off" type="text" id="" name="txt_direccion2" class="form-control input-circle" placeholder="Nombre de la Direccion 2">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12"><div class="visible-lg visible-md"><br><br><br><br></div>
@@ -166,17 +171,19 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                            <h3 class="form-section">Descripción y adjintar archivos</h3><br>
+                            <h3 class="form-section">Descripción y adjuntar archivos</h3><br>
                                 <div class="col-md-6">
                                     <label class="control-label col-md-4">Descripci&oacute;n</label>
                                     <div class="form-group col-md-8">
-                                        <textarea name="txt_desc" class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
+                                        <textarea name="txt_desc" class="form-control input-circle" rows="2" placeholder="Descripción del cliente">
+                                            <?php echo $dc->descripcion; ?>
+                                        </textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6 form-group scroller" style="height:200px">
                                    		    <h4 class="panel-title">
                                    		        <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">
-                                   		            (3) Archivos adjuntos: 
+                                   		            Archivos adjuntos: 
                                    		        </a>
                                                 <button type="button" id="file_add" class="btn btn-default"><i class="icon-plus"></i></button>
                                    		    </h4>
@@ -368,8 +375,9 @@
             var j = JSON.parse(data);
             var c = $("#select_country");
             c.html("");
+            var iso = "<?php echo $dc->iso_pais; ?>";
             $.map(j, function (k) {
-                if (k.id == "SV") {
+                if (k.id == iso) {
                     c.prepend("<option selected='selected' value='" + k.id + "'>" + k.name + "</option>");
                     get_depto(k.id);
                 }
@@ -380,46 +388,61 @@
         });
         tasking.do_task();
     };
+     
+          var get_depto = function (iso) {
+                var tasking = new jtask();
+                tasking.url = "<?php echo site_url("/country/GetDepto/"); ?>";
+                tasking.data = {"iso": iso};
 
-    var get_depto = function (iso) {
-        var tasking = new jtask();
-        tasking.url = "<?php echo site_url("/country/GetDepto/"); ?>";
-        tasking.data = {"iso": iso};
+                tasking.success_callback(function (data) {
+                    var c = $("#select_depto");
+                    c.html("");
+                    c.append('<option >Elige un Departamento</option>');
+                    var j = JSON.parse(data);
+                    var id = "<?php echo $dc->depto_pais; ?>";
+                  
+                    $.map(j, function (k) {
+                        if (k.id == id) {
+                            c.append('<option selected="selected" value="' + k.id + '">' + k.name + '</option>');
+                            get_municipio(k.id);
+                        }
+                        else
+                            c.append('<option value="' + k.id + '">' + k.name + '</option>');
+                    });
+                });
+                tasking.do_task();
+            };
 
-        tasking.success_callback(function (data) {
+   
 
-            var c = $("#select_depto");
-            c.html("");
-            c.append('<option selected="selected">Elige un Departamento</option>');
-            var j = JSON.parse(data);
-            $.map(j, function (k) {
-                c.append('<option value="' + k.id + '">' + k.name + '</option>');
-            });
-        });
-        tasking.do_task();
-    };
+        var get_municipio = function (id) {
+                var tasking = new jtask();
+                tasking.url = "<?php echo site_url("/country/GetMunicipio/"); ?>";
+                //Direccion del controlador donde se obtiene los datos
+                tasking.data = {"id": id};
+                tasking.success_callback(function (data) {
+                    //tasking libreria de rolando para hacer procesos de segundo plano
+                    var ciu = $("#select_city");
+                    //seleccion del id del select donde se desean mostrar los datos
+                    ciu.html("");
+                    //html para cambiar algo del en una etiqueta html reemplazando la anterior
+                    ciu.append('<option selected="selected">Elige una Ciudad</option>');
+                    //para mandar como lista
+                    var j = JSON.parse(data);
+                    //JSON Parse para transformar un elemento json a un objeto
 
-    var get_municipio = function (id) {
-        var tasking = new jtask();
-        tasking.url = "<?php echo site_url("/country/GetMunicipio/"); ?>";
-        //Direccion del controlador donde se obtiene los datos
-        tasking.data = {"id": id};
-        tasking.success_callback(function (data) {
-            //tasking libreria de rolando para hacer procesos de segundo plano
-            var ciu = $("#select_city");
-            //seleccion del id del select donde se desean mostrar los datos
-            ciu.html("");
-            //html para cambiar algo del en una etiqueta html reemplazando la anterior
-            ciu.append('<option  value="-1">Elige una Ciudad</option>');
-            //para mandar como lista
-            var j = JSON.parse(data);
-            //JSON Parse para transformar un elemento json a un objeto
-            $.map(j, function (k) {
-                ciu.append('<option selected="selected" value="' + k.id + '">' + k.name + '</option>');
-            });
-        });
-        tasking.do_task();
-    };
+                    var id = "<?php echo $dc->ciudad_pais; ?>";
+
+
+                    $.map(j, function (k) {
+                        if (id == k.id)
+                            ciu.append('<option selected="selected" value="' + k.id + '">' + k.name + '</option>');
+                        else
+                            ciu.append('<option value="' + k.id + '">' + k.name + '</option>');
+                    });
+                });
+                tasking.do_task();
+            };
 
     var validate_telefono = function () {
         var change_telefono_ok = $("#change_telefono_ok");

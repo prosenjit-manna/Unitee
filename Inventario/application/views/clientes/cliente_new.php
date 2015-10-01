@@ -63,7 +63,7 @@
                                     <div class="form-group col-md-8">
                                         <select required="required" id="select_tipo" name="txt_tipo" class="form-control input-circle"> 
                                             <option selected="" value="Persona Natural">Persona Natural</option>
-                                            <option value="Persona Natural">Persona Juridica</option>
+                                            <option value="Persona Juridica">Persona Juridica</option>
                                         </select>                                    
                                     </div>
                                 </div>
@@ -348,8 +348,9 @@
         });
         tasking.do_task();
     };
-
-    var get_depto = function (iso) {
+    
+    
+     var get_depto = function (iso) {
         var tasking = new jtask();
         tasking.url = "<?php echo site_url("/country/GetDepto/"); ?>";
         tasking.data = {"iso": iso};
@@ -366,6 +367,7 @@
         });
         tasking.do_task();
     };
+
 
     var get_municipio = function (id) {
         var tasking = new jtask();
