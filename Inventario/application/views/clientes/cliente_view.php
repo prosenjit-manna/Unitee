@@ -73,7 +73,7 @@
                                                                  ? '<a href="' . site_url("0/clientes=edit_cliente?i=" . $c->id) . '"><i class="icon-pencil" style="font-size: 20px;"></i></i></a>&nbsp;&nbsp;' 
                                                                  : "";
                                                          $data .= $operations['delete'] == TRUE 
-                                                                 ? '  <a class="" onclick="i(' . $c->id . ')"  data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>' 
+                                                                 ? '  <a class="" onclick="i(' . $c->id . ');"  data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></i></a>' 
                                                                  : '';
                                                          
                                                      }
@@ -126,8 +126,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Nombre:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     Lorena Antonia Peña
+                                                                <p id="c_name" class="form-control-static">
+                                                                    
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -137,8 +137,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">IVA:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     1234456-1
+                                                                <p id="c_iva" class="form-control-static">
+                                                                     
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -151,8 +151,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Tipo:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     Persona Juridica
+                                                                <p id="c_type" class="form-control-static">
+                                                                    
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -162,8 +162,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">NIT:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     1234-567894-123-4
+                                                                <p id="c_nit" class="form-control-static">
+                                                                     
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -176,10 +176,10 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-3">Empresa:</label>
+                                                            <label class="control-label col-md-3"></label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     Google Inc.
+                                                                <p id="c_build" class="form-control-static">
+                                                                     
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -188,8 +188,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Celular:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     7845-8754
+                                                                <p id="c_cell" class="form-control-static">
+                                                                    
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -200,8 +200,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Contacto</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     Andrea Pirlo
+                                                                <p id="c_contact" class="form-control-static">
+                                                                   
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -211,8 +211,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">FAX:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     2330-9779
+                                                                <p id="c_fax" class="form-control-static">
+                                                                     
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -225,8 +225,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Teléfono:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     2330-9779
+                                                                <p id="c_tel" class="form-control-static">
+                                                                   
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -236,8 +236,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Correo:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     nlima@lieison.com
+                                                                <p id="c_mail" class="form-control-static">
+                                                                   
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -250,8 +250,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Local:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                    4512A
+                                                                <p id="c_local" class="form-control-static">
+                                                                    
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -260,8 +260,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Pais:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     El Salvador
+                                                                <p id="c_pais" class="form-control-static">
+                                                                    
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -272,8 +272,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3" style="font-size:13px;">Dirección 1:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     6AV Norte Colonia Escalon
+                                                                <p id="c_direccion1" class="form-control-static">
+                                                                     
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -283,8 +283,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Departamento:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     2330-9779
+                                                                <p id="c_depto" class="form-control-static">
+                                                                   
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -297,8 +297,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3" style="font-size:13px;">Dirección 2:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     6AV Norte Colonia Escalon
+                                                                <p id="c_direccion2" class="form-control-static">
+                                                                    
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -308,8 +308,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label col-md-3">Ciudad:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static">
-                                                                     Ciudad Merliot
+                                                                <p id="c_ciudad" class="form-control-static">
+                                                                   
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -320,14 +320,10 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label class="control-label col-md-3">Descri´pción del cliente:</label>
+                                                            <label class="control-label col-md-3">Descripción del cliente:</label>
                                                             <div class="col-md-9">
-                                                                <p class="form-control-static" style="text-align:justify;">
-                                                                    Cliente de san salvador que se dedica a la venta de pc 
-                                                                    Cliente de san salvador que se dedica a la venta de pc
-                                                                    Cliente de san salvador que se dedica a la venta de pc
-                                                                    Cliente de san salvador que se dedica a la venta de pc
-                                                                    Cliente de san salvador que se dedica a la venta de pc 
+                                                                <p id="c_descripcion" class="form-control-static" style="text-align:justify;">
+                                                                   
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -338,7 +334,7 @@
                                                                 <div class="panel-heading">
                                                                     <h4 class="panel-title">
                                                                         <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">
-                                                                            (3) Archivos adjuntos: 
+                                                                             Archivos adjuntos: 
                                                                         </a>
                                                                     </h4>
                                                                 </div>
@@ -349,22 +345,8 @@
                                                                         </p>
                                                                         <table>
                                                                             <tbody>
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <a href="#">
-                                                                                            <img title="" src="<?php echo $route;;?>images/unitee/documents/png.png" style="height:80px;" alt="">
-                                                                                        </a>
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a href="#">
-                                                                                            <img title="" src="<?php echo $route;;?>images/unitee/documents/pdf.png" style="height:80px;" alt="">
-                                                                                        </a>
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a href="#">
-                                                                                            <img title="" src="<?php echo $route;;?>images/unitee/documents/word.png" style="height:80px;" alt="">
-                                                                                        </a>
-                                                                                    </td>
+                                                                                <tr id="c_adjuntos">
+                                                                                   
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
@@ -456,12 +438,76 @@
      var show = function(i){
              var task = new jtask();
              task.url = "<?php echo site_url("Client/Show"); ?>";
-             task.data = { "i" : $i };
+             task.data = { "i" : i };
              task.success_callback(function(s){
-                     
+                   var r = JSON.parse(s)
+                   $("#c_name").html(r[0].nombre);
+                   $("#c_iva").html(r[0].iva);
+                   $("#c_type").html(r[0].tipo);
+                   $("#c_nit").html(r[0].nit);
+                   $("#c_build").html();
+                   $("#c_cell").html(r[0].celular);
+                   $("#c_contact").html(r[0].contacto);
+                   $("#c_fax").html(r[0].fax);
+                   $("#c_tel").html(r[0].telefono);
+                   $("#c_mail").html(r[0].correo);
+                   $("#c_local").html(r[0].local);
+                   $("#c_pais").html(r[0].pais);
+                   $("#c_direccion1").html(r[0].direccion1); 
+                   $("#c_depto").html(r[0].departamento); 
+                   $("#c_direccion2").html(r[0].direccion2);
+                   $("#c_ciudad").html(r[0].municipio);
+                   $("#c_descripcion").html(r[0].descripcion);
+
+                   var adj = JSON.parse(r[0].adjunto);
+                   
+                   $("#c_adjuntos").html("");
+                   $.map(adj , function(k){
+                        var node = JSON.parse(k);
+                        var name   = String(node.name);
+                        var ext    = name.split('.');
+                        var dtype  = doc_type(ext[1]);
+                        var d      = '<td><a href="<?php echo site_url(); ?>Client/Download?n=' 
+                                     + node.name + '&doc=' 
+                                     + node.file + '&d=' 
+                                     + node.directory +
+                                     '"><img title="' + node.name + '" src="<?php echo $route;?>images/unitee/documents/' 
+                                     + dtype + '" style="height:80px;" alt=""></a></td>';
+                        $("#c_adjuntos").append(d);
+                       
+                   });
+                   
              });
              task.do_task();
+             
+             
+             
      };
+     
+         var doc_type = function(e)
+    {
+        switch(e){
+            case 'docx':
+            case 'doc':
+                return 'word.png';
+            case 'xls':
+                return 'excel.png';
+            case 'gif':
+                return 'gif.png';
+            case 'jpg':
+            case 'jpeg':
+                return 'jpg.png';
+            case 'txt' :
+                return 'txt.png';
+            case 'pdf' : 
+                return 'pdf.png';
+            case 'png' :
+                return 'png.png'; 
+        }
+        
+         return 'blank.png';
+    };
+
         
      
         
