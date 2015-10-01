@@ -173,49 +173,66 @@
                                         <textarea name="txt_desc" class="form-control input-circle" rows="2" placeholder="Descripción del cliente"></textarea>
                                     </div>
                                 </div>
-                                <div class="form-group scroller" style="height:200px">
-                                   <div class="col-md-12">
-                                   		<div class="panel-heading">
+                                <div class="col-md-6 form-group scroller" style="height:200px">
                                    		    <h4 class="panel-title">
                                    		        <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">
                                    		            (3) Archivos adjuntos: 
                                    		        </a>
                                    		    </h4>
-                                   		</div>
                                    		<div style="" id="collapse_3_1" class="panel-collapse collapse in">
                                    		    <div class="panel-body">
                                    		        <table>
                                    		            <tbody>
-                                   		                <tr>
-                                   		                    <td>
-                                   		                        <a href="#">
-                                   		                            <img title="" src="<?php echo $route;;?>images/unitee/documents/png.png" style="height:80px;" alt="">
-                                   		                        </a>
-                                   		                    </td>
-                                   		                    <td>
-                                     							<a href="#">
-                                         							<img title="" src="<?php echo $route;;?>images/unitee/documents/pdf.png" style="height:80px;" alt="">
+                                   		                <tr class="col-md-12">
+                                                            <td class="col-md-7">
+                                                                <p>FacturaCrediodonJuanBauchi007.jpg</p>
+                                                            </td>
+                                                            <td class="col-md-1">
+                                                                <a href="#">
+                                                                    <img title="" src="<?php echo $route;;?>images/unitee/documents/png.png" style="height:30px;" alt="">
                                                                 </a>
                                                             </td>
-                                                            <td>
-                                                                <a href="#">
-                                                                    <img title="" src="<?php echo $route;;?>images/unitee/documents/word.png" style="height:80px;" alt="">
+                                                            <td class="col-md-4">
+                                                                <a href="#" class="btn input-circle btn-danger glyphicon glyphicon-trash"> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="col-md-12">
+                                                            <td class="col-md-7">
+                                                                <p>FacturaCrediodonJuanBauchi007.pdf</p>
+                                                            </td>
+                                                            <td class="col-md-1">
+                                                                 <a href="#">
+                                                                    <img title="" src="<?php echo $route;;?>images/unitee/documents/pdf.png" style="height:30px;" alt="">
                                                                 </a>
+                                                            </td>
+                                                            <td class="col-md-4">
+                                                                <a href="#" class="btn input-circle btn-danger glyphicon glyphicon-trash"> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="col-md-12">
+                                                            <td class="col-md-7">
+                                                                <p>FacturaCrediodonJuanBauchi007.docx</p>
+                                                            </td>
+                                                            <td class="col-md-1">
+                                                                 <a href="#">
+                                                                    <img title="" src="<?php echo $route;;?>images/unitee/documents/word.png" style="height:30px;" alt="">
+                                                                </a>
+                                                            </td>
+                                                            <td class="col-md-4">
+                                                                <a href="#" class="btn input-circle btn-danger glyphicon glyphicon-trash"> Eliminar</a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
-                                     </div>
                                 </div>
-                            </div>      
-                                <div class="col-md-12">
+                            </div>
+                            <div class="col-md-12">
                                     <div class="form-actions col-md-offset-9">
                                         <a href="<?php echo site_url("/0/clientes=view_cliente"); ?>" class="btn default">Cancelar</a>
                                         <button disabled="disabled" id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                                     </div>
-                                </div>
                             </div>
                             <!-- FINAL FORM-->
                         </div>
