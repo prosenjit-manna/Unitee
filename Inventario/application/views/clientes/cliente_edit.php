@@ -403,12 +403,12 @@
             //seleccion del id del select donde se desean mostrar los datos
             ciu.html("");
             //html para cambiar algo del en una etiqueta html reemplazando la anterior
-            ciu.append('<option selected="selected" value="-1">Elige una Ciudad</option>');
+            ciu.append('<option  value="-1">Elige una Ciudad</option>');
             //para mandar como lista
             var j = JSON.parse(data);
             //JSON Parse para transformar un elemento json a un objeto
             $.map(j, function (k) {
-                ciu.append('<option value="' + k.id + '">' + k.name + '</option>');
+                ciu.append('<option selected="selected" value="' + k.id + '">' + k.name + '</option>');
             });
         });
         tasking.do_task();
