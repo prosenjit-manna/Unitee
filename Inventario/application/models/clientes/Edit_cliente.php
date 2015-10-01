@@ -53,8 +53,26 @@ class Edit_cliente extends CI_Model implements PInterface {
     }
 
     public function _init() {
-      $this->load->helper("form");
-      $this->load->view("clientes/cliente_edit");
+        
+      $this->load->helper(array("form" , "url"));
+      
+      $id = isset($_REQUEST['i'] ) ? $_REQUEST['i'] : NULL;
+      
+      if(is_null($id)){
+          redirect("/0");
+          return ;
+      }
+      
+      $this->load->model("clientes/view_cliente" , "cliente");
+      
+      $info = $this
+              ->cliente
+              ->ShowClient($id);
+      
+      $this->load->view("clientes/cliente_edit" , array(
+           "data_client"    => $info
+      ));
+      
     }
 
     public function _install() {
