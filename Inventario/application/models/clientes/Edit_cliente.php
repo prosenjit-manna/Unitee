@@ -133,4 +133,22 @@ class Edit_cliente extends CI_Model implements PInterface {
         
     }
     
+    public function EditAttach($id , $adj){
+        $this->db
+                ->where("id_adjunto" , $id);
+        return $this
+                ->db
+                ->update("adjunto" , array("adjunto" => $adj));
+    }
+    
+    public function EditClient(array $data , $id ){
+         
+         $this->db
+                 ->where("id_cliente" , $id );
+        
+         return $this->db->update("cliente" , $data);
+    }
+    
+   
+    
 }

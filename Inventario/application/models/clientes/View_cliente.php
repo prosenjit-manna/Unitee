@@ -201,6 +201,22 @@ class View_cliente extends CI_Model implements PInterface {
          
     }
     
+    
+    public function GetAtt($id){
+        
+        $this->query = " SELECT 
+            adjunto.adjunto as 'adjunto',
+            adjunto.id_adjunto as 'id'
+            FROM cliente 
+            LEFT JOIN adjunto ON adjunto.id_adjunto=cliente.id_adjunto
+            WHERE cliente.id_cliente LIKE ? ";
+        
+        
+        return $this->db
+                ->query($this->query , array($id))
+                ->result();
+    }
+    
     public function ShowClient($id){
         
         $this->query = " SELECT 
@@ -235,7 +251,7 @@ class View_cliente extends CI_Model implements PInterface {
             INNER JOIN depto_pais ON depto_pais.codigo_depto_pais=direccion.depto
             INNER JOIN municipio_depto ON municipio_depto.codigo_municipio_depto=direccion.ciudad and municipio_depto.codigo_depto_pais=direccion.depto
             INNER JOIN contacto ON contacto.id_contacto=cliente.id_contacto
-            WHERE id_cliente LIKE ? ";
+            WHERE cliente.id_cliente LIKE ? ";
         
         
         return $this->db

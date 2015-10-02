@@ -681,6 +681,116 @@ class Dashboard extends CI_Controller {
     }
     
     
+    /**
+     * Controlador de descarga de archivos 
+     * VERSION 1.5.8
+     * 
+     * INPUTS 
+     *
+     * GET METHOD :
+     *          -variables mediantes el metodo get
+     *          - nombres:
+     * 
+     *                      dir  = string
+     *                      file = string
+     *                      name = string
+     *                      ext  = string
+     *           ejemplo:  ?dir=files/location/directory
+     *                     ?file=xhrgrd
+     *                     ?name=hello.png
+     *                     ?ext=png
+     *      SI ?name conlleva la extension no es necesario utilizar la variable ext
+     *          en el input get
+     * 
+     * CONTROLLER METHOD:
+     * 
+     *          similar al metodo get sus variables se representan dentro de los 
+     *          parametros de la funcion Download    
+     * 
+     *          Obtencion de parametros mediante Url
+     *          
+     *          http://domain.com/Dashboard/Download/$dir/$file/$name/$extend
+     * 
+     *          $dir = directorio donde se aloja el archivo 
+     *                  
+     *                  por terminos de seguridad en url parse 
+     *                  el caracter "/" se remplazara por "="
+     *                  entonces como quedara la ruta del archivo 
+     * 
+     *                  ruta normal files/data/provider/
+     *                      
+     *                       nueva ruta files=data=provider
+     */
+    
+    public function Download(
+            $directory = NULL , 
+            $file = NULL , 
+            $name = NULL , 
+            $extend = NULL)
+    {
+         
+         $_dir      = isset($_REQUEST['dir']) ? $_REQUEST['dir'] : $directory;
+         $_file     = isset($_REQUEST['file']) ? $_REQUEST['file'] : $file;
+         $_name     = isset($_REQUEST['name']) ? $_REQUEST['name'] : $name;
+         $_extend   = isset($_REQUEST['ext']) ? $_REQUEST['ext'] : $extend;
+         
+         if(is_null($_dir) && is_null($_file)) { return null; }
+         
+         $token     = "=";
+         $_dir      = explode($token, $_dir);
+         
+         if(is_array($_dir)){
+             if(count($_dir) == 1){
+                 $_dir = $_dir[0];
+             }
+             else{
+                 $_dir = implode("/", $_dir);
+             }
+         }
+         
+         $name_flag     = FALSE;
+         
+         if(!$_name == NULL){
+             $name_flag = TRUE;
+         }
+         
+         if(is_null($_extend)){
+             
+             $e = explode(".", $_file);
+             if(is_array($e) && count($e) > 1 ){
+                 $_extend   = $e[1];
+                 $_file     = $e[0];
+                 
+             }
+             else if($name_flag)
+             {
+                $e          = explode(".", $_name);
+                if(is_array($e) && count($e) > 1){
+                    $_extend = $e[1];
+                    $_name   = $e[0];
+                } 
+             }
+         }
+         
+         if($extend == NULL){
+             $this->output
+                     ->set_output(FALSE);
+             return;
+         }
+         
+        
+        $this->load->helper("url");
+         
+        $uri    = base_url("$_dir/$_file.$extend");
+        
+        header("Content-disposition: attachment; filename=" .
+                $name_flag == TRUE ? $name .  "." . $extend : $file . "." . $extend );
+        header("Content-type: application/octet-stream");
+        readfile($uri);
+        
+    }
+    
+    
     public function plugins(){
         $this->load->library("plugin");
         echo "<pre>" , print_r($this->plugin->_show()) , "</pre>";

@@ -50,6 +50,7 @@
                         </div>
                         <div class="portlet-body">
                             <!-- INICIO FORM-->
+                            <?php echo form_open_multipart("Client/Update" , array("method" => "post") , array("i" => $_REQUEST['i'])); ?>
                             <h5 lass="form-section">Los campos con * son Requeridos</h5>
                             <div class="col-md-12">
                                 <h3 lass="form-section">Información del cliente</h3><br>
@@ -186,40 +187,54 @@
                                    		            Archivos adjuntos: 
                                    		        </a>
                                                 <button type="button" id="file_add" class="btn btn-default"><i class="icon-plus"></i></button>
-                                   		    </h4>
+                                   		</h4>
+                                    <br>
+                                                <div id="file_data" class="col-md-8">
+                                            <span id="f1" class="btn btn-default ">
+                                               <input autocomplete="off" id="files1" name="file[]" type="file">
+                                            </span>
+                                    </div>
+                                    <br><br>
                                    		<div style="" id="collapse_3_1" class="panel-collapse collapse in">
                                    		    <div class="panel-body">
                                    		        <table>
                                    		            <tbody>
-                                   		                <tr class="col-md-12">
-                                                            <td class="col-md-1">
-                                                                <a href="#">
-                                                                    <img title="" src="<?php echo $route;;?>images/unitee/documents/png.png" style="height:30px;" alt="">
-                                                                </a>
-                                                            </td>
-                                                            <td class="col-md-7 visible-md visible-lg visible-sm">
-                                                                <p>FacturaCrediodonJuanBauchi007.jpg</p>
-                                                            </td>
+                                                                
+                                                                <?php 
+                                                                
+                                                                    $adj        = json_decode($dc->adjunto);
+                                                                    $class      = &get_instance();
+                                                                    
+                                                                    $class->load->helper("tools");
+                                                                    
+                                                                    
+                                                                    foreach ($adj as $a ):
+                                                                        $i      = json_decode($a);
+                                                                        $d      = explode(".", $i->name);
+                                                                        $doc    = DocType( count($d) > 1 ? $d[1] : "");
+                                                                    ?>
+                                                                    
+                                                                <tr id="file_<?php echo $i->file; ?>" class="col-md-12">
+                                                                        <td class="col-md-1">
+                                                                            <a href="<?php echo site_url("Client/Download?n=" . $i->name . "&doc=" . $i->file . "&d=" . $i->directory ); ?>">
+                                                                            <img title="" src="<?php echo $route;?>images/unitee/documents/<?php echo $doc ?>" style="height:30px;" alt="">
+                                                                        </a>
+                                                                    </td>
+                                                                        <td class="col-md-7 visible-md visible-lg visible-sm">
+                                                                            <p><?php echo $i->name; ?></p>
+                                                                        </td>
                                                             
-                                                            <td class="col-md-4">
-                                                                <a href="#" class="glyphicon glyphicon-trash"></a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="col-md-12">
-                                                            <td class="col-md-1">
-                                                                 <a href="#">
-                                                                    <img title="" src="<?php echo $route;;?>images/unitee/documents/pdf.png" style="height:30px;" alt="">
-                                                                </a>
-                                                            </td>
-                                                            <td class="col-md-7 visible-md visible-lg visible-sm">
-                                                                <p>FacturaCrediodonJuanBauchi007.pdf</p>
-                                                            </td>
-                                                            
-                                                            <td class="col-md-4">
-                                                                <a href="#" class="glyphicon glyphicon-trash"></a>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
+                                                                        <td class="col-md-4">
+                                                                            <?php $e = isset($d[1]) ? $d[1] : null; ?>
+                                                                            <a href="javascript:delete_file(<?php echo "'" . $i->file . "' , '" . $i->directory . "' , '" . $e . "'"  ?>);" class="glyphicon glyphicon-trash"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                
+                                                                <?php 
+                                                                    endforeach;
+                                                                ?>
+                                   		            
+                                                            </tbody>
                                                 </table>
                                             </div>
                                         </div>
@@ -232,6 +247,7 @@
                                     </div>
                             </div>
                             <!-- FINAL FORM-->
+                            <?php echo form_close(); ?>
                         </div>
                         <!-- FINAL Portlet PORTLET-->
                     </div>
@@ -246,6 +262,27 @@
 <script>
     var $field_count = 7;
     var $file_count  = 1;
+    
+     var delete_file = function(a,b,e)
+    {
+        var c = confirm("Se eliminara este archivo , ¿ desea continuar ? ");
+        if(!c){ return; }
+        
+        var task = new jtask();
+        task.url = "<?php echo site_url("Client/DeleteFile"); ?>";
+        task.data = {
+            "f" : a,
+            "d" : b,
+            "i" : <?php echo $_REQUEST['i']; ?>,
+            "e" : e
+        };
+        task.success_callback(function(s){
+             $("#file_" + a).remove();
+             console.log(s);
+        });
+        task.do_task();
+    };
+
     
    var init_client = function(){
 
@@ -497,5 +534,7 @@
             return false;
         }
     };
+    
+    
 
 </script>
