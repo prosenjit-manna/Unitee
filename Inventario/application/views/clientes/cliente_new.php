@@ -2,6 +2,24 @@
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
+                            <?php
+                                
+                                 $response = isset($_REQUEST['s']) ? $_REQUEST['s'] : -1;
+                                 if($response != -1){
+                                     switch($response){
+                                         case TRUE:
+                                             echo '<div class="alert alert-block alert-success fade in">
+                                           <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Cliente creado con exito</p>
+                                                              </div>';
+                                             break;
+                                         case FALSE:
+                                             echo ' <div class="alert alert-block alert-danger fade in">
+                                                  <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"> </button><p>No se pudo crear el cliente,  Favor intentar de nuevo.</p>
+                                                            </div>';
+                                             break;
+                                     }
+                                 }
+                            ?>
         <!-- INICIO TITULO DE LA PAGINA -->
         <h3 class="page-title">
             Unitee - Nuevo Cliente
@@ -24,25 +42,11 @@
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <!-- INICIO PAGE CONTENT-->
-            <div class="row scroller" style="height:430px" data-rail-visible="1" >
+            <div class="row scroller" style="height:380px" data-rail-visible="1" >
                 <!-- INICIO Portlet PORTLET-->
                 <div class="portlet">  
                     <div class="portlet light">
                         <div class="portlet-title">
-                            <?php
-                                
-                                 $response = isset($_REQUEST['s']) ? $_REQUEST['s'] : -1;
-                                 if($response != -1){
-                                     switch($response){
-                                         case TRUE:
-                                             echo "CLIENTE CREADO CON EXITO ...";
-                                             break;
-                                         case FALSE:
-                                             echo "NO SE PUDO CREAR EL CLIENTE";
-                                             break;
-                                     }
-                                 }
-                            ?>
                             <div class="caption font-green-sharp">
                                 <i class="icon-speech font-green-sharp"></i>
                                 <span class="caption-subject bold uppercase">Nuevo Cliente</span>
@@ -161,7 +165,8 @@
                                     </div>
                                     <label class="control-label col-md-4">* Ciudad</label>
                                     <div class="form-group col-md-8">
-                                        <select id="select_city" class="form-control input-circle" name="txt_ciudad">                          
+                                        <select id="select_city" class="form-control input-circle" name="txt_ciudad">
+                                            <option selected="selected" value="-1">Elige una Ciudad</option>
                                         </select>
                                     </div>
                                 </div>
@@ -310,11 +315,12 @@
      setInterval(function(){
            var total = 0;
            var correo = isValidEmail();
+           var ciudad = $("#select_city").val();
            for(var i =1; i <= $field_count ; i++)
            {
               total += validar(i);
            }
-           if(total == $field_count && correo === true){
+           if(total == $field_count && correo === true && ciudad != -1){
                $("#send").attr("disabled" , false);
            }else{
                 $("#send").attr("disabled" , true);
@@ -378,7 +384,6 @@
             //tasking libreria de rolando para hacer procesos de segundo plano
             var ciu = $("#select_city");
             //seleccion del id del select donde se desean mostrar los datos
-            ciu.html("");
             //html para cambiar algo del en una etiqueta html reemplazando la anterior
             ciu.append('<option selected="selected" value="-1">Elige una Ciudad</option>');
             //para mandar como lista

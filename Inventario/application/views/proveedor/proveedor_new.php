@@ -121,7 +121,8 @@
                                             </div>
                                             <label class="control-label col-md-4">* Ciudad</label>
                                             <div class="form-group col-md-8">
-                                                <select id="select_city" class="form-control input-circle" name="txt_ciudad">                       
+                                                <select id="select_city" class="form-control input-circle" name="txt_ciudad">
+                                                    <option selected="selected" value="-1">Elige una Ciudad</option>
                                                 </select>
                                             </div>
 
@@ -203,7 +204,6 @@
             //tasking libreria de rolando para hacer procesos de segundo plano
             var ciu = $("#select_city");
             //seleccion del id del select donde se desean mostrar los datos
-            ciu.html("");
             //html para cambiar algo del en una etiqueta html reemplazando la anterior
             ciu.append('<option selected="selected" value="-1">Elige una Ciudad</option>');
             //para mandar como lista
@@ -299,6 +299,10 @@
         var celular = $("#txt_celular").val();
         var correo = $("#txt_correo").val();
         var dir = $("#txt_direccion1").val();
+        var ciudad = $("#select_city").val();
+        if (ciudad = -1) {
+
+        };
 
         if (empresa == ""
                 || contacto == ""
@@ -311,8 +315,7 @@
         else {
             document.getElementById("send").disabled = false;
         }
-    }
-    ;
+    };
 
     function load() {
         document.getElementById("send").disabled = true;
