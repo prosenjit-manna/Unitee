@@ -120,6 +120,8 @@ class View_cliente extends CI_Model implements PInterface {
         
     }
     
+    
+    
     private function GetTableClient(){
          $this->query = "SELECT 
                             cliente.id_cliente as 'id',
@@ -134,6 +136,13 @@ class View_cliente extends CI_Model implements PInterface {
                  ->result();
          
          return is_array($result) ? $result : NULL;
+    }
+    
+    public function GetInfoClient($id){
+        return $this->db->query("SELECT id_direccion as 'direccion' , "
+                . "id_contacto as 'contacto' "
+                . "FROM cliente WHERE id_cliente LIKE ?" , array($id))
+                ->result();
     }
     
     public function Delete($id){
@@ -200,7 +209,6 @@ class View_cliente extends CI_Model implements PInterface {
                  
          
     }
-    
     
     public function GetAtt($id){
         

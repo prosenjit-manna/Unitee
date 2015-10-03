@@ -314,6 +314,7 @@ class Client extends CI_Controller{
         $this->load->helper(array('string', 'url', 'file', 'form'));
         $this->load->model("clientes/edit_cliente" , "edit");
         $this->load->model("clientes/view_cliente" , "client");
+        $this->load->model("system/info_engine" );
          
         //NECESITAMOS EL ID DEL CLIENTE PARA HACER LAS MODIFICACIONES
         if($id_ == null ){
@@ -431,7 +432,30 @@ class Client extends CI_Controller{
         
         
         
-        redirect("0/clientes=edit_cliente?i=" . $id_);
+        $inf = $this->client->GetInfoClient($id_);
+        
+        
+        $this->info_engine->update_adress(array(
+              "dir1"    => $direccion1,
+              "dir2"    => $direccion2,
+              "pais"    => $pais,
+              "depto"   => $depto,
+              "ciudad"  => $ciudad,
+              "local"   => $local 
+            ) , $inf[0]->direccion);
+        
+        
+        $this->info_engine->update_contact(array(
+                      "tel1"          => $telefono,
+                      "tel2"          => $celular,
+                      "fax"           => $fax,
+                      "correo"        => $correo,
+                      "nombre"        => $contacto
+         ) , $inf[0]->contacto);
+        
+        
+        
+        //redirect("0/clientes=edit_cliente?i=" . $id_);
         
        
     }
