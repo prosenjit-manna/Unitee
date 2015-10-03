@@ -455,7 +455,7 @@ class Client extends CI_Controller{
         
         
         
-        //redirect("0/clientes=edit_cliente?i=" . $id_);
+        redirect("0/clientes=edit_cliente?i=" . $id_ . "&s=1" );
         
        
     }
