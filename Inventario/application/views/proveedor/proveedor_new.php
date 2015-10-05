@@ -290,9 +290,7 @@
         }
     };
 
-
     function val() {
-
         var empresa = $("#txt_empresa").val();
         var contacto = $("#txt_contacto").val();
         var telefono = $("#txt_telefono").val();
@@ -300,15 +298,12 @@
         var correo = $("#txt_correo").val();
         var dir = $("#txt_direccion1").val();
         var ciudad = $("#select_city").val();
-        if (ciudad = -1) {
-
-        };
-
         if (empresa == ""
                 || contacto == ""
                 || telefono == ""
                 || celular == ""
                 || dir == ""
+                || ciudad == -1
                 || !isValidEmail(correo)) {
             document.getElementById("send").disabled = true;
         }
@@ -319,13 +314,10 @@
 
     function load() {
         document.getElementById("send").disabled = true;
-    }
-    ;
+    };
 
     function isValidEmail(mail)
     {
-
         return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
-
     }
 </script>

@@ -2,25 +2,25 @@
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
-                            <?php
-                                
-                                 $response = isset($_REQUEST['s']) ? $_REQUEST['s'] : -1;
-                                 if($response != -1){
-                                     switch($response){
-                                         case TRUE:
-                                             echo '<div class="alert alert-block alert-success fade in">
-                                           <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Cliente creado con exito</p>
-                                                              </div>';
-                                             break;
-                                         case FALSE:
-                                             echo ' <div class="alert alert-block alert-danger fade in">
-                                                  <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"> </button><p>No se pudo crear el cliente,  Favor intentar de nuevo.</p>
-                                                            </div>';
-                                             break;
-                                     }
-                                 }
-                            ?>
-        <!-- INICIO TITULO DE LA PAGINA -->
+        <?php
+            
+             $response = isset($_REQUEST['s']) ? $_REQUEST['s'] : -1;
+             if($response != -1){
+                 switch($response){
+                     case TRUE:
+                         echo '<div class="alert alert-block alert-success fade in">
+                       <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"></button><p>Cliente creado con exito</p>
+                                          </div>';
+                         break;
+                     case FALSE:
+                         echo ' <div class="alert alert-block alert-danger fade in">
+                              <button type="button" class="close icon-close" data-dismiss="alert" aria-hidden="true"> </button><p>No se pudo crear el cliente,  Favor intentar de nuevo.</p>
+                                        </div>';
+                         break;
+                 }
+             }
+        ?>
+        E LA PAGINA -->
         <h3 class="page-title">
             Unitee - Nuevo Cliente
         </h3>
@@ -172,7 +172,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                            <h3 class="form-section">Descripción y adjintar archivos</h3><br>
+                            <h3 class="form-section">Descripción y adjuntar archivos</h3><br>
                                 <div class="col-md-6">
                                     <label class="control-label col-md-4">Descripci&oacute;n</label>
                                     <div class="form-group col-md-8">
