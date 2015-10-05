@@ -359,6 +359,20 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
+
+/**
+ * SESS_SAVE_PATH ON SERVER:
+ * 
+ * ARVIXE , HOSTGATOR , ETC ...
+ * $config['sess_save_path'] = 'directorio_sesion';
+ * $config['sess_save_path'] =  'database';
+ * 
+ * GODADDY
+ * $config['sess_save_path'] = '/home/unitee/public_html/soft/application/DIRECTORIO_X';
+ * 
+ * 
+ * **/
+
 $config['sess_save_path'] = NULL; //'database';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
