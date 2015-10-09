@@ -60,7 +60,7 @@ class New_proveedor extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-        return array("load_paises();", "load();","validate_margen();");
+        return array("load_paises();", "load();","validate_margen();","val();");
     }
 
     public function _rols() {

@@ -70,7 +70,7 @@ class Edit_proveedor extends CI_Model implements PInterface{
     }
 
     public function _jsLoader() {
-        return array("load_paises();");
+        return array("load_paises();","val();");
     }
 
     public function _rols() {

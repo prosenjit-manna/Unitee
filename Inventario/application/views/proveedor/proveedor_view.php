@@ -23,23 +23,13 @@
                     <a href="#">Ver Proveedor</a>
                 </li>
             </ul>
-            <div class="page-toolbar">
-
-            </div>
         </div>
-        <!-- FINAL BREADCUMBS -->
-
-        <!-- INICIO DASHBOARD STATS -->
-        <div class="page-content-wrapper">
-            <div class="row " data-always-visible="1" data-rail-visible1="1">
-                <!-- BEGIN SAMPLE TABLE PORTLET-->
-                <div class="portlet">
-                <div class="portlet light">
+        <div class="portlet">
+            <div class="portlet light">
                     <div class="portlet-title">
                         <div class="caption font-green-sharp">
                             <i class="icon-speech font-green-sharp"></i>
                             <span class="caption-subject bold uppercase"> Lista de Proveedores</span>
-                        </div>                       
                     </div>
                     <div class="portlet-body">
                             <table class="table table-striped table-hover table-bordered scrille" id="compras_table">
@@ -207,11 +197,7 @@
                     <!-- END SAMPLE TABLE PORTLET-->
                     <div>
                     </div>
-                </div>
-                </div>  
             </div>
-            <!-- FINAL ESTILOS DE LA BARRA -->
-
         </div>
     </div>
     <script>
@@ -267,7 +253,7 @@
                     [5, 15, 30, -1],
                     [5, 10, 30, "Todos"]
                 ],
-                "pageLength": 4,
+                "pageLength": 3,
                 "language": {
                     "aria": {
                         "sortAscending": ": activate to sort column ascending",

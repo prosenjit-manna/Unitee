@@ -291,25 +291,26 @@
     };
 
     function val() {
-        var empresa = $("#txt_empresa").val();
-        var contacto = $("#txt_contacto").val();
-        var telefono = $("#txt_telefono").val();
-        var celular = $("#txt_celular").val();
-        var correo = $("#txt_correo").val();
-        var dir = $("#txt_direccion1").val();
-        var ciudad = $("#select_city").val();
-        if (empresa == ""
-                || contacto == ""
-                || telefono == ""
-                || celular == ""
-                || dir == ""
-                || ciudad == -1
-                || !isValidEmail(correo)) {
-            document.getElementById("send").disabled = true;
-        }
-        else {
-            document.getElementById("send").disabled = false;
-        }
+       setInterval(function(){
+            var empresa = $("#txt_empresa").val();
+            var contacto = $("#txt_contacto").val();
+            var telefono = $("#txt_telefono").val();
+            var celular = $("#txt_celular").val();
+            var correo = $("#txt_correo").val();
+            var dir = $("#txt_direccion1").val();
+             var ciudad = $("#select_city").val();
+        if (ciudad == -1
+            || empresa ==""
+            || contacto ==""
+            || telefono ==""
+            || celular ==""
+            || dir ==""
+            || !isValidEmail(correo)) {
+            $("#send").attr("disabled" , true);
+            }else{
+            $("#send").attr("disabled" , false);
+        };
+       }, 500);
     };
 
     function load() {
