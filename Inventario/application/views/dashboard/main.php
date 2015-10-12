@@ -12,7 +12,7 @@
             );
 
             $err_message = array(
-                0 => "agregado con éxito", /* <a href='" . site_url("/0/proveedor=new_proveedor") .  "' class='btn default input-circle'>Agregar Nuevo Proveedor</a> */
+                0 => " agregado con éxito", /* <a href='" . site_url("/0/proveedor=new_proveedor") .  "' class='btn default input-circle'>Agregar Nuevo Proveedor</a> */
                 1 => " No se pudo guardar los cambios ,  favor intentar de nuevo."
             );
 
