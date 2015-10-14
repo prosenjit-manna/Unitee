@@ -1,3 +1,19 @@
+<style type="text/css" media="screen">
+    div.upload {
+    width: 37px;
+    height: 35px;
+    background: url(<?php echo $route;?>images/dashboard/plus.png);
+    overflow: hidden;
+}
+
+div.upload input {
+    display: block !important;
+    width: 57px !important;
+    height: 35px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}
+</style>
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
@@ -102,8 +118,8 @@
                                     <tr>
                                         <td align="center">Sincatex</td>
                                         <td align="center">
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-danger">Rojo</span></a>
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-info">Azul</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-danger">Rojo</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-info">Azul</span></a>
                                         </td>
                                         <td align="center">
                                            <p class="col-md-4">XS<input type="checkbox" name="" id="6" checked="checked"></p>
@@ -117,9 +133,9 @@
                                     <tr>
                                         <td align="center">Latex Bond</td>
                                         <td align="center">
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-danger">Rojo</span></a>
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-warning">Amarillo</span></a>
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-info">Azul</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-danger">Rojo</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-warning">Amarillo</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-info">Azul</span></a>
                                         </td>
                                         <td align="center">
                                            <p class="col-md-12">Todas<input type="checkbox" name="" id="6" checked="checked"></p>
@@ -131,10 +147,10 @@
                                     <tr>
                                         <td align="center">Sincatex</td>
                                         <td align="center">
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-danger">Rojo</span></a>
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-warning">Amarillo</span></a>
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-success">Verde</span></a>
-                                            <a data-toggle="modal" href="#moda_color_producto"><span class="badge badge-info">Azul</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-danger">Rojo</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-warning">Amarillo</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-success">Verde</span></a>
+                                            <a data-toggle="modal" href="#stack2"><span class="badge badge-info">Azul</span></a>
                                         </td>
                                         <td align="center">
                                            <p class="col-md-4">XS<input type="checkbox" name="" id="6" checked="checked"></p>
@@ -150,7 +166,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        </div>
+                        </div><br>
                         <!--/span-->
                         <div class="col-md-12">
                             <div class="form-actions col-md-offset-9">
@@ -190,49 +206,137 @@
                                         <h4 class="modal-title">Agregar productos</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="col-md-12 row scroller" style="height:190px" data-always-visible="1" data-rail-visible1="1">
+                                        <div class="col-md-12 row scroller" style="height:325px" data-always-visible="1" data-rail-visible1="1">
                                             <br>
-                                            <label class="control-label col-md-2">* Nombre</label>
-                                            <div class="form-group col-md-4">
-                                                <select onchange="select_color(this.value);" required="required" id="select_nombre" name="txt_pombre" class="form-control input-circle">                     
-                                                    <option value="">Seleccione el producto</option>
-                                                    
-                                                </select>
-                                            </div>
-                                            <label class="control-label col-md-2">* Color</label>
-                                            <div class="form-group col-md-4">
-                                                <select id="color_prod" required="required" id="select_color" name="txt_color" class="form-control input-circle">                     
-                                                    <option value="">Seleccione el color</option>
-                                                </select>
-                                            </div>
-                                            <label class="control-label col-md-2">Cantidad</label>
-                                            <div class="form-group col-md-4">
-                                                <div class="input-icon right">
-                                                    <i name="change_" id="change_pcantidad_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
-                                                    <i name="change_x" id="change_pcantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validarModal();
-                                                            validate_pcant();" id="cant_prod" required="" type="number" id="txt_pcantidad" name="txt_pcantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                            <div class="col-md-8">
+                                                <label class="control-label col-md-4">* Nombre</label>
+                                                <div class="form-group col-md-8">
+                                                    <select onchange="select_color(this.value);" required="required" id="select_nombre" name="txt_pombre" class="form-control input-circle">                     
+                                                        <option value="-1">Seleccione el producto</option>
+                                                        <option value="">Tela</option>
+                                                        <option value="">Botones</option>
+                                                    </select>
                                                 </div>
-                                            </div>
-                                            <label class="control-label col-md-2">Precio</label>
-                                            <div class="form-group col-md-4">
-                                                <div class="input-icon right">
-                                                    <i name="change_" id="change_precio_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
-                                                    <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validarModal();
-                                                            validate_pre();" id="price_prod" required="" type="number" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                                <label class="control-label col-md-4">* Color</label>
+                                                <div class="form-group col-md-8">
+                                                    <select id="color_prod" required="required" id="select_color" name="txt_color" class="form-control input-circle">                     
+                                                        <option value="-1">Seleccione el color</option>
+                                                        <option value="">Rojo</option>
+                                                        <option value="">Azul</option>
+                                                    </select>
                                                 </div>
-                                            </div> <br><br><br> <br><br><br>
-                                            <div class="modal-footer">
-                                                <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                                <button type="button" id="send" data-dismiss="modal" onclick="save_product();
-                                                        " class="btn green" disabled="disabled">Guardar</button>
+
+                                                <a class="btn btn-success"   data-toggle="modal" href="#"><i class="icon-plus"> Añadir</i></a><br><br>
+                                                <table class="table table-striped table-hover table-bordered" >
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                            <p align="center">Nombre</p>
+                                                            </th>
+                                                            <th >
+                                                            <p align="center">Subir imagen</p>
+                                                            </th>
+                                                            <th >
+                                                            <p align="center">Operaciones</p>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="table_prod">
+                                                        <tr>
+                                                            <td align="center">Sincatex</td>
+                                                            <td align="center">
+                                                               <a class="btn default" data-toggle="modal" href="#stack2">
+                                                                      Subir..
+                                                                </a>
+                                                            </td>
+                                                            <td align="center">
+                                                                 <a title="eliminar" href="#"><i class="icon-close" style="font-size: 20px; color:red;"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="control-label col-md-4">* Tallas</label><br>
+                                                    <p class="col-md-4">12<input type="checkbox" name="" id="6" checked="checked"></p>
+                                                    <p class="col-md-4">14<input type="checkbox" name="" id="6" checked="checked"></p>
+                                                    <p class="col-md-4">XS<input type="checkbox" name="" id="6" checked="checked"></p>
+                                                    <p class="col-md-4">S<input type="checkbox" name="" id="6" checked="checked"></p>
+                                                    <p class="col-md-4">M<input type="checkbox" name="" id="6" checked="checked"></p><br>
+                                                    <p class="col-md-4">L<input type="checkbox" name="" id="6" checked="checked"></p>
+                                                    <p class="col-md-4">G<input type="checkbox" name="" id="6" checked="checked"></p>
+                                                    <p class="col-md-4">XL<input type="checkbox" name="" id="6" checked="checked"></p>
                                             </div>
                                         </div>
+                                    </div>
+                                     <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
+                                        <button type="button" id="send" data-dismiss="modal" class="btn green" disabled="disabled">Guardar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                            <div id="stack2" class="modal fade" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                            <h4 class="modal-title">Stack Two</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4>Some Input</h4>
+                                                    <div class="form-group col-md-6">
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+                                                            </div>
+                                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+                                                            </div>
+                                                            <div>
+                                                                <span class="btn default btn-file">
+                                                                    <span class="fileinput-new">
+                                                                        Seleccionar Imagen </span>
+                                                                    <span class="fileinput-exists">
+                                                                        Cambiar </span>
+                                                                    <input type="file" name="avatar_img">
+                                                                </span>
+                                                                <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
+                                                                    Eliminar </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                     <div class="form-group col-md-6">
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+                                                            </div>
+                                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+                                                            </div>
+                                                            <div>
+                                                                <span class="btn default btn-file">
+                                                                    <span class="fileinput-new">
+                                                                        Seleccionar Imagen </span>
+                                                                    <span class="fileinput-exists">
+                                                                        Cambiar </span>
+                                                                    <input type="file" name="avatar_img">
+                                                                </span>
+                                                                <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
+                                                                    Eliminar </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" data-dismiss="modal" class="btn">Cerrar</button>
+                                            <button type="button" class="btn green" disabled="disabled">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     <!--Modals-->
                     </div>
                 </div>
@@ -243,14 +347,13 @@
 </div>
 <script>
     var checkbox = function (){
-        $("#marcarTodo").change(function () {
-            if ($(this).is(':checked')) {
-                //$("input[type=checkbox]").prop('checked', true); //todos los check
-                $("#diasHabilitados input[type=checkbox]").prop('checked', true); //solo los del objeto #diasHabilitados
-            } else {
-                //$("input[type=checkbox]").prop('checked', false);//todos los check
-                $("#diasHabilitados input[type=checkbox]").prop('checked', false);//solo los del objeto #diasHabilitados
-            }
-        });
+        $("#file_add").on("click" , function(){
+               $file_count++;
+               var data = '<span id="f' 
+                       + $file_count 
+                       + '" class="btn btn-default "><input id="files' 
+                       + $file_count + '" name="file[]" type="file"></span>';
+               $("#file_data").prepend(data);
+         });
     }
 </script>

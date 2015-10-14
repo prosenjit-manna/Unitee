@@ -48,7 +48,10 @@ class New_articulo extends CI_Model implements PInterface {
     public function _css() {
         return array(
             $this->route . "assert/plugins/select2/select2.css",
-            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"
+            $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css",
+            $this->route . "assert/perfil/css/profile.css",
+            $this->route . "assert/perfil/css/profile-old.css",
+            $this->route . "assert/perfil/css/bootstrap-fileinput.css"
         );
 
     }
@@ -68,7 +71,9 @@ class New_articulo extends CI_Model implements PInterface {
             $this->route . "assert/plugins/select2/select2.min.js",
             $this->route . "assert/plugins/datatables/media/js/jquery.dataTables.min.js",
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
-            $this->route . "assert/plugins/table-editable.js"
+            $this->route . "assert/plugins/table-editable.js",
+            $this->route . "assert/perfil/js/profile.js",
+           $this->route . "assert/perfil/js/bootstrap-fileinput.js"
         );
     }
 
