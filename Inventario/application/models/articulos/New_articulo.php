@@ -78,7 +78,7 @@ class New_articulo extends CI_Model implements PInterface {
     }
 
     public function _jsLoader() {
-         return array("checkbox();","TableEditable.init();");
+         return array("marcarTodas();","TableEditable.init();");
     }
 
     public function _rols() {

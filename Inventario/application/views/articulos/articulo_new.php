@@ -72,24 +72,24 @@
                                 <div class="form-group col-md-8">
                                     <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del producto">
                                 </div>
-                                <br><br><br><label class="control-label col-md-4">Descripci&oacute;n</label>
+                                <br><br><br><br><label class="control-label col-md-4">Descripci&oacute;n</label>
                                 <div class="form-group col-md-8">
                                     <textarea name="txt_desc" class="form-control input-circle" rows="3" placeholder="Descripción del producto"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6"><br>
                                 <label clas="control-label col-md-3" for="">Tallas</label>
-                                <label clas="control-label col-md-4" for=""><input type="checkbox" name="marcarTodo" id="marcarTodo">Marcar todas</label><br>
+                                <label clas="control-label col-md-4" for=""><input type="checkbox" onclick="marcarTodas();" name="" id="">Marcar todas</label><br>
                                 <div class="col-md-12" id="diasHabilitados">
-                                    <div class="col-md-2"><label clas="control-label">XS<input type="checkbox" name="" id="6"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">S<input type="checkbox" name="" id="1"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">M<input type="checkbox" name="" id="2"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">L<input type="checkbox" name="" id="3"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">G<input type="checkbox" name="" id="4"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">XL<input type="checkbox" name="" id="5"></label></div>
-                                </div><br>
-                                <label clas="control-label col-md-3" for="">Ver en tienda</label><br>
-                                <div class="col-md-offset-3">
+                                    <div class="col-md-2"><label clas="control-label">XS<input type="checkbox" name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">S<input type="checkbox" name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">M<input type="checkbox" name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">L<input type="checkbox" name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">G<input type="checkbox" name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">XL<input type="checkbox" name="checkbox" id="checkbox"></label></div>
+                                </div><br><br>
+                                <label class="control-label col-md-4">Ver en tienda</label>
+                                <div class="form-group col-md-8">
                                     <input type="checkbox" class="make-switch" data-on-text="SI" data-off-text="No" data-on-color="primary" data-off-color="danger">
                                 </div>
                             </div>
@@ -346,14 +346,7 @@
 </div>
 </div>
 <script>
-    var checkbox = function () {
-        $("#file_add").on("click", function () {
-            $file_count++;
-            var data = '<span id="f'
-                    + $file_count
-                    + '" class="btn btn-default "><input id="files'
-                    + $file_count + '" name="file[]" type="file"></span>';
-            $("#file_data").prepend(data);
-        });
+    var marcarTodas = function () {
+        $(".checkbox").prop("checked", true);
     }
 </script>
