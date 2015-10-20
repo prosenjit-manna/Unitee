@@ -52,7 +52,7 @@
             </ul>
         </div>
         <!-- FINAL BREADCUMBS -->
-        <div class="page-content-wrapper scroller" style="height:430px" data-rail-visible="1">
+        <div class="page-content-wrapper scroller" style="height:430px" data-rail-visible="1" data-rail-visible="1" data-rail-color="white" data-handle-color="black">
             <!-- INICIO Portlet PORTLET-->
             <div class="portlet">
                 <div class="portlet light">
@@ -81,12 +81,12 @@
                                 <label clas="control-label col-md-3" for="">Tallas</label>
                                 <label clas="control-label col-md-4" for=""><input type="checkbox" onchange="marcarTodas();" name="checkaa" id="checkaa">Marcar todas</label><br>
                                 <div class="col-md-12" id="diasHabilitados">
-                                    <div class="col-md-2"><label clas="control-label">XS<input type="checkbox" checked="" name="checkboxx" id="checkboxx"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">S<input type="checkbox" checked="" name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">M<input type="checkbox" checked="" name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">L<input type="checkbox" checked="" name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">G<input type="checkbox" checked="" name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">XL<input type="checkbox" checked="" name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">XS<input type="checkbox"  ></label></div>
+                                    <div class="col-md-2"><label clas="control-label">S<input type="checkbox"  ></label></div>
+                                    <div class="col-md-2"><label clas="control-label">M<input type="checkbox"  ></label></div>
+                                    <div class="col-md-2"><label clas="control-label">L<input type="checkbox"  ></label></div>
+                                    <div class="col-md-2"><label clas="control-label">G<input type="checkbox"  ></label></div>
+                                    <div class="col-md-2"><label clas="control-label">XL<input type="checkbox" ></label></div>
                                 </div><br><br>
                                 <label class="control-label col-md-4">Ver en tienda</label>
                                 <div class="form-group col-md-8">
@@ -347,7 +347,13 @@
 </div>
 <script>
     var marcarTodas = function () {
-            var marcall = $("#checkaa").val();
-            var mar = $("#checkboxx").val();
-            mar.prop("checked",false);
+        console.log($("[type=checkbox]"));
+        var check = $("[type=checkbox]");
+
+        check.each(function(){
+            $(this).prop("checked" , true );
+             console.log($(this).prop("checked" ));
+        });
+
+    };
 </script>
