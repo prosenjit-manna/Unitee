@@ -1,19 +1,3 @@
-<style type="text/css" media="screen">
-    div.upload {
-        width: 37px;
-        height: 35px;
-        background: url(<?php echo $route; ?>images/dashboard/plus.png);
-        overflow: hidden;
-    }
-
-    div.upload input {
-        display: block !important;
-        width: 57px !important;
-        height: 35px !important;
-        opacity: 0 !important;
-        overflow: hidden !important;
-    }
-</style>
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
@@ -72,10 +56,12 @@
                                 <div class="form-group col-md-8">
                                     <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del producto">
                                 </div>
-                                <br><br><br><br><label class="control-label col-md-4">Descripci&oacute;n</label>
-                                <div class="form-group col-md-8">
-                                    <textarea name="txt_desc" class="form-control input-circle" rows="3" placeholder="Descripción del producto"></textarea>
-                                </div>
+                               <div style="padding-top: 72px;">
+                                    <label class="control-label col-md-4">Descripci&oacute;n</label>
+                                   <div class="form-group col-md-8">
+                                       <textarea name="txt_desc" class="form-control input-circle" rows="3" placeholder="Descripción del producto"></textarea>
+                                   </div>
+                               </div>
                             </div>
                             <div class="col-md-6"><br>
                                 <label clas="control-label col-md-3" for="">Tallas</label>
@@ -87,11 +73,13 @@
                                     <div class="col-md-2"><label clas="control-label">L<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
                                     <div class="col-md-2"><label clas="control-label">G<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
                                     <div class="col-md-2"><label clas="control-label">XL<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
-                                </div><br><br>
-                                <label class="control-label col-md-4">Ver en tienda</label>
-                                <div class="form-group col-md-8">
-                                    <input type="checkbox" class="make-switch" data-on-text="SI" data-off-text="No" data-on-color="primary" data-off-color="danger">
                                 </div>
+                               <div class="col-md-12" style="padding-top: 22px;">
+                                    <label class="control-label col-md-4">Ver en tienda</label>
+                                   <div class="form-group col-md-8">
+                                       <input type="checkbox" class="make-switch" data-on-text="SI" data-off-text="No" data-on-color="primary" data-off-color="danger">
+                                   </div>
+                               </div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -234,7 +222,7 @@
                                                 <p align="center">Nombre</p>
                                                 </th>
                                                 <th >
-                                                <p align="center">Subir imagen</p>
+                                                <p align="center">Imagenes</p>
                                                 </th>
                                                 <th >
                                                 <p align="center">Operaciones</p>
@@ -248,6 +236,16 @@
                                                             <a class="btn default" data-toggle="modal" href="#stack2">
                                                                 Subir..
                                                             </a>
+                                                        </td>
+                                                        <td align="center">
+                                                            <a title="eliminar" href="#"><i class="icon-close" style="font-size: 20px; color:red;"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center">Sincatex</td>
+                                                        <td align="center">
+                                                            <a href="#"><img title="fb.jpg" src="<?php echo $route;?>images/unitee/documents/jpg.png" style="height:30px;" alt=""></a>
+                                                            <a href="#"><img title="fb.jpg" src="<?php echo $route;?>images/unitee/documents/jpg.png" style="height:30px;" alt=""></a>
                                                         </td>
                                                         <td align="center">
                                                             <a title="eliminar" href="#"><i class="icon-close" style="font-size: 20px; color:red;"></i></a>
