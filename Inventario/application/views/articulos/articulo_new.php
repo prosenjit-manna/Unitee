@@ -79,14 +79,14 @@
                             </div>
                             <div class="col-md-6"><br>
                                 <label clas="control-label col-md-3" for="">Tallas</label>
-                                <label clas="control-label col-md-4" for=""><input type="checkbox" onchange="marcarTodas();" name="checkaa" id="checkaa">Marcar todas</label><br>
-                                <div class="col-md-12" id="diasHabilitados">
-                                    <div class="col-md-2"><label clas="control-label">XS<input type="checkbox"  ></label></div>
-                                    <div class="col-md-2"><label clas="control-label">S<input type="checkbox"  ></label></div>
-                                    <div class="col-md-2"><label clas="control-label">M<input type="checkbox"  ></label></div>
-                                    <div class="col-md-2"><label clas="control-label">L<input type="checkbox"  ></label></div>
-                                    <div class="col-md-2"><label clas="control-label">G<input type="checkbox"  ></label></div>
-                                    <div class="col-md-2"><label clas="control-label">XL<input type="checkbox" ></label></div>
+                                <label clas="control-label col-md-4" for=""><input type="checkbox" onchange="_check();"  id="_talla_all">Marcar todas</label><br>
+                                <div id="talla_check" class="col-md-12">
+                                    <div class="col-md-2"><label clas="control-label">XS<input type="checkbox" name="checkboxx" id="checkboxx"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">S<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">M<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">L<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">G<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
+                                    <div class="col-md-2"><label clas="control-label">XL<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
                                 </div><br><br>
                                 <label class="control-label col-md-4">Ver en tienda</label>
                                 <div class="form-group col-md-8">
@@ -346,14 +346,32 @@
 </div>
 </div>
 <script>
-    var marcarTodas = function () {
-        console.log($("[type=checkbox]"));
-        var check = $("[type=checkbox]");
-
-        check.each(function(){
-            $(this).prop("checked" , true );
-             console.log($(this).prop("checked" ));
-        });
-
-    };
+  
+  
+  var _check = function(){
+     
+     var prop = $("#_talla_all").prop("checked");
+     if(prop){
+         $("#talla_check")
+                .find("checkbox")
+                .prop("checked" , true); 
+         
+        $("#talla_check")
+                .find("span")
+                .addClass("checked");
+    }
+    else{
+        
+        $("#talla_check")
+                .find("checkbox")
+                .prop("checked" , false); 
+        
+        
+        $("#talla_check")
+                .find("span")
+                .removeClass()("checked");
+    }
+     
+  };
+  
 </script>
