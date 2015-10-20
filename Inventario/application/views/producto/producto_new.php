@@ -72,32 +72,37 @@
                                                 <select required="" id="select_colors" name="txt_color" class="form-control input-circle">
                                                 </select>
                                             </div>
-                                            <label class="control-label col-md-4">* Margen</label>
-                                            <div class="form-group col-md-8">
-                                                <div class="input-icon right">
-                                                    <i name="change_" id="change_margen_ok" style="display:none;" class="icon-check" data-original-title=""></i>
-                                                    <i name="change_x" id="change_margen" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate();" required="" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
-                                                    <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
-                                                </div>
+                                            <div style="padding-top: 125px;">
+                                            	<label class="control-label col-md-4">* Margen</label>
+                                            	<div class="form-group col-md-8">
+                                            	    <div class="input-icon right">
+                                            	        <i name="change_" id="change_margen_ok" style="display:none;" class="icon-check" data-original-title=""></i>
+                                            	        <i name="change_x" id="change_margen" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                            	        <input onkeyup="validate();" required="" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
+                                            	        <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
+                                            	    </div>
+                                            	</div>
                                             </div>
                                             <label class="control-label col-md-4">* Unidad</label>
                                             <div class="form-group col-md-8">
                                                 <select required="true" id="select_unidad" name="txt_unidad" class="form-control input-circle">
                                                 </select>
-                                            </div>                                                                   
+                                            </div>
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
                                             <br><br><br><br>
-                                            <label class="control-label col-md-3">* Descripción</label>
-                                            <div class="form-group col-md-9">
-                                                <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>
+                                            <label class="control-label col-md-5">Articulo Prefabricado</label>
+                                            <div class="form-group col-md-7">
+                                                <input type="checkbox">
                                             </div>
-                                            <label class="control-label col-md-3">* SKU</label>
-                                            <div class="form-group col-md-9">
-                                                <input readonly="" type="text" id="SKU" name="txt_sku" class="form-control input-circle" placeholder="SKU del Producto">
+                                            <div style="padding-top: 55px;">
+                                            	<label class="control-label col-md-3">* Descripción</label>
+                                            	<div class="form-group col-md-9">
+                                            	    <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>
+                                            	</div>
                                             </div>
+                                            
                                             <label class="control-label col-md-3">* Precio</label>
                                             <div class="form-group col-md-9">
                                                 <div class="input-icon right">
@@ -106,6 +111,10 @@
                                                     <input onkeyup="validate();" required="" type="text" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
                                                 </div>
 
+                                            </div>
+                                            <label class="control-label col-md-3">* SKU</label>
+                                            <div class="form-group col-md-9">
+                                                <input readonly="" type="text" id="SKU" name="txt_sku" class="form-control input-circle" placeholder="SKU del Producto">
                                             </div>
                                             <label class="control-label col-md-3"> Cantidad</label>
                                             <div class="form-group col-md-9">

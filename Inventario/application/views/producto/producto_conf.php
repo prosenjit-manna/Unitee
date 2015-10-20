@@ -40,9 +40,6 @@
                             <div class="portlet-body form">
                                 <!-- INICIO FORM-->
                                 <div class="form-body">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                        </div>
                                         <h5 lass="form-section">Los campos con * son Requeridos
                                         </h5>
                                         <div class="col-md-6">
@@ -119,6 +116,15 @@ foreach ($unidad as $u) {
                                             </div> 
                                             <!--/span-->
                                         </div>
+                                        <div class="col-md-6">
+                                             <h3 lass="form-section">Agregar Talas
+                                                <button  id="send_unit" name="send_unit" onclick="save_unit();"  type="text" class="btn blue col-md-offset-3"><i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Talla</button>
+                                            </h3><br>
+                                            <label class="control-label col-md-3">* Talla</label>
+                                            <div class="form-group col-md-9">
+                                                <input type="text" id="txt_unidad" name="txt_unidad" class="form-control input-circle" placeholder="Unidad de productos">
+                                            </div>
+                                        </div>
                                         <div id="responsive_delete_color" class="modal fade" tabindex="-1" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -165,7 +171,6 @@ foreach ($unidad as $u) {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <!-- FINAL FORM-->
                                 </div>
 
@@ -306,7 +311,7 @@ foreach ($unidad as $u) {
                 [5, 15, 30, -1],
                 [5, 10, 30, "Todos"]
             ],
-            "pageLength": 3,
+            "pageLength": 4,
             "language": {
                 "aria": {
                     "sortAscending": ": activate to sort column ascending",
