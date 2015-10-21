@@ -145,7 +145,7 @@ foreach ($unidad as $u) {
                                                                 <p align="center">XS</p>
                                                             </td>
                                                             <td align="center">
-                                                                 <a class="" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                                 <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
                                                             </td>
                                                         </tr>
                                                          <tr>
@@ -156,7 +156,7 @@ foreach ($unidad as $u) {
                                                                 <p align="center">XS</p>
                                                             </td>
                                                             <td align="center">
-                                                                 <a class="" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                                 <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
                                                             </td>
                                                         </tr>
                                                          <tr>
@@ -167,7 +167,7 @@ foreach ($unidad as $u) {
                                                                 <p align="center">XS</p>
                                                             </td>
                                                             <td align="center">
-                                                                 <a class="" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                                 <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
                                                             </td>
                                                         </tr>
                                                          <tr>
@@ -178,7 +178,7 @@ foreach ($unidad as $u) {
                                                                 <p align="center">XS</p>
                                                             </td>
                                                             <td align="center">
-                                                                 <a class="" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                                 <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -196,7 +196,7 @@ foreach ($unidad as $u) {
                                                         <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <h4>¿Deseas eliminar de tu lista de colores?</h4>
+                                                                    <h4>¿Deseas eliminar este color de tu lista de colores?</h4>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -219,7 +219,7 @@ foreach ($unidad as $u) {
                                                         <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <h4>¿Deseas eliminar $name_unidad de tu lista de unidades?</h4>
+                                                                    <h4>¿Deseas eliminar esta unidad de tu lista de unidades?</h4>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -227,6 +227,29 @@ foreach ($unidad as $u) {
                                                     <div class="modal-footer">
                                                         <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
                                                         <button type="button" data-dismiss="modal" onclick="delete_unit();" class="btn green">Eliminar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="responsive_delete_talla" class="modal fade" tabindex="-1" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                        <h4 class="modal-title">Eliminar Talla</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="scroller" style="height:30px" data-always-visible="1" data-rail-visible1="1">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h4>¿Deseas eliminar esta talla de tu lista de tallas?</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
+                                                        <button type="button" data-dismiss="modal" onclick="delete_color();" class="btn green">Eliminar</button>
                                                     </div>
                                                 </div>
                                             </div>
