@@ -125,22 +125,24 @@
                                         <table class="table table-striped table-hover table-bordered" id="products_talla">
                                             <thead>
                                                 <tr>
-                                                    <th>
-                                            <p align="center">Nombre</p>
-                                            </th>
-                                            <th >
-                                            <p align="center">Talla</p>
-                                            </th>
-                                            <th >
-                                            <p align="center">Operaciones</p>
-                                            </th>
-                                            </tr>
+                                                    <th >
+                                                    <p align="center">Talla</p>
+                                                    </th>
+                                                    <th >
+                                                    <p align="center">Operaciones</p>
+                                                    </th>
+                                                </tr>
                                             </thead>
                                             <tbody id="body_unit">
                                                 <tr>
                                                     <td>
-                                                        <p align="center">Camiseta blanca</p>
+                                                        <p align="center">XS</p>
                                                     </td>
+                                                    <td align="center">
+                                                        <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
                                                     <td>
                                                         <p align="center">XS</p>
                                                     </td>
@@ -150,9 +152,6 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <p align="center">Camiseta blanca</p>
-                                                    </td>
-                                                    <td>
                                                         <p align="center">XS</p>
                                                     </td>
                                                     <td align="center">
@@ -160,20 +159,6 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>
-                                                        <p align="center">Camiseta blanca</p>
-                                                    </td>
-                                                    <td>
-                                                        <p align="center">XS</p>
-                                                    </td>
-                                                    <td align="center">
-                                                        <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <p align="center">Camiseta blanca</p>
-                                                    </td>
                                                     <td>
                                                         <p align="center">XS</p>
                                                     </td>
