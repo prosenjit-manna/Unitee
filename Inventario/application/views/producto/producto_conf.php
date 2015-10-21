@@ -19,15 +19,12 @@
                     <a href="<?php echo site_url("/0/productos=conf_producto"); ?>">Configuración de Productos</a>
                 </li>
             </ul>
-            <div class="page-toolbar">               
-            </div>
         </div>
         <!-- FINAL BREADCUMBS -->
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <!-- INICIO PAGE CONTENT-->
-            <div class="row scroller" style="height:450px" data-rail-visible="1" >
-                <div class="portlet">
+                <div class="portlet scroller" style="height:450px" data-rail-visible="1">
                     <!-- INICIO Portlet PORTLET-->
                     <div class="portlet light">
                         <div class="portlet-title">
@@ -80,10 +77,10 @@
                                                         ?>
                                                     </tbody>
                                                 </table>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <!--/span-->
-                                        <div class="col-md-6">
+                                        <div class="col-md-6" style="height: 447px;">
                                             <h3 lass="form-section">Agregar Unidades
                                                 <button  id="send_unit" name="send_unit" onclick="save_unit();"  type="text" class="btn blue col-md-offset-3"><i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Unidad</button>
                                             </h3><br>
@@ -118,11 +115,74 @@ foreach ($unidad as $u) {
                                         </div>
                                         <div class="col-md-6">
                                              <h3 lass="form-section">Agregar Talas
-                                                <button  id="send_unit" name="send_unit" onclick="save_unit();"  type="text" class="btn blue col-md-offset-3"><i class="icon-save" style="font-size:16px;"></i>&nbsp;&nbsp;Guardar Talla</button>
+                                                <button  id="send_unit" name="send_unit" onclick="save_unit();"  type="text" class="btn blue col-md-offset-5"><i class="icon-save" style="font-size:16px;"></i> Guardar Talla</button>
                                             </h3><br>
                                             <label class="control-label col-md-3">* Talla</label>
                                             <div class="form-group col-md-9">
-                                                <input type="text" id="txt_unidad" name="txt_unidad" class="form-control input-circle" placeholder="Unidad de productos">
+                                                <input type="text" id="txt_unidad" name="txt_unidad" class="form-control input-circle" placeholder="Talla del producto">
+                                            </div>
+                                             <div class="form-group col-md-12">
+                                                <table class="table table-striped table-hover table-bordered" id="products_talla">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <p align="center">Nombre</p>
+                                                            </th>
+                                                            <th >
+                                                                <p align="center">Talla</p>
+                                                            </th>
+                                                            <th >
+                                                                <p align="center">Operaciones</p>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="body_unit">
+                                                        <tr>
+                                                            <td>
+                                                                <p align="center">Camiseta blanca</p>
+                                                            </td>
+                                                            <td>
+                                                                <p align="center">XS</p>
+                                                            </td>
+                                                            <td align="center">
+                                                                 <a class="" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <p align="center">Camiseta blanca</p>
+                                                            </td>
+                                                            <td>
+                                                                <p align="center">XS</p>
+                                                            </td>
+                                                            <td align="center">
+                                                                 <a class="" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <p align="center">Camiseta blanca</p>
+                                                            </td>
+                                                            <td>
+                                                                <p align="center">XS</p>
+                                                            </td>
+                                                            <td align="center">
+                                                                 <a class="" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td>
+                                                                <p align="center">Camiseta blanca</p>
+                                                            </td>
+                                                            <td>
+                                                                <p align="center">XS</p>
+                                                            </td>
+                                                            <td align="center">
+                                                                 <a class="" data-toggle="modal" href="#responsive_delete_unidad"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                         <div id="responsive_delete_color" class="modal fade" tabindex="-1" aria-hidden="true">
@@ -180,7 +240,6 @@ foreach ($unidad as $u) {
                     </div>
                 </div>
                 <!-- FINAL PAGE CONTENTENIDO-->
-            </div>
             <!-- FINAL ESTILOS DE LA BARRA -->
         </div>
         <!-- FINAL CONTENIDO -->
@@ -280,7 +339,7 @@ foreach ($unidad as $u) {
                     "sortDescending": ": activate to sort column descending"
                 },
                 "emptyTable": "No data available in table",
-                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ ",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ ",
                 "infoEmpty": "No se ha encontrado productos ...",
                 "infoFiltered": "(filtered1 from _MAX_ total records)",
                 "lengthMenu": "Mostar _MENU_ Productos",
@@ -318,7 +377,7 @@ foreach ($unidad as $u) {
                     "sortDescending": ": activate to sort column descending"
                 },
                 "emptyTable": "No data available in table",
-                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ ",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ ",
                 "infoEmpty": "No se ha encontrado productos ...",
                 "infoFiltered": "(filtered1 from _MAX_ total records)",
                 "lengthMenu": "Mostar _MENU_ Productos",
@@ -340,6 +399,43 @@ foreach ($unidad as $u) {
 
         var tableWrapper2 = $('#products_unidad_wrapper');
         tableWrapper2.find('.dataTables_length select').select2();
+
+        var table3 = $('#products_talla');
+
+        table3.dataTable({
+            "lengthMenu": [
+                [5, 15, 30, -1],
+                [5, 10, 30, "Todos"]
+            ],
+            "pageLength": 3,
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                },
+                "emptyTable": "No data available in table",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ ",
+                "infoEmpty": "No se ha encontrado productos ...",
+                "infoFiltered": "(filtered1 from _MAX_ total records)",
+                "lengthMenu": "Mostar _MENU_ Productos",
+                "search": "Buscar:",
+                "zeroRecords": "Ningun color encontrado ..."
+
+            },
+            "columnDefs": [{// set default column settings
+                    'orderable': true,
+                    'targets': [0]
+                }, {
+                    "searchable": true,
+                    "targets": [0]
+                }],
+            "order": [
+                [0, "asc"]
+            ]
+        });
+
+        var tableWrapper3 = $('#products_talla_wrapper');
+        tableWrapper3.find('.dataTables_length select').select2();
 
 
     };
