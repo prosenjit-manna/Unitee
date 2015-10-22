@@ -63,6 +63,10 @@
  *              - USO DE EXPRESIONES LAMBDA PARA MEJOR COMPATIBILIDAD
  *              - COMPATIBILIDAD PARA SERVIDORES LAMP y XAMPP
  * 
+ * VERSION 1.5.9: 
+ * 
+ *              -UN SOLO CONTROLADOR PARA PETICIONES DE TIPO HTTP O REQUEST
+ * 
  */
 
 
@@ -114,6 +118,7 @@ class Dashboard extends CI_Controller {
         $this->load->library("base_url");
         $this->load->library("system");
         $this->load->library("tools");
+        
         $this->route = $this->base_url->GetBaseUrl();
         
         
@@ -543,9 +548,6 @@ class Dashboard extends CI_Controller {
         $this->load->library("plugin");
         $models     = $this->plugin->model_;
         
-        
-        
-       
         $executed   = [];
         
         foreach ($models as $m){
@@ -555,17 +557,15 @@ class Dashboard extends CI_Controller {
             
             /**VERIFICAMOS SI EXISTE UNA INTERFAZ**/
             $interfaz   = class_implements($this->$m['name']);
-  
-            if(sizeof($interfaz) >= 1){
-                  /**EJECUTAMOS LA FUNCION DE LA INTERFAZ PARA LAS CARGAS DEL DASHBOARD*/
-                try{
-                    $executed[$m['name']] =  $this->$m['name']->_JSdashboard() != NULL ? TRUE : FALSE;
-                }
-                catch (Exception $ex){
-                    trigger_error($ex->getMessage());
-                }
-                 
+            
+            if(sizeof($interfaz) == 0){
+                continue;
             }
+            
+            /**EJECUTAMOS LA FUNCION DE LA INTERFAZ PARA LAS CARGAS DEL DASHBOARD*/
+
+            $executed[$m['name']] =  $this->$m['name']->_JSdashboard() != NULL ? TRUE : FALSE;
+            
         }
         
         echo "<pre>" , print_r($executed) , "</pre>";
@@ -796,6 +796,8 @@ class Dashboard extends CI_Controller {
     }
     
     
+    
+    
     public function plugins(){
         $this->load->library("plugin");
         echo "<pre>" , print_r($this->plugin->_show()) , "</pre>";
@@ -814,7 +816,85 @@ class Dashboard extends CI_Controller {
      * **/
     public function test(){
        
+        //$url = 'http://www.elfaro.net/es/info/rss/';
+        //$url = 'http://www.lapagina.com.sv/rss/rss.php?sec=266';
+        $url = 'http://www.elsalvador.com/es/rss/articulos/rss-TE_SALVINTER.xml';
+        
+       // $url = "http://lieison.com";
+     
+        
+      //$this->load->library("rss");
+      // $data = @$this->rss->_GetFormat($url);
+        
+      // echo "<pre>" , print_r($data) , "</pre>";
+        
+          $file             = "./files/rss/icons/97620451/MBH7dYPD.png";
+          //$path             = explode("." , $file);
+          //$total_path       =  "." . $path[count($path) -2] . "_1" . ".html";
+          //echo $total_path;
+          echo pathinfo($file , PATHINFO_FILENAME);
+    }
+    
+     /**
+     * URL example : Dashboard/ActionRequest/Action/Model/Dir?request=somethimes&algo=algo
+     * where Dashboard is a controller
+     *       ActionRequest is a function on controller
+     *       Action is a action or function into the model to call 
+     *       Model  is name of model
+     *       Dir is a directory if model required   
+     *      ?request=somethimes&algo=algo is a get method
+     */
+     public function ActionRequest($action , $model , $dir = NULL){
+ 
+            set_time_limit(1000);
          
+            if(!is_null($dir)){
+               $this->load->model("$dir/$model" );
+            }
+            else
+            {
+               $this->load->model($model);
+            }
+            
+ 
+           $this->output
+                   ->set_output($this
+                           ->$model
+                           ->$action($_REQUEST));
+    }
+    
+    public function ActionForm(){
+        
+         $action         = isset($_REQUEST['action']) ? $_REQUEST['action'] : NULL;
+         $model          = isset($_REQUEST['model']) ? $_REQUEST['model'] : NULL;
+         $dir            = isset($_REQUEST['dir']) ? $_REQUEST['dir'] : NULL;
+         
+         if($action == NULL){ return null; }
+         
+        
+         if(!is_null($dir)){
+               $this->load->model("$dir/$model" );
+            }
+            else
+            {
+               $this->load->model($model);
+            }
+            
+ 
+           return $this->$model->$action($_REQUEST);
+    }
+    
+    public function ErrorRequest(){
+        $error      = isset($_REQUEST['error']) ? $_REQUEST['error'] : NULL;
+        $system     = isset($_REQUEST['system']) ? $_REQUEST['system'] : NULL;
+        
+        if(is_null($error)) return;
+        
+        $this->load->library("Errorhandle");
+        $this->errorhandle->PushError($error , $system);
+        $this->errorhandle->SendErrorbyEmail($error , $system);
+        
+        return;
     }
     
     
@@ -845,7 +925,11 @@ class Dashboard extends CI_Controller {
         if(is_null($key)) echo false;
         $this->load->library("metadata");
         $result = $this->metadata->GetMeta($key);
-        echo json_encode($result);
+        
+        $this->output
+                ->set_output(
+                        json_encode($result)
+                 );
     }
     
     
@@ -884,6 +968,8 @@ class Dashboard extends CI_Controller {
        
     }
     
+    
+   
     public function verify_notification(){
         
         $id         = isset($_REQUEST['id'] ) ? $_REQUEST['id']:NULL;
@@ -899,6 +985,8 @@ class Dashboard extends CI_Controller {
         return;
         
     }
+    
+    
     
     public function read_notification(){
         $id         = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;

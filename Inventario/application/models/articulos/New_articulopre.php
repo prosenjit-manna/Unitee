@@ -57,8 +57,12 @@ class New_articulopre extends CI_Model implements PInterface {
     }
 
     public function _init() {
+        
+        
+        
         $this->load->view("articulos/articulo_newpre" , array(
-              "clients" => $clients
+              "clients"     => $clients,
+              "articles"    => $this->GetArticle()
         ));
     }
 
@@ -121,6 +125,12 @@ class New_articulopre extends CI_Model implements PInterface {
 
     public function _JSdashboard() {
         
+    }
+    
+    public function GetArticle(){
+        
+         $this->load->model("productos/view_producto" , "prod");
+         return $this->prod->get_products(1);
     }
     
 }

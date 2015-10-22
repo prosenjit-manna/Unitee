@@ -237,45 +237,7 @@
     }
   };
 
-   var table_loader = function () {
-
-        var table = $('#products_table');
-
-        var oTable = table.dataTable({
-            "lengthMenu": [
-                [5, 15, 30, -1],
-                [5, 10, 30, "Todos"]
-            ],
-            "pageLength": 5,
-            "language": {
-                "aria": {
-                    "sortAscending": ": activate to sort column ascending",
-                    "sortDescending": ": activate to sort column descending"
-                },
-                "emptyTable": "No data available in table",
-                "info": "Mostrando _START_ a _END_ en total de _TOTAL_ tallas",
-                "infoEmpty": "No se ha encontrado tallas ...",
-                "infoFiltered": "(filtered1 from _MAX_ total records)",
-                "lengthMenu": "Mostar _MENU_ Productos",
-                "search": "Buscar:",
-                "zeroRecords": "Ningun producto encontrado ..."
-
-            },
-            "columnDefs": [{// set default column settings
-                    'orderable': true,
-                    'targets': [0]
-                }, {
-                    "searchable": true,
-                    "targets": [0]
-                }],
-            "order": [
-                [0, "DESC"]
-            ]
-        });
-        var tableWrapper = $('#products_table_wrapper');
-        tableWrapper.find('.dataTables_length select').select2();
-    };
-     var validate_precio = function () {
+    var validate_precio = function () {
         var change_precio_ok = $("#change_precio_ok");
         var change_precio = $("#change_precio");
         var precio = $("#txt5").val();
