@@ -94,12 +94,15 @@
                                         <div class="col-md-6">
                                             <br><br><br><br>
                                             <label class="control-label col-md-5">Articulo Pre-Fabricado</label>
+                                            
                                             <div class="form-group col-md-7">
                                                 <input id="pre_fab" name="pre_fab" onchange="art_pre();" type="checkbox">
+                                                
                                             </div>
                                             <div style="padding-top: 55px;">
                                                 <label id="label_desc" class="control-label col-md-3">* Descripción</label>
                                                 <div id="change_desc" class="form-group col-md-9">
+                                                   
                                             	    <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>
                                             	</div>
                                             </div>
@@ -151,6 +154,11 @@
             
             var art_pre = function(){
                 
+                
+                
+                
+               
+                
                 var check  = $("#pre_fab").prop("checked");
                 if(!check){
                     $("#change_desc").html(' <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>');
@@ -159,13 +167,19 @@
                 else
                 {
                      var jsd        = JSON.parse($sd);
-                     var select     = '<select class="form-control input-circle" class="" id="txt_descripcion" name="txt_descripcion" >';
+                     var a          = [];
+                     
+                     $("#change_desc").html('<input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control select2" value="">');
+
                      $.map(jsd , function(s){
-                        select += '<option value="' + s.nombre + '" > ' + s.nombre + '</option>';
+                         a.push(s.nombre);
                      });
-                     select         += '</select>'; 
-                     $("#change_desc").html(select);
-                     $("#label_desc").html('* Talla');
+
+                     $("#txt_descripcion").select2({
+                            tags: a
+                     });
+               
+                     $("#label_desc").html('* Tallas');
                      
                 }
                 

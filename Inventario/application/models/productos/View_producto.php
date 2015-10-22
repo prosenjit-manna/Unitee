@@ -145,14 +145,27 @@ class view_producto extends CI_Model implements PInterface {
                         ->result();
     }
 
-    public function get_products($factory = 0) {
-        $query = "  SELECT
+    public function get_products($factory = null) {
+        
+        if($factory == NULL){
+             $query = "  SELECT
+                    producto.nombre as 'nombre',
+                    producto.id_producto as 'id'
+                    FROM producto 
+                    GROUP BY producto.nombre
+                    HAVING count(*) >= 1
+                    ORDER BY producto.date DESC; ";
+        }
+        else{
+            $query = "  SELECT
                     producto.nombre as 'nombre',
                     producto.id_producto as 'id'
                     FROM producto WHERE producto.fabricado LIKE $factory
                     GROUP BY producto.nombre
                     HAVING count(*) >= 1
                     ORDER BY producto.date DESC; ";
+        }
+        
 
         return $this->db
                         ->query($query)

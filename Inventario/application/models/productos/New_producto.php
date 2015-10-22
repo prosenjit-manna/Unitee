@@ -18,6 +18,7 @@ class New_producto extends CI_Model  implements PInterface {
     
     use PluginConfig;
     
+    protected $route   = NULL;
     protected $model   = "new_producto";
     
     public function __construct() {
@@ -38,10 +39,16 @@ class New_producto extends CI_Model  implements PInterface {
                 "controller"    => "",
                 "view"          => "producto/producto_new"
         );
+        
+        
+         $this->load->library("base_url");
+         $this->route= base_url();
     }
     
     public function _css() {
-        //ACA IRAN TODOS LOS CSS 
+         return array(
+            $this->route . "assert/plugins/select2/select2.css"
+        );
     }
 
     public function _init() {
@@ -59,7 +66,9 @@ class New_producto extends CI_Model  implements PInterface {
     }
 
     public function _js() {
-        //ACA IRAN TODOS LOS JAVASCRIPT
+        return array(
+            $this->route . "assert/plugins/select2/select2.min.js"
+        );
     }
 
     public function _jsLoader() {
