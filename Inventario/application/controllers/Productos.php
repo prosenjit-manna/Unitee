@@ -43,21 +43,22 @@ class Productos extends CI_Controller {
         $nombre        = $_REQUEST['txt_nombre'];
         
         $color         = isset($_REQUEST['txt_color']) ?  $_REQUEST['txt_color'] : NULL;
-        $margen        = $_REQUEST['txt_margen'];
         $unidad        = isset($_REQUEST['txt_unidad']) ?  $_REQUEST['txt_unidad'] : NULL;
-        $descripcion   = $_REQUEST['txt_descripcion'];
+        $descripcion   = isset( $_REQUEST['txt_descripcion']) ?  $_REQUEST['txt_descripcion'] : NULL;
+        $prefab        = isset($_REQUEST['pre_fab']) ? $_REQUEST['pre_fab'] : 0;
         
+        $prefab        = $prefab == "on" ? 1 : 0;
+        
+        $margen        = $_REQUEST['txt_margen'];
         $precio        = $_REQUEST['txt_precio'];
         $cantidad      = $_REQUEST['txt_cantidad'];
-        
         $sku           = $_REQUEST['txt_sku'];
         
-      
        
        $ok = $this->New_producto->new_product($nombre,$color ,
                $margen,$unidad , $sku ,
                $descripcion , $precio , 
-               $cantidad);
+               $cantidad , $prefab);
        
        if($ok){
            redirect("/0/productos=new_producto?err=0");

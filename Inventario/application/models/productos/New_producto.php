@@ -130,7 +130,7 @@ class New_producto extends CI_Model  implements PInterface {
        
     }
     
-       public function new_product($nombre,$color ,$margen,$unidad , $sku ,$descripcion , $precio , $cantidad){
+       public function new_product($nombre,$color ,$margen,$unidad , $sku ,$descripcion , $precio , $cantidad , $fab){
          
         $date   = new DateTime("now");
         $current_d  = $date->format("Y-m-d H:m:s");
@@ -144,7 +144,8 @@ class New_producto extends CI_Model  implements PInterface {
             "sku"               => $sku,
             "precio_est_unidad" => $precio,
             "cantidad"          => $cantidad,
-            "date"              => $current_d
+            "date"              => $current_d,
+            "fabricado"         => $fab
             
         ));
     }

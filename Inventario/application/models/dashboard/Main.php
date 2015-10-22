@@ -168,4 +168,8 @@ class Main extends CI_Model implements DInterfaces {
         return $this;
     }
 
+    public function _JSdashboard() {
+        
+    }
+
 }

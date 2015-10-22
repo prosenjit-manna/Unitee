@@ -159,9 +159,9 @@
                 else
                 {
                      var jsd        = JSON.parse($sd);
-                     var select     = '<select class="form-control input-circle" class="" id="txt_description" name="txt_descripcion" >';
+                     var select     = '<select class="form-control input-circle" class="" id="txt_descripcion" name="txt_descripcion" >';
                      $.map(jsd , function(s){
-                        select += '<option value="' + s.id_talla + '" > ' + s.nombre + '</option>';
+                        select += '<option value="' + s.nombre + '" > ' + s.nombre + '</option>';
                      });
                      select         += '</select>'; 
                      $("#change_desc").html(select);

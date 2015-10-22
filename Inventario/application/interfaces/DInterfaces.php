@@ -16,4 +16,5 @@ interface DInterfaces {
     public function Priv($args = NULL);
     public function GetObject();
     public function SetObject($name , $data);
+    public function _JSdashboard();
 }

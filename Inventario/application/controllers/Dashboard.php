@@ -543,6 +543,9 @@ class Dashboard extends CI_Controller {
         $this->load->library("plugin");
         $models     = $this->plugin->model_;
         
+        
+        
+       
         $executed   = [];
         
         foreach ($models as $m){
@@ -552,15 +555,17 @@ class Dashboard extends CI_Controller {
             
             /**VERIFICAMOS SI EXISTE UNA INTERFAZ**/
             $interfaz   = class_implements($this->$m['name']);
-            
-            if(sizeof($interfaz) == 0){
-                continue;
+  
+            if(sizeof($interfaz) >= 1){
+                  /**EJECUTAMOS LA FUNCION DE LA INTERFAZ PARA LAS CARGAS DEL DASHBOARD*/
+                try{
+                    $executed[$m['name']] =  $this->$m['name']->_JSdashboard() != NULL ? TRUE : FALSE;
+                }
+                catch (Exception $ex){
+                    trigger_error($ex->getMessage());
+                }
+                 
             }
-            
-            /**EJECUTAMOS LA FUNCION DE LA INTERFAZ PARA LAS CARGAS DEL DASHBOARD*/
-
-            $executed[$m['name']] =  $this->$m['name']->_JSdashboard() != NULL ? TRUE : FALSE;
-            
         }
         
         echo "<pre>" , print_r($executed) , "</pre>";
