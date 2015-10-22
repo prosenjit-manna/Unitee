@@ -116,37 +116,13 @@
                                     <tr>
                                         <td align="center">XL</td>
                                         <td align="center">
-                                            <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" style="width: 200px;" placeholder="Escribe el preio">
-                                        </td>
-                                        <td align="center">
-                                            <a title="editar producto" href="#"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-                                            <a title="eliminar producto " class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center">XS</td>
-                                        <td align="center">
-                                            <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" style="width: 200px;" placeholder="Escribe el preio">
-                                        </td>
-                                        <td align="center">
-                                            <a title="editar producto" href="#"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-                                            <a title="eliminar producto " class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center">L</td>
-                                        <td align="center">
-                                            <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" style="width: 200px;" placeholder="Escribe el preio">
-                                        </td>
-                                        <td align="center">
-                                            <a title="editar producto" href="#"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-                                            <a title="eliminar producto " class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center">M</td>
-                                        <td align="center">
-                                            <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" style="width: 200px;" placeholder="Escribe el preio">
+                                             <div class="form-group">
+                                                <div class="input-icon right">
+                                                    <i name="change_" id="change_precio_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                    <input autocomplete="off" maxlength="8" onkeyup="validate_precio();" required="" type="text" id="txt5" name="txt_precio" class="form-control input-circle" placeholder="Escribe el recio de esta talla">
+                                                </div>
+                                            </div>
                                         </td>
                                         <td align="center">
                                             <a title="editar producto" href="#"><i class="icon-pencil" style="font-size: 20px;"></i></a>
@@ -255,5 +231,19 @@
         var tableWrapper = $('#products_table_wrapper');
         tableWrapper.find('.dataTables_length select').select2();
     };
-
+     var validate_precio = function () {
+        var change_precio_ok = $("#change_precio_ok");
+        var change_precio = $("#change_precio");
+        var precio = $("#txt5").val();
+        if (isNaN(precio) || precio == "") {
+            change_precio_ok.css("display", "none");
+            change_precio.css("display", "block");
+            return true;
+        }
+        else {
+            change_precio_ok.css("display", "block");
+            change_precio.css("display", "none");
+            return false;
+        }
+    };
 </script>
