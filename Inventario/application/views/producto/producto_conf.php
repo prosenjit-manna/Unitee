@@ -114,12 +114,12 @@
                                     <!--/span-->
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 lass="form-section">Agregar Talas
-                                        <button  id="send_unit" name="send_unit" onclick="save_unit();"  type="text" class="btn blue col-md-offset-5"><i class="icon-save" style="font-size:16px;"></i> Guardar Talla</button>
+                                    <h3 lass="form-section">Agregar Tallas
+                                        <button  id="send_size" name="send_size" onclick="save_size();"  type="text" class="btn blue col-md-offset-5"><i class="icon-save" style="font-size:16px;"></i> Guardar Talla</button>
                                     </h3><br>
                                     <label class="control-label col-md-3">* Talla</label>
                                     <div class="form-group col-md-9">
-                                        <input type="text" id="txt_unidad" name="txt_unidad" class="form-control input-circle" placeholder="Talla del producto">
+                                        <input type="text" id="txt_size"  class="form-control input-circle" placeholder="Talla del producto">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <table class="table table-striped table-hover table-bordered" id="products_talla">
@@ -133,39 +133,25 @@
                                                     </th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="body_unit">
-                                                <tr>
+                                            <tbody id="body_sizes">
+                                               <?php
+                                                 
+                                                    foreach($tallas as $s ):
+                                               ?>
+                                                
+                                                <tr id="<?php echo "size_" .  $s->id_tallas;   ?>" >
                                                     <td>
-                                                        <p align="center">XS</p>
+                                                        <p align="center"><?php echo $s->nombre; ?></p>
                                                     </td>
                                                     <td align="center">
-                                                        <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
+                                                        <a class="" onclick="<?php echo "the_id(" .  $s->id_tallas . ");";  ?>" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <p align="center">XS</p>
-                                                    </td>
-                                                    <td align="center">
-                                                        <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <p align="center">XS</p>
-                                                    </td>
-                                                    <td align="center">
-                                                        <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <p align="center">XS</p>
-                                                    </td>
-                                                    <td align="center">
-                                                        <a class="" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                                    </td>
-                                                </tr>
+                                                
+                                                <?php
+                                                        
+                                                    endforeach;
+                                                 ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -234,7 +220,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
-                                                <button type="button" data-dismiss="modal" onclick="delete_color();" class="btn green">Eliminar</button>
+                                                <button type="button" data-dismiss="modal" onclick="delete_size();" class="btn green">Eliminar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -331,6 +317,22 @@
         });
         tasking.do_task();
     };
+    
+    var save_size = function(){
+         var size = $("#txt_size").val();
+         var tasking = new jtask();
+         $("#send_size").attr("disabled" , true);
+         tasking.url = "<?php echo site_url("/Productos/AddSizes"); ?>";
+         tasking.data = {"size": size};
+         tasking.success_callback(function (d) {
+              $("#body_sizes").prepend('<tr id="size_' + d + '" ><td><p align="center">' + size + '</p></td><td align="center"><a class="" onclick="the_id(' 
+                      + d + ');" data-toggle="modal" href="#responsive_delete_talla"><i class="icon-trash" style="font-size: 20px;"></i></a></td></tr>');
+              $("#send_size").attr("disabled" , false);
+              
+         });
+         tasking.do_task();
+    };
+    
     var table_loader = function () {
 
         var table = $('#products_color');
@@ -472,5 +474,14 @@
         tasking.do_task();
     };
 
+    var delete_size  = function(){
+       var tasking = new jtask();
+        tasking.url = "<?php echo site_url("/Productos/delete_size"); ?>";
+        tasking.data = {"id": $id};
+        tasking.success_callback(function (d) {
+            $("#size_" + $id).remove();
+        });
+        tasking.do_task();
+    };
 
 </script>

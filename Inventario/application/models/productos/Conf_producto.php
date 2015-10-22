@@ -68,10 +68,12 @@ class Conf_producto extends CI_Model implements PInterface{
         
         $colors         = $this->new_producto->get_colors();
         $unidad         = $this->new_producto->get_unidad();
+        $tallas         = $this->GetSizes();
         
         $data           = array(
               "colors"  => $colors,
-              "unidad"  => $unidad
+              "unidad"  => $unidad,
+              "tallas"    => $tallas
         );
         
         $this->load->view("producto/producto_conf" , $data);
@@ -118,7 +120,6 @@ class Conf_producto extends CI_Model implements PInterface{
         //ACTUALIZACION DEL MODULO UPDATE
     }
 
-
     public function _unistall() {
         //DESISTALACION 
     }
@@ -131,6 +132,11 @@ class Conf_producto extends CI_Model implements PInterface{
         
     }
     
+   
+    public function GetSizes(){
+        return $this->db->query("select * from tallas ")->result();
+    }
+    
     public function save_( array $data , $type = "color"){
         
         switch ($type){
@@ -139,6 +145,9 @@ class Conf_producto extends CI_Model implements PInterface{
                 return $this->db->insert_id();
             case "unit":
                 $this->db->insert("unidad" , $data);
+                return $this->db->insert_id();
+            case "size":
+                $this->db->insert("tallas" , $data);
                 return $this->db->insert_id();
         }
         
@@ -151,6 +160,9 @@ class Conf_producto extends CI_Model implements PInterface{
                 break;
             case "unit":
                 $this->db->delete("unidad" , array("id_unidad" => $id));
+                break;
+            case "size":
+                $this->db->delete("tallas" , array("id_tallas" => $id));
                 break;
         }
     }

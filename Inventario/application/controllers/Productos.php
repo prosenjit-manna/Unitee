@@ -178,4 +178,31 @@ class Productos extends CI_Controller {
         );
     }
     
+    public function AddSizes(){
+          
+        $size = isset($_REQUEST['size']) ? $_REQUEST['size'] : NULL;
+        
+        if($size == NULL) return false;
+        
+        $this->load->model("productos/conf_producto" , 'conf');
+        
+        $id =  $this->conf->save_(array(
+            "nombre"            => $size,
+        ), "size");
+        
+        echo $id;
+        exit();
+    }
+    
+    
+    public function delete_size(){
+        
+         $id           = isset($_REQUEST['id']) ? $_REQUEST['id'] : NULL;
+        
+        $this->load->model("productos/conf_producto" , 'conf');
+        $this->conf->delete_($id , "size");
+        exit();
+        
+    }
+    
 }
