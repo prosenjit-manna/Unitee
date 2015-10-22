@@ -43,7 +43,7 @@
         <!-- INICIO DASHBOARD STATS -->
         <div class="page-content-wrapper">
             <!-- INICIO PAGE CONTENT-->
-            <div class="row scroller" style="height:375px" data-rail-visible="1" >
+            <div class="row scroller" style="height:425px" data-rail-visible="1" >
 
 
                 <!-- INICIO Portlet PORTLET-->
@@ -93,7 +93,7 @@
                                         <!--/span-->
                                         <div class="col-md-6">
                                             <br><br><br><br>
-                                            <label class="control-label col-md-5">Articulo Prefabricado</label>
+                                            <label class="control-label col-md-5">Articulo Pre-Fabricado</label>
                                             <div class="form-group col-md-7">
                                                 <input id="pre_fab" name="pre_fab" onchange="art_pre();" type="checkbox">
                                             </div>
