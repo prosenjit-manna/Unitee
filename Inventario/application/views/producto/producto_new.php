@@ -153,12 +153,7 @@
             var $sd = '<?php echo json_encode($sizes_dump); ?>';
             
             var art_pre = function(){
-                
-                
-                
-                
-               
-                
+
                 var check  = $("#pre_fab").prop("checked");
                 if(!check){
                     $("#change_desc").html(' <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>');
