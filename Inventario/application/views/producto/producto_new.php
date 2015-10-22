@@ -1,4 +1,5 @@
 <!-- INICIO CONTENIDO -->
+
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
@@ -94,11 +95,11 @@
                                             <br><br><br><br>
                                             <label class="control-label col-md-5">Articulo Prefabricado</label>
                                             <div class="form-group col-md-7">
-                                                <input type="checkbox">
+                                                <input id="pre_fab" name="pre_fab" onchange="art_pre();" type="checkbox">
                                             </div>
                                             <div style="padding-top: 55px;">
-                                            	<label class="control-label col-md-3">* Descripción</label>
-                                            	<div class="form-group col-md-9">
+                                                <label id="label_desc" class="control-label col-md-3">* Descripción</label>
+                                                <div id="change_desc" class="form-group col-md-9">
                                             	    <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>
                                             	</div>
                                             </div>
@@ -145,6 +146,32 @@
         </div>
         <!-- FINAL CONTENIDO -->
         <script>
+            
+            var $sd = '<?php echo json_encode($sizes_dump); ?>';
+            
+            var art_pre = function(){
+                
+                var check  = $("#pre_fab").prop("checked");
+                if(!check){
+                    $("#change_desc").html(' <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>');
+                    $("#label_desc").html('* Descripción');
+                }
+                else
+                {
+                     var jsd        = JSON.parse($sd);
+                     var select     = '<select class="form-control input-circle" class="" id="txt_description" name="txt_descripcion" >';
+                     $.map(jsd , function(s){
+                        select += '<option value="' + s.id_talla + '" > ' + s.nombre + '</option>';
+                     });
+                     select         += '</select>'; 
+                     $("#change_desc").html(select);
+                     $("#label_desc").html('* Talla');
+                     
+                }
+                
+            };
+            
+            
             var load_colors = function () {
                 var tasking = new jtask();
                 tasking.url = "<?php echo site_url("/Productos/get_colors"); ?>";

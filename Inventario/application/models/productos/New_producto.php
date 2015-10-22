@@ -47,7 +47,11 @@ class New_producto extends CI_Model  implements PInterface {
     public function _init() {
         
         $this->load->helper("form");
-        $this->load->view("producto/producto_new" , array("dump" => $this->_Getconfig()));
+        
+        $this->load->view("producto/producto_new" , array(
+            "dump" => $this->_Getconfig(),
+            "sizes_dump" => $this->get_sizes()
+         ));
     }
 
     public function _install() {
@@ -90,6 +94,11 @@ class New_producto extends CI_Model  implements PInterface {
 
     public function _Getconfig() {
         return $this->_config;
+    }
+    
+    
+    public function get_sizes(){
+       return $this->db->query("SELECT * FROM tallas")->result();
     }
     
     public function get_colors(){
