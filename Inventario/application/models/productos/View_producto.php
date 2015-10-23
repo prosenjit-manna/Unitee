@@ -145,6 +145,24 @@ class view_producto extends CI_Model implements PInterface {
                         ->query($query)
                         ->result();
     }
+    
+    public function get_sizes_art($pattern , $data){
+        
+        $query = "";
+        
+        switch($pattern){
+            case "name":
+                $query = "SELECT producto.descripcion as 'talla' , producto.id_producto as 'id'  FROM producto "
+                    . " WHERE producto.nombre LIKE '%$data'";
+                break;
+            case "id":
+                $query = "SELECT producto.descripcion as 'talla' FROM producto "
+                    . " WHERE producto.id_producto LIKE '%$data'";
+                break;
+        }
+        
+        return $this->db->query($query)->result();
+    }
 
     public function get_products($factory = null) {
         
@@ -175,9 +193,6 @@ class view_producto extends CI_Model implements PInterface {
                         ->result();
     }
     
-    
-  
-
     public function show_products() {
         $query = "SELECT
                   producto.id_producto as 'id' , 
@@ -237,7 +252,6 @@ class view_producto extends CI_Model implements PInterface {
         $this->OutProduct(); // Verifica si el margen es mayor que la cantidad
         return true;
     }
-    
     
     public function GetByBuy($id_buy){
         $query = "SELECT 

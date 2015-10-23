@@ -51,7 +51,8 @@ class New_articulopre extends CI_Model implements PInterface {
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css",
             $this->route . "assert/perfil/css/profile.css",
             $this->route . "assert/perfil/css/profile-old.css",
-            $this->route . "assert/perfil/css/bootstrap-fileinput.css"
+            $this->route . "assert/perfil/css/bootstrap-fileinput.css",
+            $this->route . "assert/plugins/select2/select2.css"
         );
 
     }
@@ -77,12 +78,13 @@ class New_articulopre extends CI_Model implements PInterface {
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",
             $this->route . "assert/plugins/table-editable.js",
             $this->route . "assert/perfil/js/profile.js",
-           $this->route . "assert/perfil/js/bootstrap-fileinput.js"
+            $this->route . "assert/perfil/js/bootstrap-fileinput.js",
+            $this->route . "assert/plugins/select2/select2.min.js"
         );
     }
 
     public function _jsLoader() {
-         return array("TableEditable.init();","table_loader();");
+         return array("_load();"  );
     }
 
     public function _rols() {
@@ -131,6 +133,14 @@ class New_articulopre extends CI_Model implements PInterface {
         
          $this->load->model("productos/view_producto" , "prod");
          return $this->prod->get_products(1);
+    }
+    
+    public function GetSize($request)
+    {
+         $data = $request['data'];
+         $this->load->model("productos/view_producto" , "prod");
+         $result = $this->prod->get_sizes_art("name" , $data);
+         return json_encode($result);
     }
     
 }

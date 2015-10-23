@@ -70,10 +70,13 @@
                             <div class="col-md-6"><br>
                                     <label class="control-label col-md-4">* Productos</label>
                                     <div class="form-group col-md-8">
-                                         <select onchange="select_color(this.value);" required="required" id="select_nombre" name="txt_pombre" class="form-control input-circle">                     
+                                         <select required="required" id="select_articulo" name="txt_articulo" class="form-control input-circle">                     
                                                     <option value="-1">Seleccione el producto</option>
-                                                    <option value="">Camissa Blanca Polo</option>
-                                                    <option value="">Camiseta Negra</option>
+                                                    <?php 
+                                                        foreach($articles as $a ):
+                                                    ?>
+                                                    <option value="<?php echo $a->nombre ?>"><?php echo $a->nombre ?></option>
+                                                    <?php endforeach; ?>
                                         </select>
                                         <span class="help-block" style="font-size:8pt;">
                                             Hay 225 camisas de este tipo su rango de precio es desde 
@@ -91,8 +94,6 @@
                                     <div class="col-md-2"><label clas="control-label">S<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
                                     <div class="col-md-2"><label clas="control-label">M<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
                                     <div class="col-md-2"><label clas="control-label">L<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">G<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">XL<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
                                 </div>
                             </div>
                         </div>
@@ -217,6 +218,40 @@
 </div>
 </div>
 <script>
+    
+
+ var _load   = function(){
+     
+     
+     
+     $("#select_articulo").select2();
+     
+     $("#select_articulo").on("change" , function(){
+         
+         var t  = $("#talla_check");
+         var v  = $(this).val();
+         
+         var task = new jtask();
+         task.url = "<?php echo site_url("Dashboard/ActionRequest/GetSize/new_articulopre/articulos");?>";
+         task.data = { "data" : v };
+         task.beforesend = true;
+         task.config_before(function(){
+             t.html("Buscando tallas ...");
+         });
+         task.success_callback(function(e){
+             var j  = JSON.parse(e);
+             t.html('');
+             
+             $.map(j , function(k){
+                 t.append(' <div class="col-md-2"><label class="control-label">' + k.talla  + '<input type="checkbox" value="' + k.id + '" name="articulos_talla" id="articulos_talla"></label></div>');
+             });
+             
+         });
+         task.do_task();
+     });
+     
+ };  
+    
   var _check = function(){
      var prop = $("#_talla_all").prop("checked");
      if(prop){
