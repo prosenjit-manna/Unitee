@@ -136,7 +136,8 @@ class view_producto extends CI_Model implements PInterface {
                     producto.id_producto as 'id',
                     producto.nombre as 'name',
                     color.nombre as 'color_name',
-                    color.referencia as 'color_ref'
+                    color.referencia as 'color_ref',
+                    producto.descripcion as 'talla'
                     FROM producto 
                     INNER JOIN color ON  color.id_color=producto.id_color
                     WHERE producto.nombre LIKE '%$name'";

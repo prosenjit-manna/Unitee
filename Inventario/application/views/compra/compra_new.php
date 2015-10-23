@@ -25,7 +25,7 @@
             </div>
         </div>
         <!-- FINAL BREADCUMBS -->
-          <div>
+        <div>
             <?php
             $type_message = array(
                 "buy" => " Compra "
@@ -279,10 +279,10 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                            <label class="control-label col-md-2">* Color</label>
+                            <label class="control-label col-md-2" id="_color">* Color</label>
                             <div class="form-group col-md-4">
-                                <select id="color_prod" required="required" id="select_color" name="txt_color" class="form-control input-circle">                     
-                                    <option value="">Seleccione el color</option>
+                                <select id="color_prod" required="required"  name="txt_color" class="form-control input-circle">                     
+                                    <option value="">Seleccione...</option>
                                 </select>
                             </div>
                             <label class="control-label col-md-2">Cantidad</label>
@@ -291,7 +291,7 @@
                                     <i name="change_" id="change_pcantidad_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                     <i name="change_x" id="change_pcantidad" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                     <input onkeyup="validarModal();
-                                            validate_pcant();" id="cant_prod" required="" type="number" id="txt_pcantidad" name="txt_pcantidad" class="form-control input-circle" placeholder="Cantidad del producto">
+                                            validate_pcant();" id="cant_prod" required="" type="number" id="txt_pcantidad" name="txt_pcantidad" class="form-control " placeholder="Cantidad del producto">
                                 </div>
                             </div>
                             <label class="control-label col-md-2">Precio</label>
@@ -300,7 +300,7 @@
                                     <i name="change_" id="change_precio_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
                                     <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
                                     <input onkeyup="validarModal();
-                                            validate_pre();" id="price_prod" required="" type="number" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                            validate_pre();" id="price_prod" required="" type="number" name="txt_precio" class="form-control" placeholder="Precio del producto">
                                 </div>
                             </div> <br><br><br> <br><br><br>
                             <div class="modal-footer">
@@ -394,8 +394,14 @@
     var $pid = null;
     var $node_table = null;
 
+
+    function _load() {
+        $("#select_nombre").select2();
+        $("#color_prod").select2({});
+    };
+
     function CheckNodes() {
-        setInterval(function () {
+        setInterval(function() {
 
             var sum = IsTableNode() + IsProvider() + IsInvoice() + IsPrice();
             if (sum >= 4)
@@ -466,9 +472,10 @@
         else {
             $("#send").attr("disabled", false);
         }
-    } ;
+    }
+    ;
 
-    var validate_pcant = function () {
+    var validate_pcant = function() {
         var change_pcantidad_ok = $("#change_pcantidad_ok");
         var change_pcantidad = $("#change_pcantidad");
         var pcantidad = $("#cant_prod").val();
@@ -484,7 +491,7 @@
         }
     };
 
-    var validate_pre = function () {
+    var validate_pre = function() {
         var change_precio_ok = $("#change_precio_ok");
         var change_precio = $("#change_precio");
         var precio = $("#price_prod").val();
@@ -500,14 +507,14 @@
         }
     };
 
-    var provider_selected = function (id) {
+    var provider_selected = function(id) {
         $pid = id;
         var prov = JSON.parse($("#providers").val());
         var dir = $("#prov_dir");
         var name = $("#prov_name");
         var num = $("#prov_num");
         $("#prov_data").addClass("well");
-        $.map(prov, function (j) {
+        $.map(prov, function(j) {
             if ($pid == j.id_prov) {
                 dir.html(
                         '<h4 class="col-md-12">Dirección</h4>' +
@@ -535,28 +542,86 @@
         });
     };
 
-    var select_color = function (i) {
+    var select_color = function(i) {
+
+        var products = JSON.parse($("#products").val());
+        var fab = false;
         var task = new jtask();
         var select = $("#color_prod");
-        task.url = "<?php echo site_url("productos/get_color_byName"); ?>";
-        task.beforesend = true;
-        task.data = {
-            "name": i
-        };
-        task.config_before(function () {
-            select.html('<option value="">Buscando Colores ..</option>');
+        var clabel = $("#_color");
+
+        $.map(products, function(k) {
+            if (k.nombre === i && k.fabricado == "1" )
+            {
+                fab = true;
+                return;
+            }
         });
-        task.success_callback(function (j) {
-            select.html('');
-            select.append('<option value="-1">Seleccione un color</option>');
-            $.map(JSON.parse(j), function (k) {
-                select.append('<option value="' + k.id + ',' + k.color_name + ',' + k.name + '">' + k.color_name + '</option>');
+
+
+
+        if (!fab)
+        {
+            clabel.html("* Color");
+            task.url = "<?php echo site_url("productos/get_color_byName"); ?>";
+            task.beforesend = true;
+            task.data = {
+                "name": i
+            };
+            task.config_before(function() {
+                select.html('<option value="">Buscando Colores ..</option>');
             });
-        });
-        task.do_task();
+            task.success_callback(function(j) {
+                select.html('');
+                select.append('<option value="-1">Seleccione un color</option>');
+                $.map(JSON.parse(j), function(k) {
+                    select.append('<option value="' + k.id + ',' + k.color_name + ',' + k.name + '">' + k.color_name + '</option>');
+                });
+
+            });
+            task.do_task();
+
+            return;
+        }
+        else
+        {
+
+            clabel.html("* Talla/Color");
+            task.url = "<?php echo site_url("productos/get_color_byName"); ?>";
+            task.beforesend = true;
+            task.data = {
+                "name": i
+            };
+            task.config_before(function() {
+                select.html('<option value="">Buscando Colores/Tallas</option>');
+            });
+            task.success_callback(function(j) {
+
+                var arr = [];
+                select.html('');
+                select.append('<option selected value="-1">Seleccione Talla/Color</option>');
+                $.map(JSON.parse(j), function(k) {
+                    var text = k.color_name + " Talla (" + k.talla + ")";
+                    var t = {id: k.id, text: text};
+                    select.append('<option value="' + k.id + ',' + k.color_name + ',' + k.name + '">' + k.color_name + " Talla (" + k.talla + ")" + '</option>');
+                    arr.push(t);
+                });
+
+              
+
+            });
+            task.do_task();
+
+        }
+
+
+
+
+
+
     };
 
-    var save_product = function () {
+    var save_product = function() {
         var color_prod = $("#color_prod").val().split(",");
         var id = color_prod[0];
         var color = color_prod[1];
@@ -580,19 +645,19 @@
 
     };
 
-    var table_node = function (i) {
+    var table_node = function(i) {
         $node_table = i;
     };
 
-    var delete_node = function () {
+    var delete_node = function() {
         $("#table_" + $node_table).remove();
         total_price();
     };
 
-    var total_price = function () {
+    var total_price = function() {
         var total_price = 0.0;
 
-        $("#table_prod tr").each(function () {
+        $("#table_prod tr").each(function() {
             total_price += parseFloat($(this).find("td")
                     .eq(3).find("p")
                     .eq(0).html());
@@ -602,7 +667,7 @@
 
     };
 
-    var save_buy = function () {
+    var save_buy = function() {
 
         var id_, name, color, cant, price;
         var data = new Array()
@@ -611,7 +676,7 @@
         var fac = $("#txt_factura").val();
         var total = $("#total_price_prod").val();
 
-        $("#table_prod tr").each(function () {
+        $("#table_prod tr").each(function() {
             id_ = $(this).attr("id").split("table_")[1];
 
             name = $(this).find("td")
@@ -644,7 +709,7 @@
 
 
         if ($fileUpload_Context != null) {
-            $.each($fileUpload_Context, function (k, v) {
+            $.each($fileUpload_Context, function(k, v) {
                 upload_data.push(v.jqXHR.responseJSON.files[0].data);
             });
         }
@@ -660,11 +725,11 @@
             "prov": $pid,
             "upload": JSON.stringify(upload_data)
         };
-        task.config_before(function () {
+        task.config_before(function() {
             $("#send_buy").html("Guardando espere ...");
             $("#send_buy").attr("disabled", true);
         });
-        task.success_callback(function (r) {
+        task.success_callback(function(r) {
             window.location.href = "<?php echo site_url("/0/compra=new_compra?success=true"); ?>";
             $("#send_buy").html("Guardar");
             $("#send_buy").attr("disabled", false);
@@ -676,11 +741,11 @@
 
     };
 
-    var FormFileUpload = function () {
+    var FormFileUpload = function() {
 
         return {
             //main function to initiate the module
-            init: function () {
+            init: function() {
 
                 // Initialize the jQuery File Upload widget:
                 $('#fileupload').fileupload({
@@ -707,7 +772,7 @@
                 if ($.support.cors) {
                     $.ajax({
                         type: 'HEAD'
-                    }).fail(function () {
+                    }).fail(function() {
                         alert();
                         $('<div class="alert alert-danger"/>')
                                 .text('Upload server currently unavailable - ' +
@@ -720,10 +785,10 @@
                     url: $('#fileupload').attr("action"),
                     dataType: 'json',
                     context: $('#fileupload')[0]
-                }).always(function () {
+                }).always(function() {
                     $(this).removeClass('fileupload-processing');
                 })
-                        .done(function (result) {
+                        .done(function(result) {
                             // $(this).fileupload('option', 'done')
                             // .call(this, $.Event('done'), {result: result});
                         });
@@ -738,7 +803,7 @@
 
     }();
 
-    var save_node = function () {
+    var save_node = function() {
 
 
         var cant = $("#ncant").val();
