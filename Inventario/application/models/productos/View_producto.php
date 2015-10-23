@@ -148,9 +148,10 @@ class view_producto extends CI_Model implements PInterface {
     public function get_products($factory = null) {
         
         if($factory == NULL){
-             $query = "  SELECT
+             $query = "  SELECT 
                     producto.nombre as 'nombre',
-                    producto.id_producto as 'id'
+                    producto.id_producto as 'id',
+                    producto.fabricado as 'fabricado'
                     FROM producto 
                     GROUP BY producto.nombre
                     HAVING count(*) >= 1
@@ -159,7 +160,8 @@ class view_producto extends CI_Model implements PInterface {
         else{
             $query = "  SELECT
                     producto.nombre as 'nombre',
-                    producto.id_producto as 'id'
+                    producto.id_producto as 'id',
+                    producto.fabricado as 'fabricado'
                     FROM producto WHERE producto.fabricado LIKE $factory
                     GROUP BY producto.nombre
                     HAVING count(*) >= 1

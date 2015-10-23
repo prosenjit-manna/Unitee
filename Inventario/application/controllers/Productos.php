@@ -49,16 +49,64 @@ class Productos extends CI_Controller {
         
         $prefab        = $prefab == "on" ? 1 : 0;
         
+        
         $margen        = $_REQUEST['txt_margen'];
         $precio        = $_REQUEST['txt_precio'];
         $cantidad      = $_REQUEST['txt_cantidad'];
         $sku           = $_REQUEST['txt_sku'];
         
+        if($prefab){
+            
+             $talla     = explode(",", $descripcion);
+             $precio    = explode("," , $precio);
+             $cantidad  = $cantidad != "" ? explode(",", $cantidad) : "";
+             
+             if(count($talla) > count($precio))
+             {
+                 for($i = 0 ; $i < count($talla) ; $i++)
+                 {
+                     if(count($precio) < $i+1){
+                         $precio[$i] = $precio[0];
+                     }
+                 }
+             }
+
+             
+             for($i = 0 ; $i < count($talla) ; $i++)
+             {
+                   $ok = $this->New_producto->new_product(
+                      $nombre,
+                      $color ,
+                      $margen,
+                      $unidad , 
+                      $sku . "-" . $i ,
+                      $talla[$i] , 
+                      $precio[$i] , 
+                      $cantidad != "" ? isset($cantidad[$i]) ? $cantidad[$i] : "" : "" ,
+                      $prefab
+                   );
+             }
+            
+           
+        }
+        else
+        {
+            
+              $ok = $this->New_producto->new_product(
+                      $nombre,
+                      $color ,
+                      $margen,
+                      $unidad , 
+                      $sku ,
+                      $descripcion , 
+                      $precio , 
+                      $cantidad ,
+                      $prefab
+                   );
+            
+        }
        
-       $ok = $this->New_producto->new_product($nombre,$color ,
-               $margen,$unidad , $sku ,
-               $descripcion , $precio , 
-               $cantidad , $prefab);
+     
        
        if($ok){
            redirect("/0/productos=new_producto?err=0");

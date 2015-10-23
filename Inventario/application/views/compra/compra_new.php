@@ -466,8 +466,7 @@
         else {
             $("#send").attr("disabled", false);
         }
-    }
-    ;
+    } ;
 
     var validate_pcant = function () {
         var change_pcantidad_ok = $("#change_pcantidad_ok");
@@ -738,8 +737,6 @@
         };
 
     }();
-
-
 
     var save_node = function () {
 

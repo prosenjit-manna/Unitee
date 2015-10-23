@@ -242,8 +242,8 @@
                     return false;
                 }
                 else if (isNaN(cantidad) && cantidad !== "") {
-                   // change_cantidad_ok.css("display", "none");
-                   // change_cantidad.css("display", "block");
+                    change_cantidad_ok.css("display", "none");
+                    change_cantidad.css("display", "block");
                     return true;
                 }
                 else {
@@ -287,7 +287,7 @@
                 else if (isNaN(precio) && precio !== "") {
                     change_precio_ok.css("display", "none");
                     change_precio.css("display", "block");
-                    return true;
+                    return false;
                 }
                 else {
                     change_precio_ok.css("display", "block");
