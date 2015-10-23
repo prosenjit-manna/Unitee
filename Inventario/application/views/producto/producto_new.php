@@ -74,15 +74,15 @@
                                                 </select>
                                             </div>
                                             <div style="padding-top: 125px;">
-                                            	<label class="control-label col-md-4">* Margen</label>
-                                            	<div class="form-group col-md-8">
-                                            	    <div class="input-icon right">
-                                            	        <i name="change_" id="change_margen_ok" style="display:none;" class="icon-check" data-original-title=""></i>
-                                            	        <i name="change_x" id="change_margen" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                            	        <input onkeyup="validate();" required="" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
-                                            	        <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
-                                            	    </div>
-                                            	</div>
+                                                <label class="control-label col-md-4">* Margen</label>
+                                                <div class="form-group col-md-8">
+                                                    <div class="input-icon right">
+                                                        <i name="change_" id="change_margen_ok" style="display:none; color:green;" class="icon-check" data-original-title=""></i>
+                                                        <i name="change_x" id="change_margen" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
+                                                        <input onkeyup="validate();" required="" type="text" id="margen" name="txt_margen" class="form-control input-circle" placeholder="Margen">
+                                                        <span class="help-block" style="font-size:8pt;">EL limite minimo requerido para que el sistema notifique la poca disponibilidad del  producto</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <label class="control-label col-md-4">* Unidad</label>
                                             <div class="form-group col-md-8">
@@ -96,23 +96,23 @@
                                             <label class="control-label col-md-5">Articulo Pre-Fabricado</label>
                                             
                                             <div class="form-group col-md-7">
-                                                <input id="pre_fab" name="pre_fab" onchange="art_pre();" type="checkbox">
+                                                <input id="pre_fab" name="pre_fab" onchange="art_pre();validate();" type="checkbox">
                                                 
                                             </div>
                                             <div style="padding-top: 55px;">
                                                 <label id="label_desc" class="control-label col-md-3">* Descripción</label>
                                                 <div id="change_desc" class="form-group col-md-9">
                                                    
-                                            	    <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>
-                                            	</div>
+                                                    <textarea required="" id="txt_descripcion" name="txt_descripcion" rows="2" class="form-control input-circle" placeholder="Descripcion del producto"></textarea>
+                                                </div>
                                             </div>
                                             
                                             <label class="control-label col-md-3">* Precio</label>
                                             <div class="form-group col-md-9">
                                                 <div class="input-icon right">
-                                                    <i name="change_" id="change_precio_ok" style="display:none;" class="icon-check" data-original-title=""></i>
+                                                    <i name="change_" id="change_precio_ok" style="display:none; color:green;" class="icon-check" data-original-title=""></i>
                                                     <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input onkeyup="validate();" required="" type="text" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
+                                                    <input onkeyup="validate();" onchange="validate();validate_len();" required="" type="text" id="precio" name="txt_precio" class="form-control input-circle" placeholder="Precio del producto">
                                                 </div>
 
                                             </div>
@@ -166,7 +166,7 @@
                      var p          = [];
                      var c          = [];
                      
-                     $("#change_desc").html('<input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control " value="">');
+                     $("#change_desc").html('<input type="text" name="txt_descripcion" id="txt_descripcion" onchange="validate();" class="form-control " value="">');
 
                      $.map(jsd , function(s){
                          a.push(s.nombre);
@@ -274,7 +274,7 @@
                 }
             };
 
-            var validate_price = function () {
+           var validate_price = function () {
                 var change_precio_ok = $("#change_precio_ok");
                 var change_precio = $("#change_precio");
                 var precio = $("#precio").val();
@@ -297,6 +297,27 @@
             };
 
             var validate = function () {
+                var check = $("#pre_fab");
+                var change_precio_ok = $("#change_precio_ok");
+                var change_precio = $("#change_precio");
+                if (check.prop("checked")) {
+                     var margen = validate_margen();
+                    var tallas = $("#txt_descripcion").val();
+                    var precio = $("#precio").val();
+                     var counTallas = tallas.split(",");
+                    var countPrecio = precio.split(",");
+
+                    if (margen === false &&  tallas !="" && precio !="" && countPrecio.length === counTallas.length) {
+                        $('#send').attr("disabled", false);
+                        change_precio_ok.css("display", "block");
+                        change_precio.css("display", "none");
+
+                    } else {
+                        $('#send').attr("disabled", true);
+                        change_precio_ok.css("display", "none");
+                        change_precio.css("display", "none");
+                    }
+               }else{
                 var precio = validate_price();
                 var margen = validate_margen();
                 var cantidad = validate_cantidad();
@@ -306,6 +327,7 @@
                 } else {
                     $('#send').attr("disabled", false);
                 }
+               };
             };
 
         </script>
