@@ -143,4 +143,19 @@ class New_articulopre extends CI_Model implements PInterface {
          return json_encode($result);
     }
     
+    public function GetInfo($request)
+    {
+        $data = $request['data'];
+        
+        return json_encode($this->db->query("SELECT 
+                                                sum(producto.cantidad) as 'cantidad',
+                                                min(producto.precio) as 'min',
+                                                max(producto.precio) as 'max'
+                                                FROM producto WHERE producto.nombre LIKE '%$data';"
+               
+                )->result()[0]
+             );
+        
+    }
+    
 }
