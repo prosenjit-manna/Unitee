@@ -51,7 +51,7 @@ class New_articulo extends CI_Model implements PInterface {
             $this->route . "assert/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css",
             $this->route . "assert/perfil/css/profile.css",
             $this->route . "assert/perfil/css/profile-old.css",
-            $this->route . "assert/perfil/css/bootstrap-fileinput.css"
+            $this->route . "assert/perfil/css/bootstrap-fileinput.css",
         );
 
     }
@@ -78,7 +78,7 @@ class New_articulo extends CI_Model implements PInterface {
     }
 
     public function _jsLoader() {
-         return array("TableEditable.init();");
+         return array("TableEditable.init();","select_tallas();");
     }
 
     public function _rols() {

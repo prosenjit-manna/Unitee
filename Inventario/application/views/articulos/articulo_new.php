@@ -56,7 +56,7 @@
                                 <div class="form-group col-md-8">
                                     <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del producto">
                                 </div>
-                               <div style="padding-top: 72px;">
+                                     <div style="padding-top: 72px;">
                                     <label class="control-label col-md-4">Descripci&oacute;n</label>
                                    <div class="form-group col-md-8">
                                        <textarea name="txt_desc" class="form-control input-circle" rows="3" placeholder="Descripción del producto"></textarea>
@@ -64,21 +64,14 @@
                                </div>
                             </div>
                             <div class="col-md-6"><br>
-                                <label clas="control-label col-md-3" for="">Tallas</label>
-                                <label clas="control-label col-md-4" for=""><input type="checkbox" onchange="_check();"  id="_talla_all">Marcar todas</label><br>
-                                <div id="talla_check" class="col-md-12">
-                                    <div class="col-md-2"><label clas="control-label">XS<input type="checkbox" name="checkboxx" id="checkboxx"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">S<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">M<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">L<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">G<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
-                                    <div class="col-md-2"><label clas="control-label">XL<input type="checkbox"  name="checkbox" id="checkbox"></label></div>
+                                <label class="control-label col-md-4">* Tallas</label>
+                                <div class="form-group col-md-8">
+                                    <input autocomplete="off"  required="required" type="text" id="txt_tallas" name="txt_nombre" class="form-control input-circle">
                                 </div>
-                               <div class="col-md-12" style="padding-top: 22px;">
                                     <label class="control-label col-md-4">Ver en tienda</label>
                                    <div class="form-group col-md-8">
                                        <input type="checkbox" class="make-switch" data-on-text="SI" data-off-text="No" data-on-color="primary" data-off-color="danger">
-                                   </div>
+                                   </div><br>
                                </div>
                             </div>
                         </div>
@@ -372,4 +365,7 @@
      
   };
   
+  var select_tallas = function (){
+        $("#txt_tallas").select2({ tags: ["X","S","M","L","XL","XXL","G","14"]});
+  };
 </script>
