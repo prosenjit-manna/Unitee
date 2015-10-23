@@ -656,21 +656,31 @@
 
     var total_price = function() {
         var total_price = 0.0;
+        var total_cant  = 0; 
+        var result      = 0.0;
 
         $("#table_prod tr").each(function() {
+            
+            total_cant = parseFloat($(this).find("td")
+                    .eq(2).find("p")
+                    .eq(0).html());
+            
             total_price += parseFloat($(this).find("td")
                     .eq(3).find("p")
                     .eq(0).html());
+            
         });
+        
+        result = (total_price * total_cant);
 
-        $("#total_price_prod").val(total_price);
+        $("#total_price_prod").val(result);
 
     };
 
     var save_buy = function() {
 
         var id_, name, color, cant, price;
-        var data = new Array()
+        var data = new Array();
         var upload_data = Array();
         var po = $("#txt_po").val();
         var fac = $("#txt_factura").val();
