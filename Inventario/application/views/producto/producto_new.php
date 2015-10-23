@@ -163,17 +163,25 @@
                 {
                      var jsd        = JSON.parse($sd);
                      var a          = [];
+                     var p          = [];
+                     var c          = [];
                      
-                     $("#change_desc").html('<input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control select2" value="">');
+                     $("#change_desc").html('<input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control " value="">');
 
                      $.map(jsd , function(s){
                          a.push(s.nombre);
                      });
+                     
+                     for(var i = 0 ; i < 30 ; i++)
+                     {
+                         var n = i+0.5;
+                         p.push(n.toString());
+                         c.push(i.toString());
+                     }
 
-                     $("#txt_descripcion").select2({
-                            tags: a
-                     });
-               
+                     $("#txt_descripcion").select2({ tags: a});
+                     $("#precio").select2({ tags : p });
+                     $("#cantidad").select2({ tags : c} );
                      $("#label_desc").html('* Tallas');
                      
                 }
