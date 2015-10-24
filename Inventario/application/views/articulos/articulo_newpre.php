@@ -209,11 +209,29 @@
     };
 
     var _load = function() {
+        
+        //LOAD BABY
         $("#select_articulo").select2();
         
         $("#select_articulo").on("change", function() {
+            
+            //LLAMADA DE LA TABLA
+            var Tsize = $("#table_size");
+            
+            //REMOVER NODOS SI EXISTEN DENTRO DE LA TABLA 
+            if(Tsize.find("tr").length >= 1)
+            {
+                Tsize.find("tr").each(function(){
+                     $(this).remove();
+                });
+            }
+            
+            //LIMPIAR ARREGLO
             $ti = [];
+            
             $ci = $(this).val();
+            
+            //LLAMAR RUTINAS
             SizeInfo($ci);
             ArticleInfo($ci);
         });
@@ -222,6 +240,7 @@
             alert($(this).val());
         });*/
         
+        //VERIFICA SI SE HA AGREGADO UN VALOR EN EL ARREGLO GLOBAL
         setInterval(function(){
             
             if($ti.length >= 1){
