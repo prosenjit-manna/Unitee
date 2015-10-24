@@ -98,7 +98,7 @@
                         </div>
                         <div class="col-md-6">
                             <h3 lass="form-section">Productos</h3><br>
-                            <table class="table table-striped table-hover table-bordered" id="products_table">
+                            <table class="table table-striped table-hover table-bordered" >
                                 <thead>
                                     <tr>
                                         <th>
@@ -107,28 +107,11 @@
                                 <th >
                                 <p align="center">Precio</p>
                                 </th>
-                                <th>
-                                <p align="center">Operaciones</p>
-                                </th>
+   
                                 </tr>
                                 </thead>
-                                <tbody id="table_prod">
-                                    <tr>
-                                        <td align="center">XL</td>
-                                        <td align="center">
-                                            <div class="form-group">
-                                                <div class="input-icon right">
-                                                    <i name="change_" id="change_precio_ok" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>
-                                                    <i name="change_x" id="change_precio" style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>
-                                                    <input autocomplete="off" maxlength="8" onkeyup="validate_precio();" required="" type="text" id="txt5" name="txt_precio" class="form-control input-circle" placeholder="Escribe el recio de esta talla">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td align="center">
-                                            <a title="editar producto" href="#"><i class="icon-pencil" style="font-size: 20px;"></i></a>
-                                            <a title="eliminar producto " class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
-                                        </td>
-                                    </tr>
+                                <tbody id="table_size">
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -227,13 +210,25 @@
 
     var _load = function() {
         $("#select_articulo").select2();
+        
         $("#select_articulo").on("change", function() {
-
             $ti = [];
             $ci = $(this).val();
             SizeInfo($ci);
             ArticleInfo($ci);
         });
+        
+        /*$(":checkbox").on("click" , function(){
+            alert($(this).val());
+        });*/
+        
+        setInterval(function(){
+            
+            if($ti.length >= 1){
+                SizePush();
+            }
+            
+        } , 1000);
 
     };
 
@@ -253,7 +248,6 @@
         task.do_task();
     };
 
-
     var SizeInfo = function(data) {
 
         var t = $("#talla_check");
@@ -269,11 +263,43 @@
             t.html('');
 
             $.map(j, function(k) {
-                t.append(' <div class="col-md-2"><label class="control-label">(' + k.talla + ')&nbsp;<input onclick="thei(' + k.id + ');" type="checkbox" value="' + k.id + '" name="articulos_talla" id="articulos_talla"></label></div>');
+                t.append(' <div class="col-md-2"><label class="control-label">(' + k.talla + ')&nbsp;<input onclick="thei(' + k.id + ');" type="checkbox" value="' + k.talla + '" name="articulos_talla" id="Csize_' + k.id + '"></label></div>');
             });
 
         });
         task.do_task();
+    };
+    
+    var SizePush = function(){
+        
+         var Tsize = $("#table_size");
+         
+          
+         for(var i in $ti)
+         {
+            var n   = $ti[i]; 
+            var d   = '<tr id="Tsize_' + n + '"><td align="center">' + $("#Csize_" + n).val() + '</td>';
+                d  += '<td align="center">';
+                d  += '<div class="form-group">';
+                d  += '<div class="input-icon right">';
+                d  += '<i name="change_" style="display:none;color:#01DF3A;" class="icon-check" data-original-title=""></i>';
+                d  += '<i name="change_x"style="display:none;color:#f3565d;" class="icon-close" data-original-title=""></i>';
+                d  += '<input autocomplete="off" required="" type="text" class="form-control " placeholder="Nuevo precio">';
+                d  += '</div></div></tr>';
+            
+            if($("#Csize_" + n).prop("checked") === false)
+            {
+                Tsize.find("tr#" + "Tsize_" + n ).remove();
+            }
+            else if(Tsize.find("tr").length === 0)
+            {
+                Tsize.append(d);
+            }
+            else if (Tsize.find("tr#" + "Tsize_" + n ).length === 0)
+            {
+                Tsize.append(d);
+            }
+         }
     };
 
 
