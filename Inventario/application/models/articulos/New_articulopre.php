@@ -59,10 +59,9 @@ class New_articulopre extends CI_Model implements PInterface {
 
     public function _init() {
         
-        
+        $this->load->helper("form");
         
         $this->load->view("articulos/articulo_newpre" , array(
-              "clients"     => $clients,
               "articles"    => $this->GetArticle()
         ));
     }

@@ -47,6 +47,8 @@
                         </div>
                     </div>
                     <div class="portlet-body">
+                        <?php echo form_open_multipart("" , array("method" => "post" )); ?>
+                        <input type="hidden" name="size_vars" id="size_vars" value="" />
                         <!-- INICIO FORM-->
                         <h5 lass="form-section">Los campos con * son Requeridos</h5>
                         <div class="col-md-12">
@@ -186,6 +188,7 @@
                             <button disabled="disabled" id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                         </div>
                     </div>
+                    <?php echo form_close(); ?>
                     <!--Modals-->
                     <div id="responsive_delete" class="modal fade" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog">
@@ -225,6 +228,13 @@
 
     var thei = function(i) {
         $ti.push(i);
+        
+        var tt = [];
+        for(var n in $ti){
+            tt.push($("#Csize_" + $ti[n]).val());
+        }
+        
+        $("#size_vars").val(tt.join());
     };
 
     var _load = function() {
@@ -260,7 +270,7 @@
         });*/
         
         //VERIFICA SI SE HA AGREGADO UN VALOR EN EL ARREGLO GLOBAL
-      /*  setInterval(function(){
+       /* setInterval(function(){
             
             if($ti.length >= 1){
                 SizePush();
@@ -324,7 +334,6 @@
         
          var Tsize = $("#table_size");
          
-          
          for(var i in $ti)
          {
             var n   = $ti[i]; 
