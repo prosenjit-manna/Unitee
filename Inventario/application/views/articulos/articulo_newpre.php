@@ -96,6 +96,10 @@
                                 </div>
                             </div>
                         </div>
+                        <!--
+                        
+                        POR SI SE NECESITA DESPUES  =)
+                        
                         <div class="col-md-6">
                             <h3 lass="form-section">Productos</h3><br>
                             <table class="table table-striped table-hover table-bordered" >
@@ -114,6 +118,21 @@
                                     
                                 </tbody>
                             </table>
+                        </div> -->
+                        <div class="col-md-6">
+                            <div  style="padding: 88px;">
+                            <div class="col-md-4">
+                                <label>Precio :</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control input-circle" value="" id="txt_price" name="txt_price" />
+                                <span id="price_note" class="help-block" style="font-size:8pt;">
+                                     
+                                  </span>
+                            </div>
+                              
+                           </div>
+                            
                         </div>
                         <div class="col-md-6" align="center" style="padding-top: 60px;">
                             <h4>Selecciona la imagen frontal y trasera de la camisa</h4>
@@ -241,13 +260,13 @@
         });*/
         
         //VERIFICA SI SE HA AGREGADO UN VALOR EN EL ARREGLO GLOBAL
-        setInterval(function(){
+      /*  setInterval(function(){
             
             if($ti.length >= 1){
                 SizePush();
             }
             
-        } , 1000);
+        } , 1000);*/
 
     };
 
@@ -263,6 +282,15 @@
         task.success_callback(function(e) {
             var j = JSON.parse(e);
             t.html(' Hay ' + j.cantidad +  ' de ' + data +  ' su rango de precio es desde $' + j.min + ' hasta $' + j.max);
+            if(parseFloat(j.min) === 0)
+            {
+                $("#txt_price").val(j.estimado);
+                $("#price_note").html("Se ha tomado el precio estimado ya que no se ha efectuado ninguna compra.");
+            }
+            else
+            {
+                $("#txt_price").val(j.min);
+            }
         });
         task.do_task();
     };
@@ -289,6 +317,8 @@
         task.do_task();
     };
     
+    
+    //DEPRECADO , YA NOS E EJECUTARA ESTE PROCESO
     var SizePush = function(){
         
          var Tsize = $("#table_size");

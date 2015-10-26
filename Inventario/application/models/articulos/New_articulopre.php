@@ -150,7 +150,8 @@ class New_articulopre extends CI_Model implements PInterface {
         return json_encode($this->db->query("SELECT 
                                                 sum(producto.cantidad) as 'cantidad',
                                                 min(producto.precio) as 'min',
-                                                max(producto.precio) as 'max'
+                                                max(producto.precio) as 'max',
+                                                producto.precio_est_unidad as 'estimado'
                                                 FROM producto WHERE producto.nombre LIKE '%$data';"
                
                 )->result()[0]
