@@ -290,6 +290,7 @@
             else
             {
                 $("#txt_price").val(j.min);
+                 $("#price_note").html();
             }
         });
         task.do_task();
