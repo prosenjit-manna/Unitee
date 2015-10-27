@@ -869,16 +869,18 @@ class Dashboard extends CI_Controller {
          $model          = isset($_REQUEST['model']) ? $_REQUEST['model'] : NULL;
          $dir            = isset($_REQUEST['dir']) ? $_REQUEST['dir'] : NULL;
          
+      
+
          if($action == NULL){ return null; }
-         
-        
-         if(!is_null($dir)){
+          
+         if(!is_null($dir))
+         {
                $this->load->model("$dir/$model" );
-            }
-            else
-            {
+         }
+         else
+         {
                $this->load->model($model);
-            }
+         }
             
  
            return $this->$model->$action($_REQUEST);

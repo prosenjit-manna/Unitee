@@ -1,3 +1,4 @@
+
 <div class="page-content-wrapper">
     <!-- INICIO CONTENIDO -->
     <div class="page-content">
@@ -47,8 +48,12 @@
                         </div>
                     </div>
                     <div class="portlet-body">
-                        <?php echo form_open_multipart("" , array("method" => "post" )); ?>
+                        <?php echo form_open_multipart("Dashboard/ActionForm/" , array("method" => "post" )); ?>
+                       
                         <input type="hidden" name="size_vars" id="size_vars" value="" />
+                        <input type="hidden" name="action"  value="Push" />
+                        <input type="hidden" name="model"  value="new_articulopre" />
+                        <input type="hidden" name="dir"  value="articulos" />
                         <!-- INICIO FORM-->
                         <h5 lass="form-section">Los campos con * son Requeridos</h5>
                         <div class="col-md-12">
@@ -66,7 +71,7 @@
                                 </div>
                                 <label class="control-label col-md-4">Ver en tienda</label>
                                 <div class="form-group col-md-8">
-                                    <input type="checkbox" class="make-switch" data-on-text="SI" data-off-text="No" data-on-color="primary" data-off-color="danger">
+                                    <input name="shop" type="checkbox" class="make-switch" data-on-text="SI" data-off-text="No" data-on-color="primary" data-off-color="danger">
                                 </div>
                             </div>
                             <div class="col-md-6"><br>
@@ -138,46 +143,23 @@
                         </div>
                         <div class="col-md-6" align="center" style="padding-top: 60px;">
                             <h4>Selecciona la imagen frontal y trasera de la camisa</h4>
-                            <div class="form-group col-md-6">
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
-                                    </div>
-                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
-                                    </div>
-                                    <div>
-                                        <span class="btn default btn-file">
-                                            <span class="fileinput-new">
-                                                Seleccionar Imagen </span>
-                                            <span class="fileinput-exists">
-                                                Cambiar </span>
-                                            <input type="file" name="avatar_img">
-                                        </span>
-                                        <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-                                            Eliminar </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
-                                    </div>
-                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
-                                    </div>
-                                    <div>
-                                        <span class="btn default btn-file">
-                                            <span class="fileinput-new">
-                                                Seleccionar Imagen </span>
-                                            <span class="fileinput-exists">
-                                                Cambiar </span>
-                                            <input type="file" name="avatar_img">
-                                        </span>
-                                        <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-                                            Eliminar </a>
-                                    </div>
-                                </div>
-                            </div>
+                             <div class="col-md-6">
+                            <table class="table table-striped table-hover table-bordered" >
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <p align="center">Colores</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Imagen (Frente/Trasera)</p>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="table_color">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
                         </div>
 
                     </div><br>
@@ -185,7 +167,7 @@
                     <div class="col-md-12">
                         <div class="form-actions col-md-offset-9">
                             <a href="<?php echo site_url("/0/"); ?>" class="btn default">Cancelar</a>
-                            <button disabled="disabled" id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
+                            <button  id="send" name="send"  type="submit" class="btn blue"><i class="fa fa-check"></i>Guardar</button>
                         </div>
                     </div>
                     <?php echo form_close(); ?>
@@ -260,9 +242,11 @@
             
             $ci = $(this).val();
             
+          
             //LLAMAR RUTINAS
             SizeInfo($ci);
             ArticleInfo($ci);
+            ColorTable($ci); 
         });
         
         /*$(":checkbox").on("click" , function(){
@@ -324,6 +308,31 @@
                 t.append(' <div class="col-md-2"><label class="control-label">(' + k.talla + ')&nbsp;<input onclick="thei(' + k.id + ');" type="checkbox" value="' + k.talla + '" name="articulos_talla" id="Csize_' + k.id + '"></label></div>');
             });
 
+        });
+        task.do_task();
+    };
+    
+    var ColorTable = function(data)
+    {
+        var t = $("#table_color");
+        var task = new jtask();
+        task.url = "<?php echo site_url("Dashboard/ActionRequest/GetColor/new_articulopre/articulos"); ?>";
+        task.data = {"data": data};
+        task.success_callback(function(e) {
+            var j = JSON.parse(e);
+            var d = '';
+            $.map(j , function(k){
+                d += '<tr><td>' + k.color + '</td>';
+                d += '<td>';
+                d += '<div class="form-group col-md-6">';
+                d += '<div class="fileinput fileinput-new" data-provides="fileinput">';
+                d += '<input type="file" class="btn btn-default" name="file[]" />';
+                d += '<input type="file" class="btn btn-default" name="file[]" />';
+                d += '</div>';
+                d += '</td>';
+                d += "</tr>";
+            });
+            t.html(d);
         });
         task.do_task();
     };

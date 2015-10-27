@@ -158,4 +158,58 @@ class New_articulopre extends CI_Model implements PInterface {
         
     }
     
+    public function GetColor($request){
+          $data = $request['data'];
+          return json_encode($this->db->query("SELECT 
+                                producto.nombre as 'producto' ,
+                                color.nombre as 'color',
+                                color.id_color as 'id_color'
+                                FROM producto
+                                INNER JOIN color ON color.id_color=producto.id_color
+                                WHERE producto.fabricado LIKE 1 and producto.nombre LIKE '%$data'
+                                GROUP BY color.nombre
+                                HAVING count(*) >= 1;"
+               
+                )->result()
+             );
+    }
+    
+    public function Push($request){
+        
+        
+        echo "<pre>" , print_r($_FILES) , "</pre>";
+        
+        return;
+        
+        $shop = $request['shop'];
+        
+        if($shop == "on") $shop = 1;
+        else $shop = 0;
+        
+        
+        $this->load->library("Tools");
+        $this->tools->default_timezone();
+        
+        
+        $this->db
+                ->insert("articulos" , array(
+            "nombre"        => $request['txt_nombre'],
+            "descripcion"   => $request['txt_desc'],
+            "talla"         => $request['size_vars'],
+            "status_shop"   => $shop,
+            "precio"        => $request['txt_price'],
+            "fecha"         => $this->tools->current_date(),
+            "referencia"    => $request['txt_articulo']
+        ));
+        
+
+        $id_insert = $this->db
+                        ->insert_id();
+        
+        
+        
+        
+        
+    }
+    
 }
