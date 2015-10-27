@@ -203,7 +203,7 @@ class New_articulopre extends CI_Model implements PInterface {
                 ->insert("articulos" , array(
             "nombre"        => $request['txt_nombre'],
             "descripcion"   => $request['txt_desc'],
-            "talla"         => $request['size_vars'],
+            "talla"         => str_replace(",", "-", $request['size_vars']),
             "status_shop"   => $shop,
             "precio"        => $request['txt_price'],
             "fecha"         => $this->tools->current_date(),
@@ -258,7 +258,7 @@ class New_articulopre extends CI_Model implements PInterface {
                 $file_names[$j][] = [
                     "name"      => $types[$i],
                     "type"      => $types[$i],
-                    "value"     => $str . "." . pathinfo($n , PATHINFO_EXTENSION)
+                    "value"     => $dir . "/" . $str . "." . pathinfo($n , PATHINFO_EXTENSION)
                 ];
                 
                 $file_sust[]  = $str;
