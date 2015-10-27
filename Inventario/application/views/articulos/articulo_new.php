@@ -54,12 +54,12 @@
                             <div class="col-md-6">
                                 <br><label class="control-label col-md-4">* Nombre</label>
                                 <div class="form-group col-md-8">
-                                    <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del producto">
+                                    <input autocomplete="off"  required="required" type="text" id="txt1" name="txt_nombre" class="form-control input-circle" placeholder="Nombre del articulo">
                                 </div>
                                      <div style="padding-top: 72px;">
                                     <label class="control-label col-md-4">Descripci&oacute;n</label>
                                    <div class="form-group col-md-8">
-                                       <textarea name="txt_desc" class="form-control input-circle" rows="3" placeholder="Descripción del producto"></textarea>
+                                       <textarea name="txt_desc" class="form-control input-circle" rows="3" placeholder="Descripción del articulo"></textarea>
                                    </div>
                                </div>
                             </div>
@@ -72,7 +72,6 @@
                                    <div class="form-group col-md-8">
                                        <input type="checkbox" class="make-switch" data-on-text="SI" data-off-text="No" data-on-color="primary" data-off-color="danger">
                                    </div><br>
-                               </div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -103,9 +102,8 @@
                                             <a data-toggle="modal" href="#stack2"><span class="badge badge-info">Azul</span></a>
                                         </td>
                                         <td align="center">
-                                            <p class="col-md-4">XS<input type="checkbox" name="" id="6" checked="checked"></p>
-                                            <p class="col-md-4">S<input type="checkbox" name="" id="6" checked="checked"></p>
-                                            <p class="col-md-4">M<input type="checkbox" name="" id="6" checked="checked"></p>
+                                            14, S, M, L, XL, XXL,
+                                        </td>
                                         <td align="center">
                                             <a title="editar producto" href="#"><i class="icon-pencil" style="font-size: 20px;"></i></a>
                                             <a title="eliminar producto " class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
@@ -119,7 +117,8 @@
                                             <a data-toggle="modal" href="#stack2"><span class="badge badge-info">Azul</span></a>
                                         </td>
                                         <td align="center">
-                                            <p class="col-md-12">Todas<input type="checkbox" name="" id="6" checked="checked"></p>
+                                            14, S, M, L, XL, XXL,
+                                        </td>
                                         <td align="center">
                                             <a title="editar producto" href="#"><i class="icon-pencil" style="font-size: 20px;"></i></a>
                                             <a title="eliminar producto " class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
@@ -134,11 +133,8 @@
                                             <a data-toggle="modal" href="#stack2"><span class="badge badge-info">Azul</span></a>
                                         </td>
                                         <td align="center">
-                                            <p class="col-md-4">XS<input type="checkbox" name="" id="6" checked="checked"></p>
-                                            <p class="col-md-4">S<input type="checkbox" name="" id="6" checked="checked"></p>
-                                            <p class="col-md-4">M<input type="checkbox" name="" id="6" checked="checked"></p><br>
-                                            <p class="col-md-4">L<input type="checkbox" name="" id="6" checked="checked"></p>
-                                            <p class="col-md-4"> G<input type="checkbox" name="" id="6" checked="checked"></p>
+                                            14, S, M, L, XL, XXL,
+                                        </td>
                                         <td align="center">
                                             <a title="editar producto" href="#"><i class="icon-pencil" style="font-size: 20px;"></i></a>
                                             <a title="eliminar producto " class="" data-toggle="modal" href="#responsive_delete"><i class="icon-trash" style="font-size: 20px;"></i></a>
