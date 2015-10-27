@@ -51,9 +51,11 @@
                         <?php echo form_open_multipart("Dashboard/ActionForm/" , array("method" => "post" )); ?>
                        
                         <input type="hidden" name="size_vars" id="size_vars" value="" />
+                        <input type="hidden" name="colors" id="colors"  value="" />
                         <input type="hidden" name="action"  value="Push" />
                         <input type="hidden" name="model"  value="new_articulopre" />
                         <input type="hidden" name="dir"  value="articulos" />
+                        
                         <!-- INICIO FORM-->
                         <h5 lass="form-section">Los campos con * son Requeridos</h5>
                         <div class="col-md-12">
@@ -315,12 +317,14 @@
     var ColorTable = function(data)
     {
         var t = $("#table_color");
+        var cc = $("#colors");
         var task = new jtask();
         task.url = "<?php echo site_url("Dashboard/ActionRequest/GetColor/new_articulopre/articulos"); ?>";
         task.data = {"data": data};
         task.success_callback(function(e) {
             var j = JSON.parse(e);
             var d = '';
+            var c = [];
             $.map(j , function(k){
                 d += '<tr><td>' + k.color + '</td>';
                 d += '<td>';
@@ -331,7 +335,9 @@
                 d += '</div>';
                 d += '</td>';
                 d += "</tr>";
+                c.push(k.id_color);
             });
+            cc.val(c.join());
             t.html(d);
         });
         task.do_task();
