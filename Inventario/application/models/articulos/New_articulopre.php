@@ -177,20 +177,28 @@ class New_articulopre extends CI_Model implements PInterface {
     public function Push($request){
         
         
-        echo "<pre>" , print_r($_FILES) , "</pre>";
         
-        return;
-        
+        //Verificamos si existira en tienda
         $shop = $request['shop'];
         
         if($shop == "on") $shop = 1;
         else $shop = 0;
         
         
+        /*CARGA DE LIBREARIAS NECESARIAS PARA ESTE ALGORITMO*/
+        
         $this->load->library("Tools");
+        $this->load->library("Base_upload");
+        $this->load->library("Tools");
+        $this->load->helper(array("url" , "string"));
+        
+        
+        
+        //ZONA HORARIA ACTUAL 
         $this->tools->default_timezone();
         
         
+        //AGREGAMOS LOS DATOS BASICOS DE LOS ARTICULOS 
         $this->db
                 ->insert("articulos" , array(
             "nombre"        => $request['txt_nombre'],
@@ -203,13 +211,108 @@ class New_articulopre extends CI_Model implements PInterface {
         ));
         
 
-        $id_insert = $this->db
+        //OBTENEMOS EN INSERSION 
+        $id_art = $this->db
                         ->insert_id();
         
         
         
+        //OBTENEMOS LOS COLORES 
+        $colors         = explode(",", $request['colors']);
+        
+        //CONTAMOS LOS COLORES POR CADA COLO HAY UN FRONT Y BACK 
+        $color_count    = sizeof($colors);
+        
+        
+        //BUSCAMOS CUANTOS ARCHIVOS EXISTEN 
+        $total_add      = sizeof($_FILES['file']['name']);
+        
+        //DIVIDIMOS ESOS ARCHIVOS ENTRE DOS , DEBE DE DARNOS COMO RESULTADO EL TOTAL DE COLORES
+        $count_add      = $total_add /  2;
+        
+        
+        $action         = true;
+        
+       //COMPARAMOS EL RESULTADO 
+        if($color_count === $count_add){
+            
+            $dir        = random_string("numeric");
+            @mkdir("./images/articulos/$dir");
+
+            $this->base_upload
+                    ->set_path("./images/articulos/$dir/");
+            
+            $file_names = [];
+            $file_sust  = [];
+            
+            
+            $types = [
+                0 => "front",
+                1 => "back"
+            ];
+            
+            $i = 0 ; $j = 0;
+            foreach($_FILES['file']['name'] as $n){
+                $str = random_string();
+                
+                $file_names[$j][] = [
+                    "name"      => $types[$i],
+                    "type"      => $types[$i],
+                    "value"     => $str . "." . pathinfo($n , PATHINFO_EXTENSION)
+                ];
+                
+                $file_sust[]  = $str;
+                
+                if ($i == 1) {
+                    $i = 0;
+                    $j++;
+                } else {
+                    $i++;
+                }
+            }
+            
+            
+            $this->base_upload->set_filename($file_sust);
+            $this->base_upload->Do_MultiUpload('file');
+            
+            $this->tools->default_timezone();
+            
+            for($i = 0 ; $i < count($colors) ; $i++){
+                
+                $this->db->insert("adjunto", array(
+                    "adjunto"      => json_encode($file_names[$i]),
+                    "tipo"         => "articulos",
+                    "comentario"   => random_string(),
+                    "fecha"        => $this->tools->current_date()
+                ));
+                
+                $id_adj = $this->db->insert_id();
+                
+                $this->db->insert("art_variaciones" ,array(
+                    "id_articulo" => $id_art,
+                    "id_adjunto"  => $id_adj,
+                    "id_color"    => $colors[$i],
+                    "fecha"       => $this->tools->current_date()
+                ));
+                
+            }
+               
+               
+           
+        }
+        else{
+            $action = false;
+        }
+        
+        
+        //REDIRECCIONAMOS 
+        
+        redirect("/0/pre-fabricado?s=$action");
         
         
     }
+    
+    
+    
     
 }
