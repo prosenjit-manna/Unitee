@@ -223,6 +223,7 @@
 
     var _load = function() {
         
+        
         //LOAD BABY
         $("#select_articulo").select2();
         
@@ -244,12 +245,54 @@
             
             $ci = $(this).val();
             
-          
+            
             //LLAMAR RUTINAS
             SizeInfo($ci);
             ArticleInfo($ci);
             ColorTable($ci); 
+            
+            
+         
+            
+            
         });
+        
+        
+        setInterval(function(){
+                
+                
+                
+                var name = $("#txt1").val();
+                
+                
+                if(name === "" || name === null){
+                    button_enabled(false);
+                    return;
+                }
+                
+                var table = $("#table_color");
+                var count = 0;
+                
+                table.find("tr").each(function(){
+                      count++;
+                });
+                
+                
+                if(count === 0){
+                    button_enabled(false);
+                    return;
+                }
+                
+                
+                if($ti.length === 0)
+                {
+                     button_enabled(false);
+                    return;
+                }
+                
+                button_enabled(true);
+                
+        } , 500);
         
         /*$(":checkbox").on("click" , function(){
             alert($(this).val());
@@ -264,6 +307,19 @@
             
         } , 1000);*/
 
+    };
+    
+    var button_enabled = function(enabled){
+        
+        var btn = $("#send");
+        switch(enabled){
+            case true:
+                btn.attr("disabled" , false);
+                break;
+            case false:
+                 btn.attr("disabled" , true);
+                break;
+        }
     };
 
     var ArticleInfo = function(data) {
