@@ -156,6 +156,7 @@
              camisas_tipos,
              camisas_categoria,
              coordFront ,
+             id_style ,
              coordBack;
      
      var img_url = "<?php echo $webservices; ?>images/articulos/";
@@ -183,9 +184,20 @@
             };
         
             var _finish = function(){
+                
+            
+                var $price = $("#txt_precio").val(); 
+              var _task = new jtask();
+                  _task.beforesend = false;
+                  _task.cache = true;
+                  _task.url = "<?php echo $webservices . "/NockupShop/GetSizes/" . $app_key . "/" ?>" + id_style + "/" +  select_variacion + "/" + $price;
+                 _task.success_callback(function(s){
+                      alert(s);
+                 });
+                 _task.do_task();
               
-             
-                var ftask = new jtask();
+             return;
+              var ftask = new jtask();
                 
                ftask.url = "<?php echo plugins_url('/', __FILE__);?>wc_response.php";
                
@@ -269,7 +281,8 @@
                     "titulo"            : $("#txt_titulo").val(),
                     "camisas_cat"       : camisas_categoria,
                     "coordf"            : JSON.stringify(coordFront),
-                    "coordb"            : JSON.stringify(coordBack)
+                    "coordb"            : JSON.stringify(coordBack),
+                    "id"                : id_style
                 };
 
                 
@@ -577,6 +590,7 @@
            $.map(data , function(m){
                 if(select_variacion == m.id_var)
                 {
+                    id_variacion = m.id_var;
                     var adj = JSON.parse(m.adjunto_data);
                     $.map(adj , function(n){
                            var view = {
@@ -605,9 +619,12 @@
         select_variacion = variacion;
         var store = JSON.parse($data_store);
         $.map(store , function(d){
+            
             if(d.id_var == variacion){
+                
               var adjunto_ = JSON.parse(d.adjunto_data);
               $.map(adjunto_ , function(p){
+                   
                    if(p.type === "front"){
                         var j =('<img class="media-object img-circle" width="100" height="100" src="'
                                         + img_url + p.value +'" alt="">');
@@ -654,8 +671,10 @@
     
     function style_select(){
         
-        
+     
         var id_art      = $("#cmd_articulos").val();
+            id_style    = id_art;
+        
         
                         $.map(camisas_tipos , function(m){
                             if(m.id === id_art){
@@ -679,7 +698,7 @@
                             $("#cmd_seccion_articulos").html(html_data);
                     });
                     task_.success_callback(function(call){
-                        
+                       
                         $data_store = call;
                         
                         var bg_color = 'blueviolet';
