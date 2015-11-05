@@ -29,6 +29,21 @@ global $wpdb; // obtenemos la clase de bases de datos wordpress
  * conversion base 64 a cadena o string 
  * 
  */
+
+
+$ATTR = $wpdb->get_results("SELECT * FROM " .  $wpdb->prefix . "woocommerce_attribute_taxonomies WHERE attribute_label LIKE '%TALLAS' ");
+
+if(count($ATTR) >= 1){
+    
+    $id_attr = $ATTR[0]->attribute_id;
+    
+}
+
+
+return;
+  
+
+
 if(!function_exists("upload_base64")){
      
     function upload_base64($encode , $filename , $coord , $e ){
@@ -251,5 +266,8 @@ $ls_tshirt_db = array(
 $wpdb->insert("wp_shirt" , $ls_tshirt_db);
 
 $guid = get_post_field("guid", $post_id );
+
+
+ 
 echo $guid;
 exit();
