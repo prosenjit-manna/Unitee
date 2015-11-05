@@ -818,7 +818,7 @@ class Dashboard extends CI_Controller {
        
         //$url = 'http://www.elfaro.net/es/info/rss/';
         //$url = 'http://www.lapagina.com.sv/rss/rss.php?sec=266';
-        $url = 'http://www.elsalvador.com/es/rss/articulos/rss-TE_SALVINTER.xml';
+        //$url = 'http://www.elsalvador.com/es/rss/articulos/rss-TE_SALVINTER.xml';
         
        // $url = "http://lieison.com";
      
@@ -828,11 +828,30 @@ class Dashboard extends CI_Controller {
         
       // echo "<pre>" , print_r($data) , "</pre>";
         
-          $file             = "./files/rss/icons/97620451/MBH7dYPD.png";
+         // $file             = "./files/rss/icons/97620451/MBH7dYPD.png";
           //$path             = explode("." , $file);
           //$total_path       =  "." . $path[count($path) -2] . "_1" . ".html";
           //echo $total_path;
-          echo pathinfo($file , PATHINFO_FILENAME);
+         // echo pathinfo($file , PATHINFO_FILENAME);
+        
+        //$file             = "./files/hola.png";
+        $file             = "./files/amarillo.png";
+        $this->load->library("Extractcolor");
+        $data = $this->extractcolor->getColors($file , 10, 255 , "hex");
+        
+        echo "<pre>" , print_r($data) , "</pre>";
+        
+        
+        foreach($data as $k)
+        {
+            
+            echo "<br>" , "<div style='background-color:$k;'>color</div>";
+            
+        }
+        
+        echo "<br>" , "<img src='.$file' />";
+        
+        
     }
     
      /**

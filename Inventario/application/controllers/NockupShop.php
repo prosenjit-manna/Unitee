@@ -53,7 +53,7 @@ class NockupShop  extends CI_Controller{
           print json_encode($r);
     }
     
-    public function Articulos($private_key , $id_articulo  , $c = null){
+    public function Articulos($private_key , $id_articulo ,  $c = null){
         
         //CREAMOS UN HEADER AL MOMENTO DE HACER EL WEB SERVICES
         $this->output->set_header("Access-Control-Allow-Origin: *");
@@ -66,6 +66,135 @@ class NockupShop  extends CI_Controller{
              ->get_articulos($id_articulo);
         
        print json_encode($r);
+        
+    }
+    
+    
+    public function GetSizes($private_key , $id_articulo , $id_variacion , $user_price , $c = NULL )
+    {
+        //CREAMOS UN HEADER AL MOMENTO DE HACER EL WEB SERVICES
+        $this->output->set_header("Access-Control-Allow-Origin: *");
+       
+        //SI LA LLAVE PRIVADA NO ES IGUAL ENTONCES SALU
+        if(!$this->get_key($private_key)) return NULL;
+        
+        //VERIFICAREMOS EL ARTICULO SELECCIONADO 
+        
+        $this->load->database();
+        
+        //QUERY ARTICULOS 
+        $query = "SELECT talla , precio , referencia FROM articulos WHERE id_articulos LIKE ?";
+        
+        
+        //QUERY ... RESULTADO
+        $art   = $this->db
+                ->query($query , array($id_articulo))
+                ->result();
+        
+        //SI EL ARTICULO DEVUELVE NADA ....
+        if(count($art) === 0) return NULL;
+        
+        
+        $price      = $art[0]->precio;
+        $tallas     = explode("-", $art[0]->talla);
+        $ref        = $art[0]->referencia;
+        
+        
+        //SEGUNDA SENTENCIA VERIFICAMOS LOS PRODUCTOS RELACIONADOS CON LOS ARTICULOS 
+        $query = "SELECT
+                    producto.nombre , 
+                    producto.id_producto,
+                    producto.descripcion,
+                    producto.precio , 
+                    producto.precio_est_unidad,
+                    color.nombre as 'color',
+                    color.id_color as 'id_color'
+                    FROM producto 
+                    LEFT JOIN color ON color.id_color=producto.id_color
+                    WHERE producto.nombre LIKE '%$ref%';";
+        
+        
+        
+        //OBTENEMOS LA DATA 
+        $prod       =  $this->db
+                            ->query($query)
+                            ->result(); 
+        
+        if(count($prod) === 0) return NULL;
+        
+        
+        //PRECIO MINIMO DEL PRODUCTO A ENCONTRAR
+      /*  $query     = "SELECT min(producto.precio) as 'minimo_precio' , "
+                   . " min(producto.precio_est_unidad) as 'minimo_estimado'"
+                   . " FROM producto  WHERE producto.nombre LIKE '%$ref%';";
+        
+        
+        //PRECIO MINIMO ARREGLO 
+        $min_price = $this->db
+                        ->query($query)
+                        ->result()[0];
+        
+        //OBTENCION DEL PRECIO MINIMO VS ESTIMADO ...
+        $min_price  = $min_price->minimo_precio != 0 ? $min_price->minimo_precio 
+                                                    : $min_price->minimo_estimado; 
+        
+       *
+       */
+        
+        
+        //QUERY PARA EL COLOR POR MEDIO DE LA TABLA VARIACION
+        $query = "SELECT id_color as 'color' "
+                . " FROM art_variaciones WHERE id_variacion LIKE ? ";
+        
+        
+        //COLOR QUERY
+        $color = $this->db
+                ->query($query , array($id_variacion))
+                ->result()[0]->color;
+        
+        
+        //ARREGLO DE SALIDA 
+        $new_array = [];
+       
+        
+        //BUCLE ....  =)
+        for($i = 0 ; $i < count($prod) ; $i++)
+        {
+            
+            if($color === $prod[$i]->id_color)
+            {
+                
+                $p_price    = $prod[$i]->precio != 0 ? $prod[$i]->precio : $prod[$i]->precio_est_unidad;
+                $p_size     = $prod[$i]->descripcion;
+                $p_id       = $prod[$i]->id_producto;
+                $total      = 0;
+                
+                
+                foreach($tallas as $s){
+                    if($s === $p_size){
+                        
+                        $total = ($p_price - $price) + $user_price ;
+                        break;
+                    }
+                }
+                
+                $data = array(  
+                    "price"     => $total,
+                    "size"      => $p_size,
+                    "id_art"    => $id_articulo,
+                    "id_var"    => $id_variacion,
+                    "id_prod"   => $p_id
+                );
+                
+                $new_array[] = $data;
+                
+            }
+        }
+        
+        
+       // echo "<pre>" ,  print_r($new_array) , "</pre>";
+       
+        $this->output->set_output(json_encode($new_array));
         
     }
     

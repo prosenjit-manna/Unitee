@@ -209,6 +209,7 @@
 
     var $ti = [];
     var $ci = null;
+    var $cfiles = 0;
 
     var thei = function(i) {
         $ti.push(i);
@@ -257,8 +258,29 @@
             
         });
         
-        
+       
         setInterval(function(){
+            
+                var files =  document.getElementById("data_file");
+                if(files !== null)
+                {
+                    
+                    var c = 0;
+                    $("input:file").each(function(){
+                          if($(this).val() !== null || $(this).val() !== ""  )
+                          {
+                              c++;
+                          }
+                    });
+                    
+                    var total = $cfiles * 2;
+                    if(total !== c)
+                    {
+                         button_enabled(false);
+                         return;
+                    }
+
+                }
                 
                 
                 
@@ -285,6 +307,11 @@
                 
                 
                 if($ti.length === 0)
+                {
+                     button_enabled(false);
+                    return;
+                }
+                if($("#txt_price").val() === '' || $("#txt_price").val() === null )
                 {
                      button_enabled(false);
                     return;
@@ -382,12 +409,13 @@
             var d = '';
             var c = [];
             $.map(j , function(k){
+                $cfiles++;
                 d += '<tr><td>' + k.color + '</td>';
                 d += '<td>';
                 d += '<div class="form-group col-md-6">';
                 d += '<div class="fileinput fileinput-new" data-provides="fileinput">';
-                d += '<input type="file" class="btn btn-default" name="file[]" />';
-                d += '<input type="file" class="btn btn-default" name="file[]" />';
+                d += '<input type="file" id="data_file" class="btn btn-default" name="file[]" />';
+                d += '<input type="file" id="data_file" class="btn btn-default" name="file[]" />';
                 d += '</div>';
                 d += '</td>';
                 d += "</tr>";
