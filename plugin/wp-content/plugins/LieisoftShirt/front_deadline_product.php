@@ -26,9 +26,14 @@ if($now_ > $date_ ){
 if(!function_exists("custom_get_availability")){
       
     function custom_get_availability( $availability, $_product ) {
-        if ( $_product->is_in_stock() ) $availability['availability'] = __(get_option("ls_stock_"), 'woocommerce');
-  
-        if ( !$_product->is_in_stock() ) $availability['availability'] = __(get_option("ls_outstock_"), 'woocommerce');
+        if ( $_product->is_in_stock() ) {
+             $availability['availability'] = __(get_option("ls_stock_"), 'woocommerce');
+        }
+           
+        if ( !$_product->is_in_stock()) {
+             $availability['availability'] = __(get_option("ls_outstock_"), 'woocommerce');
+        }
+           
         return $availability;
     }
 
@@ -38,6 +43,7 @@ add_filter( 'woocommerce_get_availability', 'custom_get_availability', 1, 2);
         
 
 ?>
+
 <input type="hidden" id="count_ls" value="<?php echo $resultset->deadline; ?>" />
 <input type="hidden" id="page_ls" value="<?php echo get_page_link(); ?>" />
 

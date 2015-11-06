@@ -2,95 +2,82 @@
 
 
 /***
- * 
- * WC response 
+ *
+ * WC response
  * version 0.5
  * Dev by Rolando Arriaza
  * Lieison Working T.
- * 
+ *
  * Modulo en el cual guarda la informaciond e la campaña de la camisa
- * por medio de parametros especificos , en el cua varian de acuerdo 
- * al diseño del elemento 
- * 
+ * por medio de parametros especificos , en el cua varian de acuerdo
+ * al diseño del elemento
+ *
  * **/
 
 
 //Necesitamos las librerias de wordpress ya que se esta enviando por medio AJAX
-require_once( $_REQUEST['path'] . "wp-config.php" ); 
+require_once( $_REQUEST['path'] . "wp-config.php" );
 
 
-global $current_user;  // obtiene el usuario actual logado  tipo array 
+global $current_user;  // obtiene el usuario actual logado  tipo array
 global $wpdb; // obtenemos la clase de bases de datos wordpress
 
 
 /*
  * Esta funcion desarrolla el proceso en el cual sube la imagen pero antes
- * de subirla pasa por una serie de filtros incluyendo el factor de 
- * conversion base 64 a cadena o string 
- * 
+ * de subirla pasa por una serie de filtros incluyendo el factor de
+ * conversion base 64 a cadena o string
+ *
  */
 
 
-$ATTR = $wpdb->get_results("SELECT * FROM " .  $wpdb->prefix . "woocommerce_attribute_taxonomies WHERE attribute_label LIKE '%TALLAS' ");
-
-if(count($ATTR) >= 1){
-    
-    $id_attr = $ATTR[0]->attribute_id;
-    
-}
-
-
-return;
-  
-
-
 if(!function_exists("upload_base64")){
-     
+
     function upload_base64($encode , $filename , $coord , $e ){
-        
-       
-        
+
+
+
         $upload_dir             = wp_upload_dir();
         $upload_path            = str_replace( '/', DIRECTORY_SEPARATOR, $upload_dir['path'] ) . DIRECTORY_SEPARATOR;
         $decoded                = base64_decode($encode);
         $hashed_filename        = md5($filename . microtime()) . '_' . $filename;
-        
 
-        
+
+
         header('Content-Type: image/png'); //header png data sistem
-        
-        $img = imagecreatefromstring($decoded); //imagen string 
+
+        $img = imagecreatefromstring($decoded); //imagen string
         list($w , $h) = getimagesizefromstring($decoded); //obtenemos el tamaño real de la imagen
 
 
         $w_m = 800; // estandar
         $h_m = 600; // estandar
-        
-        
+
+
         $wm = $h * ($w_m / $h_m);  //calculo para obtener el width general
-        $hm = $w * ($h_m / $w_m);  // calculo para obtener el height general 
-        
+        $hm = $w * ($h_m / $w_m);  // calculo para obtener el height general
+
         $i = imagecreatetruecolor($w_m, $h_m); // aplicamos el rectangulo 800x600
-        
-             
-        imagealphablending($i , FALSE); // obtenemos las transparencias 
+
+
+        imagealphablending($i , FALSE); // obtenemos las transparencias
         imagesavealpha($i , TRUE); // se guarda las transparencias
 
-        imagecopyresampled($i, 
+        imagecopyresampled($i,
                 $img,
                 0,
-                0, 
+                0,
                 $coord->x ,
                 $coord->y - 27 ,
-                $wm , 
-                $hm , 
-                $wm  , 
-                $hm  ); // corta la imagen 
+                $wm ,
+                $hm ,
+                $wm  ,
+                $hm  ); // corta la imagen
 
         imagepng($i, $upload_path . $hashed_filename );
         imagedestroy($img);
-         
-   
+
+
        // file_put_contents($upload_path . $hashed_filename, $decoded );
 
         if( !function_exists( 'wp_handle_sideload' ) ) {
@@ -106,7 +93,7 @@ if(!function_exists("upload_base64")){
          if(!function_exists("wp_get_image_editor")){
             require_once  ( ABSPATH . 'wp-includes/media.php' );
         }
-         
+
 
 
         $file             = array();
@@ -117,8 +104,8 @@ if(!function_exists("upload_base64")){
         $file['size']     = filesize($upload_path . $hashed_filename );
 
         $file_            = wp_handle_sideload( $file, array( 'test_form' => false ) );
-        
-       
+
+
 
         $attachment = array(
                 'post_mime_type'        => $file_['type'],
@@ -129,17 +116,18 @@ if(!function_exists("upload_base64")){
 
         $attach_id      = wp_insert_attachment( $attachment, $file_['file']);
         $attach_data    = wp_generate_attachment_metadata( $attach_id, $file_['file'] );
-        
+
         wp_update_attachment_metadata( $attach_id,  $attach_data );
-        
+
       //  $edit = wp_get_image_editor( $upload_path . $hashed_filename);
        // print_r($edit);
-        
+
         return $attach_id;
-        
+
     }
 
 }
+
 
 
 
@@ -162,6 +150,10 @@ $title          = $_REQUEST['titulo'];
 $categoria      = $_REQUEST['camisas_cat'];
 $coordF         = json_decode(stripslashes($_REQUEST['coordf']));
 $coordB         = json_decode(stripslashes($_REQUEST['coordb']));
+$id             = isset($_REQUEST['id']) ? $_REQUEST['id'] : null;
+$atrib          = isset($_REQUEST['attr']) ? json_decode(stripslashes($_REQUEST['attr'])) : null;
+
+
 
 $images_id = array();
 
@@ -190,11 +182,11 @@ if($post_id){
      $attach_id = get_post_meta($product->parent_id, "_thumbnail_id", true);
      add_post_meta($post_id, '_thumbnail_id', $attach_id);
 }
- 
- 
+
+
 wp_set_object_terms( $post_id, $categoria, 'product_cat' );
 wp_set_object_terms($post_id, explode(",", $tags), 'product_tag');
-
+wp_set_object_terms ($post_id,'variable','product_type'); //PRODUCTO VARIABLE DESDE HOY
 
 update_post_meta( $post_id, '_visibility', 'visible' );
 update_post_meta( $post_id, '_stock_status', 'instock');
@@ -233,6 +225,12 @@ update_post_meta( $post_id, '_manage_stock', "no" );
 update_post_meta( $post_id, '_backorders', "no" );
 update_post_meta( $post_id, '_stock', "" );
 
+
+/****************************
+ * 
+ * ALGORITMO PARA ACTUALIZAR Y AGREGAR IMAGENES
+ * 
+ * ********************************/
 $n  = 0 ;
 foreach ($images as $k=>$i){
     $co = $coordF;
@@ -251,6 +249,16 @@ update_post_meta( $post_id, '_thumbnail_id', current($images_id) );
 update_post_meta( $post_id, '_product_image_gallery' , end($images_id));
 
 
+/**    FIN             **/
+
+
+/*********
+ * 
+ * ALGORITMO PARA AGREGAR ALA BASE DE DATOS DE WP_SHIRT
+ * 
+ * ***************/
+
+
 $date_ = new DateTime($duracion);
 
 $ls_tshirt_db = array(
@@ -259,15 +267,168 @@ $ls_tshirt_db = array(
     "camisa_obj"    => $camisas,
     "precio"        => $precio,
     "deadline"      => $date_->format("Y-m-d H:i:s"),
-    "tags"          => $tags
+    "tags"          => $tags,
+    "id_product"    => $id ,
+    "attr"          => json_encode($atrib)
 );
 
 
-$wpdb->insert("wp_shirt" , $ls_tshirt_db);
+$wpdb->insert( "wp_shirt" , $ls_tshirt_db);
+
 
 $guid = get_post_field("guid", $post_id );
 
 
+/*****************************************************************
+ * 
+ * ALGORITMO DE VARIACIONES :
+ * 
+ * **************************************************************/
+
  
+
+$ATTR = $wpdb->get_results("SELECT * FROM " .  $wpdb->prefix . "woocommerce_attribute_taxonomies WHERE attribute_label LIKE '%TALLAS' ");
+
+
+if(count($ATTR) >= 1){
+
+    if(count($ATTR) == 0){
+        $wpdb->insert($wpd->prefix  . "woocommerce_attribute_taxonomies" , array(
+            "attribute_name"    => "tallas",
+            "attribute_label"   => "TALLAS",
+            "attribute_type"    => "select",
+            "attribute_orderby" => "menu_order",
+            "attribute_public"  => 1
+        ));
+    }
+
+ 
+
+    $size_tax = wc_attribute_taxonomy_name( 'tallas' );
+
+    if(!empty($size_tax))
+    {
+
+
+           //AGREGAMOS LAS TALLAS ....
+        
+           $data_atrib     = $atrib;
+           
+           $sizes          = array();
+           $price          = array();
+           
+           foreach ($data_atrib as $d){
+               $sizes[] = $d->size;
+               $price[] = $d->price;
+           }
+           
+           //ID DEL POST PRODUCTO PRINCIPAL 
+           //$post_id        = 13;
+
+           //AGREGAMOS LOS ATRIBUTOS AL POST DEL PRODUCTO ESPECIFICO
+           wp_set_object_terms($post_id, $sizes, $size_tax );
+           
+
+            //DATA A AGREGAR DEL ATRIBUTO
+            $object_data = Array(
+                $size_tax=>Array(
+                    'name'              =>$size_tax,
+                    'value'             =>'',
+                    'is_visible'        => '1',
+                    'is_variation'      => '1',
+                    'is_taxonomy'       => '1'
+            ));
+
+             //ACTUALIZAMOS LOS DATOS DEL PRODUCTO ATTR
+             update_post_meta( $post_id,'_product_attributes',$object_data);
+             
+             //ATRIBUTO POR DEFECTO 
+            /* update_post_meta($post_id, "_default_attributes", 
+             array(
+                 $size_tax => $sizes[0]
+             ));*/
+
+             //?
+             wp_set_object_terms( $post_id, $sizes , $size_tax );
+             
+             
+             //EL ID POST SERA EL PADRE DE LOS DEMAS POST
+             $parent_id = $post_id;
+             
+             
+             $i =1;
+             $k =0;
+            foreach($sizes as $s){
+                 
+                 //VARIACIONES DEL PRODUCTO EN EL POST NUEVO 
+                    $variation = array(
+                        'post_title'   => 'Product #' . $parent_id + $i . ' Variation',
+                        'post_content' => '',
+                        'post_status'  => 'publish',
+                        'post_parent'  => $parent_id,
+                        'post_type'    => 'product_variation'
+                    );
+                    
+                    
+                     //AGREGAMOS EL POST
+                    $variation_id = wp_insert_post( $variation );
+
+                     //AGEGAMOS LOS PRECIOS VARIABLES
+                     update_post_meta( $variation_id, '_regular_price', $price[$k] );
+                     update_post_meta( $variation_id, '_price', $price[$k] );
+                     update_post_meta($variation_id, "_stock_status", "instock");
+                     update_post_meta($variation_id, "_manage_stock", "no");
+                     update_post_meta($variation_id, "_sku", $s . "-" . rand(0, 1000) . "-" . rand(1000, 50000));
+                     update_post_meta( $variation_id, '_thumbnail_id' , 0 );
+                     update_post_meta( $variation_id, '_virtual' , "no");
+                     update_post_meta( $variation_id, '_downloadable' , "no"  );
+                     update_post_meta( $variation_id, '_weight' , ""  );
+                     update_post_meta( $variation_id, '_length' , ""  );
+                     update_post_meta( $variation_id, '_width' , ""  );
+                     update_post_meta( $variation_id, '_height' , ""  );
+                     update_post_meta( $variation_id, '_sale_price' , ""  );
+                     update_post_meta( $variation_id, '_sale_price_dates_from' , ""  );
+                     update_post_meta( $variation_id, '_sale_price_dates_to' , ""  );
+                     update_post_meta( $variation_id, '_download_limit' , ""  );
+                     update_post_meta( $variation_id, '_download_expiry' , ""  );
+                     update_post_meta( $variation_id, '_downloadable_files' , ""  );
+                     update_post_meta( $variation_id, '_variation_description' , ""  );
+
+                     $i++;
+                     $k++;
+                     
+                     $wpdb->update( $wpdb->posts, 
+                              array( 
+                                        'post_status'   => 'publish',
+                                        'post_title'    => 'Variación #' . $variation_id .' de ' . $title,
+                                        'menu_order'    => $i
+                             ), 
+                             array( 'ID' => $variation_id ) 
+                      );
+                     
+                     delete_post_meta( $variation_id, '_backorders' );
+		     delete_post_meta( $variation_id, '_stock' );
+                     
+                     
+                     update_post_meta( $variation_id, '_sale_price_dates_from', '' );
+		     update_post_meta( $variation_id, '_sale_price_dates_to',  '' );
+                     
+                     
+                     do_action( 'woocommerce_save_product_variation', $variation_id );
+                     do_action( 'woocommerce_update_product_variation', $variation_id );
+                 
+             }
+    }
+    
+     WC_Product_Variable::sync( $post_id );
+    
+  
+}
+
+
+/*****************************************************************************/
+
+
+
 echo $guid;
-exit();
+exit(); 

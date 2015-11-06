@@ -1,7 +1,7 @@
 <?php
 
 defined("LS_COUNT_TABLES") or define("LS_COUNT_TABLES", 2);
-defined("LS_DB_VERSION") or define("LS_DB_VERSION","1.0");
+defined("LS_DB_VERSION") or define("LS_DB_VERSION","1.1");
 
 
 function ls_create_db(){
@@ -30,6 +30,8 @@ function ls_tables($i , $prefix){
             `precio` double DEFAULT NULL,
             `deadline` datetime DEFAULT NULL,
             `tags` text,
+            `id_product` int,
+            `attr` text
             PRIMARY KEY (`id_tshirt`)
         ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
     ";

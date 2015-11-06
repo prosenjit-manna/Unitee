@@ -779,6 +779,7 @@ class WC_Meta_Box_Product_Data {
 	 */
 	public static function save( $post_id, $post ) {
 		global $wpdb;
+                
 
 		// Add any default post meta
 		add_post_meta( $post_id, 'total_sales', '0', true );
@@ -1290,12 +1291,16 @@ class WC_Meta_Box_Product_Data {
 			$max_loop = max( array_keys( $_POST['variable_post_id'] ) );
 
 			for ( $i = 0; $i <= $max_loop; $i ++ ) {
-
+                            
+                          
+                            
 				if ( ! isset( $variable_post_id[ $i ] ) ) {
 					continue;
 				}
 
 				$variation_id = absint( $variable_post_id[ $i ] );
+                                
+                                 
 
 				// Checkboxes
 				$is_virtual      = isset( $variable_is_virtual[ $i ] ) ? 'yes' : 'no';
@@ -1318,15 +1323,24 @@ class WC_Meta_Box_Product_Data {
 						'post_type'    => 'product_variation',
 						'menu_order'   => $variable_menu_order[ $i ]
 					);
+                                        
+                                       
 
-					$variation_id = wp_insert_post( $variation );
+					 $variation_id = wp_insert_post( $variation );
 
 					do_action( 'woocommerce_create_product_variation', $variation_id );
 
 				} else {
 
-					$wpdb->update( $wpdb->posts, array( 'post_status' => $post_status, 'post_title' => $variation_post_title, 'menu_order' => $variable_menu_order[ $i ] ), array( 'ID' => $variation_id ) );
-
+					$wpdb->update( $wpdb->posts, 
+                                                array( 'post_status' => $post_status,
+                                                            'post_title' => $variation_post_title,
+                                                            'menu_order' => $variable_menu_order[ $i ] ), 
+                                                            array( 'ID' => $variation_id ) );
+                                        
+                                       
+                                        //echo "<script>alert(" , print_r($post_status ) ,")</script>"; 
+                                        
 					do_action( 'woocommerce_update_product_variation', $variation_id );
 
 				}
@@ -1379,17 +1393,21 @@ class WC_Meta_Box_Product_Data {
 				}
 
 				// Stock handling
+                                
 				update_post_meta( $variation_id, '_manage_stock', $manage_stock );
 
 				// Only update stock status to user setting if changed by the user, but do so before looking at stock levels at variation level
 				if ( ! empty( $variable_stock_status[ $i ] ) ) {
+                                       
 					wc_update_product_stock_status( $variation_id, $variable_stock_status[ $i ] );
 				}
 
 				if ( 'yes' === $manage_stock ) {
+                                     
 					update_post_meta( $variation_id, '_backorders', wc_clean( $variable_backorders[ $i ] ) );
 					wc_update_product_stock( $variation_id, wc_stock_amount( $variable_stock[ $i ] ) );
 				} else {
+                                    echo "<script>alert();</script>"; 
 					delete_post_meta( $variation_id, '_backorders' );
 					delete_post_meta( $variation_id, '_stock' );
 				}

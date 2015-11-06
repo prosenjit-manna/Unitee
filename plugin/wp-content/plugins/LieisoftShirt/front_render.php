@@ -185,7 +185,10 @@ $labels_color = "darkblue";
 
             var $price = $("#txt_precio").val();
             var _task = new jtask();
-            _task.beforesend = false;
+            _task.beforesend = true;
+            _task.config_before(function(){
+                  $("a[href='#finish']").attr("disabled", "disabled");
+            });
             _task.cache = true;
             _task.url = "<?php echo $webservices . "/NockupShop/GetSizes/" . $app_key . "/" ?>" + id_style + "/" + select_variacion + "/" + $price;
             _task.success_callback(function (s) {
@@ -280,7 +283,7 @@ $labels_color = "darkblue";
                     "id": id_style,
                     "attr" : s
                 };
-
+                
 
                 ftask.beforesend = true;
                 ftask.data = data;
