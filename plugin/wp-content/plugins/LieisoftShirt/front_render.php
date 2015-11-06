@@ -295,13 +295,13 @@ $labels_color = "darkblue";
 
                 ftask.success_callback(function (call) {
                     
-                    alert(call);
-                    console.log(call);
-                  /*  var w = $.trim(call);
+                    //alert(call);
+                    //console.log(call);
+                    var w = $.trim(call);
                     $("a[href='#finish']")
                             .html("Redireccionando")
                             .attr("disabled", "disabled");
-                    window.location.href = w;*/
+                    window.location.href = w;
 
                 });
 

@@ -1256,10 +1256,16 @@ class WC_Meta_Box_Product_Data {
 	 */
 	public static function save_variations( $post_id, $post ) {
 		global $wpdb;
+                
+                
 
 		$attributes = (array) maybe_unserialize( get_post_meta( $post_id, '_product_attributes', true ) );
 
 		if ( isset( $_POST['variable_sku'] ) ) {
+                    
+                    
+                     
+                    
 			$variable_post_id               = $_POST['variable_post_id'];
 			$variable_sku                   = $_POST['variable_sku'];
 			$variable_regular_price         = $_POST['variable_regular_price'];
@@ -1290,6 +1296,9 @@ class WC_Meta_Box_Product_Data {
 
 			$max_loop = max( array_keys( $_POST['variable_post_id'] ) );
 
+                        
+                       
+                        
 			for ( $i = 0; $i <= $max_loop; $i ++ ) {
                             
                           
@@ -1300,7 +1309,7 @@ class WC_Meta_Box_Product_Data {
 
 				$variation_id = absint( $variable_post_id[ $i ] );
                                 
-                                 
+                                
 
 				// Checkboxes
 				$is_virtual      = isset( $variable_is_virtual[ $i ] ) ? 'yes' : 'no';
@@ -1332,6 +1341,7 @@ class WC_Meta_Box_Product_Data {
 
 				} else {
 
+                                    
 					$wpdb->update( $wpdb->posts, 
                                                 array( 'post_status' => $post_status,
                                                             'post_title' => $variation_post_title,
@@ -1405,9 +1415,10 @@ class WC_Meta_Box_Product_Data {
 				if ( 'yes' === $manage_stock ) {
                                      
 					update_post_meta( $variation_id, '_backorders', wc_clean( $variable_backorders[ $i ] ) );
+                                       
 					wc_update_product_stock( $variation_id, wc_stock_amount( $variable_stock[ $i ] ) );
 				} else {
-                                    echo "<script>alert();</script>"; 
+                                   //echo "<script>alert();</script>"; 
 					delete_post_meta( $variation_id, '_backorders' );
 					delete_post_meta( $variation_id, '_stock' );
 				}
@@ -1418,6 +1429,7 @@ class WC_Meta_Box_Product_Data {
 				$date_from     = wc_clean( $variable_sale_price_dates_from[ $i ] );
 				$date_to       = wc_clean( $variable_sale_price_dates_to[ $i ] );
 
+                                
 				update_post_meta( $variation_id, '_regular_price', $regular_price );
 				update_post_meta( $variation_id, '_sale_price', $sale_price );
 
@@ -1447,6 +1459,7 @@ class WC_Meta_Box_Product_Data {
 				}
 
 				if ( isset( $variable_tax_class[ $i ] ) && $variable_tax_class[ $i ] !== 'parent' ) {
+                                   
 					update_post_meta( $variation_id, '_tax_class', wc_clean( $variable_tax_class[ $i ] ) );
 				} else {
 					delete_post_meta( $variation_id, '_tax_class' );
@@ -1520,12 +1533,19 @@ class WC_Meta_Box_Product_Data {
 				$variable_shipping_class[ $i ] = ! empty( $variable_shipping_class[ $i ] ) ? (int) $variable_shipping_class[ $i ] : '';
 				wp_set_object_terms( $variation_id, $variable_shipping_class[ $i ], 'product_shipping_class');
 
-				// Update Attributes
+				//ACA QUITE EL CODIGO
+                                
+                                // Update Attributes
 				$updated_attribute_keys = array();
+                                
+                                
 				foreach ( $attributes as $attribute ) {
+                                     
 					if ( $attribute['is_variation'] ) {
 						$attribute_key            = 'attribute_' . sanitize_title( $attribute['name'] );
 						$updated_attribute_keys[] = $attribute_key;
+                                                
+                                               
 
 						if ( $attribute['is_taxonomy'] ) {
 							// Don't use wc_clean as it destroys sanitized characters
@@ -1533,11 +1553,21 @@ class WC_Meta_Box_Product_Data {
 						} else {
 							$value = isset( $_POST[ $attribute_key ][ $i ] ) ? wc_clean( stripslashes( $_POST[ $attribute_key ][ $i ] ) ) : '';
 						}
+                                                
+                                                
 
 						update_post_meta( $variation_id, $attribute_key, $value );
+                                                
+                                                 echo "<pre> " , print_r($attribute_key) , "</pre>";
+                                                 echo "<pre> " , print_r($value) , "</pre>";
+                                                echo "<pre> " , print_r($variation_id) , "</pre>";
+                                              
 					}
 				}
+                                
+                                   return;
 
+                                
 				// Remove old taxonomies attributes so data is kept up to date - first get attribute key names
 				$delete_attribute_keys = $wpdb->get_col( $wpdb->prepare( "SELECT meta_key FROM {$wpdb->postmeta} WHERE meta_key LIKE 'attribute_%%' AND meta_key NOT IN ( '" . implode( "','", $updated_attribute_keys ) . "' ) AND post_id = %d;", $variation_id ) );
 

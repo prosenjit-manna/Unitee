@@ -393,6 +393,7 @@ if(count($ATTR) >= 1){
                      update_post_meta( $variation_id, '_download_expiry' , ""  );
                      update_post_meta( $variation_id, '_downloadable_files' , ""  );
                      update_post_meta( $variation_id, '_variation_description' , ""  );
+                     update_post_meta( $variation_id, 'attribute_' . $size_tax , strtolower($s)  );
 
                      $i++;
                      $k++;
