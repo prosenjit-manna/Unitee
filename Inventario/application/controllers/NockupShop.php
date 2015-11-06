@@ -91,6 +91,8 @@ class NockupShop  extends CI_Controller{
                 ->query($query , array($id_articulo))
                 ->result();
         
+        
+        
         //SI EL ARTICULO DEVUELVE NADA ....
         if(count($art) === 0) return NULL;
         
@@ -119,6 +121,11 @@ class NockupShop  extends CI_Controller{
         $prod       =  $this->db
                             ->query($query)
                             ->result(); 
+        
+        
+
+        
+       
         
         if(count($prod) === 0) return NULL;
         
@@ -153,14 +160,17 @@ class NockupShop  extends CI_Controller{
                 ->result()[0]->color;
         
         
+        
+        
         //ARREGLO DE SALIDA 
         $new_array = [];
        
         
+
         //BUCLE ....  =)
         for($i = 0 ; $i < count($prod) ; $i++)
         {
-            
+           
             if($color === $prod[$i]->id_color)
             {
                 
@@ -169,30 +179,27 @@ class NockupShop  extends CI_Controller{
                 $p_id       = $prod[$i]->id_producto;
                 $total      = 0;
                 
-                
                 foreach($tallas as $s){
                     if($s === $p_size){
                         
                         $total = ($p_price - $price) + $user_price ;
-                        break;
+                        
+                          $data = array(  
+                                    "price"     => $total,
+                                    "size"      => $p_size,
+                                    "id_art"    => $id_articulo,
+                                    "id_var"    => $id_variacion,
+                                    "id_prod"   => $p_id
+                            );
+                
+                        $new_array[] = $data;
                     }
                 }
-                
-                $data = array(  
-                    "price"     => $total,
-                    "size"      => $p_size,
-                    "id_art"    => $id_articulo,
-                    "id_var"    => $id_variacion,
-                    "id_prod"   => $p_id
-                );
-                
-                $new_array[] = $data;
-                
+
             }
         }
         
         
-       // echo "<pre>" ,  print_r($new_array) , "</pre>";
        
         $this->output->set_output(json_encode($new_array));
         
