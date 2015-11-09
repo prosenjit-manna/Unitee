@@ -190,7 +190,7 @@ $labels_color = "darkblue";
                   $("a[href='#finish']").attr("disabled", "disabled");
             });
             _task.cache = true;
-            _task.url = "<?php echo $webservices . "/NockupShop/GetSizes/" . $app_key . "/" ?>" + id_style + "/" + select_variacion + "/" + $price;
+            _task.url = "<?php echo $webservices . "NockupShop/GetSizes/" . $app_key . "/" ?>" + id_style + "/" + select_variacion + "/" + $price;
             _task.success_callback(function (s) {
 
 
@@ -296,12 +296,18 @@ $labels_color = "darkblue";
                 ftask.success_callback(function (call) {
                     
                     //alert(call);
+                    var s = JSON.parse(call);
+                    alert(s.message);
+                    window.location.href = s.url;
                     //console.log(call);
-                    var w = $.trim(call);
-                    $("a[href='#finish']")
+                    
+                    //var w = $.trim(call);
+                   /* $("a[href='#finish']")
                             .html("Redireccionando")
                             .attr("disabled", "disabled");
-                    window.location.href = w;
+                    window.location.href = w;*/
+        
+                    
 
                 });
 
@@ -649,7 +655,7 @@ $labels_color = "darkblue";
 
         $("#cmd_articulos").html("<option>Cargando ...</option>");
         var task = new jtask();
-        task.url = "<?php echo $webservices . "/index.php?/NockupShop/NonArticulos/" . $app_key . "/" ?>";
+        task.url = "<?php echo $webservices . "index.php?/NockupShop/NonArticulos/" . $app_key . "/" ?>";
         task.method = "GET";
         task.conf_before = true;
         task.config_before(function () {

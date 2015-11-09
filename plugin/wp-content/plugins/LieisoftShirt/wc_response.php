@@ -17,6 +17,7 @@
 
 //Necesitamos las librerias de wordpress ya que se esta enviando por medio AJAX
 require_once( $_REQUEST['path'] . "wp-config.php" );
+require_once 'ColorExtract.php';
 
 
 global $current_user;  // obtiene el usuario actual logado  tipo array
@@ -306,7 +307,7 @@ if(count($ATTR) >= 1){
 
     $size_tax = wc_attribute_taxonomy_name( 'tallas' );
 
-    if(!empty($size_tax))
+    if(!empty($size_tax) && count( $atrib) != 0)
     {
 
 
@@ -430,6 +431,20 @@ if(count($ATTR) >= 1){
 /*****************************************************************************/
 
 
+$variation_color = wp_get_attachment_image_src(current($images_id) , array(400,400));
+
+
+$extract  = new ColorExtractor();
+$ex       = $extract->getColors($variation_color[0], 9, 255, "hex");
+$count    = count($ex);
+
+
+echo json_encode(array(
+    "url"           => $guid,
+    "message"       => "EN ESTA CAMISA EXISTEN " . $count . " TIPOS DE COLORES"
+));
+
+return;
 
 echo $guid;
 exit(); 
