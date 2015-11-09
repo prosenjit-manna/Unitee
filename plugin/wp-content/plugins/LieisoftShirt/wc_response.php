@@ -431,10 +431,10 @@ if(count($ATTR) >= 1){
 /*****************************************************************************/
 
 
-$variation_color = wp_get_attachment_image_src(current($images_id) , array(400,400));
+//$variation_color = wp_get_attachment_image_src(current($images_id) , array(400,400));
 
 
-$extract  = new ColorExtractor();
+/*$extract  = new ColorExtractor();
 $ex       = $extract->getColors($variation_color[0], 9, 255, "hex");
 $count    = count($ex);
 
@@ -444,7 +444,7 @@ echo json_encode(array(
     "message"       => "EN ESTA CAMISA EXISTEN " . $count . " TIPOS DE COLORES"
 ));
 
-return;
+return;*/
 
 echo $guid;
 exit(); 
